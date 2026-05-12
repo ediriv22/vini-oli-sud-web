@@ -66,6 +66,7 @@ Vini Oli Sud deve presentarsi come boutique mediterranea premium dedicata a vini
 - logo
 - favicon
 - hero images
+- video hero e video editoriali: restano in locale e non sono versionati finche non esiste una selezione ottimizzata e approvata
 - Napoli / Lungomare / Vesuvio imagery
 - wine imagery
 - olive oil imagery
@@ -91,3 +92,9 @@ Vini Oli Sud deve presentarsi come boutique mediterranea premium dedicata a vini
 - Recapiti ufficiali email, telefono e sede.
 - Regolamento, categorie e criteri del Grand Prix Magna Grecia.
 - Sponsor, partner, buyer program e materiali stampa ufficiali.
+
+## Nota asset video
+
+- Catalogo tecnico disponibile in `src/data/videos.ts`.
+- I file video sorgente restano in percorsi locali esterni al repository e non vengono versionati in questa fase.
+- I naming placeholder previsti per una futura integrazione ottimizzata sono `public/videos/hero-vigneti.mp4`, `public/videos/hero-vino.mp4` e `public/videos/hero-poster.jpg`.
