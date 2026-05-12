@@ -17,16 +17,16 @@ export default function SectionHeader({
 
   return (
     <div
-      className={`${isCentered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"} ${className ?? ""}`}
+      className={`${isCentered ? "mx-auto max-w-[58rem] text-center" : "max-w-[58rem]"} ${className ?? ""}`}
     >
       {eyebrow ? (
         <p className={isCentered ? "eyebrow text-center" : "eyebrow"}>{eyebrow}</p>
       ) : null}
-      <h2 className="display-balance mt-4 font-display text-4xl leading-none text-[var(--color-sea)] sm:text-[3.45rem]">
+      <h2 className="display-balance mt-4 max-w-[15ch] font-display text-[2.1rem] leading-[0.98] text-[var(--color-grove)] sm:text-[2.55rem] lg:text-[2.95rem]">
         {title}
       </h2>
       {intro ? (
-        <p className="mt-5 text-base leading-8 text-[var(--color-muted)] sm:text-lg">
+        <p className="mt-5 max-w-[62ch] text-[0.98rem] leading-7 text-[var(--color-muted)] sm:text-[1.02rem] sm:leading-8">
           {intro}
         </p>
       ) : null}

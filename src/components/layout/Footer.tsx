@@ -7,11 +7,18 @@ import { siteConfig } from "@/data/site";
 export default function Footer() {
   return (
     <footer className="section-divider border-t border-[rgba(200,167,111,0.16)] bg-[linear-gradient(180deg,rgba(18,52,35,0.98),rgba(12,35,47,0.98))] text-[rgba(255,248,238,0.84)]">
-      <div className="section-shell grid gap-12 py-14 lg:grid-cols-[1.1fr_0.7fr_1fr]">
+      <div className="section-shell grid gap-10 py-12 lg:grid-cols-[1.1fr_0.72fr_0.98fr]">
         <div>
-          <BrandLogo variant="footer" theme="light" />
-          <h2 className="mt-6 font-display text-4xl leading-none text-[var(--color-ivory)]">
-            Boutique mediterranea tra terroir, business e racconto.
+          <BrandLogo
+            variant="horizontal"
+            theme="light"
+            className="max-w-[13.5rem] sm:max-w-[16.5rem] lg:max-w-[18.5rem]"
+          />
+          <p className="font-ui mt-5 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-[rgba(248,243,232,0.68)]">
+            {siteConfig.brand.taglines.institutional}
+          </p>
+          <h2 className="mt-5 max-w-lg font-display text-[2.45rem] leading-[0.95] text-[var(--color-ivory)] sm:text-[2.8rem]">
+            {siteConfig.brand.taglines.secondary}
           </h2>
           <p className="mt-5 max-w-xl text-sm leading-7 text-[rgba(255,248,238,0.72)]">
             {siteConfig.footerDescription}
@@ -19,7 +26,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-ivory)]">
+          <h3 className="font-ui text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-ivory)]">
             Menu rapido
           </h3>
           <ul className="mt-5 space-y-3 text-sm">
@@ -34,7 +41,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-ivory)]">
+          <h3 className="font-ui text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-ivory)]">
             Azioni chiave
           </h3>
           <div className="mt-5 flex flex-col gap-3">

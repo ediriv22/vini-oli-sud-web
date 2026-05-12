@@ -20,10 +20,13 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[rgba(18,52,35,0.12)] bg-[rgba(251,246,236,0.9)] backdrop-blur-xl">
-      <div className="section-shell flex items-center justify-between gap-4 py-4 lg:gap-6 lg:py-5">
-        <div className="flex min-w-0 items-center gap-4 lg:gap-7">
-          <BrandLogo variant="header" />
+    <header className="sticky top-0 z-50 border-b border-[rgba(18,52,35,0.1)] bg-[rgba(252,247,238,0.88)] backdrop-blur-xl">
+      <div className="section-shell flex min-h-16 items-center justify-between gap-4 py-2 sm:min-h-[4.25rem] sm:py-2.5 lg:min-h-[4.75rem] lg:gap-6 lg:py-3">
+        <div className="flex min-w-0 items-center gap-5 lg:gap-7">
+          <BrandLogo
+            variant="horizontal"
+            className="max-w-[10.5rem] sm:max-w-[13rem] lg:max-w-[15.5rem]"
+          />
 
           <nav
             className="hidden items-center gap-1 xl:flex"
@@ -36,10 +39,10 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-full px-4 py-2 text-sm font-medium ${
+                  className={`font-ui rounded-full px-3.5 py-2 text-[0.94rem] font-semibold ${
                     active
-                      ? "bg-[rgba(95,107,51,0.08)] text-[var(--color-sea)]"
-                      : "text-[var(--color-muted)] hover:bg-[rgba(95,107,51,0.06)] hover:text-[var(--color-sea)]"
+                      ? "bg-[rgba(95,107,51,0.08)] text-[var(--color-grove)]"
+                      : "text-[var(--color-muted)] hover:bg-[rgba(95,107,51,0.06)] hover:text-[var(--color-grove)]"
                   }`}
                 >
                   {item.label}
@@ -59,14 +62,14 @@ export default function Header() {
           type="button"
           aria-expanded={isOpen}
           aria-label={isOpen ? "Chiudi menu" : "Apri menu"}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(18,52,35,0.12)] bg-white/82 text-[var(--color-sea)] xl:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-[0.95rem] border border-[rgba(18,52,35,0.12)] bg-white/82 text-[var(--color-grove)] sm:h-11 sm:w-11 xl:hidden"
           onClick={() => setIsOpen((current) => !current)}
         >
           <span className="sr-only">Menu</span>
-          <div className="flex flex-col gap-1.5">
-            <span className="block h-0.5 w-5 bg-current" />
-            <span className="block h-0.5 w-5 bg-current" />
-            <span className="block h-0.5 w-5 bg-current" />
+          <div className="flex flex-col gap-1">
+            <span className="block h-0.5 w-5 rounded-full bg-current" />
+            <span className="block h-0.5 w-5 rounded-full bg-current" />
+            <span className="block h-0.5 w-5 rounded-full bg-current" />
           </div>
         </button>
       </div>
@@ -81,9 +84,9 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-[1.35rem] px-4 py-3 text-sm font-semibold ${
+                  className={`font-ui rounded-[1.2rem] px-4 py-3 text-sm font-semibold ${
                     active
-                      ? "bg-[rgba(95,107,51,0.08)] text-[var(--color-sea)]"
+                      ? "bg-[rgba(95,107,51,0.08)] text-[var(--color-grove)]"
                       : "bg-white/70 text-[var(--color-muted)]"
                   }`}
                   onClick={() => setIsOpen(false)}

@@ -2,19 +2,30 @@ import type { Metadata } from "next";
 
 export const siteConfig = {
   name: "Vini Oli Sud",
-  miniTagline: "Boutique mediterranea premium",
+  miniTagline: "Le eccellenze della Magna Grecia.",
   description:
     "Sito ufficiale di Vini Oli Sud, salone boutique dedicato a vini, oli e cultura mediterranea nel cuore del Napoli Racing Show.",
   brand: {
     wordmark: "Vini Oli Sud",
-    subtitle: "Magna Grecia · Vino · Olio",
+    subtitle: "Le eccellenze della Magna Grecia.",
     ariaLabel: "Vini Oli Sud, sito ufficiale",
+    taglines: {
+      primary: "Le Radici del Gusto. L’Adrenalina del Futuro.",
+      secondary: "Motori, Terroir e Passione Mediterranea.",
+      institutional: "Le eccellenze della Magna Grecia.",
+      commercial: "L’Eccellenza del Mezzogiorno Scende in Pista.",
+      agora: "L’Agorà del Sud da Gustare e Vivere.",
+    },
     assets: {
       logo: "/brand/logo.svg",
       logoDark: "/brand/logo-dark.svg",
       logoLight: "/brand/logo-light.svg",
+      logoHorizontal: "/brand/logo-horizontal.png",
+      logoHorizontalCropped: "/brand/logo-horizontal-cropped.png",
       logoSquare: "/brand/logo-square.png",
       logoOriginal: "/brand/original-logo.webp",
+      symbolColumnOliveGrape: "/brand/symbol-column-olive-grape.png",
+      coverFacebook: "/brand/cover-facebook.png",
       favicon32: "/brand/favicon-32.png",
       favicon64: "/brand/favicon-64.png",
       favicon192: "/brand/favicon-192.png",
@@ -31,10 +42,10 @@ export const siteConfig = {
     address: "Napoli, sede organizzativa da confermare",
   },
   hero: {
-    eyebrow: "Vini, oli e cultura mediterranea",
-    title: "Le radici del gusto. L’adrenalina del futuro.",
+    eyebrow: "L’Eccellenza del Mezzogiorno Scende in Pista.",
+    title: "Le Radici del Gusto. L’Adrenalina del Futuro.",
     subtitle:
-      "Vini Oli Sud porta vini, oli e cultura mediterranea nel cuore del Napoli Racing Show: un salone boutique dove la lentezza della terra incontra la velocità della pista.",
+      "Vini Oli Sud unisce vino, olio, cultura mediterranea e business matching nel palcoscenico del Napoli Racing Show. Una piattaforma boutique per produttori, buyer, visitatori e brand premium.",
     actions: [
       { label: "Richiedi la Brochure Espositori", href: "/espositori" },
       { label: "Richiedi il Pass Buyer", href: "/buyer" },
@@ -58,59 +69,65 @@ export const siteConfig = {
   audiences: [
     {
       eyebrow: "Espositori",
-      title: "Espositori",
+      title: "Per chi produce eccellenza",
       description:
-        "Porta la tua azienda davanti a buyer, operatori e pubblico premium.",
-      ctaLabel: "Area Espositori",
+        "Cantine, frantoi e consorzi trovano una vetrina premium per incontrare buyer, operatori e un pubblico ad alto valore.",
+      ctaLabel: "Richiedi la Brochure Espositori",
       href: "/espositori",
     },
     {
       eyebrow: "Buyer",
-      title: "Buyer",
+      title: "Per chi seleziona il Sud",
       description:
-        "Scopri in un unico hub i terroir, i vini e gli oli del Sud Italia.",
+        "Un percorso pensato per Ho.Re.Ca., distributori, importatori e operatori alla ricerca di nuove etichette, oli e territori da portare sul mercato.",
       ctaLabel: "Richiedi il Pass Buyer",
       href: "/buyer",
     },
     {
       eyebrow: "Visitatori",
-      title: "Visitatori",
+      title: "Per chi vive l’esperienza",
       description:
-        "Vivi degustazioni, show cooking e cultura mediterranea sul Lungomare di Napoli.",
-      ctaLabel: "Esplora l’Esperienza",
+        "Degustazioni, cultura mediterranea, talk e show cooking nel dialogo unico tra gusto, mare e motori.",
+      ctaLabel: "Esplora il Programma",
       href: "/visitatori",
     },
     {
-      eyebrow: "Media",
-      title: "Media",
+      eyebrow: "Media e Partner",
+      title: "Per chi racconta e valorizza il progetto",
       description:
-        "Accedi a comunicati, immagini, accrediti e materiali pronti alla pubblicazione.",
-      ctaLabel: "Press Room",
+        "Materiali stampa, asset di brand e opportunità di co-branding per media, PR e partner che vogliono presidiare il racconto del Mezzogiorno contemporaneo.",
+      ctaLabel: "Scarica il Media Kit",
       href: "/media",
     },
   ],
   concept: {
-    title: "La lentezza della terra incontra la velocità della pista.",
+    title: "Dove la terra incontra la pista.",
     description:
-      "Mentre il Napoli Racing Show celebra l’ingegneria, la potenza e il movimento, Vini Oli Sud porta in scena l’altra velocità del Mediterraneo: quella lenta, profonda e precisa della terra. Vino e olio diventano cultura, business e racconto del Mezzogiorno.",
+      "Nel villaggio Vini Oli Sud la precisione del vigneto dialoga con l’adrenalina del motorsport. Due mondi diversi, uniti dalla stessa ossessione: cura, tempo, tecnica e identità.",
     pillars: [
       {
-        eyebrow: "Business",
-        title: "Relazioni utili, non traffico indistinto.",
+        eyebrow: "Origine Classica",
+        title: "Il Mezzogiorno come matrice, non come derivazione.",
         description:
-          "Il sito deve accompagnare espositori, buyer e partner verso azioni chiare: brochure, accredito, contatto commerciale, partnership.",
+          "Napoli, il mare e la Magna Grecia entrano nel progetto come grammatica culturale e segno di autorevolezza contemporanea.",
       },
       {
-        eyebrow: "Territorio",
-        title: "Otto regioni come una sola narrazione strategica.",
+        eyebrow: "Natura Pura",
+        title: "Vino e olio come espressioni vive del territorio.",
         description:
-          "Non un elenco di stand ma una piattaforma mediterranea riconoscibile, autorevole e coerente nel tono.",
+          "Le produzioni raccontano il Sud attraverso vigne, uliveti, stagioni e materia, senza folklore e senza artificio fieristico.",
       },
       {
-        eyebrow: "Esperienza",
-        title: "Emozione concreta, non folklore.",
+        eyebrow: "Memoria Liquida",
+        title: "Ogni bottiglia custodisce cultura, rito e visione.",
         description:
-          "La componente sensoriale deve restare calda e aspirazionale, senza scadere nel cliché della fiera generalista.",
+          "Il racconto non tratta il prodotto come merce isolata, ma come archivio sensoriale di paesaggi, lavoro e identità.",
+      },
+      {
+        eyebrow: "Adrenalina",
+        title: "Business con anima nel palcoscenico del Racing Show.",
+        description:
+          "La velocità della pista porta attenzione, energia e desiderabilità; la lentezza della terra porta profondità, selezione e reputazione.",
       },
     ],
   },
@@ -132,7 +149,7 @@ export const siteConfig = {
   editorial: {
     title: "Diario del Sud",
     description:
-      "Storie, territori, vini, oli e visioni mediterranee dal cuore del Mezzogiorno.",
+      "Storie, territori, vini, oli e visioni mediterranee dal cuore del Mezzogiorno, con una voce editoriale pensata per rafforzare marca, reputazione e desiderabilità.",
     columns: [
       "Radar del Sud",
       "Oro Verde",
@@ -168,7 +185,7 @@ export const siteConfig = {
     ],
   },
   finalCta: {
-    title: "Costruiamo il nuovo palcoscenico del gusto mediterraneo.",
+    title: "Porta il tuo brand nel nuovo palcoscenico del gusto mediterraneo.",
     actions: [
       { label: "Richiedi la Brochure Espositori", href: "/espositori" },
       { label: "Proponi una Partnership", href: "/contatti" },

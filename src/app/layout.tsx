@@ -1,10 +1,33 @@
 import type { Metadata } from "next";
+import {
+  Cormorant_Garamond,
+  Montserrat,
+  Source_Sans_3,
+} from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
 const metadataBaseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-display-stack",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-ui-stack",
+});
+
+const sourceSans3 = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-sans-stack",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(metadataBaseUrl),
@@ -58,7 +81,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it" className="h-full scroll-smooth antialiased">
+    <html
+      lang="it"
+      className={`${cormorantGaramond.variable} ${montserrat.variable} ${sourceSans3.variable} h-full scroll-smooth antialiased`}
+    >
       <body className="min-h-full bg-[var(--color-ivory)] font-sans text-[var(--color-ink)]">
         <a
           href="#content"

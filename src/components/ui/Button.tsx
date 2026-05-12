@@ -36,7 +36,7 @@ const variantClasses: Record<ButtonVariant, string> = {
 
 const sizeClasses: Record<ButtonSize, string> = {
   md: "min-h-11 px-5 py-3 text-sm",
-  lg: "min-h-12 px-6 py-3.5 text-sm sm:text-[0.95rem]",
+  lg: "min-h-[52px] px-7 py-3.5 text-sm sm:min-h-[56px] sm:px-8 sm:text-[0.95rem]",
 };
 
 export default function Button({
@@ -50,7 +50,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center rounded-full font-semibold tracking-[0.01em] focus:outline-none focus:ring-2 focus:ring-[rgba(19,41,61,0.4)] focus:ring-offset-2 focus:ring-offset-[var(--color-ivory)]",
+    "font-ui inline-flex items-center justify-center rounded-full font-semibold tracking-[0.01em] focus:outline-none focus:ring-2 focus:ring-[rgba(19,41,61,0.4)] focus:ring-offset-2 focus:ring-offset-[var(--color-ivory)]",
     variantClasses[variant],
     sizeClasses[size],
     className,

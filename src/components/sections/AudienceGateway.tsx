@@ -8,11 +8,11 @@ export default function AudienceGateway() {
       <div className="section-shell">
         <SectionHeader
           eyebrow="Percorsi dedicati"
-          title="Un portale, sei porte di ingresso operative."
-          intro="Ogni audience entra nel sito con un obiettivo diverso. La homepage mette ordine, accelera la scelta e indirizza subito verso il percorso più utile."
+          title="Un portale, quattro accessi ad alto valore."
+          intro="Ogni audience entra nel sito con un obiettivo preciso. La homepage mette ordine, qualifica il racconto e indirizza subito verso il percorso più utile."
         />
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {siteConfig.audiences.map((audience) => (
             <Card
               key={audience.href}

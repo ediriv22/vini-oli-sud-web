@@ -13,7 +13,7 @@ export default function EditorialPreview() {
             intro={siteConfig.editorial.description}
           />
 
-          <div className="panel mt-8 rounded-[2rem] p-6 sm:p-7">
+          <div className="panel mt-7 rounded-[2rem] p-6 sm:p-7">
             <p className="eyebrow">Rubriche fondative</p>
             <ul className="mt-5 grid gap-3 text-sm font-medium text-[var(--color-muted)]">
               {siteConfig.editorial.columns.map((column) => (

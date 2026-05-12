@@ -5,14 +5,14 @@ import { siteConfig } from "@/data/site";
 export default function ConceptSection() {
   return (
     <section className="section-space">
-      <div className="section-shell grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+      <div className="section-shell grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
         <SectionHeader
-          eyebrow="Concept"
+          eyebrow="Profezia Liquida"
           title={siteConfig.concept.title}
           intro={siteConfig.concept.description}
         />
 
-        <div className="grid gap-5 sm:grid-cols-3 lg:grid-cols-1">
+        <div className="grid gap-5 sm:grid-cols-2">
           {siteConfig.concept.pillars.map((pillar) => (
             <Card
               key={pillar.title}

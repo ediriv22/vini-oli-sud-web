@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Mediterranean palette: wine, olive, sand, sea, ivory */
+  /* Mediterranean palette: aglianico, oro verde, deep naples blue, ivory */
   --color-wine: #7a2634;
   --color-olive: #5f6b33;
   --color-grove: #123423;
@@ -11,10 +11,11 @@
   --color-ink: #33241f;
   --color-muted: #70615c;
   --color-line: rgba(19, 41, 61, 0.12);
-  --shadow-soft: 0 18px 60px rgba(38, 25, 17, 0.1);
-  --shadow-card: 0 28px 65px rgba(44, 30, 20, 0.12);
-  --font-sans-stack: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --font-display-stack: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --shadow-soft: 0 16px 42px rgba(38, 25, 17, 0.08);
+  --shadow-card: 0 22px 52px rgba(31, 24, 18, 0.1);
+  --font-sans-stack: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-display-stack: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-ui-stack: "Montserrat", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 @theme inline {
@@ -27,6 +28,7 @@
   --color-ink: var(--color-ink);
   --font-sans: var(--font-sans-stack);
   --font-display: var(--font-display-stack);
+  --font-ui: var(--font-ui-stack);
 }
 
 * {
@@ -39,9 +41,9 @@ html {
 
 body {
   background:
-    radial-gradient(circle at top left, rgba(200, 167, 111, 0.24), transparent 32%),
-    radial-gradient(circle at top right, rgba(18, 52, 35, 0.08), transparent 22%),
-    linear-gradient(180deg, #fcf6ea 0%, #f8f0e1 30%, #fbf7ef 62%, #fdfbf6 100%);
+    radial-gradient(circle at top left, rgba(200, 167, 111, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(18, 52, 35, 0.06), transparent 20%),
+    linear-gradient(180deg, #fbf5e8 0%, #f7efdf 28%, #fbf8f1 62%, #fdfbf7 100%);
   color: var(--color-ink);
   font-family: var(--font-sans-stack);
 }
@@ -68,13 +70,14 @@ button {
 
 .panel {
   border: 1px solid var(--color-line);
-  background: rgba(255, 252, 245, 0.82);
+  background: rgba(255, 252, 245, 0.88);
   box-shadow: var(--shadow-card);
   backdrop-filter: blur(14px);
 }
 
 .eyebrow {
   color: var(--color-wine);
+  font-family: var(--font-ui-stack);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -86,11 +89,11 @@ button {
 }
 
 .section-space {
-  padding-block: 4.75rem;
+  padding-block: 3.75rem;
 }
 
 .section-space-lg {
-  padding-block: 5.5rem;
+  padding-block: 4.25rem;
 }
 
 .soft-wash {
@@ -119,10 +122,10 @@ button {
 
 @media (min-width: 640px) {
   .section-space {
-    padding-block: 5.75rem;
+    padding-block: 5.5rem;
   }
 
   .section-space-lg {
-    padding-block: 7rem;
+    padding-block: 6.25rem;
   }
 }

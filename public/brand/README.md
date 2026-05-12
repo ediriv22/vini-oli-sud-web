@@ -4,9 +4,13 @@ Questa cartella è il punto di ingresso per gli asset reali di marca di Vini Oli
 
 ## Asset attualmente presenti
 
+- `logo-horizontal.png`
+- `logo-horizontal-cropped.png`
 - `logo-square.webp`
 - `logo-square.png`
 - `original-logo.webp`
+- `symbol-column-olive-grape.png`
+- `cover-facebook.png`
 - `favicon-512.png`
 - `favicon-192.png`
 - `favicon-64.png`
@@ -23,10 +27,14 @@ Questa cartella è il punto di ingresso per gli asset reali di marca di Vini Oli
 
 ## Comportamento del progetto
 
-- `BrandLogo` prova prima le varianti SVG previste.
-- Se non esistono ancora, usa i raster locali già presenti nella cartella.
+- `BrandLogo` usa `logo-horizontal-cropped.png` per header e footer, mantenendo `logo-horizontal.png` come sorgente non ritagliata.
+- `BrandLogo` mantiene `logo-square.*` per favicon, social/usi compatti e fallback di marca quadrato.
 - I metadata del sito usano ora favicon PNG e `og-image.jpg`.
 
 ## Nota pratica
 
-Per header e footer è preferibile ricevere in seguito un wordmark orizzontale o una variante semplificata, perché il marchio quadrato attuale è ricco di dettaglio e in navbar può risultare piccolo.
+- `logo-horizontal.png`: logo orizzontale per header e footer.
+- `logo-horizontal-cropped.png`: versione ritagliata del logo orizzontale per la UI del sito.
+- `symbol-column-olive-grape.png`: simbolo decorativo da usare con misura.
+- `cover-facebook.png`: cover/social preview di brand.
+- `logo-square.png` e `logo-square.webp`: usi compatti, favicon, riferimenti di marca quadrati.

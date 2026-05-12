@@ -12,11 +12,11 @@ export default function RegionsSection() {
           align="center"
         />
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {siteConfig.regions.items.map((region) => (
             <div
               key={region}
-              className="panel rounded-[1.6rem] px-5 py-6 text-center font-display text-[2rem] text-[var(--color-sea)]"
+              className="panel rounded-[1.6rem] px-5 py-5 text-center font-display text-[1.85rem] leading-none text-[var(--color-grove)]"
             >
               {region}
             </div>

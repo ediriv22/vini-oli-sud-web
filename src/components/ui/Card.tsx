@@ -24,17 +24,17 @@ export default function Card({
   const content = (
     <>
       {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-      <h3 className="mt-4 font-display text-[1.9rem] leading-none text-[var(--color-sea)]">
+      <h3 className="mt-3.5 max-w-[18ch] font-display text-[1.48rem] leading-[1] text-[var(--color-grove)] sm:text-[1.62rem]">
         {title}
       </h3>
       {description ? (
-        <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
+        <p className="mt-4 text-[0.95rem] leading-7 text-[var(--color-muted)]">
           {description}
         </p>
       ) : null}
       {children ? <div className="mt-5">{children}</div> : null}
       {href && ctaLabel ? (
-        <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-wine)]">
+        <span className="font-ui mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-wine)]">
           {ctaLabel}
           <span aria-hidden="true">→</span>
         </span>

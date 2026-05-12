@@ -9,7 +9,7 @@ export const mainNavigation = [
 ];
 
 export const headerPrimaryCta = {
-  label: "Richiedi la Brochure",
+  label: "Richiedi la Brochure Espositori",
   href: "/espositori",
 };
 

@@ -61,10 +61,13 @@
 ### Asset presenti
 
 - Brand:
+  - `logo-horizontal.png`
   - favicon PNG
   - `logo-square.png`
   - `logo-square.webp`
   - `original-logo.webp`
+  - `symbol-column-olive-grape.png`
+  - `cover-facebook.png`
   - `og-image.jpg`
 - Immagini:
   - `hero-placeholder.svg`
@@ -77,7 +80,6 @@
 
 ### Asset mancanti
 
-- Logo orizzontale definitivo per header/footer
 - Varianti `logo.svg`, `logo-dark.svg`, `logo-light.svg` previste dal progetto
 - Hero visual reale o video hero ottimizzato
 - Poster immagine per video hero
@@ -85,6 +87,11 @@
 - Brochure buyer
 - Media kit
 - Sponsor deck
+
+Nota operativa:
+
+- Il logo orizzontale è ora disponibile come `public/brand/logo-horizontal.png`.
+- Header e footer possono usare il wordmark orizzontale senza ricorrere al marchio quadrato in navbar.
 - Immagini ufficiali Napoli/Lungomare/Vesuvio, vino, olio e motorsport approvate
 
 ### Stato video locali/catalogo video
@@ -196,16 +203,16 @@ Direzione consigliata:
 
 ### Uso logo attuale
 
-- Il progetto usa `BrandLogo` con fallback raster e testo tipografico
-- Il logo quadrato esiste e funziona come asset provvisorio
-- Header e footer avrebbero beneficio da un wordmark orizzontale dedicato
-- Il README di `public/brand` lo segnala già esplicitamente
+- Il progetto usa `BrandLogo` con fallback testuale e supporto a logo orizzontale e quadrato
+- Il logo orizzontale è ora disponibile per header e footer
+- Il logo quadrato resta utile per usi compatti e riferimenti di marca
+- Il README di `public/brand` documenta i ruoli dei nuovi asset
 
 ### Necessità di logo orizzontale in header/footer
 
-- Priorità alta
-- Il marchio quadrato attuale è ricco di dettaglio e può risultare piccolo in navbar
-- Serve una versione orizzontale leggibile, più pulita e più performante su desktop e mobile
+- Stato: risolto a livello asset base
+- Il logo orizzontale è disponibile e adatto a header/footer
+- Resta utile verificare resa finale su tutti i breakpoint dopo l’integrazione visuale definitiva
 
 ### Uso video hero
 
