@@ -75,6 +75,161 @@ button {
   backdrop-filter: blur(14px);
 }
 
+.texture-parchment {
+  background-image:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.96), rgba(246, 237, 221, 0.92)),
+    radial-gradient(circle at top right, rgba(200, 167, 111, 0.16), transparent 42%),
+    repeating-linear-gradient(
+      135deg,
+      rgba(112, 97, 92, 0.035) 0 1px,
+      transparent 1px 8px
+    );
+}
+
+.texture-linen {
+  background-image:
+    linear-gradient(180deg, rgba(251, 248, 241, 0.95), rgba(236, 229, 216, 0.9)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(95, 107, 51, 0.04) 0 1px,
+      transparent 1px 9px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.2) 0 1px,
+      transparent 1px 10px
+    );
+}
+
+.card-shell {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--card-border, rgba(19, 41, 61, 0.12));
+  background-color: var(--card-background, rgba(255, 252, 245, 0.88));
+  box-shadow: var(--card-shadow, var(--shadow-card));
+  backdrop-filter: blur(14px);
+}
+
+.card-shell::before {
+  position: absolute;
+  inset: 0;
+  background: var(
+    --card-overlay,
+    radial-gradient(circle at top right, rgba(200, 167, 111, 0.08), transparent 42%)
+  );
+  opacity: 1;
+  pointer-events: none;
+  content: "";
+}
+
+.card-shell::after {
+  position: absolute;
+  inset: 1px;
+  border: 1px solid var(--card-inner-border, rgba(255, 255, 255, 0.25));
+  border-radius: inherit;
+  opacity: 0.9;
+  pointer-events: none;
+  content: "";
+}
+
+.card-shell:hover {
+  border-color: var(--card-border-strong, rgba(200, 167, 111, 0.32));
+  box-shadow:
+    0 28px 52px rgba(31, 24, 18, 0.14),
+    0 0 0 1px rgba(200, 167, 111, 0.08);
+}
+
+.card-theme-parchment {
+  --card-background: rgba(255, 251, 244, 0.95);
+  --card-border: rgba(200, 167, 111, 0.2);
+  --card-border-strong: rgba(200, 167, 111, 0.34);
+  --card-inner-border: rgba(255, 255, 255, 0.34);
+  --card-title: var(--color-grove);
+  --card-body: rgba(51, 36, 31, 0.76);
+  --card-eyebrow: var(--color-wine);
+  --card-cta: var(--color-wine);
+  --card-overlay:
+    radial-gradient(circle at top right, rgba(200, 167, 111, 0.12), transparent 42%),
+    linear-gradient(180deg, rgba(255, 253, 249, 0.9), rgba(248, 240, 225, 0.7));
+}
+
+.card-theme-linen {
+  --card-background: rgba(248, 244, 236, 0.95);
+  --card-border: rgba(95, 107, 51, 0.16);
+  --card-border-strong: rgba(200, 167, 111, 0.28);
+  --card-inner-border: rgba(255, 255, 255, 0.28);
+  --card-title: var(--color-grove);
+  --card-body: rgba(51, 36, 31, 0.74);
+  --card-eyebrow: var(--color-olive);
+  --card-cta: var(--color-grove);
+  --card-overlay:
+    radial-gradient(circle at top left, rgba(95, 107, 51, 0.08), transparent 38%),
+    linear-gradient(180deg, rgba(255, 254, 251, 0.82), rgba(240, 233, 220, 0.68));
+}
+
+.card-theme-wine {
+  --card-background: rgba(95, 26, 39, 0.96);
+  --card-border: rgba(227, 199, 140, 0.22);
+  --card-border-strong: rgba(227, 199, 140, 0.42);
+  --card-inner-border: rgba(255, 255, 255, 0.12);
+  --card-title: var(--color-ivory);
+  --card-body: rgba(249, 241, 228, 0.82);
+  --card-eyebrow: rgba(236, 214, 165, 0.94);
+  --card-cta: rgba(255, 244, 214, 0.98);
+  --card-overlay:
+    radial-gradient(circle at top right, rgba(255, 214, 138, 0.16), transparent 32%),
+    radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.04), transparent 30%),
+    linear-gradient(145deg, rgba(122, 38, 52, 0.98), rgba(90, 28, 40, 0.96) 52%, rgba(51, 16, 26, 0.94));
+}
+
+.card-theme-olive {
+  --card-background: rgba(27, 56, 40, 0.95);
+  --card-border: rgba(214, 191, 132, 0.22);
+  --card-border-strong: rgba(223, 200, 142, 0.4);
+  --card-inner-border: rgba(255, 255, 255, 0.12);
+  --card-title: var(--color-ivory);
+  --card-body: rgba(246, 240, 229, 0.82);
+  --card-eyebrow: rgba(226, 203, 148, 0.95);
+  --card-cta: rgba(255, 243, 210, 0.98);
+  --card-overlay:
+    radial-gradient(circle at top left, rgba(220, 198, 141, 0.16), transparent 30%),
+    linear-gradient(155deg, rgba(23, 52, 35, 0.98), rgba(47, 73, 40, 0.96) 56%, rgba(67, 87, 45, 0.92));
+}
+
+.card-theme-sea {
+  --card-background: rgba(20, 44, 68, 0.96);
+  --card-border: rgba(219, 198, 145, 0.22);
+  --card-border-strong: rgba(228, 208, 154, 0.4);
+  --card-inner-border: rgba(255, 255, 255, 0.1);
+  --card-title: rgba(251, 246, 235, 0.98);
+  --card-body: rgba(237, 232, 222, 0.82);
+  --card-eyebrow: rgba(228, 206, 154, 0.94);
+  --card-cta: rgba(255, 243, 215, 0.98);
+  --card-overlay:
+    radial-gradient(circle at top right, rgba(126, 164, 195, 0.15), transparent 34%),
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.03) 0 1px,
+      transparent 1px 10px
+    ),
+    linear-gradient(150deg, rgba(19, 41, 61, 0.98), rgba(18, 52, 76, 0.95) 54%, rgba(28, 61, 79, 0.92));
+}
+
+.card-theme-press {
+  --card-background: rgba(248, 245, 238, 0.96);
+  --card-border: rgba(51, 36, 31, 0.1);
+  --card-border-strong: rgba(200, 167, 111, 0.3);
+  --card-inner-border: rgba(255, 255, 255, 0.32);
+  --card-title: rgba(28, 34, 39, 0.96);
+  --card-body: rgba(55, 48, 44, 0.74);
+  --card-eyebrow: rgba(122, 38, 52, 0.86);
+  --card-cta: rgba(38, 47, 57, 0.95);
+  --card-overlay:
+    radial-gradient(circle at top left, rgba(200, 167, 111, 0.08), transparent 36%),
+    linear-gradient(180deg, rgba(255, 255, 252, 0.9), rgba(238, 232, 224, 0.76));
+}
+
 .eyebrow {
   color: var(--color-wine);
   font-family: var(--font-ui-stack);

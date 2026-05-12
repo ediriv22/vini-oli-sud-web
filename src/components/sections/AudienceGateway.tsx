@@ -3,6 +3,8 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import { siteConfig } from "@/data/site";
 
 export default function AudienceGateway() {
+  const audienceThemes = ["wine", "olive", "sea", "press"] as const;
+
   return (
     <section className="section-divider section-space soft-wash">
       <div className="section-shell">
@@ -13,7 +15,7 @@ export default function AudienceGateway() {
         />
 
         <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {siteConfig.audiences.map((audience) => (
+          {siteConfig.audiences.map((audience, index) => (
             <Card
               key={audience.href}
               eyebrow={audience.eyebrow}
@@ -21,6 +23,8 @@ export default function AudienceGateway() {
               description={audience.description}
               href={audience.href}
               ctaLabel={audience.ctaLabel}
+              theme={audienceThemes[index]}
+              className="h-full"
             />
           ))}
         </div>
