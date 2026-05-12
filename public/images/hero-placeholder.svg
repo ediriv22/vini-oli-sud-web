@@ -1,0 +1,18 @@
+<svg width="960" height="760" viewBox="0 0 960 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="760" fill="url(#paint0_linear)"/>
+  <circle cx="715" cy="160" r="110" fill="#C8A76F" fill-opacity="0.22"/>
+  <path d="M62 558C176 500 252 414 344 338C406 287 478 244 578 244C690 244 774 300 892 404" stroke="#F8F3E8" stroke-opacity="0.28" stroke-width="4"/>
+  <path d="M80 616C204 540 304 454 426 398C514 358 616 342 746 362C806 371 858 392 912 430" stroke="#5F6B33" stroke-opacity="0.4" stroke-width="3"/>
+  <path d="M126 520C176 424 236 356 302 304C370 250 450 220 548 220" stroke="#C8A76F" stroke-width="5" stroke-linecap="round"/>
+  <path d="M162 648C258 648 344 626 430 586C516 546 578 488 648 404" stroke="#F8F3E8" stroke-opacity="0.46" stroke-width="5" stroke-linecap="round"/>
+  <rect x="116" y="94" width="192" height="88" rx="20" fill="#F8F3E8" fill-opacity="0.08" stroke="#F8F3E8" stroke-opacity="0.18"/>
+  <text x="142" y="132" fill="#F8F3E8" font-family="Georgia, serif" font-size="34">Hero</text>
+  <text x="142" y="162" fill="#F8F3E8" fill-opacity="0.78" font-family="Arial, sans-serif" font-size="15" letter-spacing="3">PLACEHOLDER VISUAL</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="24" y1="34" x2="912" y2="718" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#13293D"/>
+      <stop offset="0.46" stop-color="#273E4C"/>
+      <stop offset="1" stop-color="#7A2634"/>
+    </linearGradient>
+  </defs>
+</svg>
