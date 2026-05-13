@@ -65,7 +65,7 @@ button {
 
 .section-shell {
   margin-inline: auto;
-  width: min(100% - 4rem, 76rem);
+  width: min(100% - 2rem, 76rem);
 }
 
 .panel {
