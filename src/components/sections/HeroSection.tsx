@@ -7,16 +7,28 @@ export default function HeroSection() {
   const { hero } = siteConfig;
 
   return (
-    <section className="pt-12 pb-14 sm:pt-14 sm:pb-16 lg:pt-[72px] lg:pb-20">
+    <section className="pt-12 pb-14 sm:pt-16 sm:pb-18 lg:pt-20 lg:pb-24">
       <div className="section-shell grid gap-10 lg:grid-cols-[0.96fr_1.04fr] lg:items-center">
         <div>
-          <p className="font-ui max-w-[780px] text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-wine)] sm:text-[0.8rem] lg:text-[0.9rem]">
-            {hero.eyebrow}
-          </p>
-          <h1 className="display-balance mt-4 max-w-[780px] font-display text-[clamp(2.25rem,11vw,3.4rem)] leading-[1.02] tracking-[0.01em] text-[var(--color-grove)] sm:text-[clamp(2.8rem,6vw,4.8rem)] sm:leading-[0.98] lg:text-[clamp(3rem,5vw,5.75rem)] lg:leading-[0.96]">
+          <div className="flex items-center gap-3">
+            <span
+              className="h-px w-8 bg-[rgba(200,167,111,0.72)]"
+              aria-hidden="true"
+            />
+            <p className="font-ui text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[var(--color-wine)] sm:text-[0.78rem]">
+              {hero.eyebrow}
+            </p>
+          </div>
+
+          <h1 className="display-balance mt-5 font-display text-[clamp(2.4rem,11vw,3.6rem)] leading-[1.0] tracking-[0.01em] text-[var(--color-grove)] sm:text-[clamp(2.9rem,6vw,5rem)] sm:leading-[0.97] lg:text-[clamp(3.2rem,5vw,6rem)] lg:leading-[0.95]">
             {hero.title}
           </h1>
-          <p className="mt-5 max-w-[760px] text-[1rem] leading-[1.6] text-[var(--color-muted)] sm:text-[1.06rem] lg:text-[1.16rem]">
+          <div
+            className="mt-6 h-px w-12 bg-[rgba(200,167,111,0.48)]"
+            aria-hidden="true"
+          />
+
+          <p className="mt-5 max-w-[54ch] text-[1rem] leading-[1.68] text-[var(--color-muted)] sm:text-[1.06rem] lg:text-[1.12rem]">
             {hero.subtitle}
           </p>
 
@@ -26,16 +38,17 @@ export default function HeroSection() {
                 key={action.href}
                 href={action.href}
                 size="lg"
-                className="w-auto"
+                className="w-fit max-w-full sm:w-auto"
                 variant={index === 0 ? "primary" : "secondary"}
               >
                 {action.label}
               </Button>
             ))}
           </div>
+
           <Link
             href={hero.actions[2]?.href ?? "/evento"}
-            className="font-ui mt-4 inline-flex items-center gap-2 text-[0.82rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-grove)] transition-transform hover:translate-x-0.5 hover:text-[var(--color-wine)]"
+            className="font-ui mt-5 inline-flex items-center gap-2 text-[0.8rem] font-semibold uppercase tracking-[0.1em] text-[rgba(51,36,31,0.52)] transition-all hover:translate-x-0.5 hover:text-[var(--color-grove)]"
           >
             {hero.actions[2]?.label}
             <span aria-hidden="true">→</span>
@@ -43,13 +56,14 @@ export default function HeroSection() {
         </div>
 
         <figure
-          className="panel relative min-h-[24rem] overflow-hidden rounded-[2.2rem] border-[rgba(19,41,61,0.08)] sm:min-h-[27rem] lg:min-h-[28rem]"
+          className="panel relative min-h-[24rem] overflow-hidden rounded-[2.2rem] border-[rgba(19,41,61,0.08)] sm:min-h-[27rem] lg:min-h-[32rem]"
           aria-label="Video hero con vigneto mediterraneo e sfondo vulcanico"
         >
           <Image
             src="/videos/hero-vigneto-poster.jpg"
             alt=""
             fill
+            priority
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="absolute inset-0 h-full w-full object-cover"
           />

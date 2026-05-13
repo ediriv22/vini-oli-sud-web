@@ -8,7 +8,7 @@ export default function ConceptSection() {
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.12fr)_minmax(0,0.88fr)] lg:items-start">
             <div>
               <p className="eyebrow text-[var(--color-wine)]">Profezia Liquida</p>
-              <h2 className="display-balance mt-3.5 max-w-[10ch] font-display text-[clamp(3rem,10vw,4.8rem)] leading-[0.96] tracking-[0.01em] text-[var(--color-grove)] sm:mt-4">
+              <h2 className="display-balance mt-3.5 max-w-[20ch] font-display text-[clamp(2rem,7vw,4.8rem)] leading-[0.96] tracking-[0.01em] text-[var(--color-grove)] sm:mt-4 sm:max-w-[14ch] sm:text-[clamp(2.6rem,6vw,4.8rem)] lg:max-w-[10ch]">
                 {siteConfig.concept.title}
               </h2>
             </div>
