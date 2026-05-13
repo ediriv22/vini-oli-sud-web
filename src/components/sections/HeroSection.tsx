@@ -49,21 +49,30 @@ export default function HeroSection() {
 
         <figure
           className="panel relative overflow-hidden rounded-[2.2rem] border-[rgba(19,41,61,0.08)] p-6 sm:p-8"
-          role="img"
-          aria-label="Placeholder editoriale elegante con luce dorata mediterranea, calici, ulivi e silhouette della pista"
+          aria-label="Video hero con vigneto mediterraneo e sfondo vulcanico"
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(200,167,111,0.24),transparent_28%),linear-gradient(135deg,rgba(13,61,39,0.98),rgba(22,48,31,0.94)_40%,rgba(122,38,52,0.88)_100%)]" />
+          <Image
+            src="/videos/hero-vigneto-poster.jpg"
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <video
+            className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
+            src="/videos/hero-vigneto.mp4"
+            poster="/videos/hero-vigneto-poster.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(200,167,111,0.16),transparent_26%),linear-gradient(140deg,rgba(11,31,21,0.24),rgba(17,35,26,0.4)_34%,rgba(20,27,26,0.56)_58%,rgba(43,20,24,0.62)_100%)]" />
           <div className="absolute inset-y-6 left-8 w-px bg-white/20" />
           <div className="absolute -right-10 top-10 h-44 w-44 rounded-full bg-[rgba(200,167,111,0.22)] blur-2xl" />
           <div className="absolute bottom-12 left-10 h-24 w-24 rounded-full border border-white/15 bg-[rgba(255,255,255,0.04)]" />
-          <Image
-            src="/images/hero-placeholder.svg"
-            alt=""
-            width={960}
-            height={760}
-            unoptimized
-            className="absolute bottom-0 right-0 h-auto w-[72%] max-w-[26rem] opacity-55"
-          />
 
           <div className="relative z-10 flex min-h-[24rem] flex-col justify-between text-[var(--color-ivory)] sm:min-h-[27rem] lg:min-h-[28rem]">
             <div className="max-w-sm">
