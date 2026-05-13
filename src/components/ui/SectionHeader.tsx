@@ -22,7 +22,7 @@ export default function SectionHeader({
       {eyebrow ? (
         <p className={isCentered ? "eyebrow text-center" : "eyebrow"}>{eyebrow}</p>
       ) : null}
-      <h2 className="display-balance mt-4 max-w-[15ch] font-display text-[2.1rem] leading-[0.98] text-[var(--color-grove)] sm:text-[2.55rem] lg:text-[2.95rem]">
+      <h2 className="display-balance mt-4 max-w-[22ch] font-display text-[1.65rem] leading-[1.02] text-[var(--color-grove)] sm:max-w-[15ch] sm:text-[2.55rem] sm:leading-[0.98] lg:text-[2.95rem]">
         {title}
       </h2>
       {intro ? (
