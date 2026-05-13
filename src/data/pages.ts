@@ -314,13 +314,13 @@ export const staticPages: Record<string, StaticPageContent> = {
     title: "Contatti",
     description:
       "Una pagina di raccordo per richieste commerciali, accrediti, partnership e informazioni organizzative, con spazio per trasformarsi in hub operativo nei prossimi sprint.",
-    ctaLabel: "Scrivi alla Segreteria",
-    ctaHref: "mailto:segreteria@placeholder.viniolisud.it",
+    ctaLabel: "Richiedi la Brochure Espositori",
+    ctaHref: "/espositori",
     summary:
-      "In assenza di dati confermati, questa pagina usa riferimenti placeholder espliciti e mantiene il tono istituzionale senza fingere informazioni non validate.",
+      "Le richieste operative stanno convergendo verso percorsi dedicati per espositori, buyer, partnership e informazioni di progetto.",
     pillars: [
       "Contatti separabili per area in sprint futuri",
-      "Placeholder dichiarati per evitare dati inventati",
+      "Percorsi commerciali e accrediti in consolidamento",
       "Punto di conversione per brochure, pass e partnership",
     ],
     focusTitle: "Base pronta per la segreteria operativa.",
@@ -341,13 +341,13 @@ export const staticPages: Record<string, StaticPageContent> = {
       },
       {
         eyebrow: "Trasparenza",
-        title: "Placeholder chiari fino a conferma.",
+        title: "Informazioni operative in aggiornamento.",
         description:
-          "Meglio un dato dichiarato come provvisorio che un recapito inventato o ambiguo.",
+          "Il sito evita recapiti non verificati e concentra la conversione sui percorsi già attivi per espositori, buyer e partnership.",
       },
     ],
     verifyNotes: [
-      "Email, telefono, sede e eventuali referenti di area sono placeholder finché non confermati.",
+      "Recapiti diretti e riferimenti di area saranno pubblicati solo dopo validazione operativa.",
     ],
     metadataDescription:
       "Contatta la segreteria di Vini Oli Sud per informazioni, brochure e partnership.",

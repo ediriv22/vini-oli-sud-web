@@ -3,8 +3,6 @@ export const mainNavigation = [
   { label: "Espositori", href: "/espositori" },
   { label: "Buyer", href: "/buyer" },
   { label: "Visitatori", href: "/visitatori" },
-  { label: "Grand Prix", href: "/grand-prix" },
-  { label: "Diario del Sud", href: "/diario-del-sud" },
   { label: "Media", href: "/media" },
 ];
 
@@ -15,6 +13,8 @@ export const headerPrimaryCta = {
 
 export const footerNavigation = [
   ...mainNavigation,
+  { label: "Grand Prix", href: "/grand-prix" },
+  { label: "Diario del Sud", href: "/diario-del-sud" },
   { label: "Contatti", href: "/contatti" },
 ];
 

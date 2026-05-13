@@ -56,10 +56,9 @@ export default function Footer() {
               </Button>
             ))}
           </div>
-          <div className="mt-6 space-y-2 text-sm text-[rgba(255,248,238,0.72)]">
-            <p>Email: {siteConfig.contact.email}</p>
-            <p>Telefono: {siteConfig.contact.phone}</p>
-            <p>Sede operativa: {siteConfig.contact.address}</p>
+          <div className="mt-6 max-w-sm space-y-3 text-sm leading-7 text-[rgba(255,248,238,0.72)]">
+            <p>Contatti e accrediti in fase di attivazione.</p>
+            <p>Per informazioni commerciali, usa il percorso dedicato o la pagina contatti.</p>
           </div>
         </div>
       </div>

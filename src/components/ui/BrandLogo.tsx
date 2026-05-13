@@ -38,7 +38,7 @@ export default function BrandLogo({
         }
       : {
           title: "text-[var(--color-sea)]",
-          subtitle: "text-[var(--color-wine)]",
+          subtitle: "text-[rgba(95,107,51,0.78)]",
           frame: "border-[rgba(19,41,61,0.12)] bg-white/75",
           logoSurface: "",
         };
@@ -83,7 +83,7 @@ export default function BrandLogo({
       >
         <span
           className={cn(
-            "font-display text-[1.4rem] leading-none tracking-[0.045em] sm:text-[1.7rem] lg:text-[2rem]",
+            "font-display text-[1.32rem] leading-none tracking-[0.04em] sm:text-[1.7rem] lg:text-[2rem]",
             tone.title,
           )}
         >
@@ -93,7 +93,7 @@ export default function BrandLogo({
           <span className="h-px w-6 bg-[rgba(200,167,111,0.65)]" aria-hidden="true" />
           <span
             className={cn(
-              "font-ui text-[0.6rem] font-semibold uppercase leading-none tracking-[0.14em] lg:text-[0.68rem]",
+              "font-ui text-[0.62rem] font-medium uppercase leading-none tracking-[0.15em] lg:text-[0.68rem]",
               tone.subtitle,
             )}
           >

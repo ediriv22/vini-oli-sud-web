@@ -35,11 +35,11 @@ export const siteConfig = {
   },
   footerDescription:
     "Vini Oli Sud è il punto di incontro tra terroir del Mezzogiorno, business hospitality e immaginario mediterraneo. Un format da costruire come piattaforma editoriale e commerciale, non come semplice vetrina.",
-  legalLine: "Placeholder legale e societario da confermare",
+  legalLine: "Informazioni societarie e riferimenti operativi in aggiornamento.",
   contact: {
-    email: "segreteria@placeholder.viniolisud.it",
-    phone: "+39 000 000 0000",
-    address: "Napoli, sede organizzativa da confermare",
+    email: "",
+    phone: "",
+    address: "",
   },
   hero: {
     eyebrow: "L’Eccellenza del Mezzogiorno Scende in Pista.",
@@ -51,20 +51,7 @@ export const siteConfig = {
       { label: "Richiedi il Pass Buyer", href: "/buyer" },
       { label: "Esplora il Programma", href: "/evento" },
     ],
-    signals: [
-      {
-        label: "Posizionamento",
-        value: "Premium mediterraneo, territoriale e business-oriented.",
-      },
-      {
-        label: "Scenario",
-        value: "Napoli, lungomare, motorsport e cultura del gusto in dialogo.",
-      },
-      {
-        label: "Obiettivo",
-        value: "Generare lead, reputazione e relazioni tra brand e operatori.",
-      },
-    ],
+    signals: [],
   },
   audiences: [
     {
