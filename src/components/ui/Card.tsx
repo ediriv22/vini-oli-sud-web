@@ -45,7 +45,7 @@ export default function Card({
       {eyebrow ? (
         <p className="eyebrow text-[var(--card-eyebrow)]">{eyebrow}</p>
       ) : null}
-      <h3 className="mt-3.5 max-w-[18ch] font-display text-[1.48rem] leading-[1] text-[var(--card-title)] sm:text-[1.62rem]">
+      <h3 className="mt-3 max-w-[19ch] font-display text-[1.42rem] leading-[1.02] text-[var(--card-title)] sm:text-[1.56rem]">
         {title}
       </h3>
       {description ? (
@@ -55,7 +55,7 @@ export default function Card({
       ) : null}
       {children ? <div className="mt-5">{children}</div> : null}
       {href && ctaLabel ? (
-        <span className="font-ui mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--card-cta)]">
+        <span className="font-ui mt-6 inline-flex items-center gap-2 text-[0.82rem] font-semibold tracking-[0.06em] text-[var(--card-cta)] uppercase">
           {ctaLabel}
           <span aria-hidden="true">→</span>
         </span>
@@ -64,9 +64,9 @@ export default function Card({
   );
 
   const classes = cn(
-    "card-shell group rounded-[2rem] p-6 sm:p-7",
+    "card-shell group rounded-[1.5rem] p-6 sm:p-7",
     themeClasses[theme],
-    href ? "block hover:-translate-y-1" : undefined,
+    href ? "block hover:-translate-y-0.5" : undefined,
     className,
   );
 

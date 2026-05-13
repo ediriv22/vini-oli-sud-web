@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[rgba(18,52,35,0.1)] bg-[rgba(252,247,238,0.88)] backdrop-blur-xl">
-      <div className="section-shell flex min-h-16 items-center justify-between gap-4 py-2 sm:min-h-[4.25rem] sm:py-2.5 lg:min-h-[4.75rem] lg:gap-6 lg:py-3">
+      <div className="section-shell flex min-h-[4.15rem] items-center justify-between gap-4 py-2 sm:min-h-[4.45rem] sm:py-2.5 lg:min-h-[4.8rem] lg:gap-6 lg:py-3">
         <div className="flex min-w-0 items-center gap-5 lg:gap-7">
           <BrandLogo
             variant="horizontal"
@@ -29,7 +29,7 @@ export default function Header() {
           />
 
           <nav
-            className="hidden items-center gap-1 xl:flex"
+            className="hidden items-center gap-1.5 xl:flex"
             aria-label="Navigazione principale"
           >
             {mainNavigation.map((item) => {
@@ -39,10 +39,10 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`font-ui rounded-full px-3.5 py-2 text-[0.94rem] font-semibold ${
+                  className={`font-ui rounded-[0.9rem] px-3 py-2 text-[0.92rem] font-semibold ${
                     active
-                      ? "bg-[rgba(95,107,51,0.08)] text-[var(--color-grove)]"
-                      : "text-[var(--color-muted)] hover:bg-[rgba(95,107,51,0.06)] hover:text-[var(--color-grove)]"
+                      ? "bg-[rgba(95,107,51,0.06)] text-[var(--color-grove)]"
+                      : "text-[var(--color-muted)] hover:bg-[rgba(95,107,51,0.04)] hover:text-[var(--color-grove)]"
                   }`}
                 >
                   {item.label}
@@ -62,7 +62,7 @@ export default function Header() {
           type="button"
           aria-expanded={isOpen}
           aria-label={isOpen ? "Chiudi menu" : "Apri menu"}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-[0.95rem] border border-[rgba(18,52,35,0.12)] bg-white/82 text-[var(--color-grove)] sm:h-11 sm:w-11 xl:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-[0.9rem] border border-[rgba(18,52,35,0.12)] bg-transparent text-[var(--color-grove)] hover:bg-white/55 sm:h-11 sm:w-11 xl:hidden"
           onClick={() => setIsOpen((current) => !current)}
         >
           <span className="sr-only">Menu</span>
@@ -84,10 +84,10 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`font-ui rounded-[1.2rem] px-4 py-3 text-sm font-semibold ${
+                  className={`font-ui rounded-[0.95rem] px-4 py-3 text-sm font-semibold ${
                     active
                       ? "bg-[rgba(95,107,51,0.08)] text-[var(--color-grove)]"
-                      : "bg-white/70 text-[var(--color-muted)]"
+                      : "bg-white/55 text-[var(--color-muted)]"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
