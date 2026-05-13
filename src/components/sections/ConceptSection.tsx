@@ -1,29 +1,40 @@
-import Card from "@/components/ui/Card";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { siteConfig } from "@/data/site";
 
 export default function ConceptSection() {
-  const pillarThemes = ["parchment", "linen", "press", "olive"] as const;
-
   return (
-    <section className="border-y border-[rgba(19,41,61,0.08)] bg-[linear-gradient(180deg,rgba(255,251,245,0.76),rgba(250,244,234,0.56))] py-14 sm:py-16 lg:py-20">
-      <div className="section-shell grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+    <section className="border-y border-[rgba(51,36,31,0.1)] bg-[linear-gradient(180deg,rgba(255,251,245,0.58),rgba(252,248,241,0.24))] py-14 sm:py-16 lg:py-20">
+      <div className="section-shell">
         <SectionHeader
           eyebrow="Profezia Liquida"
           title={siteConfig.concept.title}
-          intro="Quattro coordinate per leggere il progetto: origine, materia, memoria e adrenalina."
+          intro={siteConfig.concept.description}
         />
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="mt-10 grid gap-x-8 gap-y-8 border-t border-[rgba(200,167,111,0.42)] sm:mt-12 sm:gap-x-10 sm:gap-y-10 lg:grid-cols-2">
           {siteConfig.concept.pillars.map((pillar, index) => (
-            <Card
+            <article
               key={pillar.title}
-              eyebrow="Pilastro"
-              title={pillar.eyebrow}
-              description={pillar.title}
-              theme={pillarThemes[index]}
-              className="h-full p-5 sm:p-5"
-            />
+              className="flex h-full flex-col border-t border-[rgba(51,36,31,0.1)] pt-5 sm:pt-6"
+            >
+              <div className="flex items-baseline justify-between gap-4">
+                <span className="font-ui text-[0.78rem] font-semibold leading-none tracking-[0.22em] text-[rgba(200,167,111,0.96)] sm:text-[0.82rem]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="eyebrow text-[var(--color-olive)]">
+                  {pillar.eyebrow}
+                </p>
+              </div>
+
+              <div className="mt-4 flex flex-1 flex-col">
+                <h3 className="max-w-[24ch] font-display text-[1.52rem] leading-[1.02] text-[var(--color-grove)] sm:text-[1.72rem]">
+                  {pillar.title}
+                </h3>
+                <p className="mt-4 max-w-[44ch] text-[0.98rem] leading-7 text-[var(--color-muted)]">
+                  {pillar.description}
+                </p>
+              </div>
+            </article>
           ))}
         </div>
       </div>
