@@ -25,6 +25,11 @@ export default function InternalPageTemplate({
             <Button href={page.ctaHref} size="lg" className="mt-8 w-full sm:w-auto">
               {page.ctaLabel}
             </Button>
+            {page.ctaNote ? (
+              <p className="mt-3 max-w-xl text-sm leading-7 text-[var(--color-muted)]">
+                {page.ctaNote}
+              </p>
+            ) : null}
           </div>
 
           <aside className="panel rounded-[2rem] p-6 sm:p-8">

@@ -83,7 +83,7 @@ export const siteConfig = {
       title: "Per chi racconta e valorizza il progetto",
       description:
         "Materiali stampa, asset di brand e opportunità di co-branding per media, PR e partner che vogliono presidiare il racconto del Mezzogiorno contemporaneo.",
-      ctaLabel: "Scarica il Media Kit",
+      ctaLabel: "Scopri il percorso media",
       href: "/media",
     },
   ],
@@ -192,11 +192,19 @@ export function createPageMetadata(
       description,
       type: "website",
       locale: "it_IT",
+      images: [
+        {
+          url: siteConfig.brand.assets.ogImage,
+          width: 1200,
+          height: 630,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} | ${siteConfig.name}`,
       description,
+      images: [siteConfig.brand.assets.ogImage],
     },
   };
 }

@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/data/site";
 const page = staticPages.evento;
 
 export const metadata: Metadata = createPageMetadata(
-  "L’evento",
+  "L’Evento: gusto mediterraneo e format in evoluzione",
   page.metadataDescription,
 );
 

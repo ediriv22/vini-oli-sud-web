@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/data/site";
 const page = staticPages.media;
 
 export const metadata: Metadata = createPageMetadata(
-  "Press Room Vini Oli Sud",
+  "Media: press room e materiali in aggiornamento",
   page.metadataDescription,
 );
 

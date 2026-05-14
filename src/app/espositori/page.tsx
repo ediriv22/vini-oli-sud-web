@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/data/site";
 const page = staticPages.espositori;
 
 export const metadata: Metadata = createPageMetadata(
-  "Espositori",
+  "Espositori: visibilità e relazioni commerciali",
   page.metadataDescription,
 );
 

@@ -21,5 +21,5 @@ export const footerNavigation = [
 export const footerActions = [
   { label: "Richiedi la Brochure Espositori", href: "/espositori" },
   { label: "Richiedi il Pass Buyer", href: "/buyer" },
-  { label: "Scarica il Media Kit", href: "/media" },
+  { label: "Scopri il percorso media", href: "/media" },
 ];

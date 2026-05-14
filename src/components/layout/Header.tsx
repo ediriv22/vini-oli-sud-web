@@ -52,8 +52,12 @@ export default function Header() {
           </nav>
         </div>
 
-        <div className="hidden items-center gap-3 xl:flex">
-          <Button href={headerPrimaryCta.href} size="md">
+        <div className="hidden items-center gap-3 lg:flex">
+          <Button
+            href={headerPrimaryCta.href}
+            size="md"
+            className="px-5 text-[0.76rem] xl:px-6 xl:text-[0.82rem]"
+          >
             {headerPrimaryCta.label}
           </Button>
         </div>

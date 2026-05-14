@@ -4,6 +4,7 @@ export type StaticPageContent = {
   description: string;
   ctaLabel: string;
   ctaHref: string;
+  ctaNote?: string;
   summary: string;
   pillars: string[];
   focusTitle: string;
@@ -23,8 +24,9 @@ export const staticPages: Record<string, StaticPageContent> = {
     title: "L’evento",
     description:
       "Nel cuore di Napoli, tra mare, Vesuvio, motorsport e hospitality, Vini Oli Sud costruisce una scena dove il racconto del gusto mediterraneo dialoga con l’energia del Napoli Racing Show.",
-    ctaLabel: "Esplora il Programma",
+    ctaLabel: "Richiedi informazioni sull’evento",
     ctaHref: "/contatti",
+    ctaNote: "Programma dettagliato e informazioni operative in fase di conferma.",
     summary:
       "La pagina evento dovrà diventare il punto di sintesi tra concept, atmosfera e logistica narrativa: cosa succede, dove succede e perché vale esserci.",
     pillars: [
@@ -60,15 +62,16 @@ export const staticPages: Record<string, StaticPageContent> = {
       "Ogni riferimento operativo collegato al Napoli Racing Show va pubblicato solo dopo validazione.",
     ],
     metadataDescription:
-      "Scopri il concept di Vini Oli Sud tra Napoli, mare, motorsport e cultura mediterranea.",
+      "Scopri il concept di Vini Oli Sud tra Napoli, gusto mediterraneo e racing show. Programma dettagliato in fase di conferma.",
   },
   espositori: {
     eyebrow: "Espositori",
     title: "Porta la tua azienda in pole position sul mercato mediterraneo.",
     description:
       "Una piattaforma progettata per dare visibilità commerciale, incontri utili e posizionamento distintivo a produttori, consorzi e marchi del gusto del Sud Italia.",
-    ctaLabel: "Richiedi la Brochure Espositori",
+    ctaLabel: "Richiedi informazioni espositori",
     ctaHref: "/contatti",
+    ctaNote: "Brochure espositori in fase di attivazione.",
     summary:
       "Il percorso espositori deve chiarire ROI, audience, formula e vantaggi competitivi: niente vaghezza fieristica, ma argomenti orientati a lead e business presence.",
     pillars: [
@@ -100,15 +103,16 @@ export const staticPages: Record<string, StaticPageContent> = {
       },
     ],
     metadataDescription:
-      "Scopri perché esporre a Vini Oli Sud e richiedi la brochure espositori.",
+      "Scopri il percorso espositori di Vini Oli Sud e richiedi informazioni commerciali. Brochure espositori in fase di attivazione.",
   },
   buyer: {
     eyebrow: "Buyer e operatori",
     title: "Il tuo accesso ai migliori terroir del Sud Italia.",
     description:
       "Un hub selettivo pensato per chi cerca scouting, relazioni dirette e una lettura ordinata dell’offerta mediterranea tra vino, olio e cultura produttiva.",
-    ctaLabel: "Richiedi il Pass Buyer",
+    ctaLabel: "Richiedi informazioni buyer",
     ctaHref: "/contatti",
+    ctaNote: "Pass buyer e materiali dedicati in fase di attivazione.",
     summary:
       "La pagina buyer deve rassicurare su qualità dell’esperienza, accesso facilitato e rilevanza dei contatti. Il tono resta business-first, non turistico.",
     pillars: [
@@ -140,15 +144,16 @@ export const staticPages: Record<string, StaticPageContent> = {
       },
     ],
     metadataDescription:
-      "Richiedi il pass buyer e accedi ai migliori terroir del Sud Italia.",
+      "Scopri il percorso buyer di Vini Oli Sud e richiedi informazioni per l’accesso. Pass buyer in fase di attivazione.",
   },
   visitatori: {
     eyebrow: "Visitatori",
     title: "Assapora il Sud, vista mare.",
     description:
       "Degustazioni, show cooking e cultura mediterranea prendono forma in un’esperienza capace di tenere insieme piacere, scoperta e qualità estetica.",
-    ctaLabel: "Acquista il Carnet Degustazione",
-    ctaHref: "/contatti",
+    ctaLabel: "Esplora il percorso visitatori",
+    ctaHref: "/evento",
+    ctaNote: "Carnet degustazione e ticketing in fase di attivazione.",
     summary:
       "Questa area deve parlare al pubblico con un registro sensoriale e caldo, ma sempre ordinato: far desiderare l’esperienza senza sembrare generico intrattenimento.",
     pillars: [
@@ -180,15 +185,16 @@ export const staticPages: Record<string, StaticPageContent> = {
       },
     ],
     metadataDescription:
-      "Scopri l’esperienza visitatori di Vini Oli Sud sul lungomare di Napoli.",
+      "Scopri il percorso visitatori di Vini Oli Sud tra degustazioni e cultura mediterranea. Carnet e ticketing in fase di attivazione.",
   },
   "grand-prix": {
     eyebrow: "Grand Prix",
     title: "Grand Prix Magna Grecia",
     description:
       "Uno spazio dedicato a valorizzare prodotti, territori e riconoscibilità, con una narrazione capace di unire autorevolezza e desiderabilità.",
-    ctaLabel: "Iscrivi il tuo prodotto al Grand Prix",
+    ctaLabel: "Richiedi aggiornamenti sul Grand Prix",
     ctaHref: "/contatti",
+    ctaNote: "Candidature, regolamento e criteri sono in fase di attivazione.",
     summary:
       "Finché regolamento, categorie e criteri non sono confermati, la pagina deve posizionare il Grand Prix senza inventare dettagli né creare aspettative scorrette.",
     pillars: [
@@ -224,7 +230,7 @@ export const staticPages: Record<string, StaticPageContent> = {
       "La meccanica di iscrizione va definita solo dopo approvazione organizzativa.",
     ],
     metadataDescription:
-      "Scopri il Grand Prix Magna Grecia di Vini Oli Sud.",
+      "Scopri il posizionamento del Grand Prix Magna Grecia di Vini Oli Sud. Regolamento e candidature in fase di attivazione.",
   },
   "diario-del-sud": {
     eyebrow: "Diario del Sud",
@@ -271,8 +277,9 @@ export const staticPages: Record<string, StaticPageContent> = {
     title: "Press Room Vini Oli Sud",
     description:
       "Un’area pensata per giornalisti, redazioni, uffici stampa e stakeholder che hanno bisogno di materiali affidabili, rapidi da consultare e pronti alla pubblicazione.",
-    ctaLabel: "Scarica il Media Kit",
+    ctaLabel: "Richiedi informazioni media",
     ctaHref: "/contatti",
+    ctaNote: "Media kit, accrediti e materiali stampa sono in fase di attivazione.",
     summary:
       "La press room deve essere sobria, credibile e immediata: niente iperbole promozionale, sì a chiarezza, asset scaricabili e riferimenti stampa verificati.",
     pillars: [
@@ -307,7 +314,7 @@ export const staticPages: Record<string, StaticPageContent> = {
       "I file scaricabili e i contatti stampa ufficiali dovranno essere inseriti dopo validazione.",
     ],
     metadataDescription:
-      "Accedi alla press room di Vini Oli Sud con materiali e informazioni per i media.",
+      "Scopri la press room di Vini Oli Sud e richiedi informazioni per media e redazioni. Materiali e accrediti in fase di attivazione.",
   },
   contatti: {
     eyebrow: "Contatti",
