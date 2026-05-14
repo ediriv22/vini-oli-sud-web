@@ -57,7 +57,12 @@ export default function Card({
       {href && ctaLabel ? (
         <span className="font-ui mt-6 inline-flex items-center gap-2 text-[0.82rem] font-semibold tracking-[0.06em] text-[var(--card-cta)] uppercase">
           {ctaLabel}
-          <span aria-hidden="true">→</span>
+          <span
+            className="inline-block transition-transform duration-300 ease-out motion-reduce:transition-none motion-safe:group-hover:translate-x-1"
+            aria-hidden="true"
+          >
+            →
+          </span>
         </span>
       ) : null}
     </div>
@@ -65,8 +70,9 @@ export default function Card({
 
   const classes = cn(
     "card-shell group rounded-[1.5rem] p-6 sm:p-7",
+    "transition-[transform,box-shadow,border-color] duration-300 ease-out motion-reduce:duration-150 motion-reduce:transition-[border-color,box-shadow]",
     themeClasses[theme],
-    href ? "block hover:-translate-y-0.5" : undefined,
+    href ? "block motion-safe:hover:-translate-y-[2px] motion-reduce:hover:translate-y-0" : undefined,
     className,
   );
 

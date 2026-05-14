@@ -48,10 +48,15 @@ export default function HeroSection() {
 
           <Link
             href={hero.actions[2]?.href ?? "/evento"}
-            className="font-ui mt-5 inline-flex items-center gap-2 text-[0.8rem] font-semibold uppercase tracking-[0.1em] text-[rgba(51,36,31,0.52)] transition-all hover:translate-x-0.5 hover:text-[var(--color-grove)]"
+            className="group font-ui mt-5 inline-flex items-center gap-2 text-[0.8rem] font-semibold uppercase tracking-[0.1em] text-[rgba(51,36,31,0.52)] transition-colors duration-300 ease-out hover:text-[var(--color-grove)]"
           >
             {hero.actions[2]?.label}
-            <span aria-hidden="true">→</span>
+            <span
+              className="inline-block transition-transform duration-300 ease-out motion-reduce:transition-none motion-safe:group-hover:translate-x-1"
+              aria-hidden="true"
+            >
+              →
+            </span>
           </Link>
         </div>
 

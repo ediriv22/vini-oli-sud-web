@@ -35,11 +35,19 @@ export const siteConfig = {
   },
   footerDescription:
     "Vini Oli Sud è il punto di incontro tra terroir del Mezzogiorno, business hospitality e immaginario mediterraneo. Un format da costruire come piattaforma editoriale e commerciale, non come semplice vetrina.",
-  legalLine: "Informazioni societarie e riferimenti operativi in aggiornamento.",
+  legalLine:
+    "Vini Oli Sud · progetto a cura di A.S.D. Napoli Racing Show · P.IVA 10430641216 · C.F. 95334510633",
   contact: {
-    email: "",
-    phone: "",
-    address: "",
+    /** Contatto principale del progetto Vini Oli Sud */
+    projectEmail: "info@vinisud.it",
+  },
+  organizer: {
+    legalName: "A.S.D. Napoli Racing Show",
+    phones: ["3295535164", "3276616294"] as const,
+    email: "napoliracingshow@gmail.com",
+    pec: "asdnapoliracingshow@pec.it",
+    vatId: "10430641216",
+    fiscalCode: "95334510633",
   },
   hero: {
     eyebrow: "L’Eccellenza del Mezzogiorno Scende in Pista.",

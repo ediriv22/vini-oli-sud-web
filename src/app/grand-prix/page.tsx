@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import GrandPrixWinners from "@/components/sections/GrandPrixWinners";
 import InternalPageTemplate from "@/components/sections/InternalPageTemplate";
 import { staticPages } from "@/data/pages";
 import { createPageMetadata } from "@/data/site";
@@ -11,5 +12,10 @@ export const metadata: Metadata = createPageMetadata(
 );
 
 export default function GrandPrixPage() {
-  return <InternalPageTemplate page={page} />;
+  return (
+    <>
+      <InternalPageTemplate page={page} />
+      <GrandPrixWinners />
+    </>
+  );
 }

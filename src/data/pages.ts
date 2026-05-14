@@ -320,43 +320,40 @@ export const staticPages: Record<string, StaticPageContent> = {
     eyebrow: "Contatti",
     title: "Contatti",
     description:
-      "Una pagina di raccordo per richieste commerciali, accrediti, partnership e informazioni organizzative, con spazio per trasformarsi in hub operativo nei prossimi sprint.",
+      "Recapiti ufficiali per richieste commerciali, accrediti, partnership e comunicazioni stampa relative a Vini Oli Sud.",
     ctaLabel: "Richiedi la Brochure Espositori",
     ctaHref: "/espositori",
     summary:
-      "Le richieste operative stanno convergendo verso percorsi dedicati per espositori, buyer, partnership e informazioni di progetto.",
+      "Il progetto è curato da A.S.D. Napoli Racing Show. Il contatto principale del progetto è info@vinisud.it; la segreteria organizzativa gestisce telefono, email e PEC.",
     pillars: [
-      "Contatti separabili per area in sprint futuri",
-      "Percorsi commerciali e accrediti in consolidamento",
-      "Punto di conversione per brochure, pass e partnership",
+      "Contatto progetto dedicato a Vini Oli Sud",
+      "Segreteria organizzativa con recapiti certificati",
+      "Dati societari pubblicati per trasparenza",
     ],
-    focusTitle: "Base pronta per la segreteria operativa.",
+    focusTitle: "Percorsi dedicati per audience.",
     focusIntro:
-      "Qui potranno confluire form, recapiti ufficiali e percorsi dedicati per ogni audience del progetto.",
+      "Brochure espositori, pass buyer e partnership restano sui rispettivi percorsi; questa scheda concentra i recapiti ufficiali.",
     sections: [
       {
         eyebrow: "Commerciale",
         title: "Espositori, sponsor e partnership.",
         description:
-          "La pagina dovrà distinguere le richieste business da quelle informative, migliorando qualità e instradamento dei lead.",
+          "Le richieste business possono partire dalla brochure espositori o dalla pagina contatti, con risposta coordinata dalla segreteria.",
       },
       {
         eyebrow: "Operativo",
         title: "Buyer, media e accreditamenti.",
         description:
-          "Ogni audience avrà bisogno di un percorso di contatto più preciso, da attivare quando processi e dati saranno confermati.",
+          "Pass buyer, programma visitatori e percorso media rimandano a sezioni dedicate; per esigenze trasversali usare i recapiti pubblicati in questa area.",
       },
       {
         eyebrow: "Trasparenza",
-        title: "Informazioni operative in aggiornamento.",
+        title: "Recapiti verificati.",
         description:
-          "Il sito evita recapiti non verificati e concentra la conversione sui percorsi già attivi per espositori, buyer e partnership.",
+          "Email progetto, PEC e dati fiscali sono quelli ufficialmente associati all’organizzazione indicata.",
       },
     ],
-    verifyNotes: [
-      "Recapiti diretti e riferimenti di area saranno pubblicati solo dopo validazione operativa.",
-    ],
     metadataDescription:
-      "Contatta la segreteria di Vini Oli Sud per informazioni, brochure e partnership.",
+      "Contatti ufficiali di Vini Oli Sud: informazioni commerciali, accrediti, partnership e comunicazioni stampa.",
   },
 };

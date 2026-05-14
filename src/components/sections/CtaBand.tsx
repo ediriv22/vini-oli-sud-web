@@ -17,7 +17,7 @@ export default function CtaBand() {
                   Espositori e Buyer
                 </p>
               </div>
-              <h2 className="display-balance mt-4 max-w-[11ch] font-display text-[clamp(2.15rem,8vw,4.7rem)] leading-[0.96] tracking-[0.01em] text-[var(--color-ivory)]">
+              <h2 className="display-balance mt-4 max-w-[18ch] sm:max-w-[20ch] lg:max-w-[24ch] font-display text-[clamp(2.15rem,8vw,4.7rem)] leading-[0.96] tracking-[0.01em] text-[var(--color-ivory)]">
                 {siteConfig.finalCta.title}
               </h2>
               <p className="mt-4 max-w-none text-[1rem] leading-[1.62] text-[rgba(248,243,232,0.78)] lg:max-w-[36ch]">
@@ -47,10 +47,15 @@ export default function CtaBand() {
               <div className="mt-4 flex justify-start lg:justify-end">
                 <Link
                   href="/contatti"
-                  className="font-ui inline-flex items-center gap-2 text-[0.82rem] font-semibold tracking-[0.1em] text-[rgba(248,243,232,0.82)] uppercase transition-transform hover:translate-x-0.5 hover:text-[var(--color-ivory)]"
+                  className="group font-ui inline-flex items-center gap-2 text-[0.82rem] font-semibold tracking-[0.1em] text-[rgba(248,243,232,0.82)] uppercase transition-colors duration-300 ease-out hover:text-[var(--color-ivory)]"
                 >
                   Proponi una Partnership
-                  <span aria-hidden="true">→</span>
+                  <span
+                    className="inline-block transition-transform duration-300 ease-out motion-reduce:transition-none motion-safe:group-hover:translate-x-1"
+                    aria-hidden="true"
+                  >
+                    →
+                  </span>
                 </Link>
               </div>
             </div>

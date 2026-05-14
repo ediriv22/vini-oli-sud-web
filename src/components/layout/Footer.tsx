@@ -56,9 +56,62 @@ export default function Footer() {
               </Button>
             ))}
           </div>
-          <div className="mt-6 max-w-sm space-y-3 text-sm leading-7 text-[rgba(255,248,238,0.72)]">
-            <p>Contatti e accrediti in fase di attivazione.</p>
-            <p>Per informazioni commerciali, usa il percorso dedicato o la pagina contatti.</p>
+          <div className="mt-6 max-w-sm space-y-4 text-sm leading-7 text-[rgba(255,248,238,0.78)]">
+            <div>
+              <h4 className="font-ui text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[rgba(248,243,232,0.88)]">
+                Contatto progetto
+              </h4>
+              <p className="mt-2">
+                <Link
+                  href={`mailto:${siteConfig.contact.projectEmail}`}
+                  className="break-all text-[rgba(255,248,238,0.9)] underline decoration-[rgba(200,167,111,0.45)] underline-offset-2 hover:text-[var(--color-ivory)]"
+                >
+                  {siteConfig.contact.projectEmail}
+                </Link>
+              </p>
+            </div>
+            <div>
+              <h4 className="font-ui text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[rgba(248,243,232,0.88)]">
+                Organizzazione
+              </h4>
+              <p className="mt-2 text-[rgba(255,248,238,0.82)]">
+                Vini Oli Sud — progetto a cura di{" "}
+                <span className="text-[rgba(255,248,238,0.92)]">{siteConfig.organizer.legalName}</span>
+              </p>
+              <p className="mt-2 flex flex-wrap gap-x-2 gap-y-1">
+                {siteConfig.organizer.phones.map((num) => (
+                  <Link
+                    key={num}
+                    href={`tel:+39${num}`}
+                    className="text-[rgba(255,248,238,0.88)] underline decoration-[rgba(200,167,111,0.4)] underline-offset-2 hover:text-[var(--color-ivory)]"
+                  >
+                    {num}
+                  </Link>
+                ))}
+              </p>
+              <p className="mt-2">
+                <Link
+                  href={`mailto:${siteConfig.organizer.email}`}
+                  className="break-all text-[rgba(255,248,238,0.88)] underline decoration-[rgba(200,167,111,0.4)] underline-offset-2 hover:text-[var(--color-ivory)]"
+                >
+                  {siteConfig.organizer.email}
+                </Link>
+              </p>
+              <p className="mt-2">
+                <span className="font-ui text-[0.62rem] uppercase tracking-[0.12em] text-[rgba(248,243,232,0.55)]">
+                  PEC{" "}
+                </span>
+                <Link
+                  href={`mailto:${siteConfig.organizer.pec}`}
+                  className="break-all text-[rgba(255,248,238,0.88)] underline decoration-[rgba(200,167,111,0.4)] underline-offset-2 hover:text-[var(--color-ivory)]"
+                >
+                  {siteConfig.organizer.pec}
+                </Link>
+              </p>
+              <p className="mt-3 text-[0.8rem] leading-6 text-[rgba(255,248,238,0.65)]">
+                P.IVA {siteConfig.organizer.vatId} · C.F. {siteConfig.organizer.fiscalCode}
+              </p>
+            </div>
           </div>
         </div>
       </div>

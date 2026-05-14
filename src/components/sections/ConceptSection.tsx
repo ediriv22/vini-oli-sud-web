@@ -5,7 +5,7 @@ export default function ConceptSection() {
     <section className="bg-[linear-gradient(180deg,rgba(255,251,245,0.72),rgba(252,248,241,0.3))] py-14 sm:py-16 lg:py-20">
       <div className="section-shell">
         <div className="py-2 sm:py-4">
-          <div className="grid gap-7 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:items-start lg:gap-10">
+          <div className="grid gap-7 lg:grid-cols-[minmax(0,1.14fr)_minmax(0,0.86fr)] lg:items-start lg:gap-10">
             <div>
               <div className="flex items-center gap-3">
                 <span
@@ -14,12 +14,12 @@ export default function ConceptSection() {
                 />
                 <p className="eyebrow text-[var(--color-wine)]">Profezia Liquida</p>
               </div>
-              <h2 className="display-balance mt-4 max-w-[20ch] font-display text-[clamp(2.1rem,7vw,4.8rem)] leading-[0.96] tracking-[0.01em] text-[var(--color-grove)] sm:max-w-[14ch] sm:text-[clamp(2.6rem,6vw,4.8rem)] lg:max-w-[11ch]">
+              <h2 className="display-balance mt-4 max-w-[18ch] font-display text-[clamp(2.1rem,7vw,4.8rem)] leading-[0.96] tracking-[0.01em] text-[var(--color-grove)] sm:text-[clamp(2.6rem,6vw,4.8rem)] lg:max-w-[20ch] xl:max-w-[22ch]">
                 {siteConfig.concept.title}
               </h2>
             </div>
 
-            <p className="max-w-none text-[1rem] leading-[1.64] text-[var(--color-muted)] lg:max-w-[38ch] lg:justify-self-end lg:pt-6">
+            <p className="max-w-none text-[1rem] leading-[1.64] text-[var(--color-muted)] lg:max-w-[34ch] lg:justify-self-end lg:pt-6">
               {siteConfig.concept.description}
             </p>
           </div>

@@ -39,6 +39,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   background:
     radial-gradient(circle at top left, rgba(200, 167, 111, 0.12), transparent 28%),
@@ -61,6 +67,13 @@ button {
     border-color 160ms ease,
     transform 160ms ease,
     opacity 160ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a,
+  button {
+    transition-property: color, background-color, border-color, opacity;
+  }
 }
 
 .section-shell {
@@ -109,6 +122,15 @@ button {
   background-color: var(--card-background, rgba(255, 252, 245, 0.86));
   box-shadow: var(--card-shadow, var(--shadow-soft));
   backdrop-filter: blur(8px);
+  transition:
+    border-color 260ms ease-out,
+    box-shadow 260ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-shell {
+    transition-duration: 0ms;
+  }
 }
 
 .card-shell::before {
