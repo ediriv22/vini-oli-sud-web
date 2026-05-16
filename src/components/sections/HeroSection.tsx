@@ -98,7 +98,7 @@ export default function HeroSection() {
       className="relative h-[420vh] bg-[var(--color-grove)]"
       aria-label="Hero scroll-bound Vini Oli Sud"
     >
-      <div className="sticky top-0 h-screen overflow-hidden">
+      <div className="sticky top-[4rem] h-[calc(100vh-4rem)] overflow-hidden sm:top-[4.45rem] sm:h-[calc(100vh-4.45rem)] lg:top-[4.8rem] lg:h-[calc(100vh-4.8rem)]">
         <div className="absolute inset-0 bg-[var(--color-grove)]">
           <picture aria-hidden="true">
             <source
