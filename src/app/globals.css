@@ -1,31 +1,68 @@
 @import "tailwindcss";
 
 :root {
-  /* Mediterranean palette: aglianico, oro verde, deep naples blue, ivory */
-  --color-wine: #7a2634;
-  --color-olive: #5f6b33;
-  --color-grove: #123423;
-  --color-sand: #c8a76f;
-  --color-sea: #13293d;
-  --color-ivory: #f8f3e8;
-  --color-ink: #33241f;
-  --color-muted: #70615c;
-  --color-line: rgba(51, 36, 31, 0.14);
-  --shadow-soft: 0 10px 28px rgba(38, 25, 17, 0.05);
-  --shadow-card: 0 12px 34px rgba(31, 24, 18, 0.06);
+  /* Palette Vini Sud — revisione editoriale "Pietra Mediterranea" (mag 2026).
+   *
+   * I nomi dei token restano stabili per non rompere la codebase; cambiano
+   * i valori per riallineare il sito alla direzione richiesta:
+   *   - Avorio / Pietra: superficie dominante
+   *   - Carbone elegante: testi e titoli (era inchiostro mediterraneo / blu)
+   *   - Rosso Aglianico: CTA principali
+   *   - Oro Magna Grecia: hairline e dettagli raffinati
+   *   - Verde Oliva: solo micro-accento istituzionale
+   *   - Blu Napoli (--color-sea): accento rarissimo, mai sotto header/logo
+   *
+   * Nota chiave: --color-grove era #1b2a3a (blu profondo). Era usato
+   * ovunque per H2/H3/titoli, generando un sito visivamente "blu".
+   * Ora è un carbone caldo profondo: il sito si purifica del blu
+   * senza dover toccare le centinaia di classi che lo usano.
+   */
+  --color-wine: #6b1e1e;       /* Rosso Aglianico (CTA primaria) */
+  --color-wine-strong: #571319; /* Hover/pressed */
+  --color-olive: #5f6a3a;      /* Verde Oliva (solo micro-accento) */
+  --color-grove: #2a2017;      /* Carbone caldo profondo (titoli forti) */
+  --color-sand: #b08d57;       /* Oro Magna Grecia */
+  --color-sand-strong: #8d6f3f; /* Oro intenso */
+  --color-sea: #21384f;        /* Blu Napoli — accento rarissimo */
+  --color-ivory: #f4ede0;      /* Avorio Caldo (dominante) */
+  --color-stone: #ece2cf;      /* Pietra leggermente più calda */
+  --color-ink: #1f1a17;        /* Carbone caldo (testo corpo) */
+  --color-ink-strong: #14100c; /* Carbone profondo (H1 / display) */
+  --color-muted: #6a5b56;      /* Testo secondario su avorio (AA: 5.6:1) */
+  --color-line: rgba(176, 141, 87, 0.18);       /* Hairline oro tenue */
+  --color-line-strong: rgba(176, 141, 87, 0.32);
+  --shadow-soft: 0 10px 28px rgba(42, 32, 23, 0.06);
+  --shadow-card: 0 12px 34px rgba(42, 32, 23, 0.08);
+  --site-header-height: 4.5rem;
   --font-sans-stack: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --font-display-stack: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   --font-ui-stack: "Montserrat", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
+@media (min-width: 640px) {
+  :root {
+    --site-header-height: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --site-header-height: 5.75rem;
+  }
+}
+
 @theme inline {
   --color-wine: var(--color-wine);
+  --color-wine-strong: var(--color-wine-strong);
   --color-olive: var(--color-olive);
   --color-grove: var(--color-grove);
   --color-sand: var(--color-sand);
+  --color-sand-strong: var(--color-sand-strong);
   --color-sea: var(--color-sea);
   --color-ivory: var(--color-ivory);
+  --color-stone: var(--color-stone);
   --color-ink: var(--color-ink);
+  --color-ink-strong: var(--color-ink-strong);
   --font-sans: var(--font-sans-stack);
   --font-display: var(--font-display-stack);
   --font-ui: var(--font-ui-stack);
@@ -47,16 +84,21 @@ html {
 
 body {
   background:
-    radial-gradient(circle at top left, rgba(200, 167, 111, 0.12), transparent 28%),
-    radial-gradient(circle at top right, rgba(122, 38, 52, 0.045), transparent 18%),
-    linear-gradient(180deg, #fcf7ee 0%, #f6efe2 34%, #faf6ee 70%, #fcfaf5 100%);
+    radial-gradient(circle at top left, rgba(176, 141, 87, 0.10), transparent 32%),
+    radial-gradient(circle at top right, rgba(107, 30, 30, 0.04), transparent 22%),
+    linear-gradient(180deg, #fbf5e9 0%, #f5ecdc 34%, #f9f3e6 70%, #fbf8f0 100%);
   color: var(--color-ink);
   font-family: var(--font-sans-stack);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Disabilita scroll orizzontale sul body in caso di element rogue. */
+  overflow-x: hidden;
 }
 
 ::selection {
-  background: rgba(122, 38, 52, 0.18);
-  color: var(--color-sea);
+  background: rgba(107, 30, 30, 0.18);
+  color: var(--color-ink-strong);
 }
 
 a,
@@ -76,9 +118,16 @@ button {
   }
 }
 
+/* Container editoriale.
+ * Brief: max-width 1180–1280px desktop, 32–48px padding tablet,
+ * 20–24px padding mobile. Implementiamo un padding fluido con clamp
+ * così non servono breakpoint extra.
+ */
 .section-shell {
   margin-inline: auto;
-  width: min(100% - 2rem, 76rem);
+  width: 100%;
+  max-width: 78rem; /* 1248px, dentro la fascia 1180–1280 */
+  padding-inline: clamp(1.25rem, 3.6vw, 3rem);
 }
 
 .panel {
@@ -219,28 +268,31 @@ button {
 }
 
 .card-theme-sea {
-  --card-background: rgba(244, 248, 251, 0.95);
-  --card-border: rgba(19, 41, 61, 0.12);
-  --card-border-strong: rgba(19, 41, 61, 0.2);
-  --card-inner-border: rgba(255, 255, 255, 0.24);
+  /* "Sea" qui non significa più "blu": diventa una variante avorio
+   * leggermente più fredda usata come accento mediterraneo neutro.
+   * Il blu vero è riservato a casi rarissimi (vedi --color-sea). */
+  --card-background: rgba(249, 244, 233, 0.95);
+  --card-border: rgba(176, 141, 87, 0.16);
+  --card-border-strong: rgba(176, 141, 87, 0.28);
+  --card-inner-border: rgba(255, 255, 255, 0.28);
   --card-title: var(--color-grove);
   --card-body: rgba(51, 36, 31, 0.74);
-  --card-eyebrow: rgba(19, 41, 61, 0.82);
-  --card-cta: rgba(19, 41, 61, 0.9);
+  --card-eyebrow: var(--color-sand-strong);
+  --card-cta: var(--color-wine);
   --card-overlay:
     linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.14)),
-    radial-gradient(circle at top right, rgba(19, 41, 61, 0.06), transparent 36%);
+    radial-gradient(circle at top right, rgba(176, 141, 87, 0.08), transparent 36%);
 }
 
 .card-theme-press {
   --card-background: rgba(248, 245, 238, 0.96);
   --card-border: rgba(51, 36, 31, 0.1);
-  --card-border-strong: rgba(200, 167, 111, 0.24);
+  --card-border-strong: rgba(176, 141, 87, 0.28);
   --card-inner-border: rgba(255, 255, 255, 0.32);
-  --card-title: rgba(28, 34, 39, 0.96);
+  --card-title: var(--color-ink-strong);
   --card-body: rgba(55, 48, 44, 0.74);
   --card-eyebrow: rgba(122, 38, 52, 0.86);
-  --card-cta: rgba(38, 47, 57, 0.95);
+  --card-cta: var(--color-wine);
   --card-overlay:
     radial-gradient(circle at top left, rgba(200, 167, 111, 0.06), transparent 34%),
     linear-gradient(180deg, rgba(255, 255, 252, 0.9), rgba(238, 232, 224, 0.68));
@@ -259,18 +311,80 @@ button {
   text-wrap: balance;
 }
 
+/* Sezioni: 96–140 desktop, 72–104 tablet, 56–80 mobile.
+ * Padding fluido via clamp così non servono breakpoint extra
+ * e si elimina il rischio di "sezioni troppo attaccate". */
 .section-space {
-  padding-block: 3rem;
+  padding-block: clamp(3.5rem, 7.5vw, 8.75rem);
 }
 
 .section-space-lg {
-  padding-block: 3.5rem;
+  padding-block: clamp(4rem, 9vw, 10rem);
+}
+
+.section-space-sm {
+  padding-block: clamp(2.5rem, 5vw, 5rem);
+}
+
+/* Continuous warm-ivory background flow: keep sections feeling like one editorial page. */
+.section-flow {
+  position: relative;
+  background: transparent;
+}
+
+/* Smussa l'ingresso della prossima sezione: un'ombra-luce verticale
+ * dolce nella parte superiore, così il "beige" non parte come una
+ * banda dura ma come l'inizio di un nuovo capitolo editoriale. */
+.section-soft-enter {
+  position: relative;
+}
+.section-soft-enter::before {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: clamp(2.5rem, 6vw, 4.5rem);
+  background: linear-gradient(
+    180deg,
+    rgba(244, 237, 224, 0) 0%,
+    rgba(244, 237, 224, 0.55) 60%,
+    rgba(244, 237, 224, 0.9) 100%
+  );
+  pointer-events: none;
+  content: "";
 }
 
 .soft-wash {
   background:
-    linear-gradient(180deg, rgba(255, 251, 245, 0.52), rgba(255, 255, 255, 0.14)),
-    radial-gradient(circle at top right, rgba(200, 167, 111, 0.08), transparent 32%);
+    linear-gradient(180deg, rgba(255, 251, 245, 0.22), rgba(255, 255, 255, 0)),
+    radial-gradient(circle at top right, rgba(200, 167, 111, 0.05), transparent 32%);
+}
+
+/* Premium divider: a centered hairline that fades into the warm background. */
+.premium-divider {
+  position: relative;
+}
+
+.premium-divider::before {
+  position: absolute;
+  inset-inline: 12%;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(200, 167, 111, 0.22),
+    transparent
+  );
+  opacity: 0.85;
+  content: "";
+}
+
+/* Editorial panel: soft, low-contrast surface that doesn't look like a floating card. */
+.editorial-panel {
+  border: 1px solid rgba(200, 167, 111, 0.16);
+  background: rgba(255, 251, 244, 0.55);
+  box-shadow: 0 6px 22px rgba(38, 25, 17, 0.035);
+  backdrop-filter: blur(8px);
 }
 
 .section-divider {
@@ -285,18 +399,52 @@ button {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(51, 36, 31, 0.12),
+    rgba(51, 36, 31, 0.06),
     transparent
   );
   content: "";
 }
 
-@media (min-width: 640px) {
-  .section-space {
-    padding-block: 5.5rem;
-  }
+/* Hairline divider (oro) per separare sezioni senza creare bande colorate. */
+.hairline-gold::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-inline: auto;
+  max-width: min(78rem, calc(100% - 3rem));
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(176, 141, 87, 0.32),
+    transparent
+  );
+}
 
-  .section-space-lg {
-    padding-block: 6.25rem;
-  }
+/* Focus visible system-wide: anello caldo, non blu. */
+:where(a, button, [role="button"], input, select, textarea, summary):focus-visible {
+  outline: 2px solid rgba(107, 30, 30, 0.55);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Anti-overflow orizzontale, indispensabile su mobile. */
+html,
+body {
+  max-width: 100%;
+}
+
+/* Heading rhythm utility. */
+.headline-display {
+  font-family: var(--font-display-stack);
+  color: var(--color-ink-strong);
+  letter-spacing: 0.005em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+/* CTA system tokens — usati da Button per garantire altezze coerenti. */
+:root {
+  --cta-height-md: 2.875rem;  /* 46px — small variant */
+  --cta-height-lg: 3.25rem;   /* 52px — desktop primary */
+  --cta-height-xl: 3.5rem;    /* 56px — display CTA */
 }

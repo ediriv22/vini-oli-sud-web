@@ -60,12 +60,14 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: siteConfig.brand.assets.faviconSvg, type: "image/svg+xml" },
+      { url: siteConfig.brand.assets.favicon16, sizes: "16x16", type: "image/png" },
       { url: siteConfig.brand.assets.favicon32, sizes: "32x32", type: "image/png" },
       { url: siteConfig.brand.assets.favicon64, sizes: "64x64", type: "image/png" },
-      { url: siteConfig.brand.assets.favicon192, sizes: "192x192", type: "image/png" },
+      { url: siteConfig.brand.assets.favicon256, sizes: "256x256", type: "image/png" },
       { url: siteConfig.brand.assets.favicon512, sizes: "512x512", type: "image/png" },
     ],
-    apple: [{ url: siteConfig.brand.assets.favicon192, sizes: "192x192" }],
+    apple: [{ url: siteConfig.brand.assets.favicon256, sizes: "256x256" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -91,7 +93,7 @@ export default function RootLayout({
       >
         <a
           href="#content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-[var(--color-sea)] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-[2px] focus:bg-[var(--color-wine)] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-[var(--color-ivory)] focus:shadow-[0_8px_20px_rgba(107,30,30,0.25)]"
         >
           Vai al contenuto
         </a>

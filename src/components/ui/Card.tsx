@@ -45,17 +45,17 @@ export default function Card({
       {eyebrow ? (
         <p className="eyebrow text-[var(--card-eyebrow)]">{eyebrow}</p>
       ) : null}
-      <h3 className="mt-3 max-w-[19ch] font-display text-[1.42rem] leading-[1.02] text-[var(--card-title)] sm:text-[1.56rem]">
+      <h3 className="mt-3 max-w-[20ch] font-display text-[1.35rem] leading-[1.12] tracking-[0.005em] text-[var(--card-title)] sm:text-[1.5rem]">
         {title}
       </h3>
       {description ? (
-        <p className="mt-4 text-[0.95rem] leading-7 text-[var(--card-body)]">
+        <p className="mt-4 text-[0.96rem] leading-[1.65] text-[var(--card-body)]">
           {description}
         </p>
       ) : null}
       {children ? <div className="mt-5">{children}</div> : null}
       {href && ctaLabel ? (
-        <span className="font-ui mt-6 inline-flex items-center gap-2 text-[0.82rem] font-semibold tracking-[0.06em] text-[var(--card-cta)] uppercase">
+        <span className="font-ui mt-6 inline-flex items-center gap-2 text-[0.82rem] font-semibold uppercase tracking-[0.1em] text-[var(--card-cta)]">
           {ctaLabel}
           <span
             className="inline-block transition-transform duration-300 ease-out motion-reduce:transition-none motion-safe:group-hover:translate-x-1"
@@ -69,10 +69,12 @@ export default function Card({
   );
 
   const classes = cn(
-    "card-shell group rounded-[1.5rem] p-6 sm:p-7",
+    "card-shell group rounded-[1.1rem] p-6 sm:p-7",
     "transition-[transform,box-shadow,border-color] duration-300 ease-out motion-reduce:duration-150 motion-reduce:transition-[border-color,box-shadow]",
     themeClasses[theme],
-    href ? "block motion-safe:hover:-translate-y-[2px] motion-reduce:hover:translate-y-0" : undefined,
+    href
+      ? "block focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[rgba(107,30,30,0.5)] motion-safe:hover:-translate-y-[2px] motion-reduce:hover:translate-y-0"
+      : undefined,
     className,
   );
 
