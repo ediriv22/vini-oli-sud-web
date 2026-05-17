@@ -196,6 +196,17 @@ export default function HeroSection() {
           }}
         >
           {!showGateway ? (
+            /*
+             * Scene narrative 0–3 in viewport sticky 100svh - header.
+             * Su mobile (iPhone tipico ≈ 600–680px utili) tutta la pila
+             * "eyebrow + H1 + sottotitolo + 2 CTA + 4 chip" eccede il
+             * viewport e gli ultimi 2 chip venivano tagliati. Tre fix:
+             *
+             *  1. H1 con clamp più aggressivo sul minimo mobile;
+             *  2. Margini compattati su mobile (mt-5/mt-6 vs mt-6/mt-8);
+             *  3. I 4 chip diventano grid 2x2 da subito (no più stack
+             *     verticale a tutta colonna), dimezzando l'altezza.
+             */
             <div className="flex w-full max-w-[60rem] flex-col justify-start">
               <div className="flex items-center gap-3">
                 <span
@@ -207,15 +218,15 @@ export default function HeroSection() {
                 </p>
               </div>
 
-              <h1 className="display-balance mt-6 max-w-[18ch] font-display leading-[0.96] tracking-[0.005em] text-[var(--color-ivory)] drop-shadow-[0_16px_42px_rgba(0,0,0,0.32)] text-[clamp(2.35rem,8vw,3.6rem)] sm:text-[clamp(3rem,6.5vw,5rem)] lg:text-[clamp(3.4rem,5vw,5.6rem)]">
+              <h1 className="display-balance mt-5 max-w-[18ch] font-display leading-[0.98] tracking-[0.005em] text-[var(--color-ivory)] drop-shadow-[0_16px_42px_rgba(0,0,0,0.32)] text-[clamp(2rem,7vw,3rem)] sm:mt-6 sm:text-[clamp(3rem,6.5vw,5rem)] lg:text-[clamp(3.4rem,5vw,5.6rem)]">
                 {currentScene.title}
               </h1>
 
-              <p className="mt-6 max-w-[56ch] text-[1.02rem] leading-[1.65] text-[rgba(244,237,224,0.9)] drop-shadow-[0_10px_24px_rgba(0,0,0,0.32)] sm:text-[1.1rem]">
+              <p className="mt-4 max-w-[56ch] text-[0.96rem] leading-[1.55] text-[rgba(244,237,224,0.9)] drop-shadow-[0_10px_24px_rgba(0,0,0,0.32)] sm:mt-6 sm:text-[1.08rem] sm:leading-[1.65]">
                 {currentScene.subtitle}
               </p>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+              <div className="mt-6 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-4">
                 {hero.actions.slice(0, 2).map((action, index) => (
                   <Button
                     key={action.href}
@@ -231,32 +242,33 @@ export default function HeroSection() {
 
               {/* Micro-routing: 4 chip sempre presenti sopra l'immagine
                   scroll-bound, accessibili anche se l'utente non vuole
-                  scrollare fino al gateway finale. */}
+                  scrollare fino al gateway finale.
+                  Mobile: grid 2x2; tablet/desktop: 4 colonne in linea. */}
               <nav
                 aria-label="Percorsi rapidi per audience"
-                className="mt-10 sm:mt-12"
+                className="mt-7 sm:mt-12"
               >
-                <p className="font-ui text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[rgba(244,237,224,0.65)]">
+                <p className="font-ui text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-[rgba(244,237,224,0.65)] sm:text-[0.68rem]">
                   Percorsi rapidi
                 </p>
-                <ul className="mt-4 grid gap-2.5 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4">
+                <ul className="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:gap-3 lg:grid-cols-4">
                   {audiences.map((audience) => (
                     <li key={audience.href}>
                       <Link
                         href={audience.href}
-                        className="group flex min-h-[3rem] items-center justify-between gap-3 rounded-[0.55rem] border border-[rgba(244,237,224,0.22)] bg-[rgba(15,24,33,0.32)] px-4 py-3 text-[var(--color-ivory)] backdrop-blur-md transition-[border-color,background-color] duration-300 ease-out hover:border-[rgba(176,141,87,0.6)] hover:bg-[rgba(15,24,33,0.52)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[rgba(176,141,87,0.6)] motion-reduce:transition-none"
+                        className="group flex min-h-[2.75rem] items-center justify-between gap-2 rounded-[0.55rem] border border-[rgba(244,237,224,0.22)] bg-[rgba(15,24,33,0.32)] px-3 py-2.5 text-[var(--color-ivory)] backdrop-blur-md transition-[border-color,background-color] duration-300 ease-out hover:border-[rgba(176,141,87,0.6)] hover:bg-[rgba(15,24,33,0.52)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[rgba(176,141,87,0.6)] motion-reduce:transition-none sm:min-h-[3rem] sm:px-4 sm:py-3"
                       >
                         <span className="min-w-0">
-                          <span className="font-ui block text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-[rgba(176,141,87,0.95)]">
+                          <span className="font-ui block text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-[rgba(176,141,87,0.95)] sm:text-[0.62rem] sm:tracking-[0.2em]">
                             {audience.eyebrow}
                           </span>
-                          <span className="font-display mt-0.5 block text-[1.02rem] leading-[1.15] text-[var(--color-ivory)]">
+                          <span className="font-display mt-0.5 block text-[0.94rem] leading-[1.15] text-[var(--color-ivory)] sm:text-[1.02rem]">
                             {audience.shortLabel}
                           </span>
                         </span>
                         <span
                           aria-hidden="true"
-                          className="font-ui text-[0.82rem] text-[rgba(244,237,224,0.6)] transition-[color,transform] duration-300 ease-out group-hover:text-[var(--color-sand)] motion-safe:group-hover:translate-x-0.5"
+                          className="font-ui text-[0.78rem] text-[rgba(244,237,224,0.6)] transition-[color,transform] duration-300 ease-out group-hover:text-[var(--color-sand)] motion-safe:group-hover:translate-x-0.5 sm:text-[0.82rem]"
                         >
                           →
                         </span>
