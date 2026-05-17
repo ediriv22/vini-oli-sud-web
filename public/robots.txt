@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vinisud.it/sitemap.xml

@@ -14,7 +14,7 @@ export default function RegionsSection() {
   ];
 
   return (
-    <section className="section-divider section-space soft-wash">
+    <section className="section-flow section-space premium-divider">
       <div className="section-shell">
         <SectionHeader
           eyebrow="Geografia del gusto"

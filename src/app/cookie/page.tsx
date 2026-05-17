@@ -18,8 +18,8 @@ export default function CookiePage() {
           Cookie policy
         </h1>
         <p className="mt-6 text-[1.02rem] leading-[1.68] text-[var(--color-muted)]">
-          Questa pagina descrive l’uso dei cookie sul sito dedicato al progetto Vini Oli Sud, in forma
-          chiara e non tecnica.
+          Questa pagina descrive l’uso dei cookie sul sito di Vini Oli Sud in forma chiara e non
+          tecnica.
         </p>
 
         <div className="mt-10 space-y-8 text-[0.98rem] leading-[1.72] text-[var(--color-muted)]">
@@ -38,7 +38,7 @@ export default function CookiePage() {
               Profilazione e marketing
             </h2>
             <p className="mt-3">
-              Al momento non risultano configurati cookie di profilazione o marketing nel sito demo.
+              Al momento non risultano configurati cookie di profilazione o marketing sul sito.
             </p>
             <p className="mt-3">
               Eventuali strumenti di analytics, pixel di social network o altri servizi di terze
@@ -69,8 +69,8 @@ export default function CookiePage() {
           </section>
 
           <p className="rounded-[1.25rem] border border-[rgba(200,167,111,0.22)] bg-[rgba(255,251,245,0.65)] px-4 py-3 text-[0.92rem] leading-relaxed text-[var(--color-muted)]">
-            Testo redatto per la fase demo pubblica; potrà essere integrato prima dell’introduzione
-            di nuovi strumenti di misurazione o pubblicità.
+            Informativa aggiornata. Verrà integrata in caso di attivazione di nuovi strumenti di
+            analytics o pubblicità, con le modalità di consenso previste dalla normativa.
           </p>
         </div>
       </div>

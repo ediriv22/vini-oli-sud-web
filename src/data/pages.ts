@@ -1,3 +1,16 @@
+export type StaticPagePillar = {
+  title: string;
+  description: string;
+};
+
+export type StaticPageExternalReference = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  ctaLabel: string;
+  url: string;
+};
+
 export type StaticPageContent = {
   eyebrow: string;
   title: string;
@@ -6,7 +19,7 @@ export type StaticPageContent = {
   ctaHref: string;
   ctaNote?: string;
   summary: string;
-  pillars: string[];
+  pillars: StaticPagePillar[];
   focusTitle: string;
   focusIntro: string;
   sections: Array<{
@@ -15,8 +28,45 @@ export type StaticPageContent = {
     description: string;
   }>;
   verifyNotes?: string[];
+  externalReference?: StaticPageExternalReference;
   metadataDescription: string;
 };
+
+const generalPositioningPillars: StaticPagePillar[] = [
+  {
+    title: "Napoli come palcoscenico mediterraneo",
+    description:
+      "Il progetto valorizza mare, città e immaginario del Mezzogiorno come cornice riconoscibile per vino, olio e relazioni commerciali.",
+  },
+  {
+    title: "Vino e olio come cultura viva",
+    description:
+      "Il prodotto non è trattato come semplice esposizione, ma come racconto di territorio, filiere, memoria e valore.",
+  },
+  {
+    title: "Business con anima territoriale",
+    description:
+      "Il format orienta produttori, buyer, visitatori, media e partner verso percorsi chiari, concreti e distintivi.",
+  },
+];
+
+const buyerPositioningPillars: StaticPagePillar[] = [
+  {
+    title: "Selezione più leggibile",
+    description:
+      "Un percorso pensato per aiutare operatori, distributori, ristoratori e buyer a orientarsi tra prodotti, territori e opportunità.",
+  },
+  {
+    title: "Contatti qualificati",
+    description:
+      "Il valore non è nella quantità indistinta, ma nella qualità delle relazioni e nella chiarezza dei percorsi di accesso.",
+  },
+  {
+    title: "Materiali e agenda",
+    description:
+      "Le informazioni operative devono accompagnare il buyer verso contatto, richiesta pass e approfondimenti commerciali.",
+  },
+];
 
 export const staticPages: Record<string, StaticPageContent> = {
   evento: {
@@ -24,19 +74,23 @@ export const staticPages: Record<string, StaticPageContent> = {
     title: "L’evento",
     description:
       "Nel cuore di Napoli, tra mare, Vesuvio, motorsport e hospitality, Vini Oli Sud costruisce una scena dove il racconto del gusto mediterraneo dialoga con l’energia del Napoli Racing Show.",
-    ctaLabel: "Richiedi informazioni sull’evento",
-    ctaHref: "/contatti",
-    ctaNote: "Programma dettagliato e informazioni operative in fase di conferma.",
+    ctaLabel: "Richiedi informazioni evento",
+    ctaHref: "/contatti?interesse=visitatori#richiesta-informazioni",
+    ctaNote: "Per manifestare interesse e ricevere aggiornamenti, scrivi alla segreteria dalla pagina contatti.",
     summary:
-      "La pagina evento dovrà diventare il punto di sintesi tra concept, atmosfera e logistica narrativa: cosa succede, dove succede e perché vale esserci.",
-    pillars: [
-      "Napoli come scenario iconico e contemporaneo",
-      "Motorsport come acceleratore di attenzione e posizionamento",
-      "Vino e olio come esperienza culturale e business platform",
-    ],
-    focusTitle: "Un format da raccontare come esperienza.",
+      "Vini Oli Sud unisce il racconto del gusto mediterraneo, la cultura del vino e dell'olio del Sud Italia con l'energia e la visibilità del Napoli Racing Show. Un palcoscenico unico dove produttori, buyer e visitatori si incontrano in un contesto premium e distintivo.",
+    pillars: generalPositioningPillars,
+    externalReference: {
+      eyebrow: "Approfondimento istituzionale",
+      title: "I prodotti campani al Napoli Racing Show",
+      description:
+        "Un riferimento esterno utile per inquadrare il dialogo tra produzioni agroalimentari, territorio e Napoli Racing Show.",
+      ctaLabel: "Leggi sul sito Regione Campania",
+      url: "https://www.agricoltura.regione.campania.it/eventi/evento-06-12-25.html",
+    },
+    focusTitle: "Tre pillar di posizionamento.",
     focusIntro:
-      "Per ora la pagina imposta il tono: premium, emozionale ma leggibile, pronta ad accogliere in Sprint successivi programma, venue details e format experience.",
+      "Vini Oli Sud costruisce il suo racconto su tre fondamenta: il territorio napoletano, il dialogo tra vino/olio e velocità, la capacità di trasformare degustazione in relazione commerciale.",
     sections: [
       {
         eyebrow: "Scenario",
@@ -51,37 +105,31 @@ export const staticPages: Record<string, StaticPageContent> = {
           "Il contrasto tra velocità e lentezza diventa asset narrativo, non semplice contesto accessorio.",
       },
       {
-        eyebrow: "Sviluppo",
-        title: "Programma e format da dettagliare.",
+        eyebrow: "Cultura e Connessione",
+        title: "Degustazioni, talk e incontri B2B.",
         description:
-          "Sessioni, degustazioni, incontri e show moment saranno integrati quando dati e calendario saranno confermati.",
+          "Un programma progettato per coniugare l'esperienza sensoriale della degustazione con opportunità concrete di relazioni commerciali e racconto editoriale.",
       },
     ],
-    verifyNotes: [
-      "Date, venue details e programma ufficiale del format devono essere confermati.",
-      "Ogni riferimento operativo collegato al Napoli Racing Show va pubblicato solo dopo validazione.",
-    ],
+    verifyNotes: [],
     metadataDescription:
-      "Scopri il concept di Vini Oli Sud tra Napoli, gusto mediterraneo e racing show. Programma dettagliato in fase di conferma.",
+      "Vini Oli Sud: scenario, identità e edizione 2026 del salone boutique dei terroir del Mezzogiorno, in dialogo con Napoli Racing Show.",
   },
   espositori: {
     eyebrow: "Espositori",
     title: "Porta la tua azienda in pole position sul mercato mediterraneo.",
     description:
       "Una piattaforma progettata per dare visibilità commerciale, incontri utili e posizionamento distintivo a produttori, consorzi e marchi del gusto del Sud Italia.",
-    ctaLabel: "Richiedi informazioni espositori",
-    ctaHref: "/contatti",
-    ctaNote: "Brochure espositori in fase di attivazione.",
+    ctaLabel: "Richiedi la Brochure Espositori",
+    ctaHref: "/contatti?interesse=espositori#richiesta-informazioni",
+    ctaNote:
+      "Richiedi la brochure per dettagli su pacchetti, visibilità e opportunità commerciali.",
     summary:
-      "Il percorso espositori deve chiarire ROI, audience, formula e vantaggi competitivi: niente vaghezza fieristica, ma argomenti orientati a lead e business presence.",
-    pillars: [
-      "Buyer, operatori e pubblico premium nello stesso ecosistema",
-      "Visibilità editoriale e narrativa oltre la sola presenza fisica",
-      "Contesto distintivo legato al Napoli Racing Show",
-    ],
-    focusTitle: "Perché esporre qui.",
+      "Esporre significa accedere a un ecosistema dove il valore è nel matching qualitativo: buyer selezionati, pubblico premium, visibilità editoriale oltre il semplice evento fisico. Un contesto che amplifica la reputazione e consolida le relazioni commerciali nel mercato mediterraneo.",
+    pillars: generalPositioningPillars,
+    focusTitle: "Tre ragioni per esporre qui.",
     focusIntro:
-      "Questa pagina prepara il terreno per brochure, form di lead generation, pacchetti e proof points da inserire negli sprint successivi.",
+      "Vini Oli Sud è costruito per offrire ai produttori visibilità qualitativa, incontri rilevanti e un contesto narrativo che consolida il posizionamento nel mercato mediterraneo.",
     sections: [
       {
         eyebrow: "Lead",
@@ -103,32 +151,29 @@ export const staticPages: Record<string, StaticPageContent> = {
       },
     ],
     metadataDescription:
-      "Scopri il percorso espositori di Vini Oli Sud e richiedi informazioni commerciali. Brochure espositori in fase di attivazione.",
+      "Vini Oli Sud espositori: visibilità commerciale, matching con buyer selezionati e posizionamento premium per le eccellenze del Sud Italia.",
   },
   buyer: {
     eyebrow: "Buyer e operatori",
     title: "Il tuo accesso ai migliori terroir del Sud Italia.",
     description:
       "Un hub selettivo pensato per chi cerca scouting, relazioni dirette e una lettura ordinata dell’offerta mediterranea tra vino, olio e cultura produttiva.",
-    ctaLabel: "Richiedi informazioni buyer",
-    ctaHref: "/contatti",
-    ctaNote: "Pass buyer e materiali dedicati in fase di attivazione.",
+    ctaLabel: "Richiedi il Pass Buyer",
+    ctaHref: "/contatti?interesse=buyer#richiesta-informazioni",
+    ctaNote:
+      "Richiedi il pass buyer per accesso facilitato, agenda di incontri e materiali esclusivi.",
     summary:
-      "La pagina buyer deve rassicurare su qualità dell’esperienza, accesso facilitato e rilevanza dei contatti. Il tono resta business-first, non turistico.",
-    pillars: [
-      "Scouting produttivo in un contesto ad alta densità narrativa",
-      "Accredito e accesso pensati per operatori qualificati",
-      "Percorso chiaro verso contatto, agenda e materiali utili",
-    ],
+      "Per buyer, Ho.Re.Ca., distributori e importatori: Vini Oli Sud offre una piattaforma dove la qualità non è nel volume, ma nella densità narrativa, nella rilevanza dei contatti e nella capacità di navigare velocemente i migliori terroir del Sud Italia.",
+    pillars: buyerPositioningPillars,
     focusTitle: "Un hub di selezione, non dispersione.",
     focusIntro:
-      "In futuro questa area potrà integrare form di richiesta, criteri di accesso e vantaggi per buyer nazionali e internazionali.",
+      "Vini Oli Sud è progettato per semplificare lo scouting: facilita l’accesso a produttori selezionati, supporta l’agenda di incontri e mette a disposizione materiali che accelerano la comprensione dei terroir mediterranei.",
     sections: [
       {
         eyebrow: "Selezione",
         title: "Terroir leggibili e ordinati.",
         description:
-          "Il sito deve aiutare a capire rapidamente dove si concentra il valore e quali aree esplorare.",
+          "Il percorso buyer aiuta a capire rapidamente dove si concentra il valore e quali aree esplorare.",
       },
       {
         eyebrow: "Operatività",
@@ -144,26 +189,23 @@ export const staticPages: Record<string, StaticPageContent> = {
       },
     ],
     metadataDescription:
-      "Scopri il percorso buyer di Vini Oli Sud e richiedi informazioni per l’accesso. Pass buyer in fase di attivazione.",
+      "Vini Oli Sud buyer e operatori Ho.Re.Ca.: selezione, agenda di incontri e accesso ai terroir del Mezzogiorno.",
   },
   visitatori: {
     eyebrow: "Visitatori",
     title: "Assapora il Sud, vista mare.",
     description:
       "Degustazioni, show cooking e cultura mediterranea prendono forma in un’esperienza capace di tenere insieme piacere, scoperta e qualità estetica.",
-    ctaLabel: "Esplora il percorso visitatori",
-    ctaHref: "/evento",
-    ctaNote: "Carnet degustazione e ticketing in fase di attivazione.",
+    ctaLabel: "Richiedi aggiornamenti visitatori",
+    ctaHref: "/contatti?interesse=visitatori#richiesta-informazioni",
+    ctaNote:
+      "Iscriviti per ricevere aggiornamenti sulla programmazione e sulle modalità di accesso.",
     summary:
-      "Questa area deve parlare al pubblico con un registro sensoriale e caldo, ma sempre ordinato: far desiderare l’esperienza senza sembrare generico intrattenimento.",
-    pillars: [
-      "Percorso emozionale tra vini, oli e cucina mediterranea",
-      "Scenario iconico sul lungomare di Napoli",
-      "Informazioni pronte per ticketing e experience design futuri",
-    ],
+      "Vini Oli Sud offre ai visitatori un’esperienza che coniuga il piacere della degustazione, la scoperta del territorio mediterraneo e la bellezza scenica del lungomare napoletano. Non semplice intrattenimento, ma una forma di storytelling sensoriale e culturale.",
+    pillars: generalPositioningPillars,
     focusTitle: "Un invito a vivere il Mezzogiorno contemporaneo.",
     focusIntro:
-      "La struttura è pronta a ospitare programma pubblico, esperienze speciali, ticket e contenuti pratici quando disponibili.",
+      "Degustazioni, show cooking, incontri con produttori e momenti culturali costruiscono un’esperienza coerente dove il gusto diventa accesso al territorio.",
     sections: [
       {
         eyebrow: "Degustazione",
@@ -178,83 +220,70 @@ export const staticPages: Record<string, StaticPageContent> = {
           "Napoli entra come cornice attiva dell’esperienza, non solo come indicazione geografica.",
       },
       {
-        eyebrow: "Evoluzione",
-        title: "Ticketing e programma da integrare.",
+        eyebrow: "Esperienza",
+        title: "Carnet degustazione e accesso.",
         description:
-          "I prossimi sprint potranno attivare call to action più operative per visitatori e degustatori.",
+          "Il carnet apre il percorso vino, olio e show cooking del salone. La prenotazione passa dal modulo dedicato in questa pagina.",
       },
     ],
     metadataDescription:
-      "Scopri il percorso visitatori di Vini Oli Sud tra degustazioni e cultura mediterranea. Carnet e ticketing in fase di attivazione.",
+      "Vini Oli Sud visitatori: degustazioni, show cooking e cultura mediterranea sul lungomare di Napoli.",
   },
   "grand-prix": {
-    eyebrow: "Grand Prix",
+    eyebrow: "Grand Prix · Prima Edizione",
     title: "Grand Prix Magna Grecia",
     description:
-      "Uno spazio dedicato a valorizzare prodotti, territori e riconoscibilità, con una narrazione capace di unire autorevolezza e desiderabilità.",
-    ctaLabel: "Richiedi aggiornamenti sul Grand Prix",
-    ctaHref: "/contatti",
-    ctaNote: "Candidature, regolamento e criteri sono in fase di attivazione.",
+      "Uno spazio dedicato a valorizzare prodotti, territori e riconoscibilità, con una narrazione capace di unire autorevolezza e desiderabilità. L’Albo d’Oro 2025 raccoglie i primi dieci riconoscimenti del progetto.",
+    ctaLabel: "Richiedi informazioni Grand Prix",
+    ctaHref: "/contatti?interesse=grand-prix#richiesta-informazioni",
     summary:
-      "Finché regolamento, categorie e criteri non sono confermati, la pagina deve posizionare il Grand Prix senza inventare dettagli né creare aspettative scorrette.",
-    pillars: [
-      "Premialità come leva di reputazione",
-      "Narrazione coerente con la visione mediterranea premium",
-      "Struttura pronta per regolamento, categorie e iscrizioni",
-    ],
-    focusTitle: "Un asset da attivare con rigore.",
+      "L’Albo d’Oro 2025 raccoglie dieci riconoscimenti che presentano vino e olio del Mezzogiorno con tono autorevole e misurato.",
+    pillars: generalPositioningPillars,
+    focusTitle: "Un riconoscimento dedicato al Mezzogiorno.",
     focusIntro:
-      "La pagina imposta tono e spazio strategico. I dettagli operativi saranno inseriti solo dopo conferma ufficiale.",
+      "Il Grand Prix Magna Grecia valorizza i terroir del Sud con un linguaggio editoriale rigoroso e una selezione concreta di etichette e produttori.",
     sections: [
       {
         eyebrow: "Autorevolezza",
-        title: "Un riconoscimento da costruire bene.",
+        title: "Un riconoscimento misurato.",
         description:
-          "Premi e selezioni funzionano solo se linguaggio, criteri e presentazione risultano credibili e misurati.",
+          "Premi e selezioni funzionano solo se linguaggio, criteri e presentazione restano credibili e coerenti con il valore dei prodotti raccontati.",
       },
       {
         eyebrow: "Visibilità",
         title: "Vetrina per prodotti e territori.",
         description:
-          "Il Grand Prix può diventare contenuto editoriale, leva PR e motore di attenzione qualificata.",
+          "Il Grand Prix diventa contenuto editoriale, leva PR e motore di attenzione qualificata sui terroir del Sud.",
       },
       {
         eyebrow: "Governance",
-        title: "Regole da pubblicare solo se validate.",
+        title: "Categorie, criteri, racconto.",
         description:
-          "Questa sprint evita ogni dato non confermato e prepara una base pronta per la fase successiva.",
+          "La governance del premio mantiene insieme rigore della selezione, categorie chiare e un racconto coerente con la reputazione del progetto.",
       },
     ],
-    verifyNotes: [
-      "Il regolamento ufficiale, le categorie e i criteri di valutazione non sono ancora confermati.",
-      "La meccanica di iscrizione va definita solo dopo approvazione organizzativa.",
-    ],
     metadataDescription:
-      "Scopri il posizionamento del Grand Prix Magna Grecia di Vini Oli Sud. Regolamento e candidature in fase di attivazione.",
+      "Scopri il Grand Prix Magna Grecia di Vini Oli Sud: posizionamento, Albo d’Oro 2025 e percorso di valorizzazione delle eccellenze del Mezzogiorno.",
   },
   "diario-del-sud": {
     eyebrow: "Diario del Sud",
     title: "Diario del Sud",
     description:
-      "Un magazine proprietario che racconta territori, produttori, oli, vini e immaginari mediterranei con una voce autorevole e contemporanea.",
-    ctaLabel: "Esplora le rubriche",
-    ctaHref: "/contatti",
+      "Radar editoriale di Vini Oli Sud: titoli, fonti e segnali dal vino, dall’olio e dall’agroalimentare mediterraneo.",
+    ctaLabel: "Proponi una segnalazione",
+    ctaHref: "/diario-del-sud#proponi-segnalazione",
     summary:
-      "Il Diario del Sud non è un blog riempitivo: deve diventare motore editoriale, asset SEO e strumento di reputazione per l’intero ecosistema del progetto.",
-    pillars: [
-      "Linea editoriale chiara e riconoscibile",
-      "Rubriche capaci di tenere insieme cultura e business",
-      "Base pronta per una futura architettura contenutistica più profonda",
-    ],
-    focusTitle: "Contenuti con valore di marca.",
+      "Il Diario del Sud è un radar editoriale, non un magazine autoreferenziale: ogni voce rimanda alla fonte originale, con una breve nota di contesto firmata Vini Oli Sud.",
+    pillars: generalPositioningPillars,
+    focusTitle: "Una rassegna editoriale del Mezzogiorno.",
     focusIntro:
-      "Questa pagina prepara la futura sezione editoriale e ne definisce il ruolo strategico nel posizionamento del brand.",
+      "Il Diario del Sud raccoglie titoli, fonti e link sul vino, l’olio e l’agroalimentare mediterraneo, con una breve nota editoriale di contesto firmata Vini Oli Sud.",
     sections: [
       {
         eyebrow: "SEO",
         title: "Indicizzazione con senso.",
         description:
-          "I contenuti devono intercettare interesse reale su territori, prodotti e business mediterraneo.",
+          "I contenuti intercettano interesse reale su territori, prodotti e business mediterraneo del Sud.",
       },
       {
         eyebrow: "Marca",
@@ -263,14 +292,14 @@ export const staticPages: Record<string, StaticPageContent> = {
           "Il tone of voice evita burocratese, folklore e imitazioni di fiere generaliste.",
       },
       {
-        eyebrow: "Pipeline",
-        title: "Base per rubriche e longform futuri.",
+        eyebrow: "Rubriche",
+        title: "Cinque chiavi per leggere il Sud.",
         description:
-          "La struttura è pronta per evolvere verso articoli, dossier e serie proprietarie.",
+          "Oro Verde, Calici di Magna Grecia, Radar del Sud, Territori, Business con Anima: cinque rubriche per organizzare la rassegna editoriale.",
       },
     ],
     metadataDescription:
-      "Scopri il Diario del Sud, magazine editoriale di Vini Oli Sud.",
+      "Diario del Sud: il radar editoriale di Vini Oli Sud raccoglie titoli, fonti e segnali dal vino, dall’olio e dall’agroalimentare mediterraneo.",
   },
   media: {
     eyebrow: "Media",
@@ -278,43 +307,37 @@ export const staticPages: Record<string, StaticPageContent> = {
     description:
       "Un’area pensata per giornalisti, redazioni, uffici stampa e stakeholder che hanno bisogno di materiali affidabili, rapidi da consultare e pronti alla pubblicazione.",
     ctaLabel: "Richiedi informazioni media",
-    ctaHref: "/contatti",
-    ctaNote: "Media kit, accrediti e materiali stampa sono in fase di attivazione.",
+    ctaHref: "/contatti?interesse=media#richiesta-informazioni",
+    ctaNote:
+      "La segreteria gestisce richieste di media kit, accrediti e materiali stampa.",
     summary:
-      "La press room deve essere sobria, credibile e immediata: niente iperbole promozionale, sì a chiarezza, asset scaricabili e riferimenti stampa verificati.",
-    pillars: [
-      "Comunicati, immagini e accrediti ben organizzati",
-      "Tono chiaro e pronto per utilizzo editoriale",
-      "Base per futura media room con download e kit ufficiali",
-    ],
-    focusTitle: "Materiali pronti alla pubblicazione.",
+      "La press room di Vini Oli Sud raccoglie materiali, recapiti e riferimenti utili a giornalisti, redazioni e uffici stampa che raccontano il progetto.",
+    pillars: generalPositioningPillars,
+    focusTitle: "Materiali editoriali per la stampa.",
     focusIntro:
-      "In questa sprint creiamo il tono e il contenitore. I file ufficiali entreranno solo quando confermati dall’organizzazione.",
+      "L’area press di Vini Oli Sud raccoglie i contenuti utili a media, redazioni e uffici stampa che vogliono raccontare il progetto in modo coerente.",
     sections: [
       {
         eyebrow: "Stampa",
         title: "Comunicati e note ufficiali.",
         description:
-          "L’area sarà predisposta per aggiornamenti chiari, facilmente citabili e sempre coerenti con i dati validati.",
+          "L’area raccoglie comunicati e note ufficiali del progetto, sempre coerenti con i dati validati.",
       },
       {
         eyebrow: "Asset",
         title: "Immagini e materiali scaricabili.",
         description:
-          "La sezione è pronta per ospitare kit media, logo pack e fotografie approvate.",
+          "Kit media, logo pack e fotografie approvate del progetto Vini Oli Sud.",
       },
       {
         eyebrow: "Accrediti",
         title: "Percorso dedicato ai media.",
         description:
-          "Nelle fasi successive potrà integrare richieste accredito e contatti stampa operativi.",
+          "Le richieste accredito e i contatti stampa operativi passano dai recapiti della segreteria.",
       },
     ],
-    verifyNotes: [
-      "I file scaricabili e i contatti stampa ufficiali dovranno essere inseriti dopo validazione.",
-    ],
     metadataDescription:
-      "Scopri la press room di Vini Oli Sud e richiedi informazioni per media e redazioni. Materiali e accrediti in fase di attivazione.",
+      "Press room Vini Oli Sud: materiali, accrediti e percorso dedicato a giornalisti, redazioni e uffici stampa.",
   },
   contatti: {
     eyebrow: "Contatti",
@@ -322,14 +345,10 @@ export const staticPages: Record<string, StaticPageContent> = {
     description:
       "Recapiti ufficiali per richieste commerciali, accrediti, partnership e comunicazioni stampa relative a Vini Oli Sud.",
     ctaLabel: "Richiedi la Brochure Espositori",
-    ctaHref: "/espositori",
+    ctaHref: "/contatti?interesse=espositori#richiesta-informazioni",
     summary:
       "Il progetto è curato da A.S.D. Napoli Racing Show. Il contatto principale del progetto è info@vinisud.it; la segreteria organizzativa gestisce telefono, email e PEC.",
-    pillars: [
-      "Contatto progetto dedicato a Vini Oli Sud",
-      "Segreteria organizzativa con recapiti certificati",
-      "Dati societari pubblicati per trasparenza",
-    ],
+    pillars: generalPositioningPillars,
     focusTitle: "Percorsi dedicati per audience.",
     focusIntro:
       "Brochure espositori, pass buyer e partnership restano sui rispettivi percorsi; questa scheda concentra i recapiti ufficiali.",

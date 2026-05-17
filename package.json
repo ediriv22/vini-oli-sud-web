@@ -2,11 +2,17 @@
   "name": "vini-oli-sud-web",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20 <23"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "radar:import": "node scripts/import-food-radar.mjs",
+    "radar:import:csv": "node scripts/import-food-radar-csv.mjs",
+    "radar:validate": "node scripts/import-food-radar.mjs --check src/data/foodRadar.generated.json"
   },
   "dependencies": {
     "next": "16.2.6",

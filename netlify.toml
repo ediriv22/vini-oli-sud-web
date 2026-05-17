@@ -1,0 +1,52 @@
+# Configurazione deploy Netlify per Vini Oli Sud.
+#
+# Il sito usa `next build` con `output: "export"` (vedi next.config.ts):
+# produce una cartella `out/` con HTML/CSS/JS statici, identica a quella
+# caricata su Aruba via FTP. Su Netlify serviamo direttamente quella
+# cartella come sito statico, SENZA il plugin Next runtime.
+#
+# IMPORTANTE: se nell'UI di Netlify trovi attivo "@netlify/plugin-nextjs"
+# (Site → Plugins), disinstallalo. Il plugin assume SSR/ISR su funzioni
+# Lambda e non è compatibile con `output: "export"`: continuerebbe a far
+# fallire la build.
+
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--no-audit --no-fund"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# Pretty URL su file statici (Netlify gestisce nativamente i trailing
+# slash, ma esplicitiamo il comportamento per coerenza con Aruba).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+# Header di sicurezza minimi.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Cache lunga per asset versionati di Next.js (filename hash-ed).
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/brand/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"

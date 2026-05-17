@@ -3,13 +3,14 @@ export const mainNavigation = [
   { label: "Espositori", href: "/espositori" },
   { label: "Buyer", href: "/buyer" },
   { label: "Visitatori", href: "/visitatori" },
-  { label: "Grand Prix Prima Edizione", href: "/grand-prix" },
+  { label: "Grand Prix", href: "/grand-prix" },
   { label: "Media", href: "/media" },
 ];
 
 export const headerPrimaryCta = {
   label: "Richiedi la Brochure Espositori",
-  href: "/espositori",
+  shortLabel: "Brochure Espositori",
+  href: "/contatti?interesse=espositori#richiesta-informazioni",
 };
 
 export const footerNavigation = [
@@ -19,7 +20,7 @@ export const footerNavigation = [
 ];
 
 export const footerActions = [
-  { label: "Richiedi la Brochure Espositori", href: "/espositori" },
-  { label: "Richiedi il Pass Buyer", href: "/buyer" },
-  { label: "Scopri il percorso media", href: "/media" },
+  { label: "Richiedi la Brochure Espositori", href: "/contatti?interesse=espositori#richiesta-informazioni" },
+  { label: "Richiedi il Pass Buyer", href: "/contatti?interesse=buyer#richiesta-informazioni" },
+  { label: "Richiedi informazioni media", href: "/contatti?interesse=media#richiesta-informazioni" },
 ];

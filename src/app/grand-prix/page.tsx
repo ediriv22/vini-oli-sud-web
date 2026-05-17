@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/data/site";
 const page = staticPages["grand-prix"];
 
 export const metadata: Metadata = createPageMetadata(
-  "Grand Prix Magna Grecia: riconoscimento in costruzione",
+  "Grand Prix Magna Grecia · Albo d’Oro 2025",
   page.metadataDescription,
 );
 

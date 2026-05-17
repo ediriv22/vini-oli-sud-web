@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import Link from "next/link";
+import LeadMiniForm from "@/components/sections/LeadMiniForm";
 import { createPageMetadata, siteConfig } from "@/data/site";
 
 const { contact, organizer } = siteConfig;
@@ -36,11 +37,30 @@ export default function ContattiPage() {
           Contatti
         </h1>
         <p className="mt-6 max-w-[52ch] text-[1.05rem] leading-[1.68] text-[var(--color-muted)]">
-          Per informazioni commerciali, accrediti, partnership e richieste stampa, puoi contattare la
-          segreteria del progetto.
+          Per informazioni commerciali, accrediti, partnership e richieste stampa, puoi compilare il
+          modulo qui sotto o scrivere direttamente alla segreteria del progetto.
         </p>
 
         <div className="mt-10 grid gap-6">
+          <div
+            id="richiesta-informazioni"
+            className="panel rounded-[2rem] p-6 sm:p-8 scroll-mt-28"
+          >
+            <p className="eyebrow">Richiedi informazioni</p>
+            <h2 className="mt-3 font-display text-[1.85rem] leading-[1.05] text-[var(--color-grove)] sm:text-[2.15rem]">
+              Manifesta interesse al progetto Vini Oli Sud.
+            </h2>
+            <p className="mt-3 text-[0.98rem] leading-relaxed text-[var(--color-muted)]">
+              Indica l’area di interesse e raccontaci brevemente il tuo profilo. La segreteria
+              ricontatta i profili in linea con il progetto.
+            </p>
+            <div className="mt-6">
+              <Suspense fallback={null}>
+                <LeadMiniForm />
+              </Suspense>
+            </div>
+          </div>
+
           <div className="panel rounded-[2rem] p-6 sm:p-8">
             <h2 className="font-ui text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-wine)]">
               Contatto principale Vini Oli Sud

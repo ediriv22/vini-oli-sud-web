@@ -18,7 +18,7 @@ export default function PrivacyPage() {
         </h1>
         <p className="mt-6 text-[1.02rem] leading-[1.68] text-[var(--color-muted)]">
           Questa informativa descrive in modo sintetico come possono essere trattati i dati personali
-          inviati attraverso i recapiti pubblicati sul sito dedicato al progetto Vini Oli Sud.
+          inviati attraverso i recapiti pubblicati sul sito di Vini Oli Sud.
         </p>
 
         <div className="mt-10 space-y-10 text-[0.98rem] leading-[1.72] text-[var(--color-muted)]">
@@ -112,8 +112,8 @@ export default function PrivacyPage() {
           </section>
 
           <p className="rounded-[1.25rem] border border-[rgba(200,167,111,0.22)] bg-[rgba(255,251,245,0.65)] px-4 py-3 text-[0.92rem] leading-relaxed text-[var(--color-muted)]">
-            Informativa redatta per la fase demo pubblica; il testo legale definitivo potrà essere
-            aggiornato prima dell’apertura operativa dei servizi.
+            Informativa aggiornata. Modifiche e integrazioni saranno comunicate prima dell’attivazione
+            di nuovi servizi che comportino trattamenti dati ulteriori.
           </p>
         </div>
       </div>

@@ -2,34 +2,54 @@ import type { Metadata } from "next";
 
 export const siteConfig = {
   name: "Vini Oli Sud",
-  miniTagline: "Le eccellenze della Magna Grecia.",
   description:
     "Sito ufficiale di Vini Oli Sud, salone boutique dedicato a vini, oli e cultura mediterranea nel cuore del Napoli Racing Show.",
   brand: {
-    wordmark: "Vini Oli Sud",
-    subtitle: "Le eccellenze della Magna Grecia.",
+    wordmark: "Vini Sud",
+    subtitle: "Dal Mediterraneo",
     ariaLabel: "Vini Oli Sud, sito ufficiale",
     taglines: {
       primary: "Le Radici del Gusto. L’Adrenalina del Futuro.",
-      secondary: "Motori, Terroir e Passione Mediterranea.",
-      institutional: "Le eccellenze della Magna Grecia.",
-      commercial: "L’Eccellenza del Mezzogiorno Scende in Pista.",
-      agora: "L’Agorà del Sud da Gustare e Vivere.",
+      institutional: "Dal Mediterraneo.",
     },
+    /**
+     * Brand kit vettoriale (v1.0, maggio 2026). Tutti SVG: peso ~5KB ciascuno,
+     * scalabili a qualunque dimensione. Sorgente in
+     * /Users/.../VINISUD/ViniSud_Brand_Kit_Vettoriale/ (vedi
+     * docs/brand-assets-map.md).
+     *
+     * Aggiungere path qui solo se il file esiste già in public/brand/.
+     */
     assets: {
-      logo: "/brand/logo.svg",
-      logoDark: "/brand/logo-dark.svg",
-      logoLight: "/brand/logo-light.svg",
-      logoHorizontal: "/brand/logo-horizontal.png",
-      logoHorizontalCropped: "/brand/logo-horizontal-cropped.png",
-      logoSquare: "/brand/logo-square.png",
-      logoOriginal: "/brand/original-logo.webp",
-      symbolColumnOliveGrape: "/brand/symbol-column-olive-grape.png",
-      coverFacebook: "/brand/cover-facebook.png",
+      // Logo orizzontale "VINI SUD · DAL MEDITERRANEO" — versione
+      // trasparente (testo inchiostro mediterraneo). Adatta a sfondi chiari
+      // come l'header avorio.
+      logoHorizontal: "/brand/logo-orizzontale.svg",
+      // Versione "scuro" — testo avorio su sfondo inchiostro: pensata per
+      // footer / sezioni notturne.
+      logoHorizontalDark: "/brand/logo-orizzontale-scuro.svg",
+      // Variante avorio su sfondo trasparente.
+      logoHorizontalIvory: "/brand/logo-orizzontale-avorio.svg",
+      // Variante mono bianco (overlay su foto scure / watermark).
+      logoHorizontalMonoWhite: "/brand/logo-orizzontale-mono-bianco.svg",
+      // Wordmark essenziale senza filetto né tagline, per spazi compressi.
+      logoWordmark: "/brand/logo-wordmark.svg",
+      // Monogramma "VS" in cerchio oro su blu profondo — usi compatti.
+      monogrammaVS: "/brand/monogramma-vs.svg",
+      // Variante avorio del monogramma.
+      monogrammaVSIvory: "/brand/monogramma-vs-avorio.svg",
+      // Avatar social pronto (monogramma + piccolo wordmark sotto).
+      avatarSocial: "/brand/avatar-social-vs.svg",
+      // Favicon SVG vettoriale (monogramma senza cornice).
+      faviconSvg: "/brand/favicon.svg",
+      // Favicon raster pre-renderizzati dal brand kit.
+      favicon16: "/brand/favicon-16.png",
       favicon32: "/brand/favicon-32.png",
       favicon64: "/brand/favicon-64.png",
-      favicon192: "/brand/favicon-192.png",
+      favicon256: "/brand/favicon-256.png",
       favicon512: "/brand/favicon-512.png",
+      // OpenGraph / Twitter card (1200x630). Asset legacy: idealmente da
+      // rigenerare con il nuovo monogramma.
       ogImage: "/brand/og-image.jpg",
     },
   },
@@ -55,44 +75,47 @@ export const siteConfig = {
     subtitle:
       "Vini Oli Sud unisce vino, olio, cultura mediterranea e business matching nel palcoscenico del Napoli Racing Show. Una piattaforma boutique per produttori, buyer, visitatori e brand premium.",
     actions: [
-      { label: "Richiedi la Brochure Espositori", href: "/espositori" },
-      { label: "Richiedi il Pass Buyer", href: "/buyer" },
-      { label: "Esplora il Programma", href: "/evento" },
+      { label: "Richiedi la Brochure Espositori", href: "/contatti?interesse=espositori#richiesta-informazioni" },
+      { label: "Richiedi il Pass Buyer", href: "/contatti?interesse=buyer#richiesta-informazioni" },
     ],
     signals: [],
   },
   audiences: [
     {
       eyebrow: "Espositori",
+      shortLabel: "Espositori",
       title: "Per chi produce eccellenza",
       description:
-        "Cantine, frantoi e consorzi trovano una vetrina premium per incontrare buyer, operatori e un pubblico ad alto valore.",
+        "Porta la tua azienda in un contesto premium tra degustazioni, networking e visibilità.",
       ctaLabel: "Richiedi la Brochure Espositori",
-      href: "/espositori",
+      href: "/contatti?interesse=espositori#richiesta-informazioni",
     },
     {
-      eyebrow: "Buyer",
+      eyebrow: "Buyer / Operatori",
+      shortLabel: "Buyer",
       title: "Per chi seleziona il Sud",
       description:
-        "Un percorso pensato per Ho.Re.Ca., distributori, importatori e operatori alla ricerca di nuove etichette, oli e territori da portare sul mercato.",
+        "Accedi a produttori selezionati, incontri B2B e percorsi dedicati agli operatori.",
       ctaLabel: "Richiedi il Pass Buyer",
-      href: "/buyer",
+      href: "/contatti?interesse=buyer#richiesta-informazioni",
     },
     {
       eyebrow: "Visitatori",
+      shortLabel: "Visitatori",
       title: "Per chi vive l’esperienza",
       description:
-        "Degustazioni, cultura mediterranea, talk e show cooking nel dialogo unico tra gusto, mare e motori.",
-      ctaLabel: "Esplora il Programma",
-      href: "/visitatori",
+        "Vivi degustazioni, show cooking e cultura del Sud nel cuore di Napoli.",
+      ctaLabel: "Acquista il Carnet Degustazione",
+      href: "/visitatori#richiesta-carnet",
     },
     {
       eyebrow: "Media e Partner",
+      shortLabel: "Media",
       title: "Per chi racconta e valorizza il progetto",
       description:
-        "Materiali stampa, asset di brand e opportunità di co-branding per media, PR e partner che vogliono presidiare il racconto del Mezzogiorno contemporaneo.",
-      ctaLabel: "Scopri il percorso media",
-      href: "/media",
+        "Scarica materiali, comunicati e asset ufficiali pronti per la pubblicazione.",
+      ctaLabel: "Scarica il Media Kit",
+      href: "/contatti?interesse=media#richiesta-informazioni",
     },
   ],
   concept: {
@@ -182,8 +205,45 @@ export const siteConfig = {
   finalCta: {
     title: "Porta il tuo brand nel nuovo palcoscenico del gusto mediterraneo.",
     actions: [
-      { label: "Richiedi la Brochure Espositori", href: "/espositori" },
-      { label: "Proponi una Partnership", href: "/contatti" },
+      { label: "Richiedi la Brochure Espositori", href: "/contatti?interesse=espositori#richiesta-informazioni" },
+      { label: "Proponi una Partnership", href: "/contatti?interesse=partnership#richiesta-informazioni" },
+    ],
+  },
+  edition: {
+    label: "Edizione 2026",
+    city: "Napoli",
+    context: "In dialogo con Napoli Racing Show / Gran Premio di Napoli",
+  },
+  grandPrixHighlight: {
+    eyebrow: "Grand Prix",
+    title: "Albo d’Oro 2025",
+    subtitle:
+      "Un percorso di valorizzazione dedicato alle eccellenze del vino e dell’olio del Mezzogiorno.",
+    process: [
+      {
+        number: "01",
+        title: "Selezione",
+        description:
+          "Le etichette e i prodotti vengono presentati come espressione di territorio, filiera e identità.",
+      },
+      {
+        number: "02",
+        title: "Degustazione",
+        description:
+          "Il percorso valorizza la lettura sensoriale e culturale delle eccellenze del Mezzogiorno.",
+      },
+      {
+        number: "03",
+        title: "Riconoscimento",
+        description:
+          "Il Grand Prix offre visibilità e racconto alle produzioni che interpretano meglio lo spirito del Sud.",
+      },
+    ],
+    featuredAwards: [
+      "Miglior Spumante",
+      "Miglior Vino Bianco",
+      "Miglior Vino Rosso",
+      "Miglior Vino Rosato",
     ],
   },
 } as const;
