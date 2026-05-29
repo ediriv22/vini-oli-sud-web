@@ -87,7 +87,7 @@ export const siteConfig = {
       title: "Per chi produce eccellenza",
       description:
         "Porta la tua azienda in un contesto premium tra degustazioni, networking e visibilità.",
-      ctaLabel: "Richiedi la Brochure Espositori",
+      ctaLabel: "Brochure Espositori",
       href: "/contatti?interesse=espositori#richiesta-informazioni",
     },
     {
@@ -96,7 +96,7 @@ export const siteConfig = {
       title: "Per chi seleziona il Sud",
       description:
         "Accedi a produttori selezionati, incontri B2B e percorsi dedicati agli operatori.",
-      ctaLabel: "Richiedi il Pass Buyer",
+      ctaLabel: "Pass Buyer",
       href: "/contatti?interesse=buyer#richiesta-informazioni",
     },
     {
@@ -105,7 +105,7 @@ export const siteConfig = {
       title: "Per chi vive l’esperienza",
       description:
         "Vivi degustazioni, show cooking e cultura del Sud nel cuore di Napoli.",
-      ctaLabel: "Acquista il Carnet Degustazione",
+      ctaLabel: "Carnet Degustazione",
       href: "/visitatori#richiesta-carnet",
     },
     {
@@ -114,7 +114,7 @@ export const siteConfig = {
       title: "Per chi racconta e valorizza il progetto",
       description:
         "Scarica materiali, comunicati e asset ufficiali pronti per la pubblicazione.",
-      ctaLabel: "Scarica il Media Kit",
+      ctaLabel: "Media Kit",
       href: "/contatti?interesse=media#richiesta-informazioni",
     },
   ],

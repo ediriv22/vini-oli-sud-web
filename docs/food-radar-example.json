@@ -1,0 +1,22 @@
+{
+  "_comment": "ESEMPIO NON UTILIZZATO IN PRODUZIONE. Documenta solo il formato atteso da src/data/foodRadar.ts. Le URL example.com sono placeholder fittizi: NON pubblicarle.",
+  "items": [
+    {
+      "id": "example-001",
+      "category": "Radar del Sud",
+      "title": "Esempio: titolo della segnalazione editoriale",
+      "source": "Esempio Testata",
+      "date": "2025-01-01",
+      "url": "https://example.com/articolo-esempio",
+      "note": "Esempio di nota editoriale breve: una riga che spiega perché la segnalazione interessa il radar Vini Oli Sud."
+    },
+    {
+      "id": "example-002",
+      "category": "Oro Verde",
+      "title": "Esempio: secondo titolo di prova",
+      "source": "Esempio Consorzio",
+      "url": "https://example.com/secondo-articolo",
+      "note": "Esempio di voce senza data, per documentare che il campo date è opzionale."
+    }
+  ]
+}

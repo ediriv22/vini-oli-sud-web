@@ -75,7 +75,7 @@ export default function InternalPageTemplate({
                   href={page.externalReference.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group font-ui mt-4 inline-flex items-center gap-2 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-wine)] transition-colors duration-300 ease-out hover:text-[var(--color-wine-strong)] focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[rgba(107,30,30,0.5)]"
+                  className="group font-ui mt-4 inline-flex items-center gap-2 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-wine)] transition-colors duration-300 ease-out hover:text-[var(--color-wine-strong)] focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#6b1e1e]"
                 >
                   {page.externalReference.ctaLabel}
                   <span

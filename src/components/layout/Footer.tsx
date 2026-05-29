@@ -25,7 +25,7 @@ export default function Footer() {
         className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[rgba(176,141,87,0.55)] to-transparent"
       />
 
-      <div className="section-shell grid gap-14 py-16 sm:gap-16 sm:py-20 lg:grid-cols-[1.15fr_0.7fr_1.05fr] lg:gap-16 lg:py-24">
+      <div className="section-shell grid gap-12 py-14 sm:gap-14 sm:py-18 md:grid-cols-2 md:gap-14 lg:grid-cols-[1.15fr_0.7fr_1.05fr] lg:gap-16 lg:py-24">
         <div>
           <BrandLogo variant="horizontal" />
           <p className="font-ui mt-8 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[var(--color-sand-strong)]">
@@ -48,7 +48,7 @@ export default function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="inline-flex min-h-[1.75rem] items-center text-[var(--color-ink-strong)] transition-colors duration-200 ease-out hover:text-[var(--color-wine)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[rgba(107,30,30,0.5)]"
+                  className="inline-flex min-h-[1.75rem] items-center text-[var(--color-ink-strong)] transition-colors duration-200 ease-out hover:text-[var(--color-wine)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6b1e1e]"
                 >
                   {item.label}
                 </Link>

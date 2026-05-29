@@ -1,0 +1,55 @@
+# Apache configuration for Vini Oli Sud on Aruba hosting
+# Cache headers and security settings
+
+# Enable gzip compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Browser caching — static assets (immutable)
+<FilesMatch "\.(woff2?|ttf|otf|eot|js|css)$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+  Header set Content-Encoding gzip
+</FilesMatch>
+
+# Images cache
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg)$">
+  Header set Cache-Control "public, max-age=2592000"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/gif "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+</FilesMatch>
+
+# HTML pages — revalidate every 1 hour
+<FilesMatch "\.html$">
+  Header set Cache-Control "public, max-age=3600, must-revalidate"
+</FilesMatch>
+
+# Security headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# Rewrite rules for SPA routing (if needed)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Enable GZIP for SVG
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz
+
+# Set proper charset
+AddDefaultCharset UTF-8

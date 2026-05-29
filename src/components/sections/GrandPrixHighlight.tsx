@@ -39,7 +39,7 @@ export default function GrandPrixHighlight() {
             <div className="mt-8">
               <Link
                 href="/grand-prix"
-                className="group font-ui inline-flex items-center gap-2 text-[0.82rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-wine)] transition-colors duration-300 ease-out hover:text-[var(--color-wine-strong)] focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[rgba(107,30,30,0.5)]"
+                className="group font-ui inline-flex items-center gap-2 text-[0.82rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-wine)] transition-colors duration-300 ease-out hover:text-[var(--color-wine-strong)] focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#6b1e1e]"
               >
                 Esplora l’Albo d’Oro
                 <span
@@ -89,7 +89,7 @@ export default function GrandPrixHighlight() {
             {featured.map((winner) => (
               <li
                 key={winner.award}
-                className="group relative flex flex-col items-center rounded-[1.1rem] border border-[rgba(176,141,87,0.16)] bg-[rgba(255,251,244,0.55)] px-4 py-6 transition-[border-color,background-color,transform] duration-300 ease-out hover:border-[rgba(176,141,87,0.3)] hover:bg-[rgba(255,251,244,0.7)] motion-reduce:transition-none sm:px-5 sm:py-7"
+                className="group relative aspect-square flex flex-col items-center justify-center rounded-[1.1rem] border border-[rgba(176,141,87,0.16)] bg-[rgba(255,251,244,0.55)] px-4 py-6 transition-[border-color,background-color,transform] duration-300 ease-out hover:border-[rgba(176,141,87,0.3)] hover:bg-[rgba(255,251,244,0.7)] motion-reduce:transition-none sm:px-5 sm:py-7"
               >
                 <div className="relative z-10 h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem]">
                   <Image

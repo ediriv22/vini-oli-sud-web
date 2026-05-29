@@ -167,7 +167,7 @@ export default function VisitorCarnetForm() {
           required
           checked={privacy}
           onChange={(event) => setPrivacy(event.target.checked)}
-          className="mt-1 h-[1.1rem] w-[1.1rem] flex-shrink-0 cursor-pointer rounded-[0.25rem] border-2 border-[rgba(176,141,87,0.45)] bg-white accent-[var(--color-wine)] checked:border-[var(--color-wine)] checked:bg-[var(--color-wine)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[rgba(107,30,30,0.5)]"
+          className="mt-1 h-[1.1rem] w-[1.1rem] flex-shrink-0 cursor-pointer rounded-[0.25rem] border-2 border-[rgba(176,141,87,0.45)] bg-white accent-[var(--color-wine)] checked:border-[var(--color-wine)] checked:bg-[var(--color-wine)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6b1e1e]"
         />
         <span>
           Accetto il trattamento dei dati come descritto nella{" "}

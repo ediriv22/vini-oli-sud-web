@@ -45,7 +45,7 @@ export default function SectionHeader({
         {title}
       </h2>
       {intro ? (
-        <p className="mt-5 max-w-[64ch] text-[1rem] leading-7 text-[var(--color-muted)] sm:text-[1.04rem] sm:leading-[1.7]">
+        <p className="mt-5 max-w-[64ch] text-[0.98rem] leading-[1.65] text-[var(--color-muted)] sm:text-[1.02rem] sm:leading-[1.7]">
           {intro}
         </p>
       ) : null}

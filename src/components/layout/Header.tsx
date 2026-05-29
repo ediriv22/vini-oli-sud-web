@@ -153,7 +153,7 @@ export default function Header() {
           : "bg-[rgba(244,237,224,0.72)] backdrop-blur-xl supports-[backdrop-filter]:bg-[rgba(244,237,224,0.6)]",
       )}
     >
-      <div className="section-shell grid min-h-[var(--site-header-height)] grid-cols-[1fr_auto_1fr] items-center gap-3 py-2 sm:py-2.5 lg:gap-6 lg:py-3">
+      <div className="section-shell grid min-h-[var(--site-header-height)] grid-cols-[1fr_auto_1fr] items-center gap-2 py-2 sm:gap-4 sm:py-2.5 lg:gap-6 lg:py-3">
         {/* Colonna sinistra: spacer per mantenere il logo centrato. */}
         <div aria-hidden="true" />
 
@@ -176,7 +176,7 @@ export default function Header() {
             aria-controls="site-mobile-nav"
             aria-label={isOpen ? "Chiudi menu" : "Apri menu"}
             className={cn(
-              "inline-flex h-11 w-11 items-center justify-center rounded-[2px] border border-transparent bg-transparent p-0 transition-colors duration-200 ease-out motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[rgba(107,30,30,0.55)]",
+              "inline-flex h-11 w-11 items-center justify-center rounded-[2px] border border-transparent bg-transparent p-0 transition-colors duration-200 ease-out motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6b1e1e]",
               overDarkHero
                 ? "text-[var(--color-ivory)] hover:bg-white/15"
                 : "text-[var(--color-ink-strong)] hover:bg-[rgba(176,141,87,0.18)]",
@@ -235,7 +235,7 @@ export default function Header() {
           <nav
             id="site-mobile-nav"
             aria-label="Navigazione principale"
-            className="section-shell flex flex-col gap-1.5 py-4 sm:py-5"
+            className="section-shell flex flex-col gap-2 py-4 sm:gap-2.5 sm:py-5"
             {...(!isOpen ? { inert: true } : {})}
           >
             {mainNavigation.map((item) => {
@@ -248,7 +248,7 @@ export default function Header() {
                   aria-current={active ? "page" : undefined}
                   className={cn(
                     "font-ui rounded-[2px] border-l-2 px-4 py-3 text-[0.86rem] font-semibold uppercase tracking-[0.10em] transition-[color,background-color,border-color] duration-300 ease-out motion-reduce:duration-150 min-h-11",
-                    "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[rgba(107,30,30,0.5)]",
+                    "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6b1e1e]",
                     active
                       ? "border-[rgba(176,141,87,0.7)] bg-white/70 text-[var(--color-ink-strong)]"
                       : "border-transparent bg-transparent text-[var(--color-muted)] hover:border-[rgba(176,141,87,0.4)] hover:bg-white/60 hover:text-[var(--color-ink-strong)]",

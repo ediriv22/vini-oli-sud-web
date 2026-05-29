@@ -23,7 +23,7 @@ export default function CtaBand() {
       className="section-flow section-space-lg"
     >
       <div className="section-shell">
-        <div className="relative mx-auto max-w-[68rem] py-12 sm:py-14 lg:py-16">
+        <div className="relative mx-auto max-w-[68rem] py-10 sm:py-12 md:py-14 lg:py-16">
           {/* Hairline oro sopra e sotto: rifinitura editoriale */}
           <span
             aria-hidden="true"
@@ -34,7 +34,7 @@ export default function CtaBand() {
             className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[rgba(176,141,87,0.32)] to-transparent"
           />
 
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
+          <div className="grid gap-8 sm:gap-10 md:gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-end lg:gap-14">
             <div>
               <p className="font-ui text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-sand-strong)]">
                 Espositori e Buyer
@@ -70,7 +70,7 @@ export default function CtaBand() {
               <div className="mt-6 flex justify-start lg:justify-end">
                 <Link
                   href="/contatti?interesse=partnership#richiesta-informazioni"
-                  className="group font-ui inline-flex items-center gap-2 text-[0.82rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-wine)] transition-colors duration-300 ease-out hover:text-[var(--color-wine-strong)] focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[rgba(107,30,30,0.5)]"
+                  className="group font-ui inline-flex items-center gap-2 text-[0.82rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-wine)] transition-colors duration-300 ease-out hover:text-[var(--color-wine-strong)] focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#6b1e1e]"
                 >
                   Proponi una Partnership
                   <span

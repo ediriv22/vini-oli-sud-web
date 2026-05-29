@@ -73,7 +73,7 @@ export default function Card({
     "transition-[transform,box-shadow,border-color] duration-300 ease-out motion-reduce:duration-150 motion-reduce:transition-[border-color,box-shadow]",
     themeClasses[theme],
     href
-      ? "block focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[rgba(107,30,30,0.5)] motion-safe:hover:-translate-y-[2px] motion-reduce:hover:translate-y-0"
+      ? "block focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#6b1e1e] motion-safe:hover:-translate-y-[2px] motion-reduce:hover:translate-y-0"
       : undefined,
     className,
   );

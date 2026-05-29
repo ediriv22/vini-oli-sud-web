@@ -34,14 +34,14 @@ export default function AudienceGateway() {
           intro="Quattro accessi diversi, un'unica esperienza mediterranea. Entra dal varco più vicino al tuo obiettivo."
         />
 
-        <ul className="mt-12 grid gap-12 sm:mt-14 sm:gap-14 lg:mt-16 lg:grid-cols-4 lg:gap-10 xl:gap-12">
+        <ul className="mt-12 grid gap-[clamp(1.5rem,4vw,2.5rem)] sm:mt-14 lg:mt-16 lg:grid-cols-4">
           {audienceRoutes.map((audience, index) => {
             const isPrimary = index === 0;
 
             return (
               <li
                 key={audience.href}
-                className="group relative flex h-full flex-col pt-6"
+                className="group relative flex h-full flex-col pt-6 pb-4 min-h-[360px]"
               >
                 {/* Hairline oro come rifinitura, non bordo card */}
                 <span
@@ -75,14 +75,14 @@ export default function AudienceGateway() {
                       href={audience.href}
                       size="md"
                       variant="primary"
-                      className="w-full justify-center sm:w-auto"
+                      className="w-full"
                     >
                       {audience.ctaLabel}
                     </Button>
                   ) : (
                     <a
                       href={audience.href}
-                      className="group/cta font-ui inline-flex items-center gap-2 text-[0.82rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-wine)] transition-colors duration-300 ease-out hover:text-[var(--color-wine-strong)] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[rgba(107,30,30,0.5)]"
+                      className="group/cta font-ui inline-flex items-center gap-2 text-[0.82rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-wine)] transition-colors duration-300 ease-out hover:text-[var(--color-wine-strong)] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#6b1e1e]"
                     >
                       {audience.ctaLabel}
                       <span

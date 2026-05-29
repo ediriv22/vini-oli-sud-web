@@ -28,7 +28,7 @@
   --color-stone: #ece2cf;      /* Pietra leggermente più calda */
   --color-ink: #1f1a17;        /* Carbone caldo (testo corpo) */
   --color-ink-strong: #14100c; /* Carbone profondo (H1 / display) */
-  --color-muted: #6a5b56;      /* Testo secondario su avorio (AA: 5.6:1) */
+  --color-muted: #564d48;      /* Testo secondario su avorio (AA: 6.8:1) */
   --color-line: rgba(176, 141, 87, 0.18);       /* Hairline oro tenue */
   --color-line-strong: rgba(176, 141, 87, 0.32);
   --shadow-soft: 0 10px 28px rgba(42, 32, 23, 0.06);
@@ -313,9 +313,10 @@ button {
 
 /* Sezioni: 96–140 desktop, 72–104 tablet, 56–80 mobile.
  * Padding fluido via clamp così non servono breakpoint extra
- * e si elimina il rischio di "sezioni troppo attaccate". */
+ * e si elimina il rischio di "sezioni troppo attaccate".
+ * Aggiustati per coerenza mobile: min 56px, max 140px. */
 .section-space {
-  padding-block: clamp(3.5rem, 7.5vw, 8.75rem);
+  padding-block: clamp(3.5rem, 8vw, 8.75rem);
 }
 
 .section-space-lg {
@@ -323,7 +324,7 @@ button {
 }
 
 .section-space-sm {
-  padding-block: clamp(2.5rem, 5vw, 5rem);
+  padding-block: clamp(2.5rem, 5.5vw, 5rem);
 }
 
 /* Continuous warm-ivory background flow: keep sections feeling like one editorial page. */

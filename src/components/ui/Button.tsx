@@ -55,9 +55,9 @@ const variantClasses: Record<ButtonVariant, string> = {
  *  - tracking 0.08em (era 0.12em — sembrava da fiera generica)
  */
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: "h-11 min-h-11 px-5 text-[0.82rem]",
-  md: "h-12 min-h-12 px-6 text-[0.88rem] sm:h-[3.25rem] sm:min-h-[3.25rem] sm:px-7 sm:text-[0.92rem]",
-  lg: "h-[3.25rem] min-h-[3.25rem] px-6 text-[0.92rem] sm:h-14 sm:min-h-14 sm:px-8 sm:text-[0.98rem]",
+  sm: "h-11 min-h-11 px-5 text-[0.82rem] sm:h-12 sm:min-h-12",
+  md: "h-12 min-h-12 px-6 text-[0.88rem] sm:px-7 sm:text-[0.92rem] md:h-[3.25rem] md:min-h-[3.25rem]",
+  lg: "h-[3.25rem] min-h-[3.25rem] px-6 text-[0.92rem] sm:px-8 sm:text-[0.98rem] md:h-14 md:min-h-14",
 };
 
 export default function Button({
@@ -74,7 +74,7 @@ export default function Button({
     /* Base CTA: padding stabile, font UI semibold, tracking misurato
      * (era 0.12em → ora 0.08em, meno "fiera generica"), focus anello
      * caldo non blu. Touch target garantito da altezza ≥ 44px. */
-    "font-ui inline-flex items-center justify-center gap-2 rounded-[2px] font-semibold uppercase tracking-[0.08em] leading-none whitespace-nowrap transition-[transform,background-color,border-color,box-shadow,color] duration-300 ease-out motion-reduce:duration-150 motion-reduce:transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[rgba(107,30,30,0.55)] disabled:cursor-not-allowed disabled:opacity-60",
+    "font-ui inline-flex items-center justify-center gap-2 rounded-[2px] font-semibold uppercase tracking-[0.08em] leading-tight transition-[transform,background-color,border-color,box-shadow,color] duration-300 ease-out motion-reduce:duration-150 motion-reduce:transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#6b1e1e] disabled:cursor-not-allowed disabled:opacity-60",
     variantClasses[variant],
     sizeClasses[size],
     className,

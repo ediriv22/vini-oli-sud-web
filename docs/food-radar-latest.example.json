@@ -1,0 +1,17 @@
+[
+  {
+    "category": "Radar del Sud",
+    "title": "Esempio: prima voce di prova del Food Radar",
+    "source": "Esempio Testata",
+    "date": "2026-05-16",
+    "url": "https://example.com/articolo-uno",
+    "note": "Esempio di nota editoriale: una riga per spiegare perché la voce è rilevante per Vini Oli Sud."
+  },
+  {
+    "category": "Oro Verde",
+    "title": "Esempio: seconda voce di prova senza data",
+    "source": "Esempio Consorzio",
+    "url": "https://example.com/articolo-due",
+    "note": "Esempio di item senza campo date, per documentare che il campo è opzionale."
+  }
+]

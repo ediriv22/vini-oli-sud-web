@@ -20,7 +20,7 @@ export default function ConceptSection() {
       className="section-flow section-soft-enter section-space"
     >
       <div className="section-shell">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start lg:gap-14">
+        <div className="grid gap-8 md:gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start lg:gap-12">
           <div>
             <div className="flex items-center gap-3">
               <span
@@ -37,7 +37,7 @@ export default function ConceptSection() {
             </h2>
           </div>
 
-          <p className="max-w-none text-[1.02rem] leading-[1.7] text-[var(--color-muted)] lg:max-w-[42ch] lg:pt-3">
+          <p className="max-w-[70ch] text-[1.02rem] leading-[1.7] text-[var(--color-muted)] lg:max-w-[42ch] lg:pt-3">
             {siteConfig.concept.description}
           </p>
         </div>

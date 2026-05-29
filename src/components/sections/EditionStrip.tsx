@@ -23,10 +23,10 @@ export default function EditionStrip() {
   return (
     <section
       aria-label="Coordinate dell’edizione"
-      className="section-flow relative pt-20 pb-12 sm:pt-24 sm:pb-14 lg:pt-28 lg:pb-16"
+      className="section-flow relative pt-16 pb-10 sm:pt-20 sm:pb-12 lg:pt-24 lg:pb-14"
     >
       <div className="section-shell">
-        <div className="grid gap-6 sm:gap-8 lg:grid-cols-[auto_1fr_auto] lg:items-baseline lg:gap-12">
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-[auto_1fr] md:items-baseline md:gap-10 lg:grid-cols-[auto_1fr_auto] lg:gap-12">
           <div className="flex items-center gap-3">
             <span
               className="h-px w-8 bg-[rgba(176,141,87,0.65)]"
