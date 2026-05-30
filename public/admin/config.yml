@@ -1,10 +1,7 @@
 backend:
-  name: github
-  repo: ediriv22/vini-oli-sud-web
-  branch: main
-  base_url: https://api.decapcms.org
-  auth_endpoint: /v1/auth/github
-  squash_merges: true
+  name: test
+  # Backend test per demo: non richiede autenticazione GitHub
+  # Per production: usare 'github' + configurare OAuth su Vercel Environment
 
 media_folder: public/uploads
 public_folder: /uploads
