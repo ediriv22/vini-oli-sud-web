@@ -1,7 +1,19 @@
 backend:
-  name: test
-  # Backend test per demo: non richiede autenticazione GitHub
-  # Per production: usare 'github' + configurare OAuth su Vercel Environment
+  name: test-repo
+  # MODALITA' DEMO: backend "test-repo" — nessun login richiesto.
+  # L'interfaccia e i campi sono identici alla versione reale; le modifiche
+  # restano locali (non pubblicano). Ideale per mostrare a stakeholder/segretaria.
+  #
+  # PER PUBBLICARE DAVVERO (Vercel o Aruba): sostituire il blocco backend con:
+  #   backend:
+  #     name: github
+  #     repo: ediriv22/vini-oli-sud-web
+  #     branch: main
+  #     base_url: <URL del provider OAuth>   # vedi docs/CMS_SETUP.md
+  # Il resto del file (collections) resta identico.
+
+site_url: https://vini-oli-sud-web.vercel.app
+logo_url: https://vini-oli-sud-web.vercel.app/brand/logo-orizzontale.svg
 
 media_folder: public/uploads
 public_folder: /uploads
