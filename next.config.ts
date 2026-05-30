@@ -1,16 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Export statico per deploy su Aruba Hosting Linux: produce out/.
-  // Caricamento via FTP/SFTP nella webroot del piano.
-  output: "export",
+  // Server runtime abilitato per Vercel (CMS Decap richiede runtime server).
+  // Per deploy statico su Aruba: riabilitare output: "export" + images.unoptimized + trailingSlash.
 
-  // L'optimization Image di Next richiede un server Node a runtime: in
-  // static export non è disponibile. Si serve la sorgente as-is.
-  images: { unoptimized: true },
+  // Image optimization disabilitato per staticexport compatibility (riabilitare se server runtime).
+  // images: { unoptimized: true },
 
-  // Pretty URL su Apache: ogni route diventa <route>/index.html.
-  trailingSlash: true,
+  // Pretty URL: disabilitato su server runtime (Vercel usa /.next/static/).
+  // trailingSlash: true,
 };
 
 export default nextConfig;
