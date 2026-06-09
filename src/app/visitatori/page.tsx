@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Card from "@/components/ui/Card";
 import SectionHeader from "@/components/ui/SectionHeader";
 import VisitorCarnetForm from "@/components/forms/VisitorCarnetForm";
+import PageRichSections from "@/components/sections/PageRichSections";
 import { staticPages } from "@/data/pages";
 import { createPageMetadata } from "@/data/site";
 
@@ -98,6 +99,10 @@ export default function VisitatoriPage() {
           </div>
         </div>
       </section>
+
+      {page.richSections?.length ? (
+        <PageRichSections sections={page.richSections} />
+      ) : null}
 
       {page.verifyNotes?.length ? (
         <section className="section-space">

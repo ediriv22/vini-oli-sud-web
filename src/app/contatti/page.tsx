@@ -95,12 +95,17 @@ export default function ContattiPage() {
                 </span>
               </ContactRow>
               <ContactRow label="Email">
-                <Link
-                  href={`mailto:${organizer.email}`}
-                  className="text-[var(--color-grove)] underline decoration-[rgba(200,167,111,0.4)] underline-offset-[0.2em] hover:decoration-[var(--color-wine)]"
-                >
-                  {organizer.email}
-                </Link>
+                <span className="flex flex-wrap gap-x-3 gap-y-1">
+                  {[organizer.email, organizer.emailAlt].map((mail) => (
+                    <Link
+                      key={mail}
+                      href={`mailto:${mail}`}
+                      className="text-[var(--color-grove)] underline decoration-[rgba(200,167,111,0.4)] underline-offset-[0.2em] hover:decoration-[var(--color-wine)]"
+                    >
+                      {mail}
+                    </Link>
+                  ))}
+                </span>
               </ContactRow>
               <ContactRow label="PEC">
                 <Link

@@ -11,6 +11,29 @@ export type StaticPageExternalReference = {
   url: string;
 };
 
+/**
+ * Blocchi di contenuto ricco per le sezioni estese (es. Espositori, Sponsor,
+ * Visitatori, Eventi Collaterali). Pensati per testi lunghi, liste puntate,
+ * CTA verso moduli e griglie di sotto-eventi, senza rompere lo schema base.
+ */
+export type StaticPageBlock =
+  | { kind: "paragraph"; text: string }
+  | { kind: "list"; intro?: string; items: string[] }
+  | { kind: "cta"; label: string; href: string }
+  | { kind: "note"; text: string }
+  | { kind: "highlight"; title: string; lines: string[] }
+  | {
+      kind: "cards";
+      items: Array<{ icon?: string; title: string; description: string }>;
+    };
+
+export type StaticPageRichSection = {
+  eyebrow: string;
+  title: string;
+  intro?: string;
+  blocks: StaticPageBlock[];
+};
+
 export type StaticPageContent = {
   eyebrow: string;
   title: string;
@@ -29,6 +52,8 @@ export type StaticPageContent = {
   }>;
   verifyNotes?: string[];
   externalReference?: StaticPageExternalReference;
+  /** Sezioni estese con contenuto ricco, rese sotto le card di focus. */
+  richSections?: StaticPageRichSection[];
   metadataDescription: string;
 };
 
@@ -78,7 +103,7 @@ export const staticPages: Record<string, StaticPageContent> = {
     ctaHref: "/contatti?interesse=visitatori#richiesta-informazioni",
     ctaNote: "Per manifestare interesse e ricevere aggiornamenti, scrivi alla segreteria dalla pagina contatti.",
     summary:
-      "Vini Oli Sud unisce il racconto del gusto mediterraneo, la cultura del vino e dell'olio del Sud Italia con l'energia e la visibilità del Napoli Racing Show. Un palcoscenico unico dove produttori, buyer e visitatori si incontrano in un contesto premium e distintivo.",
+      "Vini Oli Sud unisce il racconto del gusto mediterraneo, la cultura del vino e dell'olio del Sud Italia con l'energia e la visibilità del Napoli Racing Show. Un palcoscenico unico dove produttori, buyer e visitatori si incontrano in un contesto premium e distintivo. Vini e Oli Sud ha inoltre avviato una collaborazione con Veronafiere, ente organizzatore del Vinitaly.",
     pillars: generalPositioningPillars,
     externalReference: {
       eyebrow: "Approfondimento istituzionale",
@@ -112,6 +137,186 @@ export const staticPages: Record<string, StaticPageContent> = {
       },
     ],
     verifyNotes: [],
+    richSections: [
+      {
+        eyebrow: "Collaborazione istituzionale",
+        title: "Una nuova alleanza con Veronafiere.",
+        blocks: [
+          {
+            kind: "paragraph",
+            text: "Vini e Oli Sud ha avviato una collaborazione con Veronafiere, ente organizzatore del Vinitaly. Un dialogo che rafforza il posizionamento del progetto nel circuito nazionale del vino e apre nuove opportunità di visibilità per i terroir del Mezzogiorno.",
+          },
+        ],
+      },
+      {
+        eyebrow: "Espositori",
+        title: "Partecipa come Espositore Ufficiale.",
+        intro:
+          "Partecipa come Espositore Ufficiale alla II Edizione di Vini e Oli della Magna Grecia, la grande rassegna dedicata alle eccellenze enogastronomiche del Mezzogiorno, in programma dal 27 al 29 novembre 2026 nella prestigiosa cornice del Lungomare di Napoli.",
+        blocks: [
+          {
+            kind: "paragraph",
+            text: "L'evento, organizzato nell'ambito del Gran Premio di Napoli – Napoli Racing Show, in collaborazione con l'Assessorato all'Agricoltura della Regione Campania, rappresenta una straordinaria opportunità per promuovere i propri prodotti davanti a migliaia di visitatori, operatori del settore, giornalisti, buyer, istituzioni e appassionati.",
+          },
+          {
+            kind: "list",
+            intro: "Gli espositori potranno:",
+            items: [
+              "partecipare alle Masterclass e alle degustazioni guidate;",
+              "concorrere ai Gran Prix Vini e Oli della Magna Grecia, con premi assegnati sia da giurie di esperti sia dal pubblico;",
+              "prendere parte agli incontri B2B e agli eventi di networking;",
+              "presentare le proprie eccellenze in una delle vetrine più prestigiose del Sud Italia;",
+              "partecipare agli eventi speciali dedicati a Wine & Food, Wine & Motors, Wine & Cigars, Wine & Watches, Wine & Cinema e alle altre iniziative collaterali della manifestazione.",
+            ],
+          },
+          {
+            kind: "paragraph",
+            text: "Per richiedere la partecipazione è necessario rivolgersi all'Assessorato all'Agricoltura della Regione Campania compilando l'apposito modulo di adesione.",
+          },
+          {
+            kind: "cta",
+            label: "Clicca qui per compilare il modulo di partecipazione",
+            href: "/contatti?interesse=espositori#richiesta-informazioni",
+          },
+          {
+            kind: "note",
+            text: "È inoltre previsto un piccolo contributo organizzativo obbligatorio da versare alla Segreteria della manifestazione, destinato alla copertura dei servizi comuni, tra cui allestimenti, vigilanza, pulizia, assistenza tecnica, energia elettrica e servizi logistici.",
+          },
+        ],
+      },
+      {
+        eyebrow: "Sponsor e Partner",
+        title: "Associa il tuo marchio a un palcoscenico mediterraneo.",
+        intro:
+          "Associare il proprio marchio a Vini e Oli della Magna Grecia significa entrare a far parte di una delle più prestigiose manifestazioni dedicate alle eccellenze del Mezzogiorno, ospitata nella straordinaria cornice del Lungomare di Napoli e inserita nel programma del Gran Premio di Napoli – Napoli Racing Show.",
+        blocks: [
+          {
+            kind: "paragraph",
+            text: "Un evento unico che unisce enogastronomia, turismo, cultura, motorsport, networking, spettacolo e lifestyle, in un contesto di grande fascino, eleganza e visibilità mediatica.",
+          },
+          {
+            kind: "list",
+            intro:
+              "Le aziende sponsor potranno valorizzare i propri prodotti e marchi attraverso numerose opportunità promozionali, tra cui:",
+            items: [
+              "stand espositivi personalizzati;",
+              "presenza del logo sul sito ufficiale della manifestazione;",
+              "presenza nelle brochure e nei materiali promozionali;",
+              "visibilità sui social media e nelle campagne di comunicazione;",
+              "presenza sui maxischermi e nelle aree convegni;",
+              "esposizione del marchio nell'Arena del Lungomare e nelle aree più prestigiose dell'evento;",
+              "partecipazione agli eventi esclusivi, alle masterclass e alle iniziative speciali;",
+              "possibilità di organizzare presentazioni, degustazioni e attività promozionali dedicate.",
+            ],
+          },
+          {
+            kind: "paragraph",
+            text: "Un'occasione straordinaria per incontrare migliaia di visitatori, operatori del settore, buyer, giornalisti, istituzioni e opinion leader provenienti da tutta Italia.",
+          },
+          {
+            kind: "paragraph",
+            text: "Per ricevere il dossier sponsor e conoscere tutte le opportunità di partnership e visibilità, contatta la nostra Segreteria Commerciale compilando il modulo dedicato.",
+          },
+          {
+            kind: "cta",
+            label: "Clicca qui per richiedere informazioni e diventare sponsor",
+            href: "/contatti?interesse=sponsor#richiesta-informazioni",
+          },
+        ],
+      },
+      {
+        eyebrow: "Visitatori",
+        title: "Ingresso gratuito alla II Edizione.",
+        intro:
+          "L'accesso alla II Edizione di Vini e Oli della Magna Grecia è completamente gratuito.",
+        blocks: [
+          {
+            kind: "paragraph",
+            text: "Presso la Segreteria della Manifestazione sarà possibile acquistare il Calice Ufficiale e il Portacalice Ufficiale dell'Evento, indispensabili per partecipare alle degustazioni offerte dagli espositori e vivere pienamente l'esperienza della manifestazione.",
+          },
+          {
+            kind: "paragraph",
+            text: "I visitatori potranno inoltre prendere parte alle votazioni popolari e contribuire all'assegnazione dei Gran Prix Vini e Oli della Magna Grecia, esprimendo le proprie preferenze e premiando i prodotti più apprezzati.",
+          },
+          {
+            kind: "paragraph",
+            text: "Tre giorni dedicati al gusto, alla cultura, alle tradizioni e alle eccellenze del Mezzogiorno, nella splendida cornice del Lungomare di Napoli.",
+          },
+          {
+            kind: "highlight",
+            title: "Ingresso gratuito",
+            lines: [
+              "Degustazioni • Masterclass • Concorsi • Eventi Speciali • Gran Prix del Pubblico",
+            ],
+          },
+        ],
+      },
+      {
+        eyebrow: "Eventi Collaterali",
+        title: "Concorsi, degustazioni ed eventi esclusivi.",
+        intro:
+          "Durante la II Edizione di Vini e Oli della Magna Grecia si svolgeranno concorsi, degustazioni ed eventi esclusivi dedicati alle eccellenze enogastronomiche, al lifestyle e alle passioni che rendono unico il mondo del gusto e dell'eleganza mediterranea.",
+        blocks: [
+          {
+            kind: "cards",
+            items: [
+              {
+                icon: "🍺",
+                title: "Birre in Concorso",
+                description:
+                  "Le migliori birre artigianali della Magna Grecia – chiare, ambrate, rosse e scure – saranno protagoniste di degustazioni e votazioni aperte al pubblico e a una giuria di esperti, con l'assegnazione dei premi alle etichette più apprezzate.",
+              },
+              {
+                icon: "🏎️",
+                title: "Wine & Motors",
+                description:
+                  "Un affascinante viaggio tra motori e vino, con abbinamenti tra vetture iconiche e grandi vini selezionati in base alle loro caratteristiche emozionali, sensoriali e di personalità. Un incontro tra due mondi accomunati da passione, tradizione ed eccellenza.",
+              },
+              {
+                icon: "🍝",
+                title: "Wine & Food",
+                description:
+                  "Degustazioni e confronti tra vini di qualità e le migliori specialità della cucina napoletana e della Magna Grecia, con premiazione finale degli abbinamenti più originali, armoniosi e coinvolgenti.",
+              },
+              {
+                icon: "🚬",
+                title: "Wine & Cigars",
+                description:
+                  "Un evento dedicato agli appassionati del buon vivere, con degustazioni di vini, champagne e sigari di pregio italiani ed esteri, accompagnate da testimonial, esperti e protagonisti del mondo del lifestyle e dell'eccellenza.",
+              },
+              {
+                icon: "🎬",
+                title: "Wine & Cinema",
+                description:
+                  "Il fascino del grande schermo incontra la cultura del vino. Film, documentari e celebri scene cinematografiche dedicate al mondo dell'enologia saranno proiettati sul maxi schermo e accompagnati dalla degustazione dei vini protagonisti delle opere presentate, celebrando il profondo legame tra cinema, territorio, emozioni e tradizioni.",
+              },
+              {
+                icon: "⌚",
+                title: "Wines & Watches",
+                description:
+                  "Un affascinante percorso dedicato agli appassionati di orologeria e di grandi vini, nel quale prestigiosi orologi sportivi, classici e da collezione saranno idealmente abbinati a vini e champagne selezionati in base a stile, personalità, eleganza e carattere. Un'occasione unica per scoprire come precisione, tradizione, innovazione e prestigio possano accomunare alta orologeria e grandi produzioni enologiche.",
+              },
+              {
+                icon: "👔",
+                title: "Wines & Ties",
+                description:
+                  "L'eleganza si degusta. Cravatte sartoriali, sportive o da cerimonia saranno abbinate a vini e champagne capaci di esprimere le stesse caratteristiche di stile, raffinatezza, personalità e distinzione. Un viaggio tra moda, buon gusto, tradizione e lifestyle, con la partecipazione di professionisti, imprenditori, testimonial e appassionati dell'eleganza italiana.",
+              },
+              {
+                icon: "🏆",
+                title: "Gran Prix Vini e Oli della Magna Grecia",
+                description:
+                  "Durante la manifestazione il pubblico e le giurie specializzate assegneranno prestigiosi riconoscimenti ai migliori vini, oli extravergine, birre artigianali e prodotti tipici del Mezzogiorno, premiando qualità, innovazione, tradizione e capacità di rappresentare l'identità della Magna Grecia.",
+              },
+            ],
+          },
+          {
+            kind: "note",
+            text: "Tre giorni di degustazioni, cultura, eleganza, spettacolo e networking in una delle cornici più affascinanti del Mediterraneo.",
+          },
+        ],
+      },
+    ],
     metadataDescription:
       "Vini Oli Sud: scenario, identità e edizione 2026 del salone boutique dei terroir del Mezzogiorno, in dialogo con Napoli Racing Show.",
   },
@@ -148,6 +353,44 @@ export const staticPages: Record<string, StaticPageContent> = {
         title: "Un racconto che continua online.",
         description:
           "Il portale diventa anche leva editoriale per estendere attenzione e reputazione oltre i giorni dell’evento.",
+      },
+    ],
+    richSections: [
+      {
+        eyebrow: "Espositori Ufficiali",
+        title: "Partecipa alla II Edizione di Vini e Oli della Magna Grecia.",
+        intro:
+          "Partecipa come Espositore Ufficiale alla II Edizione di Vini e Oli della Magna Grecia, la grande rassegna dedicata alle eccellenze enogastronomiche del Mezzogiorno, in programma dal 27 al 29 novembre 2026 nella prestigiosa cornice del Lungomare di Napoli.",
+        blocks: [
+          {
+            kind: "paragraph",
+            text: "L'evento, organizzato nell'ambito del Gran Premio di Napoli – Napoli Racing Show, in collaborazione con l'Assessorato all'Agricoltura della Regione Campania, rappresenta una straordinaria opportunità per promuovere i propri prodotti davanti a migliaia di visitatori, operatori del settore, giornalisti, buyer, istituzioni e appassionati.",
+          },
+          {
+            kind: "list",
+            intro: "Gli espositori potranno:",
+            items: [
+              "partecipare alle Masterclass e alle degustazioni guidate;",
+              "concorrere ai Gran Prix Vini e Oli della Magna Grecia, con premi assegnati sia da giurie di esperti sia dal pubblico;",
+              "prendere parte agli incontri B2B e agli eventi di networking;",
+              "presentare le proprie eccellenze in una delle vetrine più prestigiose del Sud Italia;",
+              "partecipare agli eventi speciali dedicati a Wine & Food, Wine & Motors, Wine & Cigars, Wine & Watches, Wine & Cinema e alle altre iniziative collaterali della manifestazione.",
+            ],
+          },
+          {
+            kind: "paragraph",
+            text: "Per richiedere la partecipazione è necessario rivolgersi all'Assessorato all'Agricoltura della Regione Campania compilando l'apposito modulo di adesione.",
+          },
+          {
+            kind: "cta",
+            label: "Compila il modulo di partecipazione",
+            href: "/contatti?interesse=espositori#richiesta-informazioni",
+          },
+          {
+            kind: "note",
+            text: "È inoltre previsto un piccolo contributo organizzativo obbligatorio da versare alla Segreteria della manifestazione, destinato alla copertura dei servizi comuni, tra cui allestimenti, vigilanza, pulizia, assistenza tecnica, energia elettrica e servizi logistici.",
+          },
+        ],
       },
     ],
     metadataDescription:
@@ -224,6 +467,35 @@ export const staticPages: Record<string, StaticPageContent> = {
         title: "Carnet degustazione e accesso.",
         description:
           "Il carnet apre il percorso vino, olio e show cooking del salone. La prenotazione passa dal modulo dedicato in questa pagina.",
+      },
+    ],
+    richSections: [
+      {
+        eyebrow: "Visitatori",
+        title: "Ingresso gratuito alla II Edizione.",
+        intro:
+          "L'accesso alla II Edizione di Vini e Oli della Magna Grecia è completamente gratuito.",
+        blocks: [
+          {
+            kind: "paragraph",
+            text: "Presso la Segreteria della Manifestazione sarà possibile acquistare il Calice Ufficiale e il Portacalice Ufficiale dell'Evento, indispensabili per partecipare alle degustazioni offerte dagli espositori e vivere pienamente l'esperienza della manifestazione.",
+          },
+          {
+            kind: "paragraph",
+            text: "I visitatori potranno inoltre prendere parte alle votazioni popolari e contribuire all'assegnazione dei Gran Prix Vini e Oli della Magna Grecia, esprimendo le proprie preferenze e premiando i prodotti più apprezzati.",
+          },
+          {
+            kind: "paragraph",
+            text: "Tre giorni dedicati al gusto, alla cultura, alle tradizioni e alle eccellenze del Mezzogiorno, nella splendida cornice del Lungomare di Napoli.",
+          },
+          {
+            kind: "highlight",
+            title: "Ingresso gratuito",
+            lines: [
+              "Degustazioni • Masterclass • Concorsi • Eventi Speciali • Gran Prix del Pubblico",
+            ],
+          },
+        ],
       },
     ],
     metadataDescription:

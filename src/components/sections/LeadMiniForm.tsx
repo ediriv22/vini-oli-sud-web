@@ -10,6 +10,7 @@ const INTEREST_OPTIONS = [
   { value: "buyer", label: "Buyer" },
   { value: "visitatori", label: "Visitatori" },
   { value: "media", label: "Media" },
+  { value: "sponsor", label: "Sponsor" },
   { value: "partnership", label: "Partnership" },
   { value: "grand-prix", label: "Grand Prix" },
 ] as const;

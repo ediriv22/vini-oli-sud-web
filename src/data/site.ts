@@ -63,8 +63,9 @@ export const siteConfig = {
   },
   organizer: {
     legalName: "A.S.D. Napoli Racing Show",
-    phones: ["3295535164", "3276616294"] as const,
+    phones: ["3295535164", "3276616294", "081 5753432"] as const,
     email: "napoliracingshow@gmail.com",
+    emailAlt: "napoliracingshow@libero.it",
     pec: "asdnapoliracingshow@pec.it",
     vatId: "10430641216",
     fiscalCode: "95334510633",

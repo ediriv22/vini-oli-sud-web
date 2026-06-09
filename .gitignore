@@ -42,6 +42,9 @@ public/forms/vendor/
 # vercel
 .vercel
 
+# claude design skills (plugin locale, non parte del sito)
+/claudedesignskills/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

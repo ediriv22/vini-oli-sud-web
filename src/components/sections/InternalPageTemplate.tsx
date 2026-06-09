@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import SectionHeader from "@/components/ui/SectionHeader";
+import PageRichSections from "@/components/sections/PageRichSections";
 import type { StaticPageContent } from "@/data/pages";
 
 type InternalPageTemplateProps = {
@@ -112,6 +113,10 @@ export default function InternalPageTemplate({
           </div>
         </div>
       </section>
+
+      {page.richSections?.length ? (
+        <PageRichSections sections={page.richSections} />
+      ) : null}
 
       {page.verifyNotes?.length ? (
         <section className="section-space-sm">
