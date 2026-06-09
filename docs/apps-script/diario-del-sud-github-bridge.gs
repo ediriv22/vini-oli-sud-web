@@ -17,7 +17,7 @@
  * Setup credenziali (una sola volta):
  *   1. Crea un PAT GitHub fine-grained → Settings → Developer settings →
  *      Personal access tokens → Fine-grained tokens → Generate new token.
- *      Resource owner: edivigerivellini.
+ *      Resource owner: ediriv22.
  *      Repository access: Only select repositories → vini-oli-sud-web.
  *      Permissions → Contents: Read and write.
  *      Scadenza: max 90 giorni (poi rinnovi). Salva il token in una nota
@@ -29,7 +29,7 @@
  *      (richiesto da UrlFetchApp verso api.github.com).
  ****************************************************/
 
-const GITHUB_OWNER = 'edivigerivellini';
+const GITHUB_OWNER = 'ediriv22';
 const GITHUB_REPO = 'vini-oli-sud-web';
 const GITHUB_BRANCH = 'main';
 const GITHUB_FILE_PATH = 'src/data/foodRadar.generated.json';

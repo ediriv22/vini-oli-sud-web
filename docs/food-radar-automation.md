@@ -148,7 +148,7 @@ Food Radar Sud Italia (Apps Script · trigger giornaliero)
 
 1. GitHub → Settings → Developer settings → Personal access tokens →
    Fine-grained tokens → **Generate new token**.
-2. Resource owner: `edivigerivellini`.
+2. Resource owner: `ediriv22`.
 3. Repository access: **Only select repositories** → `vini-oli-sud-web`.
 4. Repository permissions → **Contents: Read and write**.
 5. Scadenza ≤ 90 giorni (poi va rinnovato).
