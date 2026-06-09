@@ -1,5 +1,15 @@
 [
   {
+    "id": "f02dc1cf0529",
+    "category": "Radar del Sud",
+    "title": "Pizza della Settimana: \"Crudo e Fichi\", Levante Pizza Experience e Frappato \"Colori di Sicilia\" Feudi del Pisciotto",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/pizza-della-settimana-crudo-e-fichi-levante-pizza-experience-e-frappato-colori-di-sicilia-feudi-del-pisciotto/296146/",
+    "note": "Una segnalazione di cucina, focus Sicilia.",
+    "noteSource": "auto",
+    "date": "2026-06-09"
+  },
+  {
     "id": "4fd0ebd987b1",
     "category": "Calici di Magna Grecia",
     "title": "InvecchiatIGP. Sangiovese di Romagna DOC Superiore Riserva Domus Caia 2001, Ferrucci",
@@ -288,15 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-04-23"
-  },
-  {
-    "id": "79b15ed7383f",
-    "category": "Radar del Sud",
-    "title": "Sessant'anni fa era una macelleria, oggi è uno dei migliori ristoranti di carne (e orto) della Puglia",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/ristorante-fornelli-puglia-la-cuccagna-crispiano/",
-    "note": "Una segnalazione di cucina, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-04-20"
   }
 ]
