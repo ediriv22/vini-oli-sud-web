@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Script Node di utilita e plugin locale: non sono codice dell'app.
+    "scripts/**",
+    "claudedesignskills/**",
   ]),
 ]);
 
