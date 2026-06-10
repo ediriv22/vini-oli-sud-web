@@ -1,5 +1,35 @@
 [
   {
+    "id": "d5ba3ae37c12",
+    "category": "Calici di Magna Grecia",
+    "title": "Amuri di Fimmina e Amuri di Matri, Al-Cantàra Etna DOC Rosato 2024",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/amuri-di-fimmina-e-amuri-di-matri-al-cantara-etna-doc-rosato-2024/296203/",
+    "note": "Una voce dal mondo del vino, focus Sicilia.",
+    "noteSource": "auto",
+    "date": "2026-06-10"
+  },
+  {
+    "id": "2192e748703f",
+    "category": "Calici di Magna Grecia",
+    "title": "Vini Rossi e Spumanti Cantine Di Marzo",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/cantine-di-marzo-a-tufo-alle-origini-del-greco-di-tufo/289258/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-10"
+  },
+  {
+    "id": "b017172ce2f5",
+    "category": "Calici di Magna Grecia",
+    "title": "Diesel Farm: il vino, la terra e la visione agricola di Renzo Rosso",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/diesel-farm-il-vino-la-terra-e-la-visione-agricola-di-renzo-rosso/296154/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-10"
+  },
+  {
     "id": "f02dc1cf0529",
     "category": "Radar del Sud",
     "title": "Pizza della Settimana: \"Crudo e Fichi\", Levante Pizza Experience e Frappato \"Colori di Sicilia\" Feudi del Pisciotto",
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-05-07"
-  },
-  {
-    "id": "8d98a4718ad7",
-    "category": "Calici di Magna Grecia",
-    "title": "Rivoluzione Soave: Doc in pianura, Docg solo in collina. Così il Consorzio rivede la piramide della qualità",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/rivoluzione-soave-modifiche-disciplinare-differenze-pianura-collina/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-04-30"
-  },
-  {
-    "id": "3c30734fa538",
-    "category": "Oro Verde",
-    "title": "\"Se oggi si fa olio da Itrana è anche grazie a me\": storia di una rivoluzione silenziosa",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/attualita/se-oggi-si-fa-olio-da-itrana-e-anche-grazie-a-me-storia-di-una-rivoluzione-silenziosa/",
-    "note": "Un segnale dall'olio del Sud.",
-    "noteSource": "auto",
-    "date": "2026-04-24"
-  },
-  {
-    "id": "9bc245dcbb8c",
-    "category": "Calici di Magna Grecia",
-    "title": "Il Moscato di Canelli punta sui cru. Ecco la nuova mappa vitivinicola con 186 unità geografiche",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/moscato-canelli-cru-nuova-mappa-vitivinicola-unita-geografiche/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-04-23"
   }
 ]
