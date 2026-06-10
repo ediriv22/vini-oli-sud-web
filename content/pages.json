@@ -1,0 +1,583 @@
+{
+  "evento": {
+    "eyebrow": "L'evento",
+    "title": "L’evento",
+    "description": "Nel cuore di Napoli, tra mare, Vesuvio, motorsport e hospitality, Vini Oli Sud costruisce una scena dove il racconto del gusto mediterraneo dialoga con l’energia del Napoli Racing Show.",
+    "ctaLabel": "Richiedi informazioni evento",
+    "ctaHref": "/contatti?interesse=visitatori#richiesta-informazioni",
+    "ctaNote": "Per manifestare interesse e ricevere aggiornamenti, scrivi alla segreteria dalla pagina contatti.",
+    "summary": "Vini Oli Sud unisce il racconto del gusto mediterraneo, la cultura del vino e dell'olio del Sud Italia con l'energia e la visibilità del Napoli Racing Show. Un palcoscenico unico dove produttori, buyer e visitatori si incontrano in un contesto premium e distintivo. Vini e Oli Sud ha inoltre avviato una collaborazione con Veronafiere, ente organizzatore del Vinitaly.",
+    "pillars": [
+      {
+        "title": "Napoli come palcoscenico mediterraneo",
+        "description": "Il progetto valorizza mare, città e immaginario del Mezzogiorno come cornice riconoscibile per vino, olio e relazioni commerciali."
+      },
+      {
+        "title": "Vino e olio come cultura viva",
+        "description": "Il prodotto non è trattato come semplice esposizione, ma come racconto di territorio, filiere, memoria e valore."
+      },
+      {
+        "title": "Business con anima territoriale",
+        "description": "Il format orienta produttori, buyer, visitatori, media e partner verso percorsi chiari, concreti e distintivi."
+      }
+    ],
+    "externalReference": {
+      "eyebrow": "Approfondimento istituzionale",
+      "title": "I prodotti campani al Napoli Racing Show",
+      "description": "Un riferimento esterno utile per inquadrare il dialogo tra produzioni agroalimentari, territorio e Napoli Racing Show.",
+      "ctaLabel": "Leggi sul sito Regione Campania",
+      "url": "https://www.agricoltura.regione.campania.it/eventi/evento-06-12-25.html"
+    },
+    "focusTitle": "Tre pillar di posizionamento.",
+    "focusIntro": "Vini Oli Sud costruisce il suo racconto su tre fondamenta: il territorio napoletano, il dialogo tra vino/olio e velocità, la capacità di trasformare degustazione in relazione commerciale.",
+    "sections": [
+      {
+        "eyebrow": "Scenario",
+        "title": "Napoli, mare e Vesuvio.",
+        "description": "L’identità visiva e testuale parte da una città che ha forza scenica e riconoscibilità internazionale."
+      },
+      {
+        "eyebrow": "Connessione",
+        "title": "Pista e terroir nello stesso racconto.",
+        "description": "Il contrasto tra velocità e lentezza diventa asset narrativo, non semplice contesto accessorio."
+      },
+      {
+        "eyebrow": "Cultura e Connessione",
+        "title": "Degustazioni, talk e incontri B2B.",
+        "description": "Un programma progettato per coniugare l'esperienza sensoriale della degustazione con opportunità concrete di relazioni commerciali e racconto editoriale."
+      }
+    ],
+    "verifyNotes": [],
+    "richSections": [
+      {
+        "eyebrow": "Collaborazione istituzionale",
+        "title": "Una nuova alleanza con Veronafiere.",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Vini e Oli Sud ha avviato una collaborazione con Veronafiere, ente organizzatore del Vinitaly. Un dialogo che rafforza il posizionamento del progetto nel circuito nazionale del vino e apre nuove opportunità di visibilità per i terroir del Mezzogiorno."
+          }
+        ]
+      },
+      {
+        "eyebrow": "Espositori",
+        "title": "Partecipa come Espositore Ufficiale.",
+        "intro": "Partecipa come Espositore Ufficiale alla II Edizione di Vini e Oli della Magna Grecia, la grande rassegna dedicata alle eccellenze enogastronomiche del Mezzogiorno, in programma dal 27 al 29 novembre 2026 nella prestigiosa cornice del Lungomare di Napoli.",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "L'evento, organizzato nell'ambito del Gran Premio di Napoli – Napoli Racing Show, in collaborazione con l'Assessorato all'Agricoltura della Regione Campania, rappresenta una straordinaria opportunità per promuovere i propri prodotti davanti a migliaia di visitatori, operatori del settore, giornalisti, buyer, istituzioni e appassionati."
+          },
+          {
+            "kind": "list",
+            "intro": "Gli espositori potranno:",
+            "items": [
+              "partecipare alle Masterclass e alle degustazioni guidate;",
+              "concorrere ai Gran Prix Vini e Oli della Magna Grecia, con premi assegnati sia da giurie di esperti sia dal pubblico;",
+              "prendere parte agli incontri B2B e agli eventi di networking;",
+              "presentare le proprie eccellenze in una delle vetrine più prestigiose del Sud Italia;",
+              "partecipare agli eventi speciali dedicati a Wine & Food, Wine & Motors, Wine & Cigars, Wine & Watches, Wine & Cinema e alle altre iniziative collaterali della manifestazione."
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Per richiedere la partecipazione è necessario rivolgersi all'Assessorato all'Agricoltura della Regione Campania compilando l'apposito modulo di adesione."
+          },
+          {
+            "kind": "cta",
+            "label": "Clicca qui per compilare il modulo di partecipazione",
+            "href": "/contatti?interesse=espositori#richiesta-informazioni"
+          },
+          {
+            "kind": "note",
+            "text": "È inoltre previsto un piccolo contributo organizzativo obbligatorio da versare alla Segreteria della manifestazione, destinato alla copertura dei servizi comuni, tra cui allestimenti, vigilanza, pulizia, assistenza tecnica, energia elettrica e servizi logistici."
+          }
+        ]
+      },
+      {
+        "eyebrow": "Sponsor e Partner",
+        "title": "Associa il tuo marchio a un palcoscenico mediterraneo.",
+        "intro": "Associare il proprio marchio a Vini e Oli della Magna Grecia significa entrare a far parte di una delle più prestigiose manifestazioni dedicate alle eccellenze del Mezzogiorno, ospitata nella straordinaria cornice del Lungomare di Napoli e inserita nel programma del Gran Premio di Napoli – Napoli Racing Show.",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Un evento unico che unisce enogastronomia, turismo, cultura, motorsport, networking, spettacolo e lifestyle, in un contesto di grande fascino, eleganza e visibilità mediatica."
+          },
+          {
+            "kind": "list",
+            "intro": "Le aziende sponsor potranno valorizzare i propri prodotti e marchi attraverso numerose opportunità promozionali, tra cui:",
+            "items": [
+              "stand espositivi personalizzati;",
+              "presenza del logo sul sito ufficiale della manifestazione;",
+              "presenza nelle brochure e nei materiali promozionali;",
+              "visibilità sui social media e nelle campagne di comunicazione;",
+              "presenza sui maxischermi e nelle aree convegni;",
+              "esposizione del marchio nell'Arena del Lungomare e nelle aree più prestigiose dell'evento;",
+              "partecipazione agli eventi esclusivi, alle masterclass e alle iniziative speciali;",
+              "possibilità di organizzare presentazioni, degustazioni e attività promozionali dedicate."
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Un'occasione straordinaria per incontrare migliaia di visitatori, operatori del settore, buyer, giornalisti, istituzioni e opinion leader provenienti da tutta Italia."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Per ricevere il dossier sponsor e conoscere tutte le opportunità di partnership e visibilità, contatta la nostra Segreteria Commerciale compilando il modulo dedicato."
+          },
+          {
+            "kind": "cta",
+            "label": "Clicca qui per richiedere informazioni e diventare sponsor",
+            "href": "/contatti?interesse=sponsor#richiesta-informazioni"
+          }
+        ]
+      },
+      {
+        "eyebrow": "Visitatori",
+        "title": "Ingresso gratuito alla II Edizione.",
+        "intro": "L'accesso alla II Edizione di Vini e Oli della Magna Grecia è completamente gratuito.",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Presso la Segreteria della Manifestazione sarà possibile acquistare il Calice Ufficiale e il Portacalice Ufficiale dell'Evento, indispensabili per partecipare alle degustazioni offerte dagli espositori e vivere pienamente l'esperienza della manifestazione."
+          },
+          {
+            "kind": "paragraph",
+            "text": "I visitatori potranno inoltre prendere parte alle votazioni popolari e contribuire all'assegnazione dei Gran Prix Vini e Oli della Magna Grecia, esprimendo le proprie preferenze e premiando i prodotti più apprezzati."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Tre giorni dedicati al gusto, alla cultura, alle tradizioni e alle eccellenze del Mezzogiorno, nella splendida cornice del Lungomare di Napoli."
+          },
+          {
+            "kind": "highlight",
+            "title": "Ingresso gratuito",
+            "lines": [
+              "Degustazioni • Masterclass • Concorsi • Eventi Speciali • Gran Prix del Pubblico"
+            ]
+          }
+        ]
+      },
+      {
+        "eyebrow": "Eventi Collaterali",
+        "title": "Concorsi, degustazioni ed eventi esclusivi.",
+        "intro": "Durante la II Edizione di Vini e Oli della Magna Grecia si svolgeranno concorsi, degustazioni ed eventi esclusivi dedicati alle eccellenze enogastronomiche, al lifestyle e alle passioni che rendono unico il mondo del gusto e dell'eleganza mediterranea.",
+        "blocks": [
+          {
+            "kind": "cards",
+            "items": [
+              {
+                "icon": "🍺",
+                "title": "Birre in Concorso",
+                "description": "Le migliori birre artigianali della Magna Grecia – chiare, ambrate, rosse e scure – saranno protagoniste di degustazioni e votazioni aperte al pubblico e a una giuria di esperti, con l'assegnazione dei premi alle etichette più apprezzate."
+              },
+              {
+                "icon": "🏎️",
+                "title": "Wine & Motors",
+                "description": "Un affascinante viaggio tra motori e vino, con abbinamenti tra vetture iconiche e grandi vini selezionati in base alle loro caratteristiche emozionali, sensoriali e di personalità. Un incontro tra due mondi accomunati da passione, tradizione ed eccellenza."
+              },
+              {
+                "icon": "🍝",
+                "title": "Wine & Food",
+                "description": "Degustazioni e confronti tra vini di qualità e le migliori specialità della cucina napoletana e della Magna Grecia, con premiazione finale degli abbinamenti più originali, armoniosi e coinvolgenti."
+              },
+              {
+                "icon": "🚬",
+                "title": "Wine & Cigars",
+                "description": "Un evento dedicato agli appassionati del buon vivere, con degustazioni di vini, champagne e sigari di pregio italiani ed esteri, accompagnate da testimonial, esperti e protagonisti del mondo del lifestyle e dell'eccellenza."
+              },
+              {
+                "icon": "🎬",
+                "title": "Wine & Cinema",
+                "description": "Il fascino del grande schermo incontra la cultura del vino. Film, documentari e celebri scene cinematografiche dedicate al mondo dell'enologia saranno proiettati sul maxi schermo e accompagnati dalla degustazione dei vini protagonisti delle opere presentate, celebrando il profondo legame tra cinema, territorio, emozioni e tradizioni."
+              },
+              {
+                "icon": "⌚",
+                "title": "Wines & Watches",
+                "description": "Un affascinante percorso dedicato agli appassionati di orologeria e di grandi vini, nel quale prestigiosi orologi sportivi, classici e da collezione saranno idealmente abbinati a vini e champagne selezionati in base a stile, personalità, eleganza e carattere. Un'occasione unica per scoprire come precisione, tradizione, innovazione e prestigio possano accomunare alta orologeria e grandi produzioni enologiche."
+              },
+              {
+                "icon": "👔",
+                "title": "Wines & Ties",
+                "description": "L'eleganza si degusta. Cravatte sartoriali, sportive o da cerimonia saranno abbinate a vini e champagne capaci di esprimere le stesse caratteristiche di stile, raffinatezza, personalità e distinzione. Un viaggio tra moda, buon gusto, tradizione e lifestyle, con la partecipazione di professionisti, imprenditori, testimonial e appassionati dell'eleganza italiana."
+              },
+              {
+                "icon": "🏆",
+                "title": "Gran Prix Vini e Oli della Magna Grecia",
+                "description": "Durante la manifestazione il pubblico e le giurie specializzate assegneranno prestigiosi riconoscimenti ai migliori vini, oli extravergine, birre artigianali e prodotti tipici del Mezzogiorno, premiando qualità, innovazione, tradizione e capacità di rappresentare l'identità della Magna Grecia."
+              }
+            ]
+          },
+          {
+            "kind": "note",
+            "text": "Tre giorni di degustazioni, cultura, eleganza, spettacolo e networking in una delle cornici più affascinanti del Mediterraneo."
+          }
+        ]
+      }
+    ],
+    "metadataDescription": "Vini Oli Sud: scenario, identità e edizione 2026 del salone boutique dei terroir del Mezzogiorno, in dialogo con Napoli Racing Show."
+  },
+  "espositori": {
+    "eyebrow": "Espositori",
+    "title": "Porta la tua azienda in pole position sul mercato mediterraneo.",
+    "description": "Una piattaforma progettata per dare visibilità commerciale, incontri utili e posizionamento distintivo a produttori, consorzi e marchi del gusto del Sud Italia.",
+    "ctaLabel": "Richiedi la Brochure Espositori",
+    "ctaHref": "/contatti?interesse=espositori#richiesta-informazioni",
+    "ctaNote": "Richiedi la brochure per dettagli su pacchetti, visibilità e opportunità commerciali.",
+    "summary": "Esporre significa accedere a un ecosistema dove il valore è nel matching qualitativo: buyer selezionati, pubblico premium, visibilità editoriale oltre il semplice evento fisico. Un contesto che amplifica la reputazione e consolida le relazioni commerciali nel mercato mediterraneo.",
+    "pillars": [
+      {
+        "title": "Napoli come palcoscenico mediterraneo",
+        "description": "Il progetto valorizza mare, città e immaginario del Mezzogiorno come cornice riconoscibile per vino, olio e relazioni commerciali."
+      },
+      {
+        "title": "Vino e olio come cultura viva",
+        "description": "Il prodotto non è trattato come semplice esposizione, ma come racconto di territorio, filiere, memoria e valore."
+      },
+      {
+        "title": "Business con anima territoriale",
+        "description": "Il format orienta produttori, buyer, visitatori, media e partner verso percorsi chiari, concreti e distintivi."
+      }
+    ],
+    "focusTitle": "Tre ragioni per esporre qui.",
+    "focusIntro": "Vini Oli Sud è costruito per offrire ai produttori visibilità qualitativa, incontri rilevanti e un contesto narrativo che consolida il posizionamento nel mercato mediterraneo.",
+    "sections": [
+      {
+        "eyebrow": "Lead",
+        "title": "Accesso a buyer e operatori.",
+        "description": "Il focus non è il volume indistinto, ma la qualità delle connessioni e delle conversazioni attivabili."
+      },
+      {
+        "eyebrow": "Brand",
+        "title": "Presenza premium e riconoscibile.",
+        "description": "Il contesto valorizza chi produce con identità, aiutando a evitare l’effetto catalogo o padiglione anonimo."
+      },
+      {
+        "eyebrow": "Storytelling",
+        "title": "Un racconto che continua online.",
+        "description": "Il portale diventa anche leva editoriale per estendere attenzione e reputazione oltre i giorni dell’evento."
+      }
+    ],
+    "richSections": [
+      {
+        "eyebrow": "Espositori Ufficiali",
+        "title": "Partecipa alla II Edizione di Vini e Oli della Magna Grecia.",
+        "intro": "Partecipa come Espositore Ufficiale alla II Edizione di Vini e Oli della Magna Grecia, la grande rassegna dedicata alle eccellenze enogastronomiche del Mezzogiorno, in programma dal 27 al 29 novembre 2026 nella prestigiosa cornice del Lungomare di Napoli.",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "L'evento, organizzato nell'ambito del Gran Premio di Napoli – Napoli Racing Show, in collaborazione con l'Assessorato all'Agricoltura della Regione Campania, rappresenta una straordinaria opportunità per promuovere i propri prodotti davanti a migliaia di visitatori, operatori del settore, giornalisti, buyer, istituzioni e appassionati."
+          },
+          {
+            "kind": "list",
+            "intro": "Gli espositori potranno:",
+            "items": [
+              "partecipare alle Masterclass e alle degustazioni guidate;",
+              "concorrere ai Gran Prix Vini e Oli della Magna Grecia, con premi assegnati sia da giurie di esperti sia dal pubblico;",
+              "prendere parte agli incontri B2B e agli eventi di networking;",
+              "presentare le proprie eccellenze in una delle vetrine più prestigiose del Sud Italia;",
+              "partecipare agli eventi speciali dedicati a Wine & Food, Wine & Motors, Wine & Cigars, Wine & Watches, Wine & Cinema e alle altre iniziative collaterali della manifestazione."
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Per richiedere la partecipazione è necessario rivolgersi all'Assessorato all'Agricoltura della Regione Campania compilando l'apposito modulo di adesione."
+          },
+          {
+            "kind": "cta",
+            "label": "Compila il modulo di partecipazione",
+            "href": "/contatti?interesse=espositori#richiesta-informazioni"
+          },
+          {
+            "kind": "note",
+            "text": "È inoltre previsto un piccolo contributo organizzativo obbligatorio da versare alla Segreteria della manifestazione, destinato alla copertura dei servizi comuni, tra cui allestimenti, vigilanza, pulizia, assistenza tecnica, energia elettrica e servizi logistici."
+          }
+        ]
+      }
+    ],
+    "metadataDescription": "Vini Oli Sud espositori: visibilità commerciale, matching con buyer selezionati e posizionamento premium per le eccellenze del Sud Italia."
+  },
+  "buyer": {
+    "eyebrow": "Buyer e operatori",
+    "title": "Il tuo accesso ai migliori terroir del Sud Italia.",
+    "description": "Un hub selettivo pensato per chi cerca scouting, relazioni dirette e una lettura ordinata dell’offerta mediterranea tra vino, olio e cultura produttiva.",
+    "ctaLabel": "Richiedi il Pass Buyer",
+    "ctaHref": "/contatti?interesse=buyer#richiesta-informazioni",
+    "ctaNote": "Richiedi il pass buyer per accesso facilitato, agenda di incontri e materiali esclusivi.",
+    "summary": "Per buyer, Ho.Re.Ca., distributori e importatori: Vini Oli Sud offre una piattaforma dove la qualità non è nel volume, ma nella densità narrativa, nella rilevanza dei contatti e nella capacità di navigare velocemente i migliori terroir del Sud Italia.",
+    "pillars": [
+      {
+        "title": "Selezione più leggibile",
+        "description": "Un percorso pensato per aiutare operatori, distributori, ristoratori e buyer a orientarsi tra prodotti, territori e opportunità."
+      },
+      {
+        "title": "Contatti qualificati",
+        "description": "Il valore non è nella quantità indistinta, ma nella qualità delle relazioni e nella chiarezza dei percorsi di accesso."
+      },
+      {
+        "title": "Materiali e agenda",
+        "description": "Le informazioni operative devono accompagnare il buyer verso contatto, richiesta pass e approfondimenti commerciali."
+      }
+    ],
+    "focusTitle": "Un hub di selezione, non dispersione.",
+    "focusIntro": "Vini Oli Sud è progettato per semplificare lo scouting: facilita l’accesso a produttori selezionati, supporta l’agenda di incontri e mette a disposizione materiali che accelerano la comprensione dei terroir mediterranei.",
+    "sections": [
+      {
+        "eyebrow": "Selezione",
+        "title": "Terroir leggibili e ordinati.",
+        "description": "Il percorso buyer aiuta a capire rapidamente dove si concentra il valore e quali aree esplorare."
+      },
+      {
+        "eyebrow": "Operatività",
+        "title": "Contatti e accrediti senza frizione.",
+        "description": "Meno barriere informative, più chiarezza su come ottenere accesso e materiali di supporto."
+      },
+      {
+        "eyebrow": "Relazione",
+        "title": "Networking con contesto.",
+        "description": "Non solo incontri: anche un racconto coerente che valorizza origine, prodotto e posizionamento."
+      }
+    ],
+    "metadataDescription": "Vini Oli Sud buyer e operatori Ho.Re.Ca.: selezione, agenda di incontri e accesso ai terroir del Mezzogiorno."
+  },
+  "visitatori": {
+    "eyebrow": "Visitatori",
+    "title": "Assapora il Sud, vista mare.",
+    "description": "Degustazioni, show cooking e cultura mediterranea prendono forma in un’esperienza capace di tenere insieme piacere, scoperta e qualità estetica.",
+    "ctaLabel": "Richiedi aggiornamenti visitatori",
+    "ctaHref": "/contatti?interesse=visitatori#richiesta-informazioni",
+    "ctaNote": "Iscriviti per ricevere aggiornamenti sulla programmazione e sulle modalità di accesso.",
+    "summary": "Vini Oli Sud offre ai visitatori un’esperienza che coniuga il piacere della degustazione, la scoperta del territorio mediterraneo e la bellezza scenica del lungomare napoletano. Non semplice intrattenimento, ma una forma di storytelling sensoriale e culturale.",
+    "pillars": [
+      {
+        "title": "Napoli come palcoscenico mediterraneo",
+        "description": "Il progetto valorizza mare, città e immaginario del Mezzogiorno come cornice riconoscibile per vino, olio e relazioni commerciali."
+      },
+      {
+        "title": "Vino e olio come cultura viva",
+        "description": "Il prodotto non è trattato come semplice esposizione, ma come racconto di territorio, filiere, memoria e valore."
+      },
+      {
+        "title": "Business con anima territoriale",
+        "description": "Il format orienta produttori, buyer, visitatori, media e partner verso percorsi chiari, concreti e distintivi."
+      }
+    ],
+    "focusTitle": "Un invito a vivere il Mezzogiorno contemporaneo.",
+    "focusIntro": "Degustazioni, show cooking, incontri con produttori e momenti culturali costruiscono un’esperienza coerente dove il gusto diventa accesso al territorio.",
+    "sections": [
+      {
+        "eyebrow": "Degustazione",
+        "title": "Calici, oli e sapori in sequenza.",
+        "description": "Il tono racconta il piacere della scoperta, non l’accumulo indistinto di proposte."
+      },
+      {
+        "eyebrow": "Scenario",
+        "title": "Vista mare, identità urbana, atmosfera.",
+        "description": "Napoli entra come cornice attiva dell’esperienza, non solo come indicazione geografica."
+      },
+      {
+        "eyebrow": "Esperienza",
+        "title": "Carnet degustazione e accesso.",
+        "description": "Il carnet apre il percorso vino, olio e show cooking del salone. La prenotazione passa dal modulo dedicato in questa pagina."
+      }
+    ],
+    "richSections": [
+      {
+        "eyebrow": "Visitatori",
+        "title": "Ingresso gratuito alla II Edizione.",
+        "intro": "L'accesso alla II Edizione di Vini e Oli della Magna Grecia è completamente gratuito.",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Presso la Segreteria della Manifestazione sarà possibile acquistare il Calice Ufficiale e il Portacalice Ufficiale dell'Evento, indispensabili per partecipare alle degustazioni offerte dagli espositori e vivere pienamente l'esperienza della manifestazione."
+          },
+          {
+            "kind": "paragraph",
+            "text": "I visitatori potranno inoltre prendere parte alle votazioni popolari e contribuire all'assegnazione dei Gran Prix Vini e Oli della Magna Grecia, esprimendo le proprie preferenze e premiando i prodotti più apprezzati."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Tre giorni dedicati al gusto, alla cultura, alle tradizioni e alle eccellenze del Mezzogiorno, nella splendida cornice del Lungomare di Napoli."
+          },
+          {
+            "kind": "highlight",
+            "title": "Ingresso gratuito",
+            "lines": [
+              "Degustazioni • Masterclass • Concorsi • Eventi Speciali • Gran Prix del Pubblico"
+            ]
+          }
+        ]
+      }
+    ],
+    "metadataDescription": "Vini Oli Sud visitatori: degustazioni, show cooking e cultura mediterranea sul lungomare di Napoli."
+  },
+  "grand-prix": {
+    "eyebrow": "Grand Prix · Prima Edizione",
+    "title": "Grand Prix Magna Grecia",
+    "description": "Uno spazio dedicato a valorizzare prodotti, territori e riconoscibilità, con una narrazione capace di unire autorevolezza e desiderabilità. L’Albo d’Oro 2025 raccoglie i primi dieci riconoscimenti del progetto.",
+    "ctaLabel": "Richiedi informazioni Grand Prix",
+    "ctaHref": "/contatti?interesse=grand-prix#richiesta-informazioni",
+    "summary": "L’Albo d’Oro 2025 raccoglie dieci riconoscimenti che presentano vino e olio del Mezzogiorno con tono autorevole e misurato.",
+    "pillars": [
+      {
+        "title": "Napoli come palcoscenico mediterraneo",
+        "description": "Il progetto valorizza mare, città e immaginario del Mezzogiorno come cornice riconoscibile per vino, olio e relazioni commerciali."
+      },
+      {
+        "title": "Vino e olio come cultura viva",
+        "description": "Il prodotto non è trattato come semplice esposizione, ma come racconto di territorio, filiere, memoria e valore."
+      },
+      {
+        "title": "Business con anima territoriale",
+        "description": "Il format orienta produttori, buyer, visitatori, media e partner verso percorsi chiari, concreti e distintivi."
+      }
+    ],
+    "focusTitle": "Un riconoscimento dedicato al Mezzogiorno.",
+    "focusIntro": "Il Grand Prix Magna Grecia valorizza i terroir del Sud con un linguaggio editoriale rigoroso e una selezione concreta di etichette e produttori.",
+    "sections": [
+      {
+        "eyebrow": "Autorevolezza",
+        "title": "Un riconoscimento misurato.",
+        "description": "Premi e selezioni funzionano solo se linguaggio, criteri e presentazione restano credibili e coerenti con il valore dei prodotti raccontati."
+      },
+      {
+        "eyebrow": "Visibilità",
+        "title": "Vetrina per prodotti e territori.",
+        "description": "Il Grand Prix diventa contenuto editoriale, leva PR e motore di attenzione qualificata sui terroir del Sud."
+      },
+      {
+        "eyebrow": "Governance",
+        "title": "Categorie, criteri, racconto.",
+        "description": "La governance del premio mantiene insieme rigore della selezione, categorie chiare e un racconto coerente con la reputazione del progetto."
+      }
+    ],
+    "metadataDescription": "Scopri il Grand Prix Magna Grecia di Vini Oli Sud: posizionamento, Albo d’Oro 2025 e percorso di valorizzazione delle eccellenze del Mezzogiorno."
+  },
+  "diario-del-sud": {
+    "eyebrow": "Diario del Sud",
+    "title": "Diario del Sud",
+    "description": "Radar editoriale di Vini Oli Sud: titoli, fonti e segnali dal vino, dall’olio e dall’agroalimentare mediterraneo.",
+    "ctaLabel": "Proponi una segnalazione",
+    "ctaHref": "/diario-del-sud#proponi-segnalazione",
+    "summary": "Il Diario del Sud è un radar editoriale, non un magazine autoreferenziale: ogni voce rimanda alla fonte originale, con una breve nota di contesto firmata Vini Oli Sud.",
+    "pillars": [
+      {
+        "title": "Napoli come palcoscenico mediterraneo",
+        "description": "Il progetto valorizza mare, città e immaginario del Mezzogiorno come cornice riconoscibile per vino, olio e relazioni commerciali."
+      },
+      {
+        "title": "Vino e olio come cultura viva",
+        "description": "Il prodotto non è trattato come semplice esposizione, ma come racconto di territorio, filiere, memoria e valore."
+      },
+      {
+        "title": "Business con anima territoriale",
+        "description": "Il format orienta produttori, buyer, visitatori, media e partner verso percorsi chiari, concreti e distintivi."
+      }
+    ],
+    "focusTitle": "Una rassegna editoriale del Mezzogiorno.",
+    "focusIntro": "Il Diario del Sud raccoglie titoli, fonti e link sul vino, l’olio e l’agroalimentare mediterraneo, con una breve nota editoriale di contesto firmata Vini Oli Sud.",
+    "sections": [
+      {
+        "eyebrow": "SEO",
+        "title": "Indicizzazione con senso.",
+        "description": "I contenuti intercettano interesse reale su territori, prodotti e business mediterraneo del Sud."
+      },
+      {
+        "eyebrow": "Marca",
+        "title": "Una voce che differenzia.",
+        "description": "Il tone of voice evita burocratese, folklore e imitazioni di fiere generaliste."
+      },
+      {
+        "eyebrow": "Rubriche",
+        "title": "Cinque chiavi per leggere il Sud.",
+        "description": "Oro Verde, Calici di Magna Grecia, Radar del Sud, Territori, Business con Anima: cinque rubriche per organizzare la rassegna editoriale."
+      }
+    ],
+    "metadataDescription": "Diario del Sud: il radar editoriale di Vini Oli Sud raccoglie titoli, fonti e segnali dal vino, dall’olio e dall’agroalimentare mediterraneo."
+  },
+  "media": {
+    "eyebrow": "Media",
+    "title": "Press Room Vini Oli Sud",
+    "description": "Un’area pensata per giornalisti, redazioni, uffici stampa e stakeholder che hanno bisogno di materiali affidabili, rapidi da consultare e pronti alla pubblicazione.",
+    "ctaLabel": "Richiedi informazioni media",
+    "ctaHref": "/contatti?interesse=media#richiesta-informazioni",
+    "ctaNote": "La segreteria gestisce richieste di media kit, accrediti e materiali stampa.",
+    "summary": "La press room di Vini Oli Sud raccoglie materiali, recapiti e riferimenti utili a giornalisti, redazioni e uffici stampa che raccontano il progetto.",
+    "pillars": [
+      {
+        "title": "Napoli come palcoscenico mediterraneo",
+        "description": "Il progetto valorizza mare, città e immaginario del Mezzogiorno come cornice riconoscibile per vino, olio e relazioni commerciali."
+      },
+      {
+        "title": "Vino e olio come cultura viva",
+        "description": "Il prodotto non è trattato come semplice esposizione, ma come racconto di territorio, filiere, memoria e valore."
+      },
+      {
+        "title": "Business con anima territoriale",
+        "description": "Il format orienta produttori, buyer, visitatori, media e partner verso percorsi chiari, concreti e distintivi."
+      }
+    ],
+    "focusTitle": "Materiali editoriali per la stampa.",
+    "focusIntro": "L’area press di Vini Oli Sud raccoglie i contenuti utili a media, redazioni e uffici stampa che vogliono raccontare il progetto in modo coerente.",
+    "sections": [
+      {
+        "eyebrow": "Stampa",
+        "title": "Comunicati e note ufficiali.",
+        "description": "L’area raccoglie comunicati e note ufficiali del progetto, sempre coerenti con i dati validati."
+      },
+      {
+        "eyebrow": "Asset",
+        "title": "Immagini e materiali scaricabili.",
+        "description": "Kit media, logo pack e fotografie approvate del progetto Vini Oli Sud."
+      },
+      {
+        "eyebrow": "Accrediti",
+        "title": "Percorso dedicato ai media.",
+        "description": "Le richieste accredito e i contatti stampa operativi passano dai recapiti della segreteria."
+      }
+    ],
+    "metadataDescription": "Press room Vini Oli Sud: materiali, accrediti e percorso dedicato a giornalisti, redazioni e uffici stampa."
+  },
+  "contatti": {
+    "eyebrow": "Contatti",
+    "title": "Contatti",
+    "description": "Recapiti ufficiali per richieste commerciali, accrediti, partnership e comunicazioni stampa relative a Vini Oli Sud.",
+    "ctaLabel": "Richiedi la Brochure Espositori",
+    "ctaHref": "/contatti?interesse=espositori#richiesta-informazioni",
+    "summary": "Il progetto è curato da A.S.D. Napoli Racing Show. Il contatto principale del progetto è info@vinisud.it; la segreteria organizzativa gestisce telefono, email e PEC.",
+    "pillars": [
+      {
+        "title": "Napoli come palcoscenico mediterraneo",
+        "description": "Il progetto valorizza mare, città e immaginario del Mezzogiorno come cornice riconoscibile per vino, olio e relazioni commerciali."
+      },
+      {
+        "title": "Vino e olio come cultura viva",
+        "description": "Il prodotto non è trattato come semplice esposizione, ma come racconto di territorio, filiere, memoria e valore."
+      },
+      {
+        "title": "Business con anima territoriale",
+        "description": "Il format orienta produttori, buyer, visitatori, media e partner verso percorsi chiari, concreti e distintivi."
+      }
+    ],
+    "focusTitle": "Percorsi dedicati per audience.",
+    "focusIntro": "Brochure espositori, pass buyer e partnership restano sui rispettivi percorsi; questa scheda concentra i recapiti ufficiali.",
+    "sections": [
+      {
+        "eyebrow": "Commerciale",
+        "title": "Espositori, sponsor e partnership.",
+        "description": "Le richieste business possono partire dalla brochure espositori o dalla pagina contatti, con risposta coordinata dalla segreteria."
+      },
+      {
+        "eyebrow": "Operativo",
+        "title": "Buyer, media e accreditamenti.",
+        "description": "Pass buyer, programma visitatori e percorso media rimandano a sezioni dedicate; per esigenze trasversali usare i recapiti pubblicati in questa area."
+      },
+      {
+        "eyebrow": "Trasparenza",
+        "title": "Recapiti verificati.",
+        "description": "Email progetto, PEC e dati fiscali sono quelli ufficialmente associati all’organizzazione indicata."
+      }
+    ],
+    "metadataDescription": "Contatti ufficiali di Vini Oli Sud: informazioni commerciali, accrediti, partnership e comunicazioni stampa."
+  }
+}

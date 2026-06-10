@@ -31,6 +31,11 @@ jobs:
       - name: Build sito statico (cartella out/)
         run: npm run build
 
+      - name: Verifica sintassi PHP (blocca il deploy se rotto)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y php-cli -qq
+          find public -name '*.php' -print0 | xargs -0 -r -n1 php -l
+
       - name: Pubblicazione su Aruba via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
