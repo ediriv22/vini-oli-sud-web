@@ -40,7 +40,8 @@ jobs:
           protocol: ftps
           port: 21
           local-dir: ./out/
-          server-dir: ./
+          # L'utente FTP atterra un livello sopra: il sito vive in www.vinisud.it/
+          server-dir: ./www.vinisud.it/
           # NON toccare le cartelle gestite a mano sul server:
           # - forms/  → backend PHP, config.php, PHPMailer, log (mai sovrascrivere)
           # - cgi-bin/ → cartella di sistema Aruba
