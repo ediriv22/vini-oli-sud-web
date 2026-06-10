@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+// Contenuti modificabili dalla segretaria via /admin. Questo file JSON viene
+// aggiornato dal pannello e letto qui in fase di build. Vedi public/admin/.
+import editable from "../../content/settings/site.json";
 
 export const siteConfig = {
   name: "Vini Oli Sud",
@@ -71,10 +74,10 @@ export const siteConfig = {
     fiscalCode: "95334510633",
   },
   hero: {
-    eyebrow: "L’Eccellenza del Mezzogiorno Scende in Pista.",
-    title: "Le Radici del Gusto. L’Adrenalina del Futuro.",
-    subtitle:
-      "Vini Oli Sud unisce vino, olio, cultura mediterranea e business matching nel palcoscenico del Napoli Racing Show. Una piattaforma boutique per produttori, buyer, visitatori e brand premium.",
+    // Testi modificabili dal pannello /admin (content/settings/site.json).
+    eyebrow: editable.heroEyebrow,
+    title: editable.heroTitle,
+    subtitle: editable.heroSubtitle,
     actions: [
       { label: "Richiedi la Brochure Espositori", href: "/contatti?interesse=espositori#richiesta-informazioni" },
       { label: "Richiedi il Pass Buyer", href: "/contatti?interesse=buyer#richiesta-informazioni" },

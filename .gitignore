@@ -51,3 +51,6 @@ next-env.d.ts
 
 # Artefatto build caricato su Aruba (non versionare)
 vinisud-sito.zip
+
+# Pannello /admin: config reale con token/password (solo sul server)
+public/admin/config.php

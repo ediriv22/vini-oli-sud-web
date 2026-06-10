@@ -51,4 +51,5 @@ jobs:
             **/node_modules/**
             forms/**
             cgi-bin/**
+            admin/config.php
             **/*_Backup_*/**
