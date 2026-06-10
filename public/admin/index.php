@@ -29,11 +29,9 @@ $PASS   = $cfg['ADMIN_PASSWORD'] ?? '';
 
 // Campi modificabili: chiave nel JSON => [etichetta, tipo, aiuto]
 $FIELDS = [
-    'siteName'        => ['Nome del sito', 'text', ''],
-    'siteDescription' => ['Descrizione breve', 'text', 'Usata nei motori di ricerca e anteprime social.'],
-    'contactEmail'    => ['Email di contatto', 'text', ''],
-    'phone'           => ['Telefono', 'text', ''],
-    'address'         => ['Luogo / indirizzo', 'text', ''],
+    'siteName'        => ['Nome del sito', 'text', 'Compare nel titolo delle schede del browser e nei risultati Google.'],
+    'siteDescription' => ['Descrizione del sito', 'textarea', 'Usata da Google e nelle anteprime social.'],
+    'contactEmail'    => ['Email di contatto', 'text', 'Mostrata su contatti, footer, privacy e cookie.'],
     'heroEyebrow'     => ['Home — occhiello (riga piccola sopra il titolo)', 'text', ''],
     'heroTitle'       => ['Home — titolo grande', 'text', ''],
     'heroSubtitle'    => ['Home — sottotitolo', 'textarea', ''],

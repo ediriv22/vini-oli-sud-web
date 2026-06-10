@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import editable from "../../content/settings/site.json";
 
 export const siteConfig = {
-  name: "Vini Oli Sud",
-  description:
-    "Sito ufficiale di Vini Oli Sud, salone boutique dedicato a vini, oli e cultura mediterranea nel cuore del Napoli Racing Show.",
+  // Modificabili dal pannello /admin (content/settings/site.json).
+  name: editable.siteName,
+  description: editable.siteDescription,
   brand: {
     wordmark: "Vini Sud",
     subtitle: "Dal Mediterraneo",
@@ -61,8 +61,8 @@ export const siteConfig = {
   legalLine:
     "Vini Oli Sud · progetto a cura di A.S.D. Napoli Racing Show · P.IVA 10430641216 · C.F. 95334510633",
   contact: {
-    /** Contatto principale del progetto Vini Oli Sud */
-    projectEmail: "info@vinisud.it",
+    /** Contatto principale — modificabile dal pannello /admin */
+    projectEmail: editable.contactEmail,
   },
   organizer: {
     legalName: "A.S.D. Napoli Racing Show",
