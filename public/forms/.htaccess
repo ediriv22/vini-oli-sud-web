@@ -1,0 +1,24 @@
+# Vini Oli Sud — protezione cartella forms/
+# Blocca l'accesso web ai file sensibili. lead.php resta pubblico.
+
+<Files "config.php">
+  Require all denied
+</Files>
+<Files "config.example.php">
+  Require all denied
+</Files>
+<Files "README.md">
+  Require all denied
+</Files>
+<Files "schema.sql">
+  Require all denied
+</Files>
+
+# Niente listing delle cartelle
+Options -Indexes
+
+# Blocca l'accesso diretto a data/ (log, rate-limit) e alle librerie
+RedirectMatch 404 "/forms/data/?$"
+RedirectMatch 404 "/forms/data/.*"
+RedirectMatch 404 "/forms/PHPMailer/?$"
+RedirectMatch 404 "/forms/vendor/?$"

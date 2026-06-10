@@ -48,3 +48,6 @@ public/forms/vendor/
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Artefatto build caricato su Aruba (non versionare)
+vinisud-sito.zip

@@ -169,6 +169,47 @@ function vos_log_consent(string $dataDir, string $requestId, string $policyVersi
     @file_put_contents($dataDir . '/consent.log', $line, FILE_APPEND | LOCK_EX);
 }
 
+/**
+ * Inserisce il lead nel database Aruba (DB #1). Lancia un'eccezione se la
+ * config è incompleta o la query fallisce: il chiamante decide come reagire.
+ * Le chiavi di $record devono corrispondere alle colonne di vos_form_leads.
+ */
+function vos_db_insert(array $config, array $record): void {
+    $host  = (string)($config['DB_HOST'] ?? '');
+    $name  = (string)($config['DB_NAME'] ?? '');
+    $user  = (string)($config['DB_USER'] ?? '');
+    $pass  = (string)($config['DB_PASS'] ?? '');
+    $table = (string)($config['DB_TABLE'] ?? 'vos_form_leads');
+
+    if ($host === '' || $name === '' || $user === '') {
+        throw new RuntimeException('Config DB incompleta.');
+    }
+    if (!preg_match('/^[A-Za-z0-9_]+$/', $table)) {
+        throw new RuntimeException('Nome tabella non valido.');
+    }
+
+    $dsn = "mysql:host={$host};dbname={$name};charset=utf8mb4";
+    $pdo = new PDO($dsn, $user, $pass, [
+        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES   => false,
+    ]);
+
+    $cols = array_keys($record);
+    $placeholders = [];
+    foreach ($cols as $c) {
+        $placeholders[] = ':' . $c;
+    }
+    $sql = 'INSERT INTO `' . $table . '` (`' . implode('`,`', $cols) . '`) '
+         . 'VALUES (' . implode(',', $placeholders) . ')';
+
+    $stmt = $pdo->prepare($sql);
+    foreach ($record as $k => $v) {
+        $stmt->bindValue(':' . $k, $v);
+    }
+    $stmt->execute();
+}
+
 // -----------------------------------------------------------------------------
 // 3. Honeypot — silent success per i bot
 // -----------------------------------------------------------------------------
@@ -239,6 +280,7 @@ if (empty($privacy)) {
 $payload = [];
 $subject = '';
 $kind    = '';
+$record  = [];
 
 if ($requestType === 'carnet-degustazione' || $audience === 'visitatori') {
     $kind = 'carnet-degustazione';
@@ -249,6 +291,11 @@ if ($requestType === 'carnet-degustazione' || $audience === 'visitatori') {
     $payload = [
         'Quantità ingressi' => $qty,
         'Email visitatore'  => $email,
+    ];
+    $record = [
+        'form_type' => $kind,
+        'email'     => $email,
+        'quantity'  => $qty,
     ];
     $subject = 'Nuova richiesta Carnet Degustazione — Vini Oli Sud';
 } elseif ($requestType === 'segnalazione-editoriale' || $audience === 'diario-del-sud') {
@@ -272,6 +319,15 @@ if ($requestType === 'carnet-degustazione' || $audience === 'visitatori') {
         'Email'     => $email,
         'Nota'      => $note !== '' ? $note : '—',
     ];
+    $record = [
+        'form_type'    => $kind,
+        'email'        => $email,
+        'seg_title'    => $title,
+        'seg_url'      => $url,
+        'seg_source'   => $source,
+        'seg_category' => $category,
+        'message'      => $note !== '' ? $note : null,
+    ];
     $subject = 'Nuova segnalazione Diario del Sud — Vini Oli Sud';
 } else {
     $kind = 'manifestazione-interesse';
@@ -292,6 +348,14 @@ if ($requestType === 'carnet-degustazione' || $audience === 'visitatori') {
         'Sito web'          => $website !== '' ? $website : '—',
         'Area di interesse' => $interest !== '' ? $interest : '—',
         'Note'              => $message !== '' ? $message : '—',
+    ];
+    $record = [
+        'form_type' => $kind,
+        'email'     => $email,
+        'fullname'  => $name,
+        'company'   => $company,
+        'website'   => $website !== '' ? $website : null,
+        'message'   => $message !== '' ? $message : null,
     ];
     $subject = 'Nuova richiesta Vini Oli Sud — ' . ($interest !== '' ? ucfirst($interest) : 'generica');
 }
@@ -317,7 +381,40 @@ $lines[] = "ID: $requestId";
 $body = implode("\n", $lines);
 
 // -----------------------------------------------------------------------------
-// 8. Invio via PHPMailer + SMTP
+// 7.5 Salvataggio su database (DB #1 Aruba) — fonte primaria del lead
+// -----------------------------------------------------------------------------
+
+$record['request_id']         = $requestId;
+$record['audience']           = $audience !== '' ? $audience : null;
+$record['interest']           = $interest !== '' ? $interest : null;
+$record['status']             = 'new';
+$record['consenso_privacy']   = 1;
+$record['consenso_marketing'] =
+    (!empty($_POST['consenso_marketing']) || !empty($_POST['marketing_consent'])) ? 1 : 0;
+$record['privacy_version']    = 'privacy-2026-05';
+$record['source_url']         =
+    vos_clean_line($_POST['source_url'] ?? ($_SERVER['HTTP_REFERER'] ?? '')) ?: null;
+$record['utm_source']         = vos_clean_line($_POST['utm_source'] ?? '') ?: null;
+$record['utm_medium']         = vos_clean_line($_POST['utm_medium'] ?? '') ?: null;
+$record['utm_campaign']       = vos_clean_line($_POST['utm_campaign'] ?? '') ?: null;
+$record['ip_hash']            = vos_ip_hash();
+$record['user_agent']         = vos_clean_line($_SERVER['HTTP_USER_AGENT'] ?? '') ?: null;
+$record['extra_json']         = json_encode($payload, JSON_UNESCAPED_UNICODE);
+
+try {
+    vos_db_insert($config, $record);
+} catch (\Throwable $e) {
+    // Il salvataggio è la garanzia primaria: se fallisce, fermiamo qui.
+    error_log('lead.php DB error: ' . $e->getMessage());
+    vos_log_request($dataDir, $requestId, $kind, false);
+    http_response_code(500);
+    $respond(false, 'Salvataggio non riuscito. Riprova più tardi o scrivi a info@vinisud.it.');
+}
+
+vos_log_consent($dataDir, $requestId, 'privacy-2026-05');
+
+// -----------------------------------------------------------------------------
+// 8. Invio via PHPMailer + SMTP (notifica secondaria: il lead è già salvato)
 // -----------------------------------------------------------------------------
 
 $phpmailerLoaded = false;
@@ -336,15 +433,17 @@ foreach ($phpmailerPaths as $p) {
     }
 }
 if (!$phpmailerLoaded) {
-    error_log('lead.php: PHPMailer non trovato. Vedi commento di setup.');
-    http_response_code(500);
-    $respond(false, 'Invio email non configurato. Contatta info@vinisud.it.');
+    // Lead già salvato su DB: la mancata notifica non deve far fallire l'utente.
+    error_log('lead.php: PHPMailer non trovato (lead ' . $requestId . ' salvato su DB).');
+    vos_log_request($dataDir, $requestId, $kind, true);
+    $respond(true, null, $requestId);
 }
 
-try {
+// Factory: restituisce un mailer SMTP già configurato (connessione Aruba).
+$makeMailer = function () use ($config) {
     $mailer = new \PHPMailer\PHPMailer\PHPMailer(true);
     $mailer->isSMTP();
-    $mailer->Host       = $config['SMTP_HOST'] ?? 'smtp.gmail.com';
+    $mailer->Host       = $config['SMTP_HOST'] ?? 'smtps.aruba.it';
     $mailer->SMTPAuth   = true;
     $mailer->Username   = $config['SMTP_USER'] ?? '';
     $mailer->Password   = $config['SMTP_PASS'] ?? '';
@@ -355,29 +454,77 @@ try {
     } else {
         $mailer->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;
     }
-    $mailer->CharSet    = 'UTF-8';
-    $mailer->Timeout    = 15;
+    $mailer->CharSet = 'UTF-8';
+    $mailer->Timeout = 15;
+    return $mailer;
+};
 
-    $mailFrom     = $config['MAIL_FROM'] ?? ($config['SMTP_USER'] ?? 'noreply@vinisud.it');
+// --- 8a. Notifica allo staff (con Ccn) ---
+try {
+    $mailer = $makeMailer();
+
+    $mailFrom     = $config['MAIL_FROM'] ?? ($config['SMTP_USER'] ?? 'info@vinisud.it');
     $mailFromName = $config['MAIL_FROM_NAME'] ?? 'Vini Oli Sud';
 
     $mailer->setFrom($mailFrom, $mailFromName);
     $mailer->addAddress($to);
     $mailer->addReplyTo($email);
 
+    // Copia conoscenza nascosta su tutte le notifiche (se configurata e valida).
+    $mailBcc = trim((string)($config['MAIL_BCC'] ?? ''));
+    if ($mailBcc !== '' && filter_var($mailBcc, FILTER_VALIDATE_EMAIL)) {
+        $mailer->addBCC($mailBcc);
+    }
+
     $mailer->Subject = $subject;
     $mailer->isHTML(false);
     $mailer->Body    = $body;
 
     $mailer->send();
-
     vos_log_request($dataDir, $requestId, $kind, true);
-    vos_log_consent($dataDir, $requestId, 'privacy-2026-05');
-
-    $respond(true, null, $requestId);
 } catch (\Throwable $e) {
-    error_log('lead.php SMTP error: ' . $e->getMessage());
-    vos_log_request($dataDir, $requestId, $kind, false);
-    http_response_code(502);
-    $respond(false, 'Invio non riuscito. Riprova più tardi o scrivi a info@vinisud.it.');
+    // Il lead è salvato su DB: la notifica email è secondaria. Logghiamo e
+    // proseguiamo, così l'utente non riprova un invio già andato a buon fine.
+    error_log('lead.php SMTP error notifica (lead ' . $requestId . ' salvato su DB): ' . $e->getMessage());
+    vos_log_request($dataDir, $requestId, $kind, true);
 }
+
+// --- 8b. Email di conferma all'utente (best-effort, non blocca la risposta) ---
+if (!empty($config['SEND_USER_CONFIRMATION'])) {
+    try {
+        $kindLabel = [
+            'manifestazione-interesse' => 'manifestazione di interesse',
+            'carnet-degustazione'      => 'richiesta Carnet Degustazione',
+            'segnalazione-editoriale'  => 'segnalazione per il Diario del Sud',
+        ][$kind] ?? 'richiesta';
+
+        $confLines = [];
+        $confLines[] = 'Ciao,';
+        $confLines[] = '';
+        $confLines[] = 'grazie per averci scritto. Abbiamo ricevuto la tua ' . $kindLabel
+                     . ' e ti risponderemo al più presto.';
+        $confLines[] = '';
+        $confLines[] = 'Riferimento richiesta: ' . $requestId;
+        $confLines[] = '';
+        $confLines[] = 'Questo è un messaggio automatico di conferma: non occorre rispondere.';
+        $confLines[] = '';
+        $confLines[] = '— Vini Oli Sud';
+
+        $confMailer = $makeMailer();
+        $confFrom     = $config['CONFIRM_FROM'] ?? ($config['MAIL_FROM'] ?? 'info@vinisud.it');
+        $confFromName = $config['CONFIRM_FROM_NAME'] ?? ($config['MAIL_FROM_NAME'] ?? 'Vini Oli Sud');
+        $confMailer->setFrom($confFrom, $confFromName);
+        $confMailer->addAddress($email);
+        // Se l'utente risponde, la mail arriva alla segreteria, non al noreply.
+        $confMailer->addReplyTo($config['MAIL_TO_INFO'] ?? $confFrom, $confFromName);
+        $confMailer->Subject = $config['CONFIRM_SUBJECT'] ?? 'Abbiamo ricevuto la tua richiesta — Vini Oli Sud';
+        $confMailer->isHTML(false);
+        $confMailer->Body    = implode("\n", $confLines);
+        $confMailer->send();
+    } catch (\Throwable $e) {
+        // La conferma all'utente è un di più: se fallisce, lo logghiamo soltanto.
+        error_log('lead.php SMTP error conferma utente (lead ' . $requestId . '): ' . $e->getMessage());
+    }
+}
+
+$respond(true, null, $requestId);
