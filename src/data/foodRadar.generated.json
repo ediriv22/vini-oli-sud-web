@@ -10,6 +10,26 @@
     "date": "2026-06-11"
   },
   {
+    "id": "468f1777e22c",
+    "category": "Business con Anima",
+    "title": "Il vino italiano soffre ancora nel primo trimestre 2026. A marzo timida inversione di rotta",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/vino-italiano-export-primo-trimestre-2026-dati-istat/",
+    "note": "Un segnale di mercato per le eccellenze del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-11"
+  },
+  {
+    "id": "6c35f18eee42",
+    "category": "Calici di Magna Grecia",
+    "title": "Il vino italiano cerca un nuovo equilibrio. Le iniziative (solitarie) delle Dop prima della vendemmia 2026",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/misure-contenimento-produzione-vino-consorzi-soave-chianti-abruzzo-asti-brunello-valpolicella-barbera/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-11"
+  },
+  {
     "id": "d5ba3ae37c12",
     "category": "Calici di Magna Grecia",
     "title": "Amuri di Fimmina e Amuri di Matri, Al-Cantàra Etna DOC Rosato 2024",
@@ -278,25 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-05-08"
-  },
-  {
-    "id": "4a26476feada",
-    "category": "Calici di Magna Grecia",
-    "title": "Napoli, da \"Salvo\" tappa di Take Over PizzAis: percorso tra vino, sapori e territori",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/napoli-da-salvo-tappa-di-take-over-pizzais-percorso-tra-vino-sapori-e-territori/294159/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-05-07"
-  },
-  {
-    "id": "78a01d604afe",
-    "category": "Calici di Magna Grecia",
-    "title": "Il jazz cambia il sapore del vino. Il sorprendente studio che riscrive le regole della degustazione",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/effetti-musica-jazz-vino-studio-universita-pisa/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-05-07"
   }
 ]
