@@ -1,5 +1,25 @@
 [
   {
+    "id": "f40f3411baec",
+    "category": "Calici di Magna Grecia",
+    "title": "InvecchiatIGP: I Vigneri – Vinupetra Etna Doc 2006",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/invecchiatigp-i-vigneri-vinupetra-etna-doc-2006/295983/",
+    "note": "Una voce dal mondo del vino, focus Sicilia.",
+    "noteSource": "auto",
+    "date": "2026-06-13"
+  },
+  {
+    "id": "a157461eaf46",
+    "category": "Radar del Sud",
+    "title": "\"Ogni anno ci sfugge di mano\": il festival che porta in Calabria centinaia di chef e pizzaioli",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/bob-fest-2026-calabria-chef-pizzaioli-riviera-dei-cedri/",
+    "note": "Una segnalazione di cucina, focus Calabria.",
+    "noteSource": "auto",
+    "date": "2026-06-12"
+  },
+  {
     "id": "8e081e55a271",
     "category": "Radar del Sud",
     "title": "Garantito IGP | Catabbo e il riscatto silenzioso del Molise del vino",
@@ -278,25 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-05-09"
-  },
-  {
-    "id": "fab0f6bb9440",
-    "category": "Calici di Magna Grecia",
-    "title": "Cucina & Vini, quarta edizione di Berebianco. Sabato 23 maggio al Grand Hotel Palatino",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/cucina-vini-quarta-edizione-di-berebianco-sabato-23-maggio-al-grand-hotel-palatino/294226/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-05-08"
-  },
-  {
-    "id": "f57ec701a4bd",
-    "category": "Calici di Magna Grecia",
-    "title": "È morto Roberto Mostini, il critico gastronomico che amava i vini francesi e la Liguria",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/morto-roberto-mostini-guardiano-del-faro/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-05-08"
   }
 ]
