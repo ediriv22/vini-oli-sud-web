@@ -1,5 +1,35 @@
 [
   {
+    "id": "62a43ae90be8",
+    "category": "Radar del Sud",
+    "title": "Pasta dei pescatori, ricetta tradizionale dalle barche del Cilento",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/pasta-dei-pescatori-ricetta-tradizionale-dalle-barche-del-cilento",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-06-14"
+  },
+  {
+    "id": "792e9030496a",
+    "category": "Calici di Magna Grecia",
+    "title": "Cantina Terre Stregate a Guardia Sanframondi",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/cantina-terre-stregate-a-guardia-sanframondi/296390/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-14"
+  },
+  {
+    "id": "65d48e9386ed",
+    "category": "Calici di Magna Grecia",
+    "title": "MenoDodiciIGP | Vigneti Vallorani – Marche Rosato IGT BIO \"Octavum\" 2025",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/menododiciigp-vigneti-vallorani-marche-rosato-igt-bio-octavum-2025/295988/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-14"
+  },
+  {
     "id": "f40f3411baec",
     "category": "Calici di Magna Grecia",
     "title": "InvecchiatIGP: I Vigneri – Vinupetra Etna Doc 2006",
@@ -266,36 +296,6 @@
     "source": "Scatti di Gusto",
     "url": "https://www.scattidigusto.it/ristorante-materia-spazio-cucina-a-catania-menu-recensione",
     "note": "Una segnalazione di cucina, focus Sicilia.",
-    "noteSource": "auto",
-    "date": "2026-05-09"
-  },
-  {
-    "id": "b4e30bc27d3d",
-    "category": "Radar del Sud",
-    "title": "Le Tre Sorelle in Cilento: i piatti di pesce eccellenti di Franca Feola",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/locanda-le-tre-sorelle-a-casal-velino-in-cilento-menu-prezzi-recensione",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-05-09"
-  },
-  {
-    "id": "fdcbf3bcb4d4",
-    "category": "Business con Anima",
-    "title": "Bop a Napoli, non avrai altri ottimi dumpling a questi prezzi",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/bop-dove-mangiare-dumpling-a-napoli",
-    "note": "Un segnale di mercato per le eccellenze del Sud, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-05-09"
-  },
-  {
-    "id": "7cbfb94a1df5",
-    "category": "Calici di Magna Grecia",
-    "title": "Chi era il simposiarca, l'antenato del sommelier che decideva quanto e cosa far bere in base alla conversazione",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/simposio-vino-ruolo-simposiarca-antica-grecia/",
-    "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-05-09"
   }
