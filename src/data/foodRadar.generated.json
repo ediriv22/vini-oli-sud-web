@@ -1,11 +1,31 @@
 [
   {
+    "id": "d8c5cf127838",
+    "category": "Radar del Sud",
+    "title": "Il ristorante Vesuvio dove mangiare con vista in Penisola Sorrentina",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/ristorante-vesuvio-panoramic-hotel-mediterraneo-sant-agnello",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-06-16"
+  },
+  {
     "id": "337680b9441b",
     "category": "Calici di Magna Grecia",
     "title": "Vini Sorrentino – Nuove annate",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/vini-sorrentino-vesuvio-vite-vulcaniche-nuove-annate/263668/",
     "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-06-15"
+  },
+  {
+    "id": "0fbcdfce6d03",
+    "category": "Calici di Magna Grecia",
+    "title": "\"Ho paura di sbagliare vino\": a Milano apre il locale che vuole eliminare l'ansia della scelta",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/rubriche/nuove-aperture/milano-enoteca-intelligenza-artificiale-vino/",
+    "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-06-15"
   },
@@ -276,26 +296,6 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/andreola-leroica-cantina-di-montagna-del-valdobbiadene-docg/294180/",
     "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-05-09"
-  },
-  {
-    "id": "39f3ae18180d",
-    "category": "Radar del Sud",
-    "title": "Pizzeria De Giuseppe, Rende: teoria e prassi della pizza cosentina",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/pizzeria-de-giuseppe-a-rende-menu-prezzi",
-    "note": "Una segnalazione di cucina, focus Calabria.",
-    "noteSource": "auto",
-    "date": "2026-05-09"
-  },
-  {
-    "id": "2134ea034540",
-    "category": "Radar del Sud",
-    "title": "Fuego a Santa Maria di Castellabate, braceria imperdibile in Cilento",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/fuego-braceria-a-santa-maria-di-castellabate-in-cilento-la-recensione",
-    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
     "noteSource": "auto",
     "date": "2026-05-09"
   }
