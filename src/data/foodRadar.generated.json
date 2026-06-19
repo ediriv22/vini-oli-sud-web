@@ -1,5 +1,45 @@
 [
   {
+    "id": "af202b04df8d",
+    "category": "Radar del Sud",
+    "title": "\"La cucina italiana? È diventata una zavorra\". Lo chef Marco Ambrosino spiega perché",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/rubriche/interviste/marco-ambrosino-cucina-italiana-zavorra/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-19"
+  },
+  {
+    "id": "d046f4c0075d",
+    "category": "Calici di Magna Grecia",
+    "title": "Vini d'Abbazia 2026, si chiude la quinta edizione tra vino, olio e valorizzazione del territorio",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vini-dabbazia-2026-si-chiude-la-quinta-edizione-tra-vino-olio-e-valorizzazione-del-territorio/296624/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-19"
+  },
+  {
+    "id": "b0f347953afb",
+    "category": "Calici di Magna Grecia",
+    "title": "VINerdìIGP | Lazio IGT Bellone Aro 2024, Pietra Pinta",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vinerdiigp-lazio-igt-bellone-aro-2024-pietra-pinta/296416/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-19"
+  },
+  {
+    "id": "4acdc329c86a",
+    "category": "Radar del Sud",
+    "title": "Altamura, dove il pane racconta la Puglia più autentica: viaggio all'Antico Forno Santa Caterina, acceso dal 1306",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/altamura-dove-il-pane-racconta-la-puglia-piu-autentica-viaggio-allantico-forno-santa-caterina-acceso-dal-1306/296578/",
+    "note": "Una segnalazione gastronomica del Sud, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-06-18"
+  },
+  {
     "id": "d56bbd99f5c4",
     "category": "Calici di Magna Grecia",
     "title": "La riscossa dei vini costieri: il nuovo stile mediterraneo che sta cambiando il nostro modo di bere",
@@ -258,45 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-05-15"
-  },
-  {
-    "id": "3751afffd7fc",
-    "category": "Calici di Magna Grecia",
-    "title": "AMONTEFALCO 2026: L'Anteprima del Sagrantino e del Trebbiano Spoletino",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/amontefalco-2026-lanteprima-del-sagrantino-e-del-trebbiano-spoletino/294485/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-05-14"
-  },
-  {
-    "id": "e498946f9219",
-    "category": "Business con Anima",
-    "title": "Otto startup da tenere d'occhio che guideranno la trasformazione del vino italiano",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/otto-start-up-vino-italiano-verona-agrifood-innovation-hub/",
-    "note": "Un segnale di mercato per le eccellenze del Sud.",
-    "noteSource": "auto",
-    "date": "2026-05-14"
-  },
-  {
-    "id": "ca6e5ea7b917",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Vini Rivoluzionari\" e la \"Bottega dei Semplici Pensieri\" a Foqus",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vini-rivoluzionari-e-la-bottega-dei-semplici-pensieri-a-foqus/294354/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-05-13"
-  },
-  {
-    "id": "a1f1a46d9cd8",
-    "category": "Calici di Magna Grecia",
-    "title": "Vini Rossi e Rosato Fontanavecchia – Nuove annate",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vini-rossi-fontanavecchia-nuove-annate/275092/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-05-12"
   }
 ]
