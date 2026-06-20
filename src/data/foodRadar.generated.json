@@ -30,6 +30,36 @@
     "date": "2026-06-19"
   },
   {
+    "id": "8e83585a22d6",
+    "category": "Radar del Sud",
+    "title": "Il Risotto alla Nerano e battuto di gambero di Casamare",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/la-risotto-alla-nerano-e-battuto-di-gambero-di-casamare/296605/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-06-19"
+  },
+  {
+    "id": "2492bd7ca4cf",
+    "category": "Territori",
+    "title": "Napoli, ecco il Pane Tradizionale di Napoli tra grani antichi e memoria del territorio",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/napoli-ecco-il-pane-tradizionale-di-napoli-tra-grani-antichi-e-memoria-del-territorio/296631/",
+    "note": "Una notizia dal calendario dei territori, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-06-19"
+  },
+  {
+    "id": "506830eadcd9",
+    "category": "Territori",
+    "title": "A Napoli il Gambero Rosso lancia le nuove guide digitali",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/evento-rotte-mediterranee-guide-gambero-rosso/",
+    "note": "Una notizia dal calendario dei territori, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-06-19"
+  },
+  {
     "id": "4acdc329c86a",
     "category": "Radar del Sud",
     "title": "Altamura, dove il pane racconta la Puglia più autentica: viaggio all'Antico Forno Santa Caterina, acceso dal 1306",
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-05-16"
-  },
-  {
-    "id": "5f034b803aad",
-    "category": "Radar del Sud",
-    "title": "Villa Ischia, ristorante in Ciociaria che ha solo chef e sommelier",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/villa-ischia-ristorante-ad-atina-frosinone",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-05-15"
-  },
-  {
-    "id": "fdf105efc87a",
-    "category": "Territori",
-    "title": "Beneficenza in Campania: Festa a Vico 2026, date e programma",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/eventi-beneficenza-2026-in-campania",
-    "note": "Una notizia dal calendario dei territori, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-05-15"
-  },
-  {
-    "id": "b0fe7384c016",
-    "category": "Calici di Magna Grecia",
-    "title": "Per anni ci hanno detto che più alcol significava vino migliore. Oggi non è più così",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/vini-low-alcol-mercato/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-05-15"
   }
 ]
