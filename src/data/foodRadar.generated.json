@@ -1,10 +1,40 @@
 [
   {
+    "id": "42c482cf1b5d",
+    "category": "Calici di Magna Grecia",
+    "title": "Alta Campania Wine, un nuovo modello di enoturismo per l'Alto Casertano",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/alta-campania-wine-un-nuovo-modello-di-enoturismo-per-lalto-casertano/296747/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-06-22"
+  },
+  {
     "id": "d81f2602cf23",
     "category": "Calici di Magna Grecia",
     "title": "MenoDodiciIGP | Toscana Rosso IGT Scicchèria 2024, Borgo Tollena",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/menododiciigp-toscana-rosso-igt-sciccheria-2024-borgo-tollena/296421/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-21"
+  },
+  {
+    "id": "a6d1dff3e75e",
+    "category": "Calici di Magna Grecia",
+    "title": "Cantine Federiciane e Vigna Cigliano | Quando il passaggio generazionale diventa valore e identità",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/cantine-federiciane-monteleone-della-famiglia-palumbo-a-marano-di-napoli/78747/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-21"
+  },
+  {
+    "id": "db0bac41ea72",
+    "category": "Calici di Magna Grecia",
+    "title": "Quando il Chianti era la patria dei vini bianchi. La sorprendente scoperta che riscrive la storia vitivinicola",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/chianti-vini-bianchi-ricerca-dna-vite/",
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-06-21"
@@ -266,36 +296,6 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/amuri-di-fimmina-e-amuri-di-matri-al-cantara-etna-doc-rosato-2024/296203/",
     "note": "Una voce dal mondo del vino, focus Sicilia.",
-    "noteSource": "auto",
-    "date": "2026-06-10"
-  },
-  {
-    "id": "2192e748703f",
-    "category": "Calici di Magna Grecia",
-    "title": "Vini Rossi e Spumanti Cantine Di Marzo",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/cantine-di-marzo-a-tufo-alle-origini-del-greco-di-tufo/289258/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-06-10"
-  },
-  {
-    "id": "b017172ce2f5",
-    "category": "Calici di Magna Grecia",
-    "title": "Diesel Farm: il vino, la terra e la visione agricola di Renzo Rosso",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/diesel-farm-il-vino-la-terra-e-la-visione-agricola-di-renzo-rosso/296154/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-06-10"
-  },
-  {
-    "id": "6cd49f18aa77",
-    "category": "Calici di Magna Grecia",
-    "title": "L'enoturismo è una cosa seria: linee guida per un asset destinato a incidere più dei consumi di vino",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/libro-vino-turismo-cinelli-colombini-dario-stefano/",
-    "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-06-10"
   }
