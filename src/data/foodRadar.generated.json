@@ -1,11 +1,71 @@
 [
   {
+    "id": "8255b2f02fb0",
+    "category": "Territori",
+    "title": "Fuori Chimera a Caserta, con i vini di Alepa, la cucina di Maria Charpentier e i suoni del Mediterraneo",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/fuori-chimera-a-caserta-con-i-vini-di-alepa-la-cucina-di-maria-charpentier-e-i-suoni-del-mediterraneo/296743/",
+    "note": "Una notizia dal calendario dei territori, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-06-23"
+  },
+  {
+    "id": "6ddb94a17e15",
+    "category": "Calici di Magna Grecia",
+    "title": "Oltre i numeri, dentro l'Abruzzo con Citra e Cotarella",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/oltre-i-numeri-dentro-labruzzo-con-citra-e-cotarella/296835/",
+    "note": "Una voce dal mondo del vino, focus Abruzzo.",
+    "noteSource": "auto",
+    "date": "2026-06-23"
+  },
+  {
+    "id": "5d656dfbbccb",
+    "category": "Calici di Magna Grecia",
+    "title": "Cuvée 100 Roberto Di Meo: dieci annate di Fiano per celebrare un doppio anniversario",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/cuvee-100-roberto-di-meo-dieci-annate-di-fiano-per-celebrare-un-doppio-anniversario/296823/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-23"
+  },
+  {
+    "id": "d28364ba05e8",
+    "category": "Radar del Sud",
+    "title": "Locanda del Borgo, ristorante stellato nel resort con piscina e Spa",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/la-locanda-del-borgo-ristorante-aquapetra-telese-terme-recensione",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-06-23"
+  },
+  {
     "id": "42c482cf1b5d",
     "category": "Calici di Magna Grecia",
     "title": "Alta Campania Wine, un nuovo modello di enoturismo per l'Alto Casertano",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/alta-campania-wine-un-nuovo-modello-di-enoturismo-per-lalto-casertano/296747/",
     "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-06-22"
+  },
+  {
+    "id": "7aff8435d77d",
+    "category": "Calici di Magna Grecia",
+    "title": "Pierpaolo De Bona e Diesel Farm a Napoli | Quando la materia diventa linguaggio",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/pierpaolo-de-bona-e-diesel-farm-a-napoli-quando-la-materia-diventa-linguaggio/296659/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-06-22"
+  },
+  {
+    "id": "f85adfd54433",
+    "category": "Calici di Magna Grecia",
+    "title": "In Veneto si prevede una vendemmia abbondante (fin troppo). Preoccupa la flavescenza dorata",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/veneto-vendemmia-2026-stime/",
+    "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-06-22"
   },
@@ -238,65 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-06-14"
-  },
-  {
-    "id": "f40f3411baec",
-    "category": "Calici di Magna Grecia",
-    "title": "InvecchiatIGP: I Vigneri – Vinupetra Etna Doc 2006",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/invecchiatigp-i-vigneri-vinupetra-etna-doc-2006/295983/",
-    "note": "Una voce dal mondo del vino, focus Sicilia.",
-    "noteSource": "auto",
-    "date": "2026-06-13"
-  },
-  {
-    "id": "a157461eaf46",
-    "category": "Radar del Sud",
-    "title": "\"Ogni anno ci sfugge di mano\": il festival che porta in Calabria centinaia di chef e pizzaioli",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/bob-fest-2026-calabria-chef-pizzaioli-riviera-dei-cedri/",
-    "note": "Una segnalazione di cucina, focus Calabria.",
-    "noteSource": "auto",
-    "date": "2026-06-12"
-  },
-  {
-    "id": "8e081e55a271",
-    "category": "Radar del Sud",
-    "title": "Garantito IGP | Catabbo e il riscatto silenzioso del Molise del vino",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/garantito-igp-catabbo-e-il-riscatto-silenzioso-del-molise-del-vino/295944/",
-    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-06-11"
-  },
-  {
-    "id": "468f1777e22c",
-    "category": "Business con Anima",
-    "title": "Il vino italiano soffre ancora nel primo trimestre 2026. A marzo timida inversione di rotta",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/vino-italiano-export-primo-trimestre-2026-dati-istat/",
-    "note": "Un segnale di mercato per le eccellenze del Sud.",
-    "noteSource": "auto",
-    "date": "2026-06-11"
-  },
-  {
-    "id": "6c35f18eee42",
-    "category": "Calici di Magna Grecia",
-    "title": "Il vino italiano cerca un nuovo equilibrio. Le iniziative (solitarie) delle Dop prima della vendemmia 2026",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/misure-contenimento-produzione-vino-consorzi-soave-chianti-abruzzo-asti-brunello-valpolicella-barbera/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-06-11"
-  },
-  {
-    "id": "d5ba3ae37c12",
-    "category": "Calici di Magna Grecia",
-    "title": "Amuri di Fimmina e Amuri di Matri, Al-Cantàra Etna DOC Rosato 2024",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/amuri-di-fimmina-e-amuri-di-matri-al-cantara-etna-doc-rosato-2024/296203/",
-    "note": "Una voce dal mondo del vino, focus Sicilia.",
-    "noteSource": "auto",
-    "date": "2026-06-10"
   }
 ]
