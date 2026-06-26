@@ -1,5 +1,55 @@
 [
   {
+    "id": "69ba354db7b0",
+    "category": "Business con Anima",
+    "title": "30° Enosimposio Assoenologi Sicilia: l'enologo al centro dell'evoluzione del vino tra identità, valore e nuovi linguaggi",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/30-enosimposio-assoenologi-sicilia-lenologo-al-centro-dellevoluzione-del-vino-tra-identita-valore-e-nuovi-linguaggi/297006/",
+    "note": "Un segnale di mercato per le eccellenze del Sud, focus Sicilia.",
+    "noteSource": "auto",
+    "date": "2026-06-26"
+  },
+  {
+    "id": "8ce36cce5804",
+    "category": "Calici di Magna Grecia",
+    "title": "VINerdì IGP | Rosso Veronese IGT Greta 2015, Giovanna Tantini",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vinerdi-igp-rosso-veronese-igt-greta-2015-giovanna-tantini/296916/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-26"
+  },
+  {
+    "id": "7c6e9c112052",
+    "category": "Radar del Sud",
+    "title": "Le Ricette del cuoncio cuoncio. La Dieta del Cilento. Oscar Mondadori | Giovedì 2 luglio ore 18, Libreria Feltrinelli Salerno",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/le-ricette-del-cuoncio-cuoncio-la-dieta-del-cilento-oscar-mondadori-giovedi-2-luglio-ore-18-libreria-feltrinelli-salerno/297014/",
+    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-06-25"
+  },
+  {
+    "id": "0e6a0e1fd5b0",
+    "category": "Territori",
+    "title": "Regione Campania: parte la seconda edizione di \"PRAESENTIA. Gusto di Campania Divina\": otto eventi per scoprire luoghi, piatti e storie.",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/regione-campania-parte-la-seconda-edizione-di-praesentia-gusto-di-campania-divina-otto-eventi-per-scoprire-luoghi-piatti-e-storie/297017/",
+    "note": "Una notizia dal calendario dei territori, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-06-25"
+  },
+  {
+    "id": "af0eb67f08c0",
+    "category": "Calici di Magna Grecia",
+    "title": "La festa del vino naturale arriva nel cuore di Garbatella",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/terza-edizione-fiera-vino-naturale-roma-garbatella/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-25"
+  },
+  {
     "id": "8255b2f02fb0",
     "category": "Territori",
     "title": "Fuori Chimera a Caserta, con i vini di Alepa, la cucina di Maria Charpentier e i suoni del Mediterraneo",
@@ -248,55 +298,5 @@
     "note": "Una segnalazione di cucina, focus Campania.",
     "noteSource": "auto",
     "date": "2026-06-16"
-  },
-  {
-    "id": "f60cf60f5cac",
-    "category": "Calici di Magna Grecia",
-    "title": "Vino e pizza: il sommelier in pizzeria 25 | Federico Campeggio",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vino-e-pizza-il-sommelier-in-pizzeria-25-federico-campeggio/296454/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-06-16"
-  },
-  {
-    "id": "fd14eba47304",
-    "category": "Radar del Sud",
-    "title": "Pizza della Settimana: Trionfo di Primavera Maruzzella Fondi e Capolemole Bianco Marco Carpineti",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/pizza-della-settimana-trionfo-di-primavera-maruzzella-fondi-e-capolemole-bianco-marco-carpineti/296429/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-06-16"
-  },
-  {
-    "id": "337680b9441b",
-    "category": "Calici di Magna Grecia",
-    "title": "Vini Sorrentino – Nuove annate",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vini-sorrentino-vesuvio-vite-vulcaniche-nuove-annate/263668/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-06-15"
-  },
-  {
-    "id": "0fbcdfce6d03",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Ho paura di sbagliare vino\": a Milano apre il locale che vuole eliminare l'ansia della scelta",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/nuove-aperture/milano-enoteca-intelligenza-artificiale-vino/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-06-15"
-  },
-  {
-    "id": "62a43ae90be8",
-    "category": "Radar del Sud",
-    "title": "Pasta dei pescatori, ricetta tradizionale dalle barche del Cilento",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/pasta-dei-pescatori-ricetta-tradizionale-dalle-barche-del-cilento",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-06-14"
   }
 ]
