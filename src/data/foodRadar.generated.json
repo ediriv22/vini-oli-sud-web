@@ -1,5 +1,35 @@
 [
   {
+    "id": "4b38b2a9ad18",
+    "category": "Calici di Magna Grecia",
+    "title": "InvecchiatIGP | Monti Lessini DOC Metodo Classico Dosaggio Zero Riserva 100 Mesi 2015, Sandro De Bruno",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/invecchiatigp-monti-lessini-doc-metodo-classico-dosaggio-zero-riserva-100-mesi-2015-sandro-de-bruno/296919/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-27"
+  },
+  {
+    "id": "d0ed4d6b5981",
+    "category": "Calici di Magna Grecia",
+    "title": "Torre Rosazza racconta il tempo: sei annate a confronto tra pinot grigio e friulano",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/torre-rosazza-racconta-il-tempo-sei-annate-a-confronto-tra-pinot-grigio-e-friulano/297082/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-27"
+  },
+  {
+    "id": "acd301735274",
+    "category": "Radar del Sud",
+    "title": "Agriturismo La Rondinella a Scalea, ottimi anticipi dal Bob Festival",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/agriturismo-la-rondinella-a-scalea",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-27"
+  },
+  {
     "id": "69ba354db7b0",
     "category": "Business con Anima",
     "title": "30° Enosimposio Assoenologi Sicilia: l'enologo al centro dell'evoluzione del vino tra identità, valore e nuovi linguaggi",
@@ -16,6 +46,16 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/vinerdi-igp-rosso-veronese-igt-greta-2015-giovanna-tantini/296916/",
     "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-26"
+  },
+  {
+    "id": "b9643a499be6",
+    "category": "Calici di Magna Grecia",
+    "title": "La Costiera Amalfitana da scoprire: tre giorni tra Tramonti, Ravello e Maiori. Ospitalità, vino e grandi tavole",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/la-costiera-amalfitana-da-scoprire-tre-giorni-tra-tramonti-ravello-e-maiori-ospitalita-vino-e-grandi-tavole/297089/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
     "noteSource": "auto",
     "date": "2026-06-26"
   },
@@ -258,45 +298,5 @@
     "note": "Una voce dal mondo del vino, focus Sicilia.",
     "noteSource": "auto",
     "date": "2026-06-17"
-  },
-  {
-    "id": "dec5f4242b42",
-    "category": "Calici di Magna Grecia",
-    "title": "Vini Tenuta Cavalier Pepe – Nuove annate",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vini-tenuta-cavalier-pepe-nuove-annate-3/198131/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-06-17"
-  },
-  {
-    "id": "c149c7ae8085",
-    "category": "Calici di Magna Grecia",
-    "title": "Dal 20 al 22 giugno all'Aquila torna Abruzzo in Bolla, tre giorni con cantine da ogni parte d'Italia, show cooking, talk e prodotti tipici",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/dal-20-al-22-giugno-allaquila-torna-abruzzo-in-bolla-tre-giorni-con-cantine-da-ogni-parte-ditalia-show-cooking-talk-e-prodotti-tipici/296479/",
-    "note": "Una voce dal mondo del vino, focus Abruzzo.",
-    "noteSource": "auto",
-    "date": "2026-06-17"
-  },
-  {
-    "id": "1e227ae915c3",
-    "category": "Calici di Magna Grecia",
-    "title": "Un patto con la ristorazione per rilanciare i consumi di vino. Dalla Convention Donne del vino arriva un'idea anti-crisi",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/patto-ristorazione-vini-convention-donne-vino/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-06-17"
-  },
-  {
-    "id": "d8c5cf127838",
-    "category": "Radar del Sud",
-    "title": "Il ristorante Vesuvio dove mangiare con vista in Penisola Sorrentina",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/ristorante-vesuvio-panoramic-hotel-mediterraneo-sant-agnello",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-06-16"
   }
 ]
