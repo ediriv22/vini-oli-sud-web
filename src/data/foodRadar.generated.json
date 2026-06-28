@@ -1,5 +1,25 @@
 [
   {
+    "id": "b91ab656970a",
+    "category": "Calici di Magna Grecia",
+    "title": "MenododiciIGP | Dolcetto d'Alba 2025 Giacosa Fratelli",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/menododiciigp-dolcetto-dalba-2025-gicosa-fratelli/296982/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-06-28"
+  },
+  {
+    "id": "15de53154141",
+    "category": "Radar del Sud",
+    "title": "Maratea: Amaro The Club, Lanterna Rossa, Emilio. È il Bob Fest",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/maratea-amaro-the-club-lanterna-rossa-emilio-e-il-bob-fest",
+    "note": "Una segnalazione gastronomica del Sud, focus Basilicata.",
+    "noteSource": "auto",
+    "date": "2026-06-28"
+  },
+  {
     "id": "4b38b2a9ad18",
     "category": "Calici di Magna Grecia",
     "title": "InvecchiatIGP | Monti Lessini DOC Metodo Classico Dosaggio Zero Riserva 100 Mesi 2015, Sandro De Bruno",
@@ -278,25 +298,5 @@
     "note": "Una notizia dal calendario dei territori, focus Campania.",
     "noteSource": "auto",
     "date": "2026-06-19"
-  },
-  {
-    "id": "4acdc329c86a",
-    "category": "Radar del Sud",
-    "title": "Altamura, dove il pane racconta la Puglia più autentica: viaggio all'Antico Forno Santa Caterina, acceso dal 1306",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/altamura-dove-il-pane-racconta-la-puglia-piu-autentica-viaggio-allantico-forno-santa-caterina-acceso-dal-1306/296578/",
-    "note": "Una segnalazione gastronomica del Sud, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-06-18"
-  },
-  {
-    "id": "d56bbd99f5c4",
-    "category": "Calici di Magna Grecia",
-    "title": "La riscossa dei vini costieri: il nuovo stile mediterraneo che sta cambiando il nostro modo di bere",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/riscossa-vini-della-costa-stile-mediterraneo/",
-    "note": "Una voce dal mondo del vino, focus Sicilia.",
-    "noteSource": "auto",
-    "date": "2026-06-17"
   }
 ]
