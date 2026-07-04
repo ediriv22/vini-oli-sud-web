@@ -1,5 +1,55 @@
 [
   {
+    "id": "2fe01949cc71",
+    "category": "Calici di Magna Grecia",
+    "title": "A Scansano è tempo di \"Rosso Morellino\"",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/a-scansano-e-tempo-di-rosso-morellino/297335/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-04"
+  },
+  {
+    "id": "75f9876591d3",
+    "category": "Calici di Magna Grecia",
+    "title": "L'Asprinio d'Aversa sa invecchiare? Il verdetto della prima degustazione storica",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/lasprinio-daversa-sa-invecchiare-il-verdetto-della-prima-degustazione-storica/297345/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-04"
+  },
+  {
+    "id": "00a34478fc50",
+    "category": "Radar del Sud",
+    "title": "Quanto il Bob Fest può cambiare il futuro della Calabria",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/quanto-il-bob-fest-puo-cambiare-il-futuro-della-calabria",
+    "note": "Una segnalazione di cucina, focus Calabria.",
+    "noteSource": "auto",
+    "date": "2026-07-04"
+  },
+  {
+    "id": "46e68308cadc",
+    "category": "Calici di Magna Grecia",
+    "title": "Il vino rosso più famoso della Liguria da bere fresco per i vostri menu estivi. Ecco le etichette che vi consigliamo",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/degustazioni/vini-rossi-freschi-liguria-rossese-estate/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-04"
+  },
+  {
+    "id": "99aa16353565",
+    "category": "Calici di Magna Grecia",
+    "title": "Furto da decine di migliaia di euro nella cantina Banfi: rubate 3mila bottiglie di Alta Langa Docg",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/furto-cantina-banfi-bottiglie-alta-langa-docg/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-03"
+  },
+  {
     "id": "d40318a3895f",
     "category": "Calici di Magna Grecia",
     "title": "\"Sotto il Vesuvio – Storie di vino e di fuoco\": il Vesuvio si racconta in podcast (su spotify)",
@@ -248,55 +298,5 @@
     "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-06-23"
-  },
-  {
-    "id": "42c482cf1b5d",
-    "category": "Calici di Magna Grecia",
-    "title": "Alta Campania Wine, un nuovo modello di enoturismo per l'Alto Casertano",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/alta-campania-wine-un-nuovo-modello-di-enoturismo-per-lalto-casertano/296747/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-06-22"
-  },
-  {
-    "id": "7aff8435d77d",
-    "category": "Calici di Magna Grecia",
-    "title": "Pierpaolo De Bona e Diesel Farm a Napoli | Quando la materia diventa linguaggio",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/pierpaolo-de-bona-e-diesel-farm-a-napoli-quando-la-materia-diventa-linguaggio/296659/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-06-22"
-  },
-  {
-    "id": "f85adfd54433",
-    "category": "Calici di Magna Grecia",
-    "title": "In Veneto si prevede una vendemmia abbondante (fin troppo). Preoccupa la flavescenza dorata",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/veneto-vendemmia-2026-stime/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-06-22"
-  },
-  {
-    "id": "d81f2602cf23",
-    "category": "Calici di Magna Grecia",
-    "title": "MenoDodiciIGP | Toscana Rosso IGT Scicchèria 2024, Borgo Tollena",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/menododiciigp-toscana-rosso-igt-sciccheria-2024-borgo-tollena/296421/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-06-21"
-  },
-  {
-    "id": "a6d1dff3e75e",
-    "category": "Calici di Magna Grecia",
-    "title": "Cantine Federiciane e Vigna Cigliano | Quando il passaggio generazionale diventa valore e identità",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/cantine-federiciane-monteleone-della-famiglia-palumbo-a-marano-di-napoli/78747/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-06-21"
   }
 ]
