@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import Button from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
 
@@ -21,6 +21,8 @@ import { siteConfig } from "@/data/site";
  *  - Gateway finale invariato (4 card audience).
  */
 
+// Scena 0: titolo/sottotitolo sovrascritti a runtime da siteConfig.hero
+// (campi "Home — titolo"/"Home — sottotitolo" del pannello /admin).
 const scrollScenes = [
   {
     eyebrow: "Mediterraneo",
@@ -83,6 +85,19 @@ const gatewayCards = [
 
 export default function HeroSection() {
   const { hero, audiences } = siteConfig;
+  const scenes = useMemo(
+    () =>
+      scrollScenes.map((scene, index) =>
+        index === 0
+          ? {
+              ...scene,
+              title: hero.title || scene.title,
+              subtitle: hero.subtitle || scene.subtitle,
+            }
+          : scene,
+      ),
+    [hero.title, hero.subtitle],
+  );
   const sectionRef = useRef<HTMLElement | null>(null);
   const [progress, setProgress] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -125,10 +140,10 @@ export default function HeroSection() {
   }, []);
 
   const currentSceneIndex = Math.min(
-    scrollScenes.length - 1,
-    Math.floor(progress * scrollScenes.length),
+    scenes.length - 1,
+    Math.floor(progress * scenes.length),
   );
-  const currentScene = scrollScenes[currentSceneIndex];
+  const currentScene = scenes[currentSceneIndex];
   const showGateway = progress >= 0.78;
 
   const imageStyle: CSSProperties = reducedMotion
@@ -142,7 +157,7 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       className="relative -mt-[var(--site-header-height)] h-[420vh]"
-      aria-label="Hero scroll-bound Vini Oli Sud"
+      aria-label="Hero scroll-bound ViniSud"
     >
       <div
         className="sticky overflow-hidden"
