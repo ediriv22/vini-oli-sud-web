@@ -39,6 +39,8 @@ export type StaticPageRichSection = {
 };
 
 export type StaticPageContent = {
+  /** Colore di sfondo della pagina, modificabile dal pannello /admin. */
+  backgroundColor?: string;
   eyebrow: string;
   title: string;
   description: string;

@@ -86,6 +86,13 @@ export default function RootLayout({
     <html
       lang="it"
       className={`${cormorantGaramond.variable} ${montserrat.variable} ${sourceSans3.variable} h-full scroll-smooth antialiased`}
+      style={
+        {
+          // Tema globale modificabile dal pannello /admin (content/settings/site.json).
+          "--color-wine": siteConfig.theme.primaryColor,
+          "--color-ivory": siteConfig.theme.backgroundColor,
+        } as React.CSSProperties
+      }
     >
       <body
         suppressHydrationWarning

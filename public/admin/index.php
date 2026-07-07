@@ -55,6 +55,9 @@ $LABELS = [
     'richSections' => 'Sezioni estese', 'metadataDescription' => 'Descrizione SEO della pagina',
     'externalReference' => 'Riferimento esterno', 'intro' => 'Introduzione',
     'blocks' => 'Blocchi', 'items' => 'Voci', 'lines' => 'Righe', 'text' => 'Testo', 'label' => 'Etichetta',
+    'themePrimaryColor' => 'Colore primario (bottoni e accenti)',
+    'themeBackgroundColor' => 'Colore di sfondo generale del sito',
+    'backgroundColor' => 'Colore di sfondo di questa pagina',
 ];
 
 function h(?string $s): string { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
@@ -93,19 +96,40 @@ function gh_get_file(string $repo, string $path, string $branch, string $token):
 // ---------------------------------------------------------------------------
 // Editor ricorsivo: render + applicazione modifiche
 // ---------------------------------------------------------------------------
-function render_fields($data, string $name, array $blocklist, array $labels): void {
+function is_color_field($key): bool {
+    return is_string($key) && (bool) preg_match('/color$/i', $key);
+}
+
+// $listPath: se non null, $data è la LISTA i cui elementi stiamo iterando
+// (quindi $key è l'indice numerico) — usato per mostrare i controlli ↑/↓.
+function render_fields($data, string $name, array $blocklist, array $labels, ?string $listPath = null): void {
+    $total = count($data);
     foreach ($data as $key => $val) {
         if (in_array((string) $key, $blocklist, true)) continue;
         $fname = $name . '[' . h((string) $key) . ']';
+        if ($listPath !== null && is_array($val)) {
+            echo '<div class="reorder">';
+            echo '<button type="submit" name="move" value="' . h($listPath . '|' . $key . '|up') . '"'
+                . ($key === 0 ? ' disabled' : '') . ' title="Sposta su">▲</button>';
+            echo '<button type="submit" name="move" value="' . h($listPath . '|' . $key . '|down') . '"'
+                . ($key === $total - 1 ? ' disabled' : '') . ' title="Sposta giù">▼</button>';
+            echo '</div>';
+        }
         if (is_array($val)) {
             $isList = array_keys($val) === range(0, count($val) - 1);
             echo '<fieldset class="grp"><legend>' . h(label_for($key, $labels)) . '</legend>';
-            render_fields($val, $fname, $blocklist, $labels);
+            render_fields($val, $fname, $blocklist, $labels, $isList ? (string) $key : null);
             echo '</fieldset>';
         } elseif (is_string($val)) {
             $id = 'f_' . md5($fname);
             echo '<label for="' . $id . '">' . h(label_for($key, $labels)) . '</label>';
-            if (mb_strlen($val) > 70 || strpos($val, "\n") !== false) {
+            if (is_color_field($key)) {
+                $safeVal = preg_match('/^#[0-9a-fA-F]{3,8}$/', $val) ? $val : '#000000';
+                echo '<div class="colorfield">';
+                echo '<input id="' . $id . '" type="color" name="' . $fname . '" value="' . h($safeVal) . '" class="js-contrast">';
+                echo '<span class="contrast-note" data-for="' . $id . '"></span>';
+                echo '</div>';
+            } elseif (mb_strlen($val) > 70 || strpos($val, "\n") !== false) {
                 echo '<textarea id="' . $id . '" name="' . $fname . '">' . h($val) . '</textarea>';
             } else {
                 echo '<input id="' . $id . '" type="text" name="' . $fname . '" value="' . h($val) . '">';
@@ -152,7 +176,23 @@ $validArea = isset($AREAS[$area]);
 // ---------------------------------------------------------------------------
 // Salvataggio
 // ---------------------------------------------------------------------------
-if ($loggedIn && $validArea && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && isset($_POST['save'])) {
+// Sposta un elemento di una lista (per i controlli ↑/↓ delle sezioni).
+function apply_move(array $target, ?string $move): array {
+    if ($move === null) return $target;
+    $parts = explode('|', $move, 3);
+    if (count($parts) !== 3) return $target;
+    [$listKey, $idx, $dir] = $parts;
+    $idx = (int) $idx;
+    if (!isset($target[$listKey]) || !is_array($target[$listKey])) return $target;
+    $list = $target[$listKey];
+    $swapWith = $dir === 'up' ? $idx - 1 : $idx + 1;
+    if ($idx < 0 || $swapWith < 0 || $idx >= count($list) || $swapWith >= count($list)) return $target;
+    [$list[$idx], $list[$swapWith]] = [$list[$swapWith], $list[$idx]];
+    $target[$listKey] = array_values($list);
+    return $target;
+}
+
+if ($loggedIn && $validArea && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && (isset($_POST['save']) || isset($_POST['move']))) {
     if (!hash_equals($_SESSION['csrf'] ?? '', (string) ($_POST['csrf'] ?? ''))) {
         $error = 'Sessione scaduta, ricarica la pagina e riprova.';
     } else {
@@ -163,14 +203,20 @@ if ($loggedIn && $validArea && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' 
         } else {
             $full = json_decode(base64_decode($get['data']['content']), true) ?: [];
             $posted = $_POST['d'] ?? [];
+            $target = $subkey === null ? $full : ($full[$subkey] ?? []);
+            $target = apply_edits($target, $posted, $BLOCKLIST);
+            $target = apply_move($target, $_POST['move'] ?? null);
             if ($subkey === null) {
-                $full = apply_edits($full, $posted, $BLOCKLIST);
+                $full = $target;
             } else {
-                $full[$subkey] = apply_edits($full[$subkey] ?? [], $posted, $BLOCKLIST);
+                $full[$subkey] = $target;
             }
             $newJson = json_encode($full, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . "\n";
+            $commitMsg = isset($_POST['move'])
+                ? 'cms: riordino sezioni (' . $area . ') da pannello segreteria'
+                : 'cms: aggiornamento testi (' . $area . ') da pannello segreteria';
             $put = gh_api('PUT', "https://api.github.com/repos/{$REPO}/contents/{$file}", $TOKEN, [
-                'message' => 'cms: aggiornamento testi (' . $area . ') da pannello segreteria',
+                'message' => $commitMsg,
                 'content' => base64_encode($newJson),
                 'sha'     => $get['data']['sha'],
                 'branch'  => $BRANCH,
@@ -228,6 +274,14 @@ if ($loggedIn && $validArea) {
   .areas { list-style:none; padding:0; margin:0; display:grid; gap:10px; }
   .areas a { display:block; padding:14px 16px; border:1px solid rgba(176,141,87,.4); border-radius:10px; text-decoration:none; color:var(--ink); font-weight:600; background:#fffdf9; }
   .areas a:hover { border-color:var(--wine); color:var(--wine); }
+  .reorder { display:flex; gap:6px; justify-content:flex-end; margin-top:10px; }
+  .reorder button { margin-top:0; padding:4px 10px; font-size:.85rem; background:#fffdf9; color:var(--wine); border:1px solid rgba(176,141,87,.5); }
+  .reorder button:disabled { opacity:.3; cursor:default; }
+  .colorfield { display:flex; align-items:center; gap:12px; }
+  .colorfield input[type=color] { width:56px; height:40px; padding:2px; border:1px solid rgba(176,141,87,.5); border-radius:8px; background:#fffdf9; cursor:pointer; }
+  .contrast-note { font-size:.82rem; }
+  .contrast-note.warn { color:#a33; font-weight:600; }
+  .contrast-note.ok { color:#1c5b34; }
 </style>
 </head>
 <body>
@@ -287,5 +341,47 @@ if ($loggedIn && $validArea) {
   </div>
 <?php endif; ?>
 </div>
+<script>
+// Avviso di leggibilità: confronta il colore scelto (di solito uno sfondo)
+// con il testo scuro standard del sito, secondo la formula di luminanza WCAG.
+// Non blocca il salvataggio: è solo un suggerimento per la segreteria.
+(function () {
+  var DARK_TEXT = [20, 16, 12]; // --color-ink-strong
+
+  function luminance(r, g, b) {
+    var a = [r, g, b].map(function (v) {
+      v /= 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    return 0.2126 * a[0] + 0.7152 * a[1] + 0.0722 * a[2];
+  }
+
+  function contrastRatio(hex) {
+    var m = hex.replace('#', '');
+    if (m.length === 3) m = m.split('').map(function (c) { return c + c; }).join('');
+    var r = parseInt(m.substr(0, 2), 16), g = parseInt(m.substr(2, 2), 16), b = parseInt(m.substr(4, 2), 16);
+    var l1 = luminance(r, g, b) + 0.05;
+    var l2 = luminance(DARK_TEXT[0], DARK_TEXT[1], DARK_TEXT[2]) + 0.05;
+    return l1 > l2 ? l1 / l2 : l2 / l1;
+  }
+
+  document.querySelectorAll('.js-contrast').forEach(function (input) {
+    var note = document.querySelector('.contrast-note[data-for="' + input.id + '"]');
+    if (!note) return;
+    function update() {
+      var ratio = contrastRatio(input.value);
+      if (ratio < 4.5) {
+        note.textContent = 'Attenzione: con testo scuro il contrasto è basso (' + ratio.toFixed(1) + ':1), potrebbe essere poco leggibile.';
+        note.className = 'contrast-note warn';
+      } else {
+        note.textContent = 'Contrasto con testo scuro: ' + ratio.toFixed(1) + ':1 — ok.';
+        note.className = 'contrast-note ok';
+      }
+    }
+    input.addEventListener('input', update);
+    update();
+  });
+})();
+</script>
 </body>
 </html>

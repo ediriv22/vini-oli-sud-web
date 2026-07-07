@@ -73,6 +73,11 @@ export const siteConfig = {
     vatId: "10430641216",
     fiscalCode: "95334510633",
   },
+  // Colori globali modificabili dal pannello /admin (content/settings/site.json).
+  theme: {
+    primaryColor: editable.themePrimaryColor,
+    backgroundColor: editable.themeBackgroundColor,
+  },
   hero: {
     // Testi modificabili dal pannello /admin (content/settings/site.json).
     eyebrow: editable.heroEyebrow,

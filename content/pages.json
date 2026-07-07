@@ -1,5 +1,6 @@
 {
     "evento": {
+        "backgroundColor": "#f4ede0",
         "eyebrow": "L'evento",
         "title": "L’evento",
         "description": "Nel cuore di Napoli, tra mare, Vesuvio, motorsport e hospitality, Vini Oli Sud costruisce una scena dove il racconto del gusto mediterraneo dialoga con l’energia del Napoli Racing Show.",
@@ -218,6 +219,7 @@
         "metadataDescription": "Vini Oli Sud: scenario, identità e edizione 2026 del salone boutique dei terroir del Mezzogiorno, in dialogo con Napoli Racing Show."
     },
     "espositori": {
+        "backgroundColor": "#f4ede0",
         "eyebrow": "Espositori",
         "title": "Porta la tua azienda in pole position sul mercato mediterraneo.",
         "description": "Una piattaforma progettata per dare visibilità commerciale, incontri utili e posizionamento distintivo a produttori, consorzi e marchi del gusto del Sud Italia.",
@@ -298,6 +300,7 @@
         "metadataDescription": "Vini Oli Sud espositori: visibilità commerciale, matching con buyer selezionati e posizionamento premium per le eccellenze del Sud Italia."
     },
     "buyer": {
+        "backgroundColor": "#f4ede0",
         "eyebrow": "Buyer e operatori",
         "title": "Il tuo accesso ai migliori terroir del Sud Italia.",
         "description": "Un hub selettivo pensato per chi cerca scouting, relazioni dirette e una lettura ordinata dell’offerta mediterranea tra vino, olio e cultura produttiva.",
@@ -341,6 +344,7 @@
         "metadataDescription": "Vini Oli Sud buyer e operatori Ho.Re.Ca.: selezione, agenda di incontri e accesso ai terroir del Mezzogiorno."
     },
     "visitatori": {
+        "backgroundColor": "#f4ede0",
         "eyebrow": "Visitatori",
         "title": "Assapora il Sud, vista mare.",
         "description": "Degustazioni, show cooking e cultura mediterranea prendono forma in un’esperienza capace di tenere insieme piacere, scoperta e qualità estetica.",
@@ -412,6 +416,7 @@
         "metadataDescription": "Vini Oli Sud visitatori: degustazioni, show cooking e cultura mediterranea sul lungomare di Napoli."
     },
     "grand-prix": {
+        "backgroundColor": "#f4ede0",
         "eyebrow": "Grand Prix · Prima Edizione",
         "title": "Grand Prix Magna Grecia",
         "description": "Uno spazio dedicato a valorizzare prodotti, territori e riconoscibilità, con una narrazione capace di unire autorevolezza e desiderabilità. L’Albo d’Oro 2025 raccoglie i primi dieci riconoscimenti del progetto.",
@@ -454,6 +459,7 @@
         "metadataDescription": "Scopri il Grand Prix Magna Grecia di Vini Oli Sud: posizionamento, Albo d’Oro 2025 e percorso di valorizzazione delle eccellenze del Mezzogiorno."
     },
     "diario-del-sud": {
+        "backgroundColor": "#f4ede0",
         "eyebrow": "Diario del Sud",
         "title": "Diario del Sud",
         "description": "Radar editoriale di Vini Oli Sud: titoli, fonti e segnali dal vino, dall’olio e dall’agroalimentare mediterraneo.",
@@ -496,6 +502,7 @@
         "metadataDescription": "Diario del Sud: il radar editoriale di Vini Oli Sud raccoglie titoli, fonti e segnali dal vino, dall’olio e dall’agroalimentare mediterraneo."
     },
     "media": {
+        "backgroundColor": "#f4ede0",
         "eyebrow": "Media",
         "title": "Press Room Vini Oli Sud",
         "description": "Un’area pensata per giornalisti, redazioni, uffici stampa e stakeholder che hanno bisogno di materiali affidabili, rapidi da consultare e pronti alla pubblicazione.",
@@ -539,6 +546,7 @@
         "metadataDescription": "Press room Vini Oli Sud: materiali, accrediti e percorso dedicato a giornalisti, redazioni e uffici stampa."
     },
     "contatti": {
+        "backgroundColor": "#f4ede0",
         "eyebrow": "Contatti",
         "title": "Contatti",
         "description": "Recapiti ufficiali per richieste commerciali, accrediti, partnership e comunicazioni stampa relative a Vini Oli Sud.",

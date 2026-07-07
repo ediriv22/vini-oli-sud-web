@@ -12,7 +12,16 @@ export default function InternalPageTemplate({
   page,
 }: InternalPageTemplateProps) {
   return (
-    <>
+    <div
+      style={
+        page.backgroundColor
+          ? ({
+              backgroundColor: page.backgroundColor,
+              "--color-ivory": page.backgroundColor,
+            } as React.CSSProperties)
+          : undefined
+      }
+    >
       <section className="section-space-lg">
         <div className="section-shell grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-16">
           <div>
@@ -137,6 +146,6 @@ export default function InternalPageTemplate({
           </div>
         </section>
       ) : null}
-    </>
+    </div>
   );
 }
