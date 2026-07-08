@@ -1,10 +1,50 @@
 [
   {
+    "id": "b698629eee4b",
+    "category": "Business con Anima",
+    "title": "Capodanno del Mugnaio 2026, la decima edizione a Pontelatone",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/capodanno-del-mugnaio-2026-la-decima-edizione-a-pontelatone",
+    "note": "Un segnale di mercato per le eccellenze del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-07-08"
+  },
+  {
     "id": "05771bb97fde",
     "category": "Calici di Magna Grecia",
     "title": "Tenuta Cavalier Pepe, dove l'enoturismo ha il profumo di lavanda",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/tenuta-cavalier-pepe-dove-lenoturismo-ha-il-profumo-di-lavanda/297774/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-07"
+  },
+  {
+    "id": "b4ab9bf55afa",
+    "category": "Radar del Sud",
+    "title": "Praesentia. Gusto di Campania Divina parte da Ischia: la gastronomia racconta la cultura del Mediterraneo",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/praesentia-gusto-di-campania-divina-parte-da-ischia-la-gastronomia-racconta-la-cultura-del-mediterraneo/297884/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-07-07"
+  },
+  {
+    "id": "9632f5904000",
+    "category": "Calici di Magna Grecia",
+    "title": "\"Al Venissa il wine pairing non è mai andato meglio e vi spiego il perché\". La ricetta anti-crisi di Francesco Brutto",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/venissa-crescita-abbinamento-cibo-vino-naturale/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-07"
+  },
+  {
+    "id": "43133c021b81",
+    "category": "Calici di Magna Grecia",
+    "title": "A Suvereto sono iniziati gli espropri dei terreni per le energie rinnovabili. L'allarme delle cantine della zona",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/suvereto-progetto-rinnovabili-allarme-docg-suvereto-val-di-cornia/",
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-07-07"
@@ -258,45 +298,5 @@
     "note": "Una segnalazione gastronomica del Sud, focus Campania.",
     "noteSource": "auto",
     "date": "2026-06-25"
-  },
-  {
-    "id": "0e6a0e1fd5b0",
-    "category": "Territori",
-    "title": "Regione Campania: parte la seconda edizione di \"PRAESENTIA. Gusto di Campania Divina\": otto eventi per scoprire luoghi, piatti e storie.",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/regione-campania-parte-la-seconda-edizione-di-praesentia-gusto-di-campania-divina-otto-eventi-per-scoprire-luoghi-piatti-e-storie/297017/",
-    "note": "Una notizia dal calendario dei territori, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-06-25"
-  },
-  {
-    "id": "af0eb67f08c0",
-    "category": "Calici di Magna Grecia",
-    "title": "La festa del vino naturale arriva nel cuore di Garbatella",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/terza-edizione-fiera-vino-naturale-roma-garbatella/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-06-25"
-  },
-  {
-    "id": "8255b2f02fb0",
-    "category": "Territori",
-    "title": "Fuori Chimera a Caserta, con i vini di Alepa, la cucina di Maria Charpentier e i suoni del Mediterraneo",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/fuori-chimera-a-caserta-con-i-vini-di-alepa-la-cucina-di-maria-charpentier-e-i-suoni-del-mediterraneo/296743/",
-    "note": "Una notizia dal calendario dei territori, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-06-23"
-  },
-  {
-    "id": "6ddb94a17e15",
-    "category": "Calici di Magna Grecia",
-    "title": "Oltre i numeri, dentro l'Abruzzo con Citra e Cotarella",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/oltre-i-numeri-dentro-labruzzo-con-citra-e-cotarella/296835/",
-    "note": "Una voce dal mondo del vino, focus Abruzzo.",
-    "noteSource": "auto",
-    "date": "2026-06-23"
   }
 ]
