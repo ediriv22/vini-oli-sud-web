@@ -58,8 +58,31 @@ $LABELS = [
     'themePrimaryColor' => 'Colore primario (bottoni e accenti)',
     'themeBackgroundColor' => 'Colore di sfondo generale del sito',
     'backgroundColor' => 'Colore di sfondo di questa pagina',
+    'backgroundImage' => 'Immagine di sfondo di questa pagina (sostituisce il colore)',
     'heroBackgroundImage' => 'Home — immagine di sfondo',
     'heroOverlayOpacity' => 'Home — intensità ombreggiatura sull’immagine',
+    'fontPreset' => 'Stile carattere del sito',
+    'faviconImage' => 'Icona del sito (favicon)',
+    'editionBackgroundColor' => 'Home — Edizione: colore di sfondo',
+    'editionBackgroundImage' => 'Home — Edizione: immagine di sfondo',
+    'audienceBackgroundColor' => 'Home — Percorsi: colore di sfondo',
+    'audienceBackgroundImage' => 'Home — Percorsi: immagine di sfondo',
+    'conceptBackgroundColor' => 'Home — Profezia Liquida: colore di sfondo',
+    'conceptBackgroundImage' => 'Home — Profezia Liquida: immagine di sfondo',
+    'grandPrixBackgroundColor' => 'Home — Grand Prix: colore di sfondo',
+    'grandPrixBackgroundImage' => 'Home — Grand Prix: immagine di sfondo',
+    'ctaBackgroundColor' => 'Home — CTA finale: colore di sfondo',
+    'ctaBackgroundImage' => 'Home — CTA finale: immagine di sfondo',
+];
+
+// Campi a scelta multipla (dropdown): chiave => [valore => etichetta].
+$SELECT_FIELDS = [
+    'fontPreset' => [
+        'classico'   => 'Classico (Cormorant + Montserrat)',
+        'editoriale' => 'Editoriale (Playfair Display + Raleway)',
+        'naturale'   => 'Naturale (Fraunces + Jost)',
+        'moderno'    => 'Moderno (EB Garamond + Inter)',
+    ],
 ];
 
 function h(?string $s): string { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
@@ -107,10 +130,20 @@ function is_opacity_field($key): bool {
 function is_image_field($key): bool {
     return is_string($key) && (bool) preg_match('/image$/i', $key);
 }
+// Anteprima neutra per i campi immagine ancora vuoti (evita src="" rotto).
+function image_preview_src(string $val): string {
+    if ($val !== '') return $val;
+    $svg = '<svg xmlns="http://www.w3.org/2000/svg" width="360" height="120">'
+         . '<rect width="100%" height="100%" fill="#ece2cf"/>'
+         . '<text x="50%" y="50%" font-family="sans-serif" font-size="14" fill="#7a2634" text-anchor="middle" dominant-baseline="middle">Nessuna immagine caricata</text>'
+         . '</svg>';
+    return 'data:image/svg+xml,' . rawurlencode($svg);
+}
 
 // $listPath: se non null, $data è la LISTA i cui elementi stiamo iterando
 // (quindi $key è l'indice numerico) — usato per mostrare i controlli ↑/↓.
 function render_fields($data, string $name, array $blocklist, array $labels, ?string $listPath = null): void {
+    global $SELECT_FIELDS;
     $total = count($data);
     foreach ($data as $key => $val) {
         if (in_array((string) $key, $blocklist, true)) continue;
@@ -131,12 +164,22 @@ function render_fields($data, string $name, array $blocklist, array $labels, ?st
         } elseif (is_string($val)) {
             $id = 'f_' . md5($fname);
             echo '<label for="' . $id . '">' . h(label_for($key, $labels)) . '</label>';
-            if (is_image_field($key)) {
+            if (isset($SELECT_FIELDS[$key])) {
+                echo '<select id="' . $id . '" name="' . $fname . '">';
+                foreach ($SELECT_FIELDS[$key] as $optVal => $optLabel) {
+                    $sel = ((string) $optVal === $val) ? ' selected' : '';
+                    echo '<option value="' . h((string) $optVal) . '"' . $sel . '>' . h($optLabel) . '</option>';
+                }
+                echo '</select>';
+            } elseif (is_image_field($key)) {
                 echo '<div class="imagefield">';
-                echo '<img id="' . $id . '_preview" src="' . h($val) . '" alt="" class="preview-img">';
+                echo '<img id="' . $id . '_preview" src="' . h(image_preview_src($val)) . '" alt="" class="preview-img">';
                 echo '<input type="hidden" name="' . $fname . '" value="' . h($val) . '">';
                 echo '<input type="file" name="upload[' . h((string) $key) . ']" accept="image/jpeg,image/png,image/webp" class="js-image-upload" data-preview="' . $id . '_preview">';
                 echo '<p class="field-hint">Carica una nuova foto per sostituirla (JPG/PNG/WebP, max 6MB). Se non selezioni nulla resta quella attuale.</p>';
+                if ($val !== '') {
+                    echo '<label class="clear-image-label"><input type="checkbox" name="clear[' . h((string) $key) . ']" value="1"> Rimuovi immagine e torna al colore di sfondo</label>';
+                }
                 echo '</div>';
             } elseif (is_color_field($key)) {
                 $safeVal = preg_match('/^#[0-9a-fA-F]{3,8}$/', $val) ? $val : '#000000';
@@ -232,7 +275,9 @@ if ($loggedIn && $validArea && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' 
             // Upload immagini: ogni file caricato in $_FILES['upload'][...]
             // sostituisce il path testuale corrispondente in $posted, prima
             // di apply_edits. Supporta solo campi *Image di primo livello
-            // (unico caso oggi: heroBackgroundImage in site.json).
+            // (tutti i casi oggi: heroBackgroundImage, faviconImage,
+            // *BackgroundImage delle sezioni home, backgroundImage pagine).
+            $uploadedFields = [];
             if (!empty($_FILES['upload']['name']) && is_array($_FILES['upload']['name'])) {
                 foreach ($_FILES['upload']['name'] as $fieldKey => $originalName) {
                     if ($originalName === '' || ($_FILES['upload']['error'][$fieldKey] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
@@ -252,10 +297,11 @@ if ($loggedIn && $validArea && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' 
                     }
                     $bytes = file_get_contents($tmpPath);
                     $ext = $extByMime[$imgInfo['mime']];
-                    $newPath = 'public/images/home/hero-bg-' . substr(sha1($bytes), 0, 10) . '.' . $ext;
+                    $slug = strtolower(preg_replace('/[^a-zA-Z0-9]+/', '-', (string) $fieldKey));
+                    $newPath = 'public/images/uploads/' . trim($slug, '-') . '-' . substr(sha1($bytes), 0, 10) . '.' . $ext;
                     $existingImg = gh_get_file($REPO, $newPath, $BRANCH, $TOKEN);
                     $imgBody = [
-                        'message' => 'cms: nuova immagine di sfondo (' . $area . ') da pannello segreteria',
+                        'message' => 'cms: nuova immagine (' . $area . ' · ' . $fieldKey . ') da pannello segreteria',
                         'content' => base64_encode($bytes),
                         'branch'  => $BRANCH,
                     ];
@@ -265,8 +311,20 @@ if ($loggedIn && $validArea && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' 
                     $putImg = gh_api('PUT', "https://api.github.com/repos/{$REPO}/contents/{$newPath}", $TOKEN, $imgBody);
                     if ($putImg['code'] === 200 || $putImg['code'] === 201) {
                         $posted[$fieldKey] = '/' . preg_replace('#^public/#', '', $newPath);
+                        $uploadedFields[$fieldKey] = true;
                     } else {
                         $error = 'Caricamento immagine non riuscito (codice ' . $putImg['code'] . ').';
+                    }
+                }
+            }
+
+            // "Rimuovi immagine": riporta il campo a stringa vuota (torna al
+            // colore di sfondo), a meno che in questa stessa richiesta non
+            // sia stata appena caricata una nuova immagine per lo stesso campo.
+            if (!empty($_POST['clear']) && is_array($_POST['clear'])) {
+                foreach ($_POST['clear'] as $fieldKey => $flag) {
+                    if ($flag === '1' && empty($uploadedFields[$fieldKey])) {
+                        $posted[$fieldKey] = '';
                     }
                 }
             }
@@ -360,6 +418,14 @@ if ($loggedIn && $validArea) {
   .hero-preview img { display:block; width:100%; height:220px; object-fit:cover; }
   .hero-preview .shade { position:absolute; inset:0; background:#0f1821; }
   .hero-preview .caption { position:absolute; left:12px; bottom:10px; color:#f4ede0; font-size:.78rem; font-weight:600; text-shadow:0 2px 6px rgba(0,0,0,.6); }
+  .clear-image-label { display:flex; align-items:center; gap:8px; margin-top:10px; font-size:.82rem; font-weight:400; text-transform:none; letter-spacing:normal; color:#6b605c; }
+  .clear-image-label input { width:auto; }
+  select { width:100%; padding:11px 13px; border:1px solid rgba(176,141,87,.5); border-radius:9px; font-size:1rem; font-family:inherit; background:#fffdf9; }
+  .emoji-trigger { margin-left:8px; background:#fffdf9; border:1px solid rgba(176,141,87,.5); border-radius:6px; padding:2px 9px; font-size:1rem; line-height:1.6; cursor:pointer; vertical-align:middle; }
+  .emoji-trigger:hover { border-color:var(--wine); }
+  .emoji-panel { position:absolute; z-index:80; display:grid; grid-template-columns:repeat(8,1fr); gap:2px; background:#fff; border:1px solid rgba(176,141,87,.4); border-radius:10px; padding:8px; box-shadow:0 10px 28px rgba(42,32,23,.18); }
+  .emoji-panel button { border:none; background:transparent; font-size:1.15rem; cursor:pointer; padding:5px; border-radius:6px; margin:0; }
+  .emoji-panel button:hover { background:rgba(176,141,87,.18); }
 </style>
 </head>
 <body>
@@ -508,6 +574,53 @@ if ($loggedIn && $validArea) {
   });
 
   syncHeroPreview();
+})();
+
+// Picker emoji: aggiunge un pulsante 🙂 accanto a ogni campo di testo per
+// inserire emoji senza dover usare la tastiera emoji del sistema operativo.
+(function () {
+  var EMOJI = ['🍷','🫒','🍇','🌊','🏛️','🚗','🏆','✨','☀️','🌿','📍','🎉','💬','📌','🔥','⭐','🎊','🍽️','🥂','🌅'];
+  var activeField = null;
+  var panel = document.createElement('div');
+  panel.className = 'emoji-panel';
+  panel.style.display = 'none';
+  EMOJI.forEach(function (emoji) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = emoji;
+    btn.addEventListener('click', function () {
+      if (!activeField) return;
+      var start = activeField.selectionStart ?? activeField.value.length;
+      var end = activeField.selectionEnd ?? activeField.value.length;
+      activeField.value = activeField.value.slice(0, start) + emoji + activeField.value.slice(end);
+      activeField.focus();
+      activeField.selectionStart = activeField.selectionEnd = start + emoji.length;
+      panel.style.display = 'none';
+    });
+    panel.appendChild(btn);
+  });
+  document.body.appendChild(panel);
+
+  document.querySelectorAll('input[type=text], textarea').forEach(function (field) {
+    var trigger = document.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'emoji-trigger';
+    trigger.textContent = '🙂';
+    trigger.title = 'Inserisci emoji';
+    trigger.addEventListener('click', function () {
+      activeField = field;
+      var rect = trigger.getBoundingClientRect();
+      panel.style.top = (window.scrollY + rect.bottom + 4) + 'px';
+      panel.style.left = (window.scrollX + rect.left) + 'px';
+      panel.style.display = panel.style.display === 'none' ? 'grid' : 'none';
+    });
+    field.insertAdjacentElement('afterend', trigger);
+  });
+
+  document.addEventListener('click', function (ev) {
+    if (panel.contains(ev.target) || ev.target.classList.contains('emoji-trigger')) return;
+    panel.style.display = 'none';
+  });
 })();
 </script>
 </body>

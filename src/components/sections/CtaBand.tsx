@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
+import { getSectionBackgroundStyle } from "@/lib/sectionBackground";
 
 /**
  * Fascia CTA finale "Espositori & Buyer".
@@ -21,6 +22,7 @@ export default function CtaBand() {
     <section
       aria-labelledby="final-cta-title"
       className="section-flow section-space-lg"
+      style={getSectionBackgroundStyle(siteConfig.sectionBackgrounds.cta)}
     >
       <div className="section-shell">
         <div className="relative mx-auto max-w-[68rem] py-10 sm:py-12 md:py-14 lg:py-16">

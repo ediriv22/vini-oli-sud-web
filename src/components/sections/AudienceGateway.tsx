@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { siteConfig } from "@/data/site";
+import { getSectionBackgroundStyle } from "@/lib/sectionBackground";
 
 /**
  * "Scegli il tuo percorso" — atrio editoriale per i 4 target.
@@ -25,6 +26,7 @@ export default function AudienceGateway() {
       id="percorsi"
       aria-labelledby="audience-gateway-title"
       className="section-flow pt-16 pb-24 sm:pt-20 sm:pb-28 lg:pt-28 lg:pb-32"
+      style={getSectionBackgroundStyle(siteConfig.sectionBackgrounds.audience)}
     >
       <div className="section-shell">
         <SectionHeader

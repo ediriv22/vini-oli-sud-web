@@ -1,4 +1,5 @@
 import { siteConfig } from "@/data/site";
+import { getSectionBackgroundStyle } from "@/lib/sectionBackground";
 
 /**
  * Striscia editoriale "Edizione 2026 · Napoli".
@@ -24,6 +25,7 @@ export default function EditionStrip() {
     <section
       aria-label="Coordinate dell’edizione"
       className="section-flow relative pt-16 pb-10 sm:pt-20 sm:pb-12 lg:pt-24 lg:pb-14"
+      style={getSectionBackgroundStyle(siteConfig.sectionBackgrounds.edition)}
     >
       <div className="section-shell">
         <div className="grid gap-6 sm:gap-8 md:grid-cols-[auto_1fr] md:items-baseline md:gap-10 lg:grid-cols-[auto_1fr_auto] lg:gap-12">

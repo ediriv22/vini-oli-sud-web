@@ -1,4 +1,5 @@
 import { siteConfig } from "@/data/site";
+import { getSectionBackgroundStyle } from "@/lib/sectionBackground";
 
 /**
  * Sezione "Profezia Liquida" — manifesto editoriale del progetto.
@@ -18,6 +19,7 @@ export default function ConceptSection() {
     <section
       aria-labelledby="concept-title"
       className="section-flow section-soft-enter section-space"
+      style={getSectionBackgroundStyle(siteConfig.sectionBackgrounds.concept)}
     >
       <div className="section-shell">
         <div className="grid gap-8 md:gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start lg:gap-12">

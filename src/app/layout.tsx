@@ -3,24 +3,64 @@ import {
   Cormorant_Garamond,
   Montserrat,
   Source_Sans_3,
+  Playfair_Display,
+  Raleway,
+  Fraunces,
+  Jost,
+  EB_Garamond,
+  Inter,
 } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { siteConfig } from "@/data/site";
+import { resolveFontPreset } from "@/data/fontPresets";
 import "./globals.css";
 
 const metadataBaseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://vinisud.it";
 
+// Tutti i font dei preset selezionabili dal pannello /admin sono sempre
+// caricati qui (next/font/google richiede argomenti statici); solo quello
+// scelto in fontPreset viene collegato alle variabili --font-display-stack /
+// --font-ui-stack usate dal resto del sito. Vedi src/data/fontPresets.ts.
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["600"],
-  variable: "--font-display-stack",
+  variable: "--font-cormorant",
 });
-
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["600"],
-  variable: "--font-ui-stack",
+  variable: "--font-montserrat",
+});
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-playfair",
+});
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-raleway",
+});
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-fraunces",
+});
+const jost = Jost({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-jost",
+});
+const ebGaramond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-eb-garamond",
+});
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-inter",
 });
 
 const sourceSans3 = Source_Sans_3({
@@ -28,6 +68,26 @@ const sourceSans3 = Source_Sans_3({
   weight: ["400", "600"],
   variable: "--font-sans-stack",
 });
+
+const fontVariables = [
+  cormorantGaramond,
+  montserrat,
+  playfairDisplay,
+  raleway,
+  fraunces,
+  jost,
+  ebGaramond,
+  inter,
+  sourceSans3,
+]
+  .map((font) => font.variable)
+  .join(" ");
+
+const activeFontPreset = resolveFontPreset(siteConfig.fontPreset);
+
+const faviconMime = siteConfig.faviconImage.endsWith(".svg")
+  ? "image/svg+xml"
+  : "image/png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(metadataBaseUrl),
@@ -37,8 +97,12 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  appleWebApp: {
+    title: siteConfig.name,
+  },
+  manifest: "/manifest.json",
   keywords: [
-    "Vini Oli Sud",
+    "ViniSud",
     "Napoli Racing Show",
     "vini del Sud Italia",
     "oli del Sud Italia",
@@ -46,6 +110,7 @@ export const metadata: Metadata = {
     "buyer vino olio",
   ],
   openGraph: {
+    siteName: siteConfig.name,
     title: siteConfig.name,
     description: siteConfig.description,
     type: "website",
@@ -60,7 +125,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: siteConfig.brand.assets.faviconSvg, type: "image/svg+xml" },
+      // Favicon caricabile dal pannello /admin: sostituisce il monogramma
+      // di default se la segreteria carica un'altra icona ViniSud.
+      { url: siteConfig.faviconImage, type: faviconMime },
       { url: siteConfig.brand.assets.favicon16, sizes: "16x16", type: "image/png" },
       { url: siteConfig.brand.assets.favicon32, sizes: "32x32", type: "image/png" },
       { url: siteConfig.brand.assets.favicon64, sizes: "64x64", type: "image/png" },
@@ -85,12 +152,15 @@ export default function RootLayout({
   return (
     <html
       lang="it"
-      className={`${cormorantGaramond.variable} ${montserrat.variable} ${sourceSans3.variable} h-full scroll-smooth antialiased`}
+      className={`${fontVariables} h-full scroll-smooth antialiased`}
       style={
         {
           // Tema globale modificabile dal pannello /admin (content/settings/site.json).
           "--color-wine": siteConfig.theme.primaryColor,
           "--color-ivory": siteConfig.theme.backgroundColor,
+          // Preset di font modificabile dal pannello /admin (fontPreset).
+          "--font-display-stack": activeFontPreset.display,
+          "--font-ui-stack": activeFontPreset.ui,
         } as React.CSSProperties
       }
     >

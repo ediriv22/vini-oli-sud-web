@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/data/site";
 import { grandPrixWinners2025 } from "@/data/winners";
+import { getSectionBackgroundStyle } from "@/lib/sectionBackground";
 
 export default function GrandPrixHighlight() {
   const { eyebrow, title, subtitle, process, featuredAwards } =
@@ -15,6 +16,7 @@ export default function GrandPrixHighlight() {
     <section
       aria-labelledby="grand-prix-highlight-title"
       className="section-flow section-space"
+      style={getSectionBackgroundStyle(siteConfig.sectionBackgrounds.grandPrix)}
     >
       <span
         aria-hidden="true"

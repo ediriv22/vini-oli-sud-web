@@ -82,6 +82,36 @@ export const siteConfig = {
     primaryColor: editable.themePrimaryColor,
     backgroundColor: editable.themeBackgroundColor,
   },
+  // Preset di font selezionabile dal pannello /admin. Vedi src/app/layout.tsx
+  // per l'elenco completo dei preset caricati e come viene applicato.
+  fontPreset: editable.fontPreset,
+  // Icona favicon caricabile dal pannello /admin (upload immagine).
+  faviconImage: editable.faviconImage,
+  // Sfondo (colore o immagine) di ogni sezione della home, modificabile dal
+  // pannello /admin. Se è presente un'immagine ha sempre priorità sul colore
+  // (vedi src/lib/sectionBackground.ts).
+  sectionBackgrounds: {
+    edition: {
+      backgroundColor: editable.editionBackgroundColor,
+      backgroundImage: editable.editionBackgroundImage,
+    },
+    audience: {
+      backgroundColor: editable.audienceBackgroundColor,
+      backgroundImage: editable.audienceBackgroundImage,
+    },
+    concept: {
+      backgroundColor: editable.conceptBackgroundColor,
+      backgroundImage: editable.conceptBackgroundImage,
+    },
+    grandPrix: {
+      backgroundColor: editable.grandPrixBackgroundColor,
+      backgroundImage: editable.grandPrixBackgroundImage,
+    },
+    cta: {
+      backgroundColor: editable.ctaBackgroundColor,
+      backgroundImage: editable.ctaBackgroundImage,
+    },
+  },
   hero: {
     // Testi modificabili dal pannello /admin (content/settings/site.json).
     eyebrow: editable.heroEyebrow,

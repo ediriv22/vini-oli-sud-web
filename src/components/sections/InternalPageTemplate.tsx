@@ -3,6 +3,7 @@ import Card from "@/components/ui/Card";
 import SectionHeader from "@/components/ui/SectionHeader";
 import PageRichSections from "@/components/sections/PageRichSections";
 import type { StaticPageContent } from "@/data/pages";
+import { getSectionBackgroundStyle } from "@/lib/sectionBackground";
 
 type InternalPageTemplateProps = {
   page: StaticPageContent;
@@ -14,12 +15,12 @@ export default function InternalPageTemplate({
   return (
     <div
       style={
-        page.backgroundColor
-          ? ({
-              backgroundColor: page.backgroundColor,
-              "--color-ivory": page.backgroundColor,
-            } as React.CSSProperties)
-          : undefined
+        {
+          ...getSectionBackgroundStyle(page),
+          ...(page.backgroundColor
+            ? { "--color-ivory": page.backgroundColor }
+            : {}),
+        } as React.CSSProperties
       }
     >
       <section className="section-space-lg">

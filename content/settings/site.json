@@ -8,5 +8,17 @@
     "heroTitle": "Le Radici del Gusto. L’Adrenalina del Futuro.",
     "heroSubtitle": "Vini Oli Sud unisce vino, olio, cultura mediterranea e business matching nel palcoscenico del Napoli Racing Show. Una piattaforma boutique per produttori, buyer, visitatori e brand premium.",
     "heroBackgroundImage": "/images/home/tavola-scroll-master.jpg",
-    "heroOverlayOpacity": 0.78
+    "heroOverlayOpacity": 0.6,
+    "fontPreset": "classico",
+    "faviconImage": "/brand/favicon.svg",
+    "editionBackgroundColor": "#f4ede0",
+    "editionBackgroundImage": "",
+    "audienceBackgroundColor": "#f4ede0",
+    "audienceBackgroundImage": "",
+    "conceptBackgroundColor": "#f4ede0",
+    "conceptBackgroundImage": "",
+    "grandPrixBackgroundColor": "#f4ede0",
+    "grandPrixBackgroundImage": "",
+    "ctaBackgroundColor": "#f4ede0",
+    "ctaBackgroundImage": ""
 }
