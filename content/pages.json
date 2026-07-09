@@ -161,58 +161,306 @@
                 ]
             },
             {
-                "eyebrow": "Eventi Collaterali",
-                "title": "Concorsi, degustazioni ed eventi esclusivi.",
-                "intro": "Durante la II Edizione di Vini e Oli della Magna Grecia si svolgeranno concorsi, degustazioni ed eventi esclusivi dedicati alle eccellenze enogastronomiche, al lifestyle e alle passioni che rendono unico il mondo del gusto e dell'eleganza mediterranea.",
+                "eyebrow": "Novità II Edizione",
+                "title": "Quando il vino incontra l'eccellenza di altri settori.",
+                "intro": "La grande novità della II Edizione di Vini & Oli della Magna Grecia.",
+                "blocks": [
+                    {
+                        "kind": "paragraph",
+                        "text": "La II Edizione di Vini & Oli della Magna Grecia propone un ricco programma di appuntamenti dedicati alla cultura del vino."
+                    },
+                    {
+                        "kind": "paragraph",
+                        "text": "Le Masterclass istituzionali, dedicate alla conoscenza del patrimonio vitivinicolo campano e italiano, saranno organizzate dall'Assessorato all'Agricoltura della Regione Campania, in collaborazione con l'Associazione Italiana Sommelier (AIS), sotto la supervisione dell'Assessorato stesso."
+                    },
+                    {
+                        "kind": "paragraph",
+                        "text": "Accanto a questo prestigioso programma nasce, per la prima volta, la MAGNA GRAECIA PAIRING EXPERIENCE®, un innovativo format ideato dall'Organizzazione della manifestazione, destinato a diventare uno degli appuntamenti più originali e coinvolgenti dell'evento."
+                    },
+                    {
+                        "kind": "paragraph",
+                        "text": "La Magna Graecia Pairing Experience® trasforma la degustazione tradizionale in un'esperienza multisensoriale nella quale il vino incontra le eccellenze di altri settori del Made in Italy e del lifestyle internazionale."
+                    },
+                    {
+                        "kind": "paragraph",
+                        "text": "Non semplici degustazioni, ma Concorsi Esperienziali, durante i quali il vino dialoga con automobili, gastronomia, cinema, sigari, orologi, moda, design, birra artigianale e altri simboli dell'eccellenza italiana."
+                    },
+                    {
+                        "kind": "paragraph",
+                        "text": "Ogni appuntamento rappresenta un viaggio emozionale guidato da sommelier, produttori, testimonial ed esperti dei diversi settori, culminando nella scelta del miglior abbinamento attraverso il voto del pubblico e della giuria tecnica."
+                    },
+                    {
+                        "kind": "paragraph",
+                        "text": "Il format si ispira ai più importanti eventi internazionali dedicati al vino, nei quali degustazione guidata, storytelling dei produttori e coinvolgimento del pubblico costituiscono gli elementi fondamentali dell'esperienza."
+                    }
+                ]
+            },
+            {
+                "eyebrow": "Regolamento Ufficiale — Art. 1",
+                "title": "Finalità del format.",
+                "blocks": [
+                    {
+                        "kind": "paragraph",
+                        "text": "La Magna Graecia Pairing Experience® costituisce il format ufficiale dei Concorsi Esperienziali della manifestazione Vini & Oli della Magna Grecia."
+                    },
+                    {
+                        "kind": "list",
+                        "intro": "Ogni concorso mette in relazione due mondi apparentemente differenti ma accomunati dagli stessi valori:",
+                        "items": [
+                            "Eleganza",
+                            "Emozione",
+                            "Tradizione",
+                            "Innovazione",
+                            "Territorio",
+                            "Artigianalità",
+                            "Cultura",
+                            "Lusso"
+                        ]
+                    },
+                    {
+                        "kind": "paragraph",
+                        "text": "L'obiettivo è individuare, attraverso il voto del pubblico e della giuria tecnica, non soltanto il prodotto maggiormente apprezzato, ma soprattutto il miglior abbinamento emozionale, capace di raccontare una storia, un territorio, uno stile di vita e i valori dell'eccellenza italiana."
+                    }
+                ]
+            },
+            {
+                "eyebrow": "Regolamento Ufficiale — Art. 2 e 3",
+                "title": "I concorsi e i partner.",
+                "blocks": [
+                    {
+                        "kind": "list",
+                        "intro": "Per l'edizione 2026 sono istituiti i seguenti Concorsi Ufficiali:",
+                        "items": [
+                            "Wine & Motors",
+                            "Wine & Cigars",
+                            "Wines & Watches",
+                            "Wines & Ties",
+                            "Wine & Food",
+                            "Wine & Cinema"
+                        ]
+                    },
+                    {
+                        "kind": "note",
+                        "text": "A questi si affiancherà il concorso speciale Magna Graecia Beer Challenge."
+                    },
+                    {
+                        "kind": "note",
+                        "text": "L'Organizzazione potrà istituire ulteriori categorie dedicate ad altri comparti dell'eccellenza italiana."
+                    },
+                    {
+                        "kind": "paragraph",
+                        "text": "Ogni concorso sarà realizzato con la partecipazione di almeno una Cantina e un Brand Partner appartenente al settore interessato."
+                    },
+                    {
+                        "kind": "list",
+                        "intro": "Potranno aderire:",
+                        "items": [
+                            "Case automobilistiche",
+                            "Marchi motociclistici",
+                            "Produttori di sigari",
+                            "Maison di Champagne",
+                            "Produttori di orologi",
+                            "Maison di moda",
+                            "Produttori di cravatte",
+                            "Chef",
+                            "Ristoranti",
+                            "Case cinematografiche",
+                            "Festival del Cinema",
+                            "Birrifici artigianali",
+                            "Consorzi di tutela",
+                            "Associazioni di categoria"
+                        ]
+                    }
+                ]
+            },
+            {
+                "eyebrow": "Regolamento Ufficiale — Art. 4",
+                "title": "Calendario dei Concorsi.",
+                "blocks": [
+                    {
+                        "kind": "paragraph",
+                        "text": "Nel corso della manifestazione saranno organizzati sei Concorsi Ufficiali, distribuiti nelle tre giornate dell'evento."
+                    },
+                    {
+                        "kind": "list",
+                        "intro": "Calendario:",
+                        "items": [
+                            "Venerdì, ore 11.30 — Primo Concorso",
+                            "Venerdì, ore 17.30 — Secondo Concorso",
+                            "Sabato, ore 11.30 — Terzo Concorso",
+                            "Sabato, ore 17.30 — Quarto Concorso",
+                            "Domenica, ore 11.00 — Quinto Concorso",
+                            "Domenica, ore 17.00 — Sesto Concorso"
+                        ]
+                    },
+                    {
+                        "kind": "note",
+                        "text": "Le singole categorie saranno comunicate successivamente con il programma definitivo."
+                    },
+                    {
+                        "kind": "note",
+                        "text": "L'Organizzazione potrà modificare orari e calendario per esigenze organizzative, televisive o istituzionali."
+                    }
+                ]
+            },
+            {
+                "eyebrow": "Regolamento Ufficiale — Art. 5",
+                "title": "Modalità di svolgimento.",
+                "blocks": [
+                    {
+                        "kind": "paragraph",
+                        "text": "Ogni concorso avrà una durata indicativa compresa tra 60 e 90 minuti, in funzione della categoria e del numero dei prodotti in degustazione. Lo svolgimento sarà articolato nelle seguenti fasi:"
+                    },
+                    {
+                        "kind": "list",
+                        "items": [
+                            "Accoglienza e registrazione dei partecipanti, con consegna del kit degustazione.",
+                            "Presentazione istituzionale: saluto delle Autorità e presentazione dei partner.",
+                            "Storytelling: il Brand Partner presenta storia, filosofia, innovazione, valori e prodotto.",
+                            "Presentazione della Cantina: azienda, territorio, vitigni, tecniche produttive.",
+                            "Degustazione guidata: il Sommelier conduce la degustazione illustrando il motivo dell'abbinamento tra vino e prodotto partner.",
+                            "Esperienza immersiva: video, musica, profumi, storytelling e interazione con il pubblico.",
+                            "Votazione finale: il pubblico e la Giuria Tecnica esprimono il proprio voto.",
+                            "Premiazione: consegna del riconoscimento ufficiale.",
+                            "Photo Opportunity: interviste, riprese televisive, contenuti social e networking tra partner, sponsor e ospiti."
+                        ]
+                    }
+                ]
+            },
+            {
+                "eyebrow": "Regolamento Ufficiale — Art. 6, 7, 8",
+                "title": "Votazione, premio e giuria tecnica.",
+                "blocks": [
+                    {
+                        "kind": "paragraph",
+                        "text": "Ogni partecipante dispone di un voto. La valutazione sarà effettuata sulla base dei seguenti criteri:"
+                    },
+                    {
+                        "kind": "list",
+                        "items": [
+                            "Emozione",
+                            "Eleganza",
+                            "Originalità",
+                            "Coerenza dell'abbinamento",
+                            "Qualità dell'esperienza complessiva"
+                        ]
+                    },
+                    {
+                        "kind": "note",
+                        "text": "La votazione potrà avvenire mediante App dedicata, QR Code o scheda cartacea."
+                    },
+                    {
+                        "kind": "highlight",
+                        "title": "MAGNA GRAECIA BEST PAIRING EXPERIENCE®",
+                        "lines": [
+                            "Riconoscimento ufficiale assegnato per ciascun concorso"
+                        ]
+                    },
+                    {
+                        "kind": "note",
+                        "text": "L'Organizzazione potrà inoltre istituire Premi Speciali assegnati dagli Sponsor, dalla Giuria Tecnica o dai Media Partner."
+                    },
+                    {
+                        "kind": "list",
+                        "intro": "La Giuria Tecnica potrà essere composta da:",
+                        "items": [
+                            "Sommelier AIS",
+                            "Giornalisti",
+                            "Chef",
+                            "Critici enogastronomici",
+                            "Esperti dei settori coinvolti",
+                            "Opinion Leader",
+                            "Influencer",
+                            "Rappresentanti delle Istituzioni",
+                            "Personalità del mondo dello spettacolo e della cultura"
+                        ]
+                    }
+                ]
+            },
+            {
+                "eyebrow": "Programma Giornaliero (provvisorio)",
+                "title": "Ogni Concorso, ora per ora.",
+                "blocks": [
+                    {
+                        "kind": "list",
+                        "items": [
+                            "11.00 / 17.00 — Accoglienza dei partecipanti, registrazione e consegna del kit degustazione",
+                            "11.30 / 17.30 — Apertura ufficiale del Concorso: saluti istituzionali e presentazione dei Partner",
+                            "11.40 / 17.40 — Presentazione della Cantina e del Brand Partner",
+                            "11.50 / 17.50 — Storytelling e illustrazione dell'abbinamento",
+                            "12.05 / 18.05 — Degustazione guidata e confronto tra i prodotti",
+                            "12.35 / 18.35 — Esperienza sensoriale immersiva con immagini, musica e storytelling",
+                            "12.45 / 18.45 — Votazione del pubblico e della Giuria Tecnica",
+                            "12.55 / 18.55 — Proclamazione del vincitore e consegna del premio Magna Graecia Best Pairing Experience®",
+                            "13.00 / 19.00 — Foto ufficiali, interviste televisive e giornalistiche, contenuti video e social, networking tra aziende, produttori, sponsor, ospiti e partecipanti"
+                        ]
+                    },
+                    {
+                        "kind": "note",
+                        "text": "Al termine di ogni Concorso, i Partner, i vincitori, gli sponsor e gli ospiti prenderanno parte al tradizionale momento dedicato alle fotografie ufficiali, alle interviste con i media, ai contenuti per televisioni e social network e al networking professionale, favorendo l'incontro tra aziende, istituzioni, operatori del settore e pubblico."
+                    }
+                ]
+            },
+            {
+                "eyebrow": "I Concorsi Ufficiali",
+                "title": "Sei concorsi, un concorso speciale.",
                 "blocks": [
                     {
                         "kind": "cards",
                         "items": [
                             {
-                                "icon": "🍺",
-                                "title": "Birre in Concorso",
-                                "description": "Le migliori birre artigianali della Magna Grecia – chiare, ambrate, rosse e scure – saranno protagoniste di degustazioni e votazioni aperte al pubblico e a una giuria di esperti, con l'assegnazione dei premi alle etichette più apprezzate."
-                            },
-                            {
                                 "icon": "🏎️",
                                 "title": "Wine & Motors",
-                                "description": "Un affascinante viaggio tra motori e vino, con abbinamenti tra vetture iconiche e grandi vini selezionati in base alle loro caratteristiche emozionali, sensoriali e di personalità. Un incontro tra due mondi accomunati da passione, tradizione ed eccellenza."
-                            },
-                            {
-                                "icon": "🍝",
-                                "title": "Wine & Food",
-                                "description": "Degustazioni e confronti tra vini di qualità e le migliori specialità della cucina napoletana e della Magna Grecia, con premiazione finale degli abbinamenti più originali, armoniosi e coinvolgenti."
+                                "description": "Ogni Automobile ha il suo Vino."
                             },
                             {
                                 "icon": "🚬",
                                 "title": "Wine & Cigars",
-                                "description": "Un evento dedicato agli appassionati del buon vivere, con degustazioni di vini, champagne e sigari di pregio italiani ed esteri, accompagnate da testimonial, esperti e protagonisti del mondo del lifestyle e dell'eccellenza."
-                            },
-                            {
-                                "icon": "🎬",
-                                "title": "Wine & Cinema",
-                                "description": "Il fascino del grande schermo incontra la cultura del vino. Film, documentari e celebri scene cinematografiche dedicate al mondo dell'enologia saranno proiettati sul maxi schermo e accompagnati dalla degustazione dei vini protagonisti delle opere presentate, celebrando il profondo legame tra cinema, territorio, emozioni e tradizioni."
+                                "description": "Il tempo ha lo stesso profumo."
                             },
                             {
                                 "icon": "⌚",
                                 "title": "Wines & Watches",
-                                "description": "Un affascinante percorso dedicato agli appassionati di orologeria e di grandi vini, nel quale prestigiosi orologi sportivi, classici e da collezione saranno idealmente abbinati a vini e champagne selezionati in base a stile, personalità, eleganza e carattere. Un'occasione unica per scoprire come precisione, tradizione, innovazione e prestigio possano accomunare alta orologeria e grandi produzioni enologiche."
+                                "description": "Il tempo si misura anche nel vino."
                             },
                             {
                                 "icon": "👔",
                                 "title": "Wines & Ties",
-                                "description": "L'eleganza si degusta. Cravatte sartoriali, sportive o da cerimonia saranno abbinate a vini e champagne capaci di esprimere le stesse caratteristiche di stile, raffinatezza, personalità e distinzione. Un viaggio tra moda, buon gusto, tradizione e lifestyle, con la partecipazione di professionisti, imprenditori, testimonial e appassionati dell'eleganza italiana."
+                                "description": "L'eleganza si indossa e si beve."
                             },
                             {
-                                "icon": "🏆",
-                                "title": "Gran Prix Vini e Oli della Magna Grecia",
-                                "description": "Durante la manifestazione il pubblico e le giurie specializzate assegneranno prestigiosi riconoscimenti ai migliori vini, oli extravergine, birre artigianali e prodotti tipici del Mezzogiorno, premiando qualità, innovazione, tradizione e capacità di rappresentare l'identità della Magna Grecia."
+                                "icon": "🍝",
+                                "title": "Wine & Food",
+                                "description": "I sapori della Magna Grecia."
+                            },
+                            {
+                                "icon": "🎬",
+                                "title": "Wine & Cinema",
+                                "description": "Il grande schermo incontra il vino."
+                            },
+                            {
+                                "icon": "🍺",
+                                "title": "Magna Graecia Beer Challenge",
+                                "description": "Le migliori birre artigianali della Magna Grecia saranno presentate dai rispettivi Mastri Birrai e valutate dal pubblico e dalla Giuria Tecnica, con l'assegnazione del riconoscimento Magna Graecia Beer Award."
                             }
+                        ]
+                    }
+                ]
+            },
+            {
+                "eyebrow": "Claim Ufficiale",
+                "title": "Magna Graecia Pairing Experience®.",
+                "blocks": [
+                    {
+                        "kind": "highlight",
+                        "title": "MAGNA GRAECIA PAIRING EXPERIENCE®",
+                        "lines": [
+                            "Quando il vino incontra l'eccellenza di altri settori."
                         ]
                     },
                     {
-                        "kind": "note",
-                        "text": "Tre giorni di degustazioni, cultura, eleganza, spettacolo e networking in una delle cornici più affascinanti del Mediterraneo."
+                        "kind": "paragraph",
+                        "text": "Non una semplice degustazione. Non una semplice esposizione. Ma un viaggio emozionale in cui il vino incontra il mondo dei motori, del cinema, della gastronomia, dell'alta orologeria, dei sigari, della moda e del design, creando un dialogo tra eccellenze, territorio e cultura. Un format esclusivo che trasforma ogni concorso in un'esperienza da vivere, condividere e votare, facendo del pubblico il vero protagonista dell'evento."
                     }
                 ]
             }
