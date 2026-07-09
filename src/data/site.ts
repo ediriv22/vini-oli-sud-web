@@ -8,9 +8,9 @@ export const siteConfig = {
   name: editable.siteName,
   description: editable.siteDescription,
   brand: {
-    wordmark: "Vini Sud",
+    wordmark: "ViniSud",
     subtitle: "Dal Mediterraneo",
-    ariaLabel: "Vini Oli Sud, sito ufficiale",
+    ariaLabel: "ViniSud, sito ufficiale",
     taglines: {
       primary: "Le Radici del Gusto. L’Adrenalina del Futuro.",
       institutional: "Dal Mediterraneo.",
@@ -41,6 +41,10 @@ export const siteConfig = {
       monogrammaVS: "/brand/monogramma-vs.svg",
       // Variante avorio del monogramma.
       monogrammaVSIvory: "/brand/monogramma-vs-avorio.svg",
+      // Glifo VS puro su fondo trasparente: stesso identico segno della
+      // favicon e dell'icona app TikTok (vincolo: logo sito = icona app).
+      vsMark: "/brand/vs-mark.svg",
+      vsMarkIvory: "/brand/vs-mark-ivory.svg",
       // Avatar social pronto (monogramma + piccolo wordmark sotto).
       avatarSocial: "/brand/avatar-social-vs.svg",
       // Favicon SVG vettoriale (monogramma senza cornice).
@@ -57,9 +61,9 @@ export const siteConfig = {
     },
   },
   footerDescription:
-    "Vini Oli Sud è il punto di incontro tra terroir del Mezzogiorno, business hospitality e immaginario mediterraneo. Un format da costruire come piattaforma editoriale e commerciale, non come semplice vetrina.",
+    "ViniSud è il punto di incontro tra terroir del Mezzogiorno, business hospitality e immaginario mediterraneo. Un format da costruire come piattaforma editoriale e commerciale, non come semplice vetrina.",
   legalLine:
-    "Vini Oli Sud · progetto a cura di A.S.D. Napoli Racing Show · P.IVA 10430641216 · C.F. 95334510633",
+    "ViniSud · progetto a cura di A.S.D. Napoli Racing Show · P.IVA 10430641216 · C.F. 95334510633",
   contact: {
     /** Contatto principale — modificabile dal pannello /admin */
     projectEmail: editable.contactEmail,
@@ -83,6 +87,10 @@ export const siteConfig = {
     eyebrow: editable.heroEyebrow,
     title: editable.heroTitle,
     subtitle: editable.heroSubtitle,
+    // Immagine di sfondo e intensità dell'overlay scuro sopra l'immagine —
+    // modificabili dal pannello /admin (upload foto + slider ombreggiatura).
+    backgroundImage: editable.heroBackgroundImage,
+    overlayOpacity: editable.heroOverlayOpacity,
     actions: [
       { label: "Richiedi la Brochure Espositori", href: "/contatti?interesse=espositori#richiesta-informazioni" },
       { label: "Richiedi il Pass Buyer", href: "/contatti?interesse=buyer#richiesta-informazioni" },
@@ -130,7 +138,7 @@ export const siteConfig = {
   concept: {
     title: "Dove la terra incontra la pista.",
     description:
-      "Nel villaggio Vini Oli Sud la precisione del vigneto dialoga con l’adrenalina del motorsport. Due mondi diversi, uniti dalla stessa ossessione: cura, tempo, tecnica e identità.",
+      "Nel villaggio ViniSud la precisione del vigneto dialoga con l’adrenalina del motorsport. Due mondi diversi, uniti dalla stessa ossessione: cura, tempo, tecnica e identità.",
     pillars: [
       {
         eyebrow: "Origine Classica",

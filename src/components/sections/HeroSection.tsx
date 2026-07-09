@@ -153,6 +153,16 @@ export default function HeroSection() {
         willChange: "transform",
       };
 
+  // Le tre soste mantengono il rapporto della dissolvenza originale
+  // (0.78 / 0.5 / 0.84) scalate sull'intensità scelta in siteConfig.
+  const overlayBase = hero.overlayOpacity;
+  const overlayTop = overlayBase;
+  const overlayMid = Number((overlayBase * 0.641).toFixed(3));
+  const overlayBottom = Math.min(1, Number((overlayBase * 1.077).toFixed(3)));
+  const overlayStyle: CSSProperties = {
+    background: `linear-gradient(180deg, rgba(15,24,33,${overlayTop}) 0%, rgba(15,24,33,${overlayMid}) 42%, rgba(15,24,33,${overlayBottom}) 100%)`,
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -167,26 +177,21 @@ export default function HeroSection() {
         }}
       >
         <div className="absolute inset-0 bg-[var(--color-grove)]">
-          <picture>
-            <source
-              media="(max-width: 767px)"
-              srcSet="/images/home/tavola-scroll-mobile.jpg"
-            />
-            <img
-              src="/images/home/tavola-scroll-master.jpg"
-              alt=""
-              aria-hidden="true"
-              className="h-[230vh] min-h-[1500px] w-full object-cover object-top md:h-[250vh]"
-              style={imageStyle}
-            />
-          </picture>
+          <img
+            src={hero.backgroundImage}
+            alt=""
+            aria-hidden="true"
+            className="h-[230vh] min-h-[1500px] w-full object-cover object-top md:h-[250vh]"
+            style={imageStyle}
+          />
         </div>
 
-        {/* Overlay scuro per garantire AA su tutti i testi sopra. */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,24,33,0.78)_0%,rgba(15,24,33,0.5)_42%,rgba(15,24,33,0.84)_100%)]"
-        />
+        {/* Overlay scuro per garantire AA su tutti i testi sopra.
+         * Intensità regolabile dal pannello /admin (hero.overlayOpacity,
+         * 0 = nessuna ombreggiatura, 1 = massima). Le tre soste del
+         * gradiente restano proporzionali al valore scelto per preservare
+         * la forma della dissolvenza originale. */}
+        <div aria-hidden="true" className="absolute inset-0" style={overlayStyle} />
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(176,141,87,0.22),transparent_34%),radial-gradient(circle_at_82%_72%,rgba(107,30,30,0.22),transparent_30%)]"
