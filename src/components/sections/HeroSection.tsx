@@ -196,6 +196,13 @@ export default function HeroSection() {
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(176,141,87,0.22),transparent_34%),radial-gradient(circle_at_82%_72%,rgba(107,30,30,0.22),transparent_30%)]"
         />
+        {/* Bagliore caldo (refactor "luminoso"): luce diffusa in screen-blend
+         * per rompere la sensazione "grigia/nebbiosa" dell'overlay scuro,
+         * senza toccare l'opacità AA sotto i testi. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 mix-blend-screen bg-[radial-gradient(circle_at_78%_8%,rgba(255,244,222,0.28),transparent_46%)]"
+        />
         {/*
          * Dissolvenza editoriale verso l'avorio della sezione successiva.
          * Senza questo gradient il passaggio dalla hero scura al beige
