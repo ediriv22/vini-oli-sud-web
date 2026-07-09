@@ -58,6 +58,8 @@ $LABELS = [
     'themePrimaryColor' => 'Colore primario (bottoni e accenti)',
     'themeBackgroundColor' => 'Colore di sfondo generale del sito',
     'backgroundColor' => 'Colore di sfondo di questa pagina',
+    'heroBackgroundImage' => 'Home — immagine di sfondo',
+    'heroOverlayOpacity' => 'Home — intensità ombreggiatura sull’immagine',
 ];
 
 function h(?string $s): string { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
@@ -99,6 +101,12 @@ function gh_get_file(string $repo, string $path, string $branch, string $token):
 function is_color_field($key): bool {
     return is_string($key) && (bool) preg_match('/color$/i', $key);
 }
+function is_opacity_field($key): bool {
+    return is_string($key) && (bool) preg_match('/opacity$/i', $key);
+}
+function is_image_field($key): bool {
+    return is_string($key) && (bool) preg_match('/image$/i', $key);
+}
 
 // $listPath: se non null, $data è la LISTA i cui elementi stiamo iterando
 // (quindi $key è l'indice numerico) — usato per mostrare i controlli ↑/↓.
@@ -123,7 +131,14 @@ function render_fields($data, string $name, array $blocklist, array $labels, ?st
         } elseif (is_string($val)) {
             $id = 'f_' . md5($fname);
             echo '<label for="' . $id . '">' . h(label_for($key, $labels)) . '</label>';
-            if (is_color_field($key)) {
+            if (is_image_field($key)) {
+                echo '<div class="imagefield">';
+                echo '<img id="' . $id . '_preview" src="' . h($val) . '" alt="" class="preview-img">';
+                echo '<input type="hidden" name="' . $fname . '" value="' . h($val) . '">';
+                echo '<input type="file" name="upload[' . h((string) $key) . ']" accept="image/jpeg,image/png,image/webp" class="js-image-upload" data-preview="' . $id . '_preview">';
+                echo '<p class="field-hint">Carica una nuova foto per sostituirla (JPG/PNG/WebP, max 6MB). Se non selezioni nulla resta quella attuale.</p>';
+                echo '</div>';
+            } elseif (is_color_field($key)) {
                 $safeVal = preg_match('/^#[0-9a-fA-F]{3,8}$/', $val) ? $val : '#000000';
                 echo '<div class="colorfield">';
                 echo '<input id="' . $id . '" type="color" name="' . $fname . '" value="' . h($safeVal) . '" class="js-contrast">';
@@ -134,8 +149,16 @@ function render_fields($data, string $name, array $blocklist, array $labels, ?st
             } else {
                 echo '<input id="' . $id . '" type="text" name="' . $fname . '" value="' . h($val) . '">';
             }
+        } elseif ((is_float($val) || is_int($val)) && is_opacity_field($key)) {
+            $id = 'f_' . md5($fname);
+            $safeVal = max(0, min(1, (float) $val));
+            echo '<label for="' . $id . '">' . h(label_for($key, $labels)) . '</label>';
+            echo '<div class="rangefield">';
+            echo '<input id="' . $id . '" type="range" min="0" max="1" step="0.01" name="' . $fname . '" value="' . h((string) $safeVal) . '" class="js-range" data-output="' . $id . '_out">';
+            echo '<output id="' . $id . '_out">' . h((string) $safeVal) . '</output>';
+            echo '</div>';
         }
-        // numeri/booleani: non modificabili, ignorati
+        // altri numeri/booleani: non modificabili, ignorati
     }
 }
 // Applica i valori postati sui SOLI testi, preservando struttura, tipi e chiavi protette.
@@ -148,6 +171,8 @@ function apply_edits($orig, $posted, array $blocklist) {
             $orig[$key] = apply_edits($val, is_array($p) ? $p : [], $blocklist);
         } elseif (is_string($val) && is_string($p)) {
             $orig[$key] = $p;
+        } elseif ((is_float($val) || is_int($val)) && is_opacity_field($key) && is_string($p) && is_numeric($p)) {
+            $orig[$key] = max(0.0, min(1.0, (float) $p));
         }
     }
     return $orig;
@@ -203,6 +228,49 @@ if ($loggedIn && $validArea && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' 
         } else {
             $full = json_decode(base64_decode($get['data']['content']), true) ?: [];
             $posted = $_POST['d'] ?? [];
+
+            // Upload immagini: ogni file caricato in $_FILES['upload'][...]
+            // sostituisce il path testuale corrispondente in $posted, prima
+            // di apply_edits. Supporta solo campi *Image di primo livello
+            // (unico caso oggi: heroBackgroundImage in site.json).
+            if (!empty($_FILES['upload']['name']) && is_array($_FILES['upload']['name'])) {
+                foreach ($_FILES['upload']['name'] as $fieldKey => $originalName) {
+                    if ($originalName === '' || ($_FILES['upload']['error'][$fieldKey] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
+                        continue;
+                    }
+                    $tmpPath = $_FILES['upload']['tmp_name'][$fieldKey];
+                    $size = (int) $_FILES['upload']['size'][$fieldKey];
+                    if ($size > 6 * 1024 * 1024) {
+                        $error = 'Immagine troppo grande (max 6MB): ' . h($originalName);
+                        continue;
+                    }
+                    $imgInfo = @getimagesize($tmpPath);
+                    $extByMime = ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'];
+                    if ($imgInfo === false || !isset($extByMime[$imgInfo['mime']])) {
+                        $error = 'File non valido, deve essere una JPG/PNG/WebP: ' . h($originalName);
+                        continue;
+                    }
+                    $bytes = file_get_contents($tmpPath);
+                    $ext = $extByMime[$imgInfo['mime']];
+                    $newPath = 'public/images/home/hero-bg-' . substr(sha1($bytes), 0, 10) . '.' . $ext;
+                    $existingImg = gh_get_file($REPO, $newPath, $BRANCH, $TOKEN);
+                    $imgBody = [
+                        'message' => 'cms: nuova immagine di sfondo (' . $area . ') da pannello segreteria',
+                        'content' => base64_encode($bytes),
+                        'branch'  => $BRANCH,
+                    ];
+                    if ($existingImg['code'] === 200 && isset($existingImg['data']['sha'])) {
+                        $imgBody['sha'] = $existingImg['data']['sha'];
+                    }
+                    $putImg = gh_api('PUT', "https://api.github.com/repos/{$REPO}/contents/{$newPath}", $TOKEN, $imgBody);
+                    if ($putImg['code'] === 200 || $putImg['code'] === 201) {
+                        $posted[$fieldKey] = '/' . preg_replace('#^public/#', '', $newPath);
+                    } else {
+                        $error = 'Caricamento immagine non riuscito (codice ' . $putImg['code'] . ').';
+                    }
+                }
+            }
+
             $target = $subkey === null ? $full : ($full[$subkey] ?? []);
             $target = apply_edits($target, $posted, $BLOCKLIST);
             $target = apply_move($target, $_POST['move'] ?? null);
@@ -282,6 +350,16 @@ if ($loggedIn && $validArea) {
   .contrast-note { font-size:.82rem; }
   .contrast-note.warn { color:#a33; font-weight:600; }
   .contrast-note.ok { color:#1c5b34; }
+  .imagefield { margin-bottom:6px; }
+  .preview-img { display:block; width:100%; max-width:360px; height:auto; border-radius:10px; border:1px solid rgba(176,141,87,.35); margin-bottom:10px; }
+  .field-hint { font-size:.78rem; color:#8a7f7a; margin:6px 0 0; font-weight:400; text-transform:none; letter-spacing:normal; }
+  .rangefield { display:flex; align-items:center; gap:14px; }
+  .rangefield input[type=range] { flex:1; accent-color:var(--wine); }
+  .rangefield output { font-weight:700; color:var(--wine); min-width:2.6em; text-align:right; }
+  .hero-preview { position:relative; margin:22px 0; border-radius:12px; overflow:hidden; border:1px solid rgba(176,141,87,.35); }
+  .hero-preview img { display:block; width:100%; height:220px; object-fit:cover; }
+  .hero-preview .shade { position:absolute; inset:0; background:#0f1821; }
+  .hero-preview .caption { position:absolute; left:12px; bottom:10px; color:#f4ede0; font-size:.78rem; font-weight:600; text-shadow:0 2px 6px rgba(0,0,0,.6); }
 </style>
 </head>
 <body>
@@ -327,13 +405,26 @@ if ($loggedIn && $validArea) {
         <a class="logout" href="?logout=1">Esci</a>
       </div>
     </div>
-    <form method="post" action="?area=<?= h(urlencode($area)) ?>">
+    <form method="post" action="?area=<?= h(urlencode($area)) ?>" enctype="multipart/form-data">
       <input type="hidden" name="save" value="1">
       <input type="hidden" name="area" value="<?= h($area) ?>">
       <input type="hidden" name="csrf" value="<?= h($_SESSION['csrf'] ?? '') ?>">
       <?php
         if (is_array($areaData)) {
             render_fields($areaData, 'd', $BLOCKLIST, $LABELS);
+        }
+        // Anteprima combinata immagine + ombreggiatura: mostrata solo
+        // nell'area "site", l'unica con entrambi i campi collegati.
+        if ($area === 'site') {
+            $imgId = 'f_' . md5('d[heroBackgroundImage]') . '_preview';
+            $rangeId = 'f_' . md5('d[heroOverlayOpacity]');
+            $previewImg = h((string) ($areaData['heroBackgroundImage'] ?? ''));
+            $previewOpacity = h((string) max(0, min(1, (float) ($areaData['heroOverlayOpacity'] ?? 0.78))));
+            echo '<div class="hero-preview" data-image-source="' . $imgId . '" data-opacity-source="' . $rangeId . '">';
+            echo '<img src="' . $previewImg . '" alt="">';
+            echo '<div class="shade" style="opacity:' . $previewOpacity . '"></div>';
+            echo '<span class="caption">Anteprima ombreggiatura (indicativa)</span>';
+            echo '</div>';
         }
       ?>
       <button type="submit">Pubblica le modifiche</button>
@@ -381,6 +472,42 @@ if ($loggedIn && $validArea) {
     input.addEventListener('input', update);
     update();
   });
+})();
+
+// Anteprima live dell'immagine di sfondo + slider ombreggiatura, senza
+// dover pubblicare per vedere il risultato.
+(function () {
+  function syncHeroPreview() {
+    var box = document.querySelector('.hero-preview');
+    if (!box) return;
+    var img = box.querySelector('img');
+    var shade = box.querySelector('.shade');
+    var sourceImg = document.getElementById(box.dataset.imageSource);
+    var rangeInput = document.getElementById(box.dataset.opacitySource);
+    if (img && sourceImg) img.src = sourceImg.src;
+    if (shade && rangeInput) shade.style.opacity = rangeInput.value;
+  }
+
+  document.querySelectorAll('.js-image-upload').forEach(function (input) {
+    input.addEventListener('change', function () {
+      var file = input.files && input.files[0];
+      var preview = document.getElementById(input.dataset.preview);
+      if (!file || !preview) return;
+      var reader = new FileReader();
+      reader.onload = function (e) { preview.src = e.target.result; syncHeroPreview(); };
+      reader.readAsDataURL(file);
+    });
+  });
+
+  document.querySelectorAll('.js-range').forEach(function (input) {
+    var output = document.getElementById(input.dataset.output);
+    input.addEventListener('input', function () {
+      if (output) output.textContent = input.value;
+      syncHeroPreview();
+    });
+  });
+
+  syncHeroPreview();
 })();
 </script>
 </body>
