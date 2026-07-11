@@ -1,5 +1,25 @@
 [
   {
+    "id": "0786be182c36",
+    "category": "Business con Anima",
+    "title": "Campagna Amica per la Salute: la guerra al cibo cattivo parte dall'ospedale Santobono",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/campagna-amica-per-la-salute-la-guerra-al-cibo-cattivo-parte-dallospedale-santobono/298131/",
+    "note": "Un segnale di mercato per le eccellenze del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-07-11"
+  },
+  {
+    "id": "0b3c73f216da",
+    "category": "Radar del Sud",
+    "title": "Napoli food festival: il 13 luglio dalle 20.00 al Parco Virgiliano",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/napoli-food-festival-il-13-luglio-dalle-20-00-al-parco-virgiliano/298136/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-07-11"
+  },
+  {
     "id": "c560ca6b4413",
     "category": "Calici di Magna Grecia",
     "title": "Arcane Wines a Milano, Fabio Cagnetti da critica a cantina e cucina",
@@ -26,6 +46,26 @@
     "source": "Scatti di Gusto",
     "url": "https://www.scattidigusto.it/trattoria-di-pescheria-salerno",
     "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-07-10"
+  },
+  {
+    "id": "0e4063d1afbd",
+    "category": "Calici di Magna Grecia",
+    "title": "In Piemonte i vini invenduti potrebbero diventare aceti o vermouth. La Regione annuncia fondi per 1,7 milioni di euro",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/piemonte-proposta-regione-vini-invenduti-potrebbero-diventare-aceti-vermouth/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-10"
+  },
+  {
+    "id": "83cf0ee897a8",
+    "category": "Radar del Sud",
+    "title": "Primo Piatto dei Campi 2026: vince Chiara Rizzo, di Masseria Donna Menga a Nardò, con Gigli al Mediterraneo",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/primo-piatto-dei-campi-2026-vince-chiara-rizzo-di-masseria-donna-menga-a-nardo-con-gigli-al-mediterraneo/298120/",
+    "note": "Una segnalazione di cucina, focus Puglia.",
     "noteSource": "auto",
     "date": "2026-07-10"
   },
@@ -258,45 +298,5 @@
     "note": "Una segnalazione di cucina, focus Puglia.",
     "noteSource": "auto",
     "date": "2026-07-02"
-  },
-  {
-    "id": "1e8a58af3a8a",
-    "category": "Calici di Magna Grecia",
-    "title": "La nuova vita delle cantine italiane: dove finisce la degustazione e comincia la cultura",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/cantine-arte-cultura-neomecenatismo-borgo-conventi/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-06-30"
-  },
-  {
-    "id": "bd6e66bb4ad1",
-    "category": "Radar del Sud",
-    "title": "La Panoramica, sulla terrazza di Giungano tra pizze e cucina cilentana",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/giungano-cilento-pizzeria-la-panoramica-la-pizza-a-metro-vicino-paestum/49155/",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-06-30"
-  },
-  {
-    "id": "18c27146a906",
-    "category": "Radar del Sud",
-    "title": "Ruri Kaiseki a Palazzo Murat | Il dialogo tra Giappone, arte e ospitalità",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/ruri-kaiseki-a-palazzo-murat-il-dialogo-tra-giappone-arte-e-ospitalita/297294/",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-06-30"
-  },
-  {
-    "id": "4ac0169b0b69",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Senza i vini importati, non riusciamo a vendere neppure quelli americani\". Appello anti-dazi del trade Usa",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/dazi-usa-appello-wine-trade-allliance/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-06-30"
   }
 ]
