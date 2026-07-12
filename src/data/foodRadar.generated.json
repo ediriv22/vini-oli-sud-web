@@ -1,5 +1,25 @@
 [
   {
+    "id": "307f63c3f63f",
+    "category": "Radar del Sud",
+    "title": "Spaghetti all'assassina di mare, ricetta di Luca Pappagallo",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/spaghetti-all-assassina-di-mare-ricetta-di-luca-pappagallo",
+    "note": "Una segnalazione di cucina, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-07-12"
+  },
+  {
+    "id": "bf0dcba52afb",
+    "category": "Radar del Sud",
+    "title": "Veritas a Napoli, ristorante stellato dove mangiare spendendo poco",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/veritas-ristorante-a-napoli-menu-prezzi-recensione",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-07-12"
+  },
+  {
     "id": "0786be182c36",
     "category": "Business con Anima",
     "title": "Campagna Amica per la Salute: la guerra al cibo cattivo parte dall'ospedale Santobono",
@@ -16,6 +36,16 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/napoli-food-festival-il-13-luglio-dalle-20-00-al-parco-virgiliano/298136/",
     "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-07-11"
+  },
+  {
+    "id": "b9e8eca95a9b",
+    "category": "Oro Verde",
+    "title": "Spaghetti con i \"purpetielli\" di Carmela Abbate del ristorante Zì Teresa a Napoli",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/spaghetti-con-i-purpetielli-di-carmela-abbate-del-ristorante-zi-teresa-a-napoli/298147/",
+    "note": "Un segnale dall'olio del Sud, focus Campania.",
     "noteSource": "auto",
     "date": "2026-07-11"
   },
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-07-03"
-  },
-  {
-    "id": "d40318a3895f",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Sotto il Vesuvio – Storie di vino e di fuoco\": il Vesuvio si racconta in podcast (su spotify)",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/sotto-il-vesuvio-storie-di-vino-e-di-fuoco-il-vesuvio-si-racconta-in-podcast-su-spotify/297368/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-02"
-  },
-  {
-    "id": "64bb1fbe1ec3",
-    "category": "Calici di Magna Grecia",
-    "title": "Garantito IGP. Pompeii 2024 Pompeiano rosso igt, Bosco de Medici",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/garantito-igp-pompeii-2024-pompeiano-rosso-igt-bosco-de-medici/297160/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-02"
-  },
-  {
-    "id": "2cd3e6f55e38",
-    "category": "Radar del Sud",
-    "title": "A Monopoli apre Azur, il ristorante che riscopre la cucina di mare pugliese tradizionale",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/a-monopoli-apre-azur-il-ristorante-che-riscopre-la-cucina-di-mare-pugliese-tradizionale/297415/",
-    "note": "Una segnalazione di cucina, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-07-02"
   }
 ]
