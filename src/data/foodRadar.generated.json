@@ -1,5 +1,55 @@
 [
   {
+    "id": "8e1250991a0d",
+    "category": "Radar del Sud",
+    "title": "Slice a Milano: la marinara spicy è la regina delle 5 pizze d'estate",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/slice-a-milano-la-marinara-spicy-e-la-regina-delle-5-pizze-destate",
+    "note": "Una segnalazione gastronomica del Sud, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-07-14"
+  },
+  {
+    "id": "d3be543ea68c",
+    "category": "Calici di Magna Grecia",
+    "title": "I vini dell'estate. Il Pallagrello Bianco di Teresa Mincione",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/i-vini-dellestate-il-pallagrello-bianco-di-teresa-mincione/298344/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-14"
+  },
+  {
+    "id": "8fc0c523d621",
+    "category": "Calici di Magna Grecia",
+    "title": "Rosato, il riscatto passa dal Vesuvio: ad Acerra la sfida con la pizza d'autore",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/rosato-il-riscatto-passa-dal-vesuvio-ad-acerra-la-sfida-con-la-pizza-dautore/298227/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-07-14"
+  },
+  {
+    "id": "541735e3d570",
+    "category": "Calici di Magna Grecia",
+    "title": "\"Basta tisane, tè e kombucha: i clienti sono stanchi e vogliono tornare a bere vino\"",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/gianni-piezzo-sommelier-pairing-vino-tisane-kombucha/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-13"
+  },
+  {
+    "id": "04265bb6e7fd",
+    "category": "Oro Verde",
+    "title": "Si chiama bread dipping, è virale sui social: ma in Italia lo facciamo da sempre",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/bread-dipping-cosa-e-moda-virale-pane-olio/",
+    "note": "Un segnale dall'olio del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-13"
+  },
+  {
     "id": "307f63c3f63f",
     "category": "Radar del Sud",
     "title": "Spaghetti all'assassina di mare, ricetta di Luca Pappagallo",
@@ -248,55 +298,5 @@
     "note": "Una voce dal mondo del vino, focus Campania.",
     "noteSource": "auto",
     "date": "2026-07-05"
-  },
-  {
-    "id": "33d111dbb09d",
-    "category": "Calici di Magna Grecia",
-    "title": "Cantina Santoro: il Falerno che nasce da viti centenarie",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/cantina-santoro-il-falerno-che-nasce-da-viti-centenarie/297694/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-05"
-  },
-  {
-    "id": "af414b349c26",
-    "category": "Calici di Magna Grecia",
-    "title": "Menododici Igp. Kreos Negroamaro rosato Salento igt 2024, Castello Monaci",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/menododici-igp-kreos-negroamaro-rosato-salento-igt-2024-castello-monaci/297253/",
-    "note": "Una voce dal mondo del vino, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-07-05"
-  },
-  {
-    "id": "2fe01949cc71",
-    "category": "Calici di Magna Grecia",
-    "title": "A Scansano è tempo di \"Rosso Morellino\"",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/a-scansano-e-tempo-di-rosso-morellino/297335/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-04"
-  },
-  {
-    "id": "75f9876591d3",
-    "category": "Calici di Magna Grecia",
-    "title": "L'Asprinio d'Aversa sa invecchiare? Il verdetto della prima degustazione storica",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/lasprinio-daversa-sa-invecchiare-il-verdetto-della-prima-degustazione-storica/297345/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-04"
-  },
-  {
-    "id": "00a34478fc50",
-    "category": "Radar del Sud",
-    "title": "Quanto il Bob Fest può cambiare il futuro della Calabria",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/quanto-il-bob-fest-puo-cambiare-il-futuro-della-calabria",
-    "note": "Una segnalazione di cucina, focus Calabria.",
-    "noteSource": "auto",
-    "date": "2026-07-04"
   }
 ]
