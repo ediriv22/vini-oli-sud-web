@@ -1,5 +1,45 @@
 [
   {
+    "id": "83a7b753e933",
+    "category": "Calici di Magna Grecia",
+    "title": "VINerdì | Lison Classico 2024, Ai Galli",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vinerdi-lison-classico-2024-ai-galli/298275/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-17"
+  },
+  {
+    "id": "c646f08c0c33",
+    "category": "Oro Verde",
+    "title": "Ricetta Orecchiette alla San Giuannidde",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/orecchiette-alla-san-giuannidde/298428/",
+    "note": "Un segnale dall'olio del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-16"
+  },
+  {
+    "id": "110745435a38",
+    "category": "Radar del Sud",
+    "title": "Tra i castagni della Tuscia apre un nuovo ristorante immerso nel bosco",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/rubriche/nuove-aperture/marcellina-cucina-agricola-tiberio-proietti-viterbo/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-16"
+  },
+  {
+    "id": "123ae82f7389",
+    "category": "Calici di Magna Grecia",
+    "title": "Vino rosato: le Doc italiane rincorrono il trend, ma non basta. L'errore principale? Considerarlo un ripiego",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/nuovi-rosati-italiani-mancanza-identita/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-16"
+  },
+  {
     "id": "8e1250991a0d",
     "category": "Radar del Sud",
     "title": "Slice a Milano: la marinara spicy è la regina delle 5 pizze d'estate",
@@ -258,45 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-07-08"
-  },
-  {
-    "id": "05771bb97fde",
-    "category": "Calici di Magna Grecia",
-    "title": "Tenuta Cavalier Pepe, dove l'enoturismo ha il profumo di lavanda",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/tenuta-cavalier-pepe-dove-lenoturismo-ha-il-profumo-di-lavanda/297774/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-07"
-  },
-  {
-    "id": "b4ab9bf55afa",
-    "category": "Radar del Sud",
-    "title": "Praesentia. Gusto di Campania Divina parte da Ischia: la gastronomia racconta la cultura del Mediterraneo",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/praesentia-gusto-di-campania-divina-parte-da-ischia-la-gastronomia-racconta-la-cultura-del-mediterraneo/297884/",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-07"
-  },
-  {
-    "id": "9632f5904000",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Al Venissa il wine pairing non è mai andato meglio e vi spiego il perché\". La ricetta anti-crisi di Francesco Brutto",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/venissa-crescita-abbinamento-cibo-vino-naturale/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-07"
-  },
-  {
-    "id": "43133c021b81",
-    "category": "Calici di Magna Grecia",
-    "title": "A Suvereto sono iniziati gli espropri dei terreni per le energie rinnovabili. L'allarme delle cantine della zona",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/suvereto-progetto-rinnovabili-allarme-docg-suvereto-val-di-cornia/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-07"
   }
 ]
