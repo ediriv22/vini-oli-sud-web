@@ -1,11 +1,41 @@
 [
   {
+    "id": "cc0c25666e3c",
+    "category": "Calici di Magna Grecia",
+    "title": "Cantina Torre Varano a Torrecuso",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/cantina-torre-varano-a-torrecuso/298588/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-18"
+  },
+  {
+    "id": "4bc47ece5760",
+    "category": "Calici di Magna Grecia",
+    "title": "Invecchiato IGP | Collio Sauvignon De la Tour 2004 – Villa Russiz",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/invecchiato-igp-collio-sauvignon-de-la-tour-2004-villa-russiz/298212/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-18"
+  },
+  {
     "id": "83a7b753e933",
     "category": "Calici di Magna Grecia",
     "title": "VINerdì | Lison Classico 2024, Ai Galli",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/vinerdi-lison-classico-2024-ai-galli/298275/",
     "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-17"
+  },
+  {
+    "id": "ca251c02e544",
+    "category": "Business con Anima",
+    "title": "ESPERIA: Una Innovativa Academy per la filiera bufalina: corsi gratuiti per formare giovani professionisti in un settore in crescita.",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/esperia-una-innovativa-academy-per-la-filiera-bufalina-corsi-gratuiti-per-formare-giovani-professionisti-in-un-settore-in-crescita/298521/",
+    "note": "Un segnale di mercato per le eccellenze del Sud, focus Campania.",
     "noteSource": "auto",
     "date": "2026-07-17"
   },
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino, focus Calabria.",
     "noteSource": "auto",
     "date": "2026-07-09"
-  },
-  {
-    "id": "4251194c43d4",
-    "category": "Business con Anima",
-    "title": "\"Il vino non può più aspettare: se la filiera non risponde andiamo soli\". L'ultimatum Uiv per fermare il crollo prezzi",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tavolo-vino-appello-unione-italiana-vini-contro-svalutazione/",
-    "note": "Un segnale di mercato per le eccellenze del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-09"
-  },
-  {
-    "id": "b698629eee4b",
-    "category": "Business con Anima",
-    "title": "Capodanno del Mugnaio 2026, la decima edizione a Pontelatone",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/capodanno-del-mugnaio-2026-la-decima-edizione-a-pontelatone",
-    "note": "Un segnale di mercato per le eccellenze del Sud, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-08"
-  },
-  {
-    "id": "792ad1e94607",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Una bottiglia di vino su cinque oggi viene declassata: così crolla il valore\". L'allarme di Unione italiana vini",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/declassamenti-vino-allarme-assemblea-unione-italiana-vini/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-08"
   }
 ]
