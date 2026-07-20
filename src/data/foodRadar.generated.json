@@ -1,5 +1,35 @@
 [
   {
+    "id": "19083be0fceb",
+    "category": "Radar del Sud",
+    "title": "Ricetta Orecchiette con seppie scottate, julienne di pomodori secchi e crumble di taralli ai cereali",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/ricetta-orecchiette-con-seppie-scottate-julienne-di-pomodori-secchi-e-crumble-di-taralli-ai-cereali/298421/",
+    "note": "Una segnalazione di cucina, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-07-19"
+  },
+  {
+    "id": "31cd9a0e27d4",
+    "category": "Radar del Sud",
+    "title": "Ristorante Arva a Venezia, con Matteo Panfilio la cucina del raccolto diventa alta gastronomia",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/ristorante-arva-a-venezia-con-matteo-panfilio-la-cucina-del-raccolto-diventa-alta-gastronomia/298587/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-19"
+  },
+  {
+    "id": "2c3ac296eda1",
+    "category": "Oro Verde",
+    "title": "La pasta fredda più sottovalutata dell'estate",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/pasta-alla-checca-pasta-fredda-estate/",
+    "note": "Un segnale dall'olio del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-19"
+  },
+  {
     "id": "cc0c25666e3c",
     "category": "Calici di Magna Grecia",
     "title": "Cantina Torre Varano a Torrecuso",
@@ -266,36 +296,6 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/le-sei-anime-di-agrisolaris-da-casa-infante-un-viaggio-nella-memoria-del-sannio/297825/",
     "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-09"
-  },
-  {
-    "id": "22acbe948a1d",
-    "category": "Calici di Magna Grecia",
-    "title": "Casavecchia & Pallagrello Wine Festival, il marchio di Evento di Qualità",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/casavecchia-pallagrello-wine-festival-il-marchio-di-evento-di-qualita/297939/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-09"
-  },
-  {
-    "id": "8788acbf7643",
-    "category": "Calici di Magna Grecia",
-    "title": "Scommessa – il verdicchio che ancora nessuno aveva immaginato",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/scommessa-il-verdicchio-che-ancora-nessuno-aveva-immaginato/297837/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-09"
-  },
-  {
-    "id": "4dba1e21d8b7",
-    "category": "Radar del Sud",
-    "title": "Il ristorante Palazzo Petrucci a Napoli sale di livello e cucina in sala",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/il-ristorante-palazzo-petrucci-a-napoli-sale-di-livello-e-cucina-in-sala",
-    "note": "Una segnalazione di cucina, focus Campania.",
     "noteSource": "auto",
     "date": "2026-07-09"
   }
