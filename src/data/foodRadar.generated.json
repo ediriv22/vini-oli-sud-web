@@ -1,5 +1,65 @@
 [
   {
+    "id": "dbb854df840e",
+    "category": "Calici di Magna Grecia",
+    "title": "Cantina 36Casali a Vitulano",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/cantina-36casali-a-vitulano/298734/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-21"
+  },
+  {
+    "id": "7ea244d494db",
+    "category": "Radar del Sud",
+    "title": "Tutti i Brut – Da Zash, il metodo classico etneo incontra la cucina di chef Giuseppe Raciti",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/tutti-i-brut-da-zash-il-metodo-classico-etneo-incontra-la-cucina-di-chef-giuseppe-raciti/298712/",
+    "note": "Una segnalazione di cucina, focus Sicilia.",
+    "noteSource": "auto",
+    "date": "2026-07-21"
+  },
+  {
+    "id": "8ff97bb80ac0",
+    "category": "Calici di Magna Grecia",
+    "title": "Dalle cime delle Dolomiti alle coste della Sicilia: tre settimane all'insegna dell'enoturismo con Calici di Stelle",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/programma-calici-di-stelle-2026/",
+    "note": "Una voce dal mondo del vino, focus Sicilia.",
+    "noteSource": "auto",
+    "date": "2026-07-20"
+  },
+  {
+    "id": "452e9301e5fa",
+    "category": "Radar del Sud",
+    "title": "Vigna delle Rose, a Casa Setaro l'ospitalità tra vino ed esperienze gastronomiche",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vigna-delle-rose-il-resort-della-cantina-casa-setaro-e-la-cucina-del-vesuvio/268311/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-07-20"
+  },
+  {
+    "id": "15eb779a8646",
+    "category": "Oro Verde",
+    "title": "Ricetta Orecchiette Brezza d'estate",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/ricetta-orecchiette-brezza-destate/298413/",
+    "note": "Un segnale dall'olio del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-20"
+  },
+  {
+    "id": "deb7fd6ef0af",
+    "category": "Calici di Magna Grecia",
+    "title": "\"Non inseguiamo i volumi: per i vini della Valpolicella inizia fase di normalizzazione\". Nel 2025 bottiglie giù del 3%",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/valpolicella-produzione-vino-2025/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-20"
+  },
+  {
     "id": "19083be0fceb",
     "category": "Radar del Sud",
     "title": "Ricetta Orecchiette con seppie scottate, julienne di pomodori secchi e crumble di taralli ai cereali",
@@ -238,65 +298,5 @@
     "note": "Un segnale dall'olio del Sud, focus Campania.",
     "noteSource": "auto",
     "date": "2026-07-11"
-  },
-  {
-    "id": "c560ca6b4413",
-    "category": "Calici di Magna Grecia",
-    "title": "Arcane Wines a Milano, Fabio Cagnetti da critica a cantina e cucina",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/arcane-wines-a-milano-menu-prezzi",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-10"
-  },
-  {
-    "id": "18d14e1ae619",
-    "category": "Calici di Magna Grecia",
-    "title": "La Cantina di Solopaca celebra 60 anni di storia e guarda al futuro: Marco Giulioli è il nuovo enologo",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/la-cantina-di-solopaca-celebra-60-anni-di-storia-e-guarda-al-futuro-marco-giulioli-e-il-nuovo-enologo/298013/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-10"
-  },
-  {
-    "id": "5c0d1dfa5916",
-    "category": "Radar del Sud",
-    "title": "Trattoria di Pescheria dove mangiare bene pesce spendendo poco",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/trattoria-di-pescheria-salerno",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-10"
-  },
-  {
-    "id": "0e4063d1afbd",
-    "category": "Calici di Magna Grecia",
-    "title": "In Piemonte i vini invenduti potrebbero diventare aceti o vermouth. La Regione annuncia fondi per 1,7 milioni di euro",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/piemonte-proposta-regione-vini-invenduti-potrebbero-diventare-aceti-vermouth/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-10"
-  },
-  {
-    "id": "83cf0ee897a8",
-    "category": "Radar del Sud",
-    "title": "Primo Piatto dei Campi 2026: vince Chiara Rizzo, di Masseria Donna Menga a Nardò, con Gigli al Mediterraneo",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/primo-piatto-dei-campi-2026-vince-chiara-rizzo-di-masseria-donna-menga-a-nardo-con-gigli-al-mediterraneo/298120/",
-    "note": "Una segnalazione di cucina, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-07-10"
-  },
-  {
-    "id": "5a506ff3d6f4",
-    "category": "Calici di Magna Grecia",
-    "title": "Le Sei Anime di Agrisolaris, da Casa Infante un viaggio nella memoria del Sannio",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/le-sei-anime-di-agrisolaris-da-casa-infante-un-viaggio-nella-memoria-del-sannio/297825/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-09"
   }
 ]
