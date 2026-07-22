@@ -20,6 +20,36 @@
     "date": "2026-07-21"
   },
   {
+    "id": "7c31959b43d9",
+    "category": "Oro Verde",
+    "title": "Ricetta Orecchietta come una focaccia barese",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/ricetta-orecchietta-come-una-focaccia-barese/298415/",
+    "note": "Un segnale dall'olio del Sud, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-07-21"
+  },
+  {
+    "id": "ecef36819e03",
+    "category": "Radar del Sud",
+    "title": "Uno degli chef più apprezzati del Lazio cambia tutto: ecco il suo nuovo ristorante",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/rubriche/nuove-aperture/bsn-brasserie-simone-nardoni-terracina/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-21"
+  },
+  {
+    "id": "edd4c1a12d3e",
+    "category": "Calici di Magna Grecia",
+    "title": "Perché uno dei vini bianchi più famosi al mondo può sapere di benzina",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/perche-riesling-sa-benzina/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-21"
+  },
+  {
     "id": "8ff97bb80ac0",
     "category": "Calici di Magna Grecia",
     "title": "Dalle cime delle Dolomiti alle coste della Sicilia: tre settimane all'insegna dell'enoturismo con Calici di Stelle",
@@ -268,35 +298,5 @@
     "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-07-12"
-  },
-  {
-    "id": "0786be182c36",
-    "category": "Business con Anima",
-    "title": "Campagna Amica per la Salute: la guerra al cibo cattivo parte dall'ospedale Santobono",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/campagna-amica-per-la-salute-la-guerra-al-cibo-cattivo-parte-dallospedale-santobono/298131/",
-    "note": "Un segnale di mercato per le eccellenze del Sud, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-11"
-  },
-  {
-    "id": "0b3c73f216da",
-    "category": "Radar del Sud",
-    "title": "Napoli food festival: il 13 luglio dalle 20.00 al Parco Virgiliano",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/napoli-food-festival-il-13-luglio-dalle-20-00-al-parco-virgiliano/298136/",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-11"
-  },
-  {
-    "id": "b9e8eca95a9b",
-    "category": "Oro Verde",
-    "title": "Spaghetti con i \"purpetielli\" di Carmela Abbate del ristorante Zì Teresa a Napoli",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/spaghetti-con-i-purpetielli-di-carmela-abbate-del-ristorante-zi-teresa-a-napoli/298147/",
-    "note": "Un segnale dall'olio del Sud, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-11"
   }
 ]
