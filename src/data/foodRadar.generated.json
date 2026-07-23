@@ -1,5 +1,35 @@
 [
   {
+    "id": "e1a1f8455471",
+    "category": "Radar del Sud",
+    "title": "Horto a Milano, i piatti del menù dell'estate 2026",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/ristorante-horto-a-milano",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-23"
+  },
+  {
+    "id": "bfeb2c8d4203",
+    "category": "Calici di Magna Grecia",
+    "title": "Distillazione di crisi: in Francia richieste per 770mila ettolitri di vino. Bordeaux guida la classifica",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/distillazione-crisi-francia-richieste-2026/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-22"
+  },
+  {
+    "id": "c03854b9f200",
+    "category": "Radar del Sud",
+    "title": "San Marzano Mbuttunato: la ricetta di Pasquale Palamaro",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/san-marzano-mbuttunato-la-ricetta-di-pasquale-palamaro/298788/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-22"
+  },
+  {
     "id": "dbb854df840e",
     "category": "Calici di Magna Grecia",
     "title": "Cantina 36Casali a Vitulano",
@@ -266,36 +296,6 @@
     "source": "Scatti di Gusto",
     "url": "https://www.scattidigusto.it/spaghetti-all-assassina-di-mare-ricetta-di-luca-pappagallo",
     "note": "Una segnalazione di cucina, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-07-12"
-  },
-  {
-    "id": "bf0dcba52afb",
-    "category": "Radar del Sud",
-    "title": "Veritas a Napoli, ristorante stellato dove mangiare spendendo poco",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/veritas-ristorante-a-napoli-menu-prezzi-recensione",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-12"
-  },
-  {
-    "id": "feb046014315",
-    "category": "Calici di Magna Grecia",
-    "title": "Al Modis Music Club di Casal Velino seratona con Calici e Spicchi e i vini di Roberto Di Meo",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/al-modis-music-club-di-casal-velino-seratona-con-calici-e-spicchi-e-i-vini-di-roberto-di-meo/298156/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-12"
-  },
-  {
-    "id": "b6067d87cd99",
-    "category": "Radar del Sud",
-    "title": "Due chef under 30 aprono un ristorante dentro una pagoda. E niente menu degustazione",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/nuove-aperture/anastasia-restaurant-scandicci-pagoda/",
-    "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-07-12"
   }
