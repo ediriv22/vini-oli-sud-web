@@ -1,11 +1,61 @@
 [
   {
+    "id": "737c4b796732",
+    "category": "Calici di Magna Grecia",
+    "title": "La cantina Bortolomiol dal 1760 celebra 60 vendemmie di Prior",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/la-cantina-bortolomiol-dal-1760-celebra-60-vendemmie/298827/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-24"
+  },
+  {
+    "id": "f7be0184e1c7",
+    "category": "Radar del Sud",
+    "title": "VINerdì | Gianfranco Fino – Salento Fiano IGT Sedicimila 2024",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vinerdi-gianfranco-fino-salento-fiano-igt-sedicimila-2024/298636/",
+    "note": "Una segnalazione gastronomica del Sud, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-07-24"
+  },
+  {
     "id": "e1a1f8455471",
     "category": "Radar del Sud",
     "title": "Horto a Milano, i piatti del menù dell'estate 2026",
     "source": "Scatti di Gusto",
     "url": "https://www.scattidigusto.it/ristorante-horto-a-milano",
     "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-23"
+  },
+  {
+    "id": "91d0d9fa3f76",
+    "category": "Calici di Magna Grecia",
+    "title": "Inizia dalla Sicilia la vendemmia italiana 2026 tra incendi, crisi climatica e sovrapproduzione",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/inizio-vendemmia-2026-sicilia/",
+    "note": "Una voce dal mondo del vino, focus Sicilia.",
+    "noteSource": "auto",
+    "date": "2026-07-23"
+  },
+  {
+    "id": "63b26229ddb4",
+    "category": "Calici di Magna Grecia",
+    "title": "In arrivo superpoteri per i consorzi del vino: spunta anche l'indicazione dei prezzi. Cosa cambia con il nuovo decreto",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/novita-decreto-ministeriale-consorzi-vino-cosa-cambia/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-23"
+  },
+  {
+    "id": "cbea51519f23",
+    "category": "Business con Anima",
+    "title": "\"Questa non è una crisi temporanea. I ricarichi sul vino ci dicono che il modello deve cambiare\". L'appello di Vinarius",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/crisi-vino-ricarichi-appello-vinarius/",
+    "note": "Un segnale di mercato per le eccellenze del Sud.",
     "noteSource": "auto",
     "date": "2026-07-23"
   },
@@ -248,55 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-07-14"
-  },
-  {
-    "id": "8fc0c523d621",
-    "category": "Calici di Magna Grecia",
-    "title": "Rosato, il riscatto passa dal Vesuvio: ad Acerra la sfida con la pizza d'autore",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/rosato-il-riscatto-passa-dal-vesuvio-ad-acerra-la-sfida-con-la-pizza-dautore/298227/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-14"
-  },
-  {
-    "id": "81ff6b3839f0",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Vino in crisi? L'aceto resta uno sbocco importante\". Il Balsamico di Modena pronto a nuovi accordi di filiera",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/vino-crisi-accordi-aceto-balsamico-modena-igt/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-14"
-  },
-  {
-    "id": "541735e3d570",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Basta tisane, tè e kombucha: i clienti sono stanchi e vogliono tornare a bere vino\"",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/gianni-piezzo-sommelier-pairing-vino-tisane-kombucha/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-13"
-  },
-  {
-    "id": "04265bb6e7fd",
-    "category": "Oro Verde",
-    "title": "Si chiama bread dipping, è virale sui social: ma in Italia lo facciamo da sempre",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/bread-dipping-cosa-e-moda-virale-pane-olio/",
-    "note": "Un segnale dall'olio del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-13"
-  },
-  {
-    "id": "307f63c3f63f",
-    "category": "Radar del Sud",
-    "title": "Spaghetti all'assassina di mare, ricetta di Luca Pappagallo",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/spaghetti-all-assassina-di-mare-ricetta-di-luca-pappagallo",
-    "note": "Una segnalazione di cucina, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-07-12"
   }
 ]
