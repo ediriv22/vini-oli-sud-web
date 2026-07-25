@@ -1,5 +1,25 @@
 [
   {
+    "id": "b546b3b4b56d",
+    "category": "Calici di Magna Grecia",
+    "title": "Vini Cantine Giuseppe Apicella a Tramonti– Nuove annate",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vini-giuseppe-apicella-2/202366/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-07-25"
+  },
+  {
+    "id": "1c0a9a822f6a",
+    "category": "Calici di Magna Grecia",
+    "title": "InvecchiatIGP | Marco Antonelli – Cesanese di Olevano Romano Kósmos 2014 Riserva",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/invecchiatigp-marco-antonelli-cesanese-di-olevano-romano-kosmos-2014/298706/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-25"
+  },
+  {
     "id": "737c4b796732",
     "category": "Calici di Magna Grecia",
     "title": "La cantina Bortolomiol dal 1760 celebra 60 vendemmie di Prior",
@@ -16,6 +36,16 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/vinerdi-gianfranco-fino-salento-fiano-igt-sedicimila-2024/298636/",
     "note": "Una segnalazione gastronomica del Sud, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-07-24"
+  },
+  {
+    "id": "b194614b3a95",
+    "category": "Radar del Sud",
+    "title": "Song a Roma, la cucina del ristorante cinese con menu a 29 euro",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/ristorante-cinese-song-a-roma",
+    "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-07-24"
   },
@@ -268,35 +298,5 @@
     "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-07-16"
-  },
-  {
-    "id": "123ae82f7389",
-    "category": "Calici di Magna Grecia",
-    "title": "Vino rosato: le Doc italiane rincorrono il trend, ma non basta. L'errore principale? Considerarlo un ripiego",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/nuovi-rosati-italiani-mancanza-identita/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-16"
-  },
-  {
-    "id": "8e1250991a0d",
-    "category": "Radar del Sud",
-    "title": "Slice a Milano: la marinara spicy è la regina delle 5 pizze d'estate",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/slice-a-milano-la-marinara-spicy-e-la-regina-delle-5-pizze-destate",
-    "note": "Una segnalazione gastronomica del Sud, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-07-14"
-  },
-  {
-    "id": "d3be543ea68c",
-    "category": "Calici di Magna Grecia",
-    "title": "I vini dell'estate. Il Pallagrello Bianco di Teresa Mincione",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/i-vini-dellestate-il-pallagrello-bianco-di-teresa-mincione/298344/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-14"
   }
 ]
