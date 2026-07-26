@@ -1,5 +1,15 @@
 [
   {
+    "id": "677621284477",
+    "category": "Calici di Magna Grecia",
+    "title": "I vini ell'estate: il Vetere Rosato Paestum igp di Peppino Paganoi",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/i-vini-ellestate-il-vetere-rosato-paestum-igp-di-peppino-paganoi/298995/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-26"
+  },
+  {
     "id": "b546b3b4b56d",
     "category": "Calici di Magna Grecia",
     "title": "Vini Cantine Giuseppe Apicella a Tramonti– Nuove annate",
@@ -15,6 +25,16 @@
     "title": "InvecchiatIGP | Marco Antonelli – Cesanese di Olevano Romano Kósmos 2014 Riserva",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/invecchiatigp-marco-antonelli-cesanese-di-olevano-romano-kosmos-2014/298706/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-07-25"
+  },
+  {
+    "id": "69c4c37628f7",
+    "category": "Calici di Magna Grecia",
+    "title": "Per decenni questo vino sembrava destinato a sparire. Oggi è una delle sorprese dell'estate",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/degustazioni/migliori-spumanti-spergola-2026/",
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-07-25"
@@ -278,25 +298,5 @@
     "note": "Un segnale di mercato per le eccellenze del Sud, focus Campania.",
     "noteSource": "auto",
     "date": "2026-07-17"
-  },
-  {
-    "id": "c646f08c0c33",
-    "category": "Oro Verde",
-    "title": "Ricetta Orecchiette alla San Giuannidde",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/orecchiette-alla-san-giuannidde/298428/",
-    "note": "Un segnale dall'olio del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-16"
-  },
-  {
-    "id": "110745435a38",
-    "category": "Radar del Sud",
-    "title": "Tra i castagni della Tuscia apre un nuovo ristorante immerso nel bosco",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/nuove-aperture/marcellina-cucina-agricola-tiberio-proietti-viterbo/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-16"
   }
 ]
