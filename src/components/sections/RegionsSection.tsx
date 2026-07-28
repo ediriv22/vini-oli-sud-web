@@ -23,7 +23,7 @@ export default function RegionsSection() {
           {regions.items.map((region) => (
             <article
               key={region.name}
-              className="rounded-[1.4rem] border border-[rgba(255,215,87,0.22)] bg-[rgba(255,253,245,0.6)] px-6 py-7 transition-colors duration-300 ease-out hover:border-[rgba(255,215,87,0.45)]"
+              className="rounded-[1.4rem] border border-[rgba(47,91,70,0.3)] bg-[rgba(255,253,245,0.6)] px-6 py-7 transition-colors duration-300 ease-out hover:border-[rgba(47,91,70,0.55)]"
             >
               <h3 className="font-display text-[1.35rem] leading-none text-[var(--color-ink-strong)]">
                 {region.name}
