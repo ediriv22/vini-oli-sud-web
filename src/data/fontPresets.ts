@@ -16,9 +16,9 @@ export const FONT_PRESETS = {
     ui: "var(--font-montserrat)",
   },
   editoriale: {
-    label: "Editoriale (Playfair Display + Raleway)",
+    label: "Editoriale (Playfair Display + Lato)",
     display: "var(--font-playfair)",
-    ui: "var(--font-raleway)",
+    ui: "var(--font-lato)",
   },
   naturale: {
     label: "Naturale (Fraunces + Jost)",

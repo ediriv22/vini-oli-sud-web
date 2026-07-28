@@ -1,128 +1,119 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
+import GrandPrixWinnerBadge from "@/components/sections/GrandPrixWinnerBadge";
 import { siteConfig } from "@/data/site";
 import { grandPrixWinners2025 } from "@/data/winners";
 import { getSectionBackgroundStyle } from "@/lib/sectionBackground";
 
 export default function GrandPrixHighlight() {
-  const { eyebrow, title, subtitle, process, featuredAwards } =
+  const { eyebrow, title, subtitle, featuredAwards, expandLabel, collapseLabel } =
     siteConfig.grandPrixHighlight;
+  const [expanded, setExpanded] = useState(false);
 
   const featured = featuredAwards
     .map((award) => grandPrixWinners2025.find((winner) => winner.award === award))
     .filter((winner): winner is (typeof grandPrixWinners2025)[number] => Boolean(winner));
 
+  const remaining = grandPrixWinners2025.filter(
+    (winner) => !featuredAwards.includes(winner.award as (typeof featuredAwards)[number]),
+  );
+
   return (
     <section
+      id="grand-prix"
       aria-labelledby="grand-prix-highlight-title"
-      className="section-flow section-space"
+      className="section-flow section-space bg-[var(--color-grove)]"
       style={getSectionBackgroundStyle(siteConfig.sectionBackgrounds.grandPrix)}
     >
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-[10%] top-0 h-px bg-gradient-to-r from-transparent via-[rgba(176,141,87,0.4)] to-transparent"
-      />
       <div className="section-shell">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start lg:gap-16">
-          <div>
-            <p className="font-ui text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-wine)]">
-              {eyebrow}
-            </p>
-            <h2
-              id="grand-prix-highlight-title"
-              className="display-balance mt-4 max-w-[20ch] font-display text-[clamp(2.1rem,4.6vw,3.2rem)] leading-[0.98] tracking-[0.005em] text-[var(--color-ink-strong)]"
+        <div className="mx-auto max-w-[46rem] text-center">
+          <p className="font-ui text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-sand)]">
+            {eyebrow}
+          </p>
+          <h2
+            id="grand-prix-highlight-title"
+            className="display-balance mx-auto mt-4 max-w-[24ch] font-display text-[clamp(2.1rem,4.6vw,3rem)] leading-[1.05] tracking-[0.005em] text-[var(--color-ivory)]"
+          >
+            {title}
+          </h2>
+          <p className="mt-6 text-[1.02rem] leading-[1.7] text-[rgba(255,253,245,0.82)]">
+            {subtitle}
+          </p>
+        </div>
+
+        <ul className="mt-14 grid grid-cols-2 gap-5 sm:gap-6 lg:grid-cols-4">
+          {featured.map((winner) => (
+            <li
+              key={winner.award}
+              className="group relative flex flex-col items-center justify-center rounded-[1.1rem] border border-[rgba(255,215,87,0.25)] bg-[rgba(255,253,245,0.06)] px-4 py-6 text-center transition-[border-color,background-color] duration-300 ease-out hover:border-[rgba(255,215,87,0.5)] hover:bg-[rgba(255,253,245,0.1)] motion-reduce:transition-none sm:px-5 sm:py-7"
             >
-              {title}
-            </h2>
-            <p className="mt-6 max-w-[54ch] text-[1.02rem] leading-[1.7] text-[var(--color-muted)]">
-              {subtitle}
-            </p>
+              <GrandPrixWinnerBadge
+                src={winner.badgeSrc}
+                alt={winner.badgeAlt}
+                award={winner.award}
+              />
+              <p className="font-ui mt-3 text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-sand)]">
+                {winner.award}
+              </p>
+              <p className="mt-2 font-display text-[1.02rem] leading-snug text-[var(--color-ivory)] sm:text-[1.08rem]">
+                {winner.product}
+              </p>
+              <p className="mt-1 text-[0.84rem] leading-relaxed text-[rgba(255,253,245,0.75)]">
+                {winner.producer}
+              </p>
+            </li>
+          ))}
+        </ul>
 
-            <div className="mt-8">
-              <Link
-                href="/grand-prix"
-                className="group font-ui inline-flex items-center gap-2 text-[0.82rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-wine)] transition-colors duration-300 ease-out hover:text-[var(--color-wine-strong)] focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#6b1e1e]"
+        {remaining.length ? (
+          <div className="mt-10 text-center">
+            <button
+              type="button"
+              onClick={() => setExpanded((v) => !v)}
+              aria-expanded={expanded}
+              aria-controls="grand-prix-remaining"
+              className="font-ui inline-flex items-center gap-2 rounded-full border border-[rgba(255,215,87,0.55)] px-6 py-3 text-[0.82rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-sand)] transition-colors duration-300 ease-out hover:bg-[rgba(255,215,87,0.14)]"
+            >
+              {expanded ? collapseLabel : expandLabel}
+              <span
+                aria-hidden="true"
+                className={`inline-block transition-transform duration-300 ${expanded ? "-rotate-90" : "rotate-90"}`}
               >
-                Esplora l’Albo d’Oro
-                <span
-                  className="inline-block transition-transform duration-300 ease-out motion-reduce:transition-none motion-safe:group-hover:translate-x-1"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
-              </Link>
-            </div>
-          </div>
+                →
+              </span>
+            </button>
 
-          <div>
-            <p className="font-ui text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-sand-strong)]">
-              Metodo
-            </p>
-            <ol className="mt-6 grid gap-8 sm:grid-cols-3 sm:gap-6">
-              {process.map((item) => (
-                <li key={item.title} className="relative pt-5">
-                  <span
-                    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-[rgba(176,141,87,0.55)] via-[rgba(176,141,87,0.22)] to-transparent"
-                    aria-hidden="true"
+            <ul
+              id="grand-prix-remaining"
+              className={`mt-8 grid grid-cols-2 gap-5 overflow-hidden transition-[max-height,opacity] duration-500 ease-out sm:gap-6 lg:grid-cols-4 ${
+                expanded ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              {remaining.map((winner) => (
+                <li
+                  key={winner.award}
+                  className="group relative flex flex-col items-center justify-center rounded-[1.1rem] border border-[rgba(255,215,87,0.25)] bg-[rgba(255,253,245,0.06)] px-4 py-6 text-center sm:px-5 sm:py-7"
+                >
+                  <GrandPrixWinnerBadge
+                    src={winner.badgeSrc}
+                    alt={winner.badgeAlt}
+                    award={winner.award}
                   />
-                  <span
-                    className="font-ui text-[0.72rem] font-semibold tracking-[0.18em] text-[var(--color-sand-strong)]"
-                    aria-hidden="true"
-                  >
-                    {item.number}
-                  </span>
-                  <h3 className="font-ui mt-2.5 text-[0.88rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-strong)]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-[0.92rem] leading-[1.65] text-[var(--color-muted)]">
-                    {item.description}
+                  <p className="font-ui mt-3 text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-sand)]">
+                    {winner.award}
+                  </p>
+                  <p className="mt-2 font-display text-[1.02rem] leading-snug text-[var(--color-ivory)] sm:text-[1.08rem]">
+                    {winner.product}
+                  </p>
+                  <p className="mt-1 text-[0.84rem] leading-relaxed text-[rgba(255,253,245,0.75)]">
+                    {winner.producer}
                   </p>
                 </li>
               ))}
-            </ol>
+            </ul>
           </div>
-        </div>
-
-        <div className="mt-16 sm:mt-20">
-          <p className="font-ui text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-sand-strong)]">
-            Categorie in evidenza · 2025
-          </p>
-          <ul className="mt-6 grid grid-cols-2 gap-5 sm:gap-6 lg:grid-cols-4">
-            {featured.map((winner) => (
-              <li
-                key={winner.award}
-                className="group relative aspect-square flex flex-col items-center justify-center rounded-[1.1rem] border border-[rgba(176,141,87,0.16)] bg-[rgba(255,251,244,0.55)] px-4 py-6 transition-[border-color,background-color,transform] duration-300 ease-out hover:border-[rgba(176,141,87,0.3)] hover:bg-[rgba(255,251,244,0.7)] motion-reduce:transition-none sm:px-5 sm:py-7"
-              >
-                <div className="relative z-10 h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem]">
-                  <Image
-                    src={winner.badgeSrc}
-                    alt={winner.badgeAlt}
-                    width={220}
-                    height={220}
-                    sizes="72px"
-                    className="h-full w-full object-contain object-center"
-                  />
-                </div>
-
-                <p
-                  className={`font-ui mt-3 text-center text-[0.66rem] font-semibold uppercase tracking-[0.16em] ${
-                    winner.theme === "wine"
-                      ? "text-[var(--color-wine)]"
-                      : "text-[var(--color-sand-strong)]"
-                  }`}
-                >
-                  {winner.award}
-                </p>
-                <p className="mt-2 text-center font-display text-[1.02rem] leading-snug text-[var(--color-ink-strong)] sm:text-[1.08rem]">
-                  {winner.product}
-                </p>
-                <p className="mt-1 text-center text-[0.84rem] leading-relaxed text-[var(--color-muted)]">
-                  {winner.producer}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
+        ) : null}
       </div>
     </section>
   );

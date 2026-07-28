@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import {
   Cormorant_Garamond,
   Montserrat,
-  Source_Sans_3,
+  Lato,
   Playfair_Display,
   Raleway,
   Fraunces,
@@ -63,10 +63,13 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const sourceSans3 = Source_Sans_3({
+// Font corpo/UI del sito (allineato al demo cliente: Lato, sans-serif).
+// Caricato sempre, indipendentemente dal preset display/UI selezionabile
+// dal pannello /admin (vedi src/data/fontPresets.ts).
+const lato = Lato({
   subsets: ["latin"],
-  weight: ["400", "600"],
-  variable: "--font-sans-stack",
+  weight: ["400", "700", "900"],
+  variable: "--font-lato",
 });
 
 const fontVariables = [
@@ -78,7 +81,7 @@ const fontVariables = [
   jost,
   ebGaramond,
   inter,
-  sourceSans3,
+  lato,
 ]
   .map((font) => font.variable)
   .join(" ");

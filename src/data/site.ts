@@ -8,12 +8,12 @@ export const siteConfig = {
   name: editable.siteName,
   description: editable.siteDescription,
   brand: {
-    wordmark: "ViniSud",
-    subtitle: "Dal Mediterraneo",
-    ariaLabel: "ViniSud, sito ufficiale",
+    wordmark: "Vini & OliSud",
+    subtitle: "Magna Grecia",
+    ariaLabel: "Vini & OliSud, sito ufficiale",
     taglines: {
-      primary: "Le Radici del Gusto. L’Adrenalina del Futuro.",
-      institutional: "Dal Mediterraneo.",
+      primary: "Dove il Sole incontra il Mito.",
+      institutional: "Magna Grecia.",
     },
     /**
      * Brand kit vettoriale (v1.0, maggio 2026). Tutti SVG: peso ~5KB ciascuno,
@@ -61,9 +61,8 @@ export const siteConfig = {
     },
   },
   footerDescription:
-    "ViniSud è il punto di incontro tra terroir del Mezzogiorno, business hospitality e immaginario mediterraneo. Un format da costruire come piattaforma editoriale e commerciale, non come semplice vetrina.",
-  legalLine:
-    "ViniSud · progetto a cura di A.S.D. Napoli Racing Show · P.IVA 10430641216 · C.F. 95334510633",
+    "La rassegna che celebra l'eccellenza enogastronomica della Magna Grecia. Dove il sole incontra il mito, la storia e il sapore autentico del Sud Italia.",
+  legalLine: "© 2026 Vini & OliSud. Tutti i diritti riservati.",
   contact: {
     /** Contatto principale — modificabile dal pannello /admin */
     projectEmail: editable.contactEmail,
@@ -87,210 +86,180 @@ export const siteConfig = {
   fontPreset: editable.fontPreset,
   // Icona favicon caricabile dal pannello /admin (upload immagine).
   faviconImage: editable.faviconImage,
-  // Sfondo (colore o immagine) di ogni sezione della home, modificabile dal
+  // Sfondo (colore o immagine) della sezione Grand Prix, modificabile dal
   // pannello /admin. Se è presente un'immagine ha sempre priorità sul colore
   // (vedi src/lib/sectionBackground.ts).
   sectionBackgrounds: {
-    edition: {
-      backgroundColor: editable.editionBackgroundColor,
-      backgroundImage: editable.editionBackgroundImage,
-    },
-    audience: {
-      backgroundColor: editable.audienceBackgroundColor,
-      backgroundImage: editable.audienceBackgroundImage,
-    },
-    concept: {
-      backgroundColor: editable.conceptBackgroundColor,
-      backgroundImage: editable.conceptBackgroundImage,
-    },
     grandPrix: {
       backgroundColor: editable.grandPrixBackgroundColor,
       backgroundImage: editable.grandPrixBackgroundImage,
     },
-    cta: {
-      backgroundColor: editable.ctaBackgroundColor,
-      backgroundImage: editable.ctaBackgroundImage,
-    },
   },
+  // Hero carosello a 3 scene — replica quasi identica del demo cliente
+  // granpremiodinapoli.it/anteprima. Il testo della scena 1 resta
+  // modificabile dal pannello /admin (hero.eyebrow/title/subtitle);
+  // le scene 2 e 3 sono adattate dal transcript del demo (non verbatim
+  // al 100%: vedi nota in coda al file / report di consegna).
   hero: {
-    // Testi modificabili dal pannello /admin (content/settings/site.json).
-    eyebrow: editable.heroEyebrow,
-    title: editable.heroTitle,
-    subtitle: editable.heroSubtitle,
-    // Immagine di sfondo e intensità dell'overlay scuro sopra l'immagine —
-    // modificabili dal pannello /admin (upload foto + slider ombreggiatura).
     backgroundImage: editable.heroBackgroundImage,
     overlayOpacity: editable.heroOverlayOpacity,
-    actions: [
-      { label: "Richiedi la Brochure Espositori", href: "/contatti?interesse=espositori#richiesta-informazioni" },
-      { label: "Richiedi il Pass Buyer", href: "/contatti?interesse=buyer#richiesta-informazioni" },
-    ],
-    signals: [],
-  },
-  audiences: [
-    {
-      eyebrow: "Espositori",
-      shortLabel: "Espositori",
-      title: "Per chi produce eccellenza",
-      description:
-        "Porta la tua azienda in un contesto premium tra degustazioni, networking e visibilità.",
-      ctaLabel: "Brochure Espositori",
-      href: "/contatti?interesse=espositori#richiesta-informazioni",
-    },
-    {
-      eyebrow: "Buyer / Operatori",
-      shortLabel: "Buyer",
-      title: "Per chi seleziona il Sud",
-      description:
-        "Accedi a produttori selezionati, incontri B2B e percorsi dedicati agli operatori.",
-      ctaLabel: "Pass Buyer",
-      href: "/contatti?interesse=buyer#richiesta-informazioni",
-    },
-    {
-      eyebrow: "Visitatori",
-      shortLabel: "Visitatori",
-      title: "Per chi vive l’esperienza",
-      description:
-        "Vivi degustazioni, show cooking e cultura del Sud nel cuore di Napoli.",
-      ctaLabel: "Carnet Degustazione",
-      href: "/visitatori#richiesta-carnet",
-    },
-    {
-      eyebrow: "Media e Partner",
-      shortLabel: "Media",
-      title: "Per chi racconta e valorizza il progetto",
-      description:
-        "Scarica materiali, comunicati e asset ufficiali pronti per la pubblicazione.",
-      ctaLabel: "Media Kit",
-      href: "/contatti?interesse=media#richiesta-informazioni",
-    },
-  ],
-  concept: {
-    title: "Dove la terra incontra la pista.",
-    description:
-      "Nel villaggio ViniSud la precisione del vigneto dialoga con l’adrenalina del motorsport. Due mondi diversi, uniti dalla stessa ossessione: cura, tempo, tecnica e identità.",
-    pillars: [
+    institutionalNote:
+      "In collaborazione con l'Assessorato all'Agricoltura della Regione Campania",
+    slides: [
       {
-        eyebrow: "Origine Classica",
-        title: "Il Mezzogiorno come matrice, non come derivazione.",
-        description:
-          "Napoli, il mare e la Magna Grecia entrano nel progetto come grammatica culturale e segno di autorevolezza contemporanea.",
+        eyebrow: "Magna Grecia",
+        titlePrefix: "Dove il Sole incontra il ",
+        titleEmphasis: "Mito",
+        titleSuffix: "",
+        paragraph:
+          "Un viaggio al Sud è un'esperienza totale: è storia, gusto, paesaggio e passione. Benvenuti nella terra dell'eccellenza.",
+        ctaLabel: "Scopri la Rassegna 2026",
+        ctaHref: "#evento",
       },
       {
-        eyebrow: "Natura Pura",
-        title: "Vino e olio come espressioni vive del territorio.",
-        description:
-          "Le produzioni raccontano il Sud attraverso vigne, uliveti, stagioni e materia, senza folklore e senza artificio fieristico.",
+        eyebrow: "Oro Verde e Fuoco",
+        titlePrefix: "Oro Verde e ",
+        titleEmphasis: "Fuoco",
+        titleSuffix: "",
+        paragraph:
+          "Vigne eroiche e ulivi secolari custodiscono un sapere che nasce dalla terra, non dai laboratori: gesti antichi che raccontano il Sud contro l'omologazione industriale.",
+        ctaLabel: "Esplora il Territorio",
+        ctaHref: "#territorio",
       },
       {
-        eyebrow: "Memoria Liquida",
-        title: "Ogni bottiglia custodisce cultura, rito e visione.",
-        description:
-          "Il racconto non tratta il prodotto come merce isolata, ma come archivio sensoriale di paesaggi, lavoro e identità.",
-      },
-      {
-        eyebrow: "Adrenalina",
-        title: "Business con anima nel palcoscenico del Racing Show.",
-        description:
-          "La velocità della pista porta attenzione, energia e desiderabilità; la lentezza della terra porta profondità, selezione e reputazione.",
+        eyebrow: "27 · 28 · 29 Novembre 2026",
+        titlePrefix: "La Rassegna torna sul ",
+        titleEmphasis: "Lungomare",
+        titleSuffix: " di Napoli",
+        paragraph:
+          "Tre giorni di degustazioni e cultura mediterranea sul Lungomare Caracciolo, a ingresso libero per il pubblico, in collaborazione con l'Assessorato all'Agricoltura della Regione Campania.",
+        ctaLabel: "Tutte le Info",
+        ctaHref: "#evento",
       },
     ],
   },
-  regions: {
-    title: "Otto regioni, una piattaforma mediterranea.",
-    description:
-      "Campania, Abruzzo, Molise, Puglia, Basilicata, Calabria, Sicilia e Sardegna entrano in un racconto comune che unisce terroir, identità produttive e valore commerciale.",
-    items: [
-      "Campania",
-      "Abruzzo",
-      "Molise",
-      "Puglia",
-      "Basilicata",
-      "Calabria",
-      "Sicilia",
-      "Sardegna",
+  philosophy: {
+    eyebrow: "La nostra filosofia",
+    paragraphs: [
+      "Questa rassegna è orgoglio, visione, resistenza culturale. Non vuole copiare, ma mostrare al mondo cosa significa eccellenza vera, radicata, meridionale. Qui ogni premio è un atto di giustizia verso chi ha saputo trasformare il sole in vino, la pietra in olio, la storia in sapore.",
+      "Un viaggio al Sud è un'esperienza totale: è storia, gusto, paesaggio e passione. Benvenuti nella Magna Grecia!",
     ],
-  },
-  editorial: {
-    title: "Diario del Sud",
-    description:
-      "Storie, territori, vini, oli e visioni mediterranee dal cuore del Mezzogiorno, con una voce editoriale pensata per rafforzare marca, reputazione e desiderabilità.",
-    columns: [
-      "Radar del Sud",
-      "Oro Verde",
-      "Calici di Magna Grecia",
-      "Business con Anima",
-      "Motori & Terroir",
-    ],
-    previewCards: [
-      {
-        eyebrow: "Territori",
-        title: "Le geografie che fanno mercato.",
-        description:
-          "Dalle coste alle aree interne, il Diario del Sud mette ordine nelle mappe produttive e nelle opportunità di racconto.",
-      },
-      {
-        eyebrow: "Prodotti",
-        title: "Vino e olio come cultura viva.",
-        description:
-          "Una linea editoriale capace di tenere insieme tecnica, fascino sensoriale e concretezza commerciale.",
-      },
-      {
-        eyebrow: "Business",
-        title: "Contenuti che aiutano anche la conversione.",
-        description:
-          "Il magazine deve alimentare SEO, autorevolezza e percorsi per buyer, sponsor e operatori.",
-      },
-      {
-        eyebrow: "Scenario",
-        title: "Mediterraneo contemporaneo, non nostalgia.",
-        description:
-          "Voce, immagini e rubriche devono costruire una marca culturale distintiva e pronta a crescere.",
-      },
-    ],
-  },
-  finalCta: {
-    title: "Porta il tuo brand nel nuovo palcoscenico del gusto mediterraneo.",
-    actions: [
-      { label: "Richiedi la Brochure Espositori", href: "/contatti?interesse=espositori#richiesta-informazioni" },
-      { label: "Proponi una Partnership", href: "/contatti?interesse=partnership#richiesta-informazioni" },
-    ],
-  },
-  edition: {
-    label: "Edizione 2026",
-    city: "Napoli",
-    context: "In dialogo con Napoli Racing Show / Gran Premio di Napoli",
   },
   grandPrixHighlight: {
-    eyebrow: "Grand Prix",
-    title: "Albo d’Oro 2025",
+    eyebrow: "Premiazione",
+    title: "Riconoscimento di Eccellenza — Grand Prix della Magna Grecia",
     subtitle:
-      "Un percorso di valorizzazione dedicato alle eccellenze del vino e dell’olio del Mezzogiorno.",
-    process: [
-      {
-        number: "01",
-        title: "Selezione",
-        description:
-          "Le etichette e i prodotti vengono presentati come espressione di territorio, filiera e identità.",
-      },
-      {
-        number: "02",
-        title: "Degustazione",
-        description:
-          "Il percorso valorizza la lettura sensoriale e culturale delle eccellenze del Mezzogiorno.",
-      },
-      {
-        number: "03",
-        title: "Riconoscimento",
-        description:
-          "Il Grand Prix offre visibilità e racconto alle produzioni che interpretano meglio lo spirito del Sud.",
-      },
-    ],
+      "I migliori produttori premiati per la qualità straordinaria dei loro vini e oli. Un riconoscimento che celebra l'eccellenza del Sud Italia.",
+    expandLabel: "Scopri tutti i vincitori",
+    collapseLabel: "Mostra meno categorie",
     featuredAwards: [
       "Miglior Spumante",
       "Miglior Vino Bianco",
       "Miglior Vino Rosso",
       "Miglior Vino Rosato",
+    ],
+  },
+  territory: {
+    eyebrow: "Il territorio",
+    title: "Dove il Sole incontra il Mito e la Storia",
+    intro:
+      "Nel cuore del Sud Italia, dove il sole splende più a lungo, la Magna Grecia non è mai tramontata. Oggi è il tempo del riscatto. Oggi il Sud si affaccia al mondo con prodotti ineguagliabili e una potenza narrativa unica.",
+    pillars: [
+      {
+        title: "Un territorio benedetto",
+        description:
+          "Sole, mare, vento, luce, pietra e storia. Microclimi irripetibili, terreni vulcanici e calcarei che scolpiscono i grappoli e profumano le drupe.",
+      },
+      {
+        title: "Vitigni e radici",
+        description:
+          "Aglianico, Primitivo, Nerello Mascalese, Fiano, Greco di Tufo. Nomi che suonano come poesie scritte dalla terra stessa. Ogni sorso è un ritorno a casa.",
+      },
+      {
+        title: "Oli: spirito della terra",
+        description:
+          "Nocellara, Ravece, Coratina. Gli uliveti del Sud sono templi aperti, e ogni goccia di extravergine è memoria liquida di un popolo che trasforma la roccia in vita.",
+      },
+      {
+        title: "Natura, non laboratorio",
+        description:
+          "Non nascono da additivi o sofisticazioni, ma dalla terra viva, dal vento del mare e dalle mani dei nostri contadini. Genuinità, verità, rispetto.",
+      },
+    ],
+  },
+  regions: {
+    eyebrow: "Le terre dell'eccellenza",
+    title: "Le Regioni della Magna Grecia: un'unica anima",
+    description:
+      "Ogni territorio racconta un volto diverso del Sud. Insieme, formano l'identità agricola più ricca, vera e promettente d'Europa.",
+    items: [
+      {
+        name: "Calabria",
+        description:
+          "Fortemente greca nel midollo. Intensa nei profumi con il Greco di Bianco e l'Olio della Locride. Una regione di estremi affascinanti e fiera stirpe mediterranea.",
+      },
+      {
+        name: "Abruzzo",
+        description:
+          "Dove il mare incontra la montagna. La Passerina danza con il Montepulciano. Oli robusti e sinceri raccontano terre antiche e contadini tenaci.",
+      },
+      {
+        name: "Molise",
+        description:
+          "La genuinità della biodiversità. Piccolo scrigno dove la Tintilia si fa voce autentica di una terra segreta. Oli fragranti e naturali, respiro lento di autenticità.",
+      },
+      {
+        name: "Campania",
+        description:
+          "Cuore del Mediterraneo. Terra di vulcani e vitigni: Fiano di Avellino, Greco di Tufo, Falanghina, Aglianico. E l'olio Ravece Irpina, uno dei monocultivar più eleganti del mondo.",
+      },
+      {
+        name: "Puglia",
+        description:
+          "Profumi bizantini e genuinità. Terra di ulivi millenari, Primitivo e Negroamaro. L'oro verde e rosso del Mediterraneo, tra le Murge e il Salento.",
+      },
+      {
+        name: "Lucania",
+        description:
+          "Austera e nobile. Patria dell'Aglianico del Vulture, uno dei rossi più importanti d'Europa. Minerali, veri, profondi, forgiati dal vulcano e dal silenzio.",
+      },
+    ],
+  },
+  // Sezione richiesta dalla navigazione del demo cliente ("SPONSOR,
+  // ESPOSITORI E SPAZI DISPONIBILI") ma per cui il transcript non
+  // includeva copy dedicata: contenuto placeholder esplicito, in attesa
+  // di materiale confermato (pacchetti sponsor, planimetria spazi, prezzi).
+  sponsor: {
+    eyebrow: "Sponsor & Espositori",
+    title: "Sponsor, Espositori e Spazi Disponibili",
+    body: "[PLACEHOLDER — contenuto da confermare] Dettagli su pacchetti sponsor, spazi espositivi e disponibilità saranno pubblicati non appena confermati. Per informazioni immediate su spazi e opportunità di partnership, contatta la segreteria organizzativa.",
+    ctaLabel: "Richiedi Informazioni",
+    ctaHref: "#contatti",
+  },
+  eventDetails: {
+    eyebrow: "L'evento",
+    title: "II° Rassegna Vini e Oli della Magna Grecia",
+    dates: "27 - 28 - 29 Novembre 2026",
+    admission: "Ingresso gratuito al pubblico",
+    venueName: "Lungomare Caracciolo, Napoli",
+    venueDescription: "Nel cuore della città, tra il mare e la storia",
+    collaboration:
+      "In collaborazione con Assessorato all'Agricoltura della Regione Campania",
+    externalLink: {
+      label: "NAPOLIRACINGSHOW.IT",
+      // Dominio non confermato altrove nel repo (solo email/PEC
+      // dell'organizzatore risultano verificate). URL indicato dal
+      // brief di consegna: da validare con il cliente prima della
+      // pubblicazione definitiva.
+      url: "https://www.napoliracingshow.it",
+    },
+  },
+  alboDoro: {
+    eyebrow: "Albo d'oro",
+    title: "Il successo della I° Edizione",
+    paragraphs: [
+      "La prima edizione della Rassegna si è svolta con grande successo di pubblico e critica sul Lungomare Caracciolo di Napoli il 6-7-8 Dicembre 2025.",
+      "Un evento aperto gratuitamente al pubblico, che ha sancito la nascita di un nuovo punto di riferimento per l'enogastronomia di qualità del Mezzogiorno, confermando che il Sud è pronto a raccontare la propria eccellenza al mondo.",
     ],
   },
 } as const;

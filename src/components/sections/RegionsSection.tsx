@@ -2,35 +2,36 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import { siteConfig } from "@/data/site";
 
 export default function RegionsSection() {
-  const regionThemes = [
-    "card-theme-parchment texture-parchment",
-    "card-theme-linen texture-linen",
-    "card-theme-olive",
-    "card-theme-sea",
-    "card-theme-press texture-parchment",
-    "card-theme-parchment texture-linen",
-    "card-theme-wine",
-    "card-theme-olive",
-  ];
+  const { regions } = siteConfig;
 
   return (
-    <section className="section-flow section-space premium-divider">
+    <section
+      id="regioni"
+      aria-labelledby="regioni-title"
+      className="section-flow section-space"
+    >
       <div className="section-shell">
         <SectionHeader
-          eyebrow="Geografia del gusto"
-          title={siteConfig.regions.title}
-          intro={siteConfig.regions.description}
+          eyebrow={regions.eyebrow}
+          title={regions.title}
+          titleId="regioni-title"
+          intro={regions.description}
           align="center"
         />
 
-        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {siteConfig.regions.items.map((region, index) => (
-            <div
-              key={region}
-              className={`card-shell ${regionThemes[index]} rounded-[1.6rem] px-5 py-5 text-center font-display text-[1.75rem] leading-none text-[var(--card-title)] sm:text-[1.85rem]`}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {regions.items.map((region) => (
+            <article
+              key={region.name}
+              className="rounded-[1.4rem] border border-[rgba(255,215,87,0.22)] bg-[rgba(255,253,245,0.6)] px-6 py-7 transition-colors duration-300 ease-out hover:border-[rgba(255,215,87,0.45)]"
             >
-              <span className="relative z-10 block">{region}</span>
-            </div>
+              <h3 className="font-display text-[1.35rem] leading-none text-[var(--color-ink-strong)]">
+                {region.name}
+              </h3>
+              <p className="mt-3 text-[0.94rem] leading-[1.65] text-[var(--color-muted)]">
+                {region.description}
+              </p>
+            </article>
           ))}
         </div>
       </div>

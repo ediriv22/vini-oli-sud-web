@@ -1,171 +1,116 @@
-import Link from "next/link";
 import BrandLogo from "@/components/ui/BrandLogo";
-import Button from "@/components/ui/Button";
-import { footerActions, footerNavigation } from "@/data/navigation";
+import { footerNavigation } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 
 /**
- * Footer editoriale su fondo avorio caldo.
- *
- * Direzione (post-audit):
- *  - Niente più h3/h4 in blu profondo (--color-grove): tutti i titoli
- *    sezione sono carbone caldo intenso (--color-ink-strong) con
- *    eyebrow oro per la gerarchia.
- *  - Hairline oro come unico segnale di "fine pagina".
- *  - Layout a 3 colonne larghe con respiro generoso, CTA secondaria
- *    "soft" anziché due primarie consecutive (era visivamente forte).
- *  - Touch target ≥ 44px sui link inline mobile.
+ * Footer a 3 colonne su fondo verde scuro, replica del demo cliente:
+ * 1) wordmark + tagline, 2) "Esplora" (ancore) + "Contatti" (recapiti reali
+ * dell'organizzatore, non il placeholder del demo), 3) partner istituzionale.
+ * I link /social/*.html restano invariati (compliance TikTok Developer
+ * review), i link /privacy e /cookie sono rimossi con le relative pagine.
  */
 export default function Footer() {
   return (
-    <footer className="relative bg-[var(--color-ivory)] text-[var(--color-ink)]">
-      {/* Hairline oro: l'unico segnale di "fine pagina". */}
+    <footer id="contatti" className="relative bg-[var(--color-grove)] text-[rgba(255,253,245,0.88)]">
       <span
         aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[rgba(176,141,87,0.55)] to-transparent"
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,215,87,0.45)] to-transparent"
       />
 
-      <div className="section-shell grid gap-12 py-14 sm:gap-14 sm:py-18 md:grid-cols-2 md:gap-14 lg:grid-cols-[1.15fr_0.7fr_1.05fr] lg:gap-16 lg:py-24">
+      <div className="section-shell grid gap-12 py-14 sm:gap-14 sm:py-18 md:grid-cols-2 md:gap-14 lg:grid-cols-[1.1fr_0.8fr_1fr] lg:gap-16 lg:py-20">
         <div>
-          <BrandLogo variant="horizontal" />
-          <p className="font-ui mt-8 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[var(--color-sand-strong)]">
-            {siteConfig.brand.taglines.institutional}
-          </p>
-          <h2 className="mt-3 max-w-[22ch] font-display text-[clamp(1.85rem,3.2vw,2.4rem)] leading-[1.04] tracking-[0.005em] text-[var(--color-ink-strong)]">
-            {siteConfig.brand.taglines.primary}
-          </h2>
-          <p className="mt-5 max-w-[44ch] text-[0.96rem] leading-[1.7] text-[var(--color-muted)]">
+          <BrandLogo variant="horizontal" theme="light" />
+          <p className="mt-6 max-w-[42ch] text-[0.96rem] leading-[1.7] text-[rgba(255,253,245,0.78)]">
             {siteConfig.footerDescription}
           </p>
         </div>
 
         <div>
-          <h3 className="font-ui text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-sand-strong)]">
-            Menu rapido
+          <h3 className="font-ui text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-sand)]">
+            Esplora
           </h3>
           <ul className="mt-6 space-y-3.5 text-[0.96rem]">
             {footerNavigation.map((item) => (
               <li key={item.href}>
-                <Link
+                <a
                   href={item.href}
-                  className="inline-flex min-h-[1.75rem] items-center text-[var(--color-ink-strong)] transition-colors duration-200 ease-out hover:text-[var(--color-wine)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6b1e1e]"
+                  className="inline-flex min-h-[1.75rem] items-center text-[rgba(255,253,245,0.9)] transition-colors duration-200 ease-out hover:text-[var(--color-sand)]"
                 >
                   {item.label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
+
+          <h3 className="mt-9 font-ui text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-sand)]">
+            Contatti
+          </h3>
+          <div className="mt-5 space-y-3 text-[0.94rem] leading-[1.65] text-[rgba(255,253,245,0.85)]">
+            <p>{siteConfig.organizer.legalName}</p>
+            <p className="flex flex-wrap gap-x-3 gap-y-1.5">
+              {siteConfig.organizer.phones.map((num) => (
+                <a
+                  key={num}
+                  href={`tel:+39${num}`}
+                  className="underline decoration-[rgba(255,215,87,0.5)] decoration-1 underline-offset-[3px] hover:text-[var(--color-sand)]"
+                >
+                  {num}
+                </a>
+              ))}
+            </p>
+            <p>
+              <a
+                href={`mailto:${siteConfig.organizer.email}`}
+                className="break-all underline decoration-[rgba(255,215,87,0.5)] decoration-1 underline-offset-[3px] hover:text-[var(--color-sand)]"
+              >
+                {siteConfig.organizer.email}
+              </a>
+            </p>
+            <p>
+              <span className="font-ui mr-1 text-[0.62rem] uppercase tracking-[0.14em] text-[rgba(255,253,245,0.6)]">
+                PEC
+              </span>
+              <a
+                href={`mailto:${siteConfig.organizer.pec}`}
+                className="break-all underline decoration-[rgba(255,215,87,0.5)] decoration-1 underline-offset-[3px] hover:text-[var(--color-sand)]"
+              >
+                {siteConfig.organizer.pec}
+              </a>
+            </p>
+            <p className="text-[0.8rem] text-[rgba(255,253,245,0.6)]">
+              P.IVA {siteConfig.organizer.vatId} · C.F. {siteConfig.organizer.fiscalCode}
+            </p>
+          </div>
         </div>
 
         <div>
-          <h3 className="font-ui text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-sand-strong)]">
-            Azioni chiave
+          <h3 className="font-ui text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-sand)]">
+            Partner Istituzionale
           </h3>
-          <div className="mt-6 flex flex-col gap-4">
-            {footerActions.map((action, index) => (
-              <Button
-                key={action.href}
-                href={action.href}
-                size="md"
-                variant={index === 0 ? "primary" : "soft"}
-                className="w-full justify-center sm:w-auto sm:justify-start"
-              >
-                {action.label}
-              </Button>
-            ))}
-          </div>
-
-          <div className="mt-10 space-y-6 text-[0.94rem] leading-[1.7] text-[var(--color-muted)]">
-            <div>
-              <h4 className="font-ui text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-strong)]">
-                Contatto progetto
-              </h4>
-              <p className="mt-2">
-                <Link
-                  href={`mailto:${siteConfig.contact.projectEmail}`}
-                  className="break-all text-[var(--color-ink-strong)] underline decoration-[rgba(176,141,87,0.5)] decoration-1 underline-offset-[3px] transition-colors hover:text-[var(--color-wine)] hover:decoration-[var(--color-wine)]"
-                >
-                  {siteConfig.contact.projectEmail}
-                </Link>
-              </p>
-            </div>
-            <div>
-              <h4 className="font-ui text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-strong)]">
-                Organizzazione
-              </h4>
-              <p className="mt-2 text-[var(--color-ink)]">
-                ViniSud — progetto a cura di{" "}
-                <span>{siteConfig.organizer.legalName}</span>
-              </p>
-              <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1.5">
-                {siteConfig.organizer.phones.map((num) => (
-                  <Link
-                    key={num}
-                    href={`tel:+39${num}`}
-                    className="text-[var(--color-ink)] underline decoration-[rgba(176,141,87,0.45)] decoration-1 underline-offset-[3px] transition-colors hover:text-[var(--color-wine)] hover:decoration-[var(--color-wine)]"
-                  >
-                    {num}
-                  </Link>
-                ))}
-              </p>
-              <p className="mt-2">
-                <Link
-                  href={`mailto:${siteConfig.organizer.email}`}
-                  className="break-all text-[var(--color-ink)] underline decoration-[rgba(176,141,87,0.45)] decoration-1 underline-offset-[3px] transition-colors hover:text-[var(--color-wine)] hover:decoration-[var(--color-wine)]"
-                >
-                  {siteConfig.organizer.email}
-                </Link>
-              </p>
-              <p className="mt-2">
-                <span className="font-ui mr-1 text-[0.62rem] uppercase tracking-[0.14em] text-[var(--color-muted)]">
-                  PEC
-                </span>
-                <Link
-                  href={`mailto:${siteConfig.organizer.pec}`}
-                  className="break-all text-[var(--color-ink)] underline decoration-[rgba(176,141,87,0.45)] decoration-1 underline-offset-[3px] transition-colors hover:text-[var(--color-wine)] hover:decoration-[var(--color-wine)]"
-                >
-                  {siteConfig.organizer.pec}
-                </Link>
-              </p>
-              <p className="mt-4 text-[0.8rem] leading-[1.7] text-[var(--color-muted)]">
-                P.IVA {siteConfig.organizer.vatId} · C.F.{" "}
-                {siteConfig.organizer.fiscalCode}
-              </p>
-            </div>
-          </div>
+          <p className="mt-6 max-w-[36ch] text-[0.96rem] leading-[1.7] text-[rgba(255,253,245,0.85)]">
+            Con il patrocinio e la collaborazione dell&rsquo;Assessorato
+            all&rsquo;Agricoltura della Regione Campania.
+          </p>
         </div>
       </div>
 
-      <div className="section-shell flex flex-col gap-3 border-t border-[rgba(176,141,87,0.22)] py-6 text-[0.74rem] uppercase tracking-[0.12em] text-[var(--color-muted)] sm:flex-row sm:items-center sm:justify-between">
+      <div className="section-shell flex flex-col gap-3 border-t border-[rgba(255,215,87,0.22)] py-6 text-[0.74rem] uppercase tracking-[0.12em] text-[rgba(255,253,245,0.65)] sm:flex-row sm:items-center sm:justify-between">
         <p>{siteConfig.legalLine}</p>
         <div className="flex flex-wrap gap-x-6 gap-y-2">
-          {/* Link richiesti dalla TikTok Developer review: devono essere
-              visibili dalla homepage senza aprire menu e puntare alle pagine
-              registrate nel portale TikTok. */}
+          {/* Link richiesti dalla TikTok Developer review: devono restare
+              invariati e puntare alle pagine registrate nel portale TikTok. */}
           <a
             href="/social/privacy.html"
-            className="min-h-[1.75rem] hover:text-[var(--color-wine)]"
+            className="min-h-[1.75rem] hover:text-[var(--color-sand)]"
           >
             Privacy Policy
           </a>
           <a
             href="/social/terms.html"
-            className="min-h-[1.75rem] hover:text-[var(--color-wine)]"
+            className="min-h-[1.75rem] hover:text-[var(--color-sand)]"
           >
             Terms of Service
           </a>
-          <Link
-            href="/privacy"
-            className="min-h-[1.75rem] hover:text-[var(--color-wine)]"
-          >
-            Privacy sito
-          </Link>
-          <Link
-            href="/cookie"
-            className="min-h-[1.75rem] hover:text-[var(--color-wine)]"
-          >
-            Cookie
-          </Link>
         </div>
       </div>
     </footer>

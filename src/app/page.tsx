@@ -1,19 +1,23 @@
-import AudienceGateway from "@/components/sections/AudienceGateway";
-import ConceptSection from "@/components/sections/ConceptSection";
-import CtaBand from "@/components/sections/CtaBand";
-import EditionStrip from "@/components/sections/EditionStrip";
+import AlboDoroSection from "@/components/sections/AlboDoroSection";
+import EventDetailsSection from "@/components/sections/EventDetailsSection";
 import GrandPrixHighlight from "@/components/sections/GrandPrixHighlight";
 import HeroSection from "@/components/sections/HeroSection";
+import PhilosophySection from "@/components/sections/PhilosophySection";
+import RegionsSection from "@/components/sections/RegionsSection";
+import SponsorSection from "@/components/sections/SponsorSection";
+import TerritorySection from "@/components/sections/TerritorySection";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <EditionStrip />
-      <AudienceGateway />
-      <ConceptSection />
+      <PhilosophySection />
       <GrandPrixHighlight />
-      <CtaBand />
+      <TerritorySection />
+      <RegionsSection />
+      <SponsorSection />
+      <EventDetailsSection />
+      <AlboDoroSection />
     </>
   );
 }
