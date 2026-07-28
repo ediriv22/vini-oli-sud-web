@@ -3,11 +3,12 @@ import { footerNavigation } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 
 /**
- * Footer a 3 colonne su fondo verde scuro, replica del demo cliente:
- * 1) wordmark + tagline, 2) "Esplora" (ancore) + "Contatti" (recapiti reali
- * dell'organizzatore, non il placeholder del demo), 3) partner istituzionale.
- * I link /social/*.html restano invariati (compliance TikTok Developer
- * review), i link /privacy e /cookie sono rimossi con le relative pagine.
+ * Footer a 4 colonne su fondo verde scuro, replica esatta del demo cliente
+ * (verificato via DOM sulla demo live: 4 heading colonna separati — Vini &
+ * OliSud / Esplora / Contatti / Partner Istituzionale — non "Esplora" e
+ * "Contatti" impilati nella stessa colonna). I link /social/*.html restano
+ * invariati (compliance TikTok Developer review), i link /privacy e /cookie
+ * sono rimossi con le relative pagine.
  */
 export default function Footer() {
   return (
@@ -17,7 +18,7 @@ export default function Footer() {
         className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,215,87,0.45)] to-transparent"
       />
 
-      <div className="section-shell grid gap-12 py-14 sm:gap-14 sm:py-18 md:grid-cols-2 md:gap-14 lg:grid-cols-[1.1fr_0.8fr_1fr] lg:gap-16 lg:py-20">
+      <div className="section-shell grid gap-12 py-14 sm:gap-14 sm:py-18 md:grid-cols-2 md:gap-14 lg:grid-cols-[1fr_0.75fr_0.85fr_0.85fr] lg:gap-10 lg:py-20">
         <div>
           <BrandLogo variant="horizontal" theme="light" />
           <p className="mt-6 max-w-[42ch] text-[0.96rem] leading-[1.7] text-[rgba(255,253,245,0.78)]">
@@ -41,11 +42,13 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+        </div>
 
-          <h3 className="mt-9 font-ui text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-sand)]">
+        <div>
+          <h3 className="font-ui text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-sand)]">
             Contatti
           </h3>
-          <div className="mt-5 space-y-3 text-[0.94rem] leading-[1.65] text-[rgba(255,253,245,0.85)]">
+          <div className="mt-6 space-y-3 text-[0.94rem] leading-[1.65] text-[rgba(255,253,245,0.85)]">
             <p>{siteConfig.organizer.legalName}</p>
             <p className="flex flex-wrap gap-x-3 gap-y-1.5">
               {siteConfig.organizer.phones.map((num) => (
