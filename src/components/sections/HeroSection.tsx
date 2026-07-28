@@ -43,12 +43,15 @@ export default function HeroSection() {
   return (
     <section id="top" aria-label="Vini & OliSud — Magna Grecia" className="relative">
       <div className="relative -mt-[var(--site-header-height)] min-h-[calc(100svh)] overflow-hidden bg-[var(--color-grove)]">
-        <img
-          src={hero.backgroundImage}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        <picture>
+          <source media="(max-width: 767px)" srcSet={hero.backgroundImageMobile} />
+          <img
+            src={hero.backgroundImage}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </picture>
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[linear-gradient(180deg,rgba(26,53,40,0.72)_0%,rgba(26,53,40,0.58)_45%,rgba(26,53,40,0.82)_100%)]"

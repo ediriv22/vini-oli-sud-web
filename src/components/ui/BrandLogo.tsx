@@ -20,7 +20,7 @@ type BrandLogoProps = {
 
 const ASSETS = siteConfig.brand.assets;
 
-const MONOGRAM_DIM = { width: 1000, height: 1000 };
+const BADGE_DIM = { width: 867, height: 857 };
 
 export default function BrandLogo({
   href = "/",
@@ -36,26 +36,34 @@ export default function BrandLogo({
 
   // Il nome pubblico del brand deve apparire ESATTAMENTE come "ViniSud"
   // (vincolo TikTok Developer review: app name = titolo sito = brand
-  // visibile). Per questo il wordmark è testo HTML, non più l'SVG
-  // orizzontale "VINI SUD · DAL MEDITERRANEO".
-  const monogramSrc = theme === "light" ? ASSETS.vsMarkIvory : ASSETS.vsMark;
-
-  const monogramSizeClasses =
+  // visibile). Per questo il wordmark resta testo HTML separato, anche
+  // se il badge qui sotto contiene già una propria scritta incisa
+  // nell'immagine ("VINI OLI SUD").
+  //
+  // Badge quadrato (fondo verde scuro, colonna dorica oro, scritta oro):
+  // stesso identico file logo usato dalla demo cliente in header/footer
+  // (granpremiodinapoli.it/img/logo.jpg). Ha già un bordo e uno sfondo
+  // verde propri, per cui non serve una variante "light"/"dark" distinta.
+  // Dimensioni in px fissi (non rem) per restare fedeli alla dimensione
+  // reale del badge nella demo cliente (~75x75px misurati via
+  // getBoundingClientRect su granpremiodinapoli.it/anteprima), invece di
+  // scalare con i breakpoint tipografici del sito.
+  const badgeSizeClasses =
     resolvedVariant === "monogram"
-      ? "h-9 w-9 sm:h-10 sm:w-10"
-      : "h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11";
+      ? "h-[44px] w-[44px] sm:h-[48px] sm:w-[48px]"
+      : "h-[56px] w-[56px] sm:h-[64px] sm:w-[64px] lg:h-[72px] lg:w-[72px]";
 
   const monogram = (
     <Image
-      src={monogramSrc}
+      src={ASSETS.logoBadge}
       alt={alt}
-      width={MONOGRAM_DIM.width}
-      height={MONOGRAM_DIM.height}
+      width={BADGE_DIM.width}
+      height={BADGE_DIM.height}
       priority={priority}
       unoptimized
       className={cn(
-        "select-none object-contain",
-        monogramSizeClasses,
+        "select-none rounded-[0.3rem] object-contain",
+        badgeSizeClasses,
         imageClassName,
       )}
     />
@@ -64,13 +72,13 @@ export default function BrandLogo({
   const wordmarkText = (
     <span
       className={cn(
-        "font-display leading-none tracking-[0.04em]",
+        "font-display leading-none tracking-[0.04em] whitespace-nowrap",
         theme === "light"
           ? "text-[var(--color-ivory)]"
           : "text-[var(--color-ink-strong)]",
         resolvedVariant === "wordmark"
-          ? "text-[1.3rem] sm:text-[1.5rem]"
-          : "text-[1.45rem] sm:text-[1.65rem] lg:text-[1.85rem]",
+          ? "text-[1rem] sm:text-[1.1rem]"
+          : "text-[1rem] sm:text-[1.1rem] lg:text-[1.15rem]",
       )}
     >
       {siteConfig.brand.wordmark}

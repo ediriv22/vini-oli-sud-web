@@ -47,6 +47,11 @@ export const siteConfig = {
       vsMarkIvory: "/brand/vs-mark-ivory.svg",
       // Avatar social pronto (monogramma + piccolo wordmark sotto).
       avatarSocial: "/brand/avatar-social-vs.svg",
+      // Badge logo quadrato (fondo verde scuro, colonna dorica oro,
+      // "VINI OLI SUD" in serif oro): stesso file usato dalla demo cliente
+      // in header (granpremiodinapoli.it/img/logo.jpg). Priorità di
+      // fedeltà visiva su header/footer rispetto al monogramma VS.
+      logoBadge: "/brand/logo-badge-verde.jpg",
       // Favicon SVG vettoriale (monogramma senza cornice).
       faviconSvg: "/brand/favicon.svg",
       // Favicon raster pre-renderizzati dal brand kit.
@@ -102,6 +107,10 @@ export const siteConfig = {
   // al 100%: vedi nota in coda al file / report di consegna).
   hero: {
     backgroundImage: editable.heroBackgroundImage,
+    // Crop verticale dedicato per viewport mobile (< 768px), stessa foto
+    // sorgente della demo cliente (Unsplash photo-1506377247377). Non
+    // esposto nel pannello /admin: variante tecnica del background hero.
+    backgroundImageMobile: "/images/home/hero-magna-grecia-mobile.jpg",
     overlayOpacity: editable.heroOverlayOpacity,
     institutionalNote:
       "In collaborazione con l'Assessorato all'Agricoltura della Regione Campania",
