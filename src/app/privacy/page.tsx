@@ -3,7 +3,7 @@ import { createPageMetadata, siteConfig } from "@/data/site";
 
 export const metadata: Metadata = createPageMetadata(
   "Privacy",
-  "Informativa sul trattamento dei dati personali per il sito Vini Oli Sud.",
+  "Informativa sul trattamento dei dati personali per il sito ViniSud.",
 );
 
 const { contact, organizer } = siteConfig;
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
         </h1>
         <p className="mt-6 text-[1.02rem] leading-[1.68] text-[var(--color-muted)]">
           Questa informativa descrive in modo sintetico come possono essere trattati i dati personali
-          inviati attraverso i recapiti pubblicati sul sito di Vini Oli Sud.
+          inviati attraverso i recapiti pubblicati sul sito di ViniSud.
         </p>
 
         <div className="mt-10 space-y-10 text-[0.98rem] leading-[1.72] text-[var(--color-muted)]">
@@ -59,7 +59,7 @@ export default function PrivacyPage() {
             <p className="mt-3">
               I dati conferiti volontariamente tramite email o altri canali di contatto possono essere
               trattati per: rispondere alle richieste ricevute; gestire comunicazioni commerciali,
-              richieste di accrediti, partnership e relazioni con stampa e media in ambito Vini Oli Sud;
+              richieste di accrediti, partnership e relazioni con stampa e media in ambito ViniSud;
               svolgere le attività organizzative connesse al progetto.
             </p>
           </section>

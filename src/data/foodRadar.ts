@@ -18,7 +18,7 @@ export type FoodRadarItem = {
   /**
    * Origine della nota editoriale.
    * - "auto"   → generata dallo script/bridge dal solo set categoria+area;
-   * - "editor" → riscritta a mano da Vini Oli Sud;
+   * - "editor" → riscritta a mano da ViniSud;
    * - assente  → equivalente a "editor" (compatibilità con item legacy).
    *
    * Il bridge GitHub e il CSV importer NON sovrascrivono il campo `note`

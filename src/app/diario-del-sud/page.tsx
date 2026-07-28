@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/data/site";
 
 export const metadata: Metadata = createPageMetadata(
   "Diario del Sud",
-  "Radar editoriale di Vini Oli Sud: rassegna ragionata di titoli, fonti e segnali dal mondo del vino, dell’olio e dell’agroalimentare mediterraneo.",
+  "Radar editoriale di ViniSud: rassegna ragionata di titoli, fonti e segnali dal mondo del vino, dell’olio e dell’agroalimentare mediterraneo.",
 );
 
 export default function DiarioDelSudPage() {
@@ -134,7 +134,7 @@ export default function DiarioDelSudPage() {
                 </h3>
                 <p className="mt-4 max-w-[56ch] text-[0.98rem] leading-[1.68] text-[var(--color-muted)] sm:text-[1.02rem]">
                   Il Diario del Sud raccoglierà titoli, fonti e link selezionati
-                  dal radar editoriale Vini Oli Sud. Ogni segnalazione sarà
+                  dal radar editoriale ViniSud. Ogni segnalazione sarà
                   pubblicata solo dopo verifica della fonte originale.
                 </p>
               </div>

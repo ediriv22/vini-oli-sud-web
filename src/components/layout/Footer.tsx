@@ -94,7 +94,7 @@ export default function Footer() {
                 Organizzazione
               </h4>
               <p className="mt-2 text-[var(--color-ink)]">
-                Vini Oli Sud — progetto a cura di{" "}
+                ViniSud — progetto a cura di{" "}
                 <span>{siteConfig.organizer.legalName}</span>
               </p>
               <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1.5">
@@ -138,12 +138,27 @@ export default function Footer() {
 
       <div className="section-shell flex flex-col gap-3 border-t border-[rgba(176,141,87,0.22)] py-6 text-[0.74rem] uppercase tracking-[0.12em] text-[var(--color-muted)] sm:flex-row sm:items-center sm:justify-between">
         <p>{siteConfig.legalLine}</p>
-        <div className="flex gap-6">
+        <div className="flex flex-wrap gap-x-6 gap-y-2">
+          {/* Link richiesti dalla TikTok Developer review: devono essere
+              visibili dalla homepage senza aprire menu e puntare alle pagine
+              registrate nel portale TikTok. */}
+          <a
+            href="/social/privacy.html"
+            className="min-h-[1.75rem] hover:text-[var(--color-wine)]"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="/social/terms.html"
+            className="min-h-[1.75rem] hover:text-[var(--color-wine)]"
+          >
+            Terms of Service
+          </a>
           <Link
             href="/privacy"
             className="min-h-[1.75rem] hover:text-[var(--color-wine)]"
           >
-            Privacy
+            Privacy sito
           </Link>
           <Link
             href="/cookie"

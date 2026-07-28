@@ -4,7 +4,7 @@ import { createPageMetadata, siteConfig } from "@/data/site";
 
 export const metadata: Metadata = createPageMetadata(
   "Cookie",
-  "Informativa sui cookie per il sito Vini Oli Sud.",
+  "Informativa sui cookie per il sito ViniSud.",
 );
 
 const { contact, organizer } = siteConfig;
@@ -18,7 +18,7 @@ export default function CookiePage() {
           Cookie policy
         </h1>
         <p className="mt-6 text-[1.02rem] leading-[1.68] text-[var(--color-muted)]">
-          Questa pagina descrive l’uso dei cookie sul sito di Vini Oli Sud in forma chiara e non
+          Questa pagina descrive l’uso dei cookie sul sito di ViniSud in forma chiara e non
           tecnica.
         </p>
 

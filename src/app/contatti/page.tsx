@@ -8,7 +8,7 @@ const { contact, organizer } = siteConfig;
 
 export const metadata: Metadata = createPageMetadata(
   "Contatti",
-  "Contatti ufficiali di Vini Oli Sud: richieste commerciali, accrediti, partnership e comunicazioni stampa.",
+  "Contatti ufficiali di ViniSud: richieste commerciali, accrediti, partnership e comunicazioni stampa.",
 );
 
 function ContactRow({
@@ -48,7 +48,7 @@ export default function ContattiPage() {
           >
             <p className="eyebrow">Richiedi informazioni</p>
             <h2 className="mt-3 font-display text-[1.85rem] leading-[1.05] text-[var(--color-grove)] sm:text-[2.15rem]">
-              Manifesta interesse al progetto Vini Oli Sud.
+              Manifesta interesse al progetto ViniSud.
             </h2>
             <p className="mt-3 text-[0.98rem] leading-relaxed text-[var(--color-muted)]">
               Indica l’area di interesse e raccontaci brevemente il tuo profilo. La segreteria
@@ -63,7 +63,7 @@ export default function ContattiPage() {
 
           <div className="panel rounded-[2rem] p-6 sm:p-8">
             <h2 className="font-ui text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-wine)]">
-              Contatto principale Vini Oli Sud
+              Contatto principale ViniSud
             </h2>
             <p className="mt-4 font-display text-[1.65rem] text-[var(--color-grove)] sm:text-[1.85rem]">
               <Link

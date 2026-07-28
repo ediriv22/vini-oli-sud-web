@@ -125,7 +125,7 @@ export default function LeadMiniForm() {
         id={`${formId}-disclaimer`}
         className="rounded-[1.1rem] border border-[rgba(200,167,111,0.35)] bg-gradient-to-br from-[rgba(255,251,245,0.85)] to-[rgba(252,248,241,0.7)] px-4 py-3 text-[0.92rem] leading-relaxed text-[var(--color-muted)] shadow-[0_2px_8px_rgba(122,38,52,0.04)]"
       >
-        Compila il modulo: la segreteria di Vini Oli Sud ricontatta i profili
+        Compila il modulo: la segreteria di ViniSud ricontatta i profili
         in linea con il progetto.
       </p>
 
