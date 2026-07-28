@@ -23,7 +23,7 @@ export default function GrandPrixHighlight() {
     <section
       id="grand-prix"
       aria-labelledby="grand-prix-highlight-title"
-      className="section-flow section-space bg-[var(--color-grove)]"
+      className="section-space bg-[var(--color-grove)]"
       style={getSectionBackgroundStyle(siteConfig.sectionBackgrounds.grandPrix)}
     >
       <div className="section-shell">
