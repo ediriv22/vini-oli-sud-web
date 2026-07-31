@@ -262,6 +262,12 @@ export const siteConfig = {
       // pubblicazione definitiva.
       url: "https://www.napoliracingshow.it",
     },
+    // Programma ufficiale ricevuto dal cliente (31 luglio 2026), pubblicato
+    // in public/downloads/.
+    programDownload: {
+      label: "Scarica il Programma",
+      url: "/downloads/programma-vinisud-2026.pdf",
+    },
   },
   alboDoro: {
     eyebrow: "Albo d'oro",

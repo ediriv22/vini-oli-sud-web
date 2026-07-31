@@ -47,6 +47,17 @@ export default function EventDetailsSection() {
           {eventDetails.externalLink.label}
           <span aria-hidden="true">↗</span>
         </a>
+
+        <div className="mt-4">
+          <a
+            href={eventDetails.programDownload.url}
+            download
+            className="font-ui inline-flex items-center gap-2 text-[0.82rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-wine)] transition-colors duration-300 ease-out hover:text-[var(--color-wine-strong)]"
+          >
+            {eventDetails.programDownload.label}
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
       </div>
     </section>
   );
