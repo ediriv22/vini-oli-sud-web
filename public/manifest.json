@@ -4,8 +4,8 @@
   "description": "Sito ufficiale di ViniSud: vini, oli e cultura mediterranea del Sud Italia.",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#FFFFFF",
-  "theme_color": "#1B2A3A",
+  "background_color": "#fffdf5",
+  "theme_color": "#2f5b46",
   "icons": [
     {
       "src": "/brand/favicon-192.png",
