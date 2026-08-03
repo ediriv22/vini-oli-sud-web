@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 // Contenuti modificabili dalla segretaria via /admin. Questo file JSON viene
 // aggiornato dal pannello e letto qui in fase di build. Vedi public/admin/.
 import editable from "../../content/settings/site.json";
+// Testi delle sezioni home (filosofia, Grand Prix, territorio, regioni,
+// sponsor, evento, albo d'oro) modificabili dalla segretaria via /admin,
+// area "Sezioni Home". Vedi public/admin/index.php.
+import homeSections from "../../content/settings/home-sections.json";
 
 export const siteConfig = {
   // Modificabili dal pannello /admin (content/settings/site.json).
@@ -114,169 +118,21 @@ export const siteConfig = {
     overlayOpacity: editable.heroOverlayOpacity,
     institutionalNote:
       "In collaborazione con l'Assessorato all'Agricoltura della Regione Campania",
-    slides: [
-      {
-        eyebrow: "Magna Grecia",
-        titlePrefix: "Dove il Sole incontra il ",
-        titleEmphasis: "Mito",
-        titleSuffix: "",
-        paragraph:
-          "Un viaggio al Sud è un'esperienza totale: è storia, gusto, paesaggio e passione. Benvenuti nella terra dell'eccellenza.",
-        ctaLabel: "Scopri la Rassegna 2026",
-        ctaHref: "#evento",
-      },
-      {
-        eyebrow: "Oro Verde e Fuoco",
-        titlePrefix: "Oro Verde e ",
-        titleEmphasis: "Fuoco",
-        titleSuffix: "",
-        paragraph:
-          "Vigne eroiche e ulivi secolari custodiscono un sapere che nasce dalla terra, non dai laboratori: gesti antichi che raccontano il Sud contro l'omologazione industriale.",
-        ctaLabel: "Esplora il Territorio",
-        ctaHref: "#territorio",
-      },
-      {
-        eyebrow: "27 · 28 · 29 Novembre 2026",
-        titlePrefix: "La Rassegna torna sul ",
-        titleEmphasis: "Lungomare",
-        titleSuffix: " di Napoli",
-        paragraph:
-          "Tre giorni di degustazioni e cultura mediterranea sul Lungomare Caracciolo, a ingresso libero per il pubblico, in collaborazione con l'Assessorato all'Agricoltura della Regione Campania.",
-        ctaLabel: "Tutte le Info",
-        ctaHref: "#evento",
-      },
-    ],
+    // Testi delle 3 scene modificabili dal pannello /admin, area "Sezioni
+    // Home" (content/settings/home-sections.json).
+    slides: homeSections.hero.slides,
   },
-  philosophy: {
-    eyebrow: "La nostra filosofia",
-    paragraphs: [
-      "Questa rassegna è orgoglio, visione, resistenza culturale. Non vuole copiare, ma mostrare al mondo cosa significa eccellenza vera, radicata, meridionale. Qui ogni premio è un atto di giustizia verso chi ha saputo trasformare il sole in vino, la pietra in olio, la storia in sapore.",
-      "Un viaggio al Sud è un'esperienza totale: è storia, gusto, paesaggio e passione. Benvenuti nella Magna Grecia!",
-    ],
-  },
-  grandPrixHighlight: {
-    eyebrow: "Premiazione",
-    title: "Riconoscimento di Eccellenza — Grand Prix della Magna Grecia",
-    subtitle:
-      "I migliori produttori premiati per la qualità straordinaria dei loro vini e oli. Un riconoscimento che celebra l'eccellenza del Sud Italia.",
-    expandLabel: "Scopri tutti i vincitori",
-    collapseLabel: "Mostra meno categorie",
-    featuredAwards: [
-      "Miglior Spumante",
-      "Miglior Vino Bianco",
-      "Miglior Vino Rosso",
-      "Miglior Vino Rosato",
-    ],
-  },
-  territory: {
-    eyebrow: "Il territorio",
-    title: "Dove il Sole incontra il Mito e la Storia",
-    intro:
-      "Nel cuore del Sud Italia, dove il sole splende più a lungo, la Magna Grecia non è mai tramontata. Oggi è il tempo del riscatto. Oggi il Sud si affaccia al mondo con prodotti ineguagliabili e una potenza narrativa unica.",
-    pillars: [
-      {
-        title: "Un territorio benedetto",
-        description:
-          "Sole, mare, vento, luce, pietra e storia. Microclimi irripetibili, terreni vulcanici e calcarei che scolpiscono i grappoli e profumano le drupe.",
-      },
-      {
-        title: "Vitigni e radici",
-        description:
-          "Aglianico, Primitivo, Nerello Mascalese, Fiano, Greco di Tufo. Nomi che suonano come poesie scritte dalla terra stessa. Ogni sorso è un ritorno a casa.",
-      },
-      {
-        title: "Oli: spirito della terra",
-        description:
-          "Nocellara, Ravece, Coratina. Gli uliveti del Sud sono templi aperti, e ogni goccia di extravergine è memoria liquida di un popolo che trasforma la roccia in vita.",
-      },
-      {
-        title: "Natura, non laboratorio",
-        description:
-          "Non nascono da additivi o sofisticazioni, ma dalla terra viva, dal vento del mare e dalle mani dei nostri contadini. Genuinità, verità, rispetto.",
-      },
-    ],
-  },
-  regions: {
-    eyebrow: "Le terre dell'eccellenza",
-    title: "Le Regioni della Magna Grecia: un'unica anima",
-    description:
-      "Ogni territorio racconta un volto diverso del Sud. Insieme, formano l'identità agricola più ricca, vera e promettente d'Europa.",
-    items: [
-      {
-        name: "Calabria",
-        description:
-          "Fortemente greca nel midollo. Intensa nei profumi con il Greco di Bianco e l'Olio della Locride. Una regione di estremi affascinanti e fiera stirpe mediterranea.",
-      },
-      {
-        name: "Abruzzo",
-        description:
-          "Dove il mare incontra la montagna. La Passerina danza con il Montepulciano. Oli robusti e sinceri raccontano terre antiche e contadini tenaci.",
-      },
-      {
-        name: "Molise",
-        description:
-          "La genuinità della biodiversità. Piccolo scrigno dove la Tintilia si fa voce autentica di una terra segreta. Oli fragranti e naturali, respiro lento di autenticità.",
-      },
-      {
-        name: "Campania",
-        description:
-          "Cuore del Mediterraneo. Terra di vulcani e vitigni: Fiano di Avellino, Greco di Tufo, Falanghina, Aglianico. E l'olio Ravece Irpina, uno dei monocultivar più eleganti del mondo.",
-      },
-      {
-        name: "Puglia",
-        description:
-          "Profumi bizantini e genuinità. Terra di ulivi millenari, Primitivo e Negroamaro. L'oro verde e rosso del Mediterraneo, tra le Murge e il Salento.",
-      },
-      {
-        name: "Lucania",
-        description:
-          "Austera e nobile. Patria dell'Aglianico del Vulture, uno dei rossi più importanti d'Europa. Minerali, veri, profondi, forgiati dal vulcano e dal silenzio.",
-      },
-    ],
-  },
-  // Sezione richiesta dalla navigazione del demo cliente ("SPONSOR,
-  // ESPOSITORI E SPAZI DISPONIBILI") ma per cui il transcript non
-  // includeva copy dedicata: contenuto placeholder esplicito, in attesa
-  // di materiale confermato (pacchetti sponsor, planimetria spazi, prezzi).
-  sponsor: {
-    eyebrow: "Sponsor & Espositori",
-    title: "Sponsor, Espositori e Spazi Disponibili",
-    body: "[PLACEHOLDER — contenuto da confermare] Dettagli su pacchetti sponsor, spazi espositivi e disponibilità saranno pubblicati non appena confermati. Per informazioni immediate su spazi e opportunità di partnership, contatta la segreteria organizzativa.",
-    ctaLabel: "Richiedi Informazioni",
-    ctaHref: "#contatti",
-  },
-  eventDetails: {
-    eyebrow: "L'evento",
-    title: "II° Rassegna Vini e Oli della Magna Grecia",
-    dates: "27 - 28 - 29 Novembre 2026",
-    admission: "Ingresso gratuito al pubblico",
-    venueName: "Lungomare Caracciolo, Napoli",
-    venueDescription: "Nel cuore della città, tra il mare e la storia",
-    collaboration:
-      "In collaborazione con Assessorato all'Agricoltura della Regione Campania",
-    externalLink: {
-      label: "NAPOLIRACINGSHOW.IT",
-      // Dominio non confermato altrove nel repo (solo email/PEC
-      // dell'organizzatore risultano verificate). URL indicato dal
-      // brief di consegna: da validare con il cliente prima della
-      // pubblicazione definitiva.
-      url: "https://www.napoliracingshow.it",
-    },
-    // Programma ufficiale ricevuto dal cliente (31 luglio 2026), pubblicato
-    // in public/downloads/.
-    programDownload: {
-      label: "Scarica il Programma",
-      url: "/downloads/programma-vinisud-2026.pdf",
-    },
-  },
-  alboDoro: {
-    eyebrow: "Albo d'oro",
-    title: "Il successo della I° Edizione",
-    paragraphs: [
-      "La prima edizione della Rassegna si è svolta con grande successo di pubblico e critica sul Lungomare Caracciolo di Napoli il 6-7-8 Dicembre 2025.",
-      "Un evento aperto gratuitamente al pubblico, che ha sancito la nascita di un nuovo punto di riferimento per l'enogastronomia di qualità del Mezzogiorno, confermando che il Sud è pronto a raccontare la propria eccellenza al mondo.",
-    ],
-  },
+  // Sezioni home sotto: testi modificabili dal pannello /admin, area
+  // "Sezioni Home" (content/settings/home-sections.json). Link/href/url
+  // restano protetti e non modificabili dalla segreteria (vedi BLOCKLIST
+  // in public/admin/index.php).
+  philosophy: homeSections.philosophy,
+  grandPrixHighlight: homeSections.grandPrixHighlight,
+  territory: homeSections.territory,
+  regions: homeSections.regions,
+  sponsor: homeSections.sponsor,
+  eventDetails: homeSections.eventDetails,
+  alboDoro: homeSections.alboDoro,
 } as const;
 
 export function createPageMetadata(

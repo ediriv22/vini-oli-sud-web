@@ -28,16 +28,18 @@ $TOKEN  = $cfg['GITHUB_TOKEN']  ?? '';
 $PASS   = $cfg['ADMIN_PASSWORD'] ?? '';
 
 // Aree modificabili: chiave => [etichetta, file, sottochiave|null]
+//
+// NOTA: dal rebranding del 28/07/2026 il sito è una single-page (le vecchie
+// pagine interne evento/espositori/buyer/visitatori/grand-prix/diario-del-
+// sud/media/contatti sono state rimosse, sostituite da ancore nella home).
+// Le vecchie aree "page:*" che scrivevano su content/pages.json sono state
+// rimosse qui perché quel file non è più letto da nessun componente del
+// sito: salvare lì non aveva più alcun effetto sul sito pubblicato.
+// I testi delle sezioni home (filosofia, Grand Prix, territorio, regioni,
+// sponsor, evento, albo d'oro) sono ora nell'area "home-sections" qui sotto.
 $AREAS = [
-    'site'                => ['Generale & Home',  'content/settings/site.json', null],
-    'page:evento'         => ['Pagina Evento',        'content/pages.json', 'evento'],
-    'page:espositori'     => ['Pagina Espositori',    'content/pages.json', 'espositori'],
-    'page:buyer'          => ['Pagina Buyer',         'content/pages.json', 'buyer'],
-    'page:visitatori'     => ['Pagina Visitatori',    'content/pages.json', 'visitatori'],
-    'page:grand-prix'     => ['Pagina Grand Prix',    'content/pages.json', 'grand-prix'],
-    'page:diario-del-sud' => ['Pagina Diario del Sud','content/pages.json', 'diario-del-sud'],
-    'page:media'          => ['Pagina Media / Stampa','content/pages.json', 'media'],
-    'page:contatti'       => ['Pagina Contatti',      'content/pages.json', 'contatti'],
+    'site'          => ['Generale & Home',  'content/settings/site.json', null],
+    'home-sections' => ['Sezioni Home (Filosofia, Grand Prix, Territorio, Regioni, Sponsor, Evento, Albo d\'Oro)', 'content/settings/home-sections.json', null],
 ];
 
 // Chiavi strutturali: mai mostrate né modificabili (preservate al salvataggio).
@@ -47,7 +49,6 @@ $BLOCKLIST = ['ctaHref', 'href', 'url', 'icon', 'kind', 'slug', 'id'];
 $LABELS = [
     'siteName' => 'Nome del sito', 'siteDescription' => 'Descrizione del sito (SEO)',
     'contactEmail' => 'Email di contatto',
-    'heroEyebrow' => 'Home — occhiello', 'heroTitle' => 'Home — titolo', 'heroSubtitle' => 'Home — sottotitolo',
     'eyebrow' => 'Occhiello', 'title' => 'Titolo', 'description' => 'Descrizione',
     'ctaLabel' => 'Etichetta pulsante', 'ctaNote' => 'Nota sotto il pulsante',
     'summary' => 'Riassunto', 'focusTitle' => 'Titolo sezione focus', 'focusIntro' => 'Introduzione sezione focus',
@@ -55,6 +56,12 @@ $LABELS = [
     'richSections' => 'Sezioni estese', 'metadataDescription' => 'Descrizione SEO della pagina',
     'externalReference' => 'Riferimento esterno', 'intro' => 'Introduzione',
     'blocks' => 'Blocchi', 'items' => 'Voci', 'lines' => 'Righe', 'text' => 'Testo', 'label' => 'Etichetta',
+    // Sezioni Home (content/settings/home-sections.json)
+    'paragraph' => 'Paragrafo', 'paragraphs' => 'Paragrafi', 'name' => 'Nome', 'body' => 'Testo',
+    'titlePrefix' => 'Titolo — inizio', 'titleEmphasis' => 'Titolo — parola in evidenza', 'titleSuffix' => 'Titolo — fine',
+    'featuredAwards' => 'Premi in evidenza', 'expandLabel' => 'Etichetta "espandi"', 'collapseLabel' => 'Etichetta "comprimi"',
+    'dates' => 'Date', 'admission' => 'Ingresso', 'venueName' => 'Luogo — nome', 'venueDescription' => 'Luogo — descrizione',
+    'collaboration' => 'Collaborazione', 'externalLink' => 'Link esterno', 'programDownload' => 'Download programma',
     'themePrimaryColor' => 'Colore primario (bottoni e accenti)',
     'themeBackgroundColor' => 'Colore di sfondo generale del sito',
     'backgroundColor' => 'Colore di sfondo di questa pagina',
