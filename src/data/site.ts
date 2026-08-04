@@ -128,6 +128,7 @@ export const siteConfig = {
   // in public/admin/index.php).
   philosophy: homeSections.philosophy,
   grandPrixHighlight: homeSections.grandPrixHighlight,
+  institutionalPartners: homeSections.institutionalPartners,
   territory: homeSections.territory,
   regions: homeSections.regions,
   sponsor: homeSections.sponsor,

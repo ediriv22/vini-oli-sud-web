@@ -43,7 +43,7 @@ $AREAS = [
 ];
 
 // Chiavi strutturali: mai mostrate né modificabili (preservate al salvataggio).
-$BLOCKLIST = ['ctaHref', 'href', 'url', 'icon', 'kind', 'slug', 'id'];
+$BLOCKLIST = ['ctaHref', 'href', 'url', 'icon', 'kind', 'slug', 'id', 'logo'];
 
 // Etichette italiane per i campi.
 $LABELS = [
@@ -62,6 +62,8 @@ $LABELS = [
     'featuredAwards' => 'Premi in evidenza', 'expandLabel' => 'Etichetta "espandi"', 'collapseLabel' => 'Etichetta "comprimi"',
     'dates' => 'Date', 'admission' => 'Ingresso', 'venueName' => 'Luogo — nome', 'venueDescription' => 'Luogo — descrizione',
     'collaboration' => 'Collaborazione', 'externalLink' => 'Link esterno', 'programDownload' => 'Download programma',
+    'supervisionLabel' => 'Etichetta gruppo "supervisione"', 'partnerLabel' => 'Etichetta gruppo "partner"',
+    'supervision' => 'Enti — supervisione', 'partners' => 'Enti — partner istituzionale',
     'themePrimaryColor' => 'Colore primario (bottoni e accenti)',
     'themeBackgroundColor' => 'Colore di sfondo generale del sito',
     'backgroundColor' => 'Colore di sfondo di questa pagina',

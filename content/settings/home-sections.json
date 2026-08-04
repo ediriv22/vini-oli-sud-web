@@ -111,6 +111,32 @@
         "ctaLabel": "Richiedi Informazioni",
         "ctaHref": "#contatti"
     },
+    "institutionalPartners": {
+        "eyebrow": "Con il supporto di",
+        "title": "Enti e Partner Istituzionali",
+        "supervisionLabel": "Con la supervisione e le indicazioni di",
+        "partnerLabel": "Partner istituzionale",
+        "supervision": [
+            {
+                "name": "Comune di Napoli",
+                "logo": "/brand/partners/comune-napoli.png"
+            },
+            {
+                "name": "Regione Campania",
+                "logo": "/brand/partners/regione-campania.png"
+            }
+        ],
+        "partners": [
+            {
+                "name": "Ministero dell'Agricoltura, della Sovranità Alimentare e delle Foreste",
+                "logo": "/brand/partners/ministero-agricoltura-sovranita-alimentare-foreste.png"
+            },
+            {
+                "name": "Città Metropolitana di Napoli",
+                "logo": "/brand/partners/citta-metropolitana-napoli.png"
+            }
+        ]
+    },
     "eventDetails": {
         "eyebrow": "L'evento",
         "title": "II° Rassegna Vini e Oli della Magna Grecia",
