@@ -114,8 +114,15 @@
     "institutionalPartners": {
         "eyebrow": "Con il supporto di",
         "title": "Enti e Partner Istituzionali",
+        "organizzazioneLabel": "Organizzazione",
         "supervisionLabel": "Con la supervisione e le indicazioni di",
         "partnerLabel": "Partner istituzionale",
+        "organizzazione": [
+            {
+                "name": "A.S.D. Napoli Racing Show",
+                "logo": "/brand/partners/asd-napoli-racing-show.png"
+            }
+        ],
         "supervision": [
             {
                 "name": "Comune di Napoli",
@@ -124,6 +131,14 @@
             {
                 "name": "Regione Campania",
                 "logo": "/brand/partners/regione-campania.png"
+            },
+            {
+                "name": "Assessorato Agricoltura",
+                "logo": ""
+            },
+            {
+                "name": "Assessorato Turismo",
+                "logo": ""
             }
         ],
         "partners": [
