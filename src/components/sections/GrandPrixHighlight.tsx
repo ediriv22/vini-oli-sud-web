@@ -7,8 +7,16 @@ import { grandPrixWinners2025 } from "@/data/winners";
 import { getSectionBackgroundStyle } from "@/lib/sectionBackground";
 
 export default function GrandPrixHighlight() {
-  const { eyebrow, title, subtitle, featuredAwards, expandLabel, collapseLabel } =
-    siteConfig.grandPrixHighlight;
+  const {
+    eyebrow,
+    title,
+    subtitle,
+    registrationsNote,
+    registrationsDetail,
+    featuredAwards,
+    expandLabel,
+    collapseLabel,
+  } = siteConfig.grandPrixHighlight;
   const [expanded, setExpanded] = useState(false);
 
   const featured = featuredAwards
@@ -40,6 +48,15 @@ export default function GrandPrixHighlight() {
           <p className="mt-6 text-[1.02rem] leading-[1.7] text-[rgba(255,253,245,0.82)]">
             {subtitle}
           </p>
+
+          <div className="mt-8 inline-flex flex-col items-center gap-2 rounded-[1.1rem] border border-[rgba(255,215,87,0.35)] bg-[rgba(255,253,245,0.06)] px-6 py-5">
+            <p className="font-ui text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-sand)]">
+              {registrationsNote}
+            </p>
+            <p className="text-[0.88rem] leading-[1.6] text-[rgba(255,253,245,0.78)]">
+              {registrationsDetail}
+            </p>
+          </div>
         </div>
 
         <ul className="mt-14 grid grid-cols-2 gap-5 sm:gap-6 lg:grid-cols-4">

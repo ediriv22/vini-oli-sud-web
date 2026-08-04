@@ -24,6 +24,34 @@ export default function EventDetailsSection() {
         <p className="font-ui mt-2 text-[0.86rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-sand-strong)]">
           {eventDetails.admission}
         </p>
+        <p className="mt-2 text-[0.9rem] leading-[1.6] text-[var(--color-muted)]">
+          {eventDetails.villageAccessNote}
+        </p>
+
+        <div className="mt-8 rounded-[1.1rem] border border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)] px-6 py-6 text-left">
+          <p className="font-display text-[1.15rem] text-[var(--color-ink-strong)]">
+            {eventDetails.pass.title}
+          </p>
+          <p className="font-ui mt-1 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-wine)]">
+            {eventDetails.pass.availabilityNote}
+          </p>
+          <p className="mt-3 text-[0.92rem] leading-[1.6] text-[var(--color-muted)]">
+            {eventDetails.pass.intro}
+          </p>
+          <ul className="mt-4 space-y-1.5">
+            {eventDetails.pass.benefits.map((benefit) => (
+              <li
+                key={benefit}
+                className="flex items-start gap-2 text-[0.88rem] leading-[1.5] text-[var(--color-muted)]"
+              >
+                <span aria-hidden="true" className="mt-[0.35em] text-[var(--color-wine)]">
+                  •
+                </span>
+                {benefit}
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <div className="mt-8 border-t border-[rgba(255,215,87,0.3)] pt-8">
           <p className="font-display text-[1.3rem] text-[var(--color-ink-strong)]">
