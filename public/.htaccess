@@ -22,9 +22,15 @@
   ExpiresByType image/svg+xml "access plus 30 days"
 </FilesMatch>
 
-# HTML pages — revalidate every 1 hour
+# HTML pages — NON mettere in cache per un tempo lungo: i file JS/CSS
+# hanno hash nel nome e sono cache "immutable" per 1 anno, e ogni deploy
+# ELIMINA gli hash della build precedente. Se l'HTML resta in cache anche
+# solo per un'ora, chi lo carica poco prima di un nuovo deploy si ritrova
+# un HTML che punta a chunk JS ormai cancellati -> ChunkLoadError -> sito
+# che sembra "crashare" (schermata bianca). Con max-age=0 il browser deve
+# sempre rivalidare con il server prima di riusare la copia in cache.
 <FilesMatch "\.html$">
-  Header set Cache-Control "public, max-age=3600, must-revalidate"
+  Header set Cache-Control "public, max-age=0, must-revalidate"
 </FilesMatch>
 
 # Security headers
