@@ -1,5 +1,25 @@
 [
   {
+    "id": "96f2ea0b69fe",
+    "category": "Calici di Magna Grecia",
+    "title": "Vini Corte Laureana Azienda Agricola Casa Madre",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vini-corte-laureana-azienda-agricola-casa-madre/300010/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-08-10"
+  },
+  {
+    "id": "e531e6c50ab4",
+    "category": "Calici di Magna Grecia",
+    "title": "Vinicola del Sannio a Castelvenere",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vinicola-del-sannio-a-castelvenere/299996/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-08-10"
+  },
+  {
     "id": "ca520d67d829",
     "category": "Calici di Magna Grecia",
     "title": "MenoDodici IGP. Susumaniello Rosato 2025 Salento igp, Cantina Pliniana",
@@ -16,6 +36,16 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/costiero-il-rosato-salento-igpt2025-di-negroamaro-di-giustini/299941/",
     "note": "Una segnalazione gastronomica del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-08-09"
+  },
+  {
+    "id": "198822ceff24",
+    "category": "Calici di Magna Grecia",
+    "title": "Sono tornati in Sardegna e stanno salvando i vigneti abbandonati: ora ne fanno vino",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/mussura-giovani-vigneti-abbandonati-sardegna/",
+    "note": "Una voce dal mondo del vino, focus Sardegna.",
     "noteSource": "auto",
     "date": "2026-08-09"
   },
@@ -268,35 +298,5 @@
     "note": "Una notizia dal calendario dei territori del Sud.",
     "noteSource": "auto",
     "date": "2026-07-30"
-  },
-  {
-    "id": "4bb875505a19",
-    "category": "Radar del Sud",
-    "title": "A 1600 metri il rifugio dove si mangia una delle cucine più sorprendenti delle Alpi",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/ristoranti/visaisa-rifugio-valle-maira-cucina/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-29"
-  },
-  {
-    "id": "4084aa07c1f3",
-    "category": "Calici di Magna Grecia",
-    "title": "Addio a Emidio Pepe, il rivoluzionario del Montepulciano d'Abruzzo",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/addio-emidio-pepe-morto-vignaiolo-montepulciano-abruzzo",
-    "note": "Una voce dal mondo del vino, focus Abruzzo.",
-    "noteSource": "auto",
-    "date": "2026-07-28"
-  },
-  {
-    "id": "86abd562b12c",
-    "category": "Radar del Sud",
-    "title": "Aion e Kronos, cucina e pizza a Patti",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/aion-e-kronos-cucina-e-pizza-a-patti/299220/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-07-28"
   }
 ]
