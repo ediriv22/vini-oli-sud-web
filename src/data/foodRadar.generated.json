@@ -20,6 +20,46 @@
     "date": "2026-08-11"
   },
   {
+    "id": "20b09676355c",
+    "category": "Radar del Sud",
+    "title": "Masseria Barbera a Minervino Murge: quando la masseria diventa una delle migliori tavole di Puglia",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/masseria-barbera-a-minervino-murge-quando-la-masseria-diventa-una-delle-migliori-tavole-di-puglia/300036/",
+    "note": "Una segnalazione di cucina, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-08-11"
+  },
+  {
+    "id": "a91767cacaba",
+    "category": "Radar del Sud",
+    "title": "Sant'Agata sui Due Golfi, il Vespero: l'eleganza panoramica del ristorante dell'hotel due golfi",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/santagata-sui-due-golfi-il-vespero-leleganza-panoramica-del-ristorante-dellhotel-due-golfi/300081/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-08-11"
+  },
+  {
+    "id": "ad5c46cf98b8",
+    "category": "Calici di Magna Grecia",
+    "title": "Le cantine italiane sono ancora piene di vino in giacenza: 42,6 milioni di ettolitri a fine luglio",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/cantine-italiane-giacenze-2026-icqrf-luglio-2026/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-11"
+  },
+  {
+    "id": "a14b353c3f33",
+    "category": "Radar del Sud",
+    "title": "Nel ristorante LEGO il pranzo si ordina costruendolo con i mattoncini. Poi te lo portano i robot",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/ristoranti/nel-ristorante-lego-il-pranzo-si-ordina-costruendolo-con-i-mattoncini-poi-te-lo-portano-i-robot/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-11"
+  },
+  {
     "id": "96f2ea0b69fe",
     "category": "Calici di Magna Grecia",
     "title": "Vini Corte Laureana Azienda Agricola Casa Madre",
@@ -258,45 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-08-01"
-  },
-  {
-    "id": "8c1dc063202e",
-    "category": "Calici di Magna Grecia",
-    "title": "Sotto questa antica neviera di 16 metri oggi si cena tra vini e cucina pugliese",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/ristoranti/neviera-elia-ristorante-neviera-puglia/",
-    "note": "Una voce dal mondo del vino, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-08-01"
-  },
-  {
-    "id": "dec8bb9076ca",
-    "category": "Calici di Magna Grecia",
-    "title": "In questa cantina si fa il picnic tra i vigneti mentre tramonta il sole",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/ristoranti/picnic-vigneti-madrevite-trasimeno/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-01"
-  },
-  {
-    "id": "b32d3eddbd0e",
-    "category": "Radar del Sud",
-    "title": "La leggenda del cannellone e la campana che dà il benvenuto: il convento sul mare accoglie i viaggiatori da oltre otto secoli",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/la-leggenda-convento-sul-mare-amalfi/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-01"
-  },
-  {
-    "id": "af5ed7c2623f",
-    "category": "Territori",
-    "title": "Dall'11 al 13 settembre torna Alta Campania Wine Fest",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/dall11-al-13-settembre-torna-alta-campania-wine-fest/299439/",
-    "note": "Una notizia dal calendario dei territori, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-07-31"
   }
 ]
