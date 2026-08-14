@@ -1,5 +1,25 @@
 [
   {
+    "id": "89d7766cee4f",
+    "category": "Calici di Magna Grecia",
+    "title": "VINerdì | 3 est Est! Est!! Est!!! di Montefiascone doc 2025, Cantina la Nobra",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vinerdi-3-est-est-est-est-di-montefiascone-doc-2025-cantina-la-nobra/300078/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-14"
+  },
+  {
+    "id": "99fbdba465d5",
+    "category": "Calici di Magna Grecia",
+    "title": "Vini Orsini a San Lupo",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vini-orsini-a-san-lupo/300252/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-14"
+  },
+  {
     "id": "017ae62e3a1e",
     "category": "Calici di Magna Grecia",
     "title": "Kallmet, il vitigno che racconta il nord dell'Albania | Mrizi i Zanave Venari",
@@ -16,6 +36,26 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/5-produttori-per-conoscere-la-sicilia-del-vino/300118/",
     "note": "Una voce dal mondo del vino, focus Sicilia.",
+    "noteSource": "auto",
+    "date": "2026-08-13"
+  },
+  {
+    "id": "745b26eee425",
+    "category": "Radar del Sud",
+    "title": "Una delle pizzerie più ambite di Milano cambia volto. E ora si potrà mangiare anche senza prenotare",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/confine-milano-pizzeria-riapertura-senza-prenotazione/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-13"
+  },
+  {
+    "id": "87ec9870d3c7",
+    "category": "Radar del Sud",
+    "title": "Festa dell'Antica Pizza Cilentana: 50 mila presenze a Giungano",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/festa-dellantica-pizza-cilentana-50-mila-presenze-a-giungano/300239/",
+    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
     "noteSource": "auto",
     "date": "2026-08-13"
   },
@@ -258,45 +298,5 @@
     "note": "Una segnalazione di cucina, focus Basilicata.",
     "noteSource": "auto",
     "date": "2026-08-05"
-  },
-  {
-    "id": "115bea2be675",
-    "category": "Radar del Sud",
-    "title": "Il pesce fritto che, ancora bollente, viene tuffato nella salsa ghiacciata",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/il-pesce-fritto-che-ancora-bollente-viene-tuffato-nella-salsa-ghiacciata/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-04"
-  },
-  {
-    "id": "5ff1b580054b",
-    "category": "Calici di Magna Grecia",
-    "title": "Apollonio Vini, la firma del rosato salentino da oltre 150 anni",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/apollonio-vini-la-firma-del-rosato-salentino-da-oltre-150-anni/299586/",
-    "note": "Una voce dal mondo del vino, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-08-03"
-  },
-  {
-    "id": "c7362f00f3e0",
-    "category": "Radar del Sud",
-    "title": "I favolosi spaghetti con lupini del ristorante sul molo di Acciaroli",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/suscettibile-acciaroli-menu-e-prezzi",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-08-03"
-  },
-  {
-    "id": "8fe0529c4e34",
-    "category": "Calici di Magna Grecia",
-    "title": "Colli Ripani scommette sui vini dealcolati con la linea \"A cuor leggero\"",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/colli-ripani-vini-dealcolati-linea-a-cuor-leggero/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-03"
   }
 ]
