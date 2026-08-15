@@ -1,5 +1,15 @@
 [
   {
+    "id": "2c51cdbe727c",
+    "category": "Calici di Magna Grecia",
+    "title": "Cantina Votino a Montesarchio",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/cantina-votino-a-montesarchio/300254/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-15"
+  },
+  {
     "id": "89d7766cee4f",
     "category": "Calici di Magna Grecia",
     "title": "VINerdì | 3 est Est! Est!! Est!!! di Montefiascone doc 2025, Cantina la Nobra",
@@ -15,6 +25,36 @@
     "title": "Vini Orsini a San Lupo",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/vini-orsini-a-san-lupo/300252/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-14"
+  },
+  {
+    "id": "9a38baa027ac",
+    "category": "Business con Anima",
+    "title": "La braceria che fa ottima carne e soprattutto i migliori fusilli cilentani",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/la-rana-braceria-montecorice-san-nicola-agnone-cilento",
+    "note": "Un segnale di mercato per le eccellenze del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-08-14"
+  },
+  {
+    "id": "43016522c47d",
+    "category": "Calici di Magna Grecia",
+    "title": "Come scegliere il vino al ristorante (e non spendere più del necessario)",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/come-scegliere-vino-ristorante-carta-vini/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-14"
+  },
+  {
+    "id": "ad6b6c62e6d5",
+    "category": "Calici di Magna Grecia",
+    "title": "\"Certi vini costano troppo, bisogna avere il coraggio di non comprarli\". Parla uno dei grandi distributori italiani",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/luca-cuzziol-prezzi-ricarichi-vino-ristoranti/",
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-08-14"
@@ -258,45 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-08-06"
-  },
-  {
-    "id": "4189d8d50440",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Sul palco bevevo vino rosé\": il Lambrusco e gli altri vini che amava Francesco Guccini",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/francesco-guccini-vino-lambrusco/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-06"
-  },
-  {
-    "id": "d103c03d0d78",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Credo nelle potenzialità dei vini a bassa gradazione, ma guai ad inseguire le mode\". Il monito di Riccardo Cotarella",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/cotarella-vini-bassa-gradazione-naturale-dealcolati/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-06"
-  },
-  {
-    "id": "914697413211",
-    "category": "Oro Verde",
-    "title": "La Calabria torna tra le regine dell'olio italiano. Ecco gli extravergine premiati con le Tre Foglie",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/migliori-oli-calabria-tre-foglie/",
-    "note": "Un segnale dall'olio del Sud, focus Calabria.",
-    "noteSource": "auto",
-    "date": "2026-08-05"
-  },
-  {
-    "id": "1c5c1a4bf1e9",
-    "category": "Radar del Sud",
-    "title": "Il festival che unisce musica, teatro, birra artigianale e cucina lucana nel cuore della Basilicata",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/festival-antonio-infantino-tricarico-basilicata/",
-    "note": "Una segnalazione di cucina, focus Basilicata.",
-    "noteSource": "auto",
-    "date": "2026-08-05"
   }
 ]
