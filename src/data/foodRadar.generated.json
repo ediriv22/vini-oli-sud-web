@@ -1,5 +1,35 @@
 [
   {
+    "id": "2af11986c460",
+    "category": "Calici di Magna Grecia",
+    "title": "Ristorante Terrazza Fiorella a Massa Lubrense e la cucina di Carmine Mazza",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/ristorante-terrazza-fiorella-massa-lubrense-camine-mazza/300405/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-18"
+  },
+  {
+    "id": "20233b969087",
+    "category": "Oro Verde",
+    "title": "Sedano e bottarga: il semplicissimo piatto sardo che a San Francisco costa 29 dollari",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/sedano-bottarga-antipasto-sardo-san-francisco/",
+    "note": "Un segnale dall'olio del Sud, focus Sardegna.",
+    "noteSource": "auto",
+    "date": "2026-08-18"
+  },
+  {
+    "id": "da12b662eb15",
+    "category": "Calici di Magna Grecia",
+    "title": "Da cava abbandonata a cantina d'autore: il luogo più sorprendente da visitare a Bolgheri",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/enoturismo-cantina-meraviglia-bolgheri/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-18"
+  },
+  {
     "id": "fd4871402bd4",
     "category": "Radar del Sud",
     "title": "Un ristorante sul Vesuvio fa esclamare Oh mamma mia!",
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino, focus Sardegna.",
     "noteSource": "auto",
     "date": "2026-08-09"
-  },
-  {
-    "id": "71d9fe85f033",
-    "category": "Calici di Magna Grecia",
-    "title": "Oro Rosso Trento doc, Cembra Cantina di Montagna",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/oro-rosso-trento-doc-cembra-cantina-di-montagna/299826/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-08"
-  },
-  {
-    "id": "19581f7d898c",
-    "category": "Radar del Sud",
-    "title": "Borgo San Jacopo, ristorante dove cenare sull'Arno a Firenze",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/ristorante-borgo-san-jacopo-firenze-menu-prezzi",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-08"
-  },
-  {
-    "id": "110874baf3d7",
-    "category": "Radar del Sud",
-    "title": "Scabeccio, cos'è davvero: la tecnica antica per conservare il pesce che cambia nome in tutta Italia",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/scabeccio-cose-origini-varianti-regionali/",
-    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-08-07"
   }
 ]
