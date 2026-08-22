@@ -1,11 +1,51 @@
 [
   {
+    "id": "6d23d01d81c4",
+    "category": "Calici di Magna Grecia",
+    "title": "Invecchiato IGP | Alto Adige Sauvignon Voglar 2013 – Peter Dipoli",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/invecchiato-igp-alto-adige-sauvignon-voglar-2013-peter-dipoli/300360/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-22"
+  },
+  {
     "id": "e82b1923dcc1",
     "category": "Radar del Sud",
     "title": "Scoperte in Vigna 2026: il 12 e 13 settembre la 6* edizione dell'evento eno-turistico dedicato alle auto \"scoperte\", alla scoperta delle bellezze e dei Vini del Taburno e del Sannio",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/scoperte-in-vigna-2026-il-12-e-13-settembre-la-6-edizione-dellevento-eno-turistico-dedicato-alle-auto-scoperte-alla-scoperta-delle-bellezze-e-dei-vini-del-taburno-e-del-sannio/300539/",
     "note": "Una segnalazione gastronomica del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-08-21"
+  },
+  {
+    "id": "f9b5c0cbfabe",
+    "category": "Territori",
+    "title": "Perché Berton per la cena di Gala dei Giochi del Mediterraneo a Taranto?",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/perche-berton-per-la-cena-di-gala-dei-giochi-del-mediterraneo-a-taranto/300554/",
+    "note": "Una notizia dal calendario dei territori, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-08-21"
+  },
+  {
+    "id": "edfdf6bacd3b",
+    "category": "Radar del Sud",
+    "title": "Il Vicoletto, a Palinuro la cucina di mare torna semplice",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/il-vicoletto-a-palinuro-la-cucina-di-mare-torna-semplice/300520/",
+    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-08-21"
+  },
+  {
+    "id": "30392bc4efae",
+    "category": "Calici di Magna Grecia",
+    "title": "Il campeggio sul lago di Dobbiaco che nasconde un fine dining e una cantina da 12mila bottiglie",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/ristoranti/hebbo-dobbiaco-ristorante-cantina-12mila-bottiglie/",
+    "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-08-21"
   },
@@ -258,45 +298,5 @@
     "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-08-13"
-  },
-  {
-    "id": "87ec9870d3c7",
-    "category": "Radar del Sud",
-    "title": "Festa dell'Antica Pizza Cilentana: 50 mila presenze a Giungano",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/festa-dellantica-pizza-cilentana-50-mila-presenze-a-giungano/300239/",
-    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-08-13"
-  },
-  {
-    "id": "bfbca53deafc",
-    "category": "Business con Anima",
-    "title": "L'espansione di Compagnia del Gusto in Uk: l'acquisizione di Jascots rafforzerà la distribuzione dei vini italiani",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/compagnia-del-gusto-acquisizione-distributore-vini-jascots/",
-    "note": "Un segnale di mercato per le eccellenze del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-12"
-  },
-  {
-    "id": "217960c2268f",
-    "category": "Calici di Magna Grecia",
-    "title": "Vino, orto, animali. Da Alois Lageder l'enoturismo è un'immersione nella natura",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/alto-adige-cantina-alois-lageder-enoturismo/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-12"
-  },
-  {
-    "id": "471e492bfb16",
-    "category": "Calici di Magna Grecia",
-    "title": "Mastroberardino, l'innovazione continua. 90 punti James Suckling per VIBRA Bianco e VIBRA Rosso",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/mastroberardino-linnovazione-continua-90-punti-james-suckling-per-vibra-bianco-e-vibra-rosso/300045/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-08-11"
   }
 ]
