@@ -63,6 +63,22 @@ $SECTION_NAMES = [
 // URL del sito pubblicato (per l'anteprima in iframe nel pannello).
 $PUBLIC_SITE_URL = 'https://www.vinisud.it/';
 
+// Proprietà grafiche (sfondo colore/immagine ecc.) per sezione, vivono in
+// content/settings/site.json. Usate dall'inspector della Canva per modificare
+// immagini e colori. Oggi sono wired solo hero e Grand Prix (vedi src/data/
+// site.ts → sectionBackgrounds / hero). Le chiavi qui elencate sono l'unica
+// whitelist scrivibile dalla Canva su site.json.
+$SECTION_PROPS = [
+    'hero' => [
+        ['key' => 'heroBackgroundImage', 'type' => 'image', 'label' => 'Immagine di sfondo'],
+        ['key' => 'heroOverlayOpacity',  'type' => 'range', 'label' => 'Intensità ombreggiatura'],
+    ],
+    'grandPrixHighlight' => [
+        ['key' => 'grandPrixBackgroundColor', 'type' => 'color', 'label' => 'Colore di sfondo'],
+        ['key' => 'grandPrixBackgroundImage', 'type' => 'image', 'label' => 'Immagine di sfondo'],
+    ],
+];
+
 // Chiavi strutturali: mai mostrate né modificabili (preservate al salvataggio).
 $BLOCKLIST = ['ctaHref', 'href', 'url', 'icon', 'kind', 'slug', 'id', 'logo'];
 
@@ -480,6 +496,68 @@ if ($loggedIn && $isCanva && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' &&
             }
         }
 
+        // 3) Immagini/colori (inspector) -> content/settings/site.json.
+        // Whitelist: solo le chiavi dichiarate in $SECTION_PROPS.
+        $allowedSite = [];
+        foreach ($SECTION_PROPS as $props) {
+            foreach ($props as $p) { $allowedSite[$p['key']] = $p['type']; }
+        }
+        $siteEdit = (isset($_POST['siteedit']) && is_array($_POST['siteedit'])) ? $_POST['siteedit'] : [];
+        // Upload immagini (solo chiavi immagine consentite).
+        if (!$error && !empty($_FILES['upload']['name']) && is_array($_FILES['upload']['name'])) {
+            foreach ($_FILES['upload']['name'] as $fieldKey => $originalName) {
+                if (($allowedSite[$fieldKey] ?? '') !== 'image') continue;
+                if ($originalName === '' || ($_FILES['upload']['error'][$fieldKey] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) continue;
+                $tmpPath = $_FILES['upload']['tmp_name'][$fieldKey];
+                if ((int) $_FILES['upload']['size'][$fieldKey] > 6 * 1024 * 1024) { $error = 'Immagine troppo grande (max 6MB).'; continue; }
+                $imgInfo = @getimagesize($tmpPath);
+                $extByMime = ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'];
+                if ($imgInfo === false || !isset($extByMime[$imgInfo['mime']])) { $error = 'File non valido (serve JPG/PNG/WebP).'; continue; }
+                $bytes = file_get_contents($tmpPath);
+                $slug = trim(strtolower(preg_replace('/[^a-zA-Z0-9]+/', '-', (string) $fieldKey)), '-');
+                $newPath = 'public/images/uploads/' . $slug . '-' . substr(sha1($bytes), 0, 10) . '.' . $extByMime[$imgInfo['mime']];
+                $existingImg = gh_get_file($REPO, $newPath, $BRANCH, $TOKEN);
+                $imgBody = ['message' => 'cms: nuova immagine (canva · ' . $fieldKey . ')', 'content' => base64_encode($bytes), 'branch' => $BRANCH];
+                if ($existingImg['code'] === 200 && isset($existingImg['data']['sha'])) $imgBody['sha'] = $existingImg['data']['sha'];
+                $putImg = gh_api('PUT', "https://api.github.com/repos/{$REPO}/contents/{$newPath}", $TOKEN, $imgBody);
+                if ($putImg['code'] === 200 || $putImg['code'] === 201) $siteEdit[$fieldKey] = '/' . preg_replace('#^public/#', '', $newPath);
+                else $error = 'Caricamento immagine non riuscito (codice ' . $putImg['code'] . ').';
+            }
+        }
+        // "Rimuovi immagine" -> stringa vuota (torna al colore).
+        if (!$error && !empty($_POST['clear']) && is_array($_POST['clear'])) {
+            foreach ($_POST['clear'] as $fieldKey => $flag) {
+                if ($flag === '1' && ($allowedSite[$fieldKey] ?? '') === 'image') $siteEdit[$fieldKey] = '';
+            }
+        }
+        if (!$error && count($siteEdit) > 0) {
+            $f = 'content/settings/site.json';
+            $get = gh_get_file($REPO, $f, $BRANCH, $TOKEN);
+            if ($get['code'] === 200 && isset($get['data']['sha'])) {
+                $full = json_decode(base64_decode($get['data']['content']), true) ?: [];
+                $before = json_encode($full);
+                foreach ($siteEdit as $k => $v) {
+                    if (!isset($allowedSite[$k]) || !array_key_exists($k, $full)) continue;
+                    if ($allowedSite[$k] === 'range') {
+                        if (is_numeric($v)) $full[$k] = max(0.0, min(1.0, (float) $v));
+                    } elseif (is_string($v)) {
+                        $full[$k] = $v;
+                    }
+                }
+                if (json_encode($full) !== $before) {
+                    $json = json_encode($full, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . "\n";
+                    $put = gh_api('PUT', "https://api.github.com/repos/{$REPO}/contents/{$f}", $TOKEN, [
+                        'message' => 'cms: immagini/colori (canva) da pannello segreteria',
+                        'content' => base64_encode($json), 'sha' => $get['data']['sha'], 'branch' => $BRANCH,
+                    ]);
+                    if ($put['code'] === 200 || $put['code'] === 201) $committed[] = 'grafica';
+                    else $error = $error ?: 'Salvataggio grafica non riuscito (codice ' . $put['code'] . ').';
+                }
+            } else {
+                $error = $error ?: 'Impossibile leggere site.json da GitHub (codice ' . $get['code'] . ').';
+            }
+        }
+
         if (!$error) {
             $notice = count($committed)
                 ? 'Pubblicato (' . implode(' + ', $committed) . '). Il sito si aggiorna automaticamente in pochi minuti.'
@@ -619,6 +697,15 @@ if ($loggedIn && $validArea) {
         $error = $error ?: 'Impossibile contattare GitHub (codice ' . $get['code'] . '). Controlla il token in config.php.';
     }
 }
+
+// Valori correnti di site.json per l'inspector della Canva (immagini/colori).
+$siteData = [];
+if ($isCanva) {
+    $gs = gh_get_file($REPO, 'content/settings/site.json', $BRANCH, $TOKEN);
+    if ($gs['code'] === 200 && isset($gs['data']['content'])) {
+        $siteData = json_decode(base64_decode($gs['data']['content']), true) ?: [];
+    }
+}
 ?><!doctype html>
 <html lang="it">
 <head>
@@ -712,7 +799,10 @@ if ($loggedIn && $validArea) {
   .canva-stage { display:flex; gap:14px; align-items:flex-start; }
   .canva-frame { flex:1 1 auto; height:74vh; min-height:520px; border:1px solid rgba(176,141,87,.35); border-radius:12px; margin-top:0; }
   .canva-inspector { flex:0 0 300px; border:1px solid rgba(176,141,87,.4); border-radius:12px; background:#fffdf9; padding:16px; max-height:74vh; overflow:auto; }
-  .canva-inspector h2 { font-size:1rem; color:var(--wine); margin:0 0 4px; }
+  .canva-inspector h2 { font-size:1rem; color:var(--wine); margin:0; }
+  .insp-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
+  .js-insp-close { all:unset; cursor:pointer; font-size:1.4rem; line-height:1; color:#8a7f7a; padding:0 8px; border-radius:6px; }
+  .js-insp-close:hover { color:var(--wine); background:rgba(176,141,87,.15); }
   @media (max-width:860px) { .canva-stage { flex-direction:column; } .canva-inspector { flex-basis:auto; width:100%; } }
 </style>
 </head>
@@ -745,7 +835,7 @@ if ($loggedIn && $validArea) {
         <a class="logout" href="?logout=1">Esci</a>
       </div>
     </div>
-    <form method="post" action="index.php" id="canva-form">
+    <form method="post" action="index.php" id="canva-form" enctype="multipart/form-data">
       <input type="hidden" name="publish" value="1">
       <input type="hidden" name="area" value="home-editor">
       <input type="hidden" name="csrf" value="<?= h($_SESSION['csrf'] ?? '') ?>">
@@ -758,15 +848,46 @@ if ($loggedIn && $validArea) {
           <button type="submit" class="js-canva-publish" disabled>Pubblica</button>
         </span>
       </div>
+      <div class="canva-stage">
+        <iframe class="canva-frame site-preview" id="canva-frame" src="<?= h($PUBLIC_SITE_URL) ?>?editor=1&build=1" title="Canva editor visuale" referrerpolicy="no-referrer"></iframe>
+        <aside class="canva-inspector" id="canva-inspector" hidden>
+          <div class="insp-head">
+            <h2 id="canva-inspector-title">Proprietà</h2>
+            <button type="button" class="js-insp-close" title="Chiudi">×</button>
+          </div>
+          <div id="canva-inspector-body">
+            <?php foreach ($SECTION_PROPS as $secKey => $props): ?>
+              <div class="insp-block" data-sec="<?= h($secKey) ?>" data-title="<?= h($SECTION_NAMES[$secKey] ?? $secKey) ?>" hidden>
+                <?php foreach ($props as $p):
+                    $val = (string) ($siteData[$p['key']] ?? '');
+                    $pid = 'insp_' . md5($p['key']); ?>
+                  <label><?= h($p['label']) ?></label>
+                  <?php if ($p['type'] === 'image'): ?>
+                    <div class="imagefield">
+                      <img id="<?= $pid ?>_preview" class="preview-img" src="<?= h(image_preview_src($val)) ?>" alt="">
+                      <input type="hidden" name="siteedit[<?= h($p['key']) ?>]" value="<?= h($val) ?>">
+                      <input type="file" name="upload[<?= h($p['key']) ?>]" accept="image/jpeg,image/png,image/webp" class="js-insp-image" data-preview="<?= $pid ?>_preview">
+                      <p class="field-hint">JPG/PNG/WebP, max 6MB.</p>
+                      <?php if ($val !== ''): ?><label class="clear-image-label"><input type="checkbox" name="clear[<?= h($p['key']) ?>]" value="1"> Rimuovi immagine</label><?php endif; ?>
+                    </div>
+                  <?php elseif ($p['type'] === 'color'):
+                    $safe = preg_match('/^#[0-9a-fA-F]{3,8}$/', $val) ? $val : '#2f5b46'; ?>
+                    <div class="colorfield"><input type="color" name="siteedit[<?= h($p['key']) ?>]" value="<?= h($safe) ?>"></div>
+                  <?php elseif ($p['type'] === 'range'):
+                    $rv = max(0, min(1, (float) ($val === '' ? 0.6 : $val))); ?>
+                    <div class="rangefield"><input type="range" min="0" max="1" step="0.01" name="siteedit[<?= h($p['key']) ?>]" value="<?= h((string) $rv) ?>" class="js-insp-range" data-output="<?= $pid ?>_out"><output id="<?= $pid ?>_out"><?= h((string) $rv) ?></output></div>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+              </div>
+            <?php endforeach; ?>
+            <div class="insp-block insp-empty" data-sec="__none__" data-title="Proprietà" hidden>
+              <p class="field-hint">Questa sezione non ha immagini o colori modificabili qui. Modifica i suoi testi direttamente sull'anteprima.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <p class="field-hint" style="margin-top:12px">Le modifiche appaiono sul sito pubblicato dopo la pubblicazione (circa 1–2 minuti). Aggiunta/rimozione di blocchi e casi avanzati restano in <a href="?menu=1">Modifica avanzata</a>.</p>
     </form>
-    <div class="canva-stage">
-      <iframe class="canva-frame site-preview" id="canva-frame" src="<?= h($PUBLIC_SITE_URL) ?>?editor=1&build=1" title="Canva editor visuale" referrerpolicy="no-referrer"></iframe>
-      <aside class="canva-inspector" id="canva-inspector" hidden>
-        <h2 id="canva-inspector-title">Proprietà</h2>
-        <div id="canva-inspector-body"></div>
-      </aside>
-    </div>
-    <p class="field-hint" style="margin-top:12px">Le modifiche appaiono sul sito pubblicato dopo la pubblicazione (circa 1–2 minuti). Immagini, colori, aggiunta/rimozione di blocchi e altri dettagli restano in <a href="?menu=1">Modifica avanzata</a>.</p>
   </div>
 
 <?php elseif (!$validArea): ?>
@@ -1042,12 +1163,13 @@ if ($loggedIn && $validArea) {
   var edits = {};          // path -> testo
   var layout = null;       // [{key,enabled}] corrente
   var baseLayout = null;   // primo ordine ricevuto (stato iniziale)
+  var inspectorDirty = false; // immagini/colori toccati nell'inspector
 
   function layoutChanged() {
     return layout && baseLayout && JSON.stringify(layout) !== JSON.stringify(baseLayout);
   }
   function refresh() {
-    var n = Object.keys(edits).length + (layoutChanged() ? 1 : 0);
+    var n = Object.keys(edits).length + (layoutChanged() ? 1 : 0) + (inspectorDirty ? 1 : 0);
     editsInput.value = JSON.stringify(edits);
     layoutInput.value = layoutChanged() ? JSON.stringify(layout) : '';
     if (n > 0) {
@@ -1077,17 +1199,54 @@ if ($loggedIn && $validArea) {
     }
   });
 
-  resetBtn.addEventListener('click', function () {
-    edits = {}; layout = null; baseLayout = null;
-    frame.src = frame.src;
-    refresh();
+  var leaving = false;
+  resetBtn.addEventListener('click', function () { leaving = true; window.location.reload(); });
+  form.addEventListener('submit', function () { leaving = true; });
+  window.addEventListener('beforeunload', function (e) {
+    if (!leaving && !publishBtn.disabled) { e.preventDefault(); e.returnValue = ''; }
   });
 
-  var publishing = false;
-  form.addEventListener('submit', function () { publishing = true; });
-  window.addEventListener('beforeunload', function (e) {
-    if (!publishing && !publishBtn.disabled) { e.preventDefault(); e.returnValue = ''; }
-  });
+  // Inspector proprietà (immagini/colori) della sezione selezionata.
+  var inspector = document.getElementById('canva-inspector');
+  window.vosOpenInspector = function (key) {
+    if (!inspector) return;
+    var shown = null;
+    inspector.querySelectorAll('.insp-block').forEach(function (b) {
+      var match = b.getAttribute('data-sec') === key;
+      b.hidden = !match;
+      if (match) shown = b;
+    });
+    if (!shown) {
+      var empty = inspector.querySelector('.insp-empty');
+      if (empty) { empty.hidden = false; shown = empty; }
+    }
+    var title = document.getElementById('canva-inspector-title');
+    if (title && shown) title.textContent = shown.getAttribute('data-title') || 'Proprietà';
+    inspector.hidden = false;
+  };
+  if (inspector) {
+    var closeBtn = inspector.querySelector('.js-insp-close');
+    if (closeBtn) closeBtn.addEventListener('click', function () { inspector.hidden = true; });
+    inspector.addEventListener('input', function (e) {
+      inspectorDirty = true;
+      var t = e.target;
+      if (t.classList && t.classList.contains('js-insp-range')) {
+        var out = document.getElementById(t.getAttribute('data-output'));
+        if (out) out.textContent = t.value;
+      }
+      refresh();
+    });
+    inspector.addEventListener('change', function (e) {
+      inspectorDirty = true;
+      var t = e.target;
+      if (t.classList && t.classList.contains('js-insp-image')) {
+        var f = t.files && t.files[0];
+        var pv = document.getElementById(t.getAttribute('data-preview'));
+        if (f && pv) { var r = new FileReader(); r.onload = function (ev) { pv.src = ev.target.result; }; r.readAsDataURL(f); }
+      }
+      refresh();
+    });
+  }
 
   refresh();
 })();
