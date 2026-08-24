@@ -39,8 +39,29 @@ $PASS   = $cfg['ADMIN_PASSWORD'] ?? '';
 // sponsor, evento, albo d'oro) sono ora nell'area "home-sections" qui sotto.
 $AREAS = [
     'site'          => ['Generale & Home',  'content/settings/site.json', null],
+    'home-layout'   => ['Ordine e visibilità delle sezioni Home', 'content/settings/home-layout.json', null],
     'home-sections' => ['Sezioni Home (Filosofia, Grand Prix, Territorio, Regioni, Sponsor, Evento, Albo d\'Oro)', 'content/settings/home-sections.json', null],
 ];
+
+// Sezioni della home in ordine canonico di default: nome tecnico (chiave in
+// home-sections.json / home-layout.json) => nome leggibile per la segretaria.
+// L'ordine di questo array è anche l'ordine di fallback usato se il file
+// content/settings/home-layout.json non esiste ancora. Deve restare allineato
+// alla registry e a CANONICAL_SECTION_ORDER in src/data/homeLayout.ts.
+$SECTION_NAMES = [
+    'hero'                  => 'Copertina (Hero)',
+    'philosophy'            => 'Filosofia',
+    'grandPrixHighlight'    => 'Grand Prix',
+    'territory'             => 'Territorio',
+    'regions'               => 'Regioni',
+    'sponsor'               => 'Sponsor & Espositori',
+    'eventDetails'          => 'Dettagli dell\'Evento',
+    'institutionalPartners' => 'Partner Istituzionali',
+    'alboDoro'              => 'Albo d\'Oro',
+];
+
+// URL del sito pubblicato (per l'anteprima in iframe nel pannello).
+$PUBLIC_SITE_URL = 'https://www.vinisud.it/';
 
 // Chiavi strutturali: mai mostrate né modificabili (preservate al salvataggio).
 $BLOCKLIST = ['ctaHref', 'href', 'url', 'icon', 'kind', 'slug', 'id', 'logo'];
@@ -154,7 +175,9 @@ function image_preview_src(string $val): string {
 
 // $listPath: se non null, $data è la LISTA i cui elementi stiamo iterando
 // (quindi $key è l'indice numerico) — usato per mostrare i controlli ↑/↓.
-function render_fields($data, string $name, array $blocklist, array $labels, ?string $listPath = null): void {
+// $anchorTopLevel: se true, i fieldset di PRIMO livello ricevono id="sec-<key>"
+// (usato nell'area "home-sections" per il deep-link dal riordino sezioni).
+function render_fields($data, string $name, array $blocklist, array $labels, ?string $listPath = null, bool $anchorTopLevel = false): void {
     global $SELECT_FIELDS;
     $total = count($data);
     foreach ($data as $key => $val) {
@@ -170,7 +193,8 @@ function render_fields($data, string $name, array $blocklist, array $labels, ?st
         }
         if (is_array($val)) {
             $isList = array_keys($val) === range(0, count($val) - 1);
-            echo '<fieldset class="grp"><legend>' . h(label_for($key, $labels)) . '</legend>';
+            $anchorAttr = ($anchorTopLevel && is_string($key)) ? ' id="sec-' . h($key) . '"' : '';
+            echo '<fieldset class="grp"' . $anchorAttr . '><legend>' . h(label_for($key, $labels)) . '</legend>';
             render_fields($val, $fname, $blocklist, $labels, $isList ? (string) $key : null);
             echo '</fieldset>';
         } elseif (is_string($val)) {
@@ -234,6 +258,76 @@ function apply_edits($orig, $posted, array $blocklist) {
 }
 
 // ---------------------------------------------------------------------------
+// Area "Ordine sezioni" (content/settings/home-layout.json)
+// ---------------------------------------------------------------------------
+// Layout di default (tutte le sezioni note, in ordine canonico, attive): usato
+// quando il file non esiste ancora sul repo (prima del primo salvataggio).
+function default_section_layout(array $sectionNames): array {
+    $out = [];
+    foreach (array_keys($sectionNames) as $key) {
+        $out[] = ['key' => $key, 'enabled' => true];
+    }
+    return $out;
+}
+// Righe della vista "Ordine sezioni": nome leggibile + ↑/↓ (stesso meccanismo
+// "move" delle liste) + interruttore mostra/nascondi + link modifica contenuto.
+function render_section_layout(array $sections, array $sectionNames): void {
+    $total = count($sections);
+    if ($total === 0) {
+        echo '<p class="sub">Nessuna sezione configurata.</p>';
+        return;
+    }
+    echo '<p class="sub">Trascina l\'ordine con le frecce, spegni l\'interruttore per nascondere una sezione (il contenuto resta salvato).</p>';
+    foreach ($sections as $i => $sec) {
+        $key = is_array($sec) ? (string) ($sec['key'] ?? '') : '';
+        if ($key === '') continue;
+        $enabled = !is_array($sec) || ($sec['enabled'] ?? true) !== false;
+        $name = $sectionNames[$key] ?? ucfirst($key);
+        echo '<div class="layout-row' . ($enabled ? '' : ' is-disabled') . '">';
+        echo '<div class="layout-move">';
+        echo '<button type="submit" name="move" value="' . h('sections|' . $i . '|up') . '"'
+            . ($i === 0 ? ' disabled' : '') . ' title="Sposta su">▲</button>';
+        echo '<button type="submit" name="move" value="' . h('sections|' . $i . '|down') . '"'
+            . ($i === $total - 1 ? ' disabled' : '') . ' title="Sposta giù">▼</button>';
+        echo '</div>';
+        echo '<div class="layout-name">' . h($name) . '</div>';
+        echo '<a class="layout-edit" href="?area=home-sections#sec-' . h($key) . '">Modifica contenuto →</a>';
+        echo '<label class="layout-toggle" title="Mostra o nascondi questa sezione">';
+        echo '<input type="checkbox" name="enabled[' . h($key) . ']" value="1"' . ($enabled ? ' checked' : '') . '>';
+        echo '<span>' . ($enabled ? 'Visibile' : 'Nascosta') . '</span>';
+        echo '</label>';
+        echo '</div>';
+    }
+}
+// Applica al layout i dati postati: interruttori visibilità + riordino ↑/↓.
+// Ricostruisce ogni voce come {key, enabled} preservando l'ordine corrente,
+// poi applica lo spostamento richiesto. Le chiavi con `key` vuota sono scartate.
+function apply_layout_edits(array $sections, array $postedEnabled, ?string $move): array {
+    $clean = [];
+    foreach ($sections as $sec) {
+        $key = is_array($sec) ? (string) ($sec['key'] ?? '') : '';
+        if ($key === '') continue;
+        $clean[] = ['key' => $key, 'enabled' => isset($postedEnabled[$key])];
+    }
+    $full = ['sections' => array_values($clean)];
+    $full = apply_move($full, $move);
+    return $full;
+}
+// Anteprima del sito pubblicato in iframe (non è editing diretto): il sito è
+// export statico, quindi le modifiche appaiono solo dopo la pubblicazione.
+function render_site_preview(string $url): void {
+    echo '<div class="preview-block">';
+    echo '<div class="preview-head">';
+    echo '<strong>Anteprima del sito pubblicato</strong>';
+    echo '<button type="button" class="js-reload-preview" title="Ricarica anteprima">↻ Ricarica</button>';
+    echo '</div>';
+    echo '<p class="preview-note">Le modifiche compaiono qui <strong>dopo la pubblicazione</strong> (circa 1–2 minuti). Questa è la home online, non un\'anteprima istantanea.</p>';
+    echo '<iframe class="site-preview" src="' . h($url) . '" loading="lazy" title="Anteprima del sito pubblicato" referrerpolicy="no-referrer"></iframe>';
+    echo '<p class="field-hint"><a href="' . h($url) . '" target="_blank" rel="noopener">Apri il sito in una nuova scheda ↗</a></p>';
+    echo '</div>';
+}
+
+// ---------------------------------------------------------------------------
 // Login / logout
 // ---------------------------------------------------------------------------
 $error = ''; $notice = '';
@@ -277,11 +371,24 @@ if ($loggedIn && $validArea && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' 
         $error = 'Sessione scaduta, ricarica la pagina e riprova.';
     } else {
         [$_lbl, $file, $subkey] = $AREAS[$area];
+        $isLayout = ($area === 'home-layout');
         $get = gh_get_file($REPO, $file, $BRANCH, $TOKEN);
-        if ($get['code'] !== 200 || !isset($get['data']['sha'])) {
+        $fileExists = ($get['code'] === 200 && isset($get['data']['sha']));
+        // Il file del layout può non esistere ancora: il primo salvataggio lo
+        // crea, quindi per quest'area un 404 in lettura è accettabile.
+        if (!$fileExists && !($isLayout && $get['code'] === 404)) {
             $error = 'Impossibile leggere i contenuti da GitHub (codice ' . $get['code'] . ').';
         } else {
-            $full = json_decode(base64_decode($get['data']['content']), true) ?: [];
+            $full = $fileExists ? (json_decode(base64_decode($get['data']['content']), true) ?: []) : [];
+
+            if ($isLayout) {
+                // Area "Ordine sezioni": interruttori visibilità + riordino ↑/↓.
+                $sections = (isset($full['sections']) && is_array($full['sections']))
+                    ? $full['sections']
+                    : default_section_layout($SECTION_NAMES);
+                $postedEnabled = (isset($_POST['enabled']) && is_array($_POST['enabled'])) ? $_POST['enabled'] : [];
+                $full = apply_layout_edits($sections, $postedEnabled, $_POST['move'] ?? null);
+            } else {
             $posted = $_POST['d'] ?? [];
 
             // Upload immagini: ogni file caricato in $_FILES['upload'][...]
@@ -349,16 +456,22 @@ if ($loggedIn && $validArea && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' 
             } else {
                 $full[$subkey] = $target;
             }
+            } // fine ramo aree testuali (non-layout)
+
             $newJson = json_encode($full, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . "\n";
             $commitMsg = isset($_POST['move'])
                 ? 'cms: riordino sezioni (' . $area . ') da pannello segreteria'
-                : 'cms: aggiornamento testi (' . $area . ') da pannello segreteria';
-            $put = gh_api('PUT', "https://api.github.com/repos/{$REPO}/contents/{$file}", $TOKEN, [
+                : ($isLayout
+                    ? 'cms: visibilità sezioni (' . $area . ') da pannello segreteria'
+                    : 'cms: aggiornamento testi (' . $area . ') da pannello segreteria');
+            $putBody = [
                 'message' => $commitMsg,
                 'content' => base64_encode($newJson),
-                'sha'     => $get['data']['sha'],
                 'branch'  => $BRANCH,
-            ]);
+            ];
+            // sha solo se il file esiste già (in creazione GitHub non lo vuole).
+            if ($fileExists) $putBody['sha'] = $get['data']['sha'];
+            $put = gh_api('PUT', "https://api.github.com/repos/{$REPO}/contents/{$file}", $TOKEN, $putBody);
             if ($put['code'] === 200 || $put['code'] === 201) {
                 $notice = 'Modifiche pubblicate! Il sito si aggiorna automaticamente entro pochi minuti.';
             } else {
@@ -376,6 +489,10 @@ if ($loggedIn && $validArea) {
     if ($get['code'] === 200 && isset($get['data']['content'])) {
         $decoded = json_decode(base64_decode($get['data']['content']), true) ?: [];
         $areaData = $subkey === null ? $decoded : ($decoded[$subkey] ?? []);
+    } elseif ($area === 'home-layout' && $get['code'] === 404) {
+        // File del layout non ancora creato: mostra il default (tutte le
+        // sezioni, ordine canonico). Il primo salvataggio creerà il file.
+        $areaData = ['sections' => default_section_layout($SECTION_NAMES)];
     } else {
         $error = $error ?: 'Impossibile contattare GitHub (codice ' . $get['code'] . '). Controlla il token in config.php.';
     }
@@ -415,6 +532,24 @@ if ($loggedIn && $validArea) {
   .reorder { display:flex; gap:6px; justify-content:flex-end; margin-top:10px; }
   .reorder button { margin-top:0; padding:4px 10px; font-size:.85rem; background:#fffdf9; color:var(--wine); border:1px solid rgba(176,141,87,.5); }
   .reorder button:disabled { opacity:.3; cursor:default; }
+  /* Vista "Ordine sezioni" */
+  .layout-row { display:flex; align-items:center; gap:12px; padding:12px 14px; margin:10px 0; border:1px solid rgba(176,141,87,.4); border-radius:10px; background:#fffdf9; flex-wrap:wrap; }
+  .layout-row.is-disabled { opacity:.62; background:#f3efe6; }
+  .layout-move { display:flex; flex-direction:column; gap:4px; }
+  .layout-move button { margin-top:0; padding:2px 9px; font-size:.8rem; line-height:1.1; background:#fff; color:var(--wine); border:1px solid rgba(176,141,87,.5); border-radius:6px; }
+  .layout-move button:disabled { opacity:.3; cursor:default; }
+  .layout-name { font-weight:700; color:var(--ink); flex:1 1 auto; min-width:8rem; }
+  .layout-edit { font-size:.82rem; color:var(--wine); text-decoration:none; font-weight:600; white-space:nowrap; }
+  .layout-edit:hover { text-decoration:underline; }
+  .layout-toggle { display:flex; align-items:center; gap:7px; margin:0; text-transform:none; letter-spacing:normal; font-size:.82rem; font-weight:600; color:#6b605c; cursor:pointer; white-space:nowrap; }
+  .layout-toggle input { width:auto; }
+  /* Anteprima sito pubblicato */
+  .preview-block { margin:0 0 22px; border:1px solid rgba(176,141,87,.35); border-radius:12px; overflow:hidden; background:#fffdf9; }
+  .preview-head { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 14px; background:#f3efe6; }
+  .preview-head strong { color:var(--wine); font-size:.95rem; }
+  .preview-head button { margin-top:0; padding:5px 12px; font-size:.82rem; background:#fff; color:var(--wine); border:1px solid rgba(176,141,87,.5); }
+  .preview-note { margin:12px 14px 0; font-size:.82rem; color:#6b605c; }
+  .site-preview { display:block; width:100%; height:520px; border:0; margin-top:10px; background:#fff; }
   .colorfield { display:flex; align-items:center; gap:12px; }
   .colorfield input[type=color] { width:56px; height:40px; padding:2px; border:1px solid rgba(176,141,87,.5); border-radius:8px; background:#fffdf9; cursor:pointer; }
   .contrast-note { font-size:.82rem; }
@@ -476,7 +611,7 @@ if ($loggedIn && $validArea) {
     <div class="top">
       <div>
         <h1><?= h($AREAS[$area][0]) ?></h1>
-        <p class="sub" style="margin:0">Modifica i testi e clicca <strong>Pubblica</strong>.</p>
+        <p class="sub" style="margin:0"><?= $area === 'home-layout' ? 'Riordina e mostra/nascondi le sezioni, poi clicca <strong>Pubblica</strong>.' : 'Modifica i testi e clicca <strong>Pubblica</strong>.' ?></p>
       </div>
       <div style="text-align:right; white-space:nowrap">
         <a class="back" href="index.php">← Tutte le sezioni</a><br>
@@ -488,8 +623,20 @@ if ($loggedIn && $validArea) {
       <input type="hidden" name="area" value="<?= h($area) ?>">
       <input type="hidden" name="csrf" value="<?= h($_SESSION['csrf'] ?? '') ?>">
       <?php
+        if ($area === 'home-layout') {
+            // Vista "Ordine sezioni": righe con ↑/↓, visibilità e link modifica,
+            // più l'anteprima del sito pubblicato.
+            render_site_preview($PUBLIC_SITE_URL);
+            $layoutSections = (is_array($areaData) && isset($areaData['sections']) && is_array($areaData['sections']))
+                ? $areaData['sections'] : [];
+            render_section_layout($layoutSections, $SECTION_NAMES);
+        } else {
+        // Anteprima del sito pubblicato accanto al form dei testi delle sezioni.
+        if ($area === 'home-sections') {
+            render_site_preview($PUBLIC_SITE_URL);
+        }
         if (is_array($areaData)) {
-            render_fields($areaData, 'd', $BLOCKLIST, $LABELS);
+            render_fields($areaData, 'd', $BLOCKLIST, $LABELS, null, $area === 'home-sections');
         }
         // Anteprima combinata immagine + ombreggiatura: mostrata solo
         // nell'area "site", l'unica con entrambi i campi collegati.
@@ -504,8 +651,9 @@ if ($loggedIn && $validArea) {
             echo '<span class="caption">Anteprima ombreggiatura (indicativa)</span>';
             echo '</div>';
         }
+        } // fine ramo aree con form testuale
       ?>
-      <button type="submit">Pubblica le modifiche</button>
+      <button type="submit"><?= $area === 'home-layout' ? 'Pubblica ordine e visibilità' : 'Pubblica le modifiche' ?></button>
     </form>
   </div>
 <?php endif; ?>
@@ -632,6 +780,16 @@ if ($loggedIn && $validArea) {
   document.addEventListener('click', function (ev) {
     if (panel.contains(ev.target) || ev.target.classList.contains('emoji-trigger')) return;
     panel.style.display = 'none';
+  });
+})();
+
+// Ricarica l'anteprima del sito pubblicato (forza il refresh dell'iframe).
+(function () {
+  document.querySelectorAll('.js-reload-preview').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var iframe = document.querySelector('.site-preview');
+      if (iframe) iframe.src = iframe.src;
+    });
   });
 })();
 </script>

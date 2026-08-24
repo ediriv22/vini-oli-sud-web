@@ -1,0 +1,13 @@
+{
+    "sections": [
+        { "key": "hero", "enabled": true },
+        { "key": "philosophy", "enabled": true },
+        { "key": "grandPrixHighlight", "enabled": true },
+        { "key": "territory", "enabled": true },
+        { "key": "regions", "enabled": true },
+        { "key": "sponsor", "enabled": true },
+        { "key": "eventDetails", "enabled": true },
+        { "key": "institutionalPartners", "enabled": true },
+        { "key": "alboDoro", "enabled": true }
+    ]
+}
