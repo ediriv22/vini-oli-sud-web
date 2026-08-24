@@ -324,6 +324,38 @@ function apply_layout_edits(array $sections, array $postedEnabled, ?string $move
     $full = apply_move($full, $move);
     return $full;
 }
+// Applica alla struttura $full le modifiche testuali della canva, indicizzate
+// per path (es. "philosophy.eyebrow", "hero.slides.0.paragraph"). SICUREZZA:
+// imposta SOLO foglie stringa GIÀ ESISTENTI, rifiuta path con un segmento in
+// $blocklist, e tratta i valori come stringhe pure (nessun HTML/struttura).
+function apply_path_edits(array $full, array $edits, array $blocklist) {
+    foreach ($edits as $path => $value) {
+        if (!is_string($value)) continue;
+        $segs = explode('.', (string) $path);
+        if (count($segs) === 0) continue;
+        $blocked = false;
+        foreach ($segs as $s) { if (in_array($s, $blocklist, true)) { $blocked = true; break; } }
+        if ($blocked) continue;
+        // Cammina fino al contenitore genitore.
+        $ref =& $full;
+        $ok = true;
+        for ($i = 0; $i < count($segs) - 1; $i++) {
+            $k = is_numeric($segs[$i]) ? (int) $segs[$i] : $segs[$i];
+            if (!is_array($ref) || !array_key_exists($k, $ref)) { $ok = false; break; }
+            $ref =& $ref[$k];
+        }
+        if ($ok && is_array($ref)) {
+            $last = $segs[count($segs) - 1];
+            $lk = is_numeric($last) ? (int) $last : $last;
+            // Solo se la foglia esiste già ed è una stringa.
+            if (array_key_exists($lk, $ref) && is_string($ref[$lk])) {
+                $ref[$lk] = $value;
+            }
+        }
+        unset($ref);
+    }
+    return $full;
+}
 // Anteprima del sito pubblicato in iframe (non è editing diretto): il sito è
 // export statico, quindi le modifiche appaiono solo dopo la pubblicazione.
 function render_site_preview(string $url, bool $withEditor = false): void {
@@ -366,6 +398,11 @@ $loggedIn = !empty($_SESSION['vos_admin']);
 // Area corrente
 $area = $_GET['area'] ?? ($_POST['area'] ?? '');
 $validArea = isset($AREAS[$area]);
+// La "Canva" (editor visuale) è la schermata principale dell'admin: si mostra
+// quando non è richiesta un'area specifica né il menu "Modifica avanzata".
+// Non è un'area di $AREAS: ha salvataggio (multi-file) e vista dedicati.
+$isCanva = $loggedIn && ($area === 'home-editor'
+    || ($area === '' && !isset($_GET['menu']) && !isset($_POST['login_password'])));
 
 // ---------------------------------------------------------------------------
 // Salvataggio
@@ -384,6 +421,71 @@ function apply_move(array $target, ?string $move): array {
     [$list[$idx], $list[$swapWith]] = [$list[$swapWith], $list[$idx]];
     $target[$listKey] = array_values($list);
     return $target;
+}
+
+// Salvataggio della Canva: una "Pubblica" applica testi (home-sections.json) e
+// ordine/visibilità (home-layout.json) insieme, committando solo i file cambiati.
+if ($loggedIn && $isCanva && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && isset($_POST['publish'])) {
+    if (!hash_equals($_SESSION['csrf'] ?? '', (string) ($_POST['csrf'] ?? ''))) {
+        $error = 'Sessione scaduta, ricarica la pagina e riprova.';
+    } else {
+        $edits  = json_decode((string) ($_POST['edits'] ?? '[]'), true);
+        $layout = json_decode((string) ($_POST['layout'] ?? 'null'), true);
+        $committed = [];
+
+        // 1) Testi -> content/settings/home-sections.json
+        if (is_array($edits) && count($edits) > 0) {
+            $f = 'content/settings/home-sections.json';
+            $get = gh_get_file($REPO, $f, $BRANCH, $TOKEN);
+            if ($get['code'] === 200 && isset($get['data']['sha'])) {
+                $full = json_decode(base64_decode($get['data']['content']), true) ?: [];
+                $before = json_encode($full);
+                $full = apply_path_edits($full, $edits, $BLOCKLIST);
+                if (json_encode($full) !== $before) {
+                    $json = json_encode($full, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . "\n";
+                    $put = gh_api('PUT', "https://api.github.com/repos/{$REPO}/contents/{$f}", $TOKEN, [
+                        'message' => 'cms: modifica testi (canva) da pannello segreteria',
+                        'content' => base64_encode($json), 'sha' => $get['data']['sha'], 'branch' => $BRANCH,
+                    ]);
+                    if ($put['code'] === 200 || $put['code'] === 201) $committed[] = 'testi';
+                    else $error = 'Salvataggio testi non riuscito (codice ' . $put['code'] . ').';
+                }
+            } else {
+                $error = 'Impossibile leggere i testi da GitHub (codice ' . $get['code'] . ').';
+            }
+        }
+
+        // 2) Ordine/visibilità -> content/settings/home-layout.json
+        if (!$error && is_array($layout) && count($layout) > 0) {
+            $valid = [];
+            foreach ($layout as $item) {
+                $k = is_array($item) ? ($item['key'] ?? null) : null;
+                if (is_string($k) && isset($SECTION_NAMES[$k])) {
+                    $valid[] = ['key' => $k, 'enabled' => !empty($item['enabled'])];
+                }
+            }
+            if (count($valid) > 0) {
+                $f = 'content/settings/home-layout.json';
+                $get = gh_get_file($REPO, $f, $BRANCH, $TOKEN);
+                $exists = ($get['code'] === 200 && isset($get['data']['sha']));
+                $origJson = $exists ? base64_decode($get['data']['content']) : '';
+                $newJson = json_encode(['sections' => $valid], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . "\n";
+                if (trim($origJson) !== trim($newJson)) {
+                    $body = ['message' => 'cms: ordine sezioni (canva) da pannello segreteria', 'content' => base64_encode($newJson), 'branch' => $BRANCH];
+                    if ($exists) $body['sha'] = $get['data']['sha'];
+                    $put = gh_api('PUT', "https://api.github.com/repos/{$REPO}/contents/{$f}", $TOKEN, $body);
+                    if ($put['code'] === 200 || $put['code'] === 201) $committed[] = 'ordine';
+                    else $error = $error ?: 'Salvataggio ordine non riuscito (codice ' . $put['code'] . ').';
+                }
+            }
+        }
+
+        if (!$error) {
+            $notice = count($committed)
+                ? 'Pubblicato (' . implode(' + ', $committed) . '). Il sito si aggiorna automaticamente in pochi minuti.'
+                : 'Nessuna modifica da pubblicare.';
+        }
+    }
 }
 
 if ($loggedIn && $validArea && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && (isset($_POST['save']) || isset($_POST['move']))) {
@@ -598,10 +700,24 @@ if ($loggedIn && $validArea) {
   .emoji-panel { position:absolute; z-index:80; display:grid; grid-template-columns:repeat(8,1fr); gap:2px; background:#fff; border:1px solid rgba(176,141,87,.4); border-radius:10px; padding:8px; box-shadow:0 10px 28px rgba(42,32,23,.18); }
   .emoji-panel button { border:none; background:transparent; font-size:1.15rem; cursor:pointer; padding:5px; border-radius:6px; margin:0; }
   .emoji-panel button:hover { background:rgba(176,141,87,.18); }
+  /* Canva (editor visuale) */
+  .wrap-wide { max-width:1180px; }
+  .canva-bar { position:sticky; top:0; z-index:30; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 14px; margin:0 0 14px; border:1px solid rgba(176,141,87,.4); border-radius:12px; background:#fffdf9; box-shadow:0 6px 18px rgba(42,32,23,.06); }
+  .canva-status { font-size:.9rem; font-weight:600; color:#6b605c; }
+  .canva-status.dirty { color:var(--wine); }
+  .canva-actions { display:flex; align-items:center; gap:10px; }
+  .canva-actions button { margin-top:0; padding:10px 18px; font-size:.92rem; }
+  .canva-actions .js-canva-reset { background:#fffdf9; color:var(--wine); border:1px solid rgba(176,141,87,.5); }
+  .canva-actions .js-canva-publish:disabled { opacity:.45; cursor:default; }
+  .canva-stage { display:flex; gap:14px; align-items:flex-start; }
+  .canva-frame { flex:1 1 auto; height:74vh; min-height:520px; border:1px solid rgba(176,141,87,.35); border-radius:12px; margin-top:0; }
+  .canva-inspector { flex:0 0 300px; border:1px solid rgba(176,141,87,.4); border-radius:12px; background:#fffdf9; padding:16px; max-height:74vh; overflow:auto; }
+  .canva-inspector h2 { font-size:1rem; color:var(--wine); margin:0 0 4px; }
+  @media (max-width:860px) { .canva-stage { flex-direction:column; } .canva-inspector { flex-basis:auto; width:100%; } }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="wrap<?= $isCanva ? ' wrap-wide' : '' ?>">
 <?php if ($notice): ?><div class="msg ok"><?= h($notice) ?></div><?php endif; ?>
 <?php if ($error): ?><div class="msg err"><?= h($error) ?></div><?php endif; ?>
 
@@ -617,11 +733,50 @@ if ($loggedIn && $validArea) {
     </form>
   </div>
 
+<?php elseif ($isCanva): ?>
+  <div class="card canva-card">
+    <div class="top">
+      <div>
+        <h1>Canva — Editor visuale</h1>
+        <p class="sub" style="margin:0">Trascina le sezioni per spostarle, clicca un testo per modificarlo, poi <strong>Pubblica</strong>.</p>
+      </div>
+      <div style="text-align:right; white-space:nowrap">
+        <a class="back" href="?menu=1">Modifica avanzata →</a><br>
+        <a class="logout" href="?logout=1">Esci</a>
+      </div>
+    </div>
+    <form method="post" action="index.php" id="canva-form">
+      <input type="hidden" name="publish" value="1">
+      <input type="hidden" name="area" value="home-editor">
+      <input type="hidden" name="csrf" value="<?= h($_SESSION['csrf'] ?? '') ?>">
+      <input type="hidden" name="edits" id="canva-edits" value="">
+      <input type="hidden" name="layout" id="canva-layout" value="">
+      <div class="canva-bar">
+        <span class="canva-status" id="canva-status">Nessuna modifica in sospeso</span>
+        <span class="canva-actions">
+          <button type="button" class="js-canva-reset">Annulla</button>
+          <button type="submit" class="js-canva-publish" disabled>Pubblica</button>
+        </span>
+      </div>
+    </form>
+    <div class="canva-stage">
+      <iframe class="canva-frame site-preview" id="canva-frame" src="<?= h($PUBLIC_SITE_URL) ?>?editor=1&build=1" title="Canva editor visuale" referrerpolicy="no-referrer"></iframe>
+      <aside class="canva-inspector" id="canva-inspector" hidden>
+        <h2 id="canva-inspector-title">Proprietà</h2>
+        <div id="canva-inspector-body"></div>
+      </aside>
+    </div>
+    <p class="field-hint" style="margin-top:12px">Le modifiche appaiono sul sito pubblicato dopo la pubblicazione (circa 1–2 minuti). Immagini, colori, aggiunta/rimozione di blocchi e altri dettagli restano in <a href="?menu=1">Modifica avanzata</a>.</p>
+  </div>
+
 <?php elseif (!$validArea): ?>
   <div class="card">
     <div class="top">
       <h1>Cosa vuoi modificare?</h1>
-      <a class="logout" href="?logout=1">Esci</a>
+      <div style="text-align:right; white-space:nowrap">
+        <a class="back" href="index.php">← Canva</a><br>
+        <a class="logout" href="?logout=1">Esci</a>
+      </div>
     </div>
     <p class="sub">Scegli una sezione. Cambi i testi, clicchi Pubblica e il sito si aggiorna da solo in pochi minuti.</p>
     <ul class="areas">
@@ -870,6 +1025,71 @@ if ($loggedIn && $validArea) {
       flash(document.getElementById('sec-' + key.slice(4)));
     }
   });
+})();
+
+// Canva (editor visuale): raccoglie le modifiche inviate dall'iframe build
+// (testo inline + ordine/visibilità) e le pubblica in una sola azione.
+(function () {
+  var frame = document.getElementById('canva-frame');
+  var form = document.getElementById('canva-form');
+  if (!frame || !form) return;
+  var editsInput = document.getElementById('canva-edits');
+  var layoutInput = document.getElementById('canva-layout');
+  var statusEl = document.getElementById('canva-status');
+  var publishBtn = form.querySelector('.js-canva-publish');
+  var resetBtn = form.querySelector('.js-canva-reset');
+
+  var edits = {};          // path -> testo
+  var layout = null;       // [{key,enabled}] corrente
+  var baseLayout = null;   // primo ordine ricevuto (stato iniziale)
+
+  function layoutChanged() {
+    return layout && baseLayout && JSON.stringify(layout) !== JSON.stringify(baseLayout);
+  }
+  function refresh() {
+    var n = Object.keys(edits).length + (layoutChanged() ? 1 : 0);
+    editsInput.value = JSON.stringify(edits);
+    layoutInput.value = layoutChanged() ? JSON.stringify(layout) : '';
+    if (n > 0) {
+      statusEl.textContent = n === 1 ? '1 modifica non pubblicata' : n + ' modifiche non pubblicate';
+      statusEl.classList.add('dirty');
+      publishBtn.disabled = false;
+    } else {
+      statusEl.textContent = 'Nessuna modifica in sospeso';
+      statusEl.classList.remove('dirty');
+      publishBtn.disabled = true;
+    }
+  }
+
+  window.addEventListener('message', function (ev) {
+    if (ev.source !== frame.contentWindow) return;
+    var d = ev.data;
+    if (!d || d.source !== 'vos-editor') return;
+    if (d.type === 'edit' && typeof d.path === 'string') {
+      edits[d.path] = String(d.value == null ? '' : d.value);
+      refresh();
+    } else if (d.type === 'reorder' && Array.isArray(d.order)) {
+      layout = d.order;
+      if (baseLayout === null) baseLayout = JSON.parse(JSON.stringify(d.order));
+      refresh();
+    } else if (d.type === 'select' && typeof d.key === 'string') {
+      if (window.vosOpenInspector) window.vosOpenInspector(d.key);
+    }
+  });
+
+  resetBtn.addEventListener('click', function () {
+    edits = {}; layout = null; baseLayout = null;
+    frame.src = frame.src;
+    refresh();
+  });
+
+  var publishing = false;
+  form.addEventListener('submit', function () { publishing = true; });
+  window.addEventListener('beforeunload', function (e) {
+    if (!publishing && !publishBtn.disabled) { e.preventDefault(); e.returnValue = ''; }
+  });
+
+  refresh();
 })();
 </script>
 </body>
