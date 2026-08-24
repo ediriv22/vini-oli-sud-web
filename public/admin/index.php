@@ -50,8 +50,10 @@ $AREAS = [
 // alla registry e a CANONICAL_SECTION_ORDER in src/data/homeLayout.ts.
 $SECTION_NAMES = [
     'hero'                  => 'Copertina (Hero)',
+    'ctaCards'              => 'Inviti all\'azione (Sponsor / Gara / Carnet)',
     'philosophy'            => 'Filosofia',
     'grandPrixHighlight'    => 'Grand Prix',
+    'concorsoCategorie'     => 'Categorie del Concorso',
     'territory'             => 'Territorio',
     'regions'               => 'Regioni',
     'sponsor'               => 'Sponsor & Espositori',
@@ -88,6 +90,9 @@ $LABELS = [
     'registrationsNote' => 'Nota iscrizioni concorso (data)', 'registrationsDetail' => 'Nota iscrizioni concorso (dettaglio)',
     'villageAccessNote' => 'Nota accesso villaggio', 'pass' => 'Pass Giuria Popolare',
     'availabilityNote' => 'Nota disponibilità (data)', 'benefits' => 'Cosa include',
+    // Blocco 3 card (ctaCards) e categorie concorso (concorsoCategorie)
+    'cards' => 'Card (Sponsor / Gara / Carnet)', 'note' => 'Nota (es. disponibilità)',
+    'categories' => 'Categorie del concorso',
     'themePrimaryColor' => 'Colore primario (bottoni e accenti)',
     'themeBackgroundColor' => 'Colore di sfondo generale del sito',
     'backgroundColor' => 'Colore di sfondo di questa pagina',

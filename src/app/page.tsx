@@ -1,5 +1,7 @@
 import type { ComponentType } from "react";
 import AlboDoroSection from "@/components/sections/AlboDoroSection";
+import ConcorsoCategoriesSection from "@/components/sections/ConcorsoCategoriesSection";
+import CtaCardsSection from "@/components/sections/CtaCardsSection";
 import EventDetailsSection from "@/components/sections/EventDetailsSection";
 import GrandPrixHighlight from "@/components/sections/GrandPrixHighlight";
 import HeroSection from "@/components/sections/HeroSection";
@@ -17,6 +19,8 @@ import { resolveHomeLayout, type SectionKey } from "@/data/homeLayout";
 // via /admin), letto tramite resolveHomeLayout().
 const SECTION_REGISTRY: Record<SectionKey, ComponentType> = {
   hero: HeroSection,
+  ctaCards: CtaCardsSection,
+  concorsoCategorie: ConcorsoCategoriesSection,
   philosophy: PhilosophySection,
   grandPrixHighlight: GrandPrixHighlight,
   territory: TerritorySection,

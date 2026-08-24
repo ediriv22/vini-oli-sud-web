@@ -134,6 +134,11 @@ export const siteConfig = {
   sponsor: homeSections.sponsor,
   eventDetails: homeSections.eventDetails,
   alboDoro: homeSections.alboDoro,
+  // Blocco 3 CTA (Diventa Sponsor / Iscriviti alla Gara / Acquista Carnet) e
+  // categorie del concorso — modificabili dal pannello /admin, area "Sezioni
+  // Home". Vedi CtaCardsSection e ConcorsoCategoriesSection.
+  ctaCards: homeSections.ctaCards,
+  concorsoCategorie: homeSections.concorsoCategorie,
 } as const;
 
 export function createPageMetadata(

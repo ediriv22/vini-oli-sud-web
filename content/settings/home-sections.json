@@ -193,5 +193,49 @@
             "La prima edizione della Rassegna si è svolta con grande successo di pubblico e critica sul Lungomare Caracciolo di Napoli il 6-7-8 Dicembre 2025.",
             "Un evento aperto gratuitamente al pubblico, che ha sancito la nascita di un nuovo punto di riferimento per l'enogastronomia di qualità del Mezzogiorno, confermando che il Sud è pronto a raccontare la propria eccellenza al mondo."
         ]
+    },
+    "ctaCards": {
+        "eyebrow": "Partecipa",
+        "title": "Vivi la Rassegna da Protagonista",
+        "cards": [
+            {
+                "kind": "sponsor",
+                "title": "Diventa Sponsor",
+                "body": "Porta il tuo brand alla Rassegna Vini e Oli della Magna Grecia. Non limitarti a essere visibile: diventa protagonista dell'evento.",
+                "ctaLabel": "Diventa Sponsor",
+                "ctaHref": "https://www.napoliracingshow.it/pag/1/sponsor-1/"
+            },
+            {
+                "kind": "concorso",
+                "title": "Iscriviti alla Gara",
+                "body": "Presenta i tuoi vini e oli al Grand Prix della Magna Grecia e concorri nelle categorie d'eccellenza del Sud.",
+                "ctaLabel": "Iscriviti al Concorso",
+                "ctaHref": ""
+            },
+            {
+                "kind": "carnet",
+                "title": "Acquista il Carnet Degustazione",
+                "body": "Assicurati il tuo Carnet per le degustazioni della Rassegna sul Lungomare Caracciolo.",
+                "note": "Solo 200 carnet disponibili",
+                "ctaLabel": "Acquista il Carnet",
+                "ctaHref": ""
+            }
+        ]
+    },
+    "concorsoCategorie": {
+        "eyebrow": "Concorso 2026",
+        "title": "Le Categorie del Concorso",
+        "intro": "Le eccellenze in gara al Grand Prix della Magna Grecia: vini, oli e abbinamenti premiati per categoria.",
+        "categories": [
+            { "icon": "🍺", "name": "La Migliore Birra per il Miglior Street Food della Magna Grecia" },
+            { "icon": "🍕", "name": "Il Miglior Vino per la Migliore Pizza della Magna Grecia" },
+            { "icon": "🐟", "name": "Il Miglior Vino per il Miglior Piatto di Pesce della Magna Grecia" },
+            { "icon": "🥩", "name": "Il Miglior Vino per il Miglior Piatto di Carne della Magna Grecia" },
+            { "icon": "🍝", "name": "Il Miglior Vino per il Miglior Piatto di Pasta della Magna Grecia" },
+            { "icon": "🚬", "name": "Wine & Cigars — Il Miglior Abbinamento Vino e Sigaro della Magna Grecia" },
+            { "icon": "🫒", "name": "Il Miglior Olio Extravergine della Magna Grecia" },
+            { "icon": "🥃", "name": "Il Miglior Amaro della Magna Grecia" },
+            { "icon": "🍰", "name": "Il Miglior Abbinamento Liquore e Dolce della Magna Grecia" }
+        ]
     }
 }
