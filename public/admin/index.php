@@ -173,6 +173,16 @@ function image_preview_src(string $val): string {
     return 'data:image/svg+xml,' . rawurlencode($svg);
 }
 
+// Converte il name di un campo (es. "d[philosophy][eyebrow]") nel path JSON
+// usato dall'editor visuale (es. "philosophy.eyebrow"), così il click
+// sull'anteprima (data-content-key="field:philosophy.eyebrow") ritrova il
+// campo corrispondente nel form via [data-content-path].
+function path_from_name(string $fname): string {
+    $s = preg_replace('/^d/', '', $fname); // [philosophy][eyebrow]
+    $s = trim($s, '[]');                    // philosophy][eyebrow
+    return str_replace('][', '.', $s);      // philosophy.eyebrow
+}
+
 // $listPath: se non null, $data è la LISTA i cui elementi stiamo iterando
 // (quindi $key è l'indice numerico) — usato per mostrare i controlli ↑/↓.
 // $anchorTopLevel: se true, i fieldset di PRIMO livello ricevono id="sec-<key>"
@@ -199,9 +209,10 @@ function render_fields($data, string $name, array $blocklist, array $labels, ?st
             echo '</fieldset>';
         } elseif (is_string($val)) {
             $id = 'f_' . md5($fname);
-            echo '<label for="' . $id . '">' . h(label_for($key, $labels)) . '</label>';
+            $cpath = h(path_from_name($fname));
+            echo '<label for="' . $id . '" data-content-path="' . $cpath . '">' . h(label_for($key, $labels)) . '</label>';
             if (isset($SELECT_FIELDS[$key])) {
-                echo '<select id="' . $id . '" name="' . $fname . '">';
+                echo '<select id="' . $id . '" name="' . $fname . '" data-content-path="' . $cpath . '">';
                 foreach ($SELECT_FIELDS[$key] as $optVal => $optLabel) {
                     $sel = ((string) $optVal === $val) ? ' selected' : '';
                     echo '<option value="' . h((string) $optVal) . '"' . $sel . '>' . h($optLabel) . '</option>';
@@ -220,13 +231,13 @@ function render_fields($data, string $name, array $blocklist, array $labels, ?st
             } elseif (is_color_field($key)) {
                 $safeVal = preg_match('/^#[0-9a-fA-F]{3,8}$/', $val) ? $val : '#000000';
                 echo '<div class="colorfield">';
-                echo '<input id="' . $id . '" type="color" name="' . $fname . '" value="' . h($safeVal) . '" class="js-contrast">';
+                echo '<input id="' . $id . '" type="color" name="' . $fname . '" value="' . h($safeVal) . '" class="js-contrast" data-content-path="' . $cpath . '">';
                 echo '<span class="contrast-note" data-for="' . $id . '"></span>';
                 echo '</div>';
             } elseif (mb_strlen($val) > 70 || strpos($val, "\n") !== false) {
-                echo '<textarea id="' . $id . '" name="' . $fname . '">' . h($val) . '</textarea>';
+                echo '<textarea id="' . $id . '" name="' . $fname . '" data-content-path="' . $cpath . '">' . h($val) . '</textarea>';
             } else {
-                echo '<input id="' . $id . '" type="text" name="' . $fname . '" value="' . h($val) . '">';
+                echo '<input id="' . $id . '" type="text" name="' . $fname . '" value="' . h($val) . '" data-content-path="' . $cpath . '">';
             }
         } elseif ((is_float($val) || is_int($val)) && is_opacity_field($key)) {
             $id = 'f_' . md5($fname);
@@ -315,14 +326,23 @@ function apply_layout_edits(array $sections, array $postedEnabled, ?string $move
 }
 // Anteprima del sito pubblicato in iframe (non è editing diretto): il sito è
 // export statico, quindi le modifiche appaiono solo dopo la pubblicazione.
-function render_site_preview(string $url): void {
+function render_site_preview(string $url, bool $withEditor = false): void {
     echo '<div class="preview-block">';
     echo '<div class="preview-head">';
     echo '<strong>Anteprima del sito pubblicato</strong>';
+    echo '<span class="preview-actions">';
+    if ($withEditor) {
+        echo '<label class="editor-toggle" title="Clicca un testo nell\'anteprima per saltare al campo corrispondente">'
+           . '<input type="checkbox" class="js-editor-toggle"> Modifica visuale</label>';
+    }
     echo '<button type="button" class="js-reload-preview" title="Ricarica anteprima">↻ Ricarica</button>';
+    echo '</span>';
     echo '</div>';
     echo '<p class="preview-note">Le modifiche compaiono qui <strong>dopo la pubblicazione</strong> (circa 1–2 minuti). Questa è la home online, non un\'anteprima istantanea.</p>';
-    echo '<iframe class="site-preview" src="' . h($url) . '" loading="lazy" title="Anteprima del sito pubblicato" referrerpolicy="no-referrer"></iframe>';
+    if ($withEditor) {
+        echo '<p class="preview-note js-editor-hint" hidden>Modifica visuale attiva: <strong>clicca un testo</strong> nell\'anteprima per saltare al campo corrispondente nel modulo qui sotto. (Funziona sul sito già pubblicato con questa versione dell\'editor.)</p>';
+    }
+    echo '<iframe class="site-preview" src="' . h($url) . '" data-base-url="' . h($url) . '" loading="lazy" title="Anteprima del sito pubblicato" referrerpolicy="no-referrer"></iframe>';
     echo '<p class="field-hint"><a href="' . h($url) . '" target="_blank" rel="noopener">Apri il sito in una nuova scheda ↗</a></p>';
     echo '</div>';
 }
@@ -550,6 +570,11 @@ if ($loggedIn && $validArea) {
   .preview-head button { margin-top:0; padding:5px 12px; font-size:.82rem; background:#fff; color:var(--wine); border:1px solid rgba(176,141,87,.5); }
   .preview-note { margin:12px 14px 0; font-size:.82rem; color:#6b605c; }
   .site-preview { display:block; width:100%; height:520px; border:0; margin-top:10px; background:#fff; }
+  .preview-actions { display:flex; align-items:center; gap:14px; }
+  .editor-toggle { display:flex; align-items:center; gap:7px; margin:0; text-transform:none; letter-spacing:normal; font-size:.82rem; font-weight:600; color:var(--wine); cursor:pointer; white-space:nowrap; }
+  .editor-toggle input { width:auto; }
+  .vos-focus-flash { outline:3px solid var(--wine) !important; outline-offset:2px; border-radius:6px; animation:vosFlash 1.6s ease; }
+  @keyframes vosFlash { 0%,100% { box-shadow:0 0 0 0 rgba(122,38,52,0); } 20% { box-shadow:0 0 0 6px rgba(122,38,52,.18); } }
   .colorfield { display:flex; align-items:center; gap:12px; }
   .colorfield input[type=color] { width:56px; height:40px; padding:2px; border:1px solid rgba(176,141,87,.5); border-radius:8px; background:#fffdf9; cursor:pointer; }
   .contrast-note { font-size:.82rem; }
@@ -631,9 +656,10 @@ if ($loggedIn && $validArea) {
                 ? $areaData['sections'] : [];
             render_section_layout($layoutSections, $SECTION_NAMES);
         } else {
-        // Anteprima del sito pubblicato accanto al form dei testi delle sezioni.
+        // Anteprima del sito pubblicato accanto al form dei testi delle sezioni,
+        // con "Modifica visuale": click sull'anteprima -> campo nel form.
         if ($area === 'home-sections') {
-            render_site_preview($PUBLIC_SITE_URL);
+            render_site_preview($PUBLIC_SITE_URL, true);
         }
         if (is_array($areaData)) {
             render_fields($areaData, 'd', $BLOCKLIST, $LABELS, null, $area === 'home-sections');
@@ -790,6 +816,59 @@ if ($loggedIn && $validArea) {
       var iframe = document.querySelector('.site-preview');
       if (iframe) iframe.src = iframe.src;
     });
+  });
+})();
+
+// Editor visuale: la "Modifica visuale" ricarica l'anteprima con ?editor=1;
+// il sito (VisualEditorBridge) invia via postMessage la chiave dell'elemento
+// cliccato, e qui saltiamo/evidenziamo il campo corrispondente nel form.
+(function () {
+  var iframe = document.querySelector('.site-preview');
+  if (!iframe) return;
+  var toggle = document.querySelector('.js-editor-toggle');
+  var hint = document.querySelector('.js-editor-hint');
+
+  if (toggle) {
+    toggle.addEventListener('change', function () {
+      var base = iframe.getAttribute('data-base-url') || iframe.src;
+      if (toggle.checked) {
+        iframe.src = base + (base.indexOf('?') === -1 ? '?' : '&') + 'editor=1';
+        if (hint) hint.hidden = false;
+      } else {
+        iframe.src = base;
+        if (hint) hint.hidden = true;
+      }
+    });
+  }
+
+  function flash(el) {
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.classList.add('vos-focus-flash');
+    if (typeof el.focus === 'function') {
+      try { el.focus({ preventScroll: true }); } catch (e) { el.focus(); }
+    }
+    setTimeout(function () { el.classList.remove('vos-focus-flash'); }, 1600);
+  }
+
+  window.addEventListener('message', function (ev) {
+    // Accetta solo messaggi provenienti dall'iframe di anteprima.
+    if (ev.source !== iframe.contentWindow) return;
+    var data = ev.data;
+    if (!data || data.source !== 'vos-editor' || !data.key) return;
+    var key = String(data.key);
+    if (key.indexOf('field:') === 0) {
+      var path = key.slice(6);
+      var target = document.querySelector('[data-content-path="' + path + '"]');
+      if (target && target.tagName === 'LABEL') {
+        var forId = target.getAttribute('for');
+        var ctrl = forId ? document.getElementById(forId) : null;
+        target = ctrl || target;
+      }
+      flash(target);
+    } else if (key.indexOf('sec:') === 0) {
+      flash(document.getElementById('sec-' + key.slice(4)));
+    }
   });
 })();
 </script>
