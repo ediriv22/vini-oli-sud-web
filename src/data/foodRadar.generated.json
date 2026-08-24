@@ -1,5 +1,25 @@
 [
   {
+    "id": "96b4b4c7aff7",
+    "category": "Calici di Magna Grecia",
+    "title": "I vini di Federico Graziani, uno sguardo a tu per tu con l'Etna più autentico",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/i-vini-di-federico-graziani-uno-sguardo-a-tu-per-tu-con-letna-piu-autentico/300620/",
+    "note": "Una voce dal mondo del vino, focus Sicilia.",
+    "noteSource": "auto",
+    "date": "2026-08-24"
+  },
+  {
+    "id": "84a7c158d600",
+    "category": "Radar del Sud",
+    "title": "Ristorante Pizzeria Il Patriarca a Bitonto (BA)",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/ristorante-pizzeria-il-patriarca-a-bitonto-ba/300607/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-23"
+  },
+  {
     "id": "6d23d01d81c4",
     "category": "Calici di Magna Grecia",
     "title": "Invecchiato IGP | Alto Adige Sauvignon Voglar 2013 – Peter Dipoli",
@@ -278,25 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-08-14"
-  },
-  {
-    "id": "ad6b6c62e6d5",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Certi vini costano troppo, bisogna avere il coraggio di non comprarli\". Parla uno dei grandi distributori italiani",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/luca-cuzziol-prezzi-ricarichi-vino-ristoranti/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-14"
-  },
-  {
-    "id": "017ae62e3a1e",
-    "category": "Calici di Magna Grecia",
-    "title": "Kallmet, il vitigno che racconta il nord dell'Albania | Mrizi i Zanave Venari",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/kallmet-il-vitigno-che-racconta-il-nord-dellalbania-mrizi-i-zanave-venari/300196/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-13"
   }
 ]
