@@ -796,8 +796,13 @@ if ($isCanva) {
   .canva-actions button { margin-top:0; padding:10px 18px; font-size:.92rem; }
   .canva-actions .js-canva-reset { background:#fffdf9; color:var(--wine); border:1px solid rgba(176,141,87,.5); }
   .canva-actions .js-canva-publish:disabled { opacity:.45; cursor:default; }
+  .canva-legend { display:flex; flex-wrap:wrap; gap:8px 12px; margin:0 0 12px; font-size:.8rem; color:#6b605c; }
+  .canva-legend span { background:#f3efe6; border:1px solid rgba(176,141,87,.35); border-radius:999px; padding:5px 12px; }
   .canva-stage { display:flex; gap:14px; align-items:flex-start; }
-  .canva-frame { flex:1 1 auto; height:74vh; min-height:520px; border:1px solid rgba(176,141,87,.35); border-radius:12px; margin-top:0; }
+  .canva-frame-wrap { flex:1 1 auto; position:relative; min-width:0; }
+  .canva-loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#8a7f7a; font-size:.9rem; background:#fffdf9; border:1px solid rgba(176,141,87,.35); border-radius:12px; z-index:1; }
+  .canva-loading[hidden] { display:none; }
+  .canva-frame { display:block; width:100%; height:74vh; min-height:520px; border:1px solid rgba(176,141,87,.35); border-radius:12px; margin-top:0; }
   .canva-inspector { flex:0 0 300px; border:1px solid rgba(176,141,87,.4); border-radius:12px; background:#fffdf9; padding:16px; max-height:74vh; overflow:auto; }
   .canva-inspector h2 { font-size:1rem; color:var(--wine); margin:0; }
   .insp-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
@@ -848,8 +853,17 @@ if ($isCanva) {
           <button type="submit" class="js-canva-publish" disabled>Pubblica</button>
         </span>
       </div>
+      <div class="canva-legend">
+        <span>✎ Clicca un testo per modificarlo</span>
+        <span>⠿ Trascina la maniglia per spostare</span>
+        <span>👁 Mostra / nascondi</span>
+        <span>⚙ Immagini e colori</span>
+      </div>
       <div class="canva-stage">
-        <iframe class="canva-frame site-preview" id="canva-frame" src="<?= h($PUBLIC_SITE_URL) ?>?editor=1&build=1" title="Canva editor visuale" referrerpolicy="no-referrer"></iframe>
+        <div class="canva-frame-wrap">
+          <div class="canva-loading" id="canva-loading">Caricamento anteprima…</div>
+          <iframe class="canva-frame site-preview" id="canva-frame" src="<?= h($PUBLIC_SITE_URL) ?>?editor=1&build=1" title="Canva editor visuale" referrerpolicy="no-referrer"></iframe>
+        </div>
         <aside class="canva-inspector" id="canva-inspector" hidden>
           <div class="insp-head">
             <h2 id="canva-inspector-title">Proprietà</h2>
@@ -1160,6 +1174,11 @@ if ($isCanva) {
   var publishBtn = form.querySelector('.js-canva-publish');
   var resetBtn = form.querySelector('.js-canva-reset');
 
+  frame.addEventListener('load', function () {
+    var l = document.getElementById('canva-loading');
+    if (l) l.hidden = true;
+  });
+
   var edits = {};          // path -> testo
   var layout = null;       // [{key,enabled}] corrente
   var baseLayout = null;   // primo ordine ricevuto (stato iniziale)
@@ -1194,9 +1213,10 @@ if ($isCanva) {
       layout = d.order;
       if (baseLayout === null) baseLayout = JSON.parse(JSON.stringify(d.order));
       refresh();
-    } else if (d.type === 'select' && typeof d.key === 'string') {
+    } else if (d.type === 'inspect' && typeof d.key === 'string') {
       if (window.vosOpenInspector) window.vosOpenInspector(d.key);
     }
+    // 'select' (click sezione) evidenzia solo, dentro l'iframe: nessuna azione qui.
   });
 
   var leaving = false;
