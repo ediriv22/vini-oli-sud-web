@@ -1,9 +1,12 @@
 # Editor visuale del pannello segreteria (`/admin`)
 
-Questo documento descrive l'editor visuale aggiunto all'admin, come funziona
-e come usarlo. Nessun database, nessun backend nuovo: tutto passa per i file
-JSON in `content/settings/`, il commit via GitHub Contents API e il deploy FTP
-esistente.
+Questo documento è il riferimento **tecnico** dell'editor visuale: come funziona
+e come si estende. Per la **guida d'uso** (non tecnica, per la segreteria) vedi
+[`GUIDA-SEGRETERIA.md`](GUIDA-SEGRETERIA.md); per il setup del server
+[`CMS_SETUP.md`](CMS_SETUP.md).
+
+Nessun database, nessun backend nuovo: tutto passa per i file JSON in
+`content/settings/`, il commit via GitHub Contents API e il deploy FTP esistente.
 
 ## Canva (schermata principale) — page builder stile WordPress
 
