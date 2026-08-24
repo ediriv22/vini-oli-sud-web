@@ -1,0 +1,35 @@
+name: Verifica PR (build + php -l, senza deploy)
+
+# Gira sulle pull request verso main: valida il sito e la sintassi PHP
+# dell'admin PRIMA del merge, senza pubblicare nulla (nessun FTP).
+# Il deploy vero resta in deploy.yml, solo su push a main.
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  verifica:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Installazione dipendenze
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build sito statico (cartella out/)
+        run: npm run build
+
+      - name: Verifica sintassi PHP (blocca la PR se rotto)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y php-cli -qq
+          find public -name '*.php' -print0 | xargs -0 -r -n1 php -l
