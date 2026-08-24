@@ -8,6 +8,7 @@ import PhilosophySection from "@/components/sections/PhilosophySection";
 import RegionsSection from "@/components/sections/RegionsSection";
 import SponsorSection from "@/components/sections/SponsorSection";
 import TerritorySection from "@/components/sections/TerritorySection";
+import VisualEditorBridge from "@/components/VisualEditorBridge";
 import { resolveHomeLayout, type SectionKey } from "@/data/homeLayout";
 
 // Registry chiave → componente. Tipizzata come Record<SectionKey, ...>: se una
@@ -35,6 +36,8 @@ export default function HomePage() {
           const Section = SECTION_REGISTRY[section.key];
           return <Section key={section.key} />;
         })}
+      {/* Attivo solo con ?editor=1 (anteprima editabile nell'admin). Inerte altrove. */}
+      <VisualEditorBridge />
     </>
   );
 }
