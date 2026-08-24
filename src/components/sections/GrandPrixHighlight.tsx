@@ -33,27 +33,41 @@ export default function GrandPrixHighlight() {
       aria-labelledby="grand-prix-highlight-title"
       className="section-space bg-[var(--color-grove)]"
       style={getSectionBackgroundStyle(siteConfig.sectionBackgrounds.grandPrix)}
+      data-content-key="sec:grandPrixHighlight"
     >
       <div className="section-shell">
         <div className="mx-auto max-w-[46rem] text-center">
-          <p className="font-ui text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-sand)]">
+          <p
+            className="font-ui text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-sand)]"
+            data-content-key="field:grandPrixHighlight.eyebrow"
+          >
             {eyebrow}
           </p>
           <h2
             id="grand-prix-highlight-title"
             className="display-balance mx-auto mt-4 max-w-[24ch] font-display text-[clamp(2.1rem,4.6vw,3rem)] leading-[1.05] tracking-[0.005em] text-[var(--color-ivory)]"
+            data-content-key="field:grandPrixHighlight.title"
           >
             {title}
           </h2>
-          <p className="mt-6 text-[1.02rem] leading-[1.7] text-[rgba(255,253,245,0.82)]">
+          <p
+            className="mt-6 text-[1.02rem] leading-[1.7] text-[rgba(255,253,245,0.82)]"
+            data-content-key="field:grandPrixHighlight.subtitle"
+          >
             {subtitle}
           </p>
 
           <div className="mt-8 inline-flex flex-col items-center gap-2 rounded-[1.1rem] border border-[rgba(255,215,87,0.35)] bg-[rgba(255,253,245,0.06)] px-6 py-5">
-            <p className="font-ui text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-sand)]">
+            <p
+              className="font-ui text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-sand)]"
+              data-content-key="field:grandPrixHighlight.registrationsNote"
+            >
               {registrationsNote}
             </p>
-            <p className="text-[0.88rem] leading-[1.6] text-[rgba(255,253,245,0.78)]">
+            <p
+              className="text-[0.88rem] leading-[1.6] text-[rgba(255,253,245,0.78)]"
+              data-content-key="field:grandPrixHighlight.registrationsDetail"
+            >
               {registrationsDetail}
             </p>
           </div>

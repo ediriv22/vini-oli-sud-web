@@ -55,10 +55,13 @@ export default function TerritorySection() {
       id="territorio"
       aria-labelledby="territorio-title"
       className="section-space bg-[#fff3cc]"
+      data-content-key="sec:territory"
     >
       <div className="section-shell">
         <div className="mx-auto max-w-[68rem] text-center">
-          <p className="eyebrow text-center">{territory.eyebrow}</p>
+          <p className="eyebrow text-center" data-content-key="field:territory.eyebrow">
+            {territory.eyebrow}
+          </p>
           <h2
             id="territorio-title"
             className="display-balance mx-auto mt-4 max-w-[26ch] font-display text-[clamp(2rem,4.6vw,3.25rem)] leading-[0.98] tracking-[0.005em] text-[var(--color-ink-strong)]"
@@ -66,7 +69,10 @@ export default function TerritorySection() {
             Dove il Sole incontra il <em className="font-display italic text-[var(--color-sand-strong)]">Mito</em> e la{" "}
             <em className="font-display italic text-[var(--color-sand-strong)]">Storia</em>
           </h2>
-          <p className="mx-auto mt-5 max-w-[64ch] text-[0.98rem] leading-[1.65] text-[var(--color-muted)] sm:text-[1.02rem] sm:leading-[1.7]">
+          <p
+            className="mx-auto mt-5 max-w-[64ch] text-[0.98rem] leading-[1.65] text-[var(--color-muted)] sm:text-[1.02rem] sm:leading-[1.7]"
+            data-content-key="field:territory.intro"
+          >
             {territory.intro}
           </p>
         </div>
@@ -82,10 +88,16 @@ export default function TerritorySection() {
                 <span className="text-[var(--color-sand-strong)]">
                   <Icon />
                 </span>
-                <h3 className="mt-4 font-display text-[1.15rem] font-semibold leading-[1.15] text-[var(--color-ink-strong)]">
+                <h3
+                  className="mt-4 font-display text-[1.15rem] font-semibold leading-[1.15] text-[var(--color-ink-strong)]"
+                  data-content-key={`field:territory.pillars.${index}.title`}
+                >
                   {pillar.title}
                 </h3>
-                <p className="mt-3 text-[0.92rem] leading-[1.6] text-[var(--color-muted)]">
+                <p
+                  className="mt-3 text-[0.92rem] leading-[1.6] text-[var(--color-muted)]"
+                  data-content-key={`field:territory.pillars.${index}.description`}
+                >
                   {pillar.description}
                 </p>
               </li>

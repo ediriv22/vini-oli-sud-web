@@ -41,7 +41,12 @@ export default function HeroSection() {
   const slide = slides[index];
 
   return (
-    <section id="top" aria-label="Vini & OliSud — Magna Grecia" className="relative">
+    <section
+      id="top"
+      aria-label="Vini & OliSud — Magna Grecia"
+      className="relative"
+      data-content-key="sec:hero"
+    >
       <div className="relative -mt-[var(--site-header-height)] min-h-[calc(100svh)] overflow-hidden bg-[var(--color-grove)]">
         <picture>
           <source media="(max-width: 767px)" srcSet={hero.backgroundImageMobile} />
@@ -63,20 +68,29 @@ export default function HeroSection() {
           <div className="flex max-w-[46rem] flex-col">
             <div className="flex items-center gap-3">
               <span aria-hidden="true" className="h-px w-8 bg-[rgba(255,215,87,0.65)]" />
-              <p className="font-ui text-[0.74rem] font-semibold uppercase tracking-[0.24em] text-[rgba(255,253,245,0.85)]">
+              <p
+                className="font-ui text-[0.74rem] font-semibold uppercase tracking-[0.24em] text-[rgba(255,253,245,0.85)]"
+                data-content-key={`field:hero.slides.${index}.eyebrow`}
+              >
                 {slide.eyebrow}
               </p>
             </div>
 
             <h1 className="display-balance mt-5 font-display leading-[1.02] tracking-[0.005em] text-[var(--color-ivory)] text-[clamp(2.1rem,6vw,4rem)]">
               {slide.titlePrefix}
-              <em className="font-display italic text-[var(--color-sand)]">
+              <em
+                className="font-display italic text-[var(--color-sand)]"
+                data-content-key={`field:hero.slides.${index}.titleEmphasis`}
+              >
                 {slide.titleEmphasis}
               </em>
               {slide.titleSuffix}
             </h1>
 
-            <p className="mt-6 max-w-[54ch] text-[1.02rem] leading-[1.7] text-[rgba(255,253,245,0.9)]">
+            <p
+              className="mt-6 max-w-[54ch] text-[1.02rem] leading-[1.7] text-[rgba(255,253,245,0.9)]"
+              data-content-key={`field:hero.slides.${index}.paragraph`}
+            >
               {slide.paragraph}
             </p>
 

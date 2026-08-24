@@ -9,6 +9,7 @@ export default function RegionsSection() {
       id="regioni"
       aria-labelledby="regioni-title"
       className="section-flow section-space"
+      data-content-key="sec:regions"
     >
       <div className="section-shell">
         <SectionHeader
@@ -17,18 +18,27 @@ export default function RegionsSection() {
           titleId="regioni-title"
           intro={regions.description}
           align="center"
+          eyebrowKey="field:regions.eyebrow"
+          titleKey="field:regions.title"
+          introKey="field:regions.description"
         />
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {regions.items.map((region) => (
+          {regions.items.map((region, index) => (
             <article
               key={region.name}
               className="rounded-[1.4rem] border border-[rgba(47,91,70,0.3)] bg-[rgba(255,253,245,0.6)] px-6 py-7 transition-colors duration-300 ease-out hover:border-[rgba(47,91,70,0.55)]"
             >
-              <h3 className="font-display text-[1.35rem] leading-none text-[var(--color-ink-strong)]">
+              <h3
+                className="font-display text-[1.35rem] leading-none text-[var(--color-ink-strong)]"
+                data-content-key={`field:regions.items.${index}.name`}
+              >
                 {region.name}
               </h3>
-              <p className="mt-3 text-[0.94rem] leading-[1.65] text-[var(--color-muted)]">
+              <p
+                className="mt-3 text-[0.94rem] leading-[1.65] text-[var(--color-muted)]"
+                data-content-key={`field:regions.items.${index}.description`}
+              >
                 {region.description}
               </p>
             </article>

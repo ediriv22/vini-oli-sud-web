@@ -5,6 +5,11 @@ type SectionHeaderProps = {
   intro?: string;
   align?: "left" | "center";
   className?: string;
+  // Chiavi per l'editor visuale (/admin ?editor=1): se presenti, marcano
+  // eyebrow/title/intro come campi cliccabili. Inerti sul sito normale.
+  eyebrowKey?: string;
+  titleKey?: string;
+  introKey?: string;
 };
 
 /**
@@ -24,6 +29,9 @@ export default function SectionHeader({
   intro,
   align = "left",
   className,
+  eyebrowKey,
+  titleKey,
+  introKey,
 }: SectionHeaderProps) {
   const isCentered = align === "center";
 
@@ -32,10 +40,13 @@ export default function SectionHeader({
       className={`${isCentered ? "mx-auto max-w-[68rem] text-center" : "max-w-[68rem]"} ${className ?? ""}`}
     >
       {eyebrow ? (
-        <p className={isCentered ? "eyebrow text-center" : "eyebrow"}>{eyebrow}</p>
+        <p className={isCentered ? "eyebrow text-center" : "eyebrow"} data-content-key={eyebrowKey}>
+          {eyebrow}
+        </p>
       ) : null}
       <h2
         id={titleId}
+        data-content-key={titleKey}
         className={`display-balance mt-4 font-display text-[clamp(2rem,4.6vw,3.25rem)] leading-[0.98] tracking-[0.005em] text-[var(--color-ink-strong)] ${
           isCentered
             ? "mx-auto max-w-[20ch] sm:max-w-[24ch] lg:max-w-[26ch]"
@@ -45,7 +56,10 @@ export default function SectionHeader({
         {title}
       </h2>
       {intro ? (
-        <p className="mt-5 max-w-[64ch] text-[0.98rem] leading-[1.65] text-[var(--color-muted)] sm:text-[1.02rem] sm:leading-[1.7]">
+        <p
+          className="mt-5 max-w-[64ch] text-[0.98rem] leading-[1.65] text-[var(--color-muted)] sm:text-[1.02rem] sm:leading-[1.7]"
+          data-content-key={introKey}
+        >
           {intro}
         </p>
       ) : null}

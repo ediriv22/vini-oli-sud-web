@@ -66,6 +66,7 @@ export default function InstitutionalPartnersSection() {
       id="partner-istituzionali"
       aria-labelledby="partner-istituzionali-title"
       className="section-flow section-space"
+      data-content-key="sec:institutionalPartners"
     >
       <div className="section-shell">
         <SectionHeader
@@ -73,6 +74,8 @@ export default function InstitutionalPartnersSection() {
           title={institutionalPartners.title}
           titleId="partner-istituzionali-title"
           align="center"
+          eyebrowKey="field:institutionalPartners.eyebrow"
+          titleKey="field:institutionalPartners.title"
         />
 
         <div className="mt-12 flex flex-col items-center gap-12">
