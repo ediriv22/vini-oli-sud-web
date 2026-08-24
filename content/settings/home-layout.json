@@ -1,10 +1,10 @@
 {
     "sections": [
         { "key": "hero", "enabled": true },
-        { "key": "ctaCards", "enabled": true },
+        { "key": "sfideAccordion", "enabled": true },
+        { "key": "granPremioIntro", "enabled": true },
         { "key": "philosophy", "enabled": true },
         { "key": "grandPrixHighlight", "enabled": true },
-        { "key": "concorsoCategorie", "enabled": true },
         { "key": "territory", "enabled": true },
         { "key": "regions", "enabled": true },
         { "key": "sponsor", "enabled": true },

@@ -134,11 +134,12 @@ export const siteConfig = {
   sponsor: homeSections.sponsor,
   eventDetails: homeSections.eventDetails,
   alboDoro: homeSections.alboDoro,
-  // Blocco 3 CTA (Diventa Sponsor / Iscriviti alla Gara / Acquista Carnet) e
-  // categorie del concorso — modificabili dal pannello /admin, area "Sezioni
-  // Home". Vedi CtaCardsSection e ConcorsoCategoriesSection.
-  ctaCards: homeSections.ctaCards,
-  concorsoCategorie: homeSections.concorsoCategorie,
+  // Fisarmonica "Partecipa" (Biglietti & Pass / Iscrivi la tua Azienda /
+  // Diventa Sponsor / Shop Ufficiale) e blocco intro "Gran Premio del Gusto"
+  // — modificabili dal pannello /admin, area "Sezioni Home". Vedi
+  // SfideAccordionSection e GranPremioIntroSection.
+  sfideAccordion: homeSections.sfideAccordion,
+  granPremioIntro: homeSections.granPremioIntro,
 } as const;
 
 export function createPageMetadata(

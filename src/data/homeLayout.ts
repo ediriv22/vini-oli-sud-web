@@ -10,10 +10,10 @@ import layout from "../../content/settings/home-layout.json";
 // manca) e alle chiavi di content/settings/home-sections.json.
 export const CANONICAL_SECTION_ORDER = [
   "hero",
-  "ctaCards",
+  "sfideAccordion",
+  "granPremioIntro",
   "philosophy",
   "grandPrixHighlight",
-  "concorsoCategorie",
   "territory",
   "regions",
   "sponsor",

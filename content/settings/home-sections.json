@@ -194,48 +194,106 @@
             "Un evento aperto gratuitamente al pubblico, che ha sancito la nascita di un nuovo punto di riferimento per l'enogastronomia di qualità del Mezzogiorno, confermando che il Sud è pronto a raccontare la propria eccellenza al mondo."
         ]
     },
-    "ctaCards": {
+    "sfideAccordion": {
         "eyebrow": "Partecipa",
-        "title": "Vivi la Rassegna da Protagonista",
-        "cards": [
+        "title": "Vivi il Gran Premio del Gusto",
+        "items": [
+            {
+                "kind": "biglietti",
+                "label": "Biglietti & Pass",
+                "heading": "Vivi da protagonista un weekend unico",
+                "subheading": "Se vuoi degustare, votare e decidere chi vince…",
+                "sectionTitle": "Diventa Giurato Popolare",
+                "tiers": [
+                    { "name": "1 Sfida a scelta", "price": "€25", "featured": false, "features": ["Posto riservato", "Degustazione", "Voto", "Bicchiere ufficiale serigrafato", "Portabicchiere ufficiale"] },
+                    { "name": "3 Sfide a scelta", "price": "€50", "featured": false, "features": ["Posto riservato", "3 degustazioni", "3 voti", "Bicchiere ufficiale", "Portabicchiere ufficiale"] },
+                    { "name": "Pass Gran Giurato — Tutte le 9 Sfide", "price": "€70", "featured": true, "badge": "⭐", "features": ["9 Sfide", "9 degustazioni", "9 voti", "Bicchiere ufficiale", "Portabicchiere ufficiale"] }
+                ],
+                "ctaLabel": "Diventa Giurato",
+                "ctaHref": "",
+                "extraTitle": "🩺 Prevenzione gratuita con ASL Napoli 1 Centro",
+                "extraBody": "I maggiorenni in possesso del Biglietto Tribuna del Napoli Racing Show o del Pass Giuria Popolare del Gran Premio del Gusto, previa prenotazione e fino a esaurimento dei posti disponibili, potranno effettuare visite gratuite di prevenzione presso il Camper della Salute dell'ASL Napoli 1 Centro nelle giornate di venerdì 27 e sabato 28 novembre 2026.",
+                "extraCtaLabel": "Prenota la tua visita gratuita",
+                "extraCtaHref": ""
+            },
+            {
+                "kind": "iscrivi",
+                "label": "Iscrivi la tua Azienda",
+                "heading": "Porta la tua eccellenza in gara",
+                "subheading": "Gran Premio del Gusto 2026 — Le Sfide della Magna Grecia · 27 • 28 • 29 Novembre 2026 · Rotonda Diaz – Lungomare Caracciolo – Napoli",
+                "body": [
+                    "Le aziende produttrici possono iscrivere un proprio prodotto a uno dei 9 Concorsi del Gran Premio del Gusto – Le Sfide della Magna Grecia.",
+                    "Per garantire qualità delle degustazioni, adeguato spazio alla presentazione delle aziende e corretta valutazione dei prodotti, il numero dei partecipanti a ciascun Concorso è limitato."
+                ],
+                "note": "Le iscrizioni saranno accettate in ordine di arrivo fino a esaurimento dei posti disponibili per ciascuna sfida.",
+                "concorsiTitle": "Scegli il tuo Concorso",
+                "concorsi": [
+                    { "icon": "🍺", "name": "Birra & Street Food" },
+                    { "icon": "🍕", "name": "Vino & Pizza" },
+                    { "icon": "🐟", "name": "Vino & Pesce" },
+                    { "icon": "🥩", "name": "Vino & Carne" },
+                    { "icon": "🍝", "name": "Vino & Pasta" },
+                    { "icon": "🍷", "name": "Vino & Sigaro" },
+                    { "icon": "🫒", "name": "Il Miglior Olio Extravergine" },
+                    { "icon": "🥃", "name": "Il Miglior Amaro" },
+                    { "icon": "🍰", "name": "Il Miglior Liquore per il Miglior Dolce" }
+                ],
+                "phasesTitle": "Come funziona ogni Sfida",
+                "phasesIntro": "Ogni Concorso del Gran Premio del Gusto avrà una durata indicativa di 60 minuti.",
+                "phases": [
+                    { "time": "15 minuti", "title": "Le aziende presentano i propri prodotti", "desc": "Le aziende concorrenti raccontano brevemente la propria storia, il territorio, le caratteristiche e le qualità del prodotto presentato." },
+                    { "time": "10 minuti", "title": "Gli esperti raccontano i prodotti in gara", "desc": "Chef, sommelier, giornalisti ed esperti del settore illustrano le caratteristiche dei prodotti e accompagnano le Giurie alla degustazione." },
+                    { "time": "20 minuti", "title": "Degustazione", "desc": "La Giuria Popolare e la Giuria Tecnica degustano e confrontano i prodotti in gara." },
+                    { "time": "5 minuti", "title": "Votazione", "desc": "Il risultato finale sarà determinato da: 70% Giuria Popolare · 30% Giuria Tecnica." },
+                    { "time": "10 minuti", "title": "Proclamazione del vincitore • Premiazione • Interviste • Foto", "desc": "" }
+                ],
+                "phasesNote": "Gli orari e la durata delle singole fasi potranno subire variazioni per esigenze organizzative.",
+                "feeTitle": "Quota di iscrizione",
+                "feeSubtitle": "Un prodotto • Un concorso",
+                "feeAmount": "€ 1.100 + IVA 22%",
+                "feeTotal": "Totale da versare: € 1.342",
+                "feeBody": [
+                    "La quota si riferisce all'iscrizione di un singolo prodotto a un singolo Concorso del Gran Premio del Gusto.",
+                    "Per iscrivere più prodotti e/o partecipare a più Concorsi dovrà essere presentata una distinta iscrizione per ciascun prodotto."
+                ],
+                "ctaLabel": "Iscrivi la tua Azienda",
+                "ctaHref": ""
+            },
             {
                 "kind": "sponsor",
-                "title": "Diventa Sponsor",
-                "body": "Porta il tuo brand alla Rassegna Vini e Oli della Magna Grecia. Non limitarti a essere visibile: diventa protagonista dell'evento.",
+                "label": "Diventa Sponsor",
+                "heading": "Porta il tuo brand al Gran Premio del Gusto",
+                "body": [
+                    "Diventa protagonista dell'evento: visibilità sul Lungomare Caracciolo, davanti al pubblico della Rassegna Vini e Oli della Magna Grecia."
+                ],
                 "ctaLabel": "Diventa Sponsor",
                 "ctaHref": "https://www.napoliracingshow.it/pag/1/sponsor-1/"
             },
             {
-                "kind": "concorso",
-                "title": "Iscriviti alla Gara",
-                "body": "Presenta i tuoi vini e oli al Grand Prix della Magna Grecia e concorri nelle categorie d'eccellenza del Sud.",
-                "ctaLabel": "Iscriviti al Concorso",
-                "ctaHref": ""
-            },
-            {
-                "kind": "carnet",
-                "title": "Acquista il Carnet Degustazione",
-                "body": "Assicurati il tuo Carnet per le degustazioni della Rassegna sul Lungomare Caracciolo.",
-                "note": "Solo 200 carnet disponibili",
-                "ctaLabel": "Acquista il Carnet",
+                "kind": "shop",
+                "label": "Shop Ufficiale",
+                "heading": "Shop Ufficiale",
+                "body": [
+                    "[PLACEHOLDER — in arrivo] Gadget e prodotti ufficiali della Rassegna. I dettagli dello shop saranno pubblicati a breve."
+                ],
+                "ctaLabel": "Vai allo Shop",
                 "ctaHref": ""
             }
         ]
     },
-    "concorsoCategorie": {
-        "eyebrow": "Concorso 2026",
-        "title": "Le Categorie del Concorso",
-        "intro": "Le eccellenze in gara al Grand Prix della Magna Grecia: vini, oli e abbinamenti premiati per categoria.",
-        "categories": [
-            { "icon": "🍺", "name": "La Migliore Birra per il Miglior Street Food della Magna Grecia" },
-            { "icon": "🍕", "name": "Il Miglior Vino per la Migliore Pizza della Magna Grecia" },
-            { "icon": "🐟", "name": "Il Miglior Vino per il Miglior Piatto di Pesce della Magna Grecia" },
-            { "icon": "🥩", "name": "Il Miglior Vino per il Miglior Piatto di Carne della Magna Grecia" },
-            { "icon": "🍝", "name": "Il Miglior Vino per il Miglior Piatto di Pasta della Magna Grecia" },
-            { "icon": "🚬", "name": "Wine & Cigars — Il Miglior Abbinamento Vino e Sigaro della Magna Grecia" },
-            { "icon": "🫒", "name": "Il Miglior Olio Extravergine della Magna Grecia" },
-            { "icon": "🥃", "name": "Il Miglior Amaro della Magna Grecia" },
-            { "icon": "🍰", "name": "Il Miglior Abbinamento Liquore e Dolce della Magna Grecia" }
-        ]
+    "granPremioIntro": {
+        "kicker": "Il Gran Premio del Gusto",
+        "stat1": "9 Sfide • 9 Vincitori",
+        "stat2": "Giuria Popolare 70% • Giuria Tecnica 30%",
+        "brand": "VINISUD.IT",
+        "edition": "Vini & Oli della Magna Grecia – II Edizione",
+        "dates": "27 • 28 • 29 Novembre 2026",
+        "venue": "Rotonda Diaz • Lungomare Caracciolo • Napoli",
+        "title": "Il Gran Premio del Gusto",
+        "subtitle": "Le Sfide della Magna Grecia",
+        "claim1": "Il pubblico non assaggia soltanto.",
+        "claim2": "Il pubblico sceglie i vincitori.",
+        "tags": "Vini • Oli • Sapori • Dieta Mediterranea • Prevenzione • Motori • Spettacolo",
+        "freeEntry": "Ingresso al Villaggio gratuito"
     }
 }
