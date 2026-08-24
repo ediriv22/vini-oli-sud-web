@@ -53,13 +53,7 @@ export default function GranPremioIntroSection() {
             {g.venue}
           </p>
 
-          <h3
-            className="mt-8 font-display text-[clamp(1.6rem,4vw,2.4rem)] text-[var(--color-ivory)]"
-            data-content-key="field:granPremioIntro.title"
-          >
-            {g.title}
-          </h3>
-          <p className="mt-1 font-display text-[1.2rem] italic text-[var(--color-sand)]" data-content-key="field:granPremioIntro.subtitle">
+          <p className="mt-8 font-display text-[1.4rem] italic text-[var(--color-sand)]" data-content-key="field:granPremioIntro.subtitle">
             {g.subtitle}
           </p>
 

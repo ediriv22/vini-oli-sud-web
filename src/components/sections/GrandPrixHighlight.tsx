@@ -11,8 +11,6 @@ export default function GrandPrixHighlight() {
     eyebrow,
     title,
     subtitle,
-    registrationsNote,
-    registrationsDetail,
     featuredAwards,
     expandLabel,
     collapseLabel,
@@ -56,21 +54,6 @@ export default function GrandPrixHighlight() {
           >
             {subtitle}
           </p>
-
-          <div className="mt-8 inline-flex flex-col items-center gap-2 rounded-[1.1rem] border border-[rgba(255,215,87,0.35)] bg-[rgba(255,253,245,0.06)] px-6 py-5">
-            <p
-              className="font-ui text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-sand)]"
-              data-content-key="field:grandPrixHighlight.registrationsNote"
-            >
-              {registrationsNote}
-            </p>
-            <p
-              className="text-[0.88rem] leading-[1.6] text-[rgba(255,253,245,0.78)]"
-              data-content-key="field:grandPrixHighlight.registrationsDetail"
-            >
-              {registrationsDetail}
-            </p>
-          </div>
         </div>
 
         <ul className="mt-14 grid grid-cols-2 gap-5 sm:gap-6 lg:grid-cols-4">

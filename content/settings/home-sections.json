@@ -41,8 +41,6 @@
         "eyebrow": "Premiazione",
         "title": "Riconoscimento di Eccellenza — Grand Prix della Magna Grecia dell'edizione 2025",
         "subtitle": "I migliori produttori premiati per la qualità straordinaria dei loro vini e oli. Un riconoscimento che celebra l'eccellenza del Sud Italia.",
-        "registrationsNote": "Iscrizioni al concorso aperte dal 1° settembre 2026",
-        "registrationsDetail": "Le aziende potranno iscrivere uno o più prodotti nelle categorie previste, corrispondendo la quota di partecipazione per ciascun prodotto presentato.",
         "expandLabel": "Scopri tutti i vincitori",
         "collapseLabel": "Mostra meno categorie",
         "featuredAwards": [
@@ -163,20 +161,6 @@
         "venueName": "Lungomare Caracciolo, Napoli",
         "venueDescription": "Nel cuore della città, tra il mare e la storia",
         "collaboration": "In collaborazione con Assessorato all'Agricoltura della Regione Campania",
-        "pass": {
-            "title": "Pass Giuria Popolare",
-            "intro": "Necessario per partecipare alle degustazioni, votare i concorrenti, ricevere i gadget ufficiali della manifestazione e accedere alle visite gratuite del Villaggio della Prevenzione dell'ASL Napoli 1 Centro.",
-            "availabilityNote": "In vendita dal 24 agosto 2026",
-            "benefits": [
-                "Badge ufficiale \"Giuria Popolare\"",
-                "QR Code personale per il voto",
-                "Bicchiere ufficiale serigrafato",
-                "Portabicchiere ufficiale",
-                "Gadget previsti dal Pass acquistato",
-                "Accesso ai servizi riservati",
-                "Possibilità di prenotare gratuitamente le visite di prevenzione dell'ASL Napoli 1 Centro"
-            ]
-        },
         "externalLink": {
             "label": "NAPOLIRACINGSHOW.IT",
             "url": "https://www.napoliracingshow.it"
@@ -196,7 +180,7 @@
     },
     "sfideAccordion": {
         "eyebrow": "Partecipa",
-        "title": "Vivi il Gran Premio del Gusto",
+        "title": "Scegli come partecipare",
         "items": [
             {
                 "kind": "biglietti",
@@ -289,7 +273,6 @@
         "edition": "Vini & Oli della Magna Grecia – II Edizione",
         "dates": "27 • 28 • 29 Novembre 2026",
         "venue": "Rotonda Diaz • Lungomare Caracciolo • Napoli",
-        "title": "Il Gran Premio del Gusto",
         "subtitle": "Le Sfide della Magna Grecia",
         "claim1": "Il pubblico non assaggia soltanto.",
         "claim2": "Il pubblico sceglie i vincitori.",
