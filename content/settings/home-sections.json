@@ -41,8 +41,6 @@
         "eyebrow": "Premiazione",
         "title": "Riconoscimento di Eccellenza — Grand Prix della Magna Grecia dell'edizione 2025",
         "subtitle": "I migliori produttori premiati per la qualità straordinaria dei loro vini e oli. Un riconoscimento che celebra l'eccellenza del Sud Italia.",
-        "registrationsNote": "Iscrizioni al concorso aperte dal 1° settembre 2026",
-        "registrationsDetail": "Le aziende potranno iscrivere uno o più prodotti nelle categorie previste, corrispondendo la quota di partecipazione per ciascun prodotto presentato.",
         "expandLabel": "Scopri tutti i vincitori",
         "collapseLabel": "Mostra meno categorie",
         "featuredAwards": [
@@ -109,7 +107,7 @@
     "sponsor": {
         "eyebrow": "Sponsor & Espositori",
         "title": "Sponsor, Espositori e Spazi Disponibili",
-        "body": "[PLACEHOLDER — contenuto da confermare] Dettagli su pacchetti sponsor, spazi espositivi e disponibilità saranno pubblicati non appena confermati. Per informazioni immediate su spazi e opportunità di partnership, contatta la segreteria organizzativa.",
+        "body": "Dettagli su pacchetti sponsor, spazi espositivi e disponibilità saranno pubblicati non appena confermati. Per informazioni immediate su spazi e opportunità di partnership, contatta la segreteria organizzativa.",
         "ctaLabel": "Richiedi Informazioni",
         "ctaHref": "#contatti"
     },
@@ -163,20 +161,6 @@
         "venueName": "Lungomare Caracciolo, Napoli",
         "venueDescription": "Nel cuore della città, tra il mare e la storia",
         "collaboration": "In collaborazione con Assessorato all'Agricoltura della Regione Campania",
-        "pass": {
-            "title": "Pass Giuria Popolare",
-            "intro": "Necessario per partecipare alle degustazioni, votare i concorrenti, ricevere i gadget ufficiali della manifestazione e accedere alle visite gratuite del Villaggio della Prevenzione dell'ASL Napoli 1 Centro.",
-            "availabilityNote": "In vendita dal 24 agosto 2026",
-            "benefits": [
-                "Badge ufficiale \"Giuria Popolare\"",
-                "QR Code personale per il voto",
-                "Bicchiere ufficiale serigrafato",
-                "Portabicchiere ufficiale",
-                "Gadget previsti dal Pass acquistato",
-                "Accesso ai servizi riservati",
-                "Possibilità di prenotare gratuitamente le visite di prevenzione dell'ASL Napoli 1 Centro"
-            ]
-        },
         "externalLink": {
             "label": "NAPOLIRACINGSHOW.IT",
             "url": "https://www.napoliracingshow.it"
@@ -193,5 +177,106 @@
             "La prima edizione della Rassegna si è svolta con grande successo di pubblico e critica sul Lungomare Caracciolo di Napoli il 6-7-8 Dicembre 2025.",
             "Un evento aperto gratuitamente al pubblico, che ha sancito la nascita di un nuovo punto di riferimento per l'enogastronomia di qualità del Mezzogiorno, confermando che il Sud è pronto a raccontare la propria eccellenza al mondo."
         ]
+    },
+    "sfideAccordion": {
+        "eyebrow": "Partecipa",
+        "title": "Scegli come partecipare",
+        "items": [
+            {
+                "kind": "biglietti",
+                "label": "Biglietti & Pass",
+                "heading": "Vivi da protagonista un weekend unico",
+                "subheading": "Se vuoi degustare, votare e decidere chi vince…",
+                "sectionTitle": "Diventa Giurato Popolare",
+                "tiers": [
+                    { "name": "1 Sfida a scelta", "price": "€25", "featured": false, "features": ["Posto riservato", "Degustazione", "Voto", "Bicchiere ufficiale serigrafato", "Portabicchiere ufficiale"] },
+                    { "name": "3 Sfide a scelta", "price": "€50", "featured": false, "features": ["Posto riservato", "3 degustazioni", "3 voti", "Bicchiere ufficiale", "Portabicchiere ufficiale"] },
+                    { "name": "Pass Gran Giurato — Tutte le 9 Sfide", "price": "€70", "featured": true, "badge": "⭐", "features": ["9 Sfide", "9 degustazioni", "9 voti", "Bicchiere ufficiale", "Portabicchiere ufficiale"] }
+                ],
+                "ctaLabel": "Diventa Giurato",
+                "ctaHref": "",
+                "extraTitle": "🩺 Prevenzione gratuita con ASL Napoli 1 Centro",
+                "extraBody": "I maggiorenni in possesso del Biglietto Tribuna del Napoli Racing Show o del Pass Giuria Popolare del Gran Premio del Gusto, previa prenotazione e fino a esaurimento dei posti disponibili, potranno effettuare visite gratuite di prevenzione presso il Camper della Salute dell'ASL Napoli 1 Centro nelle giornate di venerdì 27 e sabato 28 novembre 2026.",
+                "extraCtaLabel": "Prenota la tua visita gratuita",
+                "extraCtaHref": ""
+            },
+            {
+                "kind": "iscrivi",
+                "label": "Iscrivi la tua Azienda",
+                "heading": "Porta la tua eccellenza in gara",
+                "subheading": "Gran Premio del Gusto 2026 — Le Sfide della Magna Grecia · 27 • 28 • 29 Novembre 2026 · Rotonda Diaz – Lungomare Caracciolo – Napoli",
+                "body": [
+                    "Le aziende produttrici possono iscrivere un proprio prodotto a uno dei 9 Concorsi del Gran Premio del Gusto – Le Sfide della Magna Grecia.",
+                    "Per garantire qualità delle degustazioni, adeguato spazio alla presentazione delle aziende e corretta valutazione dei prodotti, il numero dei partecipanti a ciascun Concorso è limitato."
+                ],
+                "note": "Le iscrizioni saranno accettate in ordine di arrivo fino a esaurimento dei posti disponibili per ciascuna sfida.",
+                "concorsiTitle": "Scegli il tuo Concorso",
+                "concorsi": [
+                    { "icon": "🍺", "name": "Birra & Street Food" },
+                    { "icon": "🍕", "name": "Vino & Pizza" },
+                    { "icon": "🐟", "name": "Vino & Pesce" },
+                    { "icon": "🥩", "name": "Vino & Carne" },
+                    { "icon": "🍝", "name": "Vino & Pasta" },
+                    { "icon": "🍷", "name": "Vino & Sigaro" },
+                    { "icon": "🫒", "name": "Il Miglior Olio Extravergine" },
+                    { "icon": "🥃", "name": "Il Miglior Amaro" },
+                    { "icon": "🍰", "name": "Il Miglior Liquore per il Miglior Dolce" }
+                ],
+                "phasesTitle": "Come funziona ogni Sfida",
+                "phasesIntro": "Ogni Concorso del Gran Premio del Gusto avrà una durata indicativa di 60 minuti.",
+                "phases": [
+                    { "time": "15 minuti", "title": "Le aziende presentano i propri prodotti", "desc": "Le aziende concorrenti raccontano brevemente la propria storia, il territorio, le caratteristiche e le qualità del prodotto presentato." },
+                    { "time": "10 minuti", "title": "Gli esperti raccontano i prodotti in gara", "desc": "Chef, sommelier, giornalisti ed esperti del settore illustrano le caratteristiche dei prodotti e accompagnano le Giurie alla degustazione." },
+                    { "time": "20 minuti", "title": "Degustazione", "desc": "La Giuria Popolare e la Giuria Tecnica degustano e confrontano i prodotti in gara." },
+                    { "time": "5 minuti", "title": "Votazione", "desc": "Il risultato finale sarà determinato da: 70% Giuria Popolare · 30% Giuria Tecnica." },
+                    { "time": "10 minuti", "title": "Proclamazione del vincitore • Premiazione • Interviste • Foto", "desc": "" }
+                ],
+                "phasesNote": "Gli orari e la durata delle singole fasi potranno subire variazioni per esigenze organizzative.",
+                "feeTitle": "Quota di iscrizione",
+                "feeSubtitle": "Un prodotto • Un concorso",
+                "feeAmount": "€ 1.100 + IVA 22%",
+                "feeTotal": "Totale da versare: € 1.342",
+                "feeBody": [
+                    "La quota si riferisce all'iscrizione di un singolo prodotto a un singolo Concorso del Gran Premio del Gusto.",
+                    "Per iscrivere più prodotti e/o partecipare a più Concorsi dovrà essere presentata una distinta iscrizione per ciascun prodotto."
+                ],
+                "ctaLabel": "Iscrivi la tua Azienda",
+                "ctaHref": ""
+            },
+            {
+                "kind": "sponsor",
+                "label": "Diventa Sponsor",
+                "heading": "Porta il tuo brand al Gran Premio del Gusto",
+                "body": [
+                    "Diventa protagonista dell'evento: visibilità sul Lungomare Caracciolo, davanti al pubblico della Rassegna Vini e Oli della Magna Grecia."
+                ],
+                "ctaLabel": "Diventa Sponsor",
+                "ctaHref": "https://www.napoliracingshow.it/pag/1/sponsor-1/"
+            },
+            {
+                "kind": "shop",
+                "label": "Shop Ufficiale",
+                "heading": "Shop Ufficiale",
+                "body": [
+                    "Gadget e prodotti ufficiali della Rassegna. Lo shop sarà disponibile a breve."
+                ],
+                "ctaLabel": "Vai allo Shop",
+                "ctaHref": ""
+            }
+        ]
+    },
+    "granPremioIntro": {
+        "kicker": "Il Gran Premio del Gusto",
+        "stat1": "9 Sfide • 9 Vincitori",
+        "stat2": "Giuria Popolare 70% • Giuria Tecnica 30%",
+        "brand": "VINISUD.IT",
+        "edition": "Vini & Oli della Magna Grecia – II Edizione",
+        "dates": "27 • 28 • 29 Novembre 2026",
+        "venue": "Rotonda Diaz • Lungomare Caracciolo • Napoli",
+        "subtitle": "Le Sfide della Magna Grecia",
+        "claim1": "Il pubblico non assaggia soltanto.",
+        "claim2": "Il pubblico sceglie i vincitori.",
+        "tags": "Vini • Oli • Sapori • Dieta Mediterranea • Prevenzione • Motori • Spettacolo",
+        "freeEntry": "Ingresso al Villaggio gratuito"
     }
 }

@@ -1,6 +1,8 @@
 {
     "sections": [
         { "key": "hero", "enabled": true },
+        { "key": "sfideAccordion", "enabled": true },
+        { "key": "granPremioIntro", "enabled": true },
         { "key": "philosophy", "enabled": true },
         { "key": "grandPrixHighlight", "enabled": true },
         { "key": "territory", "enabled": true },
