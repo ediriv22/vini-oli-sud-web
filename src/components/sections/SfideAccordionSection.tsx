@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
 
@@ -230,11 +230,34 @@ function Panel({ item, index, email }: { item: Item; index: number; email: strin
   );
 }
 
+// Icona per ciascun riquadro (per tipo).
+const TILE_ICON: Record<string, string> = {
+  biglietti: "🎟️",
+  iscrivi: "🏆",
+  sponsor: "🤝",
+  shop: "🛍️",
+};
+
 export default function SfideAccordionSection() {
   const data = siteConfig.sfideAccordion;
   const items = data.items as readonly Item[];
   const email = siteConfig.contact.projectEmail;
-  const [open, setOpen] = useState<number | null>(0);
+  const [active, setActive] = useState(0);
+  const [stopped, setStopped] = useState(false);
+  const [hover, setHover] = useState(false);
+
+  // "Riquadri rotanti": il riquadro attivo avanza da solo ogni 5s, finché
+  // l'utente non ne sceglie uno (stop) o non passa il mouse sopra (pausa).
+  useEffect(() => {
+    if (stopped || hover) return;
+    const id = setInterval(() => setActive((i) => (i + 1) % items.length), 5000);
+    return () => clearInterval(id);
+  }, [stopped, hover, items.length]);
+
+  const choose = (i: number) => {
+    setActive(i);
+    setStopped(true);
+  };
 
   return (
     <section
@@ -243,7 +266,11 @@ export default function SfideAccordionSection() {
       className="section-flow section-space"
       data-content-key="sec:sfideAccordion"
     >
-      <div className="section-shell max-w-[60rem]">
+      <div
+        className="section-shell max-w-[64rem]"
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
         <div className="text-center">
           <p className="eyebrow text-center" data-content-key="field:sfideAccordion.eyebrow">
             {data.eyebrow}
@@ -257,41 +284,54 @@ export default function SfideAccordionSection() {
           </h2>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3">
+        {/* 4 riquadri rotanti */}
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" role="tablist" aria-label="Sezioni Partecipa">
           {items.map((item, index) => {
-            const isOpen = open === index;
+            const isActive = index === active;
             return (
-              <div
+              <button
                 key={item.kind}
-                className="overflow-hidden rounded-[1.1rem] border border-[rgba(47,91,70,0.28)] bg-[var(--color-ivory)]"
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => choose(index)}
+                className={`group flex flex-col items-center gap-3 rounded-[1.2rem] border px-5 py-7 text-center transition-all duration-300 ${
+                  isActive
+                    ? "border-[var(--color-sand-strong)] bg-[var(--color-grove)] text-[var(--color-ivory)] shadow-[0_12px_30px_rgba(26,53,40,0.18)] -translate-y-1"
+                    : "border-[rgba(47,91,70,0.28)] bg-[var(--color-ivory)] text-[var(--color-ink-strong)] hover:border-[var(--color-sand-strong)] hover:-translate-y-0.5"
+                }`}
               >
-                <button
-                  type="button"
-                  onClick={() => setOpen(isOpen ? null : index)}
-                  aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                <span aria-hidden="true" className="text-[2rem] leading-none">
+                  {TILE_ICON[item.kind] ?? "•"}
+                </span>
+                <span
+                  className="font-display text-[1.05rem] font-semibold leading-tight"
+                  data-content-key={`field:sfideAccordion.items.${index}.label`}
                 >
-                  <span
-                    className="font-display text-[1.15rem] font-semibold text-[var(--color-ink-strong)]"
-                    data-content-key={`field:sfideAccordion.items.${index}.label`}
-                  >
-                    {item.label}
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className={`text-[1.4rem] text-[var(--color-wine)] transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`}
-                  >
-                    ＋
-                  </span>
-                </button>
-                {isOpen ? (
-                  <div className="border-t border-[rgba(47,91,70,0.18)] px-6 py-6">
-                    <Panel item={item} index={index} email={email} />
-                  </div>
-                ) : null}
-              </div>
+                  {item.label}
+                </span>
+              </button>
             );
           })}
+        </div>
+
+        {/* Pallini di navigazione (riflettono la rotazione) */}
+        <div className="mt-6 flex items-center justify-center gap-2" aria-hidden="true">
+          {items.map((item, index) => (
+            <button
+              key={item.kind}
+              type="button"
+              onClick={() => choose(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === active ? "w-6 bg-[var(--color-wine)]" : "w-2 bg-[rgba(47,91,70,0.3)] hover:bg-[rgba(47,91,70,0.5)]"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Contenuto del riquadro attivo */}
+        <div className="mt-6 rounded-[1.3rem] border border-[rgba(47,91,70,0.22)] bg-[var(--color-ivory)] p-6 sm:p-8 shadow-[0_10px_28px_rgba(26,53,40,0.06)]">
+          <Panel item={items[active]} index={active} email={email} />
         </div>
       </div>
     </section>
