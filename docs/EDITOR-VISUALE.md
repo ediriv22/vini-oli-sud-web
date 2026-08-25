@@ -1,9 +1,43 @@
 # Editor visuale del pannello segreteria (`/admin`)
 
-Questo documento descrive l'editor visuale aggiunto all'admin, come funziona
-e come usarlo. Nessun database, nessun backend nuovo: tutto passa per i file
-JSON in `content/settings/`, il commit via GitHub Contents API e il deploy FTP
-esistente.
+Questo documento è il riferimento **tecnico** dell'editor visuale: come funziona
+e come si estende. Per la **guida d'uso** (non tecnica, per la segreteria) vedi
+[`GUIDA-SEGRETERIA.md`](GUIDA-SEGRETERIA.md); per il setup del server
+[`CMS_SETUP.md`](CMS_SETUP.md).
+
+Nessun database, nessun backend nuovo: tutto passa per i file JSON in
+`content/settings/`, il commit via GitHub Contents API e il deploy FTP esistente.
+
+## Canva (schermata principale) — page builder stile WordPress
+
+Dopo il login l'admin apre la **Canva**: la home reale in un iframe, modificabile
+in place. Le aree classiche restano in *"Modifica avanzata"* (`?menu=1`).
+
+Cosa si può fare nella Canva:
+- **Spostare le sezioni**: ogni sezione ha una toolbar (maniglia per trascinare,
+  frecce ▲▼, occhio mostra/nascondi, ⚙ proprietà). L'ordine/visibilità va in
+  `home-layout.json`.
+- **Modificare i testi**: si clicca un testo e si scrive (contenteditable). I
+  testi vanno in `home-sections.json`.
+- **Immagini e colori** (⚙ Proprietà): per le sezioni che li supportano (oggi
+  Copertina/Hero: immagine di sfondo + intensità ombreggiatura; Grand Prix:
+  colore + immagine di sfondo) un inspector nel pannello permette upload immagine
+  e color picker. Vanno in `site.json`.
+- **Pubblica**: un solo pulsante committa i file effettivamente cambiati
+  (`home-sections.json` / `home-layout.json` / `site.json`). Le modifiche
+  compaiono online dopo il deploy (~1–2 minuti).
+
+### Come è fatta (flusso)
+La Canva carica la home con `?editor=1&build=1`. Dentro l'iframe,
+`VisualEditorBridge` (modalità build) rende i testi `contenteditable`, aggiunge
+le toolbar alle sezioni e invia all'admin via `postMessage` gli eventi
+`edit`/`reorder`/`toggle`/`select`. L'admin (`public/admin/index.php`, vista
+`home-editor`) raccoglie tutto in campi nascosti e, alla "Pubblica",
+applica in sicurezza:
+- testi → `apply_path_edits()`: SOLO foglie stringa già esistenti, mai chiavi in
+  `$BLOCKLIST`, valori come testo puro (nessun HTML/struttura);
+- ordine → validato contro le sezioni note;
+- immagini/colori → whitelist `$SECTION_PROPS` (solo chiavi note di `site.json`).
 
 ## Cosa fa
 
