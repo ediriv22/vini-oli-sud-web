@@ -1,5 +1,35 @@
 [
   {
+    "id": "6e268cd7700b",
+    "category": "Calici di Magna Grecia",
+    "title": "Pizza della settimana: Nduja del Nord di Vincent Cavaleri e Puntalice Senatore Vini",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/pizza-della-settimana-nduja-del-nord-di-vincent-cavalieri-e-puntalice-senatore-vini/300676/",
+    "note": "Una voce dal mondo del vino, focus Calabria.",
+    "noteSource": "auto",
+    "date": "2026-08-25"
+  },
+  {
+    "id": "89b66f71b2aa",
+    "category": "Radar del Sud",
+    "title": "La Cena Straordinaria torna a Catanzaro: sei chef stellati per mille invitati, il ricavato darà vita a Pitta Pop",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/la-cena-straordinaria-torna-a-catanzaro-sei-chef-stellati-per-mille-invitati-il-ricavato-dara-vita-a-pitta-pop/300699/",
+    "note": "Una segnalazione di cucina, focus Calabria.",
+    "noteSource": "auto",
+    "date": "2026-08-25"
+  },
+  {
+    "id": "4b63742c8729",
+    "category": "Radar del Sud",
+    "title": "Il ristorante di Barcellona amato da Ferran Adrià dove si mangia alla barra tra brace, pesce e bistecche",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/ristoranti/ultramarinos-marin-barcellona-recensione/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-25"
+  },
+  {
     "id": "96b4b4c7aff7",
     "category": "Calici di Magna Grecia",
     "title": "I vini di Federico Graziani, uno sguardo a tu per tu con l'Etna più autentico",
@@ -268,35 +298,5 @@
     "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-08-16"
-  },
-  {
-    "id": "2c51cdbe727c",
-    "category": "Calici di Magna Grecia",
-    "title": "Cantina Votino a Montesarchio",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/cantina-votino-a-montesarchio/300254/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-15"
-  },
-  {
-    "id": "f41e85ef3789",
-    "category": "Calici di Magna Grecia",
-    "title": "Dalla botte più grande al mondo alla cantina dentro un'antica neviera: l'enoturismo diffuso di Tommasi",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/enoturismo-tommasi-wine-hospitality-valpolicella-botte-magnifica/",
-    "note": "Una voce dal mondo del vino, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-08-15"
-  },
-  {
-    "id": "89d7766cee4f",
-    "category": "Calici di Magna Grecia",
-    "title": "VINerdì | 3 est Est! Est!! Est!!! di Montefiascone doc 2025, Cantina la Nobra",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vinerdi-3-est-est-est-est-di-montefiascone-doc-2025-cantina-la-nobra/300078/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-14"
   }
 ]
