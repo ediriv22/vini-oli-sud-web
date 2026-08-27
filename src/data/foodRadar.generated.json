@@ -1,5 +1,45 @@
 [
   {
+    "id": "b466f44c516b",
+    "category": "Territori",
+    "title": "10° Concorso Miglior rosato del Mediterraneo, la seconda selezione premia la calabria del biologico",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/10-concorso-miglior-rosato-del-mediterraneo-la-seconda-selezione-premia-la-calabria-del-biologico/300747/",
+    "note": "Una notizia dal calendario dei territori, focus Calabria.",
+    "noteSource": "auto",
+    "date": "2026-08-27"
+  },
+  {
+    "id": "ebf69e4a93f7",
+    "category": "Calici di Magna Grecia",
+    "title": "Vini Bianchi, Rosati e Spumante Azienda Vinicola Cantele – Nuove annate",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vini-azienda-vinicola-cantele-nuove-annate/191880/",
+    "note": "Una voce dal mondo del vino, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-08-27"
+  },
+  {
+    "id": "8c0e007ea44d",
+    "category": "Calici di Magna Grecia",
+    "title": "Camerlengo Aglianico del Vulture Doc 2006 in Jeroboam",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/camerlengo-aglianico-del-vulture-doc-2006-in-jeroboam/300778/",
+    "note": "Una voce dal mondo del vino, focus Basilicata.",
+    "noteSource": "auto",
+    "date": "2026-08-27"
+  },
+  {
+    "id": "50dbe3d1278b",
+    "category": "Oro Verde",
+    "title": "Taranto gioca male la cena di gala con Berton e scivola sull'Olio: daje",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/cena-gala-giochi-mediterraneo-taranto-2026-polemiche",
+    "note": "Un segnale dall'olio del Sud, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-08-26"
+  },
+  {
     "id": "6e268cd7700b",
     "category": "Calici di Magna Grecia",
     "title": "Pizza della settimana: Nduja del Nord di Vincent Cavaleri e Puntalice Senatore Vini",
@@ -258,45 +298,5 @@
     "note": "Un segnale dall'olio del Sud, focus Sardegna.",
     "noteSource": "auto",
     "date": "2026-08-18"
-  },
-  {
-    "id": "da12b662eb15",
-    "category": "Calici di Magna Grecia",
-    "title": "Da cava abbandonata a cantina d'autore: il luogo più sorprendente da visitare a Bolgheri",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/enoturismo-cantina-meraviglia-bolgheri/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-18"
-  },
-  {
-    "id": "fd4871402bd4",
-    "category": "Radar del Sud",
-    "title": "Un ristorante sul Vesuvio fa esclamare Oh mamma mia!",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/ristorante-u-mammami-a-ottaviano",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-08-17"
-  },
-  {
-    "id": "877d929cf195",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Una bottiglia che pago 15 euro sono costretto a venderla a 60\". Parla il manager di un grande ristorante",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/ricarichi-vino-ristorante-bottiglia-15-euro-60/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-17"
-  },
-  {
-    "id": "914d3a06e76a",
-    "category": "Radar del Sud",
-    "title": "Lo chef pugliese a Parigi è a caccia delle due stelle Michelin",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/maison-ruggieri-palais-royal-parigi",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-16"
   }
 ]
