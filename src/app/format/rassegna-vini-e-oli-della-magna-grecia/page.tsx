@@ -1,3 +1,4 @@
+import Image from "next/image";
 import EventDetailsSection from "@/components/sections/EventDetailsSection";
 import RegionsSection from "@/components/sections/RegionsSection";
 import TerritorySection from "@/components/sections/TerritorySection";
@@ -19,13 +20,22 @@ export default function RassegnaPage() {
     <>
       <EventDetailsSection />
 
+      {/* La riga "In collaborazione con Assessorato all'Agricoltura" è già
+          nell'Hero sopra (EventDetailsSection.collaboration): qui solo il
+          logo e le info che non sono altrove (AIS, regolamento). */}
       <section className="section-flow section-space-sm">
         <div className="section-shell mx-auto max-w-[52rem] text-center">
-          <p className="eyebrow">In collaborazione con</p>
-          <p className="mt-4 font-display text-[1.3rem] leading-[1.3] text-[var(--color-ink-strong)]">
-            Assessorato all&rsquo;Agricoltura della Regione Campania
-          </p>
-          <p className="mt-3 text-[0.96rem] leading-[1.65] text-[var(--color-muted)]">
+          <div className="flex justify-center">
+            <Image
+              src="/brand/partners/regione-campania.png"
+              alt="Regione Campania — Assessorato all'Agricoltura"
+              width={280}
+              height={280}
+              unoptimized
+              className="h-[92px] w-[110px] rounded-[1rem] border border-[rgba(47,91,70,0.2)] bg-[rgba(255,253,245,0.85)] object-contain p-3"
+            />
+          </div>
+          <p className="mt-5 text-[0.96rem] leading-[1.65] text-[var(--color-muted)]">
             E con la collaborazione di AIS &ndash; Associazione Italiana Sommelier per le
             Masterclass.
           </p>

@@ -57,7 +57,9 @@ export default function SectionHeader({
       </h2>
       {intro ? (
         <p
-          className="mt-5 max-w-[64ch] text-[0.98rem] leading-[1.65] text-[var(--color-muted)] sm:text-[1.02rem] sm:leading-[1.7]"
+          className={`mt-5 max-w-[64ch] text-[0.98rem] leading-[1.65] text-[var(--color-muted)] sm:text-[1.02rem] sm:leading-[1.7] ${
+            isCentered ? "mx-auto text-center" : ""
+          }`}
           data-content-key={introKey}
         >
           {intro}
