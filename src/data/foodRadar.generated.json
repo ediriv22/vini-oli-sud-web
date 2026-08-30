@@ -1,11 +1,71 @@
 [
   {
+    "id": "4f15fed520d9",
+    "category": "Calici di Magna Grecia",
+    "title": "Vigna del Vulcano Lacryma Christi Bianco del Vesuvio Doc 2006 – Villa Dora",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vigna-del-vulcano-lacryma-christi-bianco-del-vesuvio-doc-2006-villa-dora/300846/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-08-30"
+  },
+  {
+    "id": "664f3119e54f",
+    "category": "Calici di Magna Grecia",
+    "title": "MenoDodidIGP: Monte del Frà – Custoza DOC 2025",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/menododidigp-monte-del-fra-custoza-doc-2025/300687/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-30"
+  },
+  {
     "id": "33800507a4e4",
     "category": "Calici di Magna Grecia",
     "title": "InvecchiatIGP: Tenute Gregu – Vermentino di Gallura Superiore DOCG \"Selenu\" 2014",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/invecchiatigp-tenute-gregu-vermentino-di-gallura-superiore-docg-selenu-2014/300683/",
     "note": "Una voce dal mondo del vino, focus Sardegna.",
+    "noteSource": "auto",
+    "date": "2026-08-29"
+  },
+  {
+    "id": "ef82ef3cdca5",
+    "category": "Radar del Sud",
+    "title": "Vico Equense. Cerasé: la pizza di Vico e il pesce del Golfo di Napoli",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vico-equense-cerase-la-pizza-di-vico-e-il-pesce-del-golfo-di-napoli/300827/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-08-29"
+  },
+  {
+    "id": "b41fd0d9bd10",
+    "category": "Calici di Magna Grecia",
+    "title": "Vino e pizza: il sommelier in pizzeria 35 | Lorenzo Moroni",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vino-e-pizza-il-sommelier-in-pizzeria-35-lorenzo-moroni/300825/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-29"
+  },
+  {
+    "id": "bbc7bf99769d",
+    "category": "Calici di Magna Grecia",
+    "title": "In Abruzzo si mangia dentro una grotta scavata nella roccia. E la cantina ha più di mille vini",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/ristoranti/grotta-dei-raselli-guardiagrele-ristorante-grotta/",
+    "note": "Una voce dal mondo del vino, focus Abruzzo.",
+    "noteSource": "auto",
+    "date": "2026-08-29"
+  },
+  {
+    "id": "0a43b92f3c93",
+    "category": "Radar del Sud",
+    "title": "Nel castello del Marchese de Sade in Provenza oggi si mangia con 39 euro",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/ristoranti/chateau-mazan-marchese-de-sade-ristorante-provenza/",
+    "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-08-29"
   },
@@ -238,65 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-08-20"
-  },
-  {
-    "id": "16dd708aa73d",
-    "category": "Calici di Magna Grecia",
-    "title": "Perché l'enoturismo non salverà il vino italiano, ma può diventare la sua risorsa più importante",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/enoturismo-italiano-punti-di-forza-criticita/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-20"
-  },
-  {
-    "id": "d1137033c50f",
-    "category": "Calici di Magna Grecia",
-    "title": "Gite in barca e tour in cantina. L'incanto dell'enoturismo nella Riserva naturale dello Stagnone",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/enoturismo-stagnone-cantine-birgi/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-20"
-  },
-  {
-    "id": "580b0b06cf2a",
-    "category": "Radar del Sud",
-    "title": "Le Violon d'Ingres, recensione del ristorante sotto la Torre Eiffel",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/le-violon-d-ingres-ristorante-parigi",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-20"
-  },
-  {
-    "id": "349ec100b0e0",
-    "category": "Calici di Magna Grecia",
-    "title": "In Abruzzo il ritrovamento di una villa romana ha trasformato una cantina in un museo a cielo aperto",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/abruzzo-cantina-feudo-antico-enoturismo/",
-    "note": "Una voce dal mondo del vino, focus Abruzzo.",
-    "noteSource": "auto",
-    "date": "2026-08-19"
-  },
-  {
-    "id": "26324afcf772",
-    "category": "Radar del Sud",
-    "title": "Il Gargano che i turisti conoscono poco: tra foresta, pastori e una cucina molto diversa da quella di mare",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/cucina-gargano-oltre-mare-elisabetta-mondo/",
-    "note": "Una segnalazione di cucina, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-08-19"
-  },
-  {
-    "id": "d81205dd2f6c",
-    "category": "Calici di Magna Grecia",
-    "title": "Nasce il servizio di consegna vino negli Stati Uniti in 24 ore a prova di enoturista",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/fieramente-consegna-vino-stati-uniti-24/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-19"
   }
 ]
