@@ -78,7 +78,7 @@ export const siteConfig = {
   },
   organizer: {
     legalName: "A.S.D. Napoli Racing Show",
-    phones: ["3295535164", "3276616294", "081 5753432"] as const,
+    phones: ["329 553 5164", "327 661 6294", "334 159 0653", "081 575 3432"] as const,
     email: "napoliracingshow@gmail.com",
     emailAlt: "napoliracingshow@libero.it",
     pec: "asdnapoliracingshow@pec.it",
@@ -140,6 +140,10 @@ export const siteConfig = {
   // SfideAccordionSection e GranPremioIntroSection.
   sfideAccordion: homeSections.sfideAccordion,
   granPremioIntro: homeSections.granPremioIntro,
+  // Blocco "Due eventi. Un'unica grande festa del gusto." — distingue
+  // Rassegna e Gran Premio del Gusto in alto nella home. Vedi
+  // TwoEventsSection e src/app/format/.
+  twoEvents: homeSections.twoEvents,
 } as const;
 
 export function createPageMetadata(

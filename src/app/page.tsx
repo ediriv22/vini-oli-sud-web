@@ -10,6 +10,7 @@ import RegionsSection from "@/components/sections/RegionsSection";
 import SfideAccordionSection from "@/components/sections/SfideAccordionSection";
 import SponsorSection from "@/components/sections/SponsorSection";
 import TerritorySection from "@/components/sections/TerritorySection";
+import TwoEventsSection from "@/components/sections/TwoEventsSection";
 import VisualEditorBridge from "@/components/VisualEditorBridge";
 import { resolveHomeLayout, type SectionKey } from "@/data/homeLayout";
 
@@ -19,6 +20,7 @@ import { resolveHomeLayout, type SectionKey } from "@/data/homeLayout";
 // via /admin), letto tramite resolveHomeLayout().
 const SECTION_REGISTRY: Record<SectionKey, ComponentType> = {
   hero: HeroSection,
+  twoEvents: TwoEventsSection,
   sfideAccordion: SfideAccordionSection,
   granPremioIntro: GranPremioIntroSection,
   philosophy: PhilosophySection,

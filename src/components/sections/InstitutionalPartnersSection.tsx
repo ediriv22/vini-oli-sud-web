@@ -87,10 +87,6 @@ export default function InstitutionalPartnersSection() {
             label={institutionalPartners.supervisionLabel}
             entries={institutionalPartners.supervision}
           />
-          <PartnerGroup
-            label={institutionalPartners.partnerLabel}
-            entries={institutionalPartners.partners}
-          />
         </div>
       </div>
     </section>

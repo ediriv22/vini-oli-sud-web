@@ -8,7 +8,7 @@
                 "titleSuffix": "",
                 "paragraph": "Un viaggio al Sud è un'esperienza totale: è storia, gusto, paesaggio e passione. Benvenuti nella terra dell'eccellenza.",
                 "ctaLabel": "Scopri la Rassegna 2026",
-                "ctaHref": "#evento"
+                "ctaHref": "/format/rassegna-vini-e-oli-della-magna-grecia/"
             },
             {
                 "eyebrow": "Oro Verde e Fuoco",
@@ -17,7 +17,7 @@
                 "titleSuffix": "",
                 "paragraph": "Vigne eroiche e ulivi secolari custodiscono un sapere che nasce dalla terra, non dai laboratori: gesti antichi che raccontano il Sud contro l'omologazione industriale.",
                 "ctaLabel": "Esplora il Territorio",
-                "ctaHref": "#territorio"
+                "ctaHref": "/format/rassegna-vini-e-oli-della-magna-grecia/#territorio"
             },
             {
                 "eyebrow": "27 · 28 · 29 Novembre 2026",
@@ -26,7 +26,7 @@
                 "titleSuffix": " di Napoli",
                 "paragraph": "Tre giorni di degustazioni e cultura mediterranea sul Lungomare Caracciolo, a ingresso libero per il pubblico, in collaborazione con l'Assessorato all'Agricoltura della Regione Campania.",
                 "ctaLabel": "Tutte le Info",
-                "ctaHref": "#evento"
+                "ctaHref": "/programma/"
             }
         ]
     },
@@ -75,8 +75,8 @@
     },
     "regions": {
         "eyebrow": "Le terre dell'eccellenza",
-        "title": "Le Regioni della Magna Grecia: un'unica anima",
-        "description": "Ogni territorio racconta un volto diverso del Sud. Insieme, formano l'identità agricola più ricca, vera e promettente d'Europa.",
+        "title": "Magna Grecia e Terre dell'Eccellenza del Mezzogiorno",
+        "description": "Un'unica anima mediterranea.",
         "items": [
             {
                 "name": "Calabria",
@@ -112,49 +112,34 @@
         "ctaHref": "#contatti"
     },
     "institutionalPartners": {
-        "eyebrow": "Con il supporto di",
-        "title": "Enti e Partner Istituzionali",
+        "eyebrow": "Enti e Organizzazione",
+        "title": "In collaborazione con l'Assessorato all'Agricoltura della Regione Campania",
         "organizzazioneLabel": "Organizzazione",
-        "supervisionLabel": "Con la supervisione e le indicazioni di",
-        "partnerLabel": "Partner istituzionale",
+        "supervisionLabel": "Con il patrocinio di",
         "organizzazione": [
             {
                 "name": "A.S.D. Napoli Racing Show",
                 "logo": "/brand/partners/asd-napoli-racing-show.png"
+            },
+            {
+                "name": "Vini & OliSud",
+                "logo": "/brand/logo-badge-verde.jpg"
             }
         ],
         "supervision": [
-            {
-                "name": "Comune di Napoli",
-                "logo": "/brand/partners/comune-napoli.png"
-            },
             {
                 "name": "Regione Campania",
                 "logo": "/brand/partners/regione-campania.png"
             },
             {
-                "name": "Assessorato Agricoltura",
-                "logo": ""
-            },
-            {
-                "name": "Assessorato Turismo",
-                "logo": ""
-            }
-        ],
-        "partners": [
-            {
-                "name": "Ministero dell'Agricoltura, della Sovranità Alimentare e delle Foreste",
-                "logo": "/brand/partners/ministero-agricoltura-sovranita-alimentare-foreste.png"
-            },
-            {
-                "name": "Città Metropolitana di Napoli",
-                "logo": "/brand/partners/citta-metropolitana-napoli.png"
+                "name": "Comune di Napoli",
+                "logo": "/brand/partners/comune-napoli.png"
             }
         ]
     },
     "eventDetails": {
         "eyebrow": "L'evento",
-        "title": "II° Rassegna Vini e Oli della Magna Grecia",
+        "title": "2ª Rassegna Vini e Oli della Magna Grecia",
         "dates": "27 - 28 - 29 Novembre 2026",
         "admission": "Ingresso gratuito al pubblico",
         "villageAccessNote": "Accesso libero a stand espositivi, convegni, aree istituzionali e presentazioni.",
@@ -172,21 +157,33 @@
     },
     "alboDoro": {
         "eyebrow": "Albo d'oro",
-        "title": "Il successo della I° Edizione",
+        "title": "Il successo della 1ª Edizione",
         "paragraphs": [
             "La prima edizione della Rassegna si è svolta con grande successo di pubblico e critica sul Lungomare Caracciolo di Napoli il 6-7-8 Dicembre 2025.",
             "Un evento aperto gratuitamente al pubblico, che ha sancito la nascita di un nuovo punto di riferimento per l'enogastronomia di qualità del Mezzogiorno, confermando che il Sud è pronto a raccontare la propria eccellenza al mondo."
-        ]
+        ],
+        "ctaLabel": "Scopri i Vincitori 2025",
+        "ctaHref": "/vincitori-2025/"
     },
     "sfideAccordion": {
         "eyebrow": "Partecipa",
-        "title": "Scegli come partecipare",
+        "title": "Scopri la Rassegna 2026",
         "items": [
+            {
+                "kind": "programma",
+                "label": "Programma",
+                "heading": "Il Programma 2026",
+                "body": [
+                    "Tre giorni di degustazioni, masterclass e Sfide del Gran Premio del Gusto: 27, 28 e 29 novembre 2026 a Rotonda Diaz, Lungomare Caracciolo, Napoli."
+                ],
+                "ctaLabel": "Vai al Programma",
+                "ctaHref": "/programma/"
+            },
             {
                 "kind": "biglietti",
                 "label": "Biglietti & Pass",
-                "heading": "Vivi da protagonista un weekend unico",
-                "subheading": "Se vuoi degustare, votare e decidere chi vince…",
+                "heading": "L'ingresso alla manifestazione è libero e gratuito",
+                "subheading": "Se vuoi vivere da protagonista un weekend unico, degustare, votare e decidere chi vince…",
                 "sectionTitle": "Diventa Giurato Popolare",
                 "tiers": [
                     { "name": "1 Sfida a scelta", "price": "€25", "featured": false, "features": ["Posto riservato", "Degustazione", "Voto", "Bicchiere ufficiale serigrafato", "Portabicchiere ufficiale"] },
@@ -270,7 +267,7 @@
         "stat1": "9 Sfide • 9 Vincitori",
         "stat2": "Giuria Popolare 70% • Giuria Tecnica 30%",
         "brand": "VINISUD.IT",
-        "edition": "Vini & Oli della Magna Grecia – II Edizione",
+        "edition": "2ª Rassegna Vini & Oli della Magna Grecia",
         "dates": "27 • 28 • 29 Novembre 2026",
         "venue": "Rotonda Diaz • Lungomare Caracciolo • Napoli",
         "subtitle": "Le Sfide della Magna Grecia",
@@ -278,5 +275,24 @@
         "claim2": "Il pubblico sceglie i vincitori.",
         "tags": "Vini • Oli • Sapori • Dieta Mediterranea • Prevenzione • Motori • Spettacolo",
         "freeEntry": "Ingresso al Villaggio gratuito"
+    },
+    "twoEvents": {
+        "title": "Due eventi. Un'unica grande festa del gusto.",
+        "dateLine": "27 · 28 · 29 Novembre 2026",
+        "venueLine": "Rotonda Diaz · Napoli",
+        "cards": [
+            {
+                "title": "2ª Rassegna Vini e Oli della Magna Grecia",
+                "tagline": "Ingresso libero · Stand · Masterclass · Territorio · Eccellenze",
+                "ctaLabel": "Scopri la Rassegna",
+                "ctaHref": "/format/rassegna-vini-e-oli-della-magna-grecia/"
+            },
+            {
+                "title": "1ª Edizione del Gran Premio del Gusto",
+                "tagline": "9 Sfide · 9 Vincitori · 70% Giuria Popolare · 30% Giuria Tecnica",
+                "ctaLabel": "Scopri il Gran Premio",
+                "ctaHref": "/format/gran-premio-del-gusto/"
+            }
+        ]
     }
 }

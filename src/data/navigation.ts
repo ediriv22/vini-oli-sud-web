@@ -1,11 +1,15 @@
-// Navigazione a singola pagina: tutte le voci sono ancore interne alla
-// home (nessuna route separata). Vedi src/app/page.tsx per gli id di
-// sezione corrispondenti.
+// Navigazione principale — architettura 2026: 5 voci di primo livello +
+// CTA "Contatti" separata (vedi headerPrimaryCta). Sponsor resta un'ancora
+// nella home (SponsorSection, id="sponsor"): da qualunque pagina si apra
+// il menu, il link è root-relative ("/#sponsor") così la navigazione
+// funziona anche fuori dalla home. Le altre voci aprono pagine dedicate
+// sotto src/app/.
 export const mainNavigation = [
-  { label: "Home", href: "#top" },
-  { label: "Format e Programma", href: "#evento" },
-  { label: "Regolamento e Premi", href: "#grand-prix" },
-  { label: "Sponsor, Espositori e Spazi Disponibili", href: "#sponsor" },
+  { label: "Programma", href: "/programma/" },
+  { label: "Format", href: "/format/" },
+  { label: "Regolamenti e Premi", href: "/regolamenti-e-premi/" },
+  { label: "Vincitori 2025", href: "/vincitori-2025/" },
+  { label: "Sponsor", href: "/#sponsor" },
 ];
 
 export const headerPrimaryCta = {
@@ -15,8 +19,10 @@ export const headerPrimaryCta = {
 };
 
 export const footerNavigation = [
-  { label: "Format e Programma", href: "#evento" },
-  { label: "Regolamento e Premi", href: "#grand-prix" },
-  { label: "Sponsor, Espositori e Spazi Disponibili", href: "#sponsor" },
+  { label: "Programma", href: "/programma/" },
+  { label: "Format", href: "/format/" },
+  { label: "Regolamenti e Premi", href: "/regolamenti-e-premi/" },
+  { label: "Vincitori 2025", href: "/vincitori-2025/" },
+  { label: "Sponsor", href: "/#sponsor" },
   { label: "Contatti", href: "#contatti" },
 ];

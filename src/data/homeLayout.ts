@@ -10,6 +10,7 @@ import layout from "../../content/settings/home-layout.json";
 // manca) e alle chiavi di content/settings/home-sections.json.
 export const CANONICAL_SECTION_ORDER = [
   "hero",
+  "twoEvents",
   "sfideAccordion",
   "granPremioIntro",
   "philosophy",

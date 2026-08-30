@@ -1,3 +1,4 @@
+import Button from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
 
 export default function AlboDoroSection() {
@@ -32,6 +33,13 @@ export default function AlboDoroSection() {
             </p>
           ))}
         </div>
+        {alboDoro.ctaLabel ? (
+          <div className="mt-7">
+            <Button href={alboDoro.ctaHref} variant="soft" size="md">
+              {alboDoro.ctaLabel}
+            </Button>
+          </div>
+        ) : null}
       </div>
     </section>
   );

@@ -54,7 +54,7 @@ export default function Footer() {
               {siteConfig.organizer.phones.map((num) => (
                 <a
                   key={num}
-                  href={`tel:+39${num}`}
+                  href={`tel:+39${num.replace(/\s+/g, "")}`}
                   className="underline decoration-[rgba(255,215,87,0.5)] decoration-1 underline-offset-[3px] hover:text-[var(--color-sand)]"
                 >
                   {num}

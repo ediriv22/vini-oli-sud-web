@@ -54,7 +54,7 @@ function CtaButton({ href, email, children }: { href?: string; email: string; ch
   );
 }
 
-function Panel({ item, index, email }: { item: Item; index: number; email: string }) {
+export function Panel({ item, index, email }: { item: Item; index: number; email: string }) {
   const k = (f: string) => `field:sfideAccordion.items.${index}.${f}`;
   return (
     <div className="flex flex-col gap-5 text-[var(--color-muted)]">
@@ -232,11 +232,15 @@ function Panel({ item, index, email }: { item: Item; index: number; email: strin
 
 // Icona per ciascun riquadro (per tipo).
 const TILE_ICON: Record<string, string> = {
+  programma: "📅",
   biglietti: "🎟️",
   iscrivi: "🏆",
   sponsor: "🤝",
   shop: "🛍️",
 };
+
+// Tipo esportato per riuso in pagine dedicate (vedi src/app/format/).
+export type { Item as SfideAccordionItem };
 
 export default function SfideAccordionSection() {
   const data = siteConfig.sfideAccordion;
