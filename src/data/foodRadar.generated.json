@@ -1,5 +1,15 @@
 [
   {
+    "id": "335d6cd888ac",
+    "category": "Calici di Magna Grecia",
+    "title": "La Matta di Casebianche, il fiano frizzante del Cilento",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/la-matta-di-casebianche-il-fiano-frizzante-del-cilento/300914/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-08-31"
+  },
+  {
     "id": "4f15fed520d9",
     "category": "Calici di Magna Grecia",
     "title": "Vigna del Vulcano Lacryma Christi Bianco del Vesuvio Doc 2006 – Villa Dora",
@@ -16,6 +26,16 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/menododidigp-monte-del-fra-custoza-doc-2025/300687/",
     "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-08-30"
+  },
+  {
+    "id": "e292d407e794",
+    "category": "Radar del Sud",
+    "title": "Cianciuolo a Pozzallo, il valore contemporaneo della ristorazione marinara",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/cianciuolo-a-pozzallo-il-valore-contemporaneo-della-ristorazione-marinara/300878/",
+    "note": "Una segnalazione gastronomica del Sud.",
     "noteSource": "auto",
     "date": "2026-08-30"
   },
@@ -278,25 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-08-21"
-  },
-  {
-    "id": "80d67b8c215d",
-    "category": "Territori",
-    "title": "Durazzano (Sannio): quattro giorni di gusto, territorio e grandi racconti del vino",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/durazzano-sannio-quattro-giorni-di-gusto-territorio-e-grandi-racconti-del-vino/300466/",
-    "note": "Una notizia dal calendario dei territori, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-08-20"
-  },
-  {
-    "id": "798a750b12b6",
-    "category": "Calici di Magna Grecia",
-    "title": "Vino e pizza: il sommelier in pizzeria 34 | Diego Apicella",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vino-e-pizza-il-sommelier-in-pizzeria-34-diego-apicella/300518/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-20"
   }
 ]
