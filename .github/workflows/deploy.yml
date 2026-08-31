@@ -47,14 +47,23 @@ jobs:
           local-dir: ./out/
           # L'utente FTP atterra un livello sopra: il sito vive in www.vinisud.it/
           server-dir: ./www.vinisud.it/
-          # NON toccare le cartelle gestite a mano sul server:
-          # - forms/  → backend PHP, config.php, PHPMailer, log (mai sovrascrivere)
-          # - cgi-bin/ → cartella di sistema Aruba
+          # NON toccare lo stato gestito a mano sul server:
+          # - forms/config.php, forms/data/, forms/PHPMailer/ → credenziali,
+          #   log e libreria installati manualmente (mai sovrascrivere).
+          # - cgi-bin/ → cartella di sistema Aruba.
+          # ATTENZIONE: "forms/**" andava escluso PRIMA di forms/config.php
+          # (glob più specifico prima di quello generico) o il deploy
+          # rifiuta il pattern come duplicato/contraddittorio: qui i pattern
+          # sono già mirati ai soli path sensibili, forms/*.php (lead.php,
+          # config.example.php...) resta incluso e viene pubblicato.
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
-            forms/**
+            forms/config.php
+            forms/data/**
+            forms/PHPMailer/**
+            forms/vendor/**
             cgi-bin/**
             admin/config.php
             **/*_Backup_*/**
