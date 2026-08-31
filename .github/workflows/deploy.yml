@@ -48,21 +48,18 @@ jobs:
           # L'utente FTP atterra un livello sopra: il sito vive in www.vinisud.it/
           server-dir: ./www.vinisud.it/
           # NON toccare lo stato gestito a mano sul server:
-          # - forms/config.php, forms/data/, forms/PHPMailer/ → credenziali,
-          #   log e libreria installati manualmente (mai sovrascrivere).
+          # - forms/config.php, forms/data/ → credenziali e log (mai
+          #   sovrascrivere né cancellare).
           # - cgi-bin/ → cartella di sistema Aruba.
-          # ATTENZIONE: "forms/**" andava escluso PRIMA di forms/config.php
-          # (glob più specifico prima di quello generico) o il deploy
-          # rifiuta il pattern come duplicato/contraddittorio: qui i pattern
-          # sono già mirati ai soli path sensibili, forms/*.php (lead.php,
-          # config.example.php...) resta incluso e viene pubblicato.
+          # PHPMailer ora è vendorizzato in public/forms/PHPMailer/ (era
+          # escluso qui E da .gitignore: risultato, non è mai arrivato sul
+          # server. Deploya normalmente insieme a lead.php.
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
             forms/config.php
             forms/data/**
-            forms/PHPMailer/**
             forms/vendor/**
             cgi-bin/**
             admin/config.php

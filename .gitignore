@@ -36,7 +36,6 @@ yarn-error.log*
 # Backend form: config reale e log non vanno in repo
 public/forms/config.php
 public/forms/data/
-public/forms/PHPMailer/
 public/forms/vendor/
 
 # vercel
