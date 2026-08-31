@@ -106,10 +106,10 @@
     },
     "sponsor": {
         "eyebrow": "Sponsor & Espositori",
-        "title": "Sponsor, Espositori e Spazi Disponibili",
-        "body": "Dettagli su pacchetti sponsor, spazi espositivi e disponibilità saranno pubblicati non appena confermati. Per informazioni immediate su spazi e opportunità di partnership, contatta la segreteria organizzativa.",
+        "title": "Diventa Sponsor",
+        "body": "65.000 presenze nel 2024, 150.000 nel 2025: prenota stand espositivi, spazi promozionali e altre opportunità di visibilità nel Villaggio Vini e Oli della Magna Grecia.",
         "ctaLabel": "Richiedi Informazioni",
-        "ctaHref": "#contatti"
+        "ctaHref": "/sponsor/"
     },
     "institutionalPartners": {
         "eyebrow": "Enti e Organizzazione",
@@ -237,8 +237,8 @@
                     "La quota si riferisce all'iscrizione di un singolo prodotto a un singolo Concorso del Gran Premio del Gusto.",
                     "Per iscrivere più prodotti e/o partecipare a più Concorsi dovrà essere presentata una distinta iscrizione per ciascun prodotto."
                 ],
-                "ctaLabel": "Iscrivi la tua Azienda",
-                "ctaHref": "mailto:napoliracingshow@gmail.com"
+                "ctaLabel": "🏆 Iscrivi il tuo Prodotto",
+                "ctaHref": "/format/gran-premio-del-gusto/iscrizione/"
             },
             {
                 "kind": "sponsor",
@@ -248,7 +248,7 @@
                     "Diventa protagonista dell'evento: visibilità sul Lungomare Caracciolo, davanti al pubblico della Rassegna Vini e Oli della Magna Grecia."
                 ],
                 "ctaLabel": "Diventa Sponsor",
-                "ctaHref": "mailto:napoliracingshow@gmail.com"
+                "ctaHref": "/sponsor/"
             },
             {
                 "kind": "shop",

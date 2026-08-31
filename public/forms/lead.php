@@ -146,6 +146,61 @@ function vos_make_request_id(): string {
     return strtolower(bin2hex(random_bytes(6)));
 }
 
+/**
+ * Valida e salva un file caricato ($_FILES[$field]) sotto
+ * $dataDir/uploads/$requestId/. Ritorna il path assoluto salvato, o null se
+ * il campo non è stato inviato (consentito solo quando $required = false).
+ * In caso di errore di validazione, chiama $onError e termina la richiesta
+ * (stessa forma di $respond, passata dal chiamante per evitare una
+ * dipendenza circolare sulla closure definita più in basso nel file).
+ */
+function vos_save_upload(
+    string $dataDir,
+    string $requestId,
+    string $field,
+    bool $required,
+    callable $onError
+): ?string {
+    $file = $_FILES[$field] ?? null;
+    $hasFile = is_array($file) && ($file['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_NO_FILE;
+
+    if (!$hasFile) {
+        if ($required) {
+            $onError('Il file richiesto "' . $field . '" non è stato ricevuto.');
+        }
+        return null;
+    }
+    if ($file['error'] !== UPLOAD_ERR_OK) {
+        $onError('Caricamento file non riuscito (' . $field . ').');
+    }
+
+    $maxBytes = 15 * 1024 * 1024; // 15MB per file
+    if (($file['size'] ?? 0) > $maxBytes) {
+        $onError('Il file "' . $field . '" supera i 15MB consentiti.');
+    }
+
+    $allowed = [
+        'application/pdf'  => 'pdf',
+        'image/png'        => 'png',
+        'image/jpeg'       => 'jpg',
+    ];
+    $finfo = new finfo(FILEINFO_MIME_TYPE);
+    $mime = (string) $finfo->file($file['tmp_name']);
+    if (!isset($allowed[$mime])) {
+        $onError('Formato non consentito per "' . $field . '" (solo PDF, PNG, JPG).');
+    }
+
+    $dir = $dataDir . '/uploads/' . $requestId;
+    if (!is_dir($dir) && !@mkdir($dir, 0750, true) && !is_dir($dir)) {
+        $onError('Impossibile salvare il file "' . $field . '" sul server.');
+    }
+    $dest = $dir . '/' . preg_replace('/[^a-z0-9_-]/', '', strtolower($field)) . '.' . $allowed[$mime];
+    if (!@move_uploaded_file($file['tmp_name'], $dest)) {
+        $onError('Impossibile salvare il file "' . $field . '" sul server.');
+    }
+    return $dest;
+}
+
 function vos_log_request(string $dataDir, string $requestId, string $type, bool $ok): void {
     $line = sprintf(
         "%s\t%s\t%s\t%s\t%s\n",
@@ -277,12 +332,162 @@ if (empty($privacy)) {
     $respond(false, 'Devi accettare la privacy policy per inviare la richiesta.');
 }
 
+// Generato qui (anziché nella sezione 7 originale) perché le due richieste
+// con upload file (iscrizione-prodotto, richiesta-sponsor più sotto) hanno
+// bisogno del requestId già pronto per nominare la cartella di salvataggio.
+$requestId = vos_make_request_id();
+$onFileError = function (string $message) use ($respond): void {
+    $respond(false, $message);
+};
+
 $payload = [];
 $subject = '';
 $kind    = '';
 $record  = [];
+// Destinatario forzato (bypassa il routing MAIL_TO_* di config.php): usato
+// solo dalle richieste per cui il destinatario è fisso per requisito
+// esplicito di prodotto, non configurabile lato server. Vedi §6bis/6ter.
+$forcedTo = null;
+// Allegati email (path assoluti locali) per le richieste con upload file.
+$attachments = [];
 
-if ($requestType === 'carnet-degustazione' || $audience === 'visitatori') {
+if ($requestType === 'iscrizione-prodotto') {
+    $kind = 'iscrizione-prodotto';
+    $forcedTo = 'napoliracingshow@gmail.com';
+
+    $fields = [
+        'ragione_sociale'        => 'Ragione sociale',
+        'piva'                   => 'Partita IVA / Codice Fiscale',
+        'indirizzo'              => 'Sede legale',
+        'cap'                    => 'CAP',
+        'citta'                  => 'Città',
+        'provincia'              => 'Provincia',
+        'email_azienda'          => 'Email aziendale',
+        'telefono_azienda'       => 'Telefono azienda',
+        'referente_nome'         => 'Referente — Nome e cognome',
+        'referente_cellulare'    => 'Referente — Cellulare',
+        'concorso'               => 'Concorso scelto',
+        'prodotto_nome'          => 'Nome del prodotto',
+        'prodotto_tipologia'     => 'Tipologia / Categoria',
+        'territorio_produzione'  => 'Territorio di produzione',
+        'descrizione_prodotto'   => 'Descrizione del prodotto',
+        'presentatore_nome'      => 'Nome di chi presenta il prodotto',
+        'legale_rappresentante'  => 'Legale rappresentante',
+        'luogo_data'             => 'Luogo e data',
+    ];
+    $values = [];
+    foreach ($fields as $key => $label) {
+        $isMultiline = $key === 'descrizione_prodotto';
+        $value = $isMultiline
+            ? vos_clean_multiline($_POST[$key] ?? '', 3000)
+            : vos_clean_line($_POST[$key] ?? '');
+        if ($value === '') {
+            $respond(false, "Campo obbligatorio mancante: $label.");
+        }
+        $values[$key] = $value;
+    }
+
+    if (!filter_var($values['email_azienda'], FILTER_VALIDATE_EMAIL)) {
+        $respond(false, 'Inserisci un indirizzo email aziendale valido.');
+    }
+
+    $concorsiValidi = [
+        'Birra & Street Food', 'Vino & Pizza', 'Vino & Pesce', 'Vino & Carne',
+        'Vino & Pasta', 'Vino & Sigaro', 'Il Miglior Olio Extravergine',
+        'Il Miglior Amaro', 'Il Miglior Liquore per il Miglior Dolce',
+    ];
+    if (!in_array($values['concorso'], $concorsiValidi, true)) {
+        $respond(false, 'Seleziona un Concorso valido tra i 9 disponibili.');
+    }
+
+    for ($i = 1; $i <= 7; $i++) {
+        if (empty($_POST["dich_$i"])) {
+            $respond(false, 'Devi accettare tutte le dichiarazioni dell\'azienda (sezione 8).');
+        }
+    }
+
+    $optional = [
+        'nome_commerciale'   => 'Nome commerciale / Brand',
+        'sito_web'           => 'Sito web',
+        'pec'                => 'PEC',
+        'referente_ruolo'    => 'Referente — Ruolo',
+        'denominazione'      => 'Denominazione / Indicazione geografica',
+        'annata'             => 'Annata',
+        'gradazione'         => 'Gradazione alcolica',
+        'formato'            => 'Formato confezione',
+        'presentatore_ruolo' => 'Ruolo di chi presenta il prodotto',
+    ];
+    foreach ($optional as $key => $label) {
+        $v = vos_clean_line($_POST[$key] ?? '');
+        if ($v !== '') {
+            $values[$key] = $v;
+        }
+    }
+    $storia = vos_clean_multiline($_POST['storia_azienda'] ?? '', 3000);
+
+    $attachments[] = vos_save_upload($dataDir, $requestId, 'logo_file', true, $onFileError);
+    $attachments[] = vos_save_upload($dataDir, $requestId, 'foto_prodotto_file', true, $onFileError);
+    $attachments[] = vos_save_upload($dataDir, $requestId, 'brochure_file', false, $onFileError);
+    $attachments[] = vos_save_upload($dataDir, $requestId, 'ricevuta_file', true, $onFileError);
+    $attachments = array_values(array_filter($attachments));
+
+    $payload = [
+        '— AZIENDA —'          => '',
+        'Ragione sociale'      => $values['ragione_sociale'],
+        'Nome commerciale'     => $values['nome_commerciale'] ?? '—',
+        'P.IVA/CF'             => $values['piva'],
+        'Sede legale'          => $values['indirizzo'] . ', ' . $values['cap'] . ' ' . $values['citta'] . ' (' . $values['provincia'] . ')',
+        'Sito web'             => $values['sito_web'] ?? '—',
+        'Email azienda'        => $values['email_azienda'],
+        'PEC'                  => $values['pec'] ?? '—',
+        'Telefono azienda'     => $values['telefono_azienda'],
+        '— REFERENTE —'        => '',
+        'Nome referente'       => $values['referente_nome'],
+        'Ruolo referente'      => $values['referente_ruolo'] ?? '—',
+        'Cellulare referente'  => $values['referente_cellulare'],
+        'Email referente'      => $email,
+        '— CONCORSO —'         => '',
+        'Sfida scelta'         => $values['concorso'],
+        '— PRODOTTO —'         => '',
+        'Nome prodotto'        => $values['prodotto_nome'],
+        'Tipologia'            => $values['prodotto_tipologia'],
+        'Denominazione'        => $values['denominazione'] ?? '—',
+        'Annata'               => $values['annata'] ?? '—',
+        'Gradazione alcolica'  => $values['gradazione'] ?? '—',
+        'Formato confezione'   => $values['formato'] ?? '—',
+        'Territorio produzione'=> $values['territorio_produzione'],
+        'Descrizione prodotto' => $values['descrizione_prodotto'],
+        '— PRESENTAZIONE —'    => '',
+        'Storia azienda'       => $storia !== '' ? $storia : '—',
+        'Chi presenta'         => $values['presentatore_nome'] . ($values['presentatore_ruolo'] ?? '' ? ' (' . $values['presentatore_ruolo'] . ')' : ''),
+        '— DICHIARAZIONI —'    => '',
+        'Dichiarazioni azienda (1-7)' => 'Tutte accettate',
+        'Legale rappresentante'       => $values['legale_rappresentante'],
+        'Luogo e data'                => $values['luogo_data'],
+        'Allegati'             => count($attachments) . ' file (vedi allegati email)',
+    ];
+    $subject = 'Iscrizione Prodotto — Gran Premio del Gusto 2026 — ' . $values['ragione_sociale'];
+} elseif ($requestType === 'richiesta-sponsor') {
+    $kind = 'richiesta-sponsor';
+    $forcedTo = 'napoliracingshow@gmail.com';
+
+    $nome = vos_clean_line($_POST['nome'] ?? '');
+    $telefono = vos_clean_line($_POST['telefono'] ?? '');
+    $messaggio = vos_clean_multiline($_POST['messaggio'] ?? '', 2000);
+    if ($nome === '') {
+        $respond(false, 'Il nome è obbligatorio.');
+    }
+    if ($messaggio === '') {
+        $respond(false, 'Il messaggio è obbligatorio.');
+    }
+    $payload = [
+        'Nome'      => $nome,
+        'Email'     => $email,
+        'Telefono'  => $telefono !== '' ? $telefono : '—',
+        'Messaggio' => $messaggio,
+    ];
+    $subject = 'Richiesta Sponsorizzazione — Vini & OliSud — ' . $nome;
+} elseif ($requestType === 'carnet-degustazione' || $audience === 'visitatori') {
     $kind = 'carnet-degustazione';
     $qty = vos_clean_line($_POST['quantity'] ?? '');
     if ($qty === '') {
@@ -364,7 +569,7 @@ if ($requestType === 'carnet-degustazione' || $audience === 'visitatori') {
 // 7. Corpo email plain text
 // -----------------------------------------------------------------------------
 
-$requestId = vos_make_request_id();
+// $requestId generato più in alto (serve già alla sezione 6 per gli upload).
 $lines = [];
 $lines[] = "Nuova richiesta da vinisud.it (#$requestId)";
 $lines[] = "Tipo: $kind";
@@ -401,14 +606,22 @@ $record['ip_hash']            = vos_ip_hash();
 $record['user_agent']         = vos_clean_line($_SERVER['HTTP_USER_AGENT'] ?? '') ?: null;
 $record['extra_json']         = json_encode($payload, JSON_UNESCAPED_UNICODE);
 
-try {
-    vos_db_insert($config, $record);
-} catch (\Throwable $e) {
-    // Il salvataggio è la garanzia primaria: se fallisce, fermiamo qui.
-    error_log('lead.php DB error: ' . $e->getMessage());
-    vos_log_request($dataDir, $requestId, $kind, false);
-    http_response_code(500);
-    $respond(false, 'Salvataggio non riuscito. Riprova più tardi o scrivi a info@vinisud.it.');
+// iscrizione-prodotto / richiesta-sponsor non hanno colonne dedicate nello
+// schema vos_form_leads (campi troppo specifici/con allegati): per questi
+// due tipi l'email è il canale primario (vedi sezione 8, invio bloccante),
+// niente insert DB.
+$dbBacked = !in_array($kind, ['iscrizione-prodotto', 'richiesta-sponsor'], true);
+
+if ($dbBacked) {
+    try {
+        vos_db_insert($config, $record);
+    } catch (\Throwable $e) {
+        // Il salvataggio è la garanzia primaria: se fallisce, fermiamo qui.
+        error_log('lead.php DB error: ' . $e->getMessage());
+        vos_log_request($dataDir, $requestId, $kind, false);
+        http_response_code(500);
+        $respond(false, 'Salvataggio non riuscito. Riprova più tardi o scrivi a info@vinisud.it.');
+    }
 }
 
 vos_log_consent($dataDir, $requestId, 'privacy-2026-05');
@@ -433,6 +646,14 @@ foreach ($phpmailerPaths as $p) {
     }
 }
 if (!$phpmailerLoaded) {
+    if (!$dbBacked) {
+        // Niente DB per questi tipi: l'email è l'unica prova della richiesta.
+        // Senza PHPMailer non c'è nulla da salvare, quindi è un fallimento vero.
+        error_log('lead.php: PHPMailer non trovato (richiesta ' . $requestId . ' NON salvata: nessun DB per ' . $kind . ').');
+        vos_log_request($dataDir, $requestId, $kind, false);
+        http_response_code(500);
+        $respond(false, 'Invio non riuscito. Scrivi direttamente a napoliracingshow@gmail.com.');
+    }
     // Lead già salvato su DB: la mancata notifica non deve far fallire l'utente.
     error_log('lead.php: PHPMailer non trovato (lead ' . $requestId . ' salvato su DB).');
     vos_log_request($dataDir, $requestId, $kind, true);
@@ -467,7 +688,9 @@ try {
     $mailFromName = $config['MAIL_FROM_NAME'] ?? 'Vini Oli Sud';
 
     $mailer->setFrom($mailFrom, $mailFromName);
-    $mailer->addAddress($to);
+    // $forcedTo bypassa il routing MAIL_TO_* di config.php per le richieste
+    // con destinatario fisso di prodotto (vedi sezione 6).
+    $mailer->addAddress($forcedTo ?? $to);
     $mailer->addReplyTo($email);
 
     // Copia conoscenza nascosta su tutte le notifiche (se configurata e valida).
@@ -480,9 +703,22 @@ try {
     $mailer->isHTML(false);
     $mailer->Body    = $body;
 
+    foreach ($attachments as $attachmentPath) {
+        if (is_string($attachmentPath) && is_readable($attachmentPath)) {
+            $mailer->addAttachment($attachmentPath);
+        }
+    }
+
     $mailer->send();
     vos_log_request($dataDir, $requestId, $kind, true);
 } catch (\Throwable $e) {
+    if (!$dbBacked) {
+        // Niente DB per questi tipi: se l'email non parte, la richiesta è persa.
+        error_log('lead.php SMTP error (richiesta ' . $requestId . ' NON salvata, nessun DB per ' . $kind . '): ' . $e->getMessage());
+        vos_log_request($dataDir, $requestId, $kind, false);
+        http_response_code(500);
+        $respond(false, 'Invio non riuscito. Scrivi direttamente a napoliracingshow@gmail.com.');
+    }
     // Il lead è salvato su DB: la notifica email è secondaria. Logghiamo e
     // proseguiamo, così l'utente non riprova un invio già andato a buon fine.
     error_log('lead.php SMTP error notifica (lead ' . $requestId . ' salvato su DB): ' . $e->getMessage());
@@ -496,13 +732,26 @@ if (!empty($config['SEND_USER_CONFIRMATION'])) {
             'manifestazione-interesse' => 'manifestazione di interesse',
             'carnet-degustazione'      => 'richiesta Carnet Degustazione',
             'segnalazione-editoriale'  => 'segnalazione per il Diario del Sud',
+            'richiesta-sponsor'        => 'richiesta di sponsorizzazione',
+            'iscrizione-prodotto'      => 'iscrizione prodotto al Gran Premio del Gusto 2026',
         ][$kind] ?? 'richiesta';
 
         $confLines = [];
         $confLines[] = 'Ciao,';
         $confLines[] = '';
-        $confLines[] = 'grazie per averci scritto. Abbiamo ricevuto la tua ' . $kindLabel
-                     . ' e ti risponderemo al più presto.';
+        $confLines[] = 'grazie per averci scritto. Abbiamo ricevuto la tua ' . $kindLabel . '.';
+        if ($kind === 'iscrizione-prodotto') {
+            // Requisito esplicito: l'invio NON garantisce l'ammissione (posti
+            // limitati per Sfida). Vedi anche la nota a fondo modulo.
+            $confLines[] = '';
+            $confLines[] = "L'invio del modulo non garantisce automaticamente l'ammissione al "
+                         . 'Concorso. La Segreteria Organizzativa verificherà la disponibilità dei '
+                         . 'posti nella Sfida prescelta, la completezza della documentazione e '
+                         . "l'avvenuto pagamento. A iscrizione accettata, riceverai una conferma "
+                         . 'ufficiale dalla Segreteria Organizzativa.';
+        } else {
+            $confLines[] = 'Ti risponderemo al più presto.';
+        }
         $confLines[] = '';
         $confLines[] = 'Riferimento richiesta: ' . $requestId;
         $confLines[] = '';
