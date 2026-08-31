@@ -27,7 +27,7 @@ export default function RassegnaPage() {
         <div className="section-shell mx-auto max-w-[52rem] text-center">
           <div className="flex justify-center">
             <Image
-              src="/brand/partners/regione-campania.png"
+              src="/brand/partners/regione-campania-v2.png"
               alt="Regione Campania — Assessorato all'Agricoltura"
               width={280}
               height={280}
