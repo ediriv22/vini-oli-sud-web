@@ -25,12 +25,20 @@ export default function RassegnaPage() {
           logo e le info che non sono altrove (AIS, regolamento). */}
       <section className="section-flow section-space-sm">
         <div className="section-shell mx-auto max-w-[52rem] text-center">
-          <div className="flex justify-center">
+          <div className="flex flex-wrap justify-center gap-6">
             <Image
               src="/brand/partners/regione-campania-v2.png"
               alt="Regione Campania — Assessorato all'Agricoltura"
               width={280}
               height={280}
+              unoptimized
+              className="h-[92px] w-[110px] rounded-[1rem] border border-[rgba(47,91,70,0.2)] bg-[rgba(255,253,245,0.85)] object-contain p-3"
+            />
+            <Image
+              src="/brand/partners/ais-associazione-italiana-sommelier.jpg"
+              alt="AIS — Associazione Italiana Sommelier"
+              width={280}
+              height={158}
               unoptimized
               className="h-[92px] w-[110px] rounded-[1rem] border border-[rgba(47,91,70,0.2)] bg-[rgba(255,253,245,0.85)] object-contain p-3"
             />
