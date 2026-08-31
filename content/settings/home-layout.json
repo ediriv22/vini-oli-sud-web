@@ -6,10 +6,10 @@
         { "key": "sfideAccordion", "enabled": true },
         { "key": "granPremioIntro", "enabled": true },
         { "key": "philosophy", "enabled": true },
+        { "key": "territory", "enabled": true },
+        { "key": "regions", "enabled": true },
         { "key": "sponsor", "enabled": true },
         { "key": "alboDoro", "enabled": true },
-        { "key": "territory", "enabled": false },
-        { "key": "regions", "enabled": false },
         { "key": "eventDetails", "enabled": false },
         { "key": "grandPrixHighlight", "enabled": false }
     ]
