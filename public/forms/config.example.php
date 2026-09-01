@@ -58,11 +58,14 @@ return [
     'MAIL_TO_PARTNERSHIP' => 'info@vinisud.it',
     'MAIL_TO_GRAND_PRIX'  => 'info@vinisud.it',
 
-    // Pass Giuria Popolare: oltre all'email, ogni iscrizione viene sempre
-    // scritta in forms/data/pass-giurato-iscrizioni.csv (nessuna config
-    // necessaria). Se qui sotto imposti l'URL di un Google Apps Script Web
-    // App (Estensioni > Apps Script > funzione doPost > Distribuisci > App
-    // web, accesso "Chiunque"), ogni iscrizione arriva anche su un Google
-    // Sheet in tempo reale. Lascia vuoto per usare solo email + CSV.
-    'GOOGLE_SHEET_WEBAPP_URL' => '',
+    // Pass Giuria Popolare e Iscrizione Prodotto: oltre all'email, ogni
+    // invio viene sempre scritto in forms/data/pass-giurato-iscrizioni.csv
+    // / forms/data/iscrizioni-prodotto.csv (nessuna config necessaria). Se
+    // qui sotto imposti l'URL di un Google Apps Script Web App
+    // (Estensioni > Apps Script > funzione doPost > Distribuisci > App
+    // web, accesso "Chiunque"), l'invio arriva anche su un Google Sheet in
+    // tempo reale — uno per modulo, chiave separata. Lascia vuoto per
+    // usare solo email + CSV.
+    'GOOGLE_SHEET_WEBAPP_URL_GIURATO'  => '',
+    'GOOGLE_SHEET_WEBAPP_URL_PRODOTTO' => '',
 ];

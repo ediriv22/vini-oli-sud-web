@@ -226,12 +226,14 @@ function vos_append_csv(string $dataDir, string $filename, array $headers, array
 
 /**
  * Inoltra $data a un Google Apps Script Web App (doPost) configurato in
- * config.php come GOOGLE_SHEET_WEBAPP_URL — se assente, non fa nulla:
- * il Google Sheet è un canale opzionale in più, il CSV locale e l'email
- * restano garantiti a prescindere. Best-effort, non blocca mai la risposta.
+ * config.php sotto la chiave $configKey (una per modulo, ognuno può avere
+ * il suo Sheet — vedi GOOGLE_SHEET_WEBAPP_URL_GIURATO/_PRODOTTO in
+ * config.example.php) — se assente, non fa nulla: il Google Sheet è un
+ * canale opzionale in più, il CSV locale e l'email restano garantiti a
+ * prescindere. Best-effort, non blocca mai la risposta.
  */
-function vos_push_google_sheet(array $config, array $data): void {
-    $url = trim((string) ($config['GOOGLE_SHEET_WEBAPP_URL'] ?? ''));
+function vos_push_google_sheet(array $config, string $configKey, array $data): void {
+    $url = trim((string) ($config[$configKey] ?? ''));
     if ($url === '' || !function_exists('curl_init')) {
         return;
     }
@@ -494,7 +496,7 @@ if ($requestType === 'iscrizione-giurato') {
         [$requestId, date('c'), $nome, $cognome, $email, $dataNascita, $età,
             $tipoPass, implode('; ', $sfideScelte), $metodoPagamento, $ricevutaAllegataStr],
     );
-    vos_push_google_sheet($config, [
+    vos_push_google_sheet($config, 'GOOGLE_SHEET_WEBAPP_URL_GIURATO', [
         'requestId'       => $requestId,
         'timestamp'       => date('c'),
         'nome'            => $nome,
@@ -623,6 +625,35 @@ if ($requestType === 'iscrizione-giurato') {
         'Allegati'             => count($attachments) . ' file (vedi allegati email)',
     ];
     $subject = 'Iscrizione Prodotto — Gran Premio del Gusto 2026 — ' . $values['ragione_sociale'];
+
+    // Stessi due canali extra del Pass Giurato (CSV sempre, Sheet se
+    // configurato) — vedi vos_append_csv/vos_push_google_sheet più sopra.
+    $csvHeaders = [
+        'request_id', 'data_ora', 'ragione_sociale', 'nome_commerciale', 'piva',
+        'indirizzo', 'cap', 'citta', 'provincia', 'sito_web', 'email_azienda', 'pec',
+        'telefono_azienda', 'referente_nome', 'referente_ruolo', 'referente_cellulare',
+        'referente_email', 'concorso', 'prodotto_nome', 'prodotto_tipologia',
+        'denominazione', 'annata', 'gradazione', 'formato', 'territorio_produzione',
+        'presentatore_nome', 'presentatore_ruolo', 'legale_rappresentante', 'luogo_data',
+        'n_allegati',
+    ];
+    $csvRow = [
+        $requestId, date('c'), $values['ragione_sociale'], $values['nome_commerciale'] ?? '',
+        $values['piva'], $values['indirizzo'], $values['cap'], $values['citta'],
+        $values['provincia'], $values['sito_web'] ?? '', $values['email_azienda'],
+        $values['pec'] ?? '', $values['telefono_azienda'], $values['referente_nome'],
+        $values['referente_ruolo'] ?? '', $values['referente_cellulare'], $email,
+        $values['concorso'], $values['prodotto_nome'], $values['prodotto_tipologia'],
+        $values['denominazione'] ?? '', $values['annata'] ?? '', $values['gradazione'] ?? '',
+        $values['formato'] ?? '', $values['territorio_produzione'], $values['presentatore_nome'],
+        $values['presentatore_ruolo'] ?? '', $values['legale_rappresentante'], $values['luogo_data'],
+        count($attachments),
+    ];
+    vos_append_csv($dataDir, 'iscrizioni-prodotto.csv', $csvHeaders, $csvRow);
+    vos_push_google_sheet($config, 'GOOGLE_SHEET_WEBAPP_URL_PRODOTTO', array_combine(
+        ['requestId', 'timestamp', ...array_slice($csvHeaders, 2)],
+        [$requestId, date('c'), ...array_slice($csvRow, 2)],
+    ));
 } elseif ($requestType === 'richiesta-sponsor') {
     $kind = 'richiesta-sponsor';
     $forcedTo = 'napoliracingshow@gmail.com';
