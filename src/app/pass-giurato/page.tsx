@@ -296,6 +296,29 @@ export default function PassGiuratoPage() {
           />
         </div>
       </form>
+
+      {biglietti?.extraTitle ? (
+        <div className="section-shell mx-auto mt-14 max-w-[42rem] rounded-[1.1rem] border border-[rgba(47,91,70,0.2)] bg-[rgba(255,253,245,0.6)] p-6 text-center">
+          <p className="font-display text-[1.1rem] text-[var(--color-ink-strong)]">
+            {biglietti.extraTitle}
+          </p>
+          {biglietti.extraBody ? (
+            <p className="mt-2 text-[0.9rem] leading-[1.6] text-[var(--color-muted)]">
+              {biglietti.extraBody}
+            </p>
+          ) : null}
+          {biglietti.extraCtaLabel ? (
+            <div className="mt-4">
+              <a
+                href={biglietti.extraCtaHref || "mailto:napoliracingshow@gmail.com"}
+                className="font-ui inline-flex h-11 items-center justify-center rounded-full border border-[rgba(255,215,87,0.6)] bg-[rgba(255,253,245,1)] px-6 text-[0.86rem] font-semibold text-[var(--color-ink-strong)] transition-colors duration-200 hover:bg-[rgba(255,247,214,1)]"
+              >
+                {biglietti.extraCtaLabel}
+              </a>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
     </section>
   );
 }
