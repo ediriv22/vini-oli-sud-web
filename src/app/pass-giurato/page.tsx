@@ -112,7 +112,47 @@ export default function PassGiuratoPage() {
         </fieldset>
 
         <fieldset className="flex flex-col gap-5">
-          <FormSectionTitle>2. Scegli il tuo Pass</FormSectionTitle>
+          <FormSectionTitle>2. Il calendario delle Sfide</FormSectionTitle>
+          <p className="text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
+            Le 9 Sfide del Gran Premio del Gusto si svolgono su 3 giornate. Scegli il Pass e le
+            Sfide tenendo conto di quando puoi essere presente — ogni Sfida qui sotto mostra
+            giorno e orario.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {(["Venerdì 27 Novembre", "Sabato 28 Novembre", "Domenica 29 Novembre"] as const).map(
+              (giorno) => (
+                <div
+                  key={giorno}
+                  className="rounded-[1rem] border border-[rgba(47,91,70,0.2)] bg-[rgba(255,253,245,0.6)] p-4"
+                >
+                  <p className="font-ui text-[0.76rem] font-semibold uppercase tracking-[0.08em] text-[var(--color-wine)]">
+                    {giorno}
+                  </p>
+                  <ul className="mt-2.5 flex flex-col gap-1.5">
+                    {concorsi
+                      .filter((c) => c.giorno === giorno)
+                      .map((c) => (
+                        <li key={c.name} className="text-[0.82rem] leading-[1.4] text-[var(--color-muted)]">
+                          <span aria-hidden="true">{c.icon}</span> {c.ora} — {c.name}
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              ),
+            )}
+          </div>
+          <p className="text-center text-[0.8rem] italic text-[var(--color-muted)]">
+            200 Giudici Popolari Ufficiali per ciascuna Sfida. Dettaglio di come si svolge ogni
+            Sfida:{" "}
+            <a href="/format/gran-premio-del-gusto/" className="underline">
+              vai alla pagina Gran Premio del Gusto
+            </a>
+            .
+          </p>
+        </fieldset>
+
+        <fieldset className="flex flex-col gap-5">
+          <FormSectionTitle>3. Scegli il tuo Pass</FormSectionTitle>
           <div className="grid gap-4 sm:grid-cols-3">
             {tiers.map((tier) => {
               const selected = tipoPass === tier.name;
@@ -173,7 +213,12 @@ export default function PassGiuratoPage() {
                         className="h-4 w-4 accent-[var(--color-wine)]"
                       />
                       <span aria-hidden="true">{c.icon}</span>
-                      {c.name}
+                      <span>
+                        {c.name}
+                        <span className="block text-[0.74rem] text-[var(--color-muted)]">
+                          {c.giorno} · ore {c.ora}
+                        </span>
+                      </span>
                     </label>
                   );
                 })}
@@ -187,7 +232,7 @@ export default function PassGiuratoPage() {
         </fieldset>
 
         <fieldset className="flex flex-col gap-5">
-          <FormSectionTitle>3. Pagamento</FormSectionTitle>
+          <FormSectionTitle>4. Pagamento</FormSectionTitle>
           <div className="grid gap-4 sm:grid-cols-2">
             <label
               className={`flex cursor-pointer items-center gap-3 rounded-[1rem] border px-4 py-3 ${

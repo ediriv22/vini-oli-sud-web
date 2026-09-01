@@ -201,6 +201,61 @@ function vos_save_upload(
     return $dest;
 }
 
+/**
+ * Aggiunge una riga a un CSV in $dataDir/$filename, scrivendo l'intestazione
+ * alla prima creazione. Best-effort: un errore di scrittura finisce nei log
+ * PHP ma non blocca mai la risposta (l'email resta il canale garantito).
+ */
+function vos_append_csv(string $dataDir, string $filename, array $headers, array $row): void {
+    $path = $dataDir . '/' . $filename;
+    $isNew = !file_exists($path);
+    $fh = @fopen($path, 'a');
+    if (!$fh) {
+        error_log("vos_append_csv: impossibile aprire $filename");
+        return;
+    }
+    if (flock($fh, LOCK_EX)) {
+        if ($isNew) {
+            fputcsv($fh, $headers, ',', '"', '\\');
+        }
+        fputcsv($fh, $row, ',', '"', '\\');
+        flock($fh, LOCK_UN);
+    }
+    fclose($fh);
+}
+
+/**
+ * Inoltra $data a un Google Apps Script Web App (doPost) configurato in
+ * config.php come GOOGLE_SHEET_WEBAPP_URL — se assente, non fa nulla:
+ * il Google Sheet è un canale opzionale in più, il CSV locale e l'email
+ * restano garantiti a prescindere. Best-effort, non blocca mai la risposta.
+ */
+function vos_push_google_sheet(array $config, array $data): void {
+    $url = trim((string) ($config['GOOGLE_SHEET_WEBAPP_URL'] ?? ''));
+    if ($url === '' || !function_exists('curl_init')) {
+        return;
+    }
+    try {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => json_encode($data, JSON_UNESCAPED_UNICODE),
+            CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 8,
+            CURLOPT_FOLLOWLOCATION => true, // Apps Script Web App risponde con un redirect
+            CURLOPT_SSL_VERIFYPEER => true,
+        ]);
+        curl_exec($ch);
+        if (curl_errno($ch)) {
+            error_log('vos_push_google_sheet: ' . curl_error($ch));
+        }
+        curl_close($ch);
+    } catch (\Throwable $e) {
+        error_log('vos_push_google_sheet exception: ' . $e->getMessage());
+    }
+}
+
 function vos_log_request(string $dataDir, string $requestId, string $type, bool $ok): void {
     $line = sprintf(
         "%s\t%s\t%s\t%s\t%s\n",
@@ -425,6 +480,33 @@ if ($requestType === 'iscrizione-giurato') {
         'Ricevuta allegata'   => $metodoPagamento === 'bonifico' ? (count($attachments) ? 'Sì' : 'No') : '—',
     ];
     $subject = 'Iscrizione Pass Giuria Popolare — ' . $nome . ' ' . $cognome . ' — ' . $tipoPass;
+
+    // Canali extra oltre all'email (richiesta esplicita): CSV locale sempre
+    // scritto (garantito, nessuna dipendenza esterna); Google Sheet in più
+    // se GOOGLE_SHEET_WEBAPP_URL è configurato in config.php (altrimenti
+    // no-op silenzioso). Nessuno dei due blocca l'invio se fallisce.
+    $ricevutaAllegataStr = $metodoPagamento === 'bonifico' ? (count($attachments) ? 'sì' : 'no') : '—';
+    vos_append_csv(
+        $dataDir,
+        'pass-giurato-iscrizioni.csv',
+        ['request_id', 'data_ora', 'nome', 'cognome', 'email', 'data_nascita', 'eta',
+            'tipo_pass', 'sfide', 'metodo_pagamento', 'ricevuta_allegata'],
+        [$requestId, date('c'), $nome, $cognome, $email, $dataNascita, $età,
+            $tipoPass, implode('; ', $sfideScelte), $metodoPagamento, $ricevutaAllegataStr],
+    );
+    vos_push_google_sheet($config, [
+        'requestId'       => $requestId,
+        'timestamp'       => date('c'),
+        'nome'            => $nome,
+        'cognome'         => $cognome,
+        'email'           => $email,
+        'dataNascita'     => $dataNascita,
+        'eta'             => $età,
+        'tipoPass'        => $tipoPass,
+        'sfide'           => implode('; ', $sfideScelte),
+        'metodoPagamento' => $metodoPagamento,
+        'ricevutaAllegata' => $ricevutaAllegataStr,
+    ]);
 } elseif ($requestType === 'iscrizione-prodotto') {
     $kind = 'iscrizione-prodotto';
     $forcedTo = 'napoliracingshow@gmail.com';
