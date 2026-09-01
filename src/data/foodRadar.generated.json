@@ -1,11 +1,41 @@
 [
   {
+    "id": "603e4022f2d1",
+    "category": "Calici di Magna Grecia",
+    "title": "La degustazione dei vini di Tenuta dei Mori, enclave di gusto e relax nel cuore verde dell'Umbria",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/la-degustazione-dei-vini-di-tenuta-dei-mori-enclave-di-gusto-e-relax-nel-cuore-verde-dellumbria/300916/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-01"
+  },
+  {
+    "id": "e7adb19a278a",
+    "category": "Calici di Magna Grecia",
+    "title": "Tommasone Vini: il progetto di affinamento subacqueo",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/tommasone-vini-il-progetto-di-affinamento-subacqueo/300937/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-01"
+  },
+  {
     "id": "335d6cd888ac",
     "category": "Calici di Magna Grecia",
     "title": "La Matta di Casebianche, il fiano frizzante del Cilento",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/la-matta-di-casebianche-il-fiano-frizzante-del-cilento/300914/",
     "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-08-31"
+  },
+  {
+    "id": "a4eff23dee02",
+    "category": "Radar del Sud",
+    "title": "C'è un ristorante dentro un castello millenario nel Cilento",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/ristoranti/rocha-castello-rocca-cilento-salvatore-notaro/",
+    "note": "Una segnalazione di cucina, focus Campania.",
     "noteSource": "auto",
     "date": "2026-08-31"
   },
@@ -266,36 +296,6 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/scoperte-in-vigna-2026-il-12-e-13-settembre-la-6-edizione-dellevento-eno-turistico-dedicato-alle-auto-scoperte-alla-scoperta-delle-bellezze-e-dei-vini-del-taburno-e-del-sannio/300539/",
     "note": "Una segnalazione gastronomica del Sud, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-08-21"
-  },
-  {
-    "id": "f9b5c0cbfabe",
-    "category": "Territori",
-    "title": "Perché Berton per la cena di Gala dei Giochi del Mediterraneo a Taranto?",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/perche-berton-per-la-cena-di-gala-dei-giochi-del-mediterraneo-a-taranto/300554/",
-    "note": "Una notizia dal calendario dei territori, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-08-21"
-  },
-  {
-    "id": "edfdf6bacd3b",
-    "category": "Radar del Sud",
-    "title": "Il Vicoletto, a Palinuro la cucina di mare torna semplice",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/il-vicoletto-a-palinuro-la-cucina-di-mare-torna-semplice/300520/",
-    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-08-21"
-  },
-  {
-    "id": "30392bc4efae",
-    "category": "Calici di Magna Grecia",
-    "title": "Il campeggio sul lago di Dobbiaco che nasconde un fine dining e una cantina da 12mila bottiglie",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/ristoranti/hebbo-dobbiaco-ristorante-cantina-12mila-bottiglie/",
-    "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-08-21"
   }
