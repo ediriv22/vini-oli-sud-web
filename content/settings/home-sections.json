@@ -191,7 +191,8 @@
                     { "name": "Pass Gran Giurato — Tutte le 9 Sfide", "price": "€70", "featured": true, "badge": "⭐", "features": ["9 Sfide", "9 degustazioni", "9 voti", "Bicchiere ufficiale", "Portabicchiere ufficiale"] }
                 ],
                 "ctaLabel": "Diventa Giurato",
-                "ctaHref": "mailto:napoliracingshow@gmail.com",
+                "ctaHref": "/pass-giurato/",
+                "paypalLink": "",
                 "extraTitle": "🩺 Prevenzione gratuita con ASL Napoli 1 Centro",
                 "extraBody": "I maggiorenni in possesso del Biglietto Tribuna del Napoli Racing Show o del Pass Giuria Popolare del Gran Premio del Gusto, previa prenotazione e fino a esaurimento dei posti disponibili, potranno effettuare visite gratuite di prevenzione presso il Camper della Salute dell'ASL Napoli 1 Centro nelle giornate di venerdì 27 e sabato 28 novembre 2026.",
                 "extraCtaLabel": "Prenota la tua visita gratuita",

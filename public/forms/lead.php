@@ -351,7 +351,81 @@ $forcedTo = null;
 // Allegati email (path assoluti locali) per le richieste con upload file.
 $attachments = [];
 
-if ($requestType === 'iscrizione-prodotto') {
+if ($requestType === 'iscrizione-giurato') {
+    $kind = 'iscrizione-giurato';
+    $forcedTo = 'napoliracingshow@gmail.com';
+
+    $nome = vos_clean_line($_POST['nome'] ?? '');
+    $cognome = vos_clean_line($_POST['cognome'] ?? '');
+    $dataNascita = vos_clean_line($_POST['data_nascita'] ?? '');
+    $tipoPass = vos_clean_line($_POST['tipo_pass'] ?? '');
+    $metodoPagamento = strtolower(vos_clean_line($_POST['metodo_pagamento'] ?? ''));
+
+    if ($nome === '' || $cognome === '') {
+        $respond(false, 'Nome e cognome sono obbligatori.');
+    }
+
+    $nascita = DateTime::createFromFormat('Y-m-d', $dataNascita);
+    if (!$nascita || $nascita->format('Y-m-d') !== $dataNascita) {
+        $respond(false, 'Data di nascita non valida.');
+    }
+    $età = (new DateTime())->diff($nascita)->y;
+    if ($età < 18) {
+        $respond(false, 'Il Pass Giuria Popolare è riservato ai maggiorenni (18 anni compiuti).');
+    }
+
+    $tierValida = [
+        '1 Sfida a scelta'                        => 1,
+        '3 Sfide a scelta'                         => 3,
+        'Pass Gran Giurato — Tutte le 9 Sfide'     => 9,
+    ];
+    if (!isset($tierValida[$tipoPass])) {
+        $respond(false, 'Seleziona un Pass valido.');
+    }
+    $sfideAttese = $tierValida[$tipoPass];
+
+    $concorsiValidi = [
+        'Birra & Street Food', 'Vino & Pizza', 'Vino & Pesce', 'Vino & Carne',
+        'Vino & Pasta', 'Vino & Sigaro', 'Il Miglior Olio Extravergine',
+        'Il Miglior Amaro', 'Il Miglior Liquore per il Miglior Dolce',
+    ];
+    if ($sfideAttese === 9) {
+        $sfideScelte = $concorsiValidi; // Gran Giurato: tutte le 9, nessuna selezione richiesta.
+    } else {
+        $sfideScelte = array_values(array_filter(array_map(
+            'vos_clean_line',
+            (array) ($_POST['sfide'] ?? [])
+        )));
+        $sfideScelte = array_values(array_unique($sfideScelte));
+        foreach ($sfideScelte as $s) {
+            if (!in_array($s, $concorsiValidi, true)) {
+                $respond(false, 'Una delle Sfide selezionate non è valida.');
+            }
+        }
+        if (count($sfideScelte) !== $sfideAttese) {
+            $respond(false, "Seleziona esattamente $sfideAttese Sfid" . ($sfideAttese === 1 ? 'a' : 'e') . " per questo Pass.");
+        }
+    }
+
+    if (!in_array($metodoPagamento, ['bonifico', 'paypal'], true)) {
+        $respond(false, 'Seleziona un metodo di pagamento.');
+    }
+    if ($metodoPagamento === 'bonifico') {
+        $attachments[] = vos_save_upload($dataDir, $requestId, 'ricevuta_file', true, $onFileError);
+        $attachments = array_values(array_filter($attachments));
+    }
+
+    $payload = [
+        'Nome e cognome'      => "$nome $cognome",
+        'Email'               => $email,
+        'Data di nascita'     => $dataNascita . " (età $età)",
+        'Tipo di Pass'        => $tipoPass,
+        'Sfide scelte'        => implode(', ', $sfideScelte),
+        'Metodo di pagamento' => ucfirst($metodoPagamento),
+        'Ricevuta allegata'   => $metodoPagamento === 'bonifico' ? (count($attachments) ? 'Sì' : 'No') : '—',
+    ];
+    $subject = 'Iscrizione Pass Giuria Popolare — ' . $nome . ' ' . $cognome . ' — ' . $tipoPass;
+} elseif ($requestType === 'iscrizione-prodotto') {
     $kind = 'iscrizione-prodotto';
     $forcedTo = 'napoliracingshow@gmail.com';
 
@@ -610,7 +684,7 @@ $record['extra_json']         = json_encode($payload, JSON_UNESCAPED_UNICODE);
 // schema vos_form_leads (campi troppo specifici/con allegati): per questi
 // due tipi l'email è il canale primario (vedi sezione 8, invio bloccante),
 // niente insert DB.
-$dbBacked = !in_array($kind, ['iscrizione-prodotto', 'richiesta-sponsor'], true);
+$dbBacked = !in_array($kind, ['iscrizione-prodotto', 'richiesta-sponsor', 'iscrizione-giurato'], true);
 
 if ($dbBacked) {
     try {
@@ -733,6 +807,7 @@ if (!empty($config['SEND_USER_CONFIRMATION'])) {
             'carnet-degustazione'      => 'richiesta Carnet Degustazione',
             'segnalazione-editoriale'  => 'segnalazione per il Diario del Sud',
             'richiesta-sponsor'        => 'richiesta di sponsorizzazione',
+            'iscrizione-giurato'       => 'iscrizione Pass Giuria Popolare',
             'iscrizione-prodotto'      => 'iscrizione prodotto al Gran Premio del Gusto 2026',
         ][$kind] ?? 'richiesta';
 
