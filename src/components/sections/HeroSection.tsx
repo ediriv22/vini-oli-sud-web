@@ -95,23 +95,33 @@ export default function HeroSection() {
               {slide.paragraph}
             </p>
 
-            <div className="mt-8 flex items-center gap-5">
+            <div className="mt-8 flex items-center gap-4">
               <Button href={slide.ctaHref} variant="primary" size="md">
                 {slide.ctaLabel}
               </Button>
+              <button
+                type="button"
+                onClick={goPrev}
+                aria-label="Scena precedente"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(255,215,87,0.55)] text-[var(--color-sand)] transition-colors duration-300 hover:bg-[rgba(255,215,87,0.14)]"
+              >
+                <span aria-hidden="true">←</span>
+              </button>
+              <button
+                type="button"
+                onClick={goNext}
+                aria-label="Scena successiva"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(255,215,87,0.55)] text-[var(--color-sand)] transition-colors duration-300 hover:bg-[rgba(255,215,87,0.14)]"
+              >
+                <span aria-hidden="true">→</span>
+              </button>
             </div>
-          </div>
 
-          <div className="mt-14 flex items-center gap-4">
-            <button
-              type="button"
-              onClick={goPrev}
-              aria-label="Scena precedente"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(255,215,87,0.55)] text-[var(--color-sand)] transition-colors duration-300 hover:bg-[rgba(255,215,87,0.14)]"
+            <div
+              className="mt-4 flex items-center gap-2"
+              role="tablist"
+              aria-label="Scene hero"
             >
-              <span aria-hidden="true">←</span>
-            </button>
-            <div className="flex items-center gap-2" role="tablist" aria-label="Scene hero">
               {slides.map((s, i) => (
                 <button
                   key={s.eyebrow}
@@ -128,37 +138,33 @@ export default function HeroSection() {
                 />
               ))}
             </div>
-            <button
-              type="button"
-              onClick={goNext}
-              aria-label="Scena successiva"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(255,215,87,0.55)] text-[var(--color-sand)] transition-colors duration-300 hover:bg-[rgba(255,215,87,0.14)]"
-            >
-              <span aria-hidden="true">→</span>
-            </button>
           </div>
 
           {/* Carosello rapido "Scopri la Rassegna 2026" — richiesta esplicita:
               le 5 card devono stare dentro l'hero, scorrevoli, non in una
               sezione separata più in basso. Riusa siteConfig.sfideAccordion
               (stessa fonte della sezione completa con Pass/Concorsi/Fasi,
-              che resta anche lei in pagina per chi vuole il dettaglio). */}
+              che resta anche lei in pagina per chi vuole il dettaglio).
+              Frecce prev/next spostate accanto al CTA sopra: liberano
+              spazio verticale per rendere queste card più grandi. */}
           <nav
             aria-label="Scopri la Rassegna 2026"
-            className="no-scrollbar mt-10 flex gap-3 overflow-x-auto pb-1"
+            className="no-scrollbar mt-8 flex gap-4 overflow-x-auto pb-2"
           >
             {siteConfig.sfideAccordion.items.map((item) => (
               <a
                 key={item.kind}
                 href={item.ctaHref || undefined}
                 aria-disabled={!item.ctaHref}
-                className={`font-ui flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-5 py-3 text-[0.8rem] font-semibold uppercase tracking-[0.05em] transition-colors duration-200 ${
+                className={`font-ui flex shrink-0 flex-col items-center gap-2 whitespace-nowrap rounded-[1.1rem] border px-7 py-5 text-[0.92rem] font-semibold uppercase tracking-[0.05em] transition-colors duration-200 ${
                   item.ctaHref
-                    ? "border-[rgba(255,215,87,0.45)] bg-[rgba(255,253,245,0.1)] text-[var(--color-ivory)] hover:bg-[rgba(255,215,87,0.16)]"
+                    ? "border-[rgba(255,215,87,0.45)] bg-[rgba(255,253,245,0.12)] text-[var(--color-ivory)] hover:bg-[rgba(255,215,87,0.18)]"
                     : "cursor-not-allowed border-[rgba(255,253,245,0.2)] text-[rgba(255,253,245,0.5)]"
                 }`}
               >
-                <span aria-hidden="true">{TILE_ICON[item.kind] ?? "•"}</span>
+                <span aria-hidden="true" className="text-[1.7rem] leading-none">
+                  {TILE_ICON[item.kind] ?? "•"}
+                </span>
                 {item.label}
               </a>
             ))}
