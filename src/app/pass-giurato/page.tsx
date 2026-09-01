@@ -26,11 +26,12 @@ export default function PassGiuratoPage() {
   const biglietti = siteConfig.sfideAccordion.items.find((i) => i.kind === "biglietti");
   const tiers = biglietti?.tiers ?? [];
   const concorsi = siteConfig.sfideAccordion.items.find((i) => i.kind === "iscrivi")?.concorsi ?? [];
-  const paypalLink = (biglietti as { paypalLink?: string } | undefined)?.paypalLink ?? "";
+  // PayPal temporaneamente rimosso dal modulo (link non ancora attivo per le
+  // vendite): paypalLink resta in siteConfig, pronto per quando servirà
+  // reintrodurre la scelta di pagamento (vedi fieldset "4. Pagamento").
 
   const [tipoPass, setTipoPass] = useState<string>("");
   const [sfideScelte, setSfideScelte] = useState<string[]>([]);
-  const [metodoPagamento, setMetodoPagamento] = useState<"" | "bonifico" | "paypal">("");
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | undefined>();
 
@@ -67,7 +68,6 @@ export default function PassGiuratoPage() {
       e.currentTarget.reset();
       setTipoPass("");
       setSfideScelte([]);
-      setMetodoPagamento("");
     } else {
       setStatus("error");
       setErrorMessage(result.error);
@@ -237,86 +237,27 @@ export default function PassGiuratoPage() {
 
         <fieldset className="flex flex-col gap-5">
           <FormSectionTitle>4. Pagamento</FormSectionTitle>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label
-              className={`flex cursor-pointer items-center gap-3 rounded-[1rem] border px-4 py-3 ${
-                metodoPagamento === "bonifico"
-                  ? "border-[var(--color-wine)] bg-[rgba(47,91,70,0.08)]"
-                  : "border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)]"
-              }`}
-            >
-              <input
-                type="radio"
-                name="metodo_pagamento"
-                value="bonifico"
-                required
-                checked={metodoPagamento === "bonifico"}
-                onChange={() => setMetodoPagamento("bonifico")}
-                className="h-4 w-4 accent-[var(--color-wine)]"
-              />
-              🏦 Bonifico bancario
-            </label>
-            <label
-              className={`flex cursor-pointer items-center gap-3 rounded-[1rem] border px-4 py-3 ${
-                metodoPagamento === "paypal"
-                  ? "border-[var(--color-wine)] bg-[rgba(47,91,70,0.08)]"
-                  : "border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)]"
-              }`}
-            >
-              <input
-                type="radio"
-                name="metodo_pagamento"
-                value="paypal"
-                required
-                checked={metodoPagamento === "paypal"}
-                onChange={() => setMetodoPagamento("paypal")}
-                className="h-4 w-4 accent-[var(--color-wine)]"
-              />
-              💳 PayPal
-            </label>
+          {/* PayPal temporaneamente rimosso dalla UI (link non ancora attivo
+              per le vendite) — richiesta esplicita. Il backend (lead.php)
+              continua ad accettare metodo_pagamento=paypal: per riattivarlo
+              basta reintrodurre la scelta qui, nessun'altra modifica serve.
+              paypalLink resta letto da siteConfig per quando servirà. */}
+          <input type="hidden" name="metodo_pagamento" value="bonifico" />
+          <div className="rounded-[0.9rem] border border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)] p-4">
+            <p className="font-ui text-[0.78rem] font-semibold uppercase tracking-[0.08em] text-[var(--color-wine)]">
+              Dati per il bonifico
+            </p>
+            <p className="mt-2 text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
+              Intestato a <strong>A.S.D. Napoli Racing Show</strong>
+              <br />
+              IBAN: <strong>IT51 X062 3003 5470 0003 5710 069</strong>
+              <br />
+              Causale: Pass Giuria Popolare – [Nome Cognome] – [Tipo di Pass]
+            </p>
+            <div className="mt-4">
+              <FileField label="Ricevuta del bonifico" name="ricevuta_file" required />
+            </div>
           </div>
-
-          {metodoPagamento === "bonifico" ? (
-            <div className="rounded-[0.9rem] border border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)] p-4">
-              <p className="font-ui text-[0.78rem] font-semibold uppercase tracking-[0.08em] text-[var(--color-wine)]">
-                Dati per il bonifico
-              </p>
-              <p className="mt-2 text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
-                Intestato a <strong>A.S.D. Napoli Racing Show</strong>
-                <br />
-                IBAN: <strong>IT51 X062 3003 5470 0003 5710 069</strong>
-                <br />
-                Causale: Pass Giuria Popolare – [Nome Cognome] – [Tipo di Pass]
-              </p>
-              <div className="mt-4">
-                <FileField label="Ricevuta del bonifico" name="ricevuta_file" required />
-              </div>
-            </div>
-          ) : null}
-
-          {metodoPagamento === "paypal" ? (
-            <div className="rounded-[0.9rem] border border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)] p-4 text-center">
-              {paypalLink ? (
-                <a
-                  href={paypalLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-ui inline-flex h-11 items-center justify-center rounded-full bg-[#ffc439] px-6 text-[0.88rem] font-bold text-[#003087] transition-transform duration-200 hover:-translate-y-px"
-                >
-                  Paga con PayPal
-                </a>
-              ) : (
-                <p className="font-ui text-[0.82rem] font-semibold uppercase tracking-[0.08em] text-[var(--color-wine)]">
-                  Pagamento PayPal in attivazione — invia comunque il modulo, la Segreteria ti
-                  contatterà per completare il pagamento.
-                </p>
-              )}
-              <p className="mt-3 text-[0.82rem] leading-[1.55] text-[var(--color-muted)]">
-                Dopo il pagamento riceverai una conferma da PayPal. La Segreteria Organizzativa
-                verificherà il pagamento e ti confermerà la partecipazione.
-              </p>
-            </div>
-          ) : null}
         </fieldset>
 
         <fieldset className="flex flex-col gap-4">
