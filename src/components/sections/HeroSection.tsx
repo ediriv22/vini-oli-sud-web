@@ -98,10 +98,6 @@ export default function HeroSection() {
               <Button href={slide.ctaHref} variant="primary" size="md">
                 {slide.ctaLabel}
               </Button>
-              <span
-                aria-hidden="true"
-                className="hidden h-px w-16 border-t border-dashed border-[rgba(255,215,87,0.6)] sm:block"
-              />
             </div>
           </div>
 

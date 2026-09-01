@@ -1,9 +1,9 @@
 {
     "sections": [
         { "key": "hero", "enabled": true },
+        { "key": "sfideAccordion", "enabled": true },
         { "key": "twoEvents", "enabled": true },
         { "key": "institutionalPartners", "enabled": true },
-        { "key": "sfideAccordion", "enabled": true },
         { "key": "granPremioIntro", "enabled": true },
         { "key": "philosophy", "enabled": true },
         { "key": "territory", "enabled": true },
