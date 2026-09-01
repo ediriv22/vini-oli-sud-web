@@ -1,12 +1,13 @@
 "use client";
 
-import { useMemo, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useState, type FormEvent } from "react";
 import {
   CheckboxField,
   FileField,
   FormSectionTitle,
   FormStatusBanner,
   Honeypot,
+  IbanCopy,
   TextField,
   submitLeadForm,
   type SubmitStatus,
@@ -34,9 +35,38 @@ export default function PassGiuratoPage() {
   const [sfideScelte, setSfideScelte] = useState<string[]>([]);
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | undefined>();
+  // Posti rimasti per Sfida (200 a Sfida, richiesta esplicita): letti da
+  // pass-giurato-counts.php, che conta le iscrizioni già salvate nel CSV
+  // sul server. Una Sfida esaurita si disattiva da sola, senza bisogno di
+  // toccare il codice quando si riempie.
+  const [sfideCounts, setSfideCounts] = useState<Record<string, number>>({});
+  const [countsLimit, setCountsLimit] = useState<number>(200);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/forms/pass-giurato-counts.php", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((data: { limit?: number; counts?: Record<string, number> }) => {
+        if (cancelled) return;
+        if (data.counts) setSfideCounts(data.counts);
+        if (data.limit) setCountsLimit(data.limit);
+      })
+      .catch(() => {
+        // Endpoint non raggiungibile: nessuna Sfida viene disattivata per
+        // errore di rete, il controllo definitivo resta comunque lato
+        // server in lead.php.
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const isSfidaFull = (name: string) => (sfideCounts[name] ?? 0) >= countsLimit;
+  const tutteEsaurite = concorsi.length > 0 && concorsi.every((c) => isSfidaFull(c.name));
 
   const sfideAttese = tipoPass === "1 Sfida a scelta" ? 1 : tipoPass.startsWith("3 Sfide") ? 3 : tipoPass ? 9 : 0;
   const richiedeSelezione = sfideAttese === 1 || sfideAttese === 3;
+  const granGiuratoDisponibile = !concorsi.some((c) => isSfidaFull(c.name));
 
   const oggi = useMemo(() => new Date(), []);
   const maxNascita = useMemo(() => {
@@ -48,7 +78,8 @@ export default function PassGiuratoPage() {
   function toggleSfida(name: string) {
     setSfideScelte((prev) => {
       if (prev.includes(name)) return prev.filter((s) => s !== name);
-      if (prev.length >= sfideAttese) return prev; // limite raggiunto
+      if (prev.length >= sfideAttese) return prev; // limite Pass raggiunto
+      if (isSfidaFull(name)) return prev; // 200 posti già occupati per questa Sfida
       return [...prev, name];
     });
   }
@@ -85,9 +116,18 @@ export default function PassGiuratoPage() {
           Solo 200 Giurati Popolari per ciascuna Sfida. Compila il modulo e completa il pagamento
           per riservare il tuo posto.
         </p>
+        <p className="mx-auto mt-3 max-w-[46ch] text-[0.86rem] leading-[1.55] text-[var(--color-muted)]">
+          I posti sono limitati e sarà possibile acquistarli fino ad esaurimento.
+        </p>
         <p className="mx-auto mt-3 max-w-[46ch] text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
-          Il kit giurato sarà disponibile per il ritiro dalle ore 9 del 27 Novembre 2026 presso lo
-          stand della Segreteria Organizzativa.
+          Il Pass Giurato è strettamente personale e non cedibile: va conservato dal titolare per
+          tutta la durata della manifestazione (27-28-29 novembre 2026). In caso di smarrimento non
+          sarà possibile richiedere una sostituzione né l&rsquo;accesso alle Sfide.
+        </p>
+        <p className="mx-auto mt-3 max-w-[46ch] text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
+          Il kit giurato sarà disponibile per il ritiro presso lo stand della Segreteria
+          Organizzativa venerdì 27, sabato 28 e domenica 29 novembre 2026, dalle 9.00 alle 20.00,
+          previa esibizione della conferma di iscrizione ricevuta via email.
         </p>
       </div>
 
@@ -138,6 +178,11 @@ export default function PassGiuratoPage() {
                       .map((c) => (
                         <li key={c.name} className="text-[0.82rem] leading-[1.4] text-[var(--color-muted)]">
                           <span aria-hidden="true">{c.icon}</span> {c.ora} — {c.name}
+                          {isSfidaFull(c.name) ? (
+                            <span className="ml-1.5 font-ui text-[0.66rem] font-semibold uppercase tracking-[0.04em] text-[rgb(153,42,42)]">
+                              Esaurito
+                            </span>
+                          ) : null}
                         </li>
                       ))}
                   </ul>
@@ -160,13 +205,25 @@ export default function PassGiuratoPage() {
           <div className="grid gap-4 sm:grid-cols-3">
             {tiers.map((tier) => {
               const selected = tipoPass === tier.name;
+              // Il Pass Gran Giurato copre tutte le 9 Sfide: se anche una
+              // sola ha già raggiunto i 200 posti, questo Pass non è più
+              // acquistabile per intero (le Sfide singole restano invece
+              // scelte una per una più sotto, dove l'esclusione è puntuale).
+              const isGranGiurato = tier.name.startsWith("Pass Gran Giurato");
+              const disabled = isGranGiurato && !granGiuratoDisponibile;
               return (
                 <label
                   key={tier.name}
-                  className={`flex cursor-pointer flex-col items-center gap-1 rounded-[1rem] border p-4 text-center transition-colors duration-200 ${
+                  className={`flex flex-col items-center gap-1 rounded-[1rem] border p-4 text-center transition-colors duration-200 ${
+                    disabled
+                      ? "cursor-not-allowed border-[rgba(47,91,70,0.15)] bg-[rgba(47,91,70,0.03)] opacity-60"
+                      : "cursor-pointer"
+                  } ${
                     selected
                       ? "border-[var(--color-wine)] bg-[rgba(47,91,70,0.08)]"
-                      : "border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)]"
+                      : disabled
+                        ? ""
+                        : "border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)]"
                   }`}
                 >
                   <input
@@ -174,6 +231,7 @@ export default function PassGiuratoPage() {
                     name="tipo_pass"
                     value={tier.name}
                     required
+                    disabled={disabled}
                     checked={selected}
                     onChange={() => {
                       setTipoPass(tier.name);
@@ -185,6 +243,11 @@ export default function PassGiuratoPage() {
                     {tier.name}
                   </span>
                   <span className="font-display text-[1.6rem] text-[var(--color-wine)]">{tier.price}</span>
+                  {disabled ? (
+                    <span className="font-ui text-[0.66rem] font-semibold uppercase tracking-[0.04em] text-[rgb(153,42,42)]">
+                      Non disponibile: una o più Sfide esaurite
+                    </span>
+                  ) : null}
                 </label>
               );
             })}
@@ -199,13 +262,16 @@ export default function PassGiuratoPage() {
               <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
                 {concorsi.map((c) => {
                   const checked = sfideScelte.includes(c.name);
+                  const full = isSfidaFull(c.name);
                   return (
                     <label
                       key={c.name}
                       className={`flex items-center gap-3 rounded-[0.8rem] border px-3 py-2.5 text-[0.88rem] transition-colors duration-200 ${
-                        checked
-                          ? "border-[var(--color-wine)] bg-[rgba(47,91,70,0.08)]"
-                          : "border-[rgba(47,91,70,0.22)] bg-[rgba(255,253,245,0.6)]"
+                        full
+                          ? "cursor-not-allowed border-[rgba(47,91,70,0.12)] bg-[rgba(47,91,70,0.02)] opacity-60"
+                          : checked
+                            ? "border-[var(--color-wine)] bg-[rgba(47,91,70,0.08)]"
+                            : "border-[rgba(47,91,70,0.22)] bg-[rgba(255,253,245,0.6)]"
                       }`}
                     >
                       <input
@@ -213,6 +279,7 @@ export default function PassGiuratoPage() {
                         name="sfide"
                         value={c.name}
                         checked={checked}
+                        disabled={full}
                         onChange={() => toggleSfida(c.name)}
                         className="h-4 w-4 accent-[var(--color-wine)]"
                       />
@@ -221,6 +288,11 @@ export default function PassGiuratoPage() {
                         {c.name}
                         <span className="block text-[0.74rem] text-[var(--color-muted)]">
                           {c.giorno} · ore {c.ora}
+                          {full ? (
+                            <span className="ml-1.5 font-ui font-semibold uppercase tracking-[0.04em] text-[rgb(153,42,42)]">
+                              Esaurito
+                            </span>
+                          ) : null}
                         </span>
                       </span>
                     </label>
@@ -250,7 +322,7 @@ export default function PassGiuratoPage() {
             <p className="mt-2 text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
               Intestato a <strong>A.S.D. Napoli Racing Show</strong>
               <br />
-              IBAN: <strong>IT51 X062 3003 5470 0003 5710 069</strong>
+              IBAN: <IbanCopy iban="IT51 X062 3003 5470 0003 5710 069" />
               <br />
               Causale: Pass Giuria Popolare – [Nome Cognome] – [Tipo di Pass]
             </p>
@@ -271,9 +343,14 @@ export default function PassGiuratoPage() {
         </fieldset>
 
         <div className="flex flex-col items-center gap-4 border-t border-[rgba(255,215,87,0.3)] pt-8 text-center">
+          {tutteEsaurite ? (
+            <p className="font-ui text-[0.86rem] font-semibold uppercase tracking-[0.06em] text-[rgb(153,42,42)]">
+              Tutti i posti Giuria Popolare per le 9 Sfide sono esauriti.
+            </p>
+          ) : null}
           <button
             type="submit"
-            disabled={status === "submitting"}
+            disabled={status === "submitting" || tutteEsaurite}
             className="font-ui inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[var(--color-sand)] px-10 text-[1rem] font-bold uppercase tracking-[0.06em] text-[var(--color-ink-strong)] shadow-[0_14px_32px_rgba(255,215,87,0.32)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-px hover:shadow-[0_18px_38px_rgba(255,215,87,0.4)] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {status === "submitting" ? "Invio in corso…" : "🎟️ Invia Iscrizione"}

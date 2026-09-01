@@ -33,6 +33,8 @@
 
 declare(strict_types=1);
 
+require __DIR__ . '/lib/vos-sfide.php';
+
 // -----------------------------------------------------------------------------
 // 0. Bootstrap
 // -----------------------------------------------------------------------------
@@ -441,13 +443,8 @@ if ($requestType === 'iscrizione-giurato') {
     }
     $sfideAttese = $tierValida[$tipoPass];
 
-    $concorsiValidi = [
-        'Birra & Street Food', 'Vino & Pizza', 'Vino & Pesce', 'Vino & Carne',
-        'Vino & Pasta', 'Vino & Sigaro', 'Il Miglior Olio Extravergine',
-        'Il Miglior Amaro', 'Il Miglior Liquore per il Miglior Dolce',
-    ];
     if ($sfideAttese === 9) {
-        $sfideScelte = $concorsiValidi; // Gran Giurato: tutte le 9, nessuna selezione richiesta.
+        $sfideScelte = VOS_CONCORSI_VALIDI; // Gran Giurato: tutte le 9, nessuna selezione richiesta.
     } else {
         $sfideScelte = array_values(array_filter(array_map(
             'vos_clean_line',
@@ -455,12 +452,23 @@ if ($requestType === 'iscrizione-giurato') {
         )));
         $sfideScelte = array_values(array_unique($sfideScelte));
         foreach ($sfideScelte as $s) {
-            if (!in_array($s, $concorsiValidi, true)) {
+            if (!in_array($s, VOS_CONCORSI_VALIDI, true)) {
                 $respond(false, 'Una delle Sfide selezionate non è valida.');
             }
         }
         if (count($sfideScelte) !== $sfideAttese) {
             $respond(false, "Seleziona esattamente $sfideAttese Sfid" . ($sfideAttese === 1 ? 'a' : 'e') . " per questo Pass.");
+        }
+    }
+
+    // Limite 200 Giurati Popolari per Sfida (richiesta esplicita): il CSV
+    // locale è la fonte di verità, stessa lettura usata da
+    // pass-giurato-counts.php per disattivare la scelta in pagina. Controllo
+    // server-side qui per non fidarsi solo del blocco lato client.
+    $sfideCounts = vos_count_sfide_from_csv($dataDir);
+    foreach ($sfideScelte as $s) {
+        if (($sfideCounts[$s] ?? 0) >= VOS_LIMITE_GIURATI_PER_SFIDA) {
+            $respond(false, "La Sfida \"$s\" ha raggiunto i " . VOS_LIMITE_GIURATI_PER_SFIDA . " posti disponibili. Scegline un'altra.");
         }
     }
 
@@ -549,12 +557,7 @@ if ($requestType === 'iscrizione-giurato') {
         $respond(false, 'Inserisci un indirizzo email aziendale valido.');
     }
 
-    $concorsiValidi = [
-        'Birra & Street Food', 'Vino & Pizza', 'Vino & Pesce', 'Vino & Carne',
-        'Vino & Pasta', 'Vino & Sigaro', 'Il Miglior Olio Extravergine',
-        'Il Miglior Amaro', 'Il Miglior Liquore per il Miglior Dolce',
-    ];
-    if (!in_array($values['concorso'], $concorsiValidi, true)) {
+    if (!in_array($values['concorso'], VOS_CONCORSI_VALIDI, true)) {
         $respond(false, 'Seleziona un Concorso valido tra i 9 disponibili.');
     }
 
@@ -913,24 +916,46 @@ try {
 }
 
 // --- 8b. Email di conferma all'utente (best-effort, non blocca la risposta) ---
+// Testo e oggetto sono ad hoc per tipo di candidatura (richiesta esplicita):
+// per iscrizione-giurato/iscrizione-prodotto il $requestId è presentato come
+// "codice" da conservare e mostrare alla Segreteria Organizzativa — è lo
+// stesso identificativo che compare nella notifica interna (sezione 8a),
+// quindi segreteria e utente parlano sempre dello stesso codice.
 if (!empty($config['SEND_USER_CONFIRMATION'])) {
     try {
-        $kindLabel = [
-            'manifestazione-interesse' => 'manifestazione di interesse',
-            'carnet-degustazione'      => 'richiesta Carnet Degustazione',
-            'segnalazione-editoriale'  => 'segnalazione per il Diario del Sud',
-            'richiesta-sponsor'        => 'richiesta di sponsorizzazione',
-            'iscrizione-giurato'       => 'iscrizione Pass Giuria Popolare',
-            'iscrizione-prodotto'      => 'iscrizione prodotto al Gran Premio del Gusto 2026',
-        ][$kind] ?? 'richiesta';
-
+        $confSubject = $config['CONFIRM_SUBJECT'] ?? 'Abbiamo ricevuto la tua richiesta — Vini Oli Sud';
         $confLines = [];
-        $confLines[] = 'Ciao,';
-        $confLines[] = '';
-        $confLines[] = 'grazie per averci scritto. Abbiamo ricevuto la tua ' . $kindLabel . '.';
-        if ($kind === 'iscrizione-prodotto') {
-            // Requisito esplicito: l'invio NON garantisce l'ammissione (posti
-            // limitati per Sfida). Vedi anche la nota a fondo modulo.
+
+        if ($kind === 'iscrizione-giurato') {
+            $confSubject = "Iscrizione Pass Giuria Popolare ricevuta — Codice $requestId";
+            $confLines[] = 'Ciao,';
+            $confLines[] = '';
+            $confLines[] = 'grazie per la tua iscrizione come Giurato Popolare al Gran Premio del '
+                         . 'Gusto 2026.';
+            $confLines[] = '';
+            $confLines[] = "IL TUO CODICE ISCRIZIONE: $requestId";
+            $confLines[] = '';
+            $confLines[] = 'Conserva questo codice (basta mostrare questa email dal telefono): '
+                         . 'dovrai presentarlo allo stand della Segreteria Organizzativa per il '
+                         . 'ritiro del kit giurato, disponibile dalle ore 9.00 alle 20.00 di '
+                         . 'venerdì 27, sabato 28 e domenica 29 novembre 2026.';
+            $confLines[] = '';
+            $confLines[] = 'La Segreteria Organizzativa verificherà il pagamento e ti confermerà '
+                         . 'definitivamente la partecipazione.';
+            $confLines[] = '';
+            $confLines[] = 'Il Pass Giurato è personale, non cedibile né sostituibile: va '
+                         . 'conservato dal titolare per tutta la durata della manifestazione.';
+        } elseif ($kind === 'iscrizione-prodotto') {
+            $confSubject = "Iscrizione Prodotto ricevuta — Codice $requestId — Gran Premio del Gusto 2026";
+            $confLines[] = 'Ciao,';
+            $confLines[] = '';
+            $confLines[] = 'grazie per aver iscritto il tuo prodotto a una Sfida del Gran Premio '
+                         . 'del Gusto 2026.';
+            $confLines[] = '';
+            $confLines[] = "IL TUO CODICE ISCRIZIONE: $requestId";
+            $confLines[] = '';
+            $confLines[] = 'Conserva questo codice: usalo in ogni comunicazione con la Segreteria '
+                         . 'Organizzativa relativa a questa iscrizione.';
             $confLines[] = '';
             $confLines[] = "L'invio del modulo non garantisce automaticamente l'ammissione al "
                          . 'Concorso. La Segreteria Organizzativa verificherà la disponibilità dei '
@@ -938,14 +963,24 @@ if (!empty($config['SEND_USER_CONFIRMATION'])) {
                          . "l'avvenuto pagamento. A iscrizione accettata, riceverai una conferma "
                          . 'ufficiale dalla Segreteria Organizzativa.';
         } else {
+            $kindLabel = [
+                'manifestazione-interesse' => 'manifestazione di interesse',
+                'carnet-degustazione'      => 'richiesta Carnet Degustazione',
+                'segnalazione-editoriale'  => 'segnalazione per il Diario del Sud',
+                'richiesta-sponsor'        => 'richiesta di sponsorizzazione',
+            ][$kind] ?? 'richiesta';
+            $confLines[] = 'Ciao,';
+            $confLines[] = '';
+            $confLines[] = 'grazie per averci scritto. Abbiamo ricevuto la tua ' . $kindLabel . '.';
             $confLines[] = 'Ti risponderemo al più presto.';
+            $confLines[] = '';
+            $confLines[] = 'Riferimento richiesta: ' . $requestId;
         }
-        $confLines[] = '';
-        $confLines[] = 'Riferimento richiesta: ' . $requestId;
+
         $confLines[] = '';
         $confLines[] = 'Questo è un messaggio automatico di conferma: non occorre rispondere.';
         $confLines[] = '';
-        $confLines[] = '— Vini Oli Sud';
+        $confLines[] = '— A.S.D. Napoli Racing Show';
 
         $confMailer = $makeMailer();
         $confFrom     = $config['CONFIRM_FROM'] ?? ($config['MAIL_FROM'] ?? 'info@vinisud.it');
@@ -954,7 +989,7 @@ if (!empty($config['SEND_USER_CONFIRMATION'])) {
         $confMailer->addAddress($email);
         // Se l'utente risponde, la mail arriva alla segreteria, non al noreply.
         $confMailer->addReplyTo($config['MAIL_TO_INFO'] ?? $confFrom, $confFromName);
-        $confMailer->Subject = $config['CONFIRM_SUBJECT'] ?? 'Abbiamo ricevuto la tua richiesta — Vini Oli Sud';
+        $confMailer->Subject = $confSubject;
         $confMailer->isHTML(false);
         $confMailer->Body    = implode("\n", $confLines);
         $confMailer->send();

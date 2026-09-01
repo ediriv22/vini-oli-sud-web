@@ -43,10 +43,18 @@ export default function TwoEventsSection() {
               >
                 {card.tagline}
               </p>
-              <div className="mt-2">
+              <div className="mt-2 flex flex-wrap justify-center gap-3">
                 <Button href={card.ctaHref} variant="soft" size="sm">
                   {card.ctaLabel}
                 </Button>
+                {/* Secondario opzionale (oggi solo sulla card Gran Premio del
+                    Gusto: "Diventa Giurato" → /pass-giurato/, richiesta
+                    esplicita di riportarlo visibile in home). */}
+                {"secondaryCtaHref" in card && card.secondaryCtaHref ? (
+                  <Button href={card.secondaryCtaHref} variant="primary" size="sm">
+                    {"secondaryCtaLabel" in card ? card.secondaryCtaLabel : ""}
+                  </Button>
+                ) : null}
               </div>
             </div>
           ))}

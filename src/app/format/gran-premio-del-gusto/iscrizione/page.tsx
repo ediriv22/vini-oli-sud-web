@@ -7,6 +7,7 @@ import {
   FormSectionTitle,
   FormStatusBanner,
   Honeypot,
+  IbanCopy,
   TextField,
   TextareaField,
   submitLeadForm,
@@ -215,7 +216,7 @@ export default function IscrizioneProdottoPage() {
             <p className="mt-2 text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
               Bonifico bancario intestato a <strong>A.S.D. Napoli Racing Show</strong>
               <br />
-              IBAN: <strong>IT51 X062 3003 5470 0003 5710 069</strong>
+              IBAN: <IbanCopy iban="IT51 X062 3003 5470 0003 5710 069" />
               <br />
               Causale: Gran Premio del Gusto 2026 – [Nome Azienda] – [Nome Prodotto] – [Concorso]
             </p>

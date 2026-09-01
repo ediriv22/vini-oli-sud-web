@@ -292,7 +292,9 @@
                 "title": "1ª Edizione del Gran Premio del Gusto",
                 "tagline": "9 Sfide · 9 Vincitori · 70% Giuria Popolare · 30% Giuria Tecnica",
                 "ctaLabel": "Scopri il Gran Premio",
-                "ctaHref": "/format/gran-premio-del-gusto/"
+                "ctaHref": "/format/gran-premio-del-gusto/",
+                "secondaryCtaLabel": "🎟️ Diventa Giurato",
+                "secondaryCtaHref": "/pass-giurato/"
             }
         ]
     }

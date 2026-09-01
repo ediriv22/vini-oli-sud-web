@@ -1,4 +1,6 @@
-import type { InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from "react";
+"use client";
+
+import { useState, type InputHTMLAttributes, type ReactNode, type TextareaHTMLAttributes } from "react";
 
 /**
  * Primitivi UI condivisi dai moduli reali del sito (iscrizione prodotto,
@@ -160,6 +162,40 @@ export async function submitLeadForm(
   } catch {
     return { ok: false, error: "Errore di rete. Controlla la connessione e riprova." };
   }
+}
+
+/**
+ * IBAN mostrato senza spazi (copiabile/incollabile diretto in un'app
+ * bancaria) con pulsante "Copia" — richiesta esplicita: molte app banche
+ * non riconoscono l'IBAN se incollato con spazi in mezzo.
+ */
+export function IbanCopy({ iban }: { iban: string }) {
+  const [copied, setCopied] = useState(false);
+  const clean = iban.replace(/\s+/g, "");
+
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(clean);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard non disponibile (permessi/contesto): l'IBAN resta comunque
+      // selezionabile a mano, nessun errore da mostrare all'utente.
+    }
+  }
+
+  return (
+    <span className="inline-flex flex-wrap items-center gap-2">
+      <strong className="select-all font-mono tracking-wide">{clean}</strong>
+      <button
+        type="button"
+        onClick={handleCopy}
+        className="font-ui inline-flex items-center gap-1 rounded-full border border-[rgba(47,91,70,0.3)] px-2.5 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.04em] text-[var(--color-wine)] transition-colors duration-200 hover:bg-[rgba(47,91,70,0.08)]"
+      >
+        {copied ? "✓ Copiato" : "📋 Copia"}
+      </button>
+    </span>
+  );
 }
 
 /** Campo honeypot anti-bot, nascosto via CSS (non display:none: alcuni bot lo ignorano). */
