@@ -85,6 +85,10 @@ export default function PassGiuratoPage() {
           Solo 200 Giurati Popolari per ciascuna Sfida. Compila il modulo e completa il pagamento
           per riservare il tuo posto.
         </p>
+        <p className="mx-auto mt-3 max-w-[46ch] text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
+          Il kit giurato sarà disponibile per il ritiro dalle ore 9 del 27 Novembre 2026 presso lo
+          stand della Segreteria Organizzativa.
+        </p>
       </div>
 
       <form
