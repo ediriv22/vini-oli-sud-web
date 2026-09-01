@@ -160,6 +160,16 @@ button {
   background: transparent;
 }
 
+/* Carosello orizzontale (es. quick-nav nell'hero): scroll nativo, niente
+ * scrollbar visibile ma resta interamente utilizzabile da mouse/touch. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Hairline divider (oro) per separare sezioni senza creare bande colorate. */
 .hairline-gold::after {
   content: "";

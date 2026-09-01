@@ -231,7 +231,8 @@ export function Panel({ item, index, email }: { item: Item; index: number; email
 }
 
 // Icona per ciascun riquadro (per tipo).
-const TILE_ICON: Record<string, string> = {
+// Esportata per riuso nel carosello rapido dell'hero (vedi HeroSection).
+export const TILE_ICON: Record<string, string> = {
   programma: "📅",
   biglietti: "🎟️",
   iscrivi: "🏆",

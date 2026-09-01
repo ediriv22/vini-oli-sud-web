@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Button from "@/components/ui/Button";
+import { TILE_ICON } from "@/components/sections/SfideAccordionSection";
 import { siteConfig } from "@/data/site";
 
 /**
@@ -136,6 +137,32 @@ export default function HeroSection() {
               <span aria-hidden="true">→</span>
             </button>
           </div>
+
+          {/* Carosello rapido "Scopri la Rassegna 2026" — richiesta esplicita:
+              le 5 card devono stare dentro l'hero, scorrevoli, non in una
+              sezione separata più in basso. Riusa siteConfig.sfideAccordion
+              (stessa fonte della sezione completa con Pass/Concorsi/Fasi,
+              che resta anche lei in pagina per chi vuole il dettaglio). */}
+          <nav
+            aria-label="Scopri la Rassegna 2026"
+            className="no-scrollbar mt-10 flex gap-3 overflow-x-auto pb-1"
+          >
+            {siteConfig.sfideAccordion.items.map((item) => (
+              <a
+                key={item.kind}
+                href={item.ctaHref || undefined}
+                aria-disabled={!item.ctaHref}
+                className={`font-ui flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-5 py-3 text-[0.8rem] font-semibold uppercase tracking-[0.05em] transition-colors duration-200 ${
+                  item.ctaHref
+                    ? "border-[rgba(255,215,87,0.45)] bg-[rgba(255,253,245,0.1)] text-[var(--color-ivory)] hover:bg-[rgba(255,215,87,0.16)]"
+                    : "cursor-not-allowed border-[rgba(255,253,245,0.2)] text-[rgba(255,253,245,0.5)]"
+                }`}
+              >
+                <span aria-hidden="true">{TILE_ICON[item.kind] ?? "•"}</span>
+                {item.label}
+              </a>
+            ))}
+          </nav>
         </div>
       </div>
 
