@@ -26,6 +26,7 @@ import { siteConfig } from "@/data/site";
 export default function PassGiuratoPage() {
   const biglietti = siteConfig.sfideAccordion.items.find((i) => i.kind === "biglietti");
   const tiers = biglietti?.tiers ?? [];
+  const addon = biglietti?.addon;
   const concorsi = siteConfig.sfideAccordion.items.find((i) => i.kind === "iscrivi")?.concorsi ?? [];
   // PayPal temporaneamente rimosso dal modulo (link non ancora attivo per le
   // vendite): paypalLink resta in siteConfig, pronto per quando servirà
@@ -33,6 +34,11 @@ export default function PassGiuratoPage() {
 
   const [tipoPass, setTipoPass] = useState<string>("");
   const [sfideScelte, setSfideScelte] = useState<string[]>([]);
+  // Add-on "bicchiere + portabicchiere in omaggio" (+€10, richiesta esplicita
+  // 1/9/2026): esclusivo del Pass Gran Giurato — se l'utente lo seleziona e
+  // poi cambia Pass, va spento di nuovo, non deve restare "appiccicato" a un
+  // Pass che non lo prevede.
+  const [addonScelto, setAddonScelto] = useState(false);
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | undefined>();
   // Posti rimasti per Sfida (200 a Sfida, richiesta esplicita): letti da
@@ -236,6 +242,7 @@ export default function PassGiuratoPage() {
                     onChange={() => {
                       setTipoPass(tier.name);
                       setSfideScelte([]);
+                      if (tier.name !== addon?.tierName) setAddonScelto(false);
                     }}
                     className="sr-only"
                   />
@@ -303,6 +310,36 @@ export default function PassGiuratoPage() {
           ) : tipoPass ? (
             <p className="text-center text-[0.86rem] italic text-[var(--color-muted)]">
               Pass Gran Giurato: partecipi a tutte le 9 Sfide, nessuna selezione necessaria.
+            </p>
+          ) : null}
+
+          {addon && tipoPass === addon.tierName ? (
+            <label className="flex items-start gap-3 rounded-[0.9rem] border border-dashed border-[var(--color-sand-strong)] bg-[rgba(255,215,87,0.08)] px-4 py-3 text-left text-[0.88rem] leading-[1.5] text-[var(--color-ink-strong)]">
+              <input
+                type="checkbox"
+                name="addon_bicchiere"
+                value="1"
+                checked={addonScelto}
+                onChange={(e) => setAddonScelto(e.target.checked)}
+                className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-wine)]"
+              />
+              <span>
+                🎁 <strong>+{addon.price}</strong> — {addon.label}
+                {addon.note ? (
+                  <span className="block text-[0.76rem] text-[var(--color-muted)]">{addon.note}</span>
+                ) : null}
+              </span>
+            </label>
+          ) : null}
+
+          {tipoPass ? (
+            <p className="text-center font-ui text-[0.9rem] font-semibold text-[var(--color-ink-strong)]">
+              Totale:{" "}
+              {(() => {
+                const base = parseInt(tiers.find((t) => t.name === tipoPass)?.price.replace(/\D/g, "") ?? "0", 10);
+                const totale = base + (addonScelto && addon ? addon.priceValue : 0);
+                return `€${totale}`;
+              })()}
             </p>
           ) : null}
         </fieldset>

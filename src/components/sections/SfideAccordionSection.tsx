@@ -5,6 +5,7 @@ import Button from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
 
 type Tier = { name: string; price: string; featured?: boolean; badge?: string; features: string[] };
+type Addon = { tierName: string; label: string; note?: string; price: string; priceValue: number };
 type NamedIcon = { icon: string; name: string };
 type Phase = { time: string; title: string; desc: string };
 type Item = {
@@ -14,6 +15,7 @@ type Item = {
   subheading?: string;
   sectionTitle?: string;
   tiers?: Tier[];
+  addon?: Addon;
   ctaLabel?: string;
   ctaHref?: string;
   extraTitle?: string;
@@ -112,6 +114,19 @@ export function Panel({ item, index, email }: { item: Item; index: number; email
               </ul>
             </div>
           ))}
+        </div>
+      ) : null}
+      {item.addon ? (
+        <div
+          className="rounded-[1rem] border border-dashed border-[var(--color-sand-strong)] bg-[rgba(255,215,87,0.07)] p-4 text-center"
+          data-content-key={k("addon.label")}
+        >
+          <p className="font-ui text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-[var(--color-wine)]">
+            {item.addon.note ?? "Extra"}
+          </p>
+          <p className="mt-1.5 text-[0.9rem] leading-[1.5] text-[var(--color-ink-strong)]">
+            🎁 <strong>{item.addon.price} in più:</strong> {item.addon.label}
+          </p>
         </div>
       ) : null}
 

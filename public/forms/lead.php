@@ -480,16 +480,29 @@ if ($requestType === 'iscrizione-giurato') {
         $attachments = array_values(array_filter($attachments));
     }
 
+    // Add-on "bicchiere + portabicchiere in omaggio" (+€10, richiesta esplicita
+    // 1/9/2026): esclusivo del Pass Gran Giurato — Tutte le 9 Sfide. Controllo
+    // server-side (non ci si fida del solo checkbox lato client, stesso
+    // principio delle altre validazioni qui sopra): un addon selezionato con
+    // un Pass diverso viene silenziosamente ignorato, mai un errore che
+    // blocca l'iscrizione per un dettaglio non essenziale come questo.
+    $addonBicchiere = !empty($_POST['addon_bicchiere']) && $tipoPass === 'Pass Gran Giurato — Tutte le 9 Sfide';
+    $prezziBase = ['1 Sfida a scelta' => 25, '3 Sfide a scelta' => 50, 'Pass Gran Giurato — Tutte le 9 Sfide' => 70];
+    $totale = ($prezziBase[$tipoPass] ?? 0) + ($addonBicchiere ? 10 : 0);
+
     $payload = [
         'Nome e cognome'      => "$nome $cognome",
         'Email'               => $email,
         'Data di nascita'     => $dataNascita . " (età $età)",
         'Tipo di Pass'        => $tipoPass,
         'Sfide scelte'        => implode(', ', $sfideScelte),
+        'Add-on bicchiere+portabicchiere (+€10)' => $addonBicchiere ? 'Sì' : 'No',
+        'Totale dovuto'       => "€$totale",
         'Metodo di pagamento' => ucfirst($metodoPagamento),
         'Ricevuta allegata'   => $metodoPagamento === 'bonifico' ? (count($attachments) ? 'Sì' : 'No') : '—',
     ];
-    $subject = 'Iscrizione Pass Giuria Popolare — ' . $nome . ' ' . $cognome . ' — ' . $tipoPass;
+    $subject = 'Iscrizione Pass Giuria Popolare — ' . $nome . ' ' . $cognome . ' — ' . $tipoPass
+             . ($addonBicchiere ? ' (+add-on bicchiere)' : '');
 
     // Canali extra oltre all'email (richiesta esplicita): CSV locale sempre
     // scritto (garantito, nessuna dipendenza esterna); Google Sheet in più
@@ -500,9 +513,10 @@ if ($requestType === 'iscrizione-giurato') {
         $dataDir,
         'pass-giurato-iscrizioni.csv',
         ['request_id', 'data_ora', 'nome', 'cognome', 'email', 'data_nascita', 'eta',
-            'tipo_pass', 'sfide', 'metodo_pagamento', 'ricevuta_allegata'],
+            'tipo_pass', 'sfide', 'addon_bicchiere', 'totale', 'metodo_pagamento', 'ricevuta_allegata'],
         [$requestId, date('c'), $nome, $cognome, $email, $dataNascita, $età,
-            $tipoPass, implode('; ', $sfideScelte), $metodoPagamento, $ricevutaAllegataStr],
+            $tipoPass, implode('; ', $sfideScelte), $addonBicchiere ? 'si' : 'no', $totale,
+            $metodoPagamento, $ricevutaAllegataStr],
     );
     vos_push_google_sheet($config, 'GOOGLE_SHEET_WEBAPP_URL_GIURATO', [
         'requestId'       => $requestId,
@@ -514,6 +528,8 @@ if ($requestType === 'iscrizione-giurato') {
         'eta'             => $età,
         'tipoPass'        => $tipoPass,
         'sfide'           => implode('; ', $sfideScelte),
+        'addonBicchiere'  => $addonBicchiere ? 'si' : 'no',
+        'totale'          => $totale,
         'metodoPagamento' => $metodoPagamento,
         'ricevutaAllegata' => $ricevutaAllegataStr,
     ]);
@@ -935,6 +951,11 @@ if (!empty($config['SEND_USER_CONFIRMATION'])) {
             $confLines[] = '';
             $confLines[] = "IL TUO CODICE ISCRIZIONE: $requestId";
             $confLines[] = '';
+            if ($addonBicchiere) {
+                $confLines[] = 'Hai incluso l\'extra bicchiere + portabicchiere ufficiali in omaggio (+€10) — '
+                             . "totale dovuto: €$totale.";
+                $confLines[] = '';
+            }
             $confLines[] = 'Conserva questo codice (basta mostrare questa email dal telefono): '
                          . 'dovrai presentarlo allo stand della Segreteria Organizzativa per il '
                          . 'ritiro del kit giurato, disponibile dalle ore 9.00 alle 20.00 di '
