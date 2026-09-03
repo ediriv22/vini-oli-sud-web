@@ -226,39 +226,8 @@ function vos_append_csv(string $dataDir, string $filename, array $headers, array
     fclose($fh);
 }
 
-/**
- * Inoltra $data a un Google Apps Script Web App (doPost) configurato in
- * config.php sotto la chiave $configKey (una per modulo, ognuno può avere
- * il suo Sheet — vedi GOOGLE_SHEET_WEBAPP_URL_GIURATO/_PRODOTTO in
- * config.example.php) — se assente, non fa nulla: il Google Sheet è un
- * canale opzionale in più, il CSV locale e l'email restano garantiti a
- * prescindere. Best-effort, non blocca mai la risposta.
- */
-function vos_push_google_sheet(array $config, string $configKey, array $data): void {
-    $url = trim((string) ($config[$configKey] ?? ''));
-    if ($url === '' || !function_exists('curl_init')) {
-        return;
-    }
-    try {
-        $ch = curl_init($url);
-        curl_setopt_array($ch, [
-            CURLOPT_POST           => true,
-            CURLOPT_POSTFIELDS     => json_encode($data, JSON_UNESCAPED_UNICODE),
-            CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT        => 8,
-            CURLOPT_FOLLOWLOCATION => true, // Apps Script Web App risponde con un redirect
-            CURLOPT_SSL_VERIFYPEER => true,
-        ]);
-        curl_exec($ch);
-        if (curl_errno($ch)) {
-            error_log('vos_push_google_sheet: ' . curl_error($ch));
-        }
-        curl_close($ch);
-    } catch (\Throwable $e) {
-        error_log('vos_push_google_sheet exception: ' . $e->getMessage());
-    }
-}
+// vos_push_google_sheet spostata in lib/vos-sfide.php (riusata anche da
+// paypal-confirm.php per aggiornare lo stato pagamento dopo verifica).
 
 function vos_log_request(string $dataDir, string $requestId, string $type, bool $ok): void {
     $line = sprintf(
@@ -486,23 +455,35 @@ if ($requestType === 'iscrizione-giurato') {
     // principio delle altre validazioni qui sopra): un addon selezionato con
     // un Pass diverso viene silenziosamente ignorato, mai un errore che
     // blocca l'iscrizione per un dettaglio non essenziale come questo.
+    // $totale è anche l'importo atteso che paypal-confirm.php confronta con
+    // quanto restituito da PayPal Orders API prima di segnare pagato.
     $addonBicchiere = !empty($_POST['addon_bicchiere']) && $tipoPass === 'Pass Gran Giurato — Tutte le 9 Sfide';
     $prezziBase = ['1 Sfida a scelta' => 25, '3 Sfide a scelta' => 50, 'Pass Gran Giurato — Tutte le 9 Sfide' => 70];
     $totale = ($prezziBase[$tipoPass] ?? 0) + ($addonBicchiere ? 10 : 0);
+
+    // Bonifico: la ricevuta è già allegata al submit, la segreteria la
+    // verifica dopo ma la prova esiste già -> stato resta "da verificare"
+    // solo informativo. PayPal: nessuna prova ancora, il pagamento non è
+    // stato controllato -> "in_attesa_pagamento". Diventa "pagato" solo da
+    // paypal-confirm.php dopo verifica reale su PayPal Orders API (vedi
+    // §8bis più sotto: la mail di conferma utente per paypal NON parte qui).
+    $statoPagamento = $metodoPagamento === 'paypal' ? 'in_attesa_pagamento' : 'da_verificare';
 
     $payload = [
         'Nome e cognome'      => "$nome $cognome",
         'Email'               => $email,
         'Data di nascita'     => $dataNascita . " (età $età)",
         'Tipo di Pass'        => $tipoPass,
-        'Sfide scelte'        => implode(', ', $sfideScelte),
         'Add-on bicchiere+portabicchiere (+€10)' => $addonBicchiere ? 'Sì' : 'No',
         'Totale dovuto'       => "€$totale",
+        'Sfide scelte'        => implode(', ', $sfideScelte),
         'Metodo di pagamento' => ucfirst($metodoPagamento),
         'Ricevuta allegata'   => $metodoPagamento === 'bonifico' ? (count($attachments) ? 'Sì' : 'No') : '—',
+        'Stato pagamento'     => $statoPagamento,
     ];
     $subject = 'Iscrizione Pass Giuria Popolare — ' . $nome . ' ' . $cognome . ' — ' . $tipoPass
-             . ($addonBicchiere ? ' (+add-on bicchiere)' : '');
+             . ($addonBicchiere ? ' (+add-on bicchiere)' : '')
+             . ($metodoPagamento === 'paypal' ? ' — IN ATTESA PAGAMENTO PAYPAL' : '');
 
     // Canali extra oltre all'email (richiesta esplicita): CSV locale sempre
     // scritto (garantito, nessuna dipendenza esterna); Google Sheet in più
@@ -513,10 +494,11 @@ if ($requestType === 'iscrizione-giurato') {
         $dataDir,
         'pass-giurato-iscrizioni.csv',
         ['request_id', 'data_ora', 'nome', 'cognome', 'email', 'data_nascita', 'eta',
-            'tipo_pass', 'sfide', 'addon_bicchiere', 'totale', 'metodo_pagamento', 'ricevuta_allegata'],
+            'tipo_pass', 'addon_bicchiere', 'importo_atteso', 'sfide', 'metodo_pagamento',
+            'ricevuta_allegata', 'stato_pagamento'],
         [$requestId, date('c'), $nome, $cognome, $email, $dataNascita, $età,
-            $tipoPass, implode('; ', $sfideScelte), $addonBicchiere ? 'si' : 'no', $totale,
-            $metodoPagamento, $ricevutaAllegataStr],
+            $tipoPass, $addonBicchiere ? 'si' : 'no', $totale, implode('; ', $sfideScelte),
+            $metodoPagamento, $ricevutaAllegataStr, $statoPagamento],
     );
     vos_push_google_sheet($config, 'GOOGLE_SHEET_WEBAPP_URL_GIURATO', [
         'requestId'       => $requestId,
@@ -527,11 +509,12 @@ if ($requestType === 'iscrizione-giurato') {
         'dataNascita'     => $dataNascita,
         'eta'             => $età,
         'tipoPass'        => $tipoPass,
-        'sfide'           => implode('; ', $sfideScelte),
         'addonBicchiere'  => $addonBicchiere ? 'si' : 'no',
-        'totale'          => $totale,
+        'importoAtteso'   => $totale,
+        'sfide'           => implode('; ', $sfideScelte),
         'metodoPagamento' => $metodoPagamento,
         'ricevutaAllegata' => $ricevutaAllegataStr,
+        'statoPagamento'  => $statoPagamento,
     ]);
 } elseif ($requestType === 'iscrizione-prodotto') {
     $kind = 'iscrizione-prodotto';
@@ -937,7 +920,14 @@ try {
 // "codice" da conservare e mostrare alla Segreteria Organizzativa — è lo
 // stesso identificativo che compare nella notifica interna (sezione 8a),
 // quindi segreteria e utente parlano sempre dello stesso codice.
-if (!empty($config['SEND_USER_CONFIRMATION'])) {
+// Pass Giurato pagato con PayPal: NIENTE mail di conferma qui. Il pagamento
+// non è ancora stato verificato a questo punto (l'utente ha solo compilato
+// il form) — la mail parte solo da paypal-confirm.php, dopo che PayPal
+// Orders API conferma che il pagamento è reale e per l'importo giusto.
+// Bonifico invece conferma qui: la ricevuta è già allegata al submit.
+$skipUserConfirmation = ($kind === 'iscrizione-giurato' && ($metodoPagamento ?? '') === 'paypal');
+
+if (!empty($config['SEND_USER_CONFIRMATION']) && !$skipUserConfirmation) {
     try {
         $confSubject = $config['CONFIRM_SUBJECT'] ?? 'Abbiamo ricevuto la tua richiesta — Vini Oli Sud';
         $confLines = [];

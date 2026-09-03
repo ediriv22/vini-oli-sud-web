@@ -186,20 +186,21 @@
                 "subheading": "Se vuoi vivere da protagonista un weekend unico, degustare, votare e decidere chi vince…",
                 "sectionTitle": "Diventa Giurato Popolare",
                 "tiers": [
-                    { "name": "1 Sfida a scelta", "price": "€25", "featured": false, "features": ["Posto riservato per la Sfida scelta", "Degustazione dei prodotti in gara", "Diritto di voto nella Giuria Popolare"] },
-                    { "name": "3 Sfide a scelta", "price": "€50", "featured": false, "features": ["Posto riservato per le 3 Sfide scelte", "Degustazione dei prodotti in gara", "Diritto di voto nella Giuria Popolare per ogni Sfida"] },
-                    { "name": "Pass Gran Giurato — Tutte le 9 Sfide", "price": "€70", "featured": true, "badge": "⭐", "features": ["Posto riservato per tutte le 9 Sfide", "Degustazione dei prodotti in gara", "Diritto di voto nella Giuria Popolare per ogni Sfida", "Bicchiere ufficiale fornito in prestito per la degustazione, da riconsegnare a fine Sfida"] }
+                    { "name": "1 Sfida a scelta", "price": "€25", "priceValue": 25, "featured": false, "paypalHostedButtonId": "EPGERWSNHVYCQ", "features": ["Posto riservato per la Sfida scelta", "Degustazione dei prodotti in gara", "Diritto di voto nella Giuria Popolare"] },
+                    { "name": "3 Sfide a scelta", "price": "€50", "priceValue": 50, "featured": false, "paypalHostedButtonId": "CTNPRJC48ERMU", "features": ["Posto riservato per le 3 Sfide scelte", "Degustazione dei prodotti in gara", "Diritto di voto nella Giuria Popolare per ogni Sfida"] },
+                    { "name": "Pass Gran Giurato — Tutte le 9 Sfide", "price": "€70", "priceValue": 70, "featured": true, "badge": "⭐", "paypalHostedButtonId": "KZAFGXJUDSN3Q", "features": ["Posto riservato per tutte le 9 Sfide", "Degustazione dei prodotti in gara", "Diritto di voto nella Giuria Popolare per ogni Sfida", "Bicchiere ufficiale fornito in prestito per la degustazione, da riconsegnare a fine Sfida"] }
                 ],
                 "addon": {
                     "tierName": "Pass Gran Giurato — Tutte le 9 Sfide",
                     "label": "Bicchiere e portabicchiere ufficiali della manifestazione in omaggio, da tenere",
                     "note": "Esclusiva Pass 9 Sfide — solo per chi acquista il Pass Gran Giurato",
                     "price": "€10",
-                    "priceValue": 10
+                    "priceValue": 10,
+                    "paypalHostedButtonIdConAddon": "YV3L692XALKYQ"
                 },
                 "ctaLabel": "Diventa Giurato",
                 "ctaHref": "/pass-giurato/",
-                "paypalLink": "",
+                "paypalClientId": "BAAYdQ9KBOhOL67l1eSd5GAduiNx5Qv1NHttDucV7OSikwaoNnfs6QnPadR6Mpx6eVGAD8sBA0iMEWoP1E",
                 "extraTitle": "🩺 Prevenzione gratuita con ASL Napoli 1 Centro",
                 "extraBody": "I maggiorenni in possesso del Biglietto Tribuna del Napoli Racing Show o del Pass Giuria Popolare del Gran Premio del Gusto, previa prenotazione e fino a esaurimento dei posti disponibili, potranno effettuare visite gratuite di prevenzione presso il Camper della Salute dell'ASL Napoli 1 Centro nelle giornate di venerdì 27 e sabato 28 novembre 2026.",
                 "extraCtaLabel": "Prenota la tua visita gratuita",

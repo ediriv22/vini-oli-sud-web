@@ -68,4 +68,23 @@ return [
     // usare solo email + CSV.
     'GOOGLE_SHEET_WEBAPP_URL_GIURATO'  => '',
     'GOOGLE_SHEET_WEBAPP_URL_PRODOTTO' => '',
+
+    // --- PayPal (Pass Giurato) — verifica server-side degli ordini ---
+    // Usato SOLO da forms/paypal-confirm.php (chiamato dal sito dopo che
+    // l'utente approva il pagamento sui pulsanti Hosted Buttons) per
+    // interrogare PayPal Orders API v2 e confermare che il pagamento è
+    // reale prima di segnare l'iscrizione come "pagato" e inviare la mail
+    // di conferma. Client ID/Secret: developer.paypal.com > Dashboard >
+    // Apps & Credentials (app live "Pass Giurato Gran Premio del Gusto").
+    // NON è lo stesso client-id usato nello script dei pulsanti in pagina
+    // (quello è pubblico, va bene esposto lato client): questo Secret
+    // resta SOLO qui, mai nel repo, mai lato client.
+    'PAYPAL_CLIENT_ID'     => 'INSERIRE_PAYPAL_CLIENT_ID',
+    'PAYPAL_CLIENT_SECRET' => 'INSERIRE_PAYPAL_CLIENT_SECRET',
+    // true = ambiente live (api-m.paypal.com), false = sandbox.
+    'PAYPAL_LIVE' => true,
+    // Email dell'account PayPal business che riceve i pagamenti — usata
+    // come controllo anti-frode extra quando l'ordine la espone (mai
+    // mostrata da nessuna parte lato pubblico, solo confronto server-side).
+    'PAYPAL_RECEIVER_EMAIL' => 'INSERIRE_EMAIL_ACCOUNT_PAYPAL',
 ];
