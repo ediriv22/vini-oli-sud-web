@@ -1,5 +1,15 @@
 [
   {
+    "id": "2d4392c7d98a",
+    "category": "Calici di Magna Grecia",
+    "title": "Vini Argiolas – Nuove annate",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vini-argiolas-nuove-annate/178130/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-03"
+  },
+  {
     "id": "b32b406c8854",
     "category": "Territori",
     "title": "PRIMA EDIZIONE DEL \"FALERNO E PIZZA FESTIVAL\" FALCIANO DEL MASSICO (CE) 4-5 SETTEMBRE 2026",
@@ -26,6 +36,26 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/montevertine-toscana-igt-2003-montevertine/301018/",
     "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-02"
+  },
+  {
+    "id": "186299027ee2",
+    "category": "Calici di Magna Grecia",
+    "title": "Settesoli avvia la produzione di vino dealcolato. Così anche la Sicilia entra nel nuovo business",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/settesoli-impianto-vino-dealcolato/",
+    "note": "Una voce dal mondo del vino, focus Sicilia.",
+    "noteSource": "auto",
+    "date": "2026-09-02"
+  },
+  {
+    "id": "20da435667b7",
+    "category": "Radar del Sud",
+    "title": "Il ristorante che porta a Parigi il bello e il buono dell'Italia",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/ristorante-armani-parigi",
+    "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-09-02"
   },
@@ -266,36 +296,6 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/i-vini-di-federico-graziani-uno-sguardo-a-tu-per-tu-con-letna-piu-autentico/300620/",
     "note": "Una voce dal mondo del vino, focus Sicilia.",
-    "noteSource": "auto",
-    "date": "2026-08-24"
-  },
-  {
-    "id": "f76d93f467ab",
-    "category": "Calici di Magna Grecia",
-    "title": "In Irpinia c'è una cantina dove si cena tra i filari con jazz e Fiano spendendo meno di 40 euro",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/contrada-vini-irpinia-jazz-cene-vigneti-fiano/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-08-24"
-  },
-  {
-    "id": "7ec0b33d3c10",
-    "category": "Calici di Magna Grecia",
-    "title": "Cinquant'anni fa la California battè i francesi a Parigi. Oggi il suo vino affronta una nuova crisi",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/vino-california-50-anni-judgement-of-paris-napa-sonoma/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-24"
-  },
-  {
-    "id": "409d7747e0a2",
-    "category": "Radar del Sud",
-    "title": "Il ristorante dei Sibillini rinato dopo il terremoto dove il menu si racconta ancora a voce",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/ristoranti/dal-navigante-ristorante-rifugio-monti-sibillini/",
-    "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-08-24"
   }
