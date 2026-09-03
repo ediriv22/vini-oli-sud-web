@@ -63,4 +63,5 @@ jobs:
             forms/vendor/**
             cgi-bin/**
             admin/config.php
+            admin/data/**
             **/*_Backup_*/**

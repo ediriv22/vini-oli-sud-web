@@ -53,3 +53,5 @@ vinisud-sito.zip
 
 # Pannello /admin: config reale con token/password (solo sul server)
 public/admin/config.php
+# Pannello /admin: stato rate-limit login (solo sul server)
+public/admin/data/

@@ -13,6 +13,19 @@
  */
 
 declare(strict_types=1);
+
+// Cookie di sessione hardened: solo su HTTPS (quando rilevabile), mai via JS
+// (httponly), mai inviato in richieste cross-site (samesite Strict), solo
+// sotto /admin/.
+$vosHttps = (($_SERVER['HTTPS'] ?? '') !== '' && ($_SERVER['HTTPS'] ?? '') !== 'off')
+    || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path'     => '/admin/',
+    'secure'   => $vosHttps,
+    'httponly' => true,
+    'samesite' => 'Strict',
+]);
 session_start();
 
 $configPath = __DIR__ . '/config.php';
@@ -415,14 +428,82 @@ function render_site_preview(string $url, bool $withEditor = false): void {
 // ---------------------------------------------------------------------------
 $error = ''; $notice = '';
 if (($_GET['logout'] ?? '') === '1') { session_destroy(); header('Location: index.php'); exit; }
+
+// Rate limit sui tentativi di login: stesso schema a file piatto di
+// forms/lead.php (vos_rate_limit_check), ma conta solo i tentativi FALLITI,
+// cosi' un uso normale non rischia mai di autobloccarsi.
+$adminDataDir = __DIR__ . '/data';
+if (!is_dir($adminDataDir)) { @mkdir($adminDataDir, 0750, true); }
+
+function vos_admin_ip_hash(): string {
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? '';
+    if (strpos($ip, ',') !== false) {
+        $ip = trim(explode(',', $ip)[0]);
+    }
+    return hash('sha256', $ip . '|vinisud-admin');
+}
+
+function vos_admin_login_blocked(string $dataDir): bool {
+    $file = $dataDir . '/login_attempts.json';
+    $hash = vos_admin_ip_hash();
+    $now = time();
+    $window = 900; // 15 minuti
+    $limit  = 5;   // 5 password errate / IP / 15min
+
+    $state = [];
+    if (is_readable($file)) {
+        $raw = @file_get_contents($file);
+        if ($raw !== false) {
+            $decoded = json_decode($raw, true);
+            if (is_array($decoded)) { $state = $decoded; }
+        }
+    }
+    foreach ($state as $key => $entry) {
+        if (!is_array($entry) || ($entry['last'] ?? 0) < ($now - $window)) {
+            unset($state[$key]);
+        }
+    }
+    @file_put_contents($file, json_encode($state), LOCK_EX);
+
+    $entry = $state[$hash] ?? ['count' => 0, 'last' => 0];
+    return $entry['last'] >= ($now - $window) && $entry['count'] >= $limit;
+}
+
+function vos_admin_login_record_failure(string $dataDir): void {
+    $file = $dataDir . '/login_attempts.json';
+    $hash = vos_admin_ip_hash();
+    $now = time();
+    $window = 900;
+
+    $state = [];
+    if (is_readable($file)) {
+        $raw = @file_get_contents($file);
+        if ($raw !== false) {
+            $decoded = json_decode($raw, true);
+            if (is_array($decoded)) { $state = $decoded; }
+        }
+    }
+    $entry = $state[$hash] ?? ['count' => 0, 'last' => 0];
+    $state[$hash] = [
+        'count' => ($entry['last'] >= ($now - $window) ? $entry['count'] : 0) + 1,
+        'last'  => $now,
+    ];
+    @file_put_contents($file, json_encode($state), LOCK_EX);
+}
+
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && isset($_POST['login_password'])) {
-    if ($PASS !== '' && hash_equals($PASS, (string) $_POST['login_password'])) {
+    if (vos_admin_login_blocked($adminDataDir)) {
+        $error = 'Troppi tentativi falliti. Riprova fra qualche minuto.';
+    } elseif ($PASS !== '' && hash_equals($PASS, (string) $_POST['login_password'])) {
+        session_regenerate_id(true);
         $_SESSION['vos_admin'] = true;
         $_SESSION['csrf'] = bin2hex(random_bytes(16));
         header('Location: index.php' . (isset($_POST['area']) ? '?area=' . urlencode((string)$_POST['area']) : ''));
         exit;
+    } else {
+        vos_admin_login_record_failure($adminDataDir);
+        $error = 'Password errata.';
     }
-    $error = 'Password errata.';
 }
 $loggedIn = !empty($_SESSION['vos_admin']);
 

@@ -41,6 +41,16 @@
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
   Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # Content-Security-Policy: sito Next.js statico (export) + pannello /admin
+  # in PHP con stili/script inline propri (editor visuale segreteria).
+  # 'unsafe-inline' su script/style e' il compromesso: sia l'idratazione RSC
+  # di Next (script inline nell'HTML) sia il pannello /admin (attributi
+  # style="" e blocco <script> nella pagina) lo richiedono, e uno static
+  # export non puo' generare nonce per-richiesta. Tutto il resto e' bloccato
+  # a 'self': niente script/stili/immagini/font/richieste verso domini terzi,
+  # niente plugin (object-src none), niente iframe/base/tag di terzi.
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
 </IfModule>
 
 # Rewrite rules for SPA routing (if needed)
