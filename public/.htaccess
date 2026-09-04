@@ -49,8 +49,11 @@
   # style="" e blocco <script> nella pagina) lo richiedono, e uno static
   # export non puo' generare nonce per-richiesta. Tutto il resto e' bloccato
   # a 'self': niente script/stili/immagini/font/richieste verso domini terzi,
-  # niente plugin (object-src none), niente iframe/base/tag di terzi.
-  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
+  # niente plugin (object-src none), niente iframe/base/tag di terzi — tranne
+  # www.paypal.com/www.paypalobjects.com, necessari all'SDK Hosted Buttons in
+  # /pass-giurato/ (script del pulsante, il suo iframe di checkout, le sue
+  # chiamate e le sue icone: vedi src/app/pass-giurato/page.tsx).
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.paypal.com https://www.paypalobjects.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.paypalobjects.com; font-src 'self' data:; connect-src 'self' https://www.paypal.com; frame-src https://www.paypal.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
 </IfModule>
 
 # Rewrite rules for SPA routing (if needed)
