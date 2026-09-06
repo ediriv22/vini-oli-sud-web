@@ -209,24 +209,29 @@
             {
                 "kind": "iscrivi",
                 "label": "Iscrivi la tua Azienda",
-                "heading": "Porta la tua eccellenza in gara",
+                "heading": "Hai un prodotto d'eccellenza? Mettilo in gara!",
                 "subheading": "Gran Premio del Gusto 2026 — Le Sfide della Magna Grecia · 27 • 28 • 29 Novembre 2026 · Rotonda Diaz – Lungomare Caracciolo – Napoli",
                 "body": [
+                    "Fallo assaggiare. Racconta la sua storia. Conquista il voto dei giurati.",
                     "Le aziende produttrici possono iscrivere un proprio prodotto a uno dei 9 Concorsi del Gran Premio del Gusto – Le Sfide della Magna Grecia.",
-                    "Per garantire qualità delle degustazioni, adeguato spazio alla presentazione delle aziende e corretta valutazione dei prodotti, il numero dei partecipanti a ciascun Concorso è limitato."
+                    "L'invito è rivolto a produttori e commercianti, aziende agricole, caseifici, frantoi, salumifici, birrifici, cantine, liquorifici, panifici, pasticcerie, cioccolaterie, confettifici, gelaterie, apicoltori e laboratori alimentari.",
+                    "Per garantire qualità delle degustazioni, adeguato spazio alla presentazione delle aziende e corretta valutazione dei prodotti, il numero dei partecipanti a ciascun Concorso è limitato.",
+                    "Ogni azienda può iscrivere più prodotti, nello stesso Concorso o in Concorsi diversi, versando la quota di partecipazione prevista per ciascun prodotto iscritto.",
+                    "I prodotti dovranno essere pronti da degustare, senza necessità di cottura sul posto: conservazione, porzionatura e modalità di servizio saranno concordate con la Segreteria organizzativa. Gelati, yogurt e dessert freddi partecipano esclusivamente alla nona Sfida.",
+                    "L'Organizzazione si riserva di stabilire il numero massimo di prodotti ammessi e di annullare, modificare o ampliare i Concorsi, nonché di variarne giorni e orari, dandone comunicazione alle aziende iscritte."
                 ],
-                "note": "Le iscrizioni saranno accettate in ordine di arrivo fino a esaurimento dei posti disponibili per ciascuna sfida.",
+                "note": "Le iscrizioni saranno accettate in ordine cronologico di perfezionamento fino a esaurimento dei posti disponibili per ciascuna Sfida.",
                 "concorsiTitle": "Scegli il tuo Concorso",
                 "concorsi": [
-                    { "icon": "🍺", "name": "Birra & Street Food", "numero": 1, "giorno": "Venerdì 27 Novembre", "ora": "17:00" },
-                    { "icon": "🍕", "name": "Vino & Pizza", "numero": 2, "giorno": "Venerdì 27 Novembre", "ora": "18:00" },
-                    { "icon": "🐟", "name": "Vino & Pesce", "numero": 3, "giorno": "Venerdì 27 Novembre", "ora": "19:00" },
-                    { "icon": "🥩", "name": "Vino & Carne", "numero": 4, "giorno": "Sabato 28 Novembre", "ora": "17:00" },
-                    { "icon": "🍝", "name": "Vino & Pasta", "numero": 5, "giorno": "Sabato 28 Novembre", "ora": "18:00" },
-                    { "icon": "🍷", "name": "Vino & Sigaro", "numero": 6, "giorno": "Sabato 28 Novembre", "ora": "19:00" },
-                    { "icon": "🫒", "name": "Il Miglior Olio Extravergine", "numero": 7, "giorno": "Sabato 28 Novembre", "ora": "20:00" },
-                    { "icon": "🥃", "name": "Il Miglior Amaro", "numero": 8, "giorno": "Domenica 29 Novembre", "ora": "10:00" },
-                    { "icon": "🍰", "name": "Il Miglior Liquore per il Miglior Dolce", "numero": 9, "giorno": "Domenica 29 Novembre", "ora": "11:00" }
+                    { "icon": "🥃", "name": "Il Miglior Amaro, Liquore o Spumante", "numero": 1, "giorno": "Venerdì 27 Novembre", "ora": "17:00" },
+                    { "icon": "⚪", "name": "La Migliore Mozzarella di Bufala", "numero": 2, "giorno": "Venerdì 27 Novembre", "ora": "18:00" },
+                    { "icon": "🧀", "name": "Il Miglior Formaggio o Fiordilatte", "numero": 3, "giorno": "Venerdì 27 Novembre", "ora": "19:00" },
+                    { "icon": "🫒", "name": "Il Miglior Olio Extravergine di Oliva", "numero": 4, "giorno": "Sabato 28 Novembre", "ora": "17:00" },
+                    { "icon": "🍰", "name": "Il Miglior Dolce, Cioccolato o Specialità Dolce", "numero": 5, "giorno": "Sabato 28 Novembre", "ora": "18:00" },
+                    { "icon": "🥩", "name": "Il Miglior Prodotto di Salumeria", "numero": 6, "giorno": "Sabato 28 Novembre", "ora": "19:00" },
+                    { "icon": "🍺", "name": "La Migliore Birra", "numero": 7, "giorno": "Sabato 28 Novembre", "ora": "20:00" },
+                    { "icon": "🥖", "name": "Il Miglior Pane o Prodotto da Forno Salato", "numero": 8, "giorno": "Domenica 29 Novembre", "ora": "10:00" },
+                    { "icon": "🍨", "name": "Il Miglior Gelato, Yogurt o Dessert Freddo", "numero": 9, "giorno": "Domenica 29 Novembre", "ora": "11:00" }
                 ],
                 "phasesTitle": "Come funziona ogni Sfida",
                 "phasesIntro": "Ogni Concorso del Gran Premio del Gusto avrà una durata indicativa di 60 minuti.",
@@ -273,7 +278,7 @@
     },
     "granPremioIntro": {
         "kicker": "Il Gran Premio del Gusto",
-        "stat1": "9 Sfide • 9 Vincitori",
+        "stat1": "9 Sfide • 9 Vincitori • 3 Giorni di Gusto e Spettacolo",
         "stat2": "Giuria Popolare 70% • Giuria Tecnica 30%",
         "brand": "VINISUD.IT",
         "edition": "2ª Rassegna Vini & Oli della Magna Grecia",

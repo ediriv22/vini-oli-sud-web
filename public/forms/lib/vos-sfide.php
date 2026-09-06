@@ -8,9 +8,11 @@ declare(strict_types=1);
  * content/settings/home-sections.json (sfideAccordion.items[iscrivi].concorsi).
  */
 const VOS_CONCORSI_VALIDI = [
-    'Birra & Street Food', 'Vino & Pizza', 'Vino & Pesce', 'Vino & Carne',
-    'Vino & Pasta', 'Vino & Sigaro', 'Il Miglior Olio Extravergine',
-    'Il Miglior Amaro', 'Il Miglior Liquore per il Miglior Dolce',
+    'Il Miglior Amaro, Liquore o Spumante', 'La Migliore Mozzarella di Bufala',
+    'Il Miglior Formaggio o Fiordilatte', 'Il Miglior Olio Extravergine di Oliva',
+    'Il Miglior Dolce, Cioccolato o Specialità Dolce', 'Il Miglior Prodotto di Salumeria',
+    'La Migliore Birra', 'Il Miglior Pane o Prodotto da Forno Salato',
+    'Il Miglior Gelato, Yogurt o Dessert Freddo',
 ];
 
 /**
