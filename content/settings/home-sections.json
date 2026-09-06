@@ -128,6 +128,14 @@
             {
                 "name": "Associazione Italiana Sommelier",
                 "logo": "/brand/partners/ais-associazione-italiana-sommelier.jpg"
+            },
+            {
+                "name": "Città Metropolitana di Napoli",
+                "logo": "/brand/partners/citta-metropolitana-napoli.png"
+            },
+            {
+                "name": "Ministero dell'Agricoltura, della Sovranità Alimentare e delle Foreste",
+                "logo": "/brand/partners/ministero-agricoltura-sovranita-alimentare-foreste.png"
             }
         ],
         "supervision": [
