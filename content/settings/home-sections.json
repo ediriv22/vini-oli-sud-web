@@ -124,6 +124,10 @@
             {
                 "name": "Vini & OliSud",
                 "logo": "/brand/logo-badge-verde.jpg"
+            },
+            {
+                "name": "Associazione Sommelier",
+                "logo": ""
             }
         ],
         "supervision": [
@@ -223,15 +227,15 @@
                 "note": "Le iscrizioni saranno accettate in ordine cronologico di perfezionamento fino a esaurimento dei posti disponibili per ciascuna Sfida.",
                 "concorsiTitle": "Scegli il tuo Concorso",
                 "concorsi": [
-                    { "icon": "🥃", "name": "Il Miglior Amaro, Liquore o Spumante", "numero": 1, "giorno": "Venerdì 27 Novembre", "ora": "17:00" },
-                    { "icon": "⚪", "name": "La Migliore Mozzarella di Bufala", "numero": 2, "giorno": "Venerdì 27 Novembre", "ora": "18:00" },
-                    { "icon": "🧀", "name": "Il Miglior Formaggio o Fiordilatte", "numero": 3, "giorno": "Venerdì 27 Novembre", "ora": "19:00" },
-                    { "icon": "🫒", "name": "Il Miglior Olio Extravergine di Oliva", "numero": 4, "giorno": "Sabato 28 Novembre", "ora": "17:00" },
-                    { "icon": "🍰", "name": "Il Miglior Dolce, Cioccolato o Specialità Dolce", "numero": 5, "giorno": "Sabato 28 Novembre", "ora": "18:00" },
-                    { "icon": "🥩", "name": "Il Miglior Prodotto di Salumeria", "numero": 6, "giorno": "Sabato 28 Novembre", "ora": "19:00" },
-                    { "icon": "🍺", "name": "La Migliore Birra", "numero": 7, "giorno": "Sabato 28 Novembre", "ora": "20:00" },
-                    { "icon": "🥖", "name": "Il Miglior Pane o Prodotto da Forno Salato", "numero": 8, "giorno": "Domenica 29 Novembre", "ora": "10:00" },
-                    { "icon": "🍨", "name": "Il Miglior Gelato, Yogurt o Dessert Freddo", "numero": 9, "giorno": "Domenica 29 Novembre", "ora": "11:00" }
+                    { "icon": "🥃", "name": "Il Miglior Amaro, Liquore o Spumante", "numero": 1, "giorno": "Venerdì 27 Novembre", "ora": "17:00", "descrizione": "Amari, limoncelli, liquori alla frutta, alle erbe e al caffè, creme liquorose e spumanti." },
+                    { "icon": "⚪", "name": "La Migliore Mozzarella di Bufala", "numero": 2, "giorno": "Venerdì 27 Novembre", "ora": "18:00", "descrizione": "Mozzarelle di bufala classiche e affumicate, bocconcini, trecce, nodini e altri formati." },
+                    { "icon": "🧀", "name": "Il Miglior Formaggio o Fiordilatte", "numero": 3, "giorno": "Venerdì 27 Novembre", "ora": "19:00", "descrizione": "Fiordilatte, burrata, stracciatella, ricotta, scamorza, caciocavallo, provolone, pecorino e formaggi caprini: freschi, stagionati e aromatizzati." },
+                    { "icon": "🫒", "name": "Il Miglior Olio Extravergine di Oliva", "numero": 4, "giorno": "Sabato 28 Novembre", "ora": "17:00", "descrizione": "Oli monovarietali e blend, biologici, DOP e IGP: le diverse espressioni dell'eccellenza olearia." },
+                    { "icon": "🍰", "name": "Il Miglior Dolce, Cioccolato o Specialità Dolce", "numero": 5, "giorno": "Sabato 28 Novembre", "ora": "18:00", "descrizione": "Babà, pastiere, sfogliatelle, cannoli, torte, biscotti, panettoni, pandori e confetti, torroni, praline, tavolette di cioccolato, creme spalmabili, dolci di mandorla, frutta candita, miele, marmellate e confetture." },
+                    { "icon": "🥩", "name": "Il Miglior Prodotto di Salumeria", "numero": 6, "giorno": "Sabato 28 Novembre", "ora": "19:00", "descrizione": "Salami, prosciutti, capocolli, soppressate, pancette, mortadelle, 'nduja, porchetta e altre specialità di salumeria pronte da degustare." },
+                    { "icon": "🍺", "name": "La Migliore Birra", "numero": 7, "giorno": "Sabato 28 Novembre", "ora": "20:00", "descrizione": "Birre chiare, ambrate, rosse e scure, birre agricole e specialità con ingredienti del territorio, comprese le proposte analcoliche e senza glutine." },
+                    { "icon": "🥖", "name": "Il Miglior Pane o Prodotto da Forno Salato", "numero": 8, "giorno": "Domenica 29 Novembre", "ora": "10:00", "descrizione": "Pane, pizze da forno, taralli, grissini, cracker, friselle, focacce, schiacciate, casatielli, tortani, rustici e altre specialità da forno salate, anche senza glutine." },
+                    { "icon": "🍨", "name": "Il Miglior Gelato, Yogurt o Dessert Freddo", "numero": 9, "giorno": "Domenica 29 Novembre", "ora": "11:00", "descrizione": "Gelati artigianali, sorbetti, granite, yogurt, semifreddi, torte gelato, mousse, bavaresi, budini, cheesecake, dessert vegetali e dolci al cucchiaio." }
                 ],
                 "phasesTitle": "Come funziona ogni Sfida",
                 "phasesIntro": "Ogni Concorso del Gran Premio del Gusto avrà una durata indicativa di 60 minuti.",
@@ -288,7 +292,8 @@
         "claim1": "Il pubblico non assaggia soltanto.",
         "claim2": "Il pubblico sceglie i vincitori.",
         "tags": "Vini • Oli • Sapori • Dieta Mediterranea • Prevenzione • Motori • Spettacolo",
-        "freeEntry": "Ingresso al Villaggio gratuito"
+        "freeEntry": "Ingresso al Villaggio gratuito",
+        "organizzatori": "Organizzato da A.S.D. Napoli Racing Show, in collaborazione con Comune di Napoli e Associazione Sommelier, con il Patrocinio dell'Assessorato all'Agricoltura della Regione Campania."
     },
     "twoEvents": {
         "title": "Due eventi. Un'unica grande festa del gusto.",

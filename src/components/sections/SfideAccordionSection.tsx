@@ -6,7 +6,7 @@ import { siteConfig } from "@/data/site";
 
 type Tier = { name: string; price: string; featured?: boolean; badge?: string; features: string[] };
 type Addon = { tierName: string; label: string; note?: string; price: string; priceValue: number };
-type NamedIcon = { icon: string; name: string };
+type NamedIcon = { icon: string; name: string; descrizione?: string };
 type Phase = { time: string; title: string; desc: string };
 type Item = {
   kind: string;
@@ -140,13 +140,20 @@ export function Panel({ item, index, email }: { item: Item; index: number; email
           {item.concorsi.map((c, i) => (
             <li
               key={i}
-              className="flex items-center gap-3 rounded-[0.9rem] border border-[rgba(47,91,70,0.22)] bg-[rgba(255,253,245,0.6)] px-4 py-3"
+              className="flex items-start gap-3 rounded-[0.9rem] border border-[rgba(47,91,70,0.22)] bg-[rgba(255,253,245,0.6)] px-4 py-3"
             >
               <span aria-hidden="true" className="text-[1.4rem] leading-none">
                 {c.icon}
               </span>
-              <span className="text-[0.92rem] font-medium text-[var(--color-ink-strong)]" data-content-key={k(`concorsi.${i}.name`)}>
-                {c.name}
+              <span className="flex flex-col gap-1">
+                <span className="text-[0.92rem] font-medium text-[var(--color-ink-strong)]" data-content-key={k(`concorsi.${i}.name`)}>
+                  {c.name}
+                </span>
+                {c.descrizione ? (
+                  <span className="text-[0.8rem] leading-[1.5] text-[var(--color-muted)]" data-content-key={k(`concorsi.${i}.descrizione`)}>
+                    {c.descrizione}
+                  </span>
+                ) : null}
               </span>
             </li>
           ))}

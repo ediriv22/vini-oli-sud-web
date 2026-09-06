@@ -74,6 +74,15 @@ export default function GranPremioIntroSection() {
           >
             {g.freeEntry}
           </p>
+
+          {g.organizzatori ? (
+            <p
+              className="mx-auto mt-8 max-w-[46ch] text-[0.8rem] leading-[1.6] text-[rgba(255,253,245,0.7)]"
+              data-content-key="field:granPremioIntro.organizzatori"
+            >
+              {g.organizzatori}
+            </p>
+          ) : null}
         </div>
       </div>
     </section>
