@@ -126,8 +126,8 @@
                 "logo": "/brand/logo-badge-verde.jpg"
             },
             {
-                "name": "Associazione Sommelier",
-                "logo": ""
+                "name": "Associazione Italiana Sommelier",
+                "logo": "/brand/partners/ais-associazione-italiana-sommelier.jpg"
             }
         ],
         "supervision": [
@@ -293,7 +293,7 @@
         "claim2": "Il pubblico sceglie i vincitori.",
         "tags": "Vini • Oli • Sapori • Dieta Mediterranea • Prevenzione • Motori • Spettacolo",
         "freeEntry": "Ingresso al Villaggio gratuito",
-        "organizzatori": "Organizzato da A.S.D. Napoli Racing Show, in collaborazione con Comune di Napoli e Associazione Sommelier, con il Patrocinio dell'Assessorato all'Agricoltura della Regione Campania."
+        "organizzatori": "Organizzato da A.S.D. Napoli Racing Show, in collaborazione con Comune di Napoli e Associazione Italiana Sommelier, con il Patrocinio dell'Assessorato all'Agricoltura della Regione Campania."
     },
     "twoEvents": {
         "title": "Due eventi. Un'unica grande festa del gusto.",
