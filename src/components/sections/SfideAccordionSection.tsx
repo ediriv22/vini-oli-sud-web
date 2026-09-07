@@ -5,7 +5,19 @@ import Button from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
 
 type Tier = { name: string; price: string; featured?: boolean; badge?: string; features: string[] };
-type Addon = { tierName: string; label: string; note?: string; price: string; priceValue: number };
+type Addon = {
+  // Tier a cui l'add-on è applicabile. Ora tutti e 3 (richiesta 7/9/2026:
+  // esteso da "solo Pass Gran Giurato" a "tutti i Pass"). Un solo bottone
+  // PayPal per tier+addon perché gli Hosted Buttons hanno prezzo fisso.
+  tierNames: string[];
+  label: string;
+  note?: string;
+  question?: string;
+  detail?: string;
+  price: string;
+  priceValue: number;
+  paypalHostedButtonIdConAddon: Record<string, string>;
+};
 type NamedIcon = { icon: string; name: string; descrizione?: string };
 type Phase = { time: string; title: string; desc: string };
 type Item = {
@@ -16,6 +28,9 @@ type Item = {
   sectionTitle?: string;
   tiers?: Tier[];
   addon?: Addon;
+  // Aliquota IVA (0.22 = 22%), richiesta esplicita 7/9/2026: sul sito non si
+  // scrive mai il prezzo pieno, sempre "base + IVA (tot. X)".
+  ivaRate?: number;
   ctaLabel?: string;
   ctaHref?: string;
   extraTitle?: string;
@@ -127,6 +142,14 @@ export function Panel({ item, index, email }: { item: Item; index: number; email
           <p className="mt-1.5 text-[0.9rem] leading-[1.5] text-[var(--color-ink-strong)]">
             🎁 <strong>{item.addon.price} in più:</strong> {item.addon.label}
           </p>
+          {item.addon.question ? (
+            <p className="mt-2 text-[0.85rem] font-semibold text-[var(--color-ink-strong)]">
+              {item.addon.question}
+            </p>
+          ) : null}
+          {item.addon.detail ? (
+            <p className="mt-1.5 text-[0.82rem] leading-[1.55] text-[var(--color-muted)]">{item.addon.detail}</p>
+          ) : null}
         </div>
       ) : null}
 

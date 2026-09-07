@@ -1,327 +1,456 @@
 {
-    "hero": {
-        "slides": [
-            {
-                "eyebrow": "Magna Grecia",
-                "titlePrefix": "Dove il Sole incontra il ",
-                "titleEmphasis": "Mito",
-                "titleSuffix": "",
-                "paragraph": "Un viaggio al Sud è un'esperienza totale: è storia, gusto, paesaggio e passione. Benvenuti nella terra dell'eccellenza.",
-                "ctaLabel": "Scopri la Rassegna 2026",
-                "ctaHref": "/format/rassegna-vini-e-oli-della-magna-grecia/"
-            },
-            {
-                "eyebrow": "Oro Verde e Fuoco",
-                "titlePrefix": "Oro Verde e ",
-                "titleEmphasis": "Fuoco",
-                "titleSuffix": "",
-                "paragraph": "Vigne eroiche e ulivi secolari custodiscono un sapere che nasce dalla terra, non dai laboratori: gesti antichi che raccontano il Sud contro l'omologazione industriale.",
-                "ctaLabel": "Esplora il Territorio",
-                "ctaHref": "/format/rassegna-vini-e-oli-della-magna-grecia/#territorio"
-            },
-            {
-                "eyebrow": "27 · 28 · 29 Novembre 2026",
-                "titlePrefix": "La Rassegna torna sul ",
-                "titleEmphasis": "Lungomare",
-                "titleSuffix": " di Napoli",
-                "paragraph": "Tre giorni di degustazioni e cultura mediterranea sul Lungomare Caracciolo, a ingresso libero per il pubblico, in collaborazione con l'Assessorato all'Agricoltura della Regione Campania.",
-                "ctaLabel": "Tutte le Info",
-                "ctaHref": "/programma/"
-            }
-        ]
+  "hero": {
+    "slides": [
+      {
+        "eyebrow": "Magna Grecia",
+        "titlePrefix": "Dove il Sole incontra il ",
+        "titleEmphasis": "Mito",
+        "titleSuffix": "",
+        "paragraph": "Un viaggio al Sud è un'esperienza totale: è storia, gusto, paesaggio e passione. Benvenuti nella terra dell'eccellenza.",
+        "ctaLabel": "Scopri la Rassegna 2026",
+        "ctaHref": "/format/rassegna-vini-e-oli-della-magna-grecia/"
+      },
+      {
+        "eyebrow": "Oro Verde e Fuoco",
+        "titlePrefix": "Oro Verde e ",
+        "titleEmphasis": "Fuoco",
+        "titleSuffix": "",
+        "paragraph": "Vigne eroiche e ulivi secolari custodiscono un sapere che nasce dalla terra, non dai laboratori: gesti antichi che raccontano il Sud contro l'omologazione industriale.",
+        "ctaLabel": "Esplora il Territorio",
+        "ctaHref": "/format/rassegna-vini-e-oli-della-magna-grecia/#territorio"
+      },
+      {
+        "eyebrow": "27 · 28 · 29 Novembre 2026",
+        "titlePrefix": "La Rassegna torna sul ",
+        "titleEmphasis": "Lungomare",
+        "titleSuffix": " di Napoli",
+        "paragraph": "Tre giorni di degustazioni e cultura mediterranea sul Lungomare Caracciolo, a ingresso libero per il pubblico, in collaborazione con l'Assessorato all'Agricoltura della Regione Campania.",
+        "ctaLabel": "Tutte le Info",
+        "ctaHref": "/programma/"
+      }
+    ]
+  },
+  "philosophy": {
+    "eyebrow": "La nostra filosofia",
+    "paragraphs": [
+      "Questa rassegna è orgoglio, visione, resistenza culturale. Non vuole copiare, ma mostrare al mondo cosa significa eccellenza vera, radicata, meridionale. Qui ogni premio è un atto di giustizia verso chi ha saputo trasformare il sole in vino, la pietra in olio, la storia in sapore.",
+      "Un viaggio al Sud è un'esperienza totale: è storia, gusto, paesaggio e passione. Benvenuti nella Magna Grecia!"
+    ]
+  },
+  "grandPrixHighlight": {
+    "eyebrow": "Premiazione",
+    "title": "Riconoscimento di Eccellenza — Grand Prix della Magna Grecia dell'edizione 2025",
+    "subtitle": "I migliori produttori premiati per la qualità straordinaria dei loro vini e oli. Un riconoscimento che celebra l'eccellenza del Sud Italia.",
+    "expandLabel": "Scopri tutti i vincitori",
+    "collapseLabel": "Mostra meno categorie",
+    "featuredAwards": [
+      "Miglior Spumante",
+      "Miglior Vino Bianco",
+      "Miglior Vino Rosso",
+      "Miglior Vino Rosato"
+    ]
+  },
+  "territory": {
+    "eyebrow": "Il territorio",
+    "title": "Dove il Sole incontra il Mito e la Storia",
+    "intro": "Nel cuore del Sud Italia, dove il sole splende più a lungo, la Magna Grecia non è mai tramontata. Oggi è il tempo del riscatto. Oggi il Sud si affaccia al mondo con prodotti ineguagliabili e una potenza narrativa unica.",
+    "pillars": [
+      {
+        "title": "Un territorio benedetto",
+        "description": "Sole, mare, vento, luce, pietra e storia. Microclimi irripetibili, terreni vulcanici e calcarei che scolpiscono i grappoli e profumano le drupe."
+      },
+      {
+        "title": "Vitigni e radici",
+        "description": "Aglianico, Primitivo, Nerello Mascalese, Fiano, Greco di Tufo. Nomi che suonano come poesie scritte dalla terra stessa. Ogni sorso è un ritorno a casa."
+      },
+      {
+        "title": "Oli: spirito della terra",
+        "description": "Nocellara, Ravece, Coratina. Gli uliveti del Sud sono templi aperti, e ogni goccia di extravergine è memoria liquida di un popolo che trasforma la roccia in vita."
+      },
+      {
+        "title": "Natura, non laboratorio",
+        "description": "Non nascono da additivi o sofisticazioni, ma dalla terra viva, dal vento del mare e dalle mani dei nostri contadini. Genuinità, verità, rispetto."
+      }
+    ]
+  },
+  "regions": {
+    "eyebrow": "Le terre dell'eccellenza",
+    "title": "Magna Grecia e Terre dell'Eccellenza del Mezzogiorno",
+    "description": "Un'unica anima mediterranea.",
+    "items": [
+      {
+        "name": "Calabria",
+        "description": "Fortemente greca nel midollo. Intensa nei profumi con il Greco di Bianco e l'Olio della Locride. Una regione di estremi affascinanti e fiera stirpe mediterranea."
+      },
+      {
+        "name": "Abruzzo",
+        "description": "Dove il mare incontra la montagna. La Passerina danza con il Montepulciano. Oli robusti e sinceri raccontano terre antiche e contadini tenaci."
+      },
+      {
+        "name": "Molise",
+        "description": "La genuinità della biodiversità. Piccolo scrigno dove la Tintilia si fa voce autentica di una terra segreta. Oli fragranti e naturali, respiro lento di autenticità."
+      },
+      {
+        "name": "Campania",
+        "description": "Cuore del Mediterraneo. Terra di vulcani e vitigni: Fiano di Avellino, Greco di Tufo, Falanghina, Aglianico. E l'olio Ravece Irpina, uno dei monocultivar più eleganti del mondo."
+      },
+      {
+        "name": "Puglia",
+        "description": "Profumi bizantini e genuinità. Terra di ulivi millenari, Primitivo e Negroamaro. L'oro verde e rosso del Mediterraneo, tra le Murge e il Salento."
+      },
+      {
+        "name": "Lucania",
+        "description": "Austera e nobile. Patria dell'Aglianico del Vulture, uno dei rossi più importanti d'Europa. Minerali, veri, profondi, forgiati dal vulcano e dal silenzio."
+      }
+    ]
+  },
+  "sponsor": {
+    "eyebrow": "Sponsor & Espositori",
+    "title": "Diventa Sponsor",
+    "body": "65.000 presenze nel 2024, 150.000 nel 2025: prenota stand espositivi, spazi promozionali e altre opportunità di visibilità nel Villaggio Vini e Oli della Magna Grecia.",
+    "ctaLabel": "Richiedi Informazioni",
+    "ctaHref": "/sponsor/"
+  },
+  "institutionalPartners": {
+    "eyebrow": "Enti e Organizzazione",
+    "title": "In collaborazione con l'Assessorato all'Agricoltura della Regione Campania",
+    "organizzazioneLabel": "Organizzazione",
+    "supervisionLabel": "Con il patrocinio di",
+    "organizzazione": [
+      {
+        "name": "A.S.D. Napoli Racing Show",
+        "logo": "/brand/partners/asd-napoli-racing-show-v3.png"
+      },
+      {
+        "name": "Vini & OliSud",
+        "logo": "/brand/logo-badge-verde.jpg"
+      },
+      {
+        "name": "Associazione Italiana Sommelier",
+        "logo": "/brand/partners/ais-associazione-italiana-sommelier.jpg"
+      },
+      {
+        "name": "Città Metropolitana di Napoli",
+        "logo": "/brand/partners/citta-metropolitana-napoli.png"
+      },
+      {
+        "name": "Ministero dell'Agricoltura, della Sovranità Alimentare e delle Foreste",
+        "logo": "/brand/partners/ministero-agricoltura-sovranita-alimentare-foreste.png"
+      }
+    ],
+    "supervision": [
+      {
+        "name": "Regione Campania",
+        "logo": "/brand/partners/regione-campania-v2.png"
+      },
+      {
+        "name": "Comune di Napoli",
+        "logo": "/brand/partners/comune-napoli.png"
+      }
+    ]
+  },
+  "eventDetails": {
+    "eyebrow": "L'evento",
+    "title": "2ª Rassegna Vini e Oli della Magna Grecia",
+    "dates": "27 - 28 - 29 Novembre 2026",
+    "admission": "Ingresso gratuito al pubblico",
+    "villageAccessNote": "Accesso libero a stand espositivi, convegni, aree istituzionali e presentazioni.",
+    "venueName": "Lungomare Caracciolo, Napoli",
+    "venueDescription": "Nel cuore della città, tra il mare e la storia",
+    "collaboration": "In collaborazione con Assessorato all'Agricoltura della Regione Campania",
+    "externalLink": {
+      "label": "NAPOLIRACINGSHOW.IT",
+      "url": "https://www.napoliracingshow.it"
     },
-    "philosophy": {
-        "eyebrow": "La nostra filosofia",
-        "paragraphs": [
-            "Questa rassegna è orgoglio, visione, resistenza culturale. Non vuole copiare, ma mostrare al mondo cosa significa eccellenza vera, radicata, meridionale. Qui ogni premio è un atto di giustizia verso chi ha saputo trasformare il sole in vino, la pietra in olio, la storia in sapore.",
-            "Un viaggio al Sud è un'esperienza totale: è storia, gusto, paesaggio e passione. Benvenuti nella Magna Grecia!"
-        ]
-    },
-    "grandPrixHighlight": {
-        "eyebrow": "Premiazione",
-        "title": "Riconoscimento di Eccellenza — Grand Prix della Magna Grecia dell'edizione 2025",
-        "subtitle": "I migliori produttori premiati per la qualità straordinaria dei loro vini e oli. Un riconoscimento che celebra l'eccellenza del Sud Italia.",
-        "expandLabel": "Scopri tutti i vincitori",
-        "collapseLabel": "Mostra meno categorie",
-        "featuredAwards": [
-            "Miglior Spumante",
-            "Miglior Vino Bianco",
-            "Miglior Vino Rosso",
-            "Miglior Vino Rosato"
-        ]
-    },
-    "territory": {
-        "eyebrow": "Il territorio",
-        "title": "Dove il Sole incontra il Mito e la Storia",
-        "intro": "Nel cuore del Sud Italia, dove il sole splende più a lungo, la Magna Grecia non è mai tramontata. Oggi è il tempo del riscatto. Oggi il Sud si affaccia al mondo con prodotti ineguagliabili e una potenza narrativa unica.",
-        "pillars": [
-            {
-                "title": "Un territorio benedetto",
-                "description": "Sole, mare, vento, luce, pietra e storia. Microclimi irripetibili, terreni vulcanici e calcarei che scolpiscono i grappoli e profumano le drupe."
-            },
-            {
-                "title": "Vitigni e radici",
-                "description": "Aglianico, Primitivo, Nerello Mascalese, Fiano, Greco di Tufo. Nomi che suonano come poesie scritte dalla terra stessa. Ogni sorso è un ritorno a casa."
-            },
-            {
-                "title": "Oli: spirito della terra",
-                "description": "Nocellara, Ravece, Coratina. Gli uliveti del Sud sono templi aperti, e ogni goccia di extravergine è memoria liquida di un popolo che trasforma la roccia in vita."
-            },
-            {
-                "title": "Natura, non laboratorio",
-                "description": "Non nascono da additivi o sofisticazioni, ma dalla terra viva, dal vento del mare e dalle mani dei nostri contadini. Genuinità, verità, rispetto."
-            }
-        ]
-    },
-    "regions": {
-        "eyebrow": "Le terre dell'eccellenza",
-        "title": "Magna Grecia e Terre dell'Eccellenza del Mezzogiorno",
-        "description": "Un'unica anima mediterranea.",
-        "items": [
-            {
-                "name": "Calabria",
-                "description": "Fortemente greca nel midollo. Intensa nei profumi con il Greco di Bianco e l'Olio della Locride. Una regione di estremi affascinanti e fiera stirpe mediterranea."
-            },
-            {
-                "name": "Abruzzo",
-                "description": "Dove il mare incontra la montagna. La Passerina danza con il Montepulciano. Oli robusti e sinceri raccontano terre antiche e contadini tenaci."
-            },
-            {
-                "name": "Molise",
-                "description": "La genuinità della biodiversità. Piccolo scrigno dove la Tintilia si fa voce autentica di una terra segreta. Oli fragranti e naturali, respiro lento di autenticità."
-            },
-            {
-                "name": "Campania",
-                "description": "Cuore del Mediterraneo. Terra di vulcani e vitigni: Fiano di Avellino, Greco di Tufo, Falanghina, Aglianico. E l'olio Ravece Irpina, uno dei monocultivar più eleganti del mondo."
-            },
-            {
-                "name": "Puglia",
-                "description": "Profumi bizantini e genuinità. Terra di ulivi millenari, Primitivo e Negroamaro. L'oro verde e rosso del Mediterraneo, tra le Murge e il Salento."
-            },
-            {
-                "name": "Lucania",
-                "description": "Austera e nobile. Patria dell'Aglianico del Vulture, uno dei rossi più importanti d'Europa. Minerali, veri, profondi, forgiati dal vulcano e dal silenzio."
-            }
-        ]
-    },
-    "sponsor": {
-        "eyebrow": "Sponsor & Espositori",
-        "title": "Diventa Sponsor",
-        "body": "65.000 presenze nel 2024, 150.000 nel 2025: prenota stand espositivi, spazi promozionali e altre opportunità di visibilità nel Villaggio Vini e Oli della Magna Grecia.",
-        "ctaLabel": "Richiedi Informazioni",
-        "ctaHref": "/sponsor/"
-    },
-    "institutionalPartners": {
-        "eyebrow": "Enti e Organizzazione",
-        "title": "In collaborazione con l'Assessorato all'Agricoltura della Regione Campania",
-        "organizzazioneLabel": "Organizzazione",
-        "supervisionLabel": "Con il patrocinio di",
-        "organizzazione": [
-            {
-                "name": "A.S.D. Napoli Racing Show",
-                "logo": "/brand/partners/asd-napoli-racing-show-v3.png"
-            },
-            {
-                "name": "Vini & OliSud",
-                "logo": "/brand/logo-badge-verde.jpg"
-            },
-            {
-                "name": "Associazione Italiana Sommelier",
-                "logo": "/brand/partners/ais-associazione-italiana-sommelier.jpg"
-            },
-            {
-                "name": "Città Metropolitana di Napoli",
-                "logo": "/brand/partners/citta-metropolitana-napoli.png"
-            },
-            {
-                "name": "Ministero dell'Agricoltura, della Sovranità Alimentare e delle Foreste",
-                "logo": "/brand/partners/ministero-agricoltura-sovranita-alimentare-foreste.png"
-            }
-        ],
-        "supervision": [
-            {
-                "name": "Regione Campania",
-                "logo": "/brand/partners/regione-campania-v2.png"
-            },
-            {
-                "name": "Comune di Napoli",
-                "logo": "/brand/partners/comune-napoli.png"
-            }
-        ]
-    },
-    "eventDetails": {
-        "eyebrow": "L'evento",
-        "title": "2ª Rassegna Vini e Oli della Magna Grecia",
-        "dates": "27 - 28 - 29 Novembre 2026",
-        "admission": "Ingresso gratuito al pubblico",
-        "villageAccessNote": "Accesso libero a stand espositivi, convegni, aree istituzionali e presentazioni.",
-        "venueName": "Lungomare Caracciolo, Napoli",
-        "venueDescription": "Nel cuore della città, tra il mare e la storia",
-        "collaboration": "In collaborazione con Assessorato all'Agricoltura della Regione Campania",
-        "externalLink": {
-            "label": "NAPOLIRACINGSHOW.IT",
-            "url": "https://www.napoliracingshow.it"
-        },
-        "programDownload": {
-            "label": "Scarica il Programma",
-            "url": "/downloads/programma-vinisud-2026.pdf"
-        }
-    },
-    "alboDoro": {
-        "eyebrow": "Albo d'oro",
-        "title": "Il successo della 1ª Edizione",
-        "paragraphs": [
-            "La prima edizione della Rassegna si è svolta con grande successo di pubblico e critica sul Lungomare Caracciolo di Napoli il 6-7-8 Dicembre 2025.",
-            "Un evento aperto gratuitamente al pubblico, che ha sancito la nascita di un nuovo punto di riferimento per l'enogastronomia di qualità del Mezzogiorno, confermando che il Sud è pronto a raccontare la propria eccellenza al mondo."
-        ],
-        "ctaLabel": "Scopri i Vincitori 2025",
-        "ctaHref": "/vincitori-2025/"
-    },
-    "sfideAccordion": {
-        "eyebrow": "Partecipa",
-        "title": "Scopri la Rassegna 2026",
-        "items": [
-            {
-                "kind": "programma",
-                "label": "Programma",
-                "heading": "Il Programma 2026",
-                "body": [
-                    "Tre giorni di degustazioni, masterclass e Sfide del Gran Premio del Gusto: 27, 28 e 29 novembre 2026 a Rotonda Diaz, Lungomare Caracciolo, Napoli."
-                ],
-                "ctaLabel": "Vai al Programma",
-                "ctaHref": "/programma/"
-            },
-            {
-                "kind": "biglietti",
-                "label": "Biglietti & Pass",
-                "heading": "L'ingresso alla manifestazione è libero e gratuito",
-                "subheading": "Se vuoi vivere da protagonista un weekend unico, degustare, votare e decidere chi vince…",
-                "sectionTitle": "Diventa Giurato Popolare",
-                "tiers": [
-                    { "name": "1 Sfida a scelta", "price": "€25", "priceValue": 25, "featured": false, "paypalHostedButtonId": "EPGERWSNHVYCQ", "features": ["Posto riservato per la Sfida scelta", "Degustazione dei prodotti in gara", "Diritto di voto nella Giuria Popolare"] },
-                    { "name": "3 Sfide a scelta", "price": "€50", "priceValue": 50, "featured": false, "paypalHostedButtonId": "CTNPRJC48ERMU", "features": ["Posto riservato per le 3 Sfide scelte", "Degustazione dei prodotti in gara", "Diritto di voto nella Giuria Popolare per ogni Sfida"] },
-                    { "name": "Pass Gran Giurato — Tutte le 9 Sfide", "price": "€70", "priceValue": 70, "featured": true, "badge": "⭐", "paypalHostedButtonId": "KZAFGXJUDSN3Q", "features": ["Posto riservato per tutte le 9 Sfide", "Degustazione dei prodotti in gara", "Diritto di voto nella Giuria Popolare per ogni Sfida", "Bicchiere ufficiale fornito in prestito per la degustazione, da riconsegnare a fine Sfida"] }
-                ],
-                "addon": {
-                    "tierName": "Pass Gran Giurato — Tutte le 9 Sfide",
-                    "label": "Bicchiere e portabicchiere ufficiali della manifestazione in omaggio, da tenere",
-                    "note": "Esclusiva Pass 9 Sfide — solo per chi acquista il Pass Gran Giurato",
-                    "price": "€10",
-                    "priceValue": 10,
-                    "paypalHostedButtonIdConAddon": "YV3L692XALKYQ"
-                },
-                "ctaLabel": "Diventa Giurato",
-                "ctaHref": "/pass-giurato/",
-                "paypalClientId": "BAAYdQ9KBOhOL67l1eSd5GAduiNx5Qv1NHttDucV7OSikwaoNnfs6QnPadR6Mpx6eVGAD8sBA0iMEWoP1E",
-                "extraTitle": "🩺 Prevenzione gratuita con ASL Napoli 1 Centro",
-                "extraBody": "I maggiorenni in possesso del Biglietto Tribuna del Napoli Racing Show o del Pass Giuria Popolare del Gran Premio del Gusto, previa prenotazione e fino a esaurimento dei posti disponibili, potranno effettuare visite gratuite di prevenzione presso il Camper della Salute dell'ASL Napoli 1 Centro nelle giornate di venerdì 27 e sabato 28 novembre 2026.",
-                "extraCtaLabel": "Prenota la tua visita gratuita",
-                "extraCtaHref": "mailto:napoliracingshow@gmail.com"
-            },
-            {
-                "kind": "iscrivi",
-                "label": "Iscrivi la tua Azienda",
-                "heading": "Hai un prodotto d'eccellenza? Mettilo in gara!",
-                "subheading": "Gran Premio del Gusto 2026 — Le Sfide della Magna Grecia · 27 • 28 • 29 Novembre 2026 · Rotonda Diaz – Lungomare Caracciolo – Napoli",
-                "body": [
-                    "Fallo assaggiare. Racconta la sua storia. Conquista il voto dei giurati.",
-                    "Le aziende produttrici possono iscrivere un proprio prodotto a uno dei 9 Concorsi del Gran Premio del Gusto – Le Sfide della Magna Grecia.",
-                    "L'invito è rivolto a produttori e commercianti, aziende agricole, caseifici, frantoi, salumifici, birrifici, cantine, liquorifici, panifici, pasticcerie, cioccolaterie, confettifici, gelaterie, apicoltori e laboratori alimentari.",
-                    "Per garantire qualità delle degustazioni, adeguato spazio alla presentazione delle aziende e corretta valutazione dei prodotti, il numero dei partecipanti a ciascun Concorso è limitato.",
-                    "Ogni azienda può iscrivere più prodotti, nello stesso Concorso o in Concorsi diversi, versando la quota di partecipazione prevista per ciascun prodotto iscritto.",
-                    "I prodotti dovranno essere pronti da degustare, senza necessità di cottura sul posto: conservazione, porzionatura e modalità di servizio saranno concordate con la Segreteria organizzativa. Gelati, yogurt e dessert freddi partecipano esclusivamente alla nona Sfida.",
-                    "L'Organizzazione si riserva di stabilire il numero massimo di prodotti ammessi e di annullare, modificare o ampliare i Concorsi, nonché di variarne giorni e orari, dandone comunicazione alle aziende iscritte."
-                ],
-                "note": "Le iscrizioni saranno accettate in ordine cronologico di perfezionamento fino a esaurimento dei posti disponibili per ciascuna Sfida.",
-                "concorsiTitle": "Scegli il tuo Concorso",
-                "concorsi": [
-                    { "icon": "🥃", "name": "Il Miglior Amaro, Liquore o Spumante", "numero": 1, "giorno": "Venerdì 27 Novembre", "ora": "17:00", "descrizione": "Amari, limoncelli, liquori alla frutta, alle erbe e al caffè, creme liquorose e spumanti." },
-                    { "icon": "⚪", "name": "La Migliore Mozzarella di Bufala", "numero": 2, "giorno": "Venerdì 27 Novembre", "ora": "18:00", "descrizione": "Mozzarelle di bufala classiche e affumicate, bocconcini, trecce, nodini e altri formati." },
-                    { "icon": "🧀", "name": "Il Miglior Formaggio o Fiordilatte", "numero": 3, "giorno": "Venerdì 27 Novembre", "ora": "19:00", "descrizione": "Fiordilatte, burrata, stracciatella, ricotta, scamorza, caciocavallo, provolone, pecorino e formaggi caprini: freschi, stagionati e aromatizzati." },
-                    { "icon": "🫒", "name": "Il Miglior Olio Extravergine di Oliva", "numero": 4, "giorno": "Sabato 28 Novembre", "ora": "17:00", "descrizione": "Oli monovarietali e blend, biologici, DOP e IGP: le diverse espressioni dell'eccellenza olearia." },
-                    { "icon": "🍰", "name": "Il Miglior Dolce, Cioccolato o Specialità Dolce", "numero": 5, "giorno": "Sabato 28 Novembre", "ora": "18:00", "descrizione": "Babà, pastiere, sfogliatelle, cannoli, torte, biscotti, panettoni, pandori e confetti, torroni, praline, tavolette di cioccolato, creme spalmabili, dolci di mandorla, frutta candita, miele, marmellate e confetture." },
-                    { "icon": "🥩", "name": "Il Miglior Prodotto di Salumeria", "numero": 6, "giorno": "Sabato 28 Novembre", "ora": "19:00", "descrizione": "Salami, prosciutti, capocolli, soppressate, pancette, mortadelle, 'nduja, porchetta e altre specialità di salumeria pronte da degustare." },
-                    { "icon": "🍺", "name": "La Migliore Birra", "numero": 7, "giorno": "Sabato 28 Novembre", "ora": "20:00", "descrizione": "Birre chiare, ambrate, rosse e scure, birre agricole e specialità con ingredienti del territorio, comprese le proposte analcoliche e senza glutine." },
-                    { "icon": "🥖", "name": "Il Miglior Pane o Prodotto da Forno Salato", "numero": 8, "giorno": "Domenica 29 Novembre", "ora": "10:00", "descrizione": "Pane, pizze da forno, taralli, grissini, cracker, friselle, focacce, schiacciate, casatielli, tortani, rustici e altre specialità da forno salate, anche senza glutine." },
-                    { "icon": "🍨", "name": "Il Miglior Gelato, Yogurt o Dessert Freddo", "numero": 9, "giorno": "Domenica 29 Novembre", "ora": "11:00", "descrizione": "Gelati artigianali, sorbetti, granite, yogurt, semifreddi, torte gelato, mousse, bavaresi, budini, cheesecake, dessert vegetali e dolci al cucchiaio." }
-                ],
-                "phasesTitle": "Come funziona ogni Sfida",
-                "phasesIntro": "Ogni Concorso del Gran Premio del Gusto avrà una durata indicativa di 60 minuti.",
-                "phases": [
-                    { "time": "15 minuti", "title": "Le aziende presentano i propri prodotti", "desc": "Le aziende concorrenti raccontano brevemente la propria storia, il territorio, le caratteristiche e le qualità del prodotto presentato." },
-                    { "time": "10 minuti", "title": "Gli esperti raccontano i prodotti in gara", "desc": "Chef, sommelier, giornalisti ed esperti del settore illustrano le caratteristiche dei prodotti e accompagnano le Giurie alla degustazione." },
-                    { "time": "20 minuti", "title": "Degustazione", "desc": "La Giuria Popolare e la Giuria Tecnica degustano e confrontano i prodotti in gara." },
-                    { "time": "5 minuti", "title": "Votazione", "desc": "Il risultato finale sarà determinato da: 70% Giuria Popolare · 30% Giuria Tecnica." },
-                    { "time": "10 minuti", "title": "Proclamazione del vincitore • Premiazione • Interviste • Foto", "desc": "" }
-                ],
-                "phasesNote": "Gli orari e la durata delle singole fasi potranno subire variazioni per esigenze organizzative.",
-                "feeTitle": "Quota di iscrizione",
-                "feeSubtitle": "Un prodotto • Un concorso",
-                "feeAmount": "€ 1.100 + IVA 22%",
-                "feeTotal": "Totale da versare: € 1.342",
-                "feeBody": [
-                    "La quota si riferisce all'iscrizione di un singolo prodotto a un singolo Concorso del Gran Premio del Gusto.",
-                    "Per iscrivere più prodotti e/o partecipare a più Concorsi dovrà essere presentata una distinta iscrizione per ciascun prodotto."
-                ],
-                "ctaLabel": "🏆 Iscrivi il tuo Prodotto",
-                "ctaHref": "/format/gran-premio-del-gusto/iscrizione/"
-            },
-            {
-                "kind": "sponsor",
-                "label": "Diventa Sponsor",
-                "heading": "Porta il tuo brand al Gran Premio del Gusto",
-                "body": [
-                    "Diventa protagonista dell'evento: visibilità sul Lungomare Caracciolo, davanti al pubblico della Rassegna Vini e Oli della Magna Grecia."
-                ],
-                "ctaLabel": "Diventa Sponsor",
-                "ctaHref": "/sponsor/"
-            },
-            {
-                "kind": "shop",
-                "label": "Shop Ufficiale",
-                "heading": "Shop Ufficiale",
-                "body": [
-                    "Gadget e prodotti ufficiali della Rassegna. Lo shop sarà disponibile a breve."
-                ],
-                "ctaLabel": "Vai allo Shop",
-                "ctaHref": "mailto:napoliracingshow@gmail.com"
-            }
-        ]
-    },
-    "granPremioIntro": {
-        "kicker": "Il Gran Premio del Gusto",
-        "stat1": "9 Sfide • 9 Vincitori • 3 Giorni di Gusto e Spettacolo",
-        "stat2": "Giuria Popolare 70% • Giuria Tecnica 30%",
-        "brand": "VINISUD.IT",
-        "edition": "2ª Rassegna Vini & Oli della Magna Grecia",
-        "dates": "27 • 28 • 29 Novembre 2026",
-        "venue": "Rotonda Diaz • Lungomare Caracciolo • Napoli",
-        "subtitle": "Le Sfide della Magna Grecia",
-        "claim1": "Il pubblico non assaggia soltanto.",
-        "claim2": "Il pubblico sceglie i vincitori.",
-        "tags": "Vini • Oli • Sapori • Dieta Mediterranea • Prevenzione • Motori • Spettacolo",
-        "freeEntry": "Ingresso al Villaggio gratuito",
-        "organizzatori": "Organizzato da A.S.D. Napoli Racing Show, in collaborazione con Comune di Napoli e Associazione Italiana Sommelier, con il Patrocinio dell'Assessorato all'Agricoltura della Regione Campania."
-    },
-    "twoEvents": {
-        "title": "Due eventi. Un'unica grande festa del gusto.",
-        "dateLine": "27 · 28 · 29 Novembre 2026",
-        "venueLine": "Rotonda Diaz · Napoli",
-        "cards": [
-            {
-                "title": "2ª Rassegna Vini e Oli della Magna Grecia",
-                "tagline": "Ingresso libero · Stand · Masterclass · Territorio · Eccellenze",
-                "ctaLabel": "Scopri la Rassegna",
-                "ctaHref": "/format/rassegna-vini-e-oli-della-magna-grecia/"
-            },
-            {
-                "title": "1ª Edizione del Gran Premio del Gusto",
-                "tagline": "9 Sfide · 9 Vincitori · 70% Giuria Popolare · 30% Giuria Tecnica",
-                "ctaLabel": "Scopri il Gran Premio",
-                "ctaHref": "/format/gran-premio-del-gusto/",
-                "secondaryCtaLabel": "🎟️ Diventa Giurato",
-                "secondaryCtaHref": "/pass-giurato/"
-            }
-        ]
+    "programDownload": {
+      "label": "Scarica il Programma",
+      "url": "/downloads/programma-vinisud-2026.pdf"
     }
+  },
+  "alboDoro": {
+    "eyebrow": "Albo d'oro",
+    "title": "Il successo della 1ª Edizione",
+    "paragraphs": [
+      "La prima edizione della Rassegna si è svolta con grande successo di pubblico e critica sul Lungomare Caracciolo di Napoli il 6-7-8 Dicembre 2025.",
+      "Un evento aperto gratuitamente al pubblico, che ha sancito la nascita di un nuovo punto di riferimento per l'enogastronomia di qualità del Mezzogiorno, confermando che il Sud è pronto a raccontare la propria eccellenza al mondo."
+    ],
+    "ctaLabel": "Scopri i Vincitori 2025",
+    "ctaHref": "/vincitori-2025/"
+  },
+  "sfideAccordion": {
+    "eyebrow": "Partecipa",
+    "title": "Scopri la Rassegna 2026",
+    "items": [
+      {
+        "kind": "programma",
+        "label": "Programma",
+        "heading": "Il Programma 2026",
+        "body": [
+          "Tre giorni di degustazioni, masterclass e Sfide del Gran Premio del Gusto: 27, 28 e 29 novembre 2026 a Rotonda Diaz, Lungomare Caracciolo, Napoli."
+        ],
+        "ctaLabel": "Vai al Programma",
+        "ctaHref": "/programma/"
+      },
+      {
+        "kind": "biglietti",
+        "label": "Biglietti & Pass",
+        "heading": "L'ingresso alla manifestazione è libero e gratuito",
+        "subheading": "Se vuoi vivere da protagonista un weekend unico, degustare, votare e decidere chi vince…",
+        "sectionTitle": "Diventa Giurato Popolare",
+        "tiers": [
+          {
+            "name": "1 Sfida a scelta",
+            "price": "€25",
+            "priceValue": 25,
+            "featured": false,
+            "paypalHostedButtonId": "EPGERWSNHVYCQ",
+            "features": [
+              "Posto riservato per la Sfida scelta",
+              "Degustazione dei prodotti in gara",
+              "Diritto di voto nella Giuria Popolare"
+            ]
+          },
+          {
+            "name": "3 Sfide a scelta",
+            "price": "€50",
+            "priceValue": 50,
+            "featured": false,
+            "paypalHostedButtonId": "CTNPRJC48ERMU",
+            "features": [
+              "Posto riservato per le 3 Sfide scelte",
+              "Degustazione dei prodotti in gara",
+              "Diritto di voto nella Giuria Popolare per ogni Sfida"
+            ]
+          },
+          {
+            "name": "Pass Gran Giurato — Tutte le 9 Sfide",
+            "price": "€70",
+            "priceValue": 70,
+            "featured": true,
+            "badge": "⭐",
+            "paypalHostedButtonId": "KZAFGXJUDSN3Q",
+            "features": [
+              "Posto riservato per tutte le 9 Sfide",
+              "Degustazione dei prodotti in gara",
+              "Diritto di voto nella Giuria Popolare per ogni Sfida",
+              "Bicchiere ufficiale fornito in prestito per la degustazione, da riconsegnare a fine Sfida"
+            ]
+          }
+        ],
+        "addon": {
+          "tierNames": [
+            "1 Sfida a scelta",
+            "3 Sfide a scelta",
+            "Pass Gran Giurato — Tutte le 9 Sfide"
+          ],
+          "label": "Bicchiere e portabicchiere ufficiali serigrafati con il logo della manifestazione, da tenere",
+          "note": "Disponibile su ogni Pass Giuria Popolare",
+          "question": "Vuoi conservare un ricordo della manifestazione?",
+          "detail": "Il kit standard (bicchiere e portabicchiere) è fornito in prestito e va restituito a fine degustazione. Se vuoi tenerlo, potrai acquistare il bicchiere e il portabicchiere serigrafati con il logo della manifestazione al prezzo di € 10,00 + IVA (tot. € 12,20), da aggiungere al costo del Pass Giuria Popolare.",
+          "price": "€10,00 + IVA (tot. €12,20)",
+          "priceValue": 10,
+          "paypalHostedButtonIdConAddon": {
+            "1 Sfida a scelta": "DA_CREARE_PAYPAL_TIERKIT_3720CENT",
+            "3 Sfide a scelta": "DA_CREARE_PAYPAL_TIERKIT_6220CENT",
+            "Pass Gran Giurato — Tutte le 9 Sfide": "DA_CREARE_PAYPAL_TIERKIT_8220CENT"
+          }
+        },
+        "ctaLabel": "Diventa Giurato",
+        "ctaHref": "/pass-giurato/",
+        "paypalClientId": "BAAYdQ9KBOhOL67l1eSd5GAduiNx5Qv1NHttDucV7OSikwaoNnfs6QnPadR6Mpx6eVGAD8sBA0iMEWoP1E",
+        "extraTitle": "🩺 Prevenzione gratuita con ASL Napoli 1 Centro",
+        "extraBody": "I maggiorenni in possesso del Biglietto Tribuna del Napoli Racing Show o del Pass Giuria Popolare del Gran Premio del Gusto, previa prenotazione e fino a esaurimento dei posti disponibili, potranno effettuare visite gratuite di prevenzione presso il Camper della Salute dell'ASL Napoli 1 Centro nelle giornate di venerdì 27 e sabato 28 novembre 2026.",
+        "extraCtaLabel": "Prenota la tua visita gratuita",
+        "extraCtaHref": "mailto:napoliracingshow@gmail.com",
+        "ivaRate": 0.22
+      },
+      {
+        "kind": "iscrivi",
+        "label": "Iscrivi la tua Azienda",
+        "heading": "Hai un prodotto d'eccellenza? Mettilo in gara!",
+        "subheading": "Gran Premio del Gusto 2026 — Le Sfide della Magna Grecia · 27 • 28 • 29 Novembre 2026 · Rotonda Diaz – Lungomare Caracciolo – Napoli",
+        "body": [
+          "Fallo assaggiare. Racconta la sua storia. Conquista il voto dei giurati.",
+          "Le aziende produttrici possono iscrivere un proprio prodotto a uno dei 9 Concorsi del Gran Premio del Gusto – Le Sfide della Magna Grecia.",
+          "L'invito è rivolto a produttori e commercianti, aziende agricole, caseifici, frantoi, salumifici, birrifici, cantine, liquorifici, panifici, pasticcerie, cioccolaterie, confettifici, gelaterie, apicoltori e laboratori alimentari.",
+          "Per garantire qualità delle degustazioni, adeguato spazio alla presentazione delle aziende e corretta valutazione dei prodotti, il numero dei partecipanti a ciascun Concorso è limitato.",
+          "Ogni azienda può iscrivere più prodotti, nello stesso Concorso o in Concorsi diversi, versando la quota di partecipazione prevista per ciascun prodotto iscritto.",
+          "I prodotti dovranno essere pronti da degustare, senza necessità di cottura sul posto: conservazione, porzionatura e modalità di servizio saranno concordate con la Segreteria organizzativa. Gelati, yogurt e dessert freddi partecipano esclusivamente alla nona Sfida.",
+          "L'Organizzazione si riserva di stabilire il numero massimo di prodotti ammessi e di annullare, modificare o ampliare i Concorsi, nonché di variarne giorni e orari, dandone comunicazione alle aziende iscritte."
+        ],
+        "note": "Le iscrizioni saranno accettate in ordine cronologico di perfezionamento fino a esaurimento dei posti disponibili per ciascuna Sfida.",
+        "concorsiTitle": "Scegli il tuo Concorso",
+        "concorsi": [
+          {
+            "icon": "🥃",
+            "name": "Il Miglior Amaro, Liquore o Spumante",
+            "numero": 1,
+            "giorno": "Venerdì 27 Novembre",
+            "ora": "17:00",
+            "descrizione": "Amari, limoncelli, liquori alla frutta, alle erbe e al caffè, creme liquorose e spumanti."
+          },
+          {
+            "icon": "⚪",
+            "name": "La Migliore Mozzarella di Bufala",
+            "numero": 2,
+            "giorno": "Venerdì 27 Novembre",
+            "ora": "18:00",
+            "descrizione": "Mozzarelle di bufala classiche e affumicate, bocconcini, trecce, nodini e altri formati."
+          },
+          {
+            "icon": "🧀",
+            "name": "Il Miglior Formaggio o Fiordilatte",
+            "numero": 3,
+            "giorno": "Venerdì 27 Novembre",
+            "ora": "19:00",
+            "descrizione": "Fiordilatte, burrata, stracciatella, ricotta, scamorza, caciocavallo, provolone, pecorino e formaggi caprini: freschi, stagionati e aromatizzati."
+          },
+          {
+            "icon": "🫒",
+            "name": "Il Miglior Olio Extravergine di Oliva",
+            "numero": 4,
+            "giorno": "Sabato 28 Novembre",
+            "ora": "17:00",
+            "descrizione": "Oli monovarietali e blend, biologici, DOP e IGP: le diverse espressioni dell'eccellenza olearia."
+          },
+          {
+            "icon": "🍰",
+            "name": "Il Miglior Dolce, Cioccolato o Specialità Dolce",
+            "numero": 5,
+            "giorno": "Sabato 28 Novembre",
+            "ora": "18:00",
+            "descrizione": "Babà, pastiere, sfogliatelle, cannoli, torte, biscotti, panettoni, pandori e confetti, torroni, praline, tavolette di cioccolato, creme spalmabili, dolci di mandorla, frutta candita, miele, marmellate e confetture."
+          },
+          {
+            "icon": "🥩",
+            "name": "Il Miglior Prodotto di Salumeria",
+            "numero": 6,
+            "giorno": "Sabato 28 Novembre",
+            "ora": "19:00",
+            "descrizione": "Salami, prosciutti, capocolli, soppressate, pancette, mortadelle, 'nduja, porchetta e altre specialità di salumeria pronte da degustare."
+          },
+          {
+            "icon": "🍺",
+            "name": "La Migliore Birra",
+            "numero": 7,
+            "giorno": "Sabato 28 Novembre",
+            "ora": "20:00",
+            "descrizione": "Birre chiare, ambrate, rosse e scure, birre agricole e specialità con ingredienti del territorio, comprese le proposte analcoliche e senza glutine."
+          },
+          {
+            "icon": "🥖",
+            "name": "Il Miglior Pane o Prodotto da Forno Salato",
+            "numero": 8,
+            "giorno": "Domenica 29 Novembre",
+            "ora": "10:00",
+            "descrizione": "Pane, pizze da forno, taralli, grissini, cracker, friselle, focacce, schiacciate, casatielli, tortani, rustici e altre specialità da forno salate, anche senza glutine."
+          },
+          {
+            "icon": "🍨",
+            "name": "Il Miglior Gelato, Yogurt o Dessert Freddo",
+            "numero": 9,
+            "giorno": "Domenica 29 Novembre",
+            "ora": "11:00",
+            "descrizione": "Gelati artigianali, sorbetti, granite, yogurt, semifreddi, torte gelato, mousse, bavaresi, budini, cheesecake, dessert vegetali e dolci al cucchiaio."
+          }
+        ],
+        "phasesTitle": "Come funziona ogni Sfida",
+        "phasesIntro": "Ogni Concorso del Gran Premio del Gusto avrà una durata indicativa di 60 minuti.",
+        "phases": [
+          {
+            "time": "15 minuti",
+            "title": "Le aziende presentano i propri prodotti",
+            "desc": "Le aziende concorrenti raccontano brevemente la propria storia, il territorio, le caratteristiche e le qualità del prodotto presentato."
+          },
+          {
+            "time": "10 minuti",
+            "title": "Gli esperti raccontano i prodotti in gara",
+            "desc": "Chef, sommelier, giornalisti ed esperti del settore illustrano le caratteristiche dei prodotti e accompagnano le Giurie alla degustazione."
+          },
+          {
+            "time": "20 minuti",
+            "title": "Degustazione",
+            "desc": "La Giuria Popolare e la Giuria Tecnica degustano e confrontano i prodotti in gara."
+          },
+          {
+            "time": "5 minuti",
+            "title": "Votazione",
+            "desc": "Il risultato finale sarà determinato da: 70% Giuria Popolare · 30% Giuria Tecnica."
+          },
+          {
+            "time": "10 minuti",
+            "title": "Proclamazione del vincitore • Premiazione • Interviste • Foto",
+            "desc": ""
+          }
+        ],
+        "phasesNote": "Gli orari e la durata delle singole fasi potranno subire variazioni per esigenze organizzative.",
+        "feeTitle": "Quota di iscrizione",
+        "feeSubtitle": "Un prodotto • Un concorso",
+        "feeAmount": "€ 1.100 + IVA 22%",
+        "feeTotal": "Totale da versare: € 1.342",
+        "feeBody": [
+          "La quota si riferisce all'iscrizione di un singolo prodotto a un singolo Concorso del Gran Premio del Gusto.",
+          "Per iscrivere più prodotti e/o partecipare a più Concorsi dovrà essere presentata una distinta iscrizione per ciascun prodotto."
+        ],
+        "ctaLabel": "🏆 Iscrivi il tuo Prodotto",
+        "ctaHref": "/format/gran-premio-del-gusto/iscrizione/"
+      },
+      {
+        "kind": "sponsor",
+        "label": "Diventa Sponsor",
+        "heading": "Porta il tuo brand al Gran Premio del Gusto",
+        "body": [
+          "Diventa protagonista dell'evento: visibilità sul Lungomare Caracciolo, davanti al pubblico della Rassegna Vini e Oli della Magna Grecia."
+        ],
+        "ctaLabel": "Diventa Sponsor",
+        "ctaHref": "/sponsor/"
+      },
+      {
+        "kind": "shop",
+        "label": "Shop Ufficiale",
+        "heading": "Shop Ufficiale",
+        "body": [
+          "Gadget e prodotti ufficiali della Rassegna. Lo shop sarà disponibile a breve."
+        ],
+        "ctaLabel": "Vai allo Shop",
+        "ctaHref": "mailto:napoliracingshow@gmail.com"
+      }
+    ]
+  },
+  "granPremioIntro": {
+    "kicker": "Il Gran Premio del Gusto",
+    "stat1": "9 Sfide • 9 Vincitori • 3 Giorni di Gusto e Spettacolo",
+    "stat2": "Giuria Popolare 70% • Giuria Tecnica 30%",
+    "brand": "VINISUD.IT",
+    "edition": "2ª Rassegna Vini & Oli della Magna Grecia",
+    "dates": "27 • 28 • 29 Novembre 2026",
+    "venue": "Rotonda Diaz • Lungomare Caracciolo • Napoli",
+    "subtitle": "Le Sfide della Magna Grecia",
+    "claim1": "Il pubblico non assaggia soltanto.",
+    "claim2": "Il pubblico sceglie i vincitori.",
+    "tags": "Vini • Oli • Sapori • Dieta Mediterranea • Prevenzione • Motori • Spettacolo",
+    "freeEntry": "Ingresso al Villaggio gratuito",
+    "organizzatori": "Organizzato da A.S.D. Napoli Racing Show, in collaborazione con Comune di Napoli e Associazione Italiana Sommelier, con il Patrocinio dell'Assessorato all'Agricoltura della Regione Campania."
+  },
+  "twoEvents": {
+    "title": "Due eventi. Un'unica grande festa del gusto.",
+    "dateLine": "27 · 28 · 29 Novembre 2026",
+    "venueLine": "Rotonda Diaz · Napoli",
+    "cards": [
+      {
+        "title": "2ª Rassegna Vini e Oli della Magna Grecia",
+        "tagline": "Ingresso libero · Stand · Masterclass · Territorio · Eccellenze",
+        "ctaLabel": "Scopri la Rassegna",
+        "ctaHref": "/format/rassegna-vini-e-oli-della-magna-grecia/"
+      },
+      {
+        "title": "1ª Edizione del Gran Premio del Gusto",
+        "tagline": "9 Sfide · 9 Vincitori · 70% Giuria Popolare · 30% Giuria Tecnica",
+        "ctaLabel": "Scopri il Gran Premio",
+        "ctaHref": "/format/gran-premio-del-gusto/",
+        "secondaryCtaLabel": "🎟️ Diventa Giurato",
+        "secondaryCtaHref": "/pass-giurato/"
+      }
+    ]
+  }
 }

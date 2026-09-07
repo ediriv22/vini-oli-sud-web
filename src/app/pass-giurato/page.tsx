@@ -44,9 +44,10 @@ export default function PassGiuratoPage() {
   const [tipoPass, setTipoPass] = useState<string>("");
   const [sfideScelte, setSfideScelte] = useState<string[]>([]);
   // Add-on "bicchiere + portabicchiere in omaggio" (+€10, richiesta esplicita
-  // 1/9/2026): esclusivo del Pass Gran Giurato — se l'utente lo seleziona e
-  // poi cambia Pass, va spento di nuovo, non deve restare "appiccicato" a un
-  // Pass che non lo prevede.
+  // 1/9/2026, estesa a tutti i Pass il 7/9/2026): disponibile su ogni Pass
+  // elencato in addon.tierNames — se l'utente lo seleziona e poi cambia Pass
+  // verso uno che non lo prevede, va spento di nuovo, non deve restare
+  // "appiccicato".
   const [addonScelto, setAddonScelto] = useState(false);
   const [metodoPagamento, setMetodoPagamento] = useState<"bonifico" | "paypal">("bonifico");
   const [status, setStatus] = useState<SubmitStatus>("idle");
@@ -91,10 +92,19 @@ export default function PassGiuratoPage() {
   const granGiuratoDisponibile = !concorsi.some((c) => isSfidaFull(c.name));
 
   const tierSelezionato = tiers.find((t) => t.name === tipoPass);
-  const addonDisponibile = !!addon && tipoPass === addon.tierName;
-  const totale = (tierSelezionato?.priceValue ?? 0) + (addonDisponibile && addonScelto ? (addon?.priceValue ?? 0) : 0);
+  const addonDisponibile = !!addon && addon.tierNames.includes(tipoPass);
+  // IVA solo sul kit bicchiere+portabicchiere (+€10 -> €12,20): il prezzo dei
+  // Pass (25/50/70) NON ha IVA, richiesta esplicita 7/9/2026 — i bottoni
+  // PayPal dei Pass senza addon restano quelli originali, invariati.
+  const ivaRate = biglietti?.ivaRate ?? 0;
+  const kitConIva = Math.round((addon?.priceValue ?? 0) * (1 + ivaRate) * 100) / 100;
+  const fmtEuro = (n: number) => n.toLocaleString("it-IT", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const totale =
+    (tierSelezionato?.priceValue ?? 0) + (addonDisponibile && addonScelto ? kitConIva : 0);
   const hostedButtonId =
-    addonDisponibile && addonScelto ? addon?.paypalHostedButtonIdConAddon : tierSelezionato?.paypalHostedButtonId;
+    addonDisponibile && addonScelto
+      ? (addon?.paypalHostedButtonIdConAddon as Record<string, string> | undefined)?.[tipoPass]
+      : tierSelezionato?.paypalHostedButtonId;
 
   const oggi = useMemo(() => new Date(), []);
   const maxNascita = useMemo(() => {
@@ -243,6 +253,12 @@ export default function PassGiuratoPage() {
           Organizzativa venerdì 27, sabato 28 e domenica 29 novembre 2026, dalle 9.00 alle 20.00,
           previa esibizione della conferma di iscrizione ricevuta via email.
         </p>
+        <p className="mx-auto mt-3 max-w-[46ch] text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
+          L&rsquo;Organizzazione fornirà in prestito il bicchiere e il portabicchiere per le
+          degustazioni: il Giurato dovrà restituirli al termine della manifestazione. Nel caso in
+          cui il Giurato intenda invece acquistare il bicchiere serigrafato e il portabicchiere con
+          il logo della manifestazione, dovrà versare l&rsquo;importo di € 10,00 + IVA.
+        </p>
       </div>
 
       <form
@@ -350,7 +366,7 @@ export default function PassGiuratoPage() {
                     onChange={() => {
                       setTipoPass(tier.name);
                       setSfideScelte([]);
-                      if (tier.name !== addon?.tierName) setAddonScelto(false);
+                      if (!addon?.tierNames.includes(tier.name)) setAddonScelto(false);
                     }}
                     className="sr-only"
                   />
@@ -421,28 +437,38 @@ export default function PassGiuratoPage() {
             </p>
           ) : null}
 
-          {addon && tipoPass === addon.tierName ? (
-            <label className="flex items-start gap-3 rounded-[0.9rem] border border-dashed border-[var(--color-sand-strong)] bg-[rgba(255,215,87,0.08)] px-4 py-3 text-left text-[0.88rem] leading-[1.5] text-[var(--color-ink-strong)]">
-              <input
-                type="checkbox"
-                name="addon_bicchiere"
-                value="1"
-                checked={addonScelto}
-                onChange={(e) => setAddonScelto(e.target.checked)}
-                className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-wine)]"
-              />
-              <span>
-                🎁 <strong>+{addon.price}</strong> — {addon.label}
-                {addon.note ? (
-                  <span className="block text-[0.76rem] text-[var(--color-muted)]">{addon.note}</span>
-                ) : null}
-              </span>
-            </label>
+          {addon && addon.tierNames.includes(tipoPass) ? (
+            <div className="rounded-[0.9rem] border border-dashed border-[var(--color-sand-strong)] bg-[rgba(255,215,87,0.08)] px-4 py-3 text-left">
+              {addon.question ? (
+                <p className="text-[0.9rem] font-semibold text-[var(--color-ink-strong)]">{addon.question}</p>
+              ) : null}
+              {addon.detail ? (
+                <p className="mt-1.5 text-[0.82rem] leading-[1.55] text-[var(--color-muted)]">{addon.detail}</p>
+              ) : null}
+              <label className="mt-3 flex items-start gap-3 text-[0.88rem] leading-[1.5] text-[var(--color-ink-strong)]">
+                <input
+                  type="checkbox"
+                  name="addon_bicchiere"
+                  value="1"
+                  checked={addonScelto}
+                  onChange={(e) => setAddonScelto(e.target.checked)}
+                  className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-wine)]"
+                />
+                <span>
+                  🎁 <strong>+{addon.price}</strong> — {addon.label}
+                  {addon.note ? (
+                    <span className="block text-[0.76rem] text-[var(--color-muted)]">{addon.note}</span>
+                  ) : null}
+                </span>
+              </label>
+            </div>
           ) : null}
 
           {tipoPass ? (
             <p className="text-center font-ui text-[0.9rem] font-semibold text-[var(--color-ink-strong)]">
-              Totale: €{totale}
+              {addonDisponibile && addonScelto
+                ? `Totale: €${tierSelezionato?.priceValue} + €10,00 + IVA (tot. €${fmtEuro(totale)})`
+                : `Totale: €${totale}`}
             </p>
           ) : null}
         </fieldset>
@@ -492,7 +518,11 @@ export default function PassGiuratoPage() {
                 <br />
                 Causale: Pass Giuria Popolare – [Nome Cognome] – [Tipo di Pass]
                 {addonDisponibile && addonScelto ? " + Kit Bicchiere" : ""}
-                {tipoPass ? ` — Totale €${totale}` : ""}
+                {tipoPass
+                  ? addonDisponibile && addonScelto
+                    ? ` — Totale €${tierSelezionato?.priceValue} + €10,00 + IVA (tot. €${fmtEuro(totale)})`
+                    : ` — Totale €${totale}`
+                  : ""}
               </p>
               <div className="mt-4">
                 <FileField label="Ricevuta del bonifico" name="ricevuta_file" required />
@@ -502,7 +532,13 @@ export default function PassGiuratoPage() {
             <div className="rounded-[0.9rem] border border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)] p-4">
               <p className="text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
                 Dopo aver inviato l&rsquo;iscrizione, apparirà qui sotto il pulsante PayPal per
-                pagare {tipoPass ? `€${totale}` : "l'importo del Pass scelto"}. Il pagamento viene
+                pagare{" "}
+                {tipoPass
+                  ? addonDisponibile && addonScelto
+                    ? `€${tierSelezionato?.priceValue} + €10,00 + IVA (tot. €${fmtEuro(totale)})`
+                    : `€${totale}`
+                  : "l'importo del Pass scelto"}
+                . Il pagamento viene
                 verificato automaticamente: riceverai la mail di conferma solo a pagamento
                 confermato.
               </p>
