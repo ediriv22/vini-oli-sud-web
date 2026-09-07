@@ -465,7 +465,7 @@ export default function PassGiuratoPage() {
           ) : null}
 
           {tipoPass ? (
-            <p className="text-center font-ui text-[0.9rem] font-semibold text-[var(--color-ink-strong)]">
+            <p className="text-center font-ui text-[1.15rem] font-semibold text-[var(--color-ink-strong)]">
               {addonDisponibile && addonScelto
                 ? `Totale: €${tierSelezionato?.priceValue} + €10,00 + IVA (tot. €${fmtEuro(totale)})`
                 : `Totale: €${totale}`}
@@ -518,11 +518,16 @@ export default function PassGiuratoPage() {
                 <br />
                 Causale: Pass Giuria Popolare – [Nome Cognome] – [Tipo di Pass]
                 {addonDisponibile && addonScelto ? " + Kit Bicchiere" : ""}
-                {tipoPass
-                  ? addonDisponibile && addonScelto
-                    ? ` — Totale €${tierSelezionato?.priceValue} + €10,00 + IVA (tot. €${fmtEuro(totale)})`
-                    : ` — Totale €${totale}`
-                  : ""}
+                {tipoPass ? (
+                  <>
+                    {" — "}
+                    <strong className="text-[1.15rem] text-[var(--color-ink-strong)]">
+                      {addonDisponibile && addonScelto
+                        ? `Totale €${tierSelezionato?.priceValue} + €10,00 + IVA (tot. €${fmtEuro(totale)})`
+                        : `Totale €${totale}`}
+                    </strong>
+                  </>
+                ) : null}
               </p>
               <div className="mt-4">
                 <FileField label="Ricevuta del bonifico" name="ricevuta_file" required />
@@ -533,11 +538,15 @@ export default function PassGiuratoPage() {
               <p className="text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
                 Dopo aver inviato l&rsquo;iscrizione, apparirà qui sotto il pulsante PayPal per
                 pagare{" "}
-                {tipoPass
-                  ? addonDisponibile && addonScelto
-                    ? `€${tierSelezionato?.priceValue} + €10,00 + IVA (tot. €${fmtEuro(totale)})`
-                    : `€${totale}`
-                  : "l'importo del Pass scelto"}
+                {tipoPass ? (
+                  <strong className="text-[1.15rem] text-[var(--color-ink-strong)]">
+                    {addonDisponibile && addonScelto
+                      ? `€${tierSelezionato?.priceValue} + €10,00 + IVA (tot. €${fmtEuro(totale)})`
+                      : `€${totale}`}
+                  </strong>
+                ) : (
+                  "l'importo del Pass scelto"
+                )}
                 . Il pagamento viene
                 verificato automaticamente: riceverai la mail di conferma solo a pagamento
                 confermato.
