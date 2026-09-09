@@ -1,5 +1,25 @@
 [
   {
+    "id": "9391a7b71de7",
+    "category": "Oro Verde",
+    "title": "\"Mi dissero che il mio olio era un disastro\". Oggi produce uno dei migliori frantoi d'Italia",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/salvatore-stallone-le-tre-colonne-frantoio-anno/",
+    "note": "Un segnale dall'olio del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-08"
+  },
+  {
+    "id": "3abc37aea6b4",
+    "category": "Radar del Sud",
+    "title": "Pizza della settimana: Burrata di Raffaella Cucina Napoletana e Aquarius Rosé Valdo",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/pizza-della-settimana-burrata-di-raffaella-cucina-napoletana-e-aquarius-rose-valdo/301182/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-08"
+  },
+  {
     "id": "35507dab4f12",
     "category": "Calici di Magna Grecia",
     "title": "Il vino oltre il calice. Non è solo una questione di quanto beviamo, ma di come, dove e perché scegliamo un vino. Quattro punti di vista per capire dove sta andando il mondo del vino",
@@ -276,26 +296,6 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/10-concorso-miglior-rosato-del-mediterraneo-la-seconda-selezione-premia-la-calabria-del-biologico/300747/",
     "note": "Una notizia dal calendario dei territori, focus Calabria.",
-    "noteSource": "auto",
-    "date": "2026-08-27"
-  },
-  {
-    "id": "ebf69e4a93f7",
-    "category": "Calici di Magna Grecia",
-    "title": "Vini Bianchi, Rosati e Spumante Azienda Vinicola Cantele – Nuove annate",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vini-azienda-vinicola-cantele-nuove-annate/191880/",
-    "note": "Una voce dal mondo del vino, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-08-27"
-  },
-  {
-    "id": "8c0e007ea44d",
-    "category": "Calici di Magna Grecia",
-    "title": "Camerlengo Aglianico del Vulture Doc 2006 in Jeroboam",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/camerlengo-aglianico-del-vulture-doc-2006-in-jeroboam/300778/",
-    "note": "Una voce dal mondo del vino, focus Basilicata.",
     "noteSource": "auto",
     "date": "2026-08-27"
   }
