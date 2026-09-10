@@ -23,13 +23,17 @@ import { siteConfig } from "@/data/site";
  * Nota maggiore età: il modulo richiede la data di nascita e blocca lato
  * server chi ha meno di 18 anni (vedi lead.php).
  *
- * PayPal (Hosted Buttons SDK, uno per tier + uno per tier+addon, vedi
- * paypalHostedButtonId/paypalHostedButtonIdConAddon in siteConfig): dopo il
+ * PayPal (Smart Payment Buttons, importo dinamico — sostituiscono dal
+ * 10/9/2026 i vecchi Hosted Buttons a prezzo fisso, abbandonati perché
+ * l'app PayPal a cui erano legati è rimasta invalidata da un blocco
+ * account passato, non ricreabile da dashboard in quel momento): dopo il
  * submit del form, che salva già l'iscrizione lato server con stato "in
- * attesa pagamento" (vedi lead.php), mostriamo il pulsante corrispondente.
- * onApprove chiama paypal-confirm.php che verifica l'ordine reale su
- * PayPal Orders API prima di segnare pagato e mandare la mail di conferma
- * — quella mail NON parte dal submit per il metodo paypal, solo da lì.
+ * attesa pagamento" (vedi lead.php), mostriamo il pulsante. createOrder
+ * chiama /forms/paypal-create-order.php, che rilegge l'importo dal CSV
+ * (mai dal client) e crea l'ordine reale. onApprove chiama
+ * paypal-confirm.php che verifica l'ordine su PayPal Orders API prima di
+ * segnare pagato e mandare la mail di conferma — quella mail NON parte
+ * dal submit per il metodo paypal, solo da lì.
  */
 
 type PaypalPhase = "idle" | "button" | "confirming" | "confirm-error";
@@ -101,10 +105,6 @@ export default function PassGiuratoPage() {
   const fmtEuro = (n: number) => n.toLocaleString("it-IT", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const totale =
     (tierSelezionato?.priceValue ?? 0) + (addonDisponibile && addonScelto ? kitConIva : 0);
-  const hostedButtonId =
-    addonDisponibile && addonScelto
-      ? (addon?.paypalHostedButtonIdConAddon as Record<string, string> | undefined)?.[tipoPass]
-      : tierSelezionato?.paypalHostedButtonId;
 
   const oggi = useMemo(() => new Date(), []);
   const maxNascita = useMemo(() => {
@@ -181,24 +181,42 @@ export default function PassGiuratoPage() {
     [paypalRequestId],
   );
 
-  // Carica l'SDK PayPal (Hosted Buttons) e monta il pulsante corretto per
-  // tier+addon appena entriamo in fase "button".
+  // Carica l'SDK PayPal (Smart Payment Buttons, importo dinamico) e monta
+  // il pulsante appena entriamo in fase "button". A differenza dei vecchi
+  // Hosted Buttons (prezzo fisso, creabili solo da dashboard PayPal —
+  // abbandonati il 10/9/2026 per un'app rimasta invalidata da un blocco
+  // account passato), qui createOrder chiama paypal-create-order.php: è
+  // il server, non il client, a decidere l'importo, rileggendolo dal CSV
+  // scritto al submit — stessa fonte di verità già usata da
+  // paypal-confirm.php in onApprove qui sotto, invariato.
   useEffect(() => {
-    if (paypalPhase !== "button" || !hostedButtonId || !paypalClientId) return;
+    if (paypalPhase !== "button" || !paypalRequestId || !paypalClientId) return;
     let cancelled = false;
 
     function render() {
       if (cancelled || !paypalContainerRef.current) return;
       paypalContainerRef.current.innerHTML = "";
       const w = window as unknown as {
-        paypal?: { HostedButtons: (opts: Record<string, unknown>) => { render: (sel: string) => void } };
+        paypal?: { Buttons: (opts: Record<string, unknown>) => { render: (sel: string) => void } };
       };
-      if (!w.paypal?.HostedButtons) return;
-      const containerId = "paypal-container-" + hostedButtonId;
+      if (!w.paypal?.Buttons) return;
+      const containerId = "paypal-container-" + paypalRequestId;
       paypalContainerRef.current.id = containerId;
       w.paypal
-        .HostedButtons({
-          hostedButtonId,
+        .Buttons({
+          style: { layout: "vertical", label: "pay" },
+          createOrder: async () => {
+            const res = await fetch("/forms/paypal-create-order.php", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ request_id: paypalRequestId }),
+            });
+            const data = (await res.json()) as { ok: boolean; id?: string; error?: string };
+            if (!data.ok || !data.id) {
+              throw new Error(data.error ?? "Impossibile creare l'ordine PayPal.");
+            }
+            return data.id;
+          },
           onApprove: (data: { orderID: string }) => handlePaypalApprove(data.orderID),
         })
         .render("#" + containerId);
@@ -220,14 +238,14 @@ export default function PassGiuratoPage() {
     }
     const script = document.createElement("script");
     script.id = "paypal-sdk-script";
-    script.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(paypalClientId)}&components=hosted-buttons&disable-funding=venmo&currency=EUR`;
+    script.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(paypalClientId)}&disable-funding=venmo&currency=EUR`;
     script.addEventListener("load", render);
     document.body.appendChild(script);
     return () => {
       cancelled = true;
       script.removeEventListener("load", render);
     };
-  }, [paypalPhase, hostedButtonId, paypalClientId, handlePaypalApprove]);
+  }, [paypalPhase, paypalRequestId, paypalClientId, handlePaypalApprove]);
 
   return (
     <section className="section-flow section-space">
@@ -479,9 +497,7 @@ export default function PassGiuratoPage() {
             {(
               [
                 { value: "bonifico", label: "Bonifico bancario", hint: "Carichi la ricevuta, verifica manuale" },
-                // PayPal temporaneamente rimosso dai metodi (9/9/2026): errore
-                // "Contatta il commerciante" lato account, in attesa di fix.
-                // { value: "paypal", label: "PayPal", hint: "Paga subito online, conferma automatica" },
+                { value: "paypal", label: "PayPal", hint: "Paga subito online, conferma automatica" },
               ] as const
             ).map((opt) => (
               <label
