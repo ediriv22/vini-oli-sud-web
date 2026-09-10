@@ -479,7 +479,9 @@ export default function PassGiuratoPage() {
             {(
               [
                 { value: "bonifico", label: "Bonifico bancario", hint: "Carichi la ricevuta, verifica manuale" },
-                { value: "paypal", label: "PayPal", hint: "Paga subito online, conferma automatica" },
+                // PayPal temporaneamente rimosso dai metodi (9/9/2026): errore
+                // "Contatta il commerciante" lato account, in attesa di fix.
+                // { value: "paypal", label: "PayPal", hint: "Paga subito online, conferma automatica" },
               ] as const
             ).map((opt) => (
               <label
