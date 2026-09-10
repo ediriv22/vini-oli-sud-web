@@ -166,12 +166,18 @@ function vos_update_csv_row(string $dataDir, string $filename, string $requestId
         return false;
     }
     $idIndex = array_search('request_id', $header, true);
+    $headerCount = count($header);
     $rows = [];
     $updated = false;
     if ($idIndex !== false) {
         while (($row = fgetcsv($fh, 0, ',', '"', '\\')) !== false) {
             if (($row[$idIndex] ?? null) === $requestId) {
-                $assoc = array_combine($header, array_pad($row, count($header), ''));
+                // Stessa normalizzazione di vos_read_csv_row: una riga più
+                // lunga o più corta dell'header non deve mai far esplodere
+                // array_combine() (vedi bug reale scoperto e riparato il
+                // 10/9/2026 — header CSV rimasto vecchio rispetto ai dati).
+                $normalized = array_slice(array_pad($row, $headerCount, ''), 0, $headerCount);
+                $assoc = array_combine($header, $normalized);
                 foreach ($updates as $col => $val) {
                     if (array_key_exists($col, $assoc)) {
                         $assoc[$col] = $val;

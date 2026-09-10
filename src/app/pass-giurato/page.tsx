@@ -218,6 +218,18 @@ export default function PassGiuratoPage() {
             return data.id;
           },
           onApprove: (data: { orderID: string }) => handlePaypalApprove(data.orderID),
+          onError: (err: unknown) => {
+            // createOrder fallito (rete, endpoint giù) o altro errore SDK:
+            // senza questo, PayPal mostra solo il suo popup generico e
+            // l'utente resta senza un messaggio nostro né un modo per
+            // ritentare — riusiamo lo stesso stato "confirm-error" già
+            // pronto per gli errori di conferma pagamento.
+            console.error("PayPal Buttons onError:", err);
+            setPaypalPhase("confirm-error");
+            setErrorMessage(
+              "Impossibile avviare il pagamento PayPal. Riprova tra poco o scrivi a napoliracingshow@gmail.com con il tuo codice iscrizione.",
+            );
+          },
         })
         .render("#" + containerId);
     }
