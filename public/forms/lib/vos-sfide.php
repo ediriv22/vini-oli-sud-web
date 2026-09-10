@@ -123,9 +123,16 @@ function vos_read_csv_row(string $dataDir, string $filename, string $requestId):
         return null;
     }
     $found = null;
+    $headerCount = count($header);
     while (($row = fgetcsv($fh, 0, ',', '"', '\\')) !== false) {
         if (($row[$idIndex] ?? null) === $requestId) {
-            $found = array_combine($header, array_pad($row, count($header), ''));
+            // La riga può avere meno colonne dell'header (fine riga
+            // tronca) o più (es. virgola non quotata in un campo testo
+            // libero, tipo la causale bonifico): normalizziamo sempre
+            // alla stessa lunghezza dell'header prima di array_combine,
+            // che altrimenti va in ValueError fatale su un mismatch.
+            $normalized = array_slice(array_pad($row, $headerCount, ''), 0, $headerCount);
+            $found = array_combine($header, $normalized);
             break;
         }
     }
