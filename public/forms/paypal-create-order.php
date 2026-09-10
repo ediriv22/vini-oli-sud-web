@@ -23,6 +23,25 @@ require __DIR__ . '/lib/vos-sfide.php';
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 
+// DEBUG TEMPORANEO (10/9/2026, da rimuovere appena isolato il 500 vuoto):
+// cattura fatal error reali e li ritorna come JSON invece di una risposta
+// vuota, per capire da fuori cosa succede senza accesso diretto ai log.
+register_shutdown_function(function () {
+    $e = error_get_last();
+    if ($e !== null && in_array($e['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR], true)) {
+        if (!headers_sent()) {
+            http_response_code(500);
+            header('Content-Type: application/json; charset=utf-8');
+        }
+        echo json_encode([
+            'ok' => false,
+            'debug_fatal' => $e['message'],
+            'debug_file' => $e['file'],
+            'debug_line' => $e['line'],
+        ]);
+    }
+});
+
 $respond = function (bool $ok, array $extra = []): void {
     echo json_encode(['ok' => $ok] + $extra, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit;
