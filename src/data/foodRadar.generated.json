@@ -1,11 +1,61 @@
 [
   {
+    "id": "db69091e47a5",
+    "category": "Calici di Magna Grecia",
+    "title": "VINerdì | Toscana IGT Vermentino Nero 2025, Pietraserena",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vinerdi-toscana-igt-vermentino-nero-2025-pietraserena/301302/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-11"
+  },
+  {
+    "id": "3aa4755ab629",
+    "category": "Calici di Magna Grecia",
+    "title": "Pian di Stio Evoluzione 2018 Paestum Igt, San Salvatore",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/pian-di-stio-evoluzione-2018-paestum-igt-san-salvatore/301386/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-11"
+  },
+  {
     "id": "943e06ad2e09",
     "category": "Business con Anima",
     "title": "Cibo & Dintorni 2026, a Salerno la XV edizione: oltre 100 aziende e buyer da 16 paesi",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/cibo-dintorni-2026-a-salerno-la-xv-edizione-oltre-100-aziende-e-buyer-da-16-paesi/301296/",
     "note": "Un segnale di mercato per le eccellenze del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-09-10"
+  },
+  {
+    "id": "ed37d11e643f",
+    "category": "Oro Verde",
+    "title": "Ricetta di mare: tubetti con le patelle di Pasquale Rinaldo",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/ricetta-di-mare-tubetti-con-le-patelle-di-pasquale-rinaldo/301344/",
+    "note": "Un segnale dall'olio del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-09-10"
+  },
+  {
+    "id": "37f7abefe817",
+    "category": "Calici di Magna Grecia",
+    "title": "Vigneti abusivi e uve da tavola che diventano vino. Ora i produttori pugliesi dicono basta alla produzione fantasma",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/puglia-vigneti-abusivi-schedario-vitivinicolo-marzia-varvaglione/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-10"
+  },
+  {
+    "id": "864798ece2e8",
+    "category": "Calici di Magna Grecia",
+    "title": "\"Con questo clima i disciplinari del vino vanno cambiati ogni 5 anni\". Il monito di Carlo Alberto Panont",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/cambiamenti-climatici-disciplinari-vecchi-carlo-alberto-panont/",
+    "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-09-10"
   },
@@ -248,55 +298,5 @@
     "note": "Una voce dal mondo del vino, focus Sardegna.",
     "noteSource": "auto",
     "date": "2026-08-29"
-  },
-  {
-    "id": "ef82ef3cdca5",
-    "category": "Radar del Sud",
-    "title": "Vico Equense. Cerasé: la pizza di Vico e il pesce del Golfo di Napoli",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vico-equense-cerase-la-pizza-di-vico-e-il-pesce-del-golfo-di-napoli/300827/",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-08-29"
-  },
-  {
-    "id": "b41fd0d9bd10",
-    "category": "Calici di Magna Grecia",
-    "title": "Vino e pizza: il sommelier in pizzeria 35 | Lorenzo Moroni",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vino-e-pizza-il-sommelier-in-pizzeria-35-lorenzo-moroni/300825/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-29"
-  },
-  {
-    "id": "bbc7bf99769d",
-    "category": "Calici di Magna Grecia",
-    "title": "In Abruzzo si mangia dentro una grotta scavata nella roccia. E la cantina ha più di mille vini",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/ristoranti/grotta-dei-raselli-guardiagrele-ristorante-grotta/",
-    "note": "Una voce dal mondo del vino, focus Abruzzo.",
-    "noteSource": "auto",
-    "date": "2026-08-29"
-  },
-  {
-    "id": "0a43b92f3c93",
-    "category": "Radar del Sud",
-    "title": "Nel castello del Marchese de Sade in Provenza oggi si mangia con 39 euro",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/ristoranti/chateau-mazan-marchese-de-sade-ristorante-provenza/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-29"
-  },
-  {
-    "id": "3e2882a15f33",
-    "category": "Calici di Magna Grecia",
-    "title": "Villa Raiano: produrre vini che raccontino l'essenza dell'Irpinia | Incontro in cantina con Fortunato Sebastiano",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/villa-raiano-produrre-vini-che-raccontino-lessenza-dellirpinia-incontro-in-cantina-con-fortunato-sebastiano/300800/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-08-28"
   }
 ]
