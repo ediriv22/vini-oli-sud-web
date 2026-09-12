@@ -20,6 +20,36 @@
     "date": "2026-09-11"
   },
   {
+    "id": "9cea65c44af3",
+    "category": "Radar del Sud",
+    "title": "È davvero possibile mangiare giapponese nel Cilento? Hoshi Izakaya, il Giappone accanto ai templi di Paestum",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/e-davvero-possibile-mangiare-giapponese-nel-cilento-hoshi-izakaya-il-giappone-accanto-ai-templi-di-paestum/301345/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-09-11"
+  },
+  {
+    "id": "6fd0873f261e",
+    "category": "Radar del Sud",
+    "title": "Com'è il ristorante della vincitrice di Hell's Kitchen a Contigliano",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/ristorante-delicato-contigliano",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-11"
+  },
+  {
+    "id": "ebb959b1f505",
+    "category": "Business con Anima",
+    "title": "Primo semestre in frenata per il vino italiano all'estero: -6,2% a valore. Ma negli Usa l'estate ha riacceso la domanda",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/export-vino-primo-semestre-2026/",
+    "note": "Un segnale di mercato per le eccellenze del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-11"
+  },
+  {
     "id": "943e06ad2e09",
     "category": "Business con Anima",
     "title": "Cibo & Dintorni 2026, a Salerno la XV edizione: oltre 100 aziende e buyer da 16 paesi",
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino, focus Campania.",
     "noteSource": "auto",
     "date": "2026-08-30"
-  },
-  {
-    "id": "664f3119e54f",
-    "category": "Calici di Magna Grecia",
-    "title": "MenoDodidIGP: Monte del Frà – Custoza DOC 2025",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/menododidigp-monte-del-fra-custoza-doc-2025/300687/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-30"
-  },
-  {
-    "id": "e292d407e794",
-    "category": "Radar del Sud",
-    "title": "Cianciuolo a Pozzallo, il valore contemporaneo della ristorazione marinara",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/cianciuolo-a-pozzallo-il-valore-contemporaneo-della-ristorazione-marinara/300878/",
-    "note": "Una segnalazione gastronomica del Sud.",
-    "noteSource": "auto",
-    "date": "2026-08-30"
-  },
-  {
-    "id": "33800507a4e4",
-    "category": "Calici di Magna Grecia",
-    "title": "InvecchiatIGP: Tenute Gregu – Vermentino di Gallura Superiore DOCG \"Selenu\" 2014",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/invecchiatigp-tenute-gregu-vermentino-di-gallura-superiore-docg-selenu-2014/300683/",
-    "note": "Una voce dal mondo del vino, focus Sardegna.",
-    "noteSource": "auto",
-    "date": "2026-08-29"
   }
 ]
