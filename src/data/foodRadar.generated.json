@@ -1,5 +1,25 @@
 [
   {
+    "id": "6d94c62f8f9e",
+    "category": "Radar del Sud",
+    "title": "Il Magister Enrico Cosentino ai fornelli: nuova ricetta con gli scialatielli",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/il-magister-enrico-cosentino-ai-fornelli-nuova-ricetta-con-gli-scialatielli/301516/",
+    "note": "Una segnalazione di cucina, focus Sardegna.",
+    "noteSource": "auto",
+    "date": "2026-09-13"
+  },
+  {
+    "id": "0b557a284353",
+    "category": "Radar del Sud",
+    "title": "A 14 anni consegnava pizze a domicilio. Oggi ha una catena di ristoranti in Campania",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/vincenzo-rea-madison-pizza-risto-campania/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-09-13"
+  },
+  {
     "id": "1376581d1af6",
     "category": "Radar del Sud",
     "title": "La Vera Pizza Napoletana Champion 2026 riporta a Napoli i migliori pizzaioli del mondo",
@@ -278,25 +298,5 @@
     "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-09-01"
-  },
-  {
-    "id": "335d6cd888ac",
-    "category": "Calici di Magna Grecia",
-    "title": "La Matta di Casebianche, il fiano frizzante del Cilento",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/la-matta-di-casebianche-il-fiano-frizzante-del-cilento/300914/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-08-31"
-  },
-  {
-    "id": "a4eff23dee02",
-    "category": "Radar del Sud",
-    "title": "C'è un ristorante dentro un castello millenario nel Cilento",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/ristoranti/rocha-castello-rocca-cilento-salvatore-notaro/",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-08-31"
   }
 ]
