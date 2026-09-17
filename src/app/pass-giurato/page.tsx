@@ -1,49 +1,37 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useState, type FormEvent } from "react";
 import {
   CheckboxField,
-  FileField,
   FormSectionTitle,
   FormStatusBanner,
   Honeypot,
-  IbanCopy,
   TextField,
   submitLeadForm,
   type SubmitStatus,
 } from "@/components/forms/FormFields";
 import { siteConfig } from "@/data/site";
 
+const ACQUISTO_URL = "https://napoli-racing-show.metooo.com/pages/il-gran-premio-del-gusto";
+
 /**
- * Modulo "Diventa Giurato Popolare" — iscrizione + pagamento (bonifico con
- * upload ricevuta, o PayPal). Invia a napoliracingshow@gmail.com via
- * /forms/lead.php (requestType=iscrizione-giurato). Riusa i 3 Pass e i 9
- * Concorsi già definiti in siteConfig (nessun dato duplicato).
+ * Modulo "Diventa Giurato Popolare" — iscrizione. Invia a
+ * napoliracingshow@gmail.com via /forms/lead.php
+ * (requestType=iscrizione-giurato). Riusa i 3 Pass e i 9 Concorsi già
+ * definiti in siteConfig (nessun dato duplicato).
  *
  * Nota maggiore età: il modulo richiede la data di nascita e blocca lato
  * server chi ha meno di 18 anni (vedi lead.php).
  *
- * PayPal (Smart Payment Buttons, importo dinamico — sostituiscono dal
- * 10/9/2026 i vecchi Hosted Buttons a prezzo fisso, abbandonati perché
- * l'app PayPal a cui erano legati è rimasta invalidata da un blocco
- * account passato, non ricreabile da dashboard in quel momento): dopo il
- * submit del form, che salva già l'iscrizione lato server con stato "in
- * attesa pagamento" (vedi lead.php), mostriamo il pulsante. createOrder
- * chiama /forms/paypal-create-order.php, che rilegge l'importo dal CSV
- * (mai dal client) e crea l'ordine reale. onApprove chiama
- * paypal-confirm.php che verifica l'ordine su PayPal Orders API prima di
- * segnare pagato e mandare la mail di conferma — quella mail NON parte
- * dal submit per il metodo paypal, solo da lì.
+ * Pagamento: non più gestito qui (bonifico/PayPal rimossi) — l'acquisto
+ * avviene sulla piattaforma di biglietteria esterna (ACQUISTO_URL).
  */
-
-type PaypalPhase = "idle" | "button" | "confirming" | "confirm-error";
 
 export default function PassGiuratoPage() {
   const biglietti = siteConfig.sfideAccordion.items.find((i) => i.kind === "biglietti");
   const tiers = biglietti?.tiers ?? [];
   const addon = biglietti?.addon;
   const concorsi = siteConfig.sfideAccordion.items.find((i) => i.kind === "iscrivi")?.concorsi ?? [];
-  const paypalClientId = biglietti?.paypalClientId ?? "";
 
   const [tipoPass, setTipoPass] = useState<string>("");
   const [sfideScelte, setSfideScelte] = useState<string[]>([]);
@@ -53,7 +41,6 @@ export default function PassGiuratoPage() {
   // verso uno che non lo prevede, va spento di nuovo, non deve restare
   // "appiccicato".
   const [addonScelto, setAddonScelto] = useState(false);
-  const [metodoPagamento, setMetodoPagamento] = useState<"bonifico" | "paypal">("bonifico");
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | undefined>();
   // Posti rimasti per Sfida (200 a Sfida, richiesta esplicita): letti da
@@ -62,12 +49,6 @@ export default function PassGiuratoPage() {
   // toccare il codice quando si riempie.
   const [sfideCounts, setSfideCounts] = useState<Record<string, number>>({});
   const [countsLimit, setCountsLimit] = useState<number>(200);
-  // Fase del pagamento PayPal successiva al submit (i dati sono già salvati
-  // lato server a questo punto): mostriamo il pulsante ospitato giusto per
-  // tier+addon, poi verifichiamo l'ordine reale prima di concludere.
-  const [paypalPhase, setPaypalPhase] = useState<PaypalPhase>("idle");
-  const [paypalRequestId, setPaypalRequestId] = useState<string | undefined>();
-  const paypalContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -133,131 +114,16 @@ export default function PassGiuratoPage() {
     setErrorMessage(undefined);
     const result = await submitLeadForm(e.currentTarget);
     if (result.ok) {
-      if (metodoPagamento === "paypal") {
-        // Dati già salvati lato server (stato "in attesa pagamento", vedi
-        // lead.php) — non resettiamo il form: mostriamo qui il pulsante
-        // PayPal del tier scelto. La mail di conferma NON parte da questo
-        // submit, solo dopo verifica reale in handlePaypalApprove.
-        setPaypalRequestId(result.requestId);
-        setPaypalPhase("button");
-        setStatus("idle");
-      } else {
-        setStatus("success");
-        e.currentTarget.reset();
-        setTipoPass("");
-        setSfideScelte([]);
-        setAddonScelto(false);
-      }
+      setStatus("success");
+      e.currentTarget.reset();
+      setTipoPass("");
+      setSfideScelte([]);
+      setAddonScelto(false);
     } else {
       setStatus("error");
       setErrorMessage(result.error);
     }
   }
-
-  const handlePaypalApprove = useCallback(
-    async (orderID: string) => {
-      if (!paypalRequestId) return;
-      setPaypalPhase("confirming");
-      try {
-        const res = await fetch("/forms/paypal-confirm.php", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ request_id: paypalRequestId, orderID }),
-        });
-        const data = (await res.json()) as { ok: boolean; error?: string };
-        if (data.ok) {
-          window.location.href = "/pass-giurato/grazie/";
-          return;
-        }
-        setPaypalPhase("confirm-error");
-        setErrorMessage(data.error);
-      } catch {
-        setPaypalPhase("confirm-error");
-        setErrorMessage(
-          "Errore di rete durante la verifica del pagamento. Se hai pagato, scrivi a napoliracingshow@gmail.com con il tuo codice iscrizione.",
-        );
-      }
-    },
-    [paypalRequestId],
-  );
-
-  // Carica l'SDK PayPal (Smart Payment Buttons, importo dinamico) e monta
-  // il pulsante appena entriamo in fase "button". A differenza dei vecchi
-  // Hosted Buttons (prezzo fisso, creabili solo da dashboard PayPal —
-  // abbandonati il 10/9/2026 per un'app rimasta invalidata da un blocco
-  // account passato), qui createOrder chiama paypal-create-order.php: è
-  // il server, non il client, a decidere l'importo, rileggendolo dal CSV
-  // scritto al submit — stessa fonte di verità già usata da
-  // paypal-confirm.php in onApprove qui sotto, invariato.
-  useEffect(() => {
-    if (paypalPhase !== "button" || !paypalRequestId || !paypalClientId) return;
-    let cancelled = false;
-
-    function render() {
-      if (cancelled || !paypalContainerRef.current) return;
-      paypalContainerRef.current.innerHTML = "";
-      const w = window as unknown as {
-        paypal?: { Buttons: (opts: Record<string, unknown>) => { render: (sel: string) => void } };
-      };
-      if (!w.paypal?.Buttons) return;
-      const containerId = "paypal-container-" + paypalRequestId;
-      paypalContainerRef.current.id = containerId;
-      w.paypal
-        .Buttons({
-          style: { layout: "vertical", label: "pay" },
-          createOrder: async () => {
-            const res = await fetch("/forms/paypal-create-order.php", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ request_id: paypalRequestId }),
-            });
-            const data = (await res.json()) as { ok: boolean; id?: string; error?: string };
-            if (!data.ok || !data.id) {
-              throw new Error(data.error ?? "Impossibile creare l'ordine PayPal.");
-            }
-            return data.id;
-          },
-          onApprove: (data: { orderID: string }) => handlePaypalApprove(data.orderID),
-          onError: (err: unknown) => {
-            // createOrder fallito (rete, endpoint giù) o altro errore SDK:
-            // senza questo, PayPal mostra solo il suo popup generico e
-            // l'utente resta senza un messaggio nostro né un modo per
-            // ritentare — riusiamo lo stesso stato "confirm-error" già
-            // pronto per gli errori di conferma pagamento.
-            console.error("PayPal Buttons onError:", err);
-            setPaypalPhase("confirm-error");
-            setErrorMessage(
-              "Impossibile avviare il pagamento PayPal. Riprova tra poco o scrivi a napoliracingshow@gmail.com con il tuo codice iscrizione.",
-            );
-          },
-        })
-        .render("#" + containerId);
-    }
-
-    const existing = document.getElementById("paypal-sdk-script") as HTMLScriptElement | null;
-    if (existing && (window as unknown as { paypal?: unknown }).paypal) {
-      render();
-      return () => {
-        cancelled = true;
-      };
-    }
-    if (existing) {
-      existing.addEventListener("load", render);
-      return () => {
-        cancelled = true;
-        existing.removeEventListener("load", render);
-      };
-    }
-    const script = document.createElement("script");
-    script.id = "paypal-sdk-script";
-    script.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(paypalClientId)}&disable-funding=venmo&currency=EUR`;
-    script.addEventListener("load", render);
-    document.body.appendChild(script);
-    return () => {
-      cancelled = true;
-      script.removeEventListener("load", render);
-    };
-  }, [paypalPhase, paypalRequestId, paypalClientId, handlePaypalApprove]);
 
   return (
     <section className="section-flow section-space">
@@ -505,84 +371,33 @@ export default function PassGiuratoPage() {
 
         <fieldset className="flex flex-col gap-5">
           <FormSectionTitle>4. Pagamento</FormSectionTitle>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {(
-              [
-                { value: "bonifico", label: "Bonifico bancario", hint: "Carichi la ricevuta, verifica manuale" },
-                { value: "paypal", label: "PayPal", hint: "Paga subito online, conferma automatica" },
-              ] as const
-            ).map((opt) => (
-              <label
-                key={opt.value}
-                className={`flex cursor-pointer flex-col gap-1 rounded-[0.9rem] border p-4 transition-colors duration-200 ${
-                  metodoPagamento === opt.value
-                    ? "border-[var(--color-wine)] bg-[rgba(47,91,70,0.08)]"
-                    : "border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)]"
-                }`}
-              >
-                <span className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="metodo_pagamento"
-                    value={opt.value}
-                    checked={metodoPagamento === opt.value}
-                    onChange={() => setMetodoPagamento(opt.value)}
-                    className="h-4 w-4 accent-[var(--color-wine)]"
-                  />
-                  <span className="font-ui text-[0.9rem] font-semibold">{opt.label}</span>
-                </span>
-                <span className="pl-6 text-[0.78rem] text-[var(--color-muted)]">{opt.hint}</span>
-              </label>
-            ))}
-          </div>
-
-          {metodoPagamento === "bonifico" ? (
-            <div className="rounded-[0.9rem] border border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)] p-4">
-              <p className="font-ui text-[0.78rem] font-semibold uppercase tracking-[0.08em] text-[var(--color-wine)]">
-                Dati per il bonifico
-              </p>
-              <p className="mt-2 text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
-                Intestato a <strong>A.S.D. Napoli Racing Show</strong>
-                <br />
-                IBAN: <IbanCopy iban="IT51 X062 3003 5470 0003 5710 069" />
-                <br />
-                Causale: Pass Giuria Popolare – [Nome Cognome] – [Tipo di Pass]
-                {addonDisponibile && addonScelto ? " + Kit Bicchiere" : ""}
-                {tipoPass ? (
-                  <>
-                    {" — "}
-                    <strong className="text-[1.15rem] text-[var(--color-ink-strong)]">
-                      {addonDisponibile && addonScelto
-                        ? `Totale €${tierSelezionato?.priceValue} + €10,00 + IVA (tot. €${fmtEuro(totale)})`
-                        : `Totale €${totale}`}
-                    </strong>
-                  </>
-                ) : null}
-              </p>
-              <div className="mt-4">
-                <FileField label="Ricevuta del bonifico" name="ricevuta_file" required />
-              </div>
-            </div>
-          ) : (
-            <div className="rounded-[0.9rem] border border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)] p-4">
-              <p className="text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
-                Dopo aver inviato l&rsquo;iscrizione, apparirà qui sotto il pulsante PayPal per
-                pagare{" "}
-                {tipoPass ? (
+          <div className="rounded-[0.9rem] border border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)] p-4 text-center">
+            <p className="text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
+              L&rsquo;acquisto del Pass Giuria Popolare avviene sulla piattaforma ufficiale di
+              biglietteria
+              {tipoPass ? (
+                <>
+                  {" — "}
                   <strong className="text-[1.15rem] text-[var(--color-ink-strong)]">
                     {addonDisponibile && addonScelto
-                      ? `€${tierSelezionato?.priceValue} + €10,00 + IVA (tot. €${fmtEuro(totale)})`
-                      : `€${totale}`}
+                      ? `Totale €${tierSelezionato?.priceValue} + €10,00 + IVA (tot. €${fmtEuro(totale)})`
+                      : `Totale €${totale}`}
                   </strong>
-                ) : (
-                  "l'importo del Pass scelto"
-                )}
-                . Il pagamento viene
-                verificato automaticamente: riceverai la mail di conferma solo a pagamento
-                confermato.
-              </p>
+                </>
+              ) : null}
+              .
+            </p>
+            <div className="mt-4">
+              <a
+                href={ACQUISTO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-ui inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[var(--color-sand)] px-8 text-[0.9rem] font-bold uppercase tracking-[0.06em] text-[var(--color-ink-strong)] shadow-[0_14px_32px_rgba(255,215,87,0.32)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-px hover:shadow-[0_18px_38px_rgba(255,215,87,0.4)]"
+              >
+                🎟️ Acquista il Pass Giurato
+              </a>
             </div>
-          )}
+          </div>
         </fieldset>
 
         <fieldset className="flex flex-col gap-4">
@@ -602,46 +417,19 @@ export default function PassGiuratoPage() {
             </p>
           ) : null}
 
-          {paypalPhase === "idle" ? (
-            <>
-              <button
-                type="submit"
-                disabled={status === "submitting" || tutteEsaurite}
-                className="font-ui inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[var(--color-sand)] px-10 text-[1rem] font-bold uppercase tracking-[0.06em] text-[var(--color-ink-strong)] shadow-[0_14px_32px_rgba(255,215,87,0.32)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-px hover:shadow-[0_18px_38px_rgba(255,215,87,0.4)] disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                {status === "submitting" ? "Invio in corso…" : "🎟️ Invia Iscrizione"}
-              </button>
+          <button
+            type="submit"
+            disabled={status === "submitting" || tutteEsaurite}
+            className="font-ui inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[var(--color-sand)] px-10 text-[1rem] font-bold uppercase tracking-[0.06em] text-[var(--color-ink-strong)] shadow-[0_14px_32px_rgba(255,215,87,0.32)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-px hover:shadow-[0_18px_38px_rgba(255,215,87,0.4)] disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {status === "submitting" ? "Invio in corso…" : "🎟️ Invia Iscrizione"}
+          </button>
 
-              <FormStatusBanner
-                status={status}
-                errorMessage={errorMessage}
-                successMessage="Iscrizione ricevuta dalla Segreteria Organizzativa. Riceverai una conferma via email."
-              />
-            </>
-          ) : (
-            <div className="w-full max-w-[24rem]">
-              <p className="font-display text-[1.1rem] text-[var(--color-ink-strong)]">
-                Dati ricevuti — completa il pagamento
-              </p>
-              <p className="mt-1.5 text-[0.86rem] leading-[1.5] text-[var(--color-muted)]">
-                Codice iscrizione: <strong>{paypalRequestId}</strong>. Paga con il pulsante qui
-                sotto per ricevere la mail di conferma.
-              </p>
-              <div ref={paypalContainerRef} className="mt-5 min-h-[3rem]" />
-              {paypalPhase === "confirming" ? (
-                <p className="mt-3 text-[0.86rem] italic text-[var(--color-muted)]">
-                  Verifica del pagamento in corso…
-                </p>
-              ) : null}
-              {paypalPhase === "confirm-error" ? (
-                <div className="mt-3 rounded-[1rem] border border-[rgba(191,60,60,0.4)] bg-[rgba(191,60,60,0.06)] px-4 py-3 text-center">
-                  <p className="text-[0.86rem] font-semibold text-[rgb(153,42,42)]">
-                    {errorMessage ?? "Verifica pagamento non riuscita."}
-                  </p>
-                </div>
-              ) : null}
-            </div>
-          )}
+          <FormStatusBanner
+            status={status}
+            errorMessage={errorMessage}
+            successMessage="Iscrizione ricevuta dalla Segreteria Organizzativa. Riceverai una conferma via email."
+          />
         </div>
       </form>
 
