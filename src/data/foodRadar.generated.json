@@ -1,5 +1,35 @@
 [
   {
+    "id": "80adfff509e9",
+    "category": "Calici di Magna Grecia",
+    "title": "Il vino CE torna a Caserta: il 27 e 28 settembre palazzo Paternò ospita la terza edizione",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/il-vino-ce-torna-a-caserta-il-27-e-28-settembre-palazzo-paterno-ospita-la-terza-edizione/301653/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-09-18"
+  },
+  {
+    "id": "cd49d4b4fdc8",
+    "category": "Calici di Magna Grecia",
+    "title": "Azienda Agricola Rapillo | L'etichetta che resta nella memoria",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/azienda-agricola-rapillo-letichetta-che-resta-nella-memoria/301656/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-18"
+  },
+  {
+    "id": "afa5c16db075",
+    "category": "Business con Anima",
+    "title": "Export vino e strategie a confronto: la Francia salva i prezzi, l'Argentina smaltisce i volumi, gli Usa perdono tutto",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/export-vino-2026-confronto-strategie-francia-spagna-stati-uniti-argentina/",
+    "note": "Un segnale di mercato per le eccellenze del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-17"
+  },
+  {
     "id": "6b63fed96c15",
     "category": "Business con Anima",
     "title": "Cibo & Dintorni, Salerno incontra il mondo e il viaggio continua",
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-09-02"
-  },
-  {
-    "id": "186299027ee2",
-    "category": "Calici di Magna Grecia",
-    "title": "Settesoli avvia la produzione di vino dealcolato. Così anche la Sicilia entra nel nuovo business",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/settesoli-impianto-vino-dealcolato/",
-    "note": "Una voce dal mondo del vino, focus Sicilia.",
-    "noteSource": "auto",
-    "date": "2026-09-02"
-  },
-  {
-    "id": "20da435667b7",
-    "category": "Radar del Sud",
-    "title": "Il ristorante che porta a Parigi il bello e il buono dell'Italia",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/ristorante-armani-parigi",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-02"
-  },
-  {
-    "id": "603e4022f2d1",
-    "category": "Calici di Magna Grecia",
-    "title": "La degustazione dei vini di Tenuta dei Mori, enclave di gusto e relax nel cuore verde dell'Umbria",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/la-degustazione-dei-vini-di-tenuta-dei-mori-enclave-di-gusto-e-relax-nel-cuore-verde-dellumbria/300916/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-01"
   }
 ]
