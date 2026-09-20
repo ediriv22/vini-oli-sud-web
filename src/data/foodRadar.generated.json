@@ -1,11 +1,31 @@
 [
   {
+    "id": "e0067dc2e62e",
+    "category": "Calici di Magna Grecia",
+    "title": "Vino e pizza: il sommelier in pizzeria 38 | Vincenzo Altobelli",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vino-e-pizza-il-sommelier-in-pizzeria-38-vincenzo-altobelli/301779/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-20"
+  },
+  {
     "id": "f9288cc78bf8",
     "category": "Calici di Magna Grecia",
     "title": "Invecchiato IGP. Vigneto di Popoli 2014 Trebbiano d'Abruzzo doc, Valle Reale",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/invecchiato-igp-vigneto-di-popoli-2014-trebbiano-dabruzzo-doc-valle-reale/301589/",
     "note": "Una voce dal mondo del vino, focus Abruzzo.",
+    "noteSource": "auto",
+    "date": "2026-09-19"
+  },
+  {
+    "id": "51866a2ad19a",
+    "category": "Radar del Sud",
+    "title": "Siamo stati nel nuovo ristorante malese di Milano. E vale davvero la pena provarlo",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/ristoranti/wau-ristorante-malese-milano-freida-pilus/",
+    "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-09-19"
   },
@@ -278,25 +298,5 @@
     "note": "Una segnalazione gastronomica del Sud, focus Campania.",
     "noteSource": "auto",
     "date": "2026-09-03"
-  },
-  {
-    "id": "8b7aec3bdec7",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Il clima ci distrugge, i prezzi del vino crollano e la politica nega la crisi\". Paolo Ricagno invoca la distillazione",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/paolo-ricagno-brachetto-acqui-crisi-vino-piemonte-distillazione/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-03"
-  },
-  {
-    "id": "b32b406c8854",
-    "category": "Territori",
-    "title": "PRIMA EDIZIONE DEL \"FALERNO E PIZZA FESTIVAL\" FALCIANO DEL MASSICO (CE) 4-5 SETTEMBRE 2026",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/prima-edizione-del-falerno-e-pizza-festival-falciano-del-massico-ce-4-5-settembre-2026/301001/",
-    "note": "Una notizia dal calendario dei territori del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-02"
   }
 ]
