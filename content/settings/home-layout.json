@@ -1,6 +1,8 @@
 {
     "sections": [
         { "key": "hero", "enabled": true },
+        { "key": "tickets", "enabled": true },
+        { "key": "sponsorPackages", "enabled": true },
         { "key": "sfideAccordion", "enabled": false },
         { "key": "twoEvents", "enabled": true },
         { "key": "institutionalPartners", "enabled": true },

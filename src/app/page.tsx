@@ -4,6 +4,8 @@ import EventDetailsSection from "@/components/sections/EventDetailsSection";
 import GranPremioIntroSection from "@/components/sections/GranPremioIntroSection";
 import GrandPrixHighlight from "@/components/sections/GrandPrixHighlight";
 import HeroSection from "@/components/sections/HeroSection";
+import HomeSponsorPackagesSection from "@/components/sections/HomeSponsorPackagesSection";
+import HomeTicketsSection from "@/components/sections/HomeTicketsSection";
 import InstitutionalPartnersSection from "@/components/sections/InstitutionalPartnersSection";
 import PhilosophySection from "@/components/sections/PhilosophySection";
 import RegionsSection from "@/components/sections/RegionsSection";
@@ -20,6 +22,8 @@ import { resolveHomeLayout, type SectionKey } from "@/data/homeLayout";
 // via /admin), letto tramite resolveHomeLayout().
 const SECTION_REGISTRY: Record<SectionKey, ComponentType> = {
   hero: HeroSection,
+  tickets: HomeTicketsSection,
+  sponsorPackages: HomeSponsorPackagesSection,
   twoEvents: TwoEventsSection,
   sfideAccordion: SfideAccordionSection,
   granPremioIntro: GranPremioIntroSection,
