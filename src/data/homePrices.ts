@@ -116,4 +116,8 @@ export const sponsorPackagesSection = {
   bottomLine: "Per altre forme di sponsorizzazione e partnership contattare l'organizzatore",
   ctaLabel: "Diventa Sponsor",
   ctaHref: "/sponsor/",
+  brochures: [
+    { label: "Scarica Brochure Espositori (PDF)", href: "/downloads/brochure-vinisud-espositori.pdf" },
+    { label: "Brochure Giurati (PDF)", href: "/downloads/brochure-vinisud-giurati.pdf" },
+  ],
 } as const;

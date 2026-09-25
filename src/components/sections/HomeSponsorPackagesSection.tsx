@@ -67,6 +67,11 @@ export default function HomeSponsorPackagesSection() {
           <Button href={sponsorPackagesSection.ctaHref} variant="soft" size="md">
             {sponsorPackagesSection.ctaLabel}
           </Button>
+          {sponsorPackagesSection.brochures.map((brochure) => (
+            <Button key={brochure.href} href={brochure.href} variant="ghost" size="md">
+              {brochure.label}
+            </Button>
+          ))}
         </div>
       </div>
     </section>
