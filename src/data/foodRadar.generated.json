@@ -1,11 +1,61 @@
 [
   {
+    "id": "03911b982133",
+    "category": "Calici di Magna Grecia",
+    "title": "InvecchiatIGP | Bagnadore Franciacorta Riserva docg 2012 Barone Pizzini",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/invecchiatigp-bagnadore-franciacorta-riserva-docg-2012-barone-pizzini/302041/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-26"
+  },
+  {
     "id": "5bb420f22995",
     "category": "Calici di Magna Grecia",
     "title": "Vigna Lapillo 2022 Lacryma Christi doc in magnum, Sorrentino Vini",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/vigna-lapillo-2022-lacryma-christi-doc-in-magnum-sorrentino-vini/302013/",
     "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-09-25"
+  },
+  {
+    "id": "ec6ccd5a0a76",
+    "category": "Calici di Magna Grecia",
+    "title": "Una cantina, i trulli saraceni e il mare: un viaggio nel Salento del vino",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/borgo-dei-trulli-cantina-vini-salento/",
+    "note": "Una voce dal mondo del vino, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-09-25"
+  },
+  {
+    "id": "ff24a5f716aa",
+    "category": "Radar del Sud",
+    "title": "La Toscana in Cilento con i vini di Lamole e Lamole al Ristorante la Chioccia d'Oro di Vallo della Lucania",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/la-toscana-in-cilento-con-i-vini-di-lamole-e-lamole-al-ristorante-la-chioccia-doro-di-vallo-della-lucania/302062/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-09-25"
+  },
+  {
+    "id": "0da24ca52832",
+    "category": "Calici di Magna Grecia",
+    "title": "Vini d'Italia 2027, il futuro del vino italiano si racconta ad Asti: il 1° ottobre l'anteprima nazionale",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/anteprima-vini-italia-2027-asti/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-25"
+  },
+  {
+    "id": "1703f94b0762",
+    "category": "Calici di Magna Grecia",
+    "title": "Uno dei migliori vini valdostani non può fregiarsi della DOC: ecco perché",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/petit-arvine-sopraquota-doc-valle-aosta/",
+    "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-09-25"
   },
@@ -248,55 +298,5 @@
     "note": "Una segnalazione di cucina, focus Sardegna.",
     "noteSource": "auto",
     "date": "2026-09-13"
-  },
-  {
-    "id": "0b557a284353",
-    "category": "Radar del Sud",
-    "title": "A 14 anni consegnava pizze a domicilio. Oggi ha una catena di ristoranti in Campania",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/vincenzo-rea-madison-pizza-risto-campania/",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-09-13"
-  },
-  {
-    "id": "1376581d1af6",
-    "category": "Radar del Sud",
-    "title": "La Vera Pizza Napoletana Champion 2026 riporta a Napoli i migliori pizzaioli del mondo",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/la-vera-pizza-napoletana-champion-2026-riporta-a-napoli-i-migliori-pizzaioli-del-mondo/301447/",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-09-12"
-  },
-  {
-    "id": "db69091e47a5",
-    "category": "Calici di Magna Grecia",
-    "title": "VINerdì | Toscana IGT Vermentino Nero 2025, Pietraserena",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vinerdi-toscana-igt-vermentino-nero-2025-pietraserena/301302/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-11"
-  },
-  {
-    "id": "3aa4755ab629",
-    "category": "Calici di Magna Grecia",
-    "title": "Pian di Stio Evoluzione 2018 Paestum Igt, San Salvatore",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/pian-di-stio-evoluzione-2018-paestum-igt-san-salvatore/301386/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-11"
-  },
-  {
-    "id": "9cea65c44af3",
-    "category": "Radar del Sud",
-    "title": "È davvero possibile mangiare giapponese nel Cilento? Hoshi Izakaya, il Giappone accanto ai templi di Paestum",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/e-davvero-possibile-mangiare-giapponese-nel-cilento-hoshi-izakaya-il-giappone-accanto-ai-templi-di-paestum/301345/",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-09-11"
   }
 ]
