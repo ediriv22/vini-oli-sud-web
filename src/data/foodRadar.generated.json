@@ -1,5 +1,55 @@
 [
   {
+    "id": "3a5b047d49b9",
+    "category": "Calici di Magna Grecia",
+    "title": "Vini Bianchi Capoano – Nuove annate",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vini-tenuta-baroni-capoano-vigneti-e-cantine/191619/",
+    "note": "Una voce dal mondo del vino, focus Calabria.",
+    "noteSource": "auto",
+    "date": "2026-09-27"
+  },
+  {
+    "id": "c889e07b7a23",
+    "category": "Business con Anima",
+    "title": "Il Pane di Altamura è davvero sopravvalutato? La polemica dopo la stroncatura del Gambero Rosso",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/il-pane-di-altamura-e-il-gambero-rosso-di-altamura-e-sonia-ricci/302167/",
+    "note": "Un segnale di mercato per le eccellenze del Sud, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-09-27"
+  },
+  {
+    "id": "ea8224458968",
+    "category": "Calici di Magna Grecia",
+    "title": "La pizzeria a Roma che vince per pizze, servizio e vino",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/pizzeria-avenida-calo-roma",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-27"
+  },
+  {
+    "id": "acecabd1e1e6",
+    "category": "Radar del Sud",
+    "title": "Il Café a Lione dove mangiare cucina tradizionale e pollo di Bresse",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/ristorante-cafe-terroir-lione",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-27"
+  },
+  {
+    "id": "aeccfae2517b",
+    "category": "Oro Verde",
+    "title": "Nella patria del burro i pasticceri scoprono l'olio d'oliva",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/pasticceria-francese-olio-oliva/",
+    "note": "Un segnale dall'olio del Sud.",
+    "noteSource": "auto",
+    "date": "2026-09-27"
+  },
+  {
     "id": "03911b982133",
     "category": "Calici di Magna Grecia",
     "title": "InvecchiatIGP | Bagnadore Franciacorta Riserva docg 2012 Barone Pizzini",
@@ -248,55 +298,5 @@
     "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-09-18"
-  },
-  {
-    "id": "afa5c16db075",
-    "category": "Business con Anima",
-    "title": "Export vino e strategie a confronto: la Francia salva i prezzi, l'Argentina smaltisce i volumi, gli Usa perdono tutto",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/export-vino-2026-confronto-strategie-francia-spagna-stati-uniti-argentina/",
-    "note": "Un segnale di mercato per le eccellenze del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-17"
-  },
-  {
-    "id": "6b63fed96c15",
-    "category": "Business con Anima",
-    "title": "Cibo & Dintorni, Salerno incontra il mondo e il viaggio continua",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/cibo-dintorni-salerno-incontra-il-mondo-e-il-viaggio-continua/301684/",
-    "note": "Un segnale di mercato per le eccellenze del Sud, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-09-16"
-  },
-  {
-    "id": "462116d2db29",
-    "category": "Radar del Sud",
-    "title": "Latteria Sorrentina porta la pizza sul mare: il fiordilatte night boat club accende il Golfo di Napoli",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/latteria-sorrentina-porta-la-pizza-sul-mare-il-fiordilatte-night-boat-club-accende-il-golfo-di-napoli/301686/",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-09-16"
-  },
-  {
-    "id": "4e92f0b520eb",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Convocare subito gli Stati generali del vino: senza reddito non c'è futuro\". L'appello di Filippo Mobrici",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/stati-generali-vino-appello-filippo-mobrici-consorzio-barbera-asti/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-14"
-  },
-  {
-    "id": "6d94c62f8f9e",
-    "category": "Radar del Sud",
-    "title": "Il Magister Enrico Cosentino ai fornelli: nuova ricetta con gli scialatielli",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/il-magister-enrico-cosentino-ai-fornelli-nuova-ricetta-con-gli-scialatielli/301516/",
-    "note": "Una segnalazione di cucina, focus Sardegna.",
-    "noteSource": "auto",
-    "date": "2026-09-13"
   }
 ]
