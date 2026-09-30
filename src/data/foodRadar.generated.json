@@ -1,5 +1,15 @@
 [
   {
+    "id": "f781516820b0",
+    "category": "Oro Verde",
+    "title": "Marina Cvetić e i suoi Granelli d'Abruzzo. Il sapore inatteso del Montepulciano",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/marina-cvetic-e-i-suoi-granelli-dabruzzo-il-sapore-inatteso-del-montepulciano/302289/",
+    "note": "Un segnale dall'olio del Sud, focus Abruzzo.",
+    "noteSource": "auto",
+    "date": "2026-09-30"
+  },
+  {
     "id": "74efd355dbcb",
     "category": "Calici di Magna Grecia",
     "title": "Vendemmiamo la Catalanesca: raccolta dell'uva, degustazione e pranzo tra i Vigneti del Vesuvio",
@@ -16,6 +26,16 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/alessandra-2012-fiano-avellino-docg-meo/117835/",
     "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-09-29"
+  },
+  {
+    "id": "ea8e01ab44c2",
+    "category": "Radar del Sud",
+    "title": "Pizza Week Paris Edition 2026: il programma completo dal 12 al 17 ottobre",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/pizza-week-paris-edition-2026-il-programma-completo-dal-12-al-17-ottobre/302318/",
+    "note": "Una segnalazione di cucina, focus Campania.",
     "noteSource": "auto",
     "date": "2026-09-29"
   },
@@ -278,25 +298,5 @@
     "note": "Una voce dal mondo del vino, focus Abruzzo.",
     "noteSource": "auto",
     "date": "2026-09-19"
-  },
-  {
-    "id": "51866a2ad19a",
-    "category": "Radar del Sud",
-    "title": "Siamo stati nel nuovo ristorante malese di Milano. E vale davvero la pena provarlo",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/ristoranti/wau-ristorante-malese-milano-freida-pilus/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-19"
-  },
-  {
-    "id": "80adfff509e9",
-    "category": "Calici di Magna Grecia",
-    "title": "Il vino CE torna a Caserta: il 27 e 28 settembre palazzo Paternò ospita la terza edizione",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/il-vino-ce-torna-a-caserta-il-27-e-28-settembre-palazzo-paterno-ospita-la-terza-edizione/301653/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-09-18"
   }
 ]
