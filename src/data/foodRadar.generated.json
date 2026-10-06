@@ -1,11 +1,41 @@
 [
   {
+    "id": "0fbcf4330665",
+    "category": "Calici di Magna Grecia",
+    "title": "\"Vino, Donna\" di Chiara Giorleo: le prossime presentazioni",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vino-donna-di-chiara-giorleo-le-prossime-presentazioni/302617/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-06"
+  },
+  {
     "id": "75a671cda534",
     "category": "Calici di Magna Grecia",
     "title": "I Venti 2025 Coda di Volpe Irpinia doc, Famiglia Pagano",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/i-venti-2025-coda-di-volpe-irpinia-doc-famiglia-pagano/302594/",
     "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-05"
+  },
+  {
+    "id": "2f3f8821a624",
+    "category": "Calici di Magna Grecia",
+    "title": "6 vini per raccontare il Trentino: perché andare fino in cantina",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/cantina-la-vis-vini-ritratti",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-05"
+  },
+  {
+    "id": "98d43c2740ec",
+    "category": "Radar del Sud",
+    "title": "Sembra una criniera di leone ed è il fungo più strano del bosco: perché gli chef lo vogliono in menu",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/lions-mane-fungo-criniera-di-leone/",
+    "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-10-05"
   },
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino, focus Sicilia.",
     "noteSource": "auto",
     "date": "2026-09-23"
-  },
-  {
-    "id": "2d9addfa280a",
-    "category": "Oro Verde",
-    "title": "Pizza della settimana: \"Barena\" Birraria La Corte e Soave Classico Suavia",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/pizza-della-settimana-barena-birraria-la-corte-e-soave-classico-suavia/301869/",
-    "note": "Un segnale dall'olio del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-23"
-  },
-  {
-    "id": "b3d66b91865d",
-    "category": "Calici di Magna Grecia",
-    "title": "A Taurasi 26 e 27 settembre al borgo",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/a-taurasi-26-e-27-settembre-al-borgo/301802/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-21"
-  },
-  {
-    "id": "64920d22344c",
-    "category": "Radar del Sud",
-    "title": "Boho Padova. In un antico mulino la cucina di Daniele e Christian Carta",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/boho-padova-in-un-antico-mulino-la-cucina-di-daniele-e-christian-carta/301874/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-21"
   }
 ]
