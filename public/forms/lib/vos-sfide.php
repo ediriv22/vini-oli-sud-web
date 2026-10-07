@@ -20,6 +20,12 @@ const VOS_CONCORSI_VALIDI = [
  */
 const VOS_LIMITE_GIURATI_PER_SFIDA = 200;
 
+// 7/10/2026: il Pass Giurato non e' piu' in vendita, si prenota gratis e il
+// tetto e' di 50 prenotazioni TOTALI (confermato da Edvige). Si contano solo
+// le righe nuove (stato_pagamento = 'prenotazione'): le vecchie iscrizioni a
+// pagamento non entrano nel conteggio dei primi 50.
+const VOS_LIMITE_PASS_GIURATO_TOTALE = 50;
+
 /**
  * Conta quante iscrizioni Pass Giurato esistono per ciascuna delle 9 Sfide,
  * leggendo il CSV locale (fonte di verità unica per il limite posti — lo
@@ -286,4 +292,27 @@ function vos_send_giurato_confirmation(array $config, string $email, string $req
     } catch (\Throwable $e) {
         error_log('vos_send_giurato_confirmation SMTP error (lead ' . $requestId . '): ' . $e->getMessage());
     }
+}
+
+function vos_count_prenotazioni_pass_giurato(string $dataDir): int {
+    $path = $dataDir . '/pass-giurato-iscrizioni.csv';
+    if (!is_readable($path)) {
+        return 0;
+    }
+    $fh = @fopen($path, 'r');
+    if (!$fh) {
+        return 0;
+    }
+    $header = fgetcsv($fh, 0, ',', '"', '\\');
+    $statoIndex = is_array($header) ? array_search('stato_pagamento', $header, true) : false;
+    $n = 0;
+    if ($statoIndex !== false) {
+        while (($row = fgetcsv($fh, 0, ',', '"', '\\')) !== false) {
+            if (($row[$statoIndex] ?? '') === 'prenotazione') {
+                $n++;
+            }
+        }
+    }
+    fclose($fh);
+    return $n;
 }

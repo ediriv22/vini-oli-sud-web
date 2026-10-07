@@ -195,15 +195,12 @@
         "kind": "biglietti",
         "label": "Biglietti & Pass",
         "heading": "L'ingresso alla manifestazione è libero e gratuito",
-        "subheading": "Se vuoi vivere da protagonista un weekend unico, degustare, votare e decidere chi vince…",
+        "subheading": "Se vuoi vivere da protagonista un weekend unico, degustare, votare e decidere chi vince, prenota il tuo Pass Giurato: prenotazione gratuita, solo per i primi 50.",
         "sectionTitle": "Diventa Giurato Popolare",
         "tiers": [
           {
             "name": "1 Sfida a scelta",
-            "price": "€25",
-            "priceValue": 25,
             "featured": false,
-            "paypalHostedButtonId": "EPGERWSNHVYCQ",
             "features": [
               "Posto riservato per la Sfida scelta",
               "Degustazione dei prodotti in gara",
@@ -212,10 +209,7 @@
           },
           {
             "name": "3 Sfide a scelta",
-            "price": "€50",
-            "priceValue": 50,
             "featured": false,
-            "paypalHostedButtonId": "CTNPRJC48ERMU",
             "features": [
               "Posto riservato per le 3 Sfide scelte",
               "Degustazione dei prodotti in gara",
@@ -224,62 +218,35 @@
           },
           {
             "name": "Pass Gran Giurato — Tutte le 9 Sfide",
-            "price": "€70",
-            "priceValue": 70,
             "featured": true,
             "badge": "⭐",
-            "paypalHostedButtonId": "KZAFGXJUDSN3Q",
             "features": [
               "Posto riservato per tutte le 9 Sfide",
               "Degustazione dei prodotti in gara",
-              "Diritto di voto nella Giuria Popolare per ogni Sfida",
-              "Bicchiere ufficiale fornito in prestito per la degustazione, da riconsegnare a fine Sfida"
+              "Diritto di voto nella Giuria Popolare per ogni Sfida"
             ]
           }
         ],
-        "addon": {
-          "tierNames": [
-            "1 Sfida a scelta",
-            "3 Sfide a scelta",
-            "Pass Gran Giurato — Tutte le 9 Sfide"
-          ],
-          "label": "Bicchiere e portabicchiere ufficiali serigrafati con il logo della manifestazione",
-          "note": "Disponibile su ogni Pass Giuria Popolare",
-          "question": "Vuoi conservare un ricordo della manifestazione?",
-          "detail": "Il kit standard (bicchiere e portabicchiere) è fornito in prestito e va restituito a fine degustazione. Se vuoi tenerlo, potrai acquistare il bicchiere e il portabicchiere serigrafati con il logo della manifestazione al prezzo di € 10,00 + IVA (tot. € 12,20), da aggiungere al costo del Pass Giuria Popolare.",
-          "price": "€10,00 + IVA (tot. €12,20)",
-          "priceValue": 10,
-          "paypalHostedButtonIdConAddon": {
-            "1 Sfida a scelta": "GX3RKDRU3N4Y4",
-            "3 Sfide a scelta": "2ECE8328H9PKL",
-            "Pass Gran Giurato — Tutte le 9 Sfide": "9Q2FV2RHUF4Y8"
-          }
-        },
-        "ctaLabel": "Diventa Giurato",
+        "ctaLabel": "Prenota il tuo Pass",
         "ctaHref": "/pass-giurato/",
-        "paypalClientId": "BAARjdTyQrlXTF3TP3yikv7bDq3f90XiqYtmFjj9MwwyqLN41x9bQb7TL1VUuLx6ZoVcnX-_tEz2nfPIzE",
         "extraTitle": "🩺 Prevenzione gratuita con ASL Napoli 1 Centro",
         "extraBody": "I maggiorenni in possesso del Biglietto Tribuna del Napoli Racing Show o del Pass Giuria Popolare del Gran Premio del Gusto, previa prenotazione e fino a esaurimento dei posti disponibili, potranno effettuare visite gratuite di prevenzione presso il Camper della Salute dell'ASL Napoli 1 Centro nelle giornate di venerdì 27 e sabato 28 novembre 2026.",
         "extraCtaLabel": "Prenota la tua visita gratuita",
-        "extraCtaHref": "mailto:napoliracingshow@gmail.com",
-        "ivaRate": 0.22
+        "extraCtaHref": "mailto:napoliracingshow@gmail.com"
       },
       {
         "kind": "iscrivi",
-        "label": "Iscrivi la tua Azienda",
-        "heading": "Hai un prodotto d'eccellenza? Mettilo in gara!",
+        "label": "Selezione Prodotti",
+        "heading": "I prodotti in gara sono selezionati con bando della Regione Campania",
         "subheading": "Gran Premio del Gusto 2026 — Le Sfide della Magna Grecia · 27 • 28 • 29 Novembre 2026 · Rotonda Diaz – Lungomare Caracciolo – Napoli",
         "body": [
-          "Fallo assaggiare. Racconta la sua storia. Conquista il voto dei giurati.",
-          "Le aziende produttrici possono iscrivere un proprio prodotto a uno dei 9 Concorsi del Gran Premio del Gusto – Le Sfide della Magna Grecia.",
-          "L'invito è rivolto a produttori e commercianti, aziende agricole, caseifici, frantoi, salumifici, birrifici, cantine, liquorifici, panifici, pasticcerie, cioccolaterie, confettifici, gelaterie, apicoltori e laboratori alimentari.",
-          "Per garantire qualità delle degustazioni, adeguato spazio alla presentazione delle aziende e corretta valutazione dei prodotti, il numero dei partecipanti a ciascun Concorso è limitato.",
-          "Ogni azienda può iscrivere più prodotti, nello stesso Concorso o in Concorsi diversi, versando la quota di partecipazione prevista per ciascun prodotto iscritto.",
+          "Il Gran Premio del Gusto 2026 – Le Sfide della Magna Grecia mette in gara prodotti d'eccellenza in 9 Concorsi.",
+          "I prodotti in gara non si candidano più direttamente dal sito: sono selezionati tramite bando della Regione Campania.",
+          "Modalità di partecipazione, scadenze e documentazione saranno comunicate dalla Regione Campania.",
           "I prodotti dovranno essere pronti da degustare, senza necessità di cottura sul posto: conservazione, porzionatura e modalità di servizio saranno concordate con la Segreteria organizzativa. Gelati, yogurt e dessert freddi partecipano esclusivamente alla nona Sfida.",
-          "L'Organizzazione si riserva di stabilire il numero massimo di prodotti ammessi e di annullare, modificare o ampliare i Concorsi, nonché di variarne giorni e orari, dandone comunicazione alle aziende iscritte."
+          "L'Organizzazione si riserva di stabilire il numero massimo di prodotti ammessi e di annullare, modificare o ampliare i Concorsi, nonché di variarne giorni e orari, dandone comunicazione alle aziende selezionate."
         ],
-        "note": "Le iscrizioni saranno accettate in ordine cronologico di perfezionamento fino a esaurimento dei posti disponibili per ciascuna Sfida.",
-        "concorsiTitle": "Scegli il tuo Concorso",
+        "concorsiTitle": "I 9 Concorsi",
         "concorsi": [
           {
             "icon": "🥃",
@@ -384,16 +351,9 @@
           }
         ],
         "phasesNote": "Gli orari e la durata delle singole fasi potranno subire variazioni per esigenze organizzative.",
-        "feeTitle": "Quota di iscrizione",
-        "feeSubtitle": "Un prodotto • Un concorso",
-        "feeAmount": "€ 1.100 + IVA 22%",
-        "feeTotal": "Totale da versare: € 1.342",
-        "feeBody": [
-          "La quota si riferisce all'iscrizione di un singolo prodotto a un singolo Concorso del Gran Premio del Gusto.",
-          "Per iscrivere più prodotti e/o partecipare a più Concorsi dovrà essere presentata una distinta iscrizione per ciascun prodotto."
-        ],
-        "ctaLabel": "🏆 Iscrivi il tuo Prodotto",
-        "ctaHref": "/format/gran-premio-del-gusto/iscrizione/"
+        "ctaLabel": "🏆 Come funziona la selezione",
+        "ctaHref": "/format/gran-premio-del-gusto/iscrizione/",
+        "note": "I prodotti in gara sono selezionati tramite bando della Regione Campania: modalità di partecipazione e scadenze saranno comunicate dalla Regione."
       },
       {
         "kind": "sponsor",

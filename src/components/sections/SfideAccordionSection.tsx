@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Button from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
 
-type Tier = { name: string; price: string; featured?: boolean; badge?: string; features: string[] };
+type Tier = { name: string; price?: string; featured?: boolean; badge?: string; features: string[] };
 type Addon = {
   // Tier a cui l'add-on è applicabile. Ora tutti e 3 (richiesta 7/9/2026:
   // esteso da "solo Pass Gran Giurato" a "tutti i Pass"). Un solo bottone
@@ -119,9 +119,11 @@ export function Panel({ item, index, email }: { item: Item; index: number; email
                 {t.badge ? <span aria-hidden="true">{t.badge} </span> : null}
                 <span data-content-key={k(`tiers.${i}.name`)}>{t.name}</span>
               </p>
-              <p className="mt-2 font-display text-[2rem] text-[var(--color-wine)]" data-content-key={k(`tiers.${i}.price`)}>
-                {t.price}
-              </p>
+              {t.price ? (
+                <p className="mt-2 font-display text-[2rem] text-[var(--color-wine)]" data-content-key={k(`tiers.${i}.price`)}>
+                  {t.price}
+                </p>
+              ) : null}
               <ul className="mt-3 space-y-1 text-[0.85rem] leading-snug">
                 {t.features.map((f, j) => (
                   <li key={j}>• {f}</li>

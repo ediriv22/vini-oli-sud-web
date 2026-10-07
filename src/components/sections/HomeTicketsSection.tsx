@@ -27,7 +27,7 @@ export default function HomeTicketsSection() {
           id="biglietti-title"
           className="display-balance mx-auto mt-5 max-w-[32ch] font-display text-[clamp(1.7rem,3.6vw,2.4rem)] leading-[1.08] text-[var(--color-ink-strong)]"
         >
-          Biglietti e iscrizioni
+          Prenotazioni e selezione
         </h2>
 
         <p className="mx-auto mt-4 max-w-[52ch] text-[0.98rem] leading-[1.7] text-[var(--color-muted)]">
@@ -50,13 +50,15 @@ export default function HomeTicketsSection() {
               <p className="font-ui text-[0.8rem] font-semibold uppercase tracking-[0.06em] text-[var(--color-wine)]">
                 {card.subtitle}
               </p>
-              <p className="mt-2 font-display text-[1.8rem] leading-[1] text-[var(--color-ink-strong)]">
-                {card.price}
-              </p>
-              {"priceNote" in card && card.priceNote ? (
+              {card.price ? (
+                <p className="mt-2 font-display text-[1.8rem] leading-[1] text-[var(--color-ink-strong)]">
+                  {card.price}
+                </p>
+              ) : null}
+              {card.priceNote ? (
                 <p className="text-[0.82rem] text-[var(--color-muted)]">{card.priceNote}</p>
               ) : null}
-              {"note" in card && card.note ? (
+              {card.note ? (
                 <p className="mt-1 text-[0.78rem] leading-[1.4] text-[var(--color-muted)]">{card.note}</p>
               ) : null}
               <Button

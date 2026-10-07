@@ -1,52 +1,59 @@
-// Sezione home "Biglietti e iscrizioni" + "Pacchetti sponsor". Dati
-// confermati dal cliente (pass-giurato in vigore, flyer sponsor): vedi
-// src/app/pass-giurato/page.tsx (biglietti.tiers in
-// content/settings/home-sections.json) e src/app/sponsor/page.tsx per i
-// pass e le quote già pubblicati altrove sul sito. Prezzi riportati esatti,
-// senza aggiunte non confermate (regola AGENTS.md).
+// Sezione home "Prenotazioni e selezione" + "Pacchetti sponsor".
+// 7/10/2026 (richiesta Edvige): il Pass Giurato non è più in vendita ma si
+// prenota gratuitamente (solo i primi 50) e i prodotti in gara sono scelti
+// da un bando della Regione Campania: niente prezzi né quote nella sezione
+// biglietti. I pacchetti sponsor restano quelli del flyer (src/app/sponsor/page.tsx),
+// riportati esatti, senza aggiunte non confermate (regola AGENTS.md).
+
+type TicketCard = {
+  name: string;
+  subtitle: string;
+  featured: boolean;
+  ctaLabel: string;
+  ctaHref: string;
+  price?: string;
+  priceNote?: string;
+  note?: string;
+};
 
 export const ticketsSection = {
   badge: "Ingresso al Villaggio gratuito",
   intro:
-    "Per degustare e votare nelle 9 Sfide serve il Pass Giurato: il voto della Giuria Popolare vale il 70% del risultato finale. Solo 200 Giurati Popolari per ciascuna Sfida.",
+    "Per degustare e votare nelle 9 Sfide serve il Pass Giurato: il voto della Giuria Popolare vale il 70% del risultato finale. Il Pass non è in vendita: si prenota gratuitamente sul sito, solo per i primi 50.",
   cards: [
     {
       name: "Pass Giurato",
       subtitle: "1 Sfida",
-      price: "€25",
       featured: false,
-      ctaLabel: "Diventa Giurato",
+      ctaLabel: "Prenota il tuo Pass",
       ctaHref: "/pass-giurato/",
     },
     {
       name: "Pass Giurato",
       subtitle: "3 Sfide",
-      price: "€50",
       featured: false,
-      ctaLabel: "Diventa Giurato",
+      ctaLabel: "Prenota il tuo Pass",
       ctaHref: "/pass-giurato/",
     },
     {
       name: "Pass Gran Giurato",
       subtitle: "Tutte le 9 Sfide",
-      price: "€70",
       featured: true,
-      ctaLabel: "Diventa Giurato",
+      ctaLabel: "Prenota il tuo Pass",
       ctaHref: "/pass-giurato/",
+      note: "Prenotazione gratuita, solo i primi 50.",
     },
     {
-      name: "Iscrizione prodotto",
-      subtitle: "Un prodotto, un concorso",
-      price: "€1.100 + IVA",
-      priceNote: "Totale € 1.342",
+      name: "Selezione prodotti",
+      subtitle: "Bando Regione Campania",
       featured: false,
-      ctaLabel: "Iscrivi il tuo Prodotto",
+      ctaLabel: "Come funziona",
       ctaHref: "/format/gran-premio-del-gusto/iscrizione/",
-      note: "Posti limitati in ordine di arrivo.",
+      note: "I prodotti in gara sono selezionati tramite bando della Regione Campania.",
     },
-  ],
+  ] as readonly TicketCard[],
   footnote:
-    "+ €10,00 + IVA (tot. €12,20) per tenere il bicchiere e portabicchiere ufficiali serigrafati, opzionale su ogni Pass. Pass personale e non cedibile, riservato ai maggiorenni.",
+    "Pass personale e non cedibile, riservato ai maggiorenni.",
 } as const;
 
 export const sponsorPackagesSection = {

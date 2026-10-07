@@ -387,7 +387,8 @@ if ($requestType === 'iscrizione-giurato') {
     $cognome = vos_clean_line($_POST['cognome'] ?? '');
     $dataNascita = vos_clean_line($_POST['data_nascita'] ?? '');
     $tipoPass = vos_clean_line($_POST['tipo_pass'] ?? '');
-    $metodoPagamento = strtolower(vos_clean_line($_POST['metodo_pagamento'] ?? ''));
+    // 7/10/2026: nessun pagamento, il Pass Giurato si prenota gratis (primi 50).
+    $metodoPagamento = 'prenotazione';
 
     if ($nome === '' || $cognome === '') {
         $respond(false, 'Nome e cognome sono obbligatori.');
@@ -441,12 +442,9 @@ if ($requestType === 'iscrizione-giurato') {
         }
     }
 
-    if (!in_array($metodoPagamento, ['bonifico', 'paypal'], true)) {
-        $respond(false, 'Seleziona un metodo di pagamento.');
-    }
-    if ($metodoPagamento === 'bonifico') {
-        $attachments[] = vos_save_upload($dataDir, $requestId, 'ricevuta_file', true, $onFileError);
-        $attachments = array_values(array_filter($attachments));
+    // Tetto totale: solo i primi 50 possono prenotare il Pass Giurato.
+    if (vos_count_prenotazioni_pass_giurato($dataDir) >= VOS_LIMITE_PASS_GIURATO_TOTALE) {
+        $respond(false, 'I ' . VOS_LIMITE_PASS_GIURATO_TOTALE . ' posti disponibili per il Pass Giurato sono esauriti.');
     }
 
     // Add-on "bicchiere + portabicchiere in omaggio" (+€10, richiesta esplicita
@@ -457,9 +455,9 @@ if ($requestType === 'iscrizione-giurato') {
     // blocca l'iscrizione per un dettaglio non essenziale come questo.
     // $totale è anche l'importo atteso che paypal-confirm.php confronta con
     // quanto restituito da PayPal Orders API prima di segnare pagato.
-    $addonBicchiere = !empty($_POST['addon_bicchiere']) && $tipoPass === 'Pass Gran Giurato — Tutte le 9 Sfide';
-    $prezziBase = ['1 Sfida a scelta' => 25, '3 Sfide a scelta' => 50, 'Pass Gran Giurato — Tutte le 9 Sfide' => 70];
-    $totale = ($prezziBase[$tipoPass] ?? 0) + ($addonBicchiere ? 10 : 0);
+    // 7/10/2026: add-on kit eliminato e Pass non piu' a pagamento.
+    $addonBicchiere = false;
+    $totale = 0;
 
     // Bonifico: la ricevuta è già allegata al submit, la segreteria la
     // verifica dopo ma la prova esiste già -> stato resta "da verificare"
@@ -467,29 +465,23 @@ if ($requestType === 'iscrizione-giurato') {
     // stato controllato -> "in_attesa_pagamento". Diventa "pagato" solo da
     // paypal-confirm.php dopo verifica reale su PayPal Orders API (vedi
     // §8bis più sotto: la mail di conferma utente per paypal NON parte qui).
-    $statoPagamento = $metodoPagamento === 'paypal' ? 'in_attesa_pagamento' : 'da_verificare';
+    $statoPagamento = 'prenotazione';
 
     $payload = [
         'Nome e cognome'      => "$nome $cognome",
         'Email'               => $email,
         'Data di nascita'     => $dataNascita . " (età $età)",
         'Tipo di Pass'        => $tipoPass,
-        'Add-on bicchiere+portabicchiere (+€10)' => $addonBicchiere ? 'Sì' : 'No',
-        'Totale dovuto'       => "€$totale",
         'Sfide scelte'        => implode(', ', $sfideScelte),
-        'Metodo di pagamento' => ucfirst($metodoPagamento),
-        'Ricevuta allegata'   => $metodoPagamento === 'bonifico' ? (count($attachments) ? 'Sì' : 'No') : '—',
-        'Stato pagamento'     => $statoPagamento,
+        'Tipo di richiesta'   => 'Prenotazione gratuita (primi 50)',
     ];
-    $subject = 'Iscrizione Pass Giuria Popolare — ' . $nome . ' ' . $cognome . ' — ' . $tipoPass
-             . ($addonBicchiere ? ' (+add-on bicchiere)' : '')
-             . ($metodoPagamento === 'paypal' ? ' — IN ATTESA PAGAMENTO PAYPAL' : '');
+    $subject = 'Prenotazione Pass Giuria Popolare — ' . $nome . ' ' . $cognome . ' — ' . $tipoPass;
 
     // Canali extra oltre all'email (richiesta esplicita): CSV locale sempre
     // scritto (garantito, nessuna dipendenza esterna); Google Sheet in più
     // se GOOGLE_SHEET_WEBAPP_URL è configurato in config.php (altrimenti
     // no-op silenzioso). Nessuno dei due blocca l'invio se fallisce.
-    $ricevutaAllegataStr = $metodoPagamento === 'bonifico' ? (count($attachments) ? 'sì' : 'no') : '—';
+    $ricevutaAllegataStr = '—';
     vos_append_csv(
         $dataDir,
         'pass-giurato-iscrizioni.csv',
@@ -933,26 +925,16 @@ if (!empty($config['SEND_USER_CONFIRMATION']) && !$skipUserConfirmation) {
         $confLines = [];
 
         if ($kind === 'iscrizione-giurato') {
-            $confSubject = "Iscrizione Pass Giuria Popolare ricevuta — Codice $requestId";
+            $confSubject = "Prenotazione Pass Giuria Popolare ricevuta — Codice $requestId";
             $confLines[] = 'Ciao,';
             $confLines[] = '';
-            $confLines[] = 'grazie per la tua iscrizione come Giurato Popolare al Gran Premio del '
+            $confLines[] = 'grazie per la tua prenotazione come Giurato Popolare al Gran Premio del '
                          . 'Gusto 2026.';
             $confLines[] = '';
-            $confLines[] = "IL TUO CODICE ISCRIZIONE: $requestId";
+            $confLines[] = "IL TUO CODICE PRENOTAZIONE: $requestId";
             $confLines[] = '';
-            if ($addonBicchiere) {
-                $confLines[] = 'Hai incluso l\'extra bicchiere + portabicchiere ufficiali in omaggio (+€10) — '
-                             . "totale dovuto: €$totale.";
-                $confLines[] = '';
-            }
-            $confLines[] = 'Conserva questo codice (basta mostrare questa email dal telefono): '
-                         . 'dovrai presentarlo allo stand della Segreteria Organizzativa per il '
-                         . 'ritiro del kit giurato, disponibile dalle ore 9.00 alle 20.00 di '
-                         . 'venerdì 27, sabato 28 e domenica 29 novembre 2026.';
-            $confLines[] = '';
-            $confLines[] = 'La Segreteria Organizzativa verificherà il pagamento e ti confermerà '
-                         . 'definitivamente la partecipazione.';
+            $confLines[] = 'Conserva questo codice: la Segreteria Organizzativa ti confermerà '
+                         . 'la prenotazione via email.';
             $confLines[] = '';
             $confLines[] = 'Il Pass Giurato è personale, non cedibile né sostituibile: va '
                          . 'conservato dal titolare per tutta la durata della manifestazione.';

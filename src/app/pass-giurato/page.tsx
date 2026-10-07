@@ -12,10 +12,8 @@ import {
 } from "@/components/forms/FormFields";
 import { siteConfig } from "@/data/site";
 
-const ACQUISTO_URL = "https://napoli-racing-show.metooo.com/pages/il-gran-premio-del-gusto";
-
 /**
- * Modulo "Diventa Giurato Popolare" — iscrizione. Invia a
+ * Modulo "Diventa Giurato Popolare" — prenotazione. Invia a
  * napoliracingshow@gmail.com via /forms/lead.php
  * (requestType=iscrizione-giurato). Riusa i 3 Pass e i 9 Concorsi già
  * definiti in siteConfig (nessun dato duplicato).
@@ -23,24 +21,24 @@ const ACQUISTO_URL = "https://napoli-racing-show.metooo.com/pages/il-gran-premio
  * Nota maggiore età: il modulo richiede la data di nascita e blocca lato
  * server chi ha meno di 18 anni (vedi lead.php).
  *
- * Pagamento: non più gestito qui (bonifico/PayPal rimossi) — l'acquisto
- * avviene sulla piattaforma di biglietteria esterna (ACQUISTO_URL).
+ * 7/10/2026 (richiesta Edvige, regola cambiata): il Pass Giurato NON è più
+ * in vendita. Niente prezzo, niente PayPal/piattaforma esterna. Si prenota
+ * gratuitamente: tetto di 50 posti TOTALI sul Pass Giurato (confermato da
+ * Edvige), indipendente dal conteggio già esistente per Sfida
+ * (sfideCounts/countsLimit sotto, letto da pass-giurato-counts.php — non
+ * si somma né lo sostituisce, backend non in questa repo, non toccato qui).
+ * Kit giurato (bicchiere+portabicchiere) eliminato del tutto, anche la
+ * versione in prestito: confermato da Edvige, nessuna versione gratuita da
+ * tenere.
  */
 
 export default function PassGiuratoPage() {
   const biglietti = siteConfig.sfideAccordion.items.find((i) => i.kind === "biglietti");
   const tiers = biglietti?.tiers ?? [];
-  const addon = biglietti?.addon;
   const concorsi = siteConfig.sfideAccordion.items.find((i) => i.kind === "iscrivi")?.concorsi ?? [];
 
   const [tipoPass, setTipoPass] = useState<string>("");
   const [sfideScelte, setSfideScelte] = useState<string[]>([]);
-  // Add-on "bicchiere + portabicchiere in omaggio" (+€10, richiesta esplicita
-  // 1/9/2026, estesa a tutti i Pass il 7/9/2026): disponibile su ogni Pass
-  // elencato in addon.tierNames — se l'utente lo seleziona e poi cambia Pass
-  // verso uno che non lo prevede, va spento di nuovo, non deve restare
-  // "appiccicato".
-  const [addonScelto, setAddonScelto] = useState(false);
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | undefined>();
   // Posti rimasti per Sfida (200 a Sfida, richiesta esplicita): letti da
@@ -76,17 +74,6 @@ export default function PassGiuratoPage() {
   const richiedeSelezione = sfideAttese === 1 || sfideAttese === 3;
   const granGiuratoDisponibile = !concorsi.some((c) => isSfidaFull(c.name));
 
-  const tierSelezionato = tiers.find((t) => t.name === tipoPass);
-  const addonDisponibile = !!addon && addon.tierNames.includes(tipoPass);
-  // IVA solo sul kit bicchiere+portabicchiere (+€10 -> €12,20): il prezzo dei
-  // Pass (25/50/70) NON ha IVA, richiesta esplicita 7/9/2026 — i bottoni
-  // PayPal dei Pass senza addon restano quelli originali, invariati.
-  const ivaRate = biglietti?.ivaRate ?? 0;
-  const kitConIva = Math.round((addon?.priceValue ?? 0) * (1 + ivaRate) * 100) / 100;
-  const fmtEuro = (n: number) => n.toLocaleString("it-IT", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  const totale =
-    (tierSelezionato?.priceValue ?? 0) + (addonDisponibile && addonScelto ? kitConIva : 0);
-
   const oggi = useMemo(() => new Date(), []);
   const maxNascita = useMemo(() => {
     const d = new Date(oggi);
@@ -118,7 +105,6 @@ export default function PassGiuratoPage() {
       e.currentTarget.reset();
       setTipoPass("");
       setSfideScelte([]);
-      setAddonScelto(false);
     } else {
       setStatus("error");
       setErrorMessage(result.error);
@@ -133,27 +119,17 @@ export default function PassGiuratoPage() {
           Diventa Giurato Popolare
         </h1>
         <p className="mx-auto mt-3 max-w-[42ch] text-[0.94rem] leading-[1.6] text-[var(--color-muted)]">
-          Solo 200 Giurati Popolari per ciascuna Sfida. Compila il modulo e completa il pagamento
-          per riservare il tuo posto.
+          Il Pass Giurato non è più in vendita: si prenota gratuitamente, solo per i primi 50 che
+          compilano il modulo.
         </p>
         <p className="mx-auto mt-3 max-w-[46ch] text-[0.86rem] leading-[1.55] text-[var(--color-muted)]">
-          I posti sono limitati e sarà possibile acquistarli fino ad esaurimento.
+          I posti sono limitati: la prenotazione resta aperta fino al raggiungimento dei primi 50
+          posti disponibili.
         </p>
         <p className="mx-auto mt-3 max-w-[46ch] text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
           Il Pass Giurato è strettamente personale e non cedibile: va conservato dal titolare per
           tutta la durata della manifestazione (27-28-29 novembre 2026). In caso di smarrimento non
           sarà possibile richiedere una sostituzione né l&rsquo;accesso alle Sfide.
-        </p>
-        <p className="mx-auto mt-3 max-w-[46ch] text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
-          Il kit giurato sarà disponibile per il ritiro presso lo stand della Segreteria
-          Organizzativa venerdì 27, sabato 28 e domenica 29 novembre 2026, dalle 9.00 alle 20.00,
-          previa esibizione della conferma di iscrizione ricevuta via email.
-        </p>
-        <p className="mx-auto mt-3 max-w-[46ch] text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
-          L&rsquo;Organizzazione fornirà in prestito il bicchiere e il portabicchiere per le
-          degustazioni: il Giurato dovrà restituirli al termine della manifestazione. Nel caso in
-          cui il Giurato intenda invece acquistare il bicchiere serigrafato e il portabicchiere con
-          il logo della manifestazione, dovrà versare l&rsquo;importo di € 10,00 + IVA.
         </p>
       </div>
 
@@ -262,14 +238,12 @@ export default function PassGiuratoPage() {
                     onChange={() => {
                       setTipoPass(tier.name);
                       setSfideScelte([]);
-                      if (!addon?.tierNames.includes(tier.name)) setAddonScelto(false);
                     }}
                     className="sr-only"
                   />
                   <span className="font-display text-[1rem] leading-tight text-[var(--color-ink-strong)]">
                     {tier.name}
                   </span>
-                  <span className="font-display text-[1.6rem] text-[var(--color-wine)]">{tier.price}</span>
                   {disabled ? (
                     <span className="font-ui text-[0.66rem] font-semibold uppercase tracking-[0.04em] text-[rgb(153,42,42)]">
                       Non disponibile: una o più Sfide esaurite
@@ -333,70 +307,18 @@ export default function PassGiuratoPage() {
             </p>
           ) : null}
 
-          {addon && addon.tierNames.includes(tipoPass) ? (
-            <div className="rounded-[0.9rem] border border-dashed border-[var(--color-sand-strong)] bg-[rgba(255,215,87,0.08)] px-4 py-3 text-left">
-              {addon.question ? (
-                <p className="text-[0.9rem] font-semibold text-[var(--color-ink-strong)]">{addon.question}</p>
-              ) : null}
-              {addon.detail ? (
-                <p className="mt-1.5 text-[0.82rem] leading-[1.55] text-[var(--color-muted)]">{addon.detail}</p>
-              ) : null}
-              <label className="mt-3 flex items-start gap-3 text-[0.88rem] leading-[1.5] text-[var(--color-ink-strong)]">
-                <input
-                  type="checkbox"
-                  name="addon_bicchiere"
-                  value="1"
-                  checked={addonScelto}
-                  onChange={(e) => setAddonScelto(e.target.checked)}
-                  className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-wine)]"
-                />
-                <span>
-                  🎁 <strong>+{addon.price}</strong> — {addon.label}
-                  {addon.note ? (
-                    <span className="block text-[0.76rem] text-[var(--color-muted)]">{addon.note}</span>
-                  ) : null}
-                </span>
-              </label>
-            </div>
-          ) : null}
-
-          {tipoPass ? (
-            <p className="text-center font-ui text-[1.15rem] font-semibold text-[var(--color-ink-strong)]">
-              {addonDisponibile && addonScelto
-                ? `Totale: €${tierSelezionato?.priceValue} + €10,00 + IVA (tot. €${fmtEuro(totale)})`
-                : `Totale: €${totale}`}
-            </p>
-          ) : null}
         </fieldset>
 
+        {/* 7/10/2026: fieldset "Pagamento" rimosso (niente più PayPal/biglietteria
+            esterna, niente add-on bicchiere a pagamento) — il Pass Giurato si
+            prenota gratis, solo i primi 50. Nota sotto al posto del vecchio box
+            di acquisto. */}
         <fieldset className="flex flex-col gap-5">
-          <FormSectionTitle>4. Pagamento</FormSectionTitle>
           <div className="rounded-[0.9rem] border border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)] p-4 text-center">
             <p className="text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
-              L&rsquo;acquisto del Pass Giuria Popolare avviene sulla piattaforma ufficiale di
-              biglietteria
-              {tipoPass ? (
-                <>
-                  {" — "}
-                  <strong className="text-[1.15rem] text-[var(--color-ink-strong)]">
-                    {addonDisponibile && addonScelto
-                      ? `Totale €${tierSelezionato?.priceValue} + €10,00 + IVA (tot. €${fmtEuro(totale)})`
-                      : `Totale €${totale}`}
-                  </strong>
-                </>
-              ) : null}
-              .
+              La prenotazione del Pass Giurato Popolare è gratuita. Sono disponibili solo i primi
+              50 posti: a prenotazione ricevuta, la Segreteria Organizzativa confermerà via email.
             </p>
-            <div className="mt-4">
-              <a
-                href={ACQUISTO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-ui inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[var(--color-sand)] px-8 text-[0.9rem] font-bold uppercase tracking-[0.06em] text-[var(--color-ink-strong)] shadow-[0_14px_32px_rgba(255,215,87,0.32)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-px hover:shadow-[0_18px_38px_rgba(255,215,87,0.4)]"
-              >
-                🎟️ Acquista il Pass Giurato
-              </a>
-            </div>
           </div>
         </fieldset>
 
@@ -422,13 +344,13 @@ export default function PassGiuratoPage() {
             disabled={status === "submitting" || tutteEsaurite}
             className="font-ui inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[var(--color-sand)] px-10 text-[1rem] font-bold uppercase tracking-[0.06em] text-[var(--color-ink-strong)] shadow-[0_14px_32px_rgba(255,215,87,0.32)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-px hover:shadow-[0_18px_38px_rgba(255,215,87,0.4)] disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {status === "submitting" ? "Invio in corso…" : "🎟️ Invia Iscrizione"}
+            {status === "submitting" ? "Invio in corso…" : "🎟️ Invia Prenotazione"}
           </button>
 
           <FormStatusBanner
             status={status}
             errorMessage={errorMessage}
-            successMessage="Iscrizione ricevuta dalla Segreteria Organizzativa. Riceverai una conferma via email."
+            successMessage="Prenotazione ricevuta dalla Segreteria Organizzativa. Riceverai una conferma via email."
           />
         </div>
       </form>

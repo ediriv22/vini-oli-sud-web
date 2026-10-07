@@ -3,7 +3,7 @@ import { createPageMetadata, siteConfig } from "@/data/site";
 
 export const metadata = createPageMetadata(
   "1ª Edizione del Gran Premio del Gusto",
-  "9 Sfide, 9 Vincitori: 70% Giuria Popolare, 30% Giuria Tecnica. Iscrivi la tua azienda al Gran Premio del Gusto 2026.",
+  "9 Sfide, 9 Vincitori: 70% Giuria Popolare, 30% Giuria Tecnica. I prodotti in gara sono selezionati tramite bando della Regione Campania.",
 );
 
 /**
