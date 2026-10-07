@@ -20,11 +20,11 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          echo "--- radice FTP"; curl -sS --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/" -l | sort | head -40
-          echo "--- www.vinisud.it/"; curl -sS --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/www.vinisud.it/" -l | sort | head -40
-          echo "--- forms/"; curl -sS --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/www.vinisud.it/forms/" -l | sort
+          echo "--- radice FTP"; curl -sSk --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/" -l | sort | head -40
+          echo "--- www.vinisud.it/"; curl -sSk --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/www.vinisud.it/" -l | sort | head -40
+          echo "--- forms/"; curl -sSk --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/www.vinisud.it/forms/" -l | sort
           echo "--- forms/data (solo nomi)"
-          curl -sS --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/www.vinisud.it/forms/data/" -l | sort || true
+          curl -sSk --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/www.vinisud.it/forms/data/" -l | sort || true
       - name: Cancella i file richiesti
         if: ${{ github.event.inputs.delete_paths != '' }}
         env:
@@ -36,7 +36,7 @@ jobs:
           for p in $PATHS; do
             case "$p" in *..*|/*) echo "percorso non valido: $p"; exit 1;; esac
             echo "DELE $p"
-            curl -sS --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/" -Q "-DELE www.vinisud.it/$p" -o /dev/null && echo "  cancellato" || echo "  non cancellato (assente?)"
+            curl -sSk --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/" -Q "-DELE www.vinisud.it/$p" -o /dev/null && echo "  cancellato" || echo "  non cancellato (assente?)"
           done
           echo "--- forms/ dopo"
-          curl -sS --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/www.vinisud.it/forms/" -l | sort
+          curl -sSk --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/www.vinisud.it/forms/" -l | sort
