@@ -10,6 +10,26 @@
     "date": "2026-10-06"
   },
   {
+    "id": "f4054552cc89",
+    "category": "Oro Verde",
+    "title": "La pasta nata per mangiare l'olio nuovo. In Abruzzo si preparava direttamente al frantoio",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/pasta-trappitara-abruzzo-olio-nuovo/",
+    "note": "Un segnale dall'olio del Sud, focus Abruzzo.",
+    "noteSource": "auto",
+    "date": "2026-10-06"
+  },
+  {
+    "id": "3fbb5c26bd58",
+    "category": "Radar del Sud",
+    "title": "Il ristorante vegano a Milano dove portare anche un carnivoro",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/ristorante-vegano-linfa-visionnaire-milano",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-06"
+  },
+  {
     "id": "75a671cda534",
     "category": "Calici di Magna Grecia",
     "title": "I Venti 2025 Coda di Volpe Irpinia doc, Famiglia Pagano",
@@ -278,25 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-09-24"
-  },
-  {
-    "id": "5a88a95083ae",
-    "category": "Calici di Magna Grecia",
-    "title": "Nel 2026 non ci saranno vini di questa denominazione: l'unica cantina che li produce non riesce a sostenere i costi",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/niente-vini-denominazione-saint-sardos-produzione-ferma/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-24"
-  },
-  {
-    "id": "1cf375b87208",
-    "category": "Calici di Magna Grecia",
-    "title": "Palermo Coffee Festival, tre giorni per imparare a bere il caffè",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/palermo-coffee-festival/",
-    "note": "Una voce dal mondo del vino, focus Sicilia.",
-    "noteSource": "auto",
-    "date": "2026-09-23"
   }
 ]
