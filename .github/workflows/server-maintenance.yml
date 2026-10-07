@@ -10,7 +10,7 @@ on:
         required: false
         default: ""
       remove_request_id:
-        description: "request_id da togliere da forms/data/pass-giurato-iscrizioni.csv (prenotazione di prova)"
+        description: "cognome della prenotazione di prova da togliere da forms/data/pass-giurato-iscrizioni.csv"
         required: false
         default: ""
 
@@ -61,7 +61,7 @@ jobs:
           import csv, os
           rid = os.environ["RID"]
           rows = list(csv.reader(open("cur.csv", newline="", encoding="utf-8")))
-          hdr = rows[0]; idx = hdr.index("request_id")
+          hdr = rows[0]; idx = hdr.index("cognome")
           keep = [rows[0]] + [r for r in rows[1:] if r and r[idx] != rid]
           print("righe prima:", len(rows) - 1, "dopo:", len(keep) - 1)
           assert len(rows) - len(keep) == 1, "attesa esattamente 1 riga da togliere"
