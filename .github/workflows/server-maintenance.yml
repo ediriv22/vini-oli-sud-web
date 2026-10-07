@@ -1,0 +1,40 @@
+name: Manutenzione server (temporaneo)
+
+# Workflow temporaneo, solo manuale: cancella file residui sul server Aruba
+# usando i secret FTP gia' presenti. Da rimuovere dopo l'uso.
+on:
+  workflow_dispatch:
+    inputs:
+      delete_paths:
+        description: "File da cancellare, relativi a www.vinisud.it/, separati da spazio"
+        required: false
+        default: ""
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Elenco forms/ (solo nomi) prima
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          curl -sS --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/www.vinisud.it/forms/" -l | sort
+          echo "--- forms/data (solo nomi)"
+          curl -sS --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/www.vinisud.it/forms/data/" -l | sort || true
+      - name: Cancella i file richiesti
+        if: ${{ github.event.inputs.delete_paths != '' }}
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          PATHS: ${{ github.event.inputs.delete_paths }}
+        run: |
+          for p in $PATHS; do
+            case "$p" in *..*|/*) echo "percorso non valido: $p"; exit 1;; esac
+            echo "DELE $p"
+            curl -sS --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/" -Q "-DELE www.vinisud.it/$p" -o /dev/null && echo "  cancellato" || echo "  non cancellato (assente?)"
+          done
+          echo "--- forms/ dopo"
+          curl -sS --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/www.vinisud.it/forms/" -l | sort

@@ -117,7 +117,7 @@ export default function RegolamentiEPremiPage() {
             ) : null}
 
             <p className="text-[0.86rem] leading-[1.6] text-[var(--color-muted)]">
-              Elenco completo delle 9 Sfide e modalità di iscrizione:{" "}
+              Elenco completo delle 9 Sfide e modalità di partecipazione:{" "}
               <a
                 href="/format/gran-premio-del-gusto/"
                 className="font-semibold text-[var(--color-wine)] underline underline-offset-2"
