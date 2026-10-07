@@ -9,6 +9,10 @@ on:
         description: "File da cancellare, relativi a www.vinisud.it/, separati da spazio"
         required: false
         default: ""
+      remove_request_id:
+        description: "request_id da togliere da forms/data/pass-giurato-iscrizioni.csv (prenotazione di prova)"
+        required: false
+        default: ""
 
 jobs:
   maintenance:
@@ -40,3 +44,28 @@ jobs:
           done
           echo "--- forms/ dopo"
           curl -sSk --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER/www.vinisud.it/forms/" -l | sort
+      - name: Toglie una prenotazione di prova dal CSV (con backup sul server)
+        if: ${{ github.event.inputs.remove_request_id != '' }}
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          RID: ${{ github.event.inputs.remove_request_id }}
+        run: |
+          set -e
+          U="ftp://$FTP_SERVER/www.vinisud.it/forms/data/pass-giurato-iscrizioni.csv"
+          curl -sSk --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" "$U" -o cur.csv
+          BK="ftp://$FTP_SERVER/www.vinisud.it/forms/data/pass-giurato-iscrizioni.csv.bak_$(date +%Y%m%d_%H%M)_test_cleanup"
+          curl -sSk --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" -T cur.csv "$BK"
+          python3 - <<'PY'
+          import csv, os
+          rid = os.environ["RID"]
+          rows = list(csv.reader(open("cur.csv", newline="", encoding="utf-8")))
+          hdr = rows[0]; idx = hdr.index("request_id")
+          keep = [rows[0]] + [r for r in rows[1:] if r and r[idx] != rid]
+          print("righe prima:", len(rows) - 1, "dopo:", len(keep) - 1)
+          assert len(rows) - len(keep) == 1, "attesa esattamente 1 riga da togliere"
+          csv.writer(open("new.csv", "w", newline="", encoding="utf-8")).writerows(keep)
+          PY
+          curl -sSk --ssl-reqd --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" -T new.csv "$U"
+          echo "CSV aggiornato"
