@@ -1,5 +1,45 @@
 [
   {
+    "id": "19cc64e71376",
+    "category": "Calici di Magna Grecia",
+    "title": "Vini Bianchi, Rosato e Passito – Audarya",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vini-bianchi-rosato-e-passito-audarya/302712/",
+    "note": "Una voce dal mondo del vino, focus Sardegna.",
+    "noteSource": "auto",
+    "date": "2026-10-08"
+  },
+  {
+    "id": "44e4667bd65b",
+    "category": "Calici di Magna Grecia",
+    "title": "Bianchi e spumanti meglio dei rossi, Doc e Docg più reattivi dei vini Igt. Il nuovo quadro degli imbottigliamenti",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/imbottigliamenti-vino-terzo-trimestre-2026-valoritalia/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-07"
+  },
+  {
+    "id": "6faccbae8210",
+    "category": "Calici di Magna Grecia",
+    "title": "Oltre il 70% del vino altoatesino è cooperativo (ed è una fortuna). Storia di un modello di resistenza controcorrente",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/alto-adige-vino-cooperativo-modello-controcorrente/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-07"
+  },
+  {
+    "id": "b623a632446d",
+    "category": "Calici di Magna Grecia",
+    "title": "Il vino dealcolato prova a recuperare gli aromi persi. La nuova tecnologia viene dalla Germania",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/vino-dealcolato-aromi-henkell-freixenet/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-07"
+  },
+  {
     "id": "0fbcf4330665",
     "category": "Calici di Magna Grecia",
     "title": "\"Vino, Donna\" di Chiara Giorleo: le prossime presentazioni",
@@ -258,45 +298,5 @@
     "note": "Una segnalazione di cucina, focus Campania.",
     "noteSource": "auto",
     "date": "2026-09-25"
-  },
-  {
-    "id": "0da24ca52832",
-    "category": "Calici di Magna Grecia",
-    "title": "Vini d'Italia 2027, il futuro del vino italiano si racconta ad Asti: il 1° ottobre l'anteprima nazionale",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/anteprima-vini-italia-2027-asti/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-25"
-  },
-  {
-    "id": "1703f94b0762",
-    "category": "Calici di Magna Grecia",
-    "title": "Uno dei migliori vini valdostani non può fregiarsi della DOC: ecco perché",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/petit-arvine-sopraquota-doc-valle-aosta/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-25"
-  },
-  {
-    "id": "3c4e483fdd32",
-    "category": "Calici di Magna Grecia",
-    "title": "Garantito IGP | Le chiusure in vetro e i \"grandi vecchi\" del vino: un dibattito",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/garantito-igp-le-chiusure-in-vetro-e-i-grandi-vecchi-del-vino-un-dibattito/301858/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-24"
-  },
-  {
-    "id": "ea55a4ff342f",
-    "category": "Calici di Magna Grecia",
-    "title": "Vittoria Rocca, il futuro del vino passa dalla capacità di evolvere",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vittoria-rocca-il-futuro-del-vino-passa-dalla-capacita-di-evolvere/301915/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-24"
   }
 ]
