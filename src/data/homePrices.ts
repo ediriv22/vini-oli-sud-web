@@ -19,7 +19,7 @@ type TicketCard = {
 export const ticketsSection = {
   badge: "Ingresso al Villaggio gratuito",
   intro:
-    "Per degustare e votare nelle 9 Sfide serve il Pass Giurato: il voto della Giuria Popolare vale il 70% del risultato finale. Il Pass non è in vendita: si prenota gratuitamente sul sito, solo per i primi 50.",
+    "Per degustare e votare nelle 9 Sfide serve il Pass Giurato: il voto della Giuria Popolare vale il 70% del risultato finale. Si prenota compilando il modulo e inviandolo, via mail, alla nostra segreteria: saranno accettati solo i primi 50 prenotati.",
   cards: [
     {
       name: "Pass Giurato",
@@ -41,7 +41,7 @@ export const ticketsSection = {
       featured: true,
       ctaLabel: "Prenota il tuo Pass",
       ctaHref: "/pass-giurato/",
-      note: "Prenotazione gratuita, solo i primi 50.",
+      note: "Saranno accettati solo i primi 50 prenotati.",
     },
     {
       name: "Selezione prodotti",
@@ -49,7 +49,7 @@ export const ticketsSection = {
       featured: false,
       ctaLabel: "Come funziona",
       ctaHref: "/format/gran-premio-del-gusto/iscrizione/",
-      note: "I prodotti in gara sono selezionati tramite bando della Regione Campania.",
+      note: "Le aziende saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania con un bando apposito.",
     },
   ] as readonly TicketCard[],
   footnote:

@@ -2,7 +2,7 @@ import { createPageMetadata, siteConfig } from "@/data/site";
 
 export const metadata = createPageMetadata(
   "Selezione prodotti",
-  "I prodotti in gara al Gran Premio del Gusto 2026 sono selezionati tramite bando della Regione Campania.",
+  "Le aziende che desiderano partecipare alle Sfide del Gran Premio del Gusto saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania tramite bando.",
 );
 
 /**
@@ -37,13 +37,10 @@ export default function SelezioneProdottoPage() {
           27 · 28 · 29 novembre 2026 · Rotonda Diaz – Lungomare Caracciolo – Napoli
         </p>
         <p className="mx-auto mt-6 max-w-[42ch] text-[0.96rem] leading-[1.65] text-[var(--color-muted)]">
-          I prodotti ammessi ai 9 Concorsi del Gran Premio del Gusto 2026 sono selezionati
-          tramite bando della Regione Campania: non è più possibile candidare un prodotto
-          direttamente tramite questo sito.
-        </p>
-        <p className="mx-auto mt-3 max-w-[42ch] text-[0.86rem] leading-[1.6] text-[var(--color-muted)]">
-          Modalità di partecipazione al bando, scadenze e documentazione richiesta saranno
-          comunicate dalla Regione Campania.
+          Le aziende che desiderano partecipare alle Sfide del Gran Premio del Gusto saranno
+          selezionate dall&rsquo;Assessorato all&rsquo;Agricoltura della Regione Campania che
+          pubblicherà un bando apposito. Per ogni ulteriore informazione inviate una mail alla
+          nostra segreteria.
         </p>
         {/* TODO(bando): quando escono nome, link e scadenza del bando Regione Campania, aggiungere qui un paragrafo con link e data. Nessun segnaposto visibile in pagina. */}
       </div>

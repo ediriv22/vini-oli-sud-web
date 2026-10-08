@@ -195,7 +195,7 @@
         "kind": "biglietti",
         "label": "Biglietti & Pass",
         "heading": "L'ingresso alla manifestazione è libero e gratuito",
-        "subheading": "Se vuoi vivere da protagonista un weekend unico, degustare, votare e decidere chi vince, prenota il tuo Pass Giurato: prenotazione gratuita, solo per i primi 50.",
+        "subheading": "Il Pass Giurato che ti consente di degustare il prodotto e votare si prenota compilando il modulo e inviandolo, via mail, alla nostra segreteria. Saranno accettati solo i primi 50 prenotati.",
         "sectionTitle": "Diventa Giurato Popolare",
         "tiers": [
           {
@@ -237,12 +237,10 @@
       {
         "kind": "iscrivi",
         "label": "Selezione Prodotti",
-        "heading": "I prodotti in gara sono selezionati con bando della Regione Campania",
+        "heading": "Le aziende saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania",
         "subheading": "Gran Premio del Gusto 2026 — Le Sfide della Magna Grecia · 27 • 28 • 29 Novembre 2026 · Rotonda Diaz – Lungomare Caracciolo – Napoli",
         "body": [
-          "Il Gran Premio del Gusto 2026 – Le Sfide della Magna Grecia mette in gara prodotti d'eccellenza in 9 Concorsi.",
-          "I prodotti in gara non si candidano più direttamente dal sito: sono selezionati tramite bando della Regione Campania.",
-          "Modalità di partecipazione, scadenze e documentazione saranno comunicate dalla Regione Campania.",
+          "Le aziende che desiderano partecipare alle Sfide del Gran Premio del Gusto saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania che pubblicherà un bando apposito. Per ogni ulteriore informazione inviate una mail alla nostra segreteria.",
           "I prodotti dovranno essere pronti da degustare, senza necessità di cottura sul posto: conservazione, porzionatura e modalità di servizio saranno concordate con la Segreteria organizzativa. Gelati, yogurt e dessert freddi partecipano esclusivamente alla nona Sfida.",
           "L'Organizzazione si riserva di stabilire il numero massimo di prodotti ammessi e di annullare, modificare o ampliare i Concorsi, nonché di variarne giorni e orari, dandone comunicazione alle aziende selezionate."
         ],
@@ -353,7 +351,7 @@
         "phasesNote": "Gli orari e la durata delle singole fasi potranno subire variazioni per esigenze organizzative.",
         "ctaLabel": "🏆 Come funziona la selezione",
         "ctaHref": "/format/gran-premio-del-gusto/iscrizione/",
-        "note": "I prodotti in gara sono selezionati tramite bando della Regione Campania: modalità di partecipazione e scadenze saranno comunicate dalla Regione."
+        "note": "Le aziende che desiderano partecipare alle Sfide del Gran Premio del Gusto saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania che pubblicherà un bando apposito. Per ogni ulteriore informazione inviate una mail alla nostra segreteria."
       },
       {
         "kind": "sponsor",

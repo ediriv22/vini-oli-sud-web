@@ -119,12 +119,9 @@ export default function PassGiuratoPage() {
           Diventa Giurato Popolare
         </h1>
         <p className="mx-auto mt-3 max-w-[42ch] text-[0.94rem] leading-[1.6] text-[var(--color-muted)]">
-          Il Pass Giurato non è più in vendita: si prenota gratuitamente, solo per i primi 50 che
-          compilano il modulo.
-        </p>
-        <p className="mx-auto mt-3 max-w-[46ch] text-[0.86rem] leading-[1.55] text-[var(--color-muted)]">
-          I posti sono limitati: la prenotazione resta aperta fino al raggiungimento dei primi 50
-          posti disponibili.
+          Il Pass Giurato che ti consente di degustare il prodotto e votare si prenota compilando
+          il modulo e inviandolo, via mail, alla nostra segreteria. Saranno accettati solo i primi
+          50 prenotati.
         </p>
         <p className="mx-auto mt-3 max-w-[46ch] text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
           Il Pass Giurato è strettamente personale e non cedibile: va conservato dal titolare per
@@ -309,15 +306,12 @@ export default function PassGiuratoPage() {
 
         </fieldset>
 
-        {/* 7/10/2026: fieldset "Pagamento" rimosso (niente più PayPal/biglietteria
-            esterna, niente add-on bicchiere a pagamento) — il Pass Giurato si
-            prenota gratis, solo i primi 50. Nota sotto al posto del vecchio box
-            di acquisto. */}
+        {/* Nessun pagamento: il modulo si invia alla segreteria, solo i primi 50 prenotati. */}
         <fieldset className="flex flex-col gap-5">
           <div className="rounded-[0.9rem] border border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)] p-4 text-center">
             <p className="text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
-              La prenotazione del Pass Giurato Popolare è gratuita. Sono disponibili solo i primi
-              50 posti: a prenotazione ricevuta, la Segreteria Organizzativa confermerà via email.
+              Compila il modulo e invialo alla nostra segreteria: a prenotazione ricevuta ti
+              confermeremo via email. Saranno accettati solo i primi 50 prenotati.
             </p>
           </div>
         </fieldset>
