@@ -1,10 +1,50 @@
 [
   {
+    "id": "b83a25735a95",
+    "category": "Calici di Magna Grecia",
+    "title": "Alta Langa il futuro del Metodo Classico italiano: la masterclass durante l'evento Falstaff Sparkling Party a Napoli",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/alta-langa-il-futuro-del-metodo-classico-italiano-la-masterclass-durante-levento-falstaff-sparkling-party-a-napoli/302828/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-10"
+  },
+  {
     "id": "c385f47aa09b",
     "category": "Calici di Magna Grecia",
     "title": "VINerdì | Az. Agr. Falisca – Toscana IGT Trebbiano 2024",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/vinerdi-az-agr-falisca-toscana-igt-trebbiano-2024/302701/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-09"
+  },
+  {
+    "id": "deaa65b51275",
+    "category": "Radar del Sud",
+    "title": "A Napoli la migliore pizzeria della Campania fa pizze e fritti da paura",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/palazzo-petrucci-migliore-pizzeria-napoli",
+    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-09"
+  },
+  {
+    "id": "57e6c20d9b08",
+    "category": "Calici di Magna Grecia",
+    "title": "\"Furti in cantina? Ormai i vini italiani vanno a ruba come opere d'arte\". La riflessione di Mauro Rosati",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/furto-vino-valore-mauro-rosati/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-09"
+  },
+  {
+    "id": "4d36dd444355",
+    "category": "Calici di Magna Grecia",
+    "title": "La famiglia Agnelli aveva anche una cantina a Bordeaux. Oggi il suo erede fa vino in Friuli e produce sempre meno bottiglie",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/agnelli-brandolini-vistorta-friuli-bordeaux-merlot/",
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-10-09"
@@ -258,45 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-09-27"
-  },
-  {
-    "id": "acecabd1e1e6",
-    "category": "Radar del Sud",
-    "title": "Il Café a Lione dove mangiare cucina tradizionale e pollo di Bresse",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/ristorante-cafe-terroir-lione",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-27"
-  },
-  {
-    "id": "aeccfae2517b",
-    "category": "Oro Verde",
-    "title": "Nella patria del burro i pasticceri scoprono l'olio d'oliva",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/pasticceria-francese-olio-oliva/",
-    "note": "Un segnale dall'olio del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-27"
-  },
-  {
-    "id": "03911b982133",
-    "category": "Calici di Magna Grecia",
-    "title": "InvecchiatIGP | Bagnadore Franciacorta Riserva docg 2012 Barone Pizzini",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/invecchiatigp-bagnadore-franciacorta-riserva-docg-2012-barone-pizzini/302041/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-09-26"
-  },
-  {
-    "id": "5bb420f22995",
-    "category": "Calici di Magna Grecia",
-    "title": "Vigna Lapillo 2022 Lacryma Christi doc in magnum, Sorrentino Vini",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vigna-lapillo-2022-lacryma-christi-doc-in-magnum-sorrentino-vini/302013/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-09-25"
   }
 ]
