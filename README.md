@@ -46,7 +46,7 @@ Docs: [CMS setup](docs/CMS_SETUP.md) · [visual editor](docs/EDITOR-VISUALE.md) 
 ## Tests and checks
 
 ```bash
-npm test          # 17 tests, Node's built-in runner, no extra dependencies
+npm test          # 18 tests, Node's built-in runner, no extra dependencies
 npm run lint
 npx tsc --noEmit
 ```

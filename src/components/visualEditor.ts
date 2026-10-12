@@ -20,26 +20,26 @@ export function initVisualEditor(win: Window): (() => void) | undefined {
   const style = doc.createElement("style");
   style.textContent = `
     .vos-badge { position: fixed; z-index: 2147483647; left: 50%; bottom: 18px; transform: translateX(-50%);
-      background: #1f2a24; color: #fff; font: 600 13px/1.4 -apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background: #1d3a2c; color: #fffdf5; border: 1px solid rgba(255,215,87,.55); font: 700 13px/1.4 var(--font-ui-stack),Lato,-apple-system,Segoe UI,Arial,sans-serif;
       padding: 9px 18px; border-radius: 999px; box-shadow: 0 8px 24px rgba(0,0,0,.32); pointer-events: none; }
     [data-content-key] { cursor: pointer; }
-    [data-content-key]:not([contenteditable="true"]):hover { outline: 2px dashed #7a2634; outline-offset: 3px; background: rgba(122,38,52,0.06); }
-    [contenteditable="true"] { cursor: text; outline: 1px dashed rgba(122,38,52,.5); outline-offset: 2px; border-radius: 3px; transition: outline-color .1s, background-color .1s; }
-    [contenteditable="true"]:hover { outline-color: #7a2634; background: rgba(255,247,214,.4); }
-    [contenteditable="true"]:focus { outline: 2px solid #7a2634; background: rgba(255,247,214,.6); }
+    [data-content-key]:not([contenteditable="true"]):hover { outline: 2px dashed #1d3a2c; outline-offset: 3px; box-shadow: 0 0 0 6px rgba(255,215,87,.7); background: rgba(255,215,87,0.1); }
+    [contenteditable="true"] { cursor: text; outline: 1px dashed rgba(29,58,44,.55); outline-offset: 2px; border-radius: 3px; transition: outline-color .1s, background-color .1s; }
+    [contenteditable="true"]:hover { outline-color: #1d3a2c; background: rgba(255,243,204,.5); }
+    [contenteditable="true"]:focus { outline: 2px solid #1d3a2c; box-shadow: 0 0 0 5px rgba(255,215,87,.75); background: rgba(255,243,204,.7); }
     [data-content-key^="sec:"] { position: relative; }
-    [data-content-key^="sec:"].vos-selected { outline: 3px solid #b08d57; outline-offset: -3px; }
+    [data-content-key^="sec:"].vos-selected { outline: 3px solid #e8b93a; outline-offset: -3px; }
     .vos-sec-toolbar { position: absolute; top: 8px; right: 8px; z-index: 2147483000; display: flex; gap: 4px;
-      background: rgba(31,42,36,.92); border-radius: 8px; padding: 4px; box-shadow: 0 6px 16px rgba(0,0,0,.3);
+      background: rgba(29,58,44,.95); border: 1px solid rgba(255,215,87,.5); border-radius: 10px; padding: 4px; box-shadow: 0 6px 16px rgba(0,0,0,.3);
       opacity: .5; transition: opacity .12s ease; }
     [data-content-key^="sec:"]:hover .vos-sec-toolbar, [data-content-key^="sec:"].vos-selected .vos-sec-toolbar { opacity: 1; }
     .vos-sec-toolbar button { all: unset; box-sizing: border-box; height: 26px; min-width: 26px; padding: 0 6px; display: inline-flex;
-      align-items: center; justify-content: center; gap: 4px; color: #fff; font: 600 12px/1 -apple-system,Segoe UI,sans-serif; border-radius: 6px; cursor: pointer; }
-    .vos-sec-toolbar button:hover { background: rgba(255,255,255,.18); }
+      align-items: center; justify-content: center; gap: 4px; color: #fffdf5; font: 700 12px/1 var(--font-ui-stack),Lato,-apple-system,Segoe UI,sans-serif; border-radius: 6px; cursor: pointer; }
+    .vos-sec-toolbar button:hover { background: rgba(255,215,87,.28); }
     .vos-sec-toolbar .vos-handle { cursor: grab; }
     .vos-hidden { opacity: .4; }
     .vos-hidden::after { content: "Sezione nascosta — clicca 👁 per mostrarla"; position: absolute; top: 8px; left: 8px; z-index: 2147483000;
-      background: #7a2634; color: #fff; font: 600 11px/1 sans-serif; padding: 6px 10px; border-radius: 6px; }
+      background: #1d3a2c; color: #ffd757; font: 700 11px/1 var(--font-ui-stack),Lato,sans-serif; padding: 6px 10px; border-radius: 6px; }
     .vos-dragging { opacity: .5; }
   `;
   doc.head.appendChild(style);

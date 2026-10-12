@@ -63,6 +63,20 @@ test("shows the login form to anonymous visitors", opts, async () => {
   assert.doesNotMatch(html, /name="csrf"/, "editor must not be rendered before login");
 });
 
+test("serves the stylesheet and self-hosted fonts the page depends on", opts, async () => {
+  const html = await (await fetch(server.base)).text();
+  assert.match(html, /href="admin\.css\?v=\d+"/);
+  const base = new URL(server.base);
+  const css = await fetch(new URL("admin.css", base));
+  assert.equal(css.status, 200);
+  assert.match(css.headers.get("content-type") ?? "", /text\/css/);
+  const body = await css.text();
+  for (const font of body.match(/fonts\/[a-z0-9-]+\.woff2/g) ?? []) {
+    assert.equal((await fetch(new URL(font, new URL("admin/", base.origin + "/")))).status, 200, font);
+  }
+  assert.doesNotMatch(body, /#7a2634|#b08d57/i, "old palette must be gone");
+});
+
 test("rejects a wrong password and stays on the login form", opts, async () => {
   const res = await login(server.base, "wrong");
   const html = await res.text();

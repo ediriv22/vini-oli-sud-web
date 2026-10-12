@@ -213,7 +213,7 @@ function image_preview_src(string $val): string {
     if ($val !== '') return $val;
     $svg = '<svg xmlns="http://www.w3.org/2000/svg" width="360" height="120">'
          . '<rect width="100%" height="100%" fill="#ece2cf"/>'
-         . '<text x="50%" y="50%" font-family="sans-serif" font-size="14" fill="#7a2634" text-anchor="middle" dominant-baseline="middle">Nessuna immagine caricata</text>'
+         . '<text x="50%" y="50%" font-family="sans-serif" font-size="14" fill="#58685f" text-anchor="middle" dominant-baseline="middle">Nessuna immagine caricata</text>'
          . '</svg>';
     return 'data:image/svg+xml,' . rawurlencode($svg);
 }
@@ -810,113 +810,27 @@ if ($isCanva) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Pannello Segreteria — Vini Oli Sud</title>
-<style>
-  :root { --wine:#7a2634; --ink:#1f2a24; --sand:#b08d57; --bg:#f8f5ec; }
-  * { box-sizing:border-box; }
-  body { font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); margin:0; padding:28px 16px; line-height:1.5; }
-  .wrap { max-width:780px; margin:0 auto; }
-  .card { background:#fff; border:1px solid rgba(176,141,87,.35); border-radius:16px; padding:26px 24px; box-shadow:0 10px 30px rgba(42,32,23,.06); }
-  h1 { font-size:1.5rem; margin:0 0 4px; color:var(--wine); }
-  .sub { color:#6b605c; margin:0 0 22px; font-size:.95rem; }
-  label { display:block; font-weight:600; font-size:.8rem; text-transform:uppercase; letter-spacing:.03em; margin:16px 0 6px; }
-  input[type=text],input[type=password],textarea { width:100%; padding:11px 13px; border:1px solid rgba(176,141,87,.5); border-radius:9px; font-size:1rem; font-family:inherit; background:#fffdf9; }
-  textarea { min-height:84px; resize:vertical; }
-  input:focus,textarea:focus { outline:none; border-color:var(--wine); box-shadow:0 0 0 3px rgba(122,38,52,.12); }
-  fieldset.grp { border:1px solid rgba(176,141,87,.3); border-radius:10px; padding:6px 16px 16px; margin:18px 0; }
-  fieldset.grp legend { padding:0 8px; font-weight:700; color:var(--wine); font-size:.92rem; }
-  button { margin-top:22px; background:var(--wine); color:#fff; border:0; padding:14px 22px; border-radius:9px; font-size:1.02rem; font-weight:700; cursor:pointer; }
-  button:hover { filter:brightness(1.08); }
-  .msg { padding:12px 16px; border-radius:10px; margin-bottom:18px; font-size:.95rem; }
-  .ok { background:#eaf6ee; border:1px solid #9ed3b0; color:#1c5b34; }
-  .err { background:#fcebec; border:1px solid #e2a3ab; color:var(--wine); }
-  .top { display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; gap:12px; }
-  .logout,.back { font-size:.85rem; color:#8a7f7a; text-decoration:none; }
-  .logout:hover,.back:hover { color:var(--wine); }
-  .areas { list-style:none; padding:0; margin:0; display:grid; gap:10px; }
-  .areas a { display:block; padding:14px 16px; border:1px solid rgba(176,141,87,.4); border-radius:10px; text-decoration:none; color:var(--ink); font-weight:600; background:#fffdf9; }
-  .areas a:hover { border-color:var(--wine); color:var(--wine); }
-  .reorder { display:flex; gap:6px; justify-content:flex-end; margin-top:10px; }
-  .reorder button { margin-top:0; padding:4px 10px; font-size:.85rem; background:#fffdf9; color:var(--wine); border:1px solid rgba(176,141,87,.5); }
-  .reorder button:disabled { opacity:.3; cursor:default; }
-  /* Vista "Ordine sezioni" */
-  .layout-row { display:flex; align-items:center; gap:12px; padding:12px 14px; margin:10px 0; border:1px solid rgba(176,141,87,.4); border-radius:10px; background:#fffdf9; flex-wrap:wrap; }
-  .layout-row.is-disabled { opacity:.62; background:#f3efe6; }
-  .layout-move { display:flex; flex-direction:column; gap:4px; }
-  .layout-move button { margin-top:0; padding:2px 9px; font-size:.8rem; line-height:1.1; background:#fff; color:var(--wine); border:1px solid rgba(176,141,87,.5); border-radius:6px; }
-  .layout-move button:disabled { opacity:.3; cursor:default; }
-  .layout-name { font-weight:700; color:var(--ink); flex:1 1 auto; min-width:8rem; }
-  .layout-edit { font-size:.82rem; color:var(--wine); text-decoration:none; font-weight:600; white-space:nowrap; }
-  .layout-edit:hover { text-decoration:underline; }
-  .layout-toggle { display:flex; align-items:center; gap:7px; margin:0; text-transform:none; letter-spacing:normal; font-size:.82rem; font-weight:600; color:#6b605c; cursor:pointer; white-space:nowrap; }
-  .layout-toggle input { width:auto; }
-  /* Anteprima sito pubblicato */
-  .preview-block { margin:0 0 22px; border:1px solid rgba(176,141,87,.35); border-radius:12px; overflow:hidden; background:#fffdf9; }
-  .preview-head { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 14px; background:#f3efe6; }
-  .preview-head strong { color:var(--wine); font-size:.95rem; }
-  .preview-head button { margin-top:0; padding:5px 12px; font-size:.82rem; background:#fff; color:var(--wine); border:1px solid rgba(176,141,87,.5); }
-  .preview-note { margin:12px 14px 0; font-size:.82rem; color:#6b605c; }
-  .site-preview { display:block; width:100%; height:520px; border:0; margin-top:10px; background:#fff; }
-  .preview-actions { display:flex; align-items:center; gap:14px; }
-  .editor-toggle { display:flex; align-items:center; gap:7px; margin:0; text-transform:none; letter-spacing:normal; font-size:.82rem; font-weight:600; color:var(--wine); cursor:pointer; white-space:nowrap; }
-  .editor-toggle input { width:auto; }
-  .vos-focus-flash { outline:3px solid var(--wine) !important; outline-offset:2px; border-radius:6px; animation:vosFlash 1.6s ease; }
-  @keyframes vosFlash { 0%,100% { box-shadow:0 0 0 0 rgba(122,38,52,0); } 20% { box-shadow:0 0 0 6px rgba(122,38,52,.18); } }
-  .colorfield { display:flex; align-items:center; gap:12px; }
-  .colorfield input[type=color] { width:56px; height:40px; padding:2px; border:1px solid rgba(176,141,87,.5); border-radius:8px; background:#fffdf9; cursor:pointer; }
-  .contrast-note { font-size:.82rem; }
-  .contrast-note.warn { color:#a33; font-weight:600; }
-  .contrast-note.ok { color:#1c5b34; }
-  .imagefield { margin-bottom:6px; }
-  .preview-img { display:block; width:100%; max-width:360px; height:auto; border-radius:10px; border:1px solid rgba(176,141,87,.35); margin-bottom:10px; }
-  .field-hint { font-size:.78rem; color:#8a7f7a; margin:6px 0 0; font-weight:400; text-transform:none; letter-spacing:normal; }
-  .rangefield { display:flex; align-items:center; gap:14px; }
-  .rangefield input[type=range] { flex:1; accent-color:var(--wine); }
-  .rangefield output { font-weight:700; color:var(--wine); min-width:2.6em; text-align:right; }
-  .hero-preview { position:relative; margin:22px 0; border-radius:12px; overflow:hidden; border:1px solid rgba(176,141,87,.35); }
-  .hero-preview img { display:block; width:100%; height:220px; object-fit:cover; }
-  .hero-preview .shade { position:absolute; inset:0; background:#0f1821; }
-  .hero-preview .caption { position:absolute; left:12px; bottom:10px; color:#f4ede0; font-size:.78rem; font-weight:600; text-shadow:0 2px 6px rgba(0,0,0,.6); }
-  .clear-image-label { display:flex; align-items:center; gap:8px; margin-top:10px; font-size:.82rem; font-weight:400; text-transform:none; letter-spacing:normal; color:#6b605c; }
-  .clear-image-label input { width:auto; }
-  select { width:100%; padding:11px 13px; border:1px solid rgba(176,141,87,.5); border-radius:9px; font-size:1rem; font-family:inherit; background:#fffdf9; }
-  .emoji-trigger { margin-left:8px; background:#fffdf9; border:1px solid rgba(176,141,87,.5); border-radius:6px; padding:2px 9px; font-size:1rem; line-height:1.6; cursor:pointer; vertical-align:middle; }
-  .emoji-trigger:hover { border-color:var(--wine); }
-  .emoji-panel { position:absolute; z-index:80; display:grid; grid-template-columns:repeat(8,1fr); gap:2px; background:#fff; border:1px solid rgba(176,141,87,.4); border-radius:10px; padding:8px; box-shadow:0 10px 28px rgba(42,32,23,.18); }
-  .emoji-panel button { border:none; background:transparent; font-size:1.15rem; cursor:pointer; padding:5px; border-radius:6px; margin:0; }
-  .emoji-panel button:hover { background:rgba(176,141,87,.18); }
-  /* Canva (editor visuale) */
-  .wrap-wide { max-width:1180px; }
-  .canva-bar { position:sticky; top:0; z-index:30; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 14px; margin:0 0 14px; border:1px solid rgba(176,141,87,.4); border-radius:12px; background:#fffdf9; box-shadow:0 6px 18px rgba(42,32,23,.06); }
-  .canva-status { font-size:.9rem; font-weight:600; color:#6b605c; }
-  .canva-status.dirty { color:var(--wine); }
-  .canva-actions { display:flex; align-items:center; gap:10px; }
-  .canva-actions button { margin-top:0; padding:10px 18px; font-size:.92rem; }
-  .canva-actions .js-canva-reset { background:#fffdf9; color:var(--wine); border:1px solid rgba(176,141,87,.5); }
-  .canva-actions .js-canva-publish:disabled { opacity:.45; cursor:default; }
-  .canva-legend { display:flex; flex-wrap:wrap; gap:8px 12px; margin:0 0 12px; font-size:.8rem; color:#6b605c; }
-  .canva-legend span { background:#f3efe6; border:1px solid rgba(176,141,87,.35); border-radius:999px; padding:5px 12px; }
-  .canva-stage { display:flex; gap:14px; align-items:flex-start; }
-  .canva-frame-wrap { flex:1 1 auto; position:relative; min-width:0; }
-  .canva-loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#8a7f7a; font-size:.9rem; background:#fffdf9; border:1px solid rgba(176,141,87,.35); border-radius:12px; z-index:1; }
-  .canva-loading[hidden] { display:none; }
-  .canva-frame { display:block; width:100%; height:74vh; min-height:520px; border:1px solid rgba(176,141,87,.35); border-radius:12px; margin-top:0; }
-  .canva-inspector { flex:0 0 300px; border:1px solid rgba(176,141,87,.4); border-radius:12px; background:#fffdf9; padding:16px; max-height:74vh; overflow:auto; }
-  .canva-inspector h2 { font-size:1rem; color:var(--wine); margin:0; }
-  .insp-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
-  .js-insp-close { all:unset; cursor:pointer; font-size:1.4rem; line-height:1; color:#8a7f7a; padding:0 8px; border-radius:6px; }
-  .js-insp-close:hover { color:var(--wine); background:rgba(176,141,87,.15); }
-  @media (max-width:860px) { .canva-stage { flex-direction:column; } .canva-inspector { flex-basis:auto; width:100%; } }
-</style>
+<meta name="theme-color" content="#284d3c">
+<link rel="stylesheet" href="admin.css?v=<?= (int) @filemtime(__DIR__ . '/admin.css') ?>">
 </head>
-<body>
+<body<?= $isCanva ? ' class="is-wide"' : '' ?>>
+<header class="adm-header">
+  <div class="adm-header-in">
+    <img src="../brand/vs-mark-ivory.svg" alt="" width="38" height="38">
+    <div>
+      <span class="adm-eyebrow">Vini Oli Sud</span>
+      <span class="adm-title">Pannello Segreteria</span>
+    </div>
+  </div>
+</header>
 <div class="wrap<?= $isCanva ? ' wrap-wide' : '' ?>">
 <?php if ($notice): ?><div class="msg ok"><?= h($notice) ?></div><?php endif; ?>
 <?php if ($error): ?><div class="msg err"><?= h($error) ?></div><?php endif; ?>
 
 <?php if (!$loggedIn): ?>
   <div class="card">
-    <h1>Pannello Segreteria</h1>
-    <p class="sub">Vini Oli Sud — accesso riservato.</p>
+    <h1>Accesso riservato</h1>
+    <p class="sub">Inserisci la password per gestire i contenuti del sito.</p>
     <form method="post">
       <?php if ($area): ?><input type="hidden" name="area" value="<?= h($area) ?>"><?php endif; ?>
       <label for="pw">Password</label>
