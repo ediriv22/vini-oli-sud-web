@@ -1,5 +1,25 @@
 [
   {
+    "id": "94a9e37387c5",
+    "category": "Radar del Sud",
+    "title": "Addio alla stella Michelin in Puglia: Pietro Penna lascia Casamatta",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/pietro-penna-lascia-ristorante-stellato-casamatta",
+    "note": "Una segnalazione di cucina, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-10-11"
+  },
+  {
+    "id": "da128675e6db",
+    "category": "Radar del Sud",
+    "title": "Uno dei migliori Vermentino da 12 euro si fa in Puglia. E si trova anche al supermercato",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/degustazioni/vermentino-salento-notte-rossa-terre-di-sava/",
+    "note": "Una segnalazione gastronomica del Sud, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-10-11"
+  },
+  {
     "id": "b83a25735a95",
     "category": "Calici di Magna Grecia",
     "title": "Alta Langa il futuro del Metodo Classico italiano: la masterclass durante l'evento Falstaff Sparkling Party a Napoli",
@@ -276,26 +296,6 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/vendemmiamo-la-catalanesca-raccolta-delluva-degustazione-e-pranzo-tra-i-vigneti-del-vesuvio/302216/",
     "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-09-29"
-  },
-  {
-    "id": "6eb131541c5a",
-    "category": "Calici di Magna Grecia",
-    "title": "Alessandra Fiano di Avellino Riserva Docg 2012 Di Meo",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/alessandra-2012-fiano-avellino-docg-meo/117835/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-09-29"
-  },
-  {
-    "id": "ea8e01ab44c2",
-    "category": "Radar del Sud",
-    "title": "Pizza Week Paris Edition 2026: il programma completo dal 12 al 17 ottobre",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/pizza-week-paris-edition-2026-il-programma-completo-dal-12-al-17-ottobre/302318/",
-    "note": "Una segnalazione di cucina, focus Campania.",
     "noteSource": "auto",
     "date": "2026-09-29"
   }
