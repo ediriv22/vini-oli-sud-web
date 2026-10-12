@@ -7,9 +7,12 @@
 </IfModule>
 
 # Browser caching — static assets (immutable)
+# NON impostare Content-Encoding a mano: js e css li comprime gia' mod_deflate
+# (che aggiunge l'header giusto da solo). Forzare "gzip" su file che non sono
+# compressi, come i font woff/woff2, fa fallire la decodifica nel browser
+# (ERR_CONTENT_DECODING_FAILED) e i font del sito non si caricano.
 <FilesMatch "\.(woff2?|ttf|otf|eot|js|css)$">
   Header set Cache-Control "public, max-age=31536000, immutable"
-  Header set Content-Encoding gzip
 </FilesMatch>
 
 # Images cache

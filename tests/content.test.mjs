@@ -39,3 +39,9 @@ test("local files referenced from the content exist in public/", () => {
   const missing = refs.filter(([p]) => !existsSync(join("public", p)));
   assert.deepEqual(missing, [], "assets referenced in content but missing from public/");
 });
+
+test(".htaccess does not force a Content-Encoding on static files", () => {
+  // A forced "gzip" on uncompressed woff2 files makes browsers reject the fonts.
+  const htaccess = readFileSync("public/.htaccess", "utf8");
+  assert.doesNotMatch(htaccess, /^\s*Header\s+set\s+Content-Encoding/im);
+});
