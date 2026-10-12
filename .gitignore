@@ -55,3 +55,12 @@ vinisud-sito.zip
 public/admin/config.php
 # Pannello /admin: stato rate-limit login (solo sul server)
 public/admin/data/
+
+# local tooling and internal notes (not part of the public repo)
+/.claude/
+/claudedesignskills/
+/CLAUDE.md
+/AGENTS.md
+/diario-del-sud-design-philosophy.md
+/docs/canva-editor-spec.md
+/vinisud-sito.zip

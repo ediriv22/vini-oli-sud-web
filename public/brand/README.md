@@ -1,8 +1,7 @@
 # Brand Assets — Vini Oli Sud
 
 Asset reali della marca usati dal sito. Sorgente di verità per i path:
-`siteConfig.brand.assets` in `src/data/site.ts`. Per la mappa completa
-"asset → punti d'uso", vedere `docs/brand-assets-map.md`.
+`siteConfig.brand.assets` in `src/data/site.ts`.
 
 ## Brand kit vettoriale (v1.0, maggio 2026) — asset attivi
 
@@ -60,5 +59,5 @@ repo (fuori dal deploy).
 
 1. Aggiungere/aggiornare il file in `public/brand/`.
 2. Registrare/aggiornare la chiave in `siteConfig.brand.assets`.
-3. Aggiornare `docs/brand-assets-map.md` e questo README nello stesso PR.
+3. Aggiornare questo README nello stesso commit.
 4. Mai path hardcoded nei componenti: solo via `siteConfig.brand.assets`.

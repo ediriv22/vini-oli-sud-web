@@ -21,9 +21,7 @@ export const siteConfig = {
     },
     /**
      * Brand kit vettoriale (v1.0, maggio 2026). Tutti SVG: peso ~5KB ciascuno,
-     * scalabili a qualunque dimensione. Sorgente in
-     * /Users/.../VINISUD/ViniSud_Brand_Kit_Vettoriale/ (vedi
-     * docs/brand-assets-map.md).
+     * scalabili a qualunque dimensione.
      *
      * Aggiungere path qui solo se il file esiste già in public/brand/.
      */

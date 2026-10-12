@@ -3,7 +3,7 @@
 // prenota gratuitamente (solo i primi 50) e i prodotti in gara sono scelti
 // da un bando della Regione Campania: niente prezzi né quote nella sezione
 // biglietti. I pacchetti sponsor restano quelli del flyer (src/app/sponsor/page.tsx),
-// riportati esatti, senza aggiunte non confermate (regola AGENTS.md).
+// riportati esatti, senza aggiunte non confermate.
 
 type TicketCard = {
   name: string;
