@@ -56,7 +56,7 @@
   # www.paypal.com/www.paypalobjects.com, necessari all'SDK Hosted Buttons in
   # /pass-giurato/ (script del pulsante, il suo iframe di checkout, le sue
   # chiamate e le sue icone: vedi src/app/pass-giurato/page.tsx).
-  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.paypal.com https://www.paypalobjects.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.paypalobjects.com; font-src 'self' data:; connect-src 'self' https://www.paypal.com; frame-src https://www.paypal.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.paypal.com https://www.paypalobjects.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.paypalobjects.com; font-src 'self' data:; connect-src 'self' https://www.paypal.com; frame-src 'self' https://www.paypal.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
 </IfModule>
 
 # Rewrite rules for SPA routing (if needed)

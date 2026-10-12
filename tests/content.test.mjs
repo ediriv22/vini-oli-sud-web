@@ -45,3 +45,12 @@ test(".htaccess does not force a Content-Encoding on static files", () => {
   const htaccess = readFileSync("public/.htaccess", "utf8");
   assert.doesNotMatch(htaccess, /^\s*Header\s+set\s+Content-Encoding/im);
 });
+
+test("CSP lets the admin panel embed the site (visual editor and preview)", () => {
+  // The panel shows the live site in an iframe. Without 'self' in frame-src
+  // the browser blocks it ("Questi contenuti sono bloccati").
+  const htaccess = readFileSync("public/.htaccess", "utf8");
+  const csp = /Content-Security-Policy\s+"([^"]+)"/.exec(htaccess)?.[1] ?? "";
+  const frameSrc = /(?:^|;)\s*frame-src\s+([^;]+)/.exec(csp)?.[1] ?? "";
+  assert.match(frameSrc, /'self'/, "frame-src must include 'self'");
+});
