@@ -12,10 +12,11 @@
     "lint": "eslint",
     "radar:import": "node scripts/import-food-radar.mjs",
     "radar:import:csv": "node scripts/import-food-radar-csv.mjs",
-    "radar:validate": "node scripts/import-food-radar.mjs --check src/data/foodRadar.generated.json"
+    "radar:validate": "node scripts/import-food-radar.mjs --check src/data/foodRadar.generated.json",
+    "test": "node --test"
   },
   "dependencies": {
-    "next": "16.3.4",
+    "next": "16.4.0",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
@@ -25,8 +26,9 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.3.4",
+    "eslint-config-next": "16.4.0",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "license": "UNLICENSED"
 }

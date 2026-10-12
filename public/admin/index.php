@@ -175,18 +175,20 @@ function gh_api(string $method, string $url, string $token, ?array $body = null)
     curl_setopt_array($ch, [
         CURLOPT_CUSTOMREQUEST  => $method,
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_HTTPHEADER     => [
-            'Authorization: Bearer ' . $token,
+        // Senza token (sviluppo locale) niente header Authorization: la lettura
+        // del repo pubblico funziona comunque, il salvataggio no.
+        CURLOPT_HTTPHEADER     => array_values(array_filter([
+            $token !== '' ? 'Authorization: Bearer ' . $token : null,
             'Accept: application/vnd.github+json',
             'User-Agent: vinisud-admin',
             'X-GitHub-Api-Version: 2022-11-28',
-        ],
+        ])),
         CURLOPT_TIMEOUT => 20,
     ]);
     if ($body !== null) curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body));
     $raw = curl_exec($ch);
     $code = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
+    if (PHP_VERSION_ID < 80000) { curl_close($ch); } // no-op da PHP 8.0, deprecata in 8.5
     return ['code' => $code, 'data' => $raw ? json_decode($raw, true) : null];
 }
 function gh_get_file(string $repo, string $path, string $branch, string $token): array {

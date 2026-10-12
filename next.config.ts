@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Export statico: stesso output per Vercel e per Aruba (cartella out/).
+  // Export statico: output nella cartella out/, pubblicato su Aruba via FTPS (vedi .github/workflows/deploy.yml).
   // Il CMS in public/admin/ viene copiato as-is in out/admin/ e servito a /admin/.
   output: "export",
 

@@ -1,0 +1,28 @@
+name: CI
+
+# Controllo di qualita' su ogni push a main (anche quelli del CMS e del bot
+# Diario del Sud). Non blocca il deploy: serve a far emergere subito problemi
+# di lint, build, test o vulnerabilita' nelle dipendenze di produzione.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npx tsc --noEmit
+      - run: npm run build
+      - name: Installa PHP
+        run: sudo apt-get update -qq && sudo apt-get install -y php-cli -qq
+      - run: find public -name '*.php' -print0 | xargs -0 -r -n1 php -l
+      - run: npm test
+      - run: npm audit --omit=dev --audit-level=high
