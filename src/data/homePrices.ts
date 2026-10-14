@@ -3,8 +3,9 @@
 // Prezzi allineati alla biglietteria, che è ciò che il pubblico paga davvero:
 // €25 + €10 bicchiere = €35, €50 + €10 = €60, €70 + €10 = €80, più commissioni.
 // I €10 del bicchiere serigrafato NON sono facoltativi: sono dentro il totale
-// di ogni Pass in vendita. Bicchiere e portabicchiere restano forniti in
-// prestito e vanno restituiti a fine manifestazione.
+// di ogni Pass in vendita. Il testo della biglietteria parlava di bicchiere "in
+// prestito, da restituire": Edvige ha chiarito il 14/10/2026 che si paga e si
+// tiene, quindi quella frase e' stata tolta dal sito.
 // Annulla la regola del 7/10/2026 (prenotazione gratuita, primi 50).
 // L'acquisto avviene su Azzurro Service (vivaticket): vedi PASS_URLS qui sotto.
 // I prodotti in gara restano scelti da un bando della Regione Campania.

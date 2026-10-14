@@ -320,9 +320,8 @@ export default function PassGiuratoPage() {
               alla segreteria le Sfide che hai scelto: riceverai la conferma via email.
             </p>
             <p className="mt-2 text-[0.82rem] leading-[1.55] text-[var(--color-muted)]">
-              €35 una Sfida · €60 tre Sfide · €80 tutte le nove, bicchiere serigrafato compreso,
-              più commissioni. L&rsquo;Organizzazione fornisce in prestito bicchiere e
-              portabicchiere per le degustazioni: vanno restituiti al termine della manifestazione.
+              €35 una Sfida · €60 tre Sfide · €80 tutte le nove, più commissioni. Bicchiere
+              serigrafato e portabicchiere sono compresi nel prezzo e restano al Giurato.
             </p>
             <div className="mt-4 flex justify-center">
               <Button href={PASS_URLS.tutti} variant="primary" size="md" target="_blank" rel="noopener noreferrer">
