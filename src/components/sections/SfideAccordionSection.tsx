@@ -4,7 +4,19 @@ import { useEffect, useState } from "react";
 import Button from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
 
-type Tier = { name: string; price?: string; featured?: boolean; badge?: string; features: string[] };
+type Tier = {
+  name: string;
+  price?: string;
+  // Riga sotto il prezzo: "+ €10 bicchiere serigrafato — totale €35 + commissioni".
+  priceDetail?: string;
+  featured?: boolean;
+  badge?: string;
+  features: string[];
+  // 14/10/2026: ogni Pass ha il suo link sulla biglietteria Azzurro Service
+  // (vivaticket), quindi il bottone sta sul singolo tier e non solo in fondo.
+  ctaHref?: string;
+  ctaLabel?: string;
+};
 type Addon = {
   // Tier a cui l'add-on è applicabile. Ora tutti e 3 (richiesta 7/9/2026:
   // esteso da "solo Pass Gran Giurato" a "tutti i Pass"). Un solo bottone
@@ -16,7 +28,10 @@ type Addon = {
   detail?: string;
   price: string;
   priceValue: number;
-  paypalHostedButtonIdConAddon: Record<string, string>;
+  // 14/10/2026: l'acquisto avviene sulla biglietteria esterna, non piu' con
+  // i bottoni PayPal del sito. Il campo resta solo per non rompere eventuali
+  // contenuti storici.
+  paypalHostedButtonIdConAddon?: Record<string, string>;
 };
 type NamedIcon = { icon: string; name: string; descrizione?: string };
 type Phase = { time: string; title: string; desc: string };
@@ -31,6 +46,8 @@ type Item = {
   // Aliquota IVA (0.22 = 22%), richiesta esplicita 7/9/2026: sul sito non si
   // scrive mai il prezzo pieno, sempre "base + IVA (tot. X)".
   ivaRate?: number;
+  // Nota prezzi: va sotto i tier e l'add-on, non sopra come `note`.
+  priceFootnote?: string;
   ctaLabel?: string;
   ctaHref?: string;
   extraTitle?: string;
@@ -124,11 +141,26 @@ export function Panel({ item, index, email }: { item: Item; index: number; email
                   {t.price}
                 </p>
               ) : null}
+              {t.priceDetail ? (
+                <p
+                  className="mt-1 text-[0.8rem] leading-[1.45] text-[var(--color-muted)]"
+                  data-content-key={k(`tiers.${i}.priceDetail`)}
+                >
+                  {t.priceDetail}
+                </p>
+              ) : null}
               <ul className="mt-3 space-y-1 text-[0.85rem] leading-snug">
                 {t.features.map((f, j) => (
                   <li key={j}>• {f}</li>
                 ))}
               </ul>
+              {t.ctaHref ? (
+                <div className="mt-4">
+                  <CtaButton href={t.ctaHref} email={email}>
+                    {t.ctaLabel ?? "Acquista il tuo Pass"}
+                  </CtaButton>
+                </div>
+              ) : null}
             </div>
           ))}
         </div>
@@ -153,6 +185,11 @@ export function Panel({ item, index, email }: { item: Item; index: number; email
             <p className="mt-1.5 text-[0.82rem] leading-[1.55] text-[var(--color-muted)]">{item.addon.detail}</p>
           ) : null}
         </div>
+      ) : null}
+      {item.priceFootnote ? (
+        <p className="text-[0.78rem] leading-[1.55] text-[var(--color-muted)]" data-content-key={k("priceFootnote")}>
+          {item.priceFootnote}
+        </p>
       ) : null}
 
       {item.concorsiTitle ? (

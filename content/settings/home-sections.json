@@ -195,40 +195,53 @@
         "kind": "biglietti",
         "label": "Biglietti & Pass",
         "heading": "L'ingresso alla manifestazione è libero e gratuito",
-        "subheading": "Il Pass Giurato che ti consente di degustare il prodotto e votare si prenota compilando il modulo e inviandolo, via mail, alla nostra segreteria. Saranno accettati solo i primi 50 prenotati.",
+        "subheading": "9 Gran Premi del Gusto, 9 Sfide da assaggiare e votare. Con il Pass Giurato degusti le eccellenze in gara, esprimi il tuo voto e contribuisci a decretare i vincitori: il voto della Giuria Popolare vale il 70% del risultato finale.",
         "sectionTitle": "Diventa Giurato Popolare",
         "tiers": [
           {
             "name": "1 Sfida a scelta",
+            "price": "€35",
+            "priceDetail": "€25 Pass + €10 bicchiere serigrafato, più commissioni",
             "featured": false,
             "features": [
               "Posto riservato per la Sfida scelta",
               "Degustazione dei prodotti in gara",
               "Diritto di voto nella Giuria Popolare"
-            ]
+            ],
+            "ctaHref": "https://azzurroservice.vivaticket.it/it/tour/il-gran-premio-del-gusto-vini-e-olisud/5026",
+            "ctaLabel": "Acquista il tuo Pass"
           },
           {
             "name": "3 Sfide a scelta",
+            "price": "€60",
+            "priceDetail": "€50 Pass + €10 bicchiere serigrafato, più commissioni",
             "featured": false,
             "features": [
               "Posto riservato per le 3 Sfide scelte",
               "Degustazione dei prodotti in gara",
               "Diritto di voto nella Giuria Popolare per ogni Sfida"
-            ]
+            ],
+            "ctaHref": "https://azzurroservice.vivaticket.it/it/event/pass-giurato-3-sfide/315885",
+            "ctaLabel": "Acquista il tuo Pass"
           },
           {
             "name": "Pass Gran Giurato — Tutte le 9 Sfide",
+            "price": "€80",
+            "priceDetail": "€70 Pass + €10 bicchiere serigrafato, più commissioni",
             "featured": true,
             "badge": "⭐",
             "features": [
               "Posto riservato per tutte le 9 Sfide",
               "Degustazione dei prodotti in gara",
               "Diritto di voto nella Giuria Popolare per ogni Sfida"
-            ]
+            ],
+            "ctaHref": "https://azzurroservice.vivaticket.it/it/event/pass-gran-giurato-9-sfide/315918",
+            "ctaLabel": "Acquista il tuo Pass"
           }
         ],
-        "ctaLabel": "Prenota il tuo Pass",
-        "ctaHref": "/pass-giurato/",
+        "priceFootnote": "L'Organizzazione fornisce in prestito il bicchiere e il portabicchiere per le degustazioni: il Giurato dovrà restituirli al termine della manifestazione. Prezzi dei Pass Giurato, escluse eventuali commissioni e costi aggiuntivi indicati al momento dell'acquisto.",
+        "ctaLabel": "Vedi tutti i Pass sulla biglietteria",
+        "ctaHref": "https://napoli-racing-show.metooo.com/pages/il-gran-premio-del-gusto",
         "extraTitle": "🩺 Prevenzione gratuita con ASL Napoli 1 Centro",
         "extraBody": "I maggiorenni in possesso del Biglietto Tribuna del Napoli Racing Show o del Pass Giuria Popolare del Gran Premio del Gusto, previa prenotazione e fino a esaurimento dei posti disponibili, potranno effettuare visite gratuite di prevenzione presso il Camper della Salute dell'ASL Napoli 1 Centro nelle giornate di venerdì 27 e sabato 28 novembre 2026.",
         "extraCtaLabel": "Prenota la tua visita gratuita",

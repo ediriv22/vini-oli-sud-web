@@ -10,6 +10,8 @@ import {
   submitLeadForm,
   type SubmitStatus,
 } from "@/components/forms/FormFields";
+import Button from "@/components/ui/Button";
+import { PASS_URLS } from "@/data/homePrices";
 import { siteConfig } from "@/data/site";
 
 /**
@@ -21,15 +23,17 @@ import { siteConfig } from "@/data/site";
  * Nota maggiore età: il modulo richiede la data di nascita e blocca lato
  * server chi ha meno di 18 anni (vedi lead.php).
  *
- * 7/10/2026 (richiesta Edvige, regola cambiata): il Pass Giurato NON è più
- * in vendita. Niente prezzo, niente PayPal/piattaforma esterna. Si prenota
- * gratuitamente: tetto di 50 posti TOTALI sul Pass Giurato (confermato da
- * Edvige), indipendente dal conteggio già esistente per Sfida
- * (sfideCounts/countsLimit sotto, letto da pass-giurato-counts.php — non
- * si somma né lo sostituisce, backend non in questa repo, non toccato qui).
- * Kit giurato (bicchiere+portabicchiere) eliminato del tutto, anche la
- * versione in prestito: confermato da Edvige, nessuna versione gratuita da
- * tenere.
+ * 14/10/2026 (richiesta Edvige, regola cambiata di nuovo): il Pass Giurato
+ * torna A PAGAMENTO. Prezzi presi dalla biglietteria ufficiale, perché è
+ * quello che il pubblico paga davvero: €25 + €10 bicchiere = €35, €50 + €10 =
+ * €60, €70 + €10 = €80, più commissioni. Cade il tetto dei 50 posti gratuiti
+ * del 7/10/2026; resta attivo il conteggio per Sfida (sfideCounts/countsLimit
+ * sotto, letto da pass-giurato-counts.php, backend non in questa repo, non
+ * toccato qui).
+ *
+ * L'acquisto avviene su Azzurro Service (vivaticket), link in
+ * src/data/homePrices.ts → PASS_URLS. Il sito non incassa pagamenti: questo
+ * modulo serve alla segreteria per sapere quali Sfide ha scelto il Giurato.
  */
 
 export default function PassGiuratoPage() {
@@ -119,9 +123,9 @@ export default function PassGiuratoPage() {
           Diventa Giurato Popolare
         </h1>
         <p className="mx-auto mt-3 max-w-[42ch] text-[0.94rem] leading-[1.6] text-[var(--color-muted)]">
-          Il Pass Giurato che ti consente di degustare il prodotto e votare si prenota compilando
-          il modulo e inviandolo, via mail, alla nostra segreteria. Saranno accettati solo i primi
-          50 prenotati.
+          9 Gran Premi del Gusto, 9 Sfide da assaggiare e votare. Con il Pass Giurato degusti le
+          eccellenze in gara, esprimi il tuo voto e contribuisci a decretare i vincitori: €35 per
+          una Sfida, €60 per tre Sfide, €80 per tutte e nove, bicchiere serigrafato compreso.
         </p>
         <p className="mx-auto mt-3 max-w-[46ch] text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
           Il Pass Giurato è strettamente personale e non cedibile: va conservato dal titolare per
@@ -306,13 +310,25 @@ export default function PassGiuratoPage() {
 
         </fieldset>
 
-        {/* Nessun pagamento: il modulo si invia alla segreteria, solo i primi 50 prenotati. */}
+        {/* 14/10/2026: il Pass si acquista su Azzurro Service (vivaticket),
+            non qui. Questo modulo resta per dire alla segreteria quali Sfide
+            ha scelto il Giurato. Nessun pagamento viene incassato dal sito. */}
         <fieldset className="flex flex-col gap-5">
           <div className="rounded-[0.9rem] border border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)] p-4 text-center">
             <p className="text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
-              Compila il modulo e invialo alla nostra segreteria: a prenotazione ricevuta ti
-              confermeremo via email. Saranno accettati solo i primi 50 prenotati.
+              Il Pass si acquista sulla biglietteria ufficiale. Compila il modulo per comunicare
+              alla segreteria le Sfide che hai scelto: riceverai la conferma via email.
             </p>
+            <p className="mt-2 text-[0.82rem] leading-[1.55] text-[var(--color-muted)]">
+              €35 una Sfida · €60 tre Sfide · €80 tutte le nove, bicchiere serigrafato compreso,
+              più commissioni. L&rsquo;Organizzazione fornisce in prestito bicchiere e
+              portabicchiere per le degustazioni: vanno restituiti al termine della manifestazione.
+            </p>
+            <div className="mt-4 flex justify-center">
+              <Button href={PASS_URLS.tutti} variant="primary" size="md" target="_blank" rel="noopener noreferrer">
+                Acquista il tuo Pass
+              </Button>
+            </div>
           </div>
         </fieldset>
 

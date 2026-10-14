@@ -1,9 +1,25 @@
 // Sezione home "Prenotazioni e selezione" + "Pacchetti sponsor".
-// 7/10/2026 (richiesta Edvige): il Pass Giurato non è più in vendita ma si
-// prenota gratuitamente (solo i primi 50) e i prodotti in gara sono scelti
-// da un bando della Regione Campania: niente prezzi né quote nella sezione
-// biglietti. I pacchetti sponsor restano quelli del flyer (src/app/sponsor/page.tsx),
+// 14/10/2026 (richiesta Edvige): il Pass Giurato torna A PAGAMENTO.
+// Prezzi allineati alla biglietteria, che è ciò che il pubblico paga davvero:
+// €25 + €10 bicchiere = €35, €50 + €10 = €60, €70 + €10 = €80, più commissioni.
+// I €10 del bicchiere serigrafato NON sono facoltativi: sono dentro il totale
+// di ogni Pass in vendita. Bicchiere e portabicchiere restano forniti in
+// prestito e vanno restituiti a fine manifestazione.
+// Annulla la regola del 7/10/2026 (prenotazione gratuita, primi 50).
+// L'acquisto avviene su Azzurro Service (vivaticket): vedi PASS_URLS qui sotto.
+// I prodotti in gara restano scelti da un bando della Regione Campania.
+// I pacchetti sponsor restano quelli del flyer (src/app/sponsor/page.tsx),
 // riportati esatti, senza aggiunte non confermate.
+
+// Biglietteria ufficiale Azzurro Service (vivaticket), verificata il 14/10/2026
+// dalla pagina Metooo del Napoli Racing Show: tutti e tre i link rispondono 200.
+// Unico punto in cui vivono questi URL: le pagine li importano da qui.
+export const PASS_URLS = {
+  unaSfida: "https://azzurroservice.vivaticket.it/it/tour/il-gran-premio-del-gusto-vini-e-olisud/5026",
+  treSfide: "https://azzurroservice.vivaticket.it/it/event/pass-giurato-3-sfide/315885",
+  noveSfide: "https://azzurroservice.vivaticket.it/it/event/pass-gran-giurato-9-sfide/315918",
+  tutti: "https://napoli-racing-show.metooo.com/pages/il-gran-premio-del-gusto",
+} as const;
 
 type TicketCard = {
   name: string;
@@ -19,29 +35,34 @@ type TicketCard = {
 export const ticketsSection = {
   badge: "Ingresso al Villaggio gratuito",
   intro:
-    "Per degustare e votare nelle 9 Sfide serve il Pass Giurato: il voto della Giuria Popolare vale il 70% del risultato finale. Si prenota compilando il modulo e inviandolo, via mail, alla nostra segreteria: saranno accettati solo i primi 50 prenotati.",
+    "Per degustare e votare nelle 9 Sfide serve il Pass Giurato: il voto della Giuria Popolare vale il 70% del risultato finale. Assaggia le eccellenze in gara, esprimi il tuo voto e contribuisci a decretare i vincitori.",
   cards: [
     {
       name: "Pass Giurato",
-      subtitle: "1 Sfida",
+      subtitle: "1 Sfida a scelta",
+      price: "€35",
+      priceNote: "€25 Pass + €10 bicchiere serigrafato, più commissioni",
       featured: false,
-      ctaLabel: "Prenota il tuo Pass",
-      ctaHref: "/pass-giurato/",
+      ctaLabel: "Acquista il tuo Pass",
+      ctaHref: PASS_URLS.unaSfida,
     },
     {
       name: "Pass Giurato",
-      subtitle: "3 Sfide",
+      subtitle: "3 Sfide a scelta",
+      price: "€60",
+      priceNote: "€50 Pass + €10 bicchiere serigrafato, più commissioni",
       featured: false,
-      ctaLabel: "Prenota il tuo Pass",
-      ctaHref: "/pass-giurato/",
+      ctaLabel: "Acquista il tuo Pass",
+      ctaHref: PASS_URLS.treSfide,
     },
     {
       name: "Pass Gran Giurato",
       subtitle: "Tutte le 9 Sfide",
+      price: "€80",
+      priceNote: "€70 Pass + €10 bicchiere serigrafato, più commissioni",
       featured: true,
-      ctaLabel: "Prenota il tuo Pass",
-      ctaHref: "/pass-giurato/",
-      note: "Saranno accettati solo i primi 50 prenotati.",
+      ctaLabel: "Acquista il tuo Pass",
+      ctaHref: PASS_URLS.noveSfide,
     },
     {
       name: "Selezione prodotti",
@@ -53,7 +74,7 @@ export const ticketsSection = {
     },
   ] as readonly TicketCard[],
   footnote:
-    "Pass personale e non cedibile, riservato ai maggiorenni.",
+    "Pass personale e non cedibile, riservato ai maggiorenni. Prezzi dei Pass Giurato, escluse eventuali commissioni e costi aggiuntivi indicati al momento dell'acquisto.",
 } as const;
 
 export const sponsorPackagesSection = {
