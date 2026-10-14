@@ -1,5 +1,55 @@
 [
   {
+    "id": "4fd7fd9bc756",
+    "category": "Radar del Sud",
+    "title": "Pizza della settimana: Attaccami di Madison e Piedirosso Contrada Salandra",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/pizza-della-settimana-attaccami-di-madison-e-piedirosso-contrada-salandra/303122/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-13"
+  },
+  {
+    "id": "be4652a6fdb1",
+    "category": "Radar del Sud",
+    "title": "Dieta Mediterranea, un dialogo a più voci al Campania Libri Festival",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/dieta-mediterranea-un-dialogo-a-piu-voci-al-campania-libri-festival/303118/",
+    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-13"
+  },
+  {
+    "id": "f89005573a39",
+    "category": "Radar del Sud",
+    "title": "Ragù indimenticabile al tavolo sociale del ristorante di Salerno",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/cucina-uvenude-ristorante-salerno",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-12"
+  },
+  {
+    "id": "b08e3e316c4a",
+    "category": "Radar del Sud",
+    "title": "TerraCore – Osteria Campana al Conterraneo Hotel",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/terracore-osteria-campana-al-conterraneo-hotel/303018/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-12"
+  },
+  {
+    "id": "2960c6b149fb",
+    "category": "Radar del Sud",
+    "title": "Il ristorante e tapas bar a Napoli che gioca bene con piatti e prezzi",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/joca-ristorante-tapas-bar-napoli",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-12"
+  },
+  {
     "id": "94a9e37387c5",
     "category": "Radar del Sud",
     "title": "Addio alla stella Michelin in Puglia: Pietro Penna lascia Casamatta",
@@ -248,55 +298,5 @@
     "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-10-02"
-  },
-  {
-    "id": "407b19a61be4",
-    "category": "Calici di Magna Grecia",
-    "title": "Terra di Ruscello, Rosso Campania Igp 2022: i fratelli Tammaro raddoppiano",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/terra-di-ruscello-rosso-campania-igp-2022-i-fratelli-tammaro-raddoppiano/302323/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-01"
-  },
-  {
-    "id": "8af72440b7a9",
-    "category": "Business con Anima",
-    "title": "Dove comprare la torta caprese più famosa ma solo per 1 mese",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/torta-caprese-annuccia",
-    "note": "Un segnale di mercato per le eccellenze del Sud, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-01"
-  },
-  {
-    "id": "a0061765ed3b",
-    "category": "Calici di Magna Grecia",
-    "title": "Il vino del futuro ha 500 anni: la rivoluzione di due giovani cugini nel Monferrato",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/francesca-davide-bonzano-castello-uviglie-giovani-produttori-2027/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-01"
-  },
-  {
-    "id": "f781516820b0",
-    "category": "Oro Verde",
-    "title": "Marina Cvetić e i suoi Granelli d'Abruzzo. Il sapore inatteso del Montepulciano",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/marina-cvetic-e-i-suoi-granelli-dabruzzo-il-sapore-inatteso-del-montepulciano/302289/",
-    "note": "Un segnale dall'olio del Sud, focus Abruzzo.",
-    "noteSource": "auto",
-    "date": "2026-09-30"
-  },
-  {
-    "id": "74efd355dbcb",
-    "category": "Calici di Magna Grecia",
-    "title": "Vendemmiamo la Catalanesca: raccolta dell'uva, degustazione e pranzo tra i Vigneti del Vesuvio",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vendemmiamo-la-catalanesca-raccolta-delluva-degustazione-e-pranzo-tra-i-vigneti-del-vesuvio/302216/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-09-29"
   }
 ]
