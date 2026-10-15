@@ -7,7 +7,7 @@ declare(strict_types=1);
  *
  * Endpoint pubblico di sola lettura: quante iscrizioni Pass Giurato esistono
  * già per ciascuna delle 9 Sfide, per disattivare in pagina (/pass-giurato/)
- * la selezione di una Sfida che ha già raggiunto i 200 posti. Nessun dato
+ * la selezione di una Sfida che ha già raggiunto i 60 posti. Nessun dato
  * personale esposto: solo nome Sfida + conteggio.
  */
 

@@ -431,7 +431,7 @@ if ($requestType === 'iscrizione-giurato') {
         }
     }
 
-    // Limite 200 Giurati Popolari per Sfida (richiesta esplicita): il CSV
+    // Limite 60 Giurati Popolari per Sfida (confermato 15/10/2026): il CSV
     // locale è la fonte di verità, stessa lettura usata da
     // pass-giurato-counts.php per disattivare la scelta in pagina. Controllo
     // server-side qui per non fidarsi solo del blocco lato client.

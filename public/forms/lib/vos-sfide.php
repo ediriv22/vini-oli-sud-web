@@ -16,9 +16,11 @@ const VOS_CONCORSI_VALIDI = [
 ];
 
 /**
- * Limite di Giurati Popolari per ciascuna Sfida (richiesta esplicita).
+ * Limite di Giurati Popolari per ciascuna Sfida.
+ * 15/10/2026 (confermato da Edvige): sono 60, non 200. Il numero vecchio resta
+ * ancora scritto sulla biglietteria (Metooo e Azzurro Service): va fatto correggere.
  */
-const VOS_LIMITE_GIURATI_PER_SFIDA = 200;
+const VOS_LIMITE_GIURATI_PER_SFIDA = 60;
 
 // 7/10/2026: il Pass Giurato non e' piu' in vendita, si prenota gratis e il
 // tetto e' di 50 prenotazioni TOTALI (confermato da Edvige). Si contano solo

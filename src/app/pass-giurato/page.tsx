@@ -45,12 +45,13 @@ export default function PassGiuratoPage() {
   const [sfideScelte, setSfideScelte] = useState<string[]>([]);
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | undefined>();
-  // Posti rimasti per Sfida (200 a Sfida, richiesta esplicita): letti da
+  // Posti rimasti per Sfida (60 a Sfida, confermato da Edvige il 15/10/2026):
+  // letti da
   // pass-giurato-counts.php, che conta le iscrizioni già salvate nel CSV
   // sul server. Una Sfida esaurita si disattiva da sola, senza bisogno di
   // toccare il codice quando si riempie.
   const [sfideCounts, setSfideCounts] = useState<Record<string, number>>({});
-  const [countsLimit, setCountsLimit] = useState<number>(200);
+  const [countsLimit, setCountsLimit] = useState<number>(60);
 
   useEffect(() => {
     let cancelled = false;
@@ -89,7 +90,7 @@ export default function PassGiuratoPage() {
     setSfideScelte((prev) => {
       if (prev.includes(name)) return prev.filter((s) => s !== name);
       if (prev.length >= sfideAttese) return prev; // limite Pass raggiunto
-      if (isSfidaFull(name)) return prev; // 200 posti già occupati per questa Sfida
+      if (isSfidaFull(name)) return prev; // 60 posti già occupati per questa Sfida
       return [...prev, name];
     });
   }
@@ -194,7 +195,7 @@ export default function PassGiuratoPage() {
             )}
           </div>
           <p className="text-center text-[0.8rem] italic text-[var(--color-muted)]">
-            200 Giudici Popolari Ufficiali per ciascuna Sfida. Dettaglio di come si svolge ogni
+            Solo 60 Giudici Popolari Ufficiali per ciascuna Sfida. Dettaglio di come si svolge ogni
             Sfida:{" "}
             <a href="/format/gran-premio-del-gusto/" className="underline">
               vai alla pagina Gran Premio del Gusto
@@ -209,7 +210,7 @@ export default function PassGiuratoPage() {
             {tiers.map((tier) => {
               const selected = tipoPass === tier.name;
               // Il Pass Gran Giurato copre tutte le 9 Sfide: se anche una
-              // sola ha già raggiunto i 200 posti, questo Pass non è più
+              // sola ha già raggiunto i 60 posti, questo Pass non è più
               // acquistabile per intero (le Sfide singole restano invece
               // scelte una per una più sotto, dove l'esclusione è puntuale).
               const isGranGiurato = tier.name.startsWith("Pass Gran Giurato");
