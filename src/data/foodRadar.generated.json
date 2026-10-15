@@ -1,5 +1,35 @@
 [
   {
+    "id": "981016412aa4",
+    "category": "Oro Verde",
+    "title": "In Puglia gli olivicoltori bloccano l'A14 e lasciano le olive sugli alberi: \"Raccoglierle costa troppo\"",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/protesta-olio-puglia-olivicoltori-a14-prezzi/",
+    "note": "Un segnale dall'olio del Sud, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-10-14"
+  },
+  {
+    "id": "05e3dfcbb3cc",
+    "category": "Radar del Sud",
+    "title": "Sorrento, l'India incontra il golfo: Chef Madhab firma una cena d'autore all'Excelsior Vittoria",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/sorrento-lindia-incontra-il-golfo-chef-madhab-firma-una-cena-dautore-allexcelsior-vittoria/303148/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-14"
+  },
+  {
+    "id": "58422f2b496d",
+    "category": "Calici di Magna Grecia",
+    "title": "La rivincita dei vini pop nell'era dei nuovi consumi. Il Bardolino punta su versatilità, turismo e mercato italiano",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/vini-pop-bardolino-centenario/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-14"
+  },
+  {
     "id": "4fd7fd9bc756",
     "category": "Radar del Sud",
     "title": "Pizza della settimana: Attaccami di Madison e Piedirosso Contrada Salandra",
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-10-04"
-  },
-  {
-    "id": "25b7fcb2e59c",
-    "category": "Calici di Magna Grecia",
-    "title": "Trent'anni di Pinot Bianco: così il vino di Terlano ha cambiato il modo di pensare i grandi bianchi italiani",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/pinot-bianco-cantina-terlano-invecchiamento-vini-bianchi/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-04"
-  },
-  {
-    "id": "beec9d1d5c5b",
-    "category": "Calici di Magna Grecia",
-    "title": "A San Donaci rinasce la cantina Candido: la famiglia Paolo Leo rilancia la storia del vino salentino",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/a-san-donaci-rinasce-la-cantina-candido-la-famiglia-paolo-leo-rilancia-la-storia-del-vino-salentino/302443/",
-    "note": "Una voce dal mondo del vino, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-10-02"
-  },
-  {
-    "id": "d5382756b413",
-    "category": "Radar del Sud",
-    "title": "A Gardone Riviera il nuovo palazzo del gusto firmato Massari",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/a-gardone-riviera-il-nuovo-palazzo-del-gusto-firmato-massari/302464/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-02"
   }
 ]
