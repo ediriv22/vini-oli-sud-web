@@ -15,10 +15,11 @@ export const metadata = createPageMetadata(
  * linkato da hooks_cta_vinisud.json e da post già pubblicati) ma il modulo
  * e la quota sono stati rimossi: non c'è più nulla da inviare qui.
  *
- * Nome del bando, link ufficiale e scadenze: Edvige li manda appena
- * escono (confermato 7/10/2026). Segnaposto sotto ([BANDO_LINK],
- * [BANDO_SCADENZA]) pronti per un find&replace — non riempiti con dati
- * inventati, non vanno pubblicati così com'è.
+ * 15/10/2026: il bando è uscito, link mandato da Edvige. I dati qui sotto
+ * (requisiti, e-mail per la domanda, quote, scadenza 31/10/2026) sono letti
+ * dalla pagina ufficiale della Regione Campania:
+ * https://agricoltura.regione.campania.it/fiere/racing-show-2026.html
+ * Niente più segnaposto.
  */
 export default function SelezioneProdottoPage() {
   const concorsi = siteConfig.sfideAccordion.items.find((i) => i.kind === "iscrivi")?.concorsi ?? [];
@@ -42,7 +43,33 @@ export default function SelezioneProdottoPage() {
           pubblicherà un bando apposito. Per ogni ulteriore informazione inviate una mail alla
           nostra segreteria.
         </p>
-        {/* TODO(bando): quando escono nome, link e scadenza del bando Regione Campania, aggiungere qui un paragrafo con link e data. Nessun segnaposto visibile in pagina. */}
+        <p className="mx-auto mt-5 max-w-[42ch] text-[0.96rem] leading-[1.65] text-[var(--color-muted)]">
+          Il bando è aperto. Possono candidarsi le aziende agroalimentari con sede operativa
+          in Campania, iscritte alla Camera di Commercio competente. La domanda si presenta
+          per e-mail a{" "}
+          <a
+            href="mailto:portale.agroalimenta@regione.campania.it"
+            className="font-semibold text-[var(--color-wine)]"
+          >
+            portale.agroalimenta@regione.campania.it
+          </a>
+          , allegando il logo aziendale e il documento d&rsquo;identità del titolare.
+          Quota di partecipazione al concorso: € 200,00 + IVA; stand espositivo 4x4 m:
+          € 2.500,00 + IVA.
+        </p>
+        <p className="mx-auto mt-4 max-w-[42ch] text-[0.96rem] leading-[1.65] text-[var(--color-ink-strong)]">
+          <strong>Le domande si chiudono il 31 ottobre 2026.</strong>
+        </p>
+        <p className="mt-5">
+          <a
+            href="https://agricoltura.regione.campania.it/fiere/racing-show-2026.html"
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold text-[var(--color-wine)]"
+          >
+            Leggi il bando sul sito della Regione Campania
+          </a>
+        </p>
       </div>
 
       {concorsi.length ? (
