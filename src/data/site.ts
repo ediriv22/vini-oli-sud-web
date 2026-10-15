@@ -132,7 +132,7 @@ export const siteConfig = {
   sponsor: homeSections.sponsor,
   eventDetails: homeSections.eventDetails,
   alboDoro: homeSections.alboDoro,
-  // Fisarmonica "Partecipa" (Giurato / Selezione Prodotti / Diventa Sponsor)
+  // Fisarmonica "Partecipa" (Giurato / Selezione Aziende / Diventa Sponsor)
   // e blocco intro "Gran Premio del Gusto"
   // — modificabili dal pannello /admin, area "Sezioni Home". Vedi
   // SfideAccordionSection e GranPremioIntroSection.

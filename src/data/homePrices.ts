@@ -68,7 +68,7 @@ export const ticketsSection = {
       ctaHref: PASS_URLS.noveSfide,
     },
     {
-      name: "Selezione prodotti",
+      name: "Selezione aziende",
       subtitle: "Bando Regione Campania",
       featured: false,
       ctaLabel: "Come funziona",

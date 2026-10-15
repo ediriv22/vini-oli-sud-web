@@ -30,7 +30,7 @@ const COLLEGAMENTI = [
     cta: "Diventa Giurato",
   },
   {
-    titolo: "Selezione prodotti",
+    titolo: "Selezione aziende",
     testo:
       "Le aziende che desiderano concorrere alle Sfide saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania, che ha pubblicato un bando apposito. Le domande si chiudono il 31 ottobre 2026.",
     href: "/format/gran-premio-del-gusto/iscrizione/",

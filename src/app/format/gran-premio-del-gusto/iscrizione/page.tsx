@@ -1,7 +1,7 @@
 import { createPageMetadata, siteConfig } from "@/data/site";
 
 export const metadata = createPageMetadata(
-  "Selezione prodotti",
+  "Selezione aziende per il Gran Premio del Gusto",
   "Le aziende che desiderano concorrere alle Sfide del Gran Premio del Gusto saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania, che ha pubblicato un bando apposito.",
 );
 
@@ -29,7 +29,7 @@ export default function SelezioneProdottoPage() {
       <div className="section-shell mx-auto max-w-[46rem] text-center">
         <p className="eyebrow text-center">Gran Premio del Gusto 2026</p>
         <h1 className="display-balance mt-4 font-display text-[clamp(1.9rem,4vw,2.6rem)] leading-[1.05] text-[var(--color-ink-strong)]">
-          Selezione dei prodotti in gara
+          Selezione aziende per il Gran Premio del Gusto
         </h1>
         <p className="mt-3 font-display text-[1.1rem] text-[var(--color-wine)]">
           Le Sfide della Magna Grecia
