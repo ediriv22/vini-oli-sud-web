@@ -131,6 +131,29 @@ export default function PassGiuratoPage() {
           tutta la durata della manifestazione (27-28-29 novembre 2026). In caso di smarrimento non
           sarà possibile richiedere una sostituzione né l&rsquo;accesso alle Sfide.
         </p>
+
+        {/* 15/10/2026 (Edvige: "questo perche' sta in basso deve stare in alto"):
+            la scarsita' e' il primo argomento, non una nota a fondo modulo. */}
+        <div className="mx-auto mt-8 max-w-[42rem] rounded-[0.9rem] border border-[rgba(255,215,87,0.5)] bg-[rgba(255,247,214,0.5)] px-5 py-5 text-center">
+          <p className="font-ui text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-sand-strong)]">
+            Solo 60 posti per ogni Sfida
+          </p>
+          <p className="mt-3 font-display text-[1.25rem] text-[var(--color-ink-strong)]">
+            Con il Pass il tuo posto in giuria è assicurato.
+          </p>
+          <p className="mt-3 text-[0.92rem] leading-[1.65] text-[var(--color-muted)]">
+            Il Pass Giurato garantisce la partecipazione alle degustazioni e alle votazioni
+            delle Sfide che hai scelto. I posti riservati a chi ha il Pass sono soltanto 60
+            per ciascun Gran Premio del Gusto.
+          </p>
+          <p className="mt-3 text-[0.92rem] leading-[1.65] text-[var(--color-muted)]">
+            Chi non ha il Pass può essere ammesso alla Giuria Popolare solo a discrezione
+            dell&rsquo;Organizzazione, e soltanto se restano posti liberi.
+          </p>
+          <p className="mt-3 text-[0.92rem] leading-[1.65] text-[var(--color-ink-strong)]">
+            Non lasciarlo al caso: scegli le tue Sfide e prendi il Pass.
+          </p>
+        </div>
       </div>
 
       <form
@@ -191,29 +214,6 @@ export default function PassGiuratoPage() {
                 </div>
               ),
             )}
-          </div>
-          {/* 15/10/2026, testo dettato da Edvige: la scarsita' e' il punto. Il Pass
-              garantisce il posto; senza Pass si entra solo se avanza spazio e solo
-              se lo decide l'Organizzazione. */}
-          <div className="rounded-[0.9rem] border border-[rgba(255,215,87,0.5)] bg-[rgba(255,247,214,0.5)] px-5 py-5 text-center">
-            <p className="font-ui text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-sand-strong)]">
-              Solo 60 posti per ogni Sfida
-            </p>
-            <p className="mt-3 font-display text-[1.25rem] text-[var(--color-ink-strong)]">
-              Con il Pass il tuo posto in giuria è assicurato.
-            </p>
-            <p className="mt-3 text-[0.92rem] leading-[1.65] text-[var(--color-muted)]">
-              Il Pass Giurato garantisce la partecipazione alle degustazioni e alle votazioni
-              delle Sfide che hai scelto. I posti riservati a chi ha il Pass sono soltanto 60
-              per ciascun Gran Premio del Gusto.
-            </p>
-            <p className="mt-3 text-[0.92rem] leading-[1.65] text-[var(--color-muted)]">
-              Chi non ha il Pass può essere ammesso alla Giuria Popolare solo a discrezione
-              dell&rsquo;Organizzazione, e soltanto se restano posti liberi.
-            </p>
-            <p className="mt-3 text-[0.92rem] leading-[1.65] text-[var(--color-ink-strong)]">
-              Non lasciarlo al caso: scegli le tue Sfide e prendi il Pass.
-            </p>
           </div>
           <p className="text-center text-[0.8rem] italic text-[var(--color-muted)]">
             Dettaglio di come si svolge ogni Sfida:{" "}
