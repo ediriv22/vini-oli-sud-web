@@ -372,16 +372,6 @@
         ],
         "ctaLabel": "Diventa Sponsor",
         "ctaHref": "/sponsor/"
-      },
-      {
-        "kind": "shop",
-        "label": "Shop Ufficiale",
-        "heading": "Shop Ufficiale",
-        "body": [
-          "Gadget e prodotti ufficiali della Rassegna. Lo shop sarà disponibile a breve."
-        ],
-        "ctaLabel": "Vai allo Shop",
-        "ctaHref": "mailto:napoliracingshow@gmail.com"
       }
     ]
   },

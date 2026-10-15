@@ -40,34 +40,23 @@ export default function SelezioneProdottoPage() {
         <p className="mx-auto mt-6 max-w-[42ch] text-[0.96rem] leading-[1.65] text-[var(--color-muted)]">
           Le aziende che desiderano concorrere alle Sfide del Gran Premio del Gusto saranno
           selezionate dall&rsquo;Assessorato all&rsquo;Agricoltura della Regione Campania, che ha
-          pubblicato un bando apposito. Per ogni ulteriore informazione inviate una mail alla
-          nostra segreteria.
-        </p>
-        <p className="mx-auto mt-5 max-w-[42ch] text-[0.96rem] leading-[1.65] text-[var(--color-muted)]">
-          Il bando è aperto. Possono candidarsi le aziende agroalimentari con sede operativa
-          in Campania, iscritte alla Camera di Commercio competente. La domanda si presenta
-          per e-mail a{" "}
-          <a
-            href="mailto:portale.agroalimenta@regione.campania.it"
-            className="font-semibold text-[var(--color-wine)]"
-          >
-            portale.agroalimenta@regione.campania.it
-          </a>
-          , allegando il logo aziendale e il documento d&rsquo;identità del titolare.
-          Quota di partecipazione al concorso: € 200,00 + IVA; stand espositivo 4x4 m:
-          € 2.500,00 + IVA.
+          pubblicato un bando apposito.
         </p>
         <p className="mx-auto mt-4 max-w-[42ch] text-[0.96rem] leading-[1.65] text-[var(--color-ink-strong)]">
           <strong>Le domande si chiudono il 31 ottobre 2026.</strong>
         </p>
-        <p className="mt-5">
+        {/* 15/10/2026 (Edvige): niente requisiti, niente e-mail, niente quote e niente
+            rimando alla segreteria. Solo il pulsante: i requisiti e il modo di
+            presentare la domanda stanno nel bando, che e' la fonte ufficiale e puo'
+            cambiare senza che ce ne accorgiamo. */}
+        <p className="mt-7">
           <a
             href="https://agricoltura.regione.campania.it/fiere/racing-show-2026.html"
             target="_blank"
             rel="noreferrer"
-            className="font-semibold text-[var(--color-wine)]"
+            className="font-ui inline-flex h-11 items-center justify-center rounded-full bg-[var(--color-wine)] px-6 text-[0.86rem] font-semibold text-[rgba(255,253,245,1)] transition-colors duration-300 ease-out hover:bg-[var(--color-wine-strong)]"
           >
-            Leggi il bando sul sito della Regione Campania
+            Leggi il bando della Regione Campania
           </a>
         </p>
       </div>
@@ -91,19 +80,6 @@ export default function SelezioneProdottoPage() {
         </div>
       ) : null}
 
-      <div className="section-shell mx-auto mt-14 max-w-[42rem] border-t border-[rgba(255,215,87,0.3)] pt-8 text-center">
-        <p className="font-ui text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-sand-strong)]">
-          Hai bisogno di informazioni?
-        </p>
-        <p className="mt-3 text-[0.92rem] leading-[1.6] text-[var(--color-muted)]">
-          Segreteria Organizzativa – Gran Premio del Gusto 2026 · Napoli Racing Show
-          <br />
-          E-mail:{" "}
-          <a href="mailto:napoliracingshow@gmail.com" className="font-semibold text-[var(--color-wine)]">
-            napoliracingshow@gmail.com
-          </a>
-        </p>
-      </div>
     </section>
   );
 }
