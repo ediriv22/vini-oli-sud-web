@@ -7,7 +7,7 @@ import { siteConfig } from "@/data/site";
 type Tier = {
   name: string;
   price?: string;
-  // Riga sotto il prezzo: "+ €10 bicchiere e sottobicchiere serigrafati — totale €35 + commissioni".
+  // Riga sotto il prezzo: "+ €10 bicchiere e portabicchiere serigrafati — totale €35 + commissioni".
   priceDetail?: string;
   featured?: boolean;
   badge?: string;

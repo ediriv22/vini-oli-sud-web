@@ -197,7 +197,7 @@
           {
             "name": "1 Sfida a scelta",
             "price": "€35",
-            "priceDetail": "€25 Pass + €10 bicchiere e sottobicchiere serigrafati, più commissioni",
+            "priceDetail": "€25 Pass + €10 bicchiere e portabicchiere serigrafati, più commissioni",
             "featured": false,
             "features": [
               "Posto riservato per la Sfida scelta",
@@ -210,7 +210,7 @@
           {
             "name": "3 Sfide a scelta",
             "price": "€60",
-            "priceDetail": "€50 Pass + €10 bicchiere e sottobicchiere serigrafati, più commissioni",
+            "priceDetail": "€50 Pass + €10 bicchiere e portabicchiere serigrafati, più commissioni",
             "featured": false,
             "features": [
               "Posto riservato per le 3 Sfide scelte",
@@ -223,7 +223,7 @@
           {
             "name": "Pass Gran Giurato — Tutte le 9 Sfide",
             "price": "€80",
-            "priceDetail": "€70 Pass + €10 bicchiere e sottobicchiere serigrafati, più commissioni",
+            "priceDetail": "€70 Pass + €10 bicchiere e portabicchiere serigrafati, più commissioni",
             "featured": true,
             "badge": "⭐",
             "features": [
@@ -235,7 +235,7 @@
             "ctaLabel": "Acquista il tuo Pass"
           }
         ],
-        "priceFootnote": "Con il Pass il tuo posto in giuria è assicurato: garantisce la partecipazione alle degustazioni e alle votazioni delle Sfide che hai scelto. I posti riservati a chi ha il Pass sono soltanto 60 per ciascun Gran Premio del Gusto. Chi non ha il Pass può essere ammesso alla Giuria Popolare solo a discrezione dell'Organizzazione, e soltanto se restano posti liberi. Bicchiere e sottobicchiere serigrafati sono compresi nel prezzo di tutti i Pass e restano al Giurato. Prezzi esclusi commissioni e costi aggiuntivi indicati al momento della richiesta.",
+        "priceFootnote": "Con il Pass il tuo posto in giuria è assicurato: garantisce la partecipazione alle degustazioni e alle votazioni delle Sfide che hai scelto. I posti riservati a chi ha il Pass sono soltanto 60 per ciascun Gran Premio del Gusto. Chi non ha il Pass può essere ammesso alla Giuria Popolare solo a discrezione dell'Organizzazione, e soltanto se restano posti liberi. Bicchiere e portabicchiere serigrafati sono compresi nel prezzo di tutti i Pass e restano al Giurato. Prezzi esclusi commissioni e costi aggiuntivi indicati al momento della richiesta.",
         "ctaLabel": "Richiedi il tuo Pass Giurato",
         "ctaHref": "/pass-giurato/",
         "extraTitle": "🩺 Prevenzione gratuita con ASL Napoli 1 Centro",

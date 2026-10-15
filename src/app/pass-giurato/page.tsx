@@ -152,7 +152,7 @@ export default function PassGiuratoPage() {
         </div>
 
         <p className="mx-auto mt-8 max-w-[42ch] font-display text-[1.15rem] leading-[1.5] text-[var(--color-ink-strong)]">
-          €35 per una Sfida, €60 per tre Sfide, €80 per tutte e nove. Bicchiere e sottobicchiere
+          €35 per una Sfida, €60 per tre Sfide, €80 per tutte e nove. Bicchiere e portabicchiere
           serigrafati compresi in tutti i Pass.
         </p>
         <p className="mx-auto mt-5 max-w-[46ch] text-[0.84rem] leading-[1.6] text-[var(--color-muted)]">
@@ -348,7 +348,7 @@ export default function PassGiuratoPage() {
             </p>
             <p className="mt-2 text-[0.82rem] leading-[1.55] text-[var(--color-muted)]">
               €35 una Sfida · €60 tre Sfide · €80 tutte le nove, più commissioni. Bicchiere e
-              sottobicchiere serigrafati sono compresi nel prezzo di tutti i Pass e restano al
+              portabicchiere serigrafati sono compresi nel prezzo di tutti i Pass e restano al
               Giurato.
             </p>
           </div>
