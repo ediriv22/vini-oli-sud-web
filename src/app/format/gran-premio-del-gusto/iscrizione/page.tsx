@@ -2,7 +2,7 @@ import { createPageMetadata, siteConfig } from "@/data/site";
 
 export const metadata = createPageMetadata(
   "Selezione prodotti",
-  "Le aziende che desiderano partecipare alle Sfide del Gran Premio del Gusto saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania tramite bando.",
+  "Le aziende che desiderano concorrere alle Sfide del Gran Premio del Gusto saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania, che ha pubblicato un bando apposito.",
 );
 
 /**
@@ -38,9 +38,9 @@ export default function SelezioneProdottoPage() {
           27 · 28 · 29 novembre 2026 · Rotonda Diaz – Lungomare Caracciolo – Napoli
         </p>
         <p className="mx-auto mt-6 max-w-[42ch] text-[0.96rem] leading-[1.65] text-[var(--color-muted)]">
-          Le aziende che desiderano partecipare alle Sfide del Gran Premio del Gusto saranno
-          selezionate dall&rsquo;Assessorato all&rsquo;Agricoltura della Regione Campania che
-          pubblicherà un bando apposito. Per ogni ulteriore informazione inviate una mail alla
+          Le aziende che desiderano concorrere alle Sfide del Gran Premio del Gusto saranno
+          selezionate dall&rsquo;Assessorato all&rsquo;Agricoltura della Regione Campania, che ha
+          pubblicato un bando apposito. Per ogni ulteriore informazione inviate una mail alla
           nostra segreteria.
         </p>
         <p className="mx-auto mt-5 max-w-[42ch] text-[0.96rem] leading-[1.65] text-[var(--color-muted)]">

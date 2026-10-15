@@ -32,7 +32,7 @@ const COLLEGAMENTI = [
   {
     titolo: "Selezione prodotti",
     testo:
-      "Le aziende che desiderano partecipare al Gran Premio del Gusto devono aderire al bando della Regione Campania, che scade il 31 ottobre 2026.",
+      "Le aziende che desiderano concorrere alle Sfide saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania, che ha pubblicato un bando apposito. Le domande si chiudono il 31 ottobre 2026.",
     href: "/format/gran-premio-del-gusto/iscrizione/",
     cta: "Vai al bando",
   },

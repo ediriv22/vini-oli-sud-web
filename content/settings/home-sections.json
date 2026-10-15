@@ -246,10 +246,11 @@
       {
         "kind": "iscrivi",
         "label": "Selezione Prodotti",
-        "heading": "Le aziende aderiscono al bando della Regione Campania",
+        "heading": "Le aziende sono selezionate dall'Assessorato all'Agricoltura della Regione Campania",
         "subheading": "Gran Premio del Gusto 2026 — Le Sfide della Magna Grecia · 27 • 28 • 29 Novembre 2026 · Rotonda Diaz – Lungomare Caracciolo – Napoli",
         "body": [
-          "Le aziende che desiderano partecipare al Gran Premio del Gusto devono aderire al bando della Regione Campania, che scade il 31 ottobre 2026.",
+          "Le aziende che desiderano concorrere alle Sfide del Gran Premio del Gusto saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania, che ha pubblicato un bando apposito.",
+          "Le domande si chiudono il 31 ottobre 2026.",
           "I prodotti dovranno essere pronti da degustare, senza necessità di cottura sul posto: conservazione, porzionatura e modalità di servizio saranno concordate con la Segreteria organizzativa.",
           "L'Organizzazione si riserva di stabilire il numero massimo di prodotti ammessi e di annullare, modificare o ampliare i Concorsi, nonché di variarne giorni e orari, dandone comunicazione alle aziende selezionate."
         ],
@@ -360,7 +361,7 @@
         "phasesNote": "Gli orari e la durata delle singole fasi potranno subire variazioni per esigenze organizzative.",
         "ctaLabel": "Vai al bando",
         "ctaHref": "/format/gran-premio-del-gusto/iscrizione/",
-        "note": "Le aziende che desiderano partecipare al Gran Premio del Gusto devono aderire al bando della Regione Campania, che scade il 31 ottobre 2026."
+        "note": "Le aziende che desiderano concorrere alle Sfide del Gran Premio del Gusto saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania, che ha pubblicato un bando apposito. Le domande si chiudono il 31 ottobre 2026."
       },
       {
         "kind": "sponsor",
