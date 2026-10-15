@@ -195,7 +195,7 @@
         "kind": "biglietti",
         "label": "Giurato",
         "heading": "L'ingresso alla manifestazione è libero e gratuito",
-        "subheading": "9 Gran Premi del Gusto, 9 Sfide da assaggiare e votare. Con il Pass Giurato degusti le eccellenze in gara, esprimi il tuo voto e contribuisci a decretare i vincitori: il voto della Giuria Popolare vale il 70% del risultato finale.",
+        "subheading": "9 Sfide da assaggiare e votare. Con il Pass Giurato degusti le eccellenze in gara ed esprimi il tuo voto: la Giuria Popolare pesa il 70% del verdetto. I posti sono solo 60 per ciascuna Sfida.",
         "sectionTitle": "Diventa Giurato Popolare",
         "tiers": [
           {
@@ -250,10 +250,10 @@
       {
         "kind": "iscrivi",
         "label": "Selezione Prodotti",
-        "heading": "Le aziende saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania",
+        "heading": "Le aziende aderiscono al bando della Regione Campania",
         "subheading": "Gran Premio del Gusto 2026 — Le Sfide della Magna Grecia · 27 • 28 • 29 Novembre 2026 · Rotonda Diaz – Lungomare Caracciolo – Napoli",
         "body": [
-          "Le aziende che desiderano partecipare alle Sfide del Gran Premio del Gusto saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania che pubblicherà un bando apposito. Per ogni ulteriore informazione inviate una mail alla nostra segreteria.",
+          "Le aziende che desiderano partecipare al Gran Premio del Gusto devono aderire al bando della Regione Campania, che scade il 31 ottobre 2026.",
           "I prodotti dovranno essere pronti da degustare, senza necessità di cottura sul posto: conservazione, porzionatura e modalità di servizio saranno concordate con la Segreteria organizzativa.",
           "L'Organizzazione si riserva di stabilire il numero massimo di prodotti ammessi e di annullare, modificare o ampliare i Concorsi, nonché di variarne giorni e orari, dandone comunicazione alle aziende selezionate."
         ],
@@ -362,9 +362,9 @@
           }
         ],
         "phasesNote": "Gli orari e la durata delle singole fasi potranno subire variazioni per esigenze organizzative.",
-        "ctaLabel": "🏆 Come funziona la selezione",
+        "ctaLabel": "Vai al bando",
         "ctaHref": "/format/gran-premio-del-gusto/iscrizione/",
-        "note": "Le aziende che desiderano partecipare alle Sfide del Gran Premio del Gusto saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania che pubblicherà un bando apposito. Per ogni ulteriore informazione inviate una mail alla nostra segreteria."
+        "note": "Le aziende che desiderano partecipare al Gran Premio del Gusto devono aderire al bando della Regione Campania, che scade il 31 ottobre 2026."
       },
       {
         "kind": "sponsor",
