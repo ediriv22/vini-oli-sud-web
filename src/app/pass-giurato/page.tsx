@@ -348,8 +348,7 @@ export default function PassGiuratoPage() {
             </p>
             <p className="mt-2 text-[0.82rem] leading-[1.55] text-[var(--color-muted)]">
               €35 una Sfida · €60 tre Sfide · €80 tutte le nove, più commissioni. Bicchiere e
-              portabicchiere serigrafati sono compresi nel prezzo di tutti i Pass e restano al
-              Giurato.
+              portabicchiere serigrafati sono compresi nel prezzo di tutti i Pass.
             </p>
           </div>
         </fieldset>
