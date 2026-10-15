@@ -1,4 +1,8 @@
-// Navigazione principale — architettura 2026: 5 voci di primo livello +
+// Navigazione principale. 15/10/2026 (Edvige: "la sezione format eliminala e
+// basta"): tolta la voce "Format" e cancellata la pagina indice /format/. Le due
+// pagine di dettaglio restano vive, perche' ci puntano la home, la pagina Pass
+// Giurato, i regolamenti e dei post gia' pubblicati.
+// Architettura 2026: voci di primo livello +
 // CTA "Contatti" separata (vedi headerPrimaryCta). Sponsor resta un'ancora
 // nella home (SponsorSection, id="sponsor"): da qualunque pagina si apra
 // il menu, il link è root-relative ("/#sponsor") così la navigazione
@@ -6,7 +10,6 @@
 // sotto src/app/.
 export const mainNavigation = [
   { label: "Programma", href: "/programma/" },
-  { label: "Format", href: "/format/" },
   { label: "Regolamenti e Premi", href: "/regolamenti-e-premi/" },
   { label: "Vincitori 2025", href: "/vincitori-2025/" },
   { label: "Sponsor", href: "/#sponsor" },
@@ -20,7 +23,6 @@ export const headerPrimaryCta = {
 
 export const footerNavigation = [
   { label: "Programma", href: "/programma/" },
-  { label: "Format", href: "/format/" },
   { label: "Regolamenti e Premi", href: "/regolamenti-e-premi/" },
   { label: "Vincitori 2025", href: "/vincitori-2025/" },
   { label: "Sponsor", href: "/#sponsor" },

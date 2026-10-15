@@ -43,12 +43,6 @@ const COLLEGAMENTI = [
     cta: "Leggi i regolamenti",
   },
   {
-    titolo: "Il format",
-    testo: "Due eventi insieme: la Rassegna Vini e Oli della Magna Grecia e il Gran Premio del Gusto.",
-    href: "/format/",
-    cta: "Scopri il format",
-  },
-  {
     titolo: "Vincitori 2025",
     testo: "L'albo d'oro della prima edizione, Sfida per Sfida.",
     href: "/vincitori-2025/",
@@ -90,20 +84,30 @@ export default function ProgrammaHubSection() {
           </h2>
           <p className="mx-auto mt-5 max-w-[42ch] text-[0.96rem] leading-[1.7] text-[var(--color-muted)]">
             Degustazioni guidate dentro la Rassegna, ad accesso libero come tutto il Villaggio.
-            Il regolamento è redatto dall&rsquo;Assessorato all&rsquo;Agricoltura della Regione
-            Campania in collaborazione con AIS &ndash; Associazione Italiana Sommelier.
+            <strong> A cura dell&rsquo;AIS &ndash; Associazione Italiana Sommelier</strong>, con
+            l&rsquo;Assessorato all&rsquo;Agricoltura della Regione Campania.
           </p>
 
-          <div className="mx-auto mt-8 flex max-w-[34rem] flex-col items-center gap-4 rounded-[1.1rem] border border-[rgba(47,91,70,0.2)] bg-[rgba(255,253,245,0.6)] px-6 py-7">
-            <Image
-              src="/brand/partners/regione-campania-v2.png"
-              alt="Regione Campania — Assessorato all'Agricoltura"
-              width={220}
-              height={110}
-              className="h-auto w-[180px] object-contain"
-            />
+          <div className="mx-auto mt-8 flex max-w-[34rem] flex-col items-center gap-5 rounded-[1.1rem] border border-[rgba(47,91,70,0.2)] bg-[rgba(255,253,245,0.6)] px-6 py-7">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-5">
+              <Image
+                src="/brand/partners/ais-associazione-italiana-sommelier.jpg"
+                alt="AIS — Associazione Italiana Sommelier"
+                width={220}
+                height={110}
+                className="h-auto w-[150px] object-contain"
+              />
+              <Image
+                src="/brand/partners/regione-campania-v2.png"
+                alt="Regione Campania — Assessorato all'Agricoltura"
+                width={220}
+                height={110}
+                className="h-auto w-[180px] object-contain"
+              />
+            </div>
             <p className="text-[0.92rem] leading-[1.6] text-[var(--color-muted)]">
-              In collaborazione con l&rsquo;Assessorato all&rsquo;Agricoltura della Regione Campania.
+              Masterclass a cura dell&rsquo;AIS &ndash; Associazione Italiana Sommelier, in
+              collaborazione con l&rsquo;Assessorato all&rsquo;Agricoltura della Regione Campania.
             </p>
           </div>
 
