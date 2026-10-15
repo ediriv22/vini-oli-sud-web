@@ -19,7 +19,12 @@ export const PASS_URLS = {
   unaSfida: "https://azzurroservice.vivaticket.it/it/tour/il-gran-premio-del-gusto-vini-e-olisud/5026",
   treSfide: "https://azzurroservice.vivaticket.it/it/event/pass-giurato-3-sfide/315885",
   noveSfide: "https://azzurroservice.vivaticket.it/it/event/pass-gran-giurato-9-sfide/315918",
-  tutti: "https://napoli-racing-show.metooo.com/pages/il-gran-premio-del-gusto",
+  // 15/10/2026: era la pagina Metooo. Su telefono e' illeggibile (muro di testo e
+  // immagini ripetute a tutta larghezza) e contraddice il sito: dice che il
+  // bicchiere e' "in prestito" e va restituito, e parla di 200 Giurati per Sfida
+  // invece di 60. Finche' non la correggono, il pulsante porta direttamente alla
+  // biglietteria ufficiale Azzurro Service, che e' il punto in cui si paga davvero.
+  tutti: "https://azzurroservice.vivaticket.it/it/tour/il-gran-premio-del-gusto-vini-e-olisud/5026",
 } as const;
 
 type TicketCard = {
