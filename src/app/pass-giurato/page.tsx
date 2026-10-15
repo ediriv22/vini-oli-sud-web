@@ -10,8 +10,6 @@ import {
   submitLeadForm,
   type SubmitStatus,
 } from "@/components/forms/FormFields";
-import Button from "@/components/ui/Button";
-import { PASS_URLS } from "@/data/homePrices";
 import { siteConfig } from "@/data/site";
 
 /**
@@ -31,8 +29,8 @@ import { siteConfig } from "@/data/site";
  * sotto, letto da pass-giurato-counts.php, backend non in questa repo, non
  * toccato qui).
  *
- * L'acquisto avviene su Azzurro Service (vivaticket), link in
- * src/data/homePrices.ts → PASS_URLS. Il sito non incassa pagamenti: questo
+ * 15/10/2026: tolta la biglietteria esterna (ordine di Edvige). Il sito non
+ * incassa pagamenti e non manda piu' fuori: questo
  * modulo serve alla segreteria per sapere quali Sfide ha scelto il Giurato.
  */
 
@@ -311,24 +309,19 @@ export default function PassGiuratoPage() {
 
         </fieldset>
 
-        {/* 14/10/2026: il Pass si acquista su Azzurro Service (vivaticket),
+        {/* 15/10/2026: niente biglietteria esterna,
             non qui. Questo modulo resta per dire alla segreteria quali Sfide
             ha scelto il Giurato. Nessun pagamento viene incassato dal sito. */}
         <fieldset className="flex flex-col gap-5">
           <div className="rounded-[0.9rem] border border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)] p-4 text-center">
             <p className="text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
-              Il Pass si acquista sulla biglietteria ufficiale. Compila il modulo per comunicare
-              alla segreteria le Sfide che hai scelto: riceverai la conferma via email.
+              Compila il modulo qui sotto con le Sfide che hai scelto: la Segreteria ti
+              richiama per completare il Pass e ti manda la conferma via email.
             </p>
             <p className="mt-2 text-[0.82rem] leading-[1.55] text-[var(--color-muted)]">
               €35 una Sfida · €60 tre Sfide · €80 tutte le nove, più commissioni. Bicchiere
               serigrafato e portabicchiere sono compresi nel prezzo e restano al Giurato.
             </p>
-            <div className="mt-4 flex justify-center">
-              <Button href={PASS_URLS.tutti} variant="primary" size="md" target="_blank" rel="noopener noreferrer">
-                Acquista il tuo Pass
-              </Button>
-            </div>
           </div>
         </fieldset>
 

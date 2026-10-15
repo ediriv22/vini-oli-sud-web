@@ -7,24 +7,21 @@
 // prestito, da restituire": Edvige ha chiarito il 14/10/2026 che si paga e si
 // tiene, quindi quella frase e' stata tolta dal sito.
 // Annulla la regola del 7/10/2026 (prenotazione gratuita, primi 50).
-// L'acquisto avviene su Azzurro Service (vivaticket): vedi PASS_URLS qui sotto.
+// Dal 15/10/2026 il sito non rimanda a una biglietteria esterna: vedi PASS_URLS.
 // I prodotti in gara restano scelti da un bando della Regione Campania.
 // I pacchetti sponsor restano quelli del flyer (src/app/sponsor/page.tsx),
 // riportati esatti, senza aggiunte non confermate.
 
-// Biglietteria ufficiale Azzurro Service (vivaticket), verificata il 14/10/2026
-// dalla pagina Metooo del Napoli Racing Show: tutti e tre i link rispondono 200.
-// Unico punto in cui vivono questi URL: le pagine li importano da qui.
+// 15/10/2026 (ordine di Edvige: "leva azzurro service subito"): tolti tutti i
+// link alla biglietteria esterna. Il sito non manda piu' nessuno fuori: chi vuole
+// il Pass compila il modulo qui e la segreteria conferma. Niente pagamento online
+// finche' non si decide la nuova biglietteria. Gli URL vecchi non restano
+// nemmeno commentati, per non rimetterli in pagina per sbaglio.
 export const PASS_URLS = {
-  unaSfida: "https://azzurroservice.vivaticket.it/it/tour/il-gran-premio-del-gusto-vini-e-olisud/5026",
-  treSfide: "https://azzurroservice.vivaticket.it/it/event/pass-giurato-3-sfide/315885",
-  noveSfide: "https://azzurroservice.vivaticket.it/it/event/pass-gran-giurato-9-sfide/315918",
-  // 15/10/2026: era la pagina Metooo. Su telefono e' illeggibile (muro di testo e
-  // immagini ripetute a tutta larghezza) e contraddice il sito: dice che il
-  // bicchiere e' "in prestito" e va restituito, e parla di 200 Giurati per Sfida
-  // invece di 60. Finche' non la correggono, il pulsante porta direttamente alla
-  // biglietteria ufficiale Azzurro Service, che e' il punto in cui si paga davvero.
-  tutti: "https://azzurroservice.vivaticket.it/it/tour/il-gran-premio-del-gusto-vini-e-olisud/5026",
+  unaSfida: "/pass-giurato/",
+  treSfide: "/pass-giurato/",
+  noveSfide: "/pass-giurato/",
+  tutti: "/pass-giurato/",
 } as const;
 
 type TicketCard = {
@@ -49,7 +46,7 @@ export const ticketsSection = {
       price: "€35",
       priceNote: "€25 Pass + €10 bicchiere serigrafato, più commissioni",
       featured: false,
-      ctaLabel: "Acquista il tuo Pass",
+      ctaLabel: "Richiedi il tuo Pass",
       ctaHref: PASS_URLS.unaSfida,
     },
     {
@@ -58,7 +55,7 @@ export const ticketsSection = {
       price: "€60",
       priceNote: "€50 Pass + €10 bicchiere serigrafato, più commissioni",
       featured: false,
-      ctaLabel: "Acquista il tuo Pass",
+      ctaLabel: "Richiedi il tuo Pass",
       ctaHref: PASS_URLS.treSfide,
     },
     {
@@ -67,7 +64,7 @@ export const ticketsSection = {
       price: "€80",
       priceNote: "€70 Pass + €10 bicchiere serigrafato, più commissioni",
       featured: true,
-      ctaLabel: "Acquista il tuo Pass",
+      ctaLabel: "Richiedi il tuo Pass",
       ctaHref: PASS_URLS.noveSfide,
     },
     {
