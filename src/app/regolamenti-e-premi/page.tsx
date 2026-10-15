@@ -30,9 +30,8 @@ export default function RegolamentiEPremiPage() {
               Il Regolamento sarà pubblicato prossimamente.
             </p>
             <p className="mt-3 text-[0.94rem] leading-[1.6] text-[var(--color-muted)]">
-              Sarà redatto, come per l&rsquo;edizione 2025, dall&rsquo;Assessorato
-              all&rsquo;Agricoltura della Regione Campania in collaborazione con AIS &ndash;
-              Associazione Italiana Sommelier.
+              Sarà redatto dall&rsquo;Assessorato all&rsquo;Agricoltura della Regione
+              Campania in collaborazione con AIS &ndash; Associazione Italiana Sommelier.
             </p>
           </div>
         </div>
