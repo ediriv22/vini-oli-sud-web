@@ -121,19 +121,15 @@ export default function PassGiuratoPage() {
         <h1 className="display-balance mt-4 font-display text-[clamp(1.9rem,4vw,2.6rem)] leading-[1.05] text-[var(--color-ink-strong)]">
           Diventa Giurato Popolare
         </h1>
-        <p className="mx-auto mt-3 max-w-[42ch] text-[0.94rem] leading-[1.6] text-[var(--color-muted)]">
+        {/* 15/10/2026 (Edvige: "ci sono troppe scritte", "il layout e' un casino"):
+            ordine voluto da lei. Prima cosa fai, poi il riquadro giallo con i 60
+            posti, poi i prezzi, poi la nota sul Pass personale. I prezzi sono usciti
+            dal primo paragrafo, che ne conteneva troppa roba in una frase sola. */}
+        <p className="mx-auto mt-4 max-w-[42ch] text-[1rem] leading-[1.65] text-[var(--color-muted)]">
           9 Gran Premi del Gusto, 9 Sfide da assaggiare e votare. Con il Pass Giurato degusti le
-          eccellenze in gara, esprimi il tuo voto e contribuisci a decretare i vincitori: €35 per
-          una Sfida, €60 per tre Sfide, €80 per tutte e nove, bicchiere serigrafato compreso.
-        </p>
-        <p className="mx-auto mt-3 max-w-[46ch] text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
-          Il Pass Giurato è strettamente personale e non cedibile: va conservato dal titolare per
-          tutta la durata della manifestazione (27-28-29 novembre 2026). In caso di smarrimento non
-          sarà possibile richiedere una sostituzione né l&rsquo;accesso alle Sfide.
+          eccellenze in gara, esprimi il tuo voto e contribuisci a decretare i vincitori.
         </p>
 
-        {/* 15/10/2026 (Edvige: "questo perche' sta in basso deve stare in alto"):
-            la scarsita' e' il primo argomento, non una nota a fondo modulo. */}
         <div className="mx-auto mt-8 max-w-[42rem] rounded-[0.9rem] border border-[rgba(255,215,87,0.5)] bg-[rgba(255,247,214,0.5)] px-5 py-5 text-center">
           <p className="font-ui text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-sand-strong)]">
             Solo 60 posti per ogni Sfida
@@ -154,6 +150,16 @@ export default function PassGiuratoPage() {
             Non lasciarlo al caso: scegli le tue Sfide e prendi il Pass.
           </p>
         </div>
+
+        <p className="mx-auto mt-8 max-w-[42ch] font-display text-[1.15rem] leading-[1.5] text-[var(--color-ink-strong)]">
+          €35 per una Sfida, €60 per tre Sfide, €80 per tutte e nove, bicchiere serigrafato
+          compreso.
+        </p>
+        <p className="mx-auto mt-5 max-w-[46ch] text-[0.84rem] leading-[1.6] text-[var(--color-muted)]">
+          Il Pass Giurato è strettamente personale e non cedibile: va conservato dal titolare per
+          tutta la durata della manifestazione (27-28-29 novembre 2026). In caso di smarrimento non
+          sarà possibile richiedere una sostituzione né l&rsquo;accesso alle Sfide.
+        </p>
       </div>
 
       <form
