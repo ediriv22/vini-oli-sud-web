@@ -149,14 +149,18 @@ export default function HeroSection() {
               spazio verticale per rendere queste card più grandi. */}
           <nav
             aria-label="Scopri la Rassegna 2026"
-            className="no-scrollbar mt-8 flex gap-4 overflow-x-auto pb-2"
+            /* 15/10/2026 (Edvige: "uniformare le dimensioni dei riquadri"): prima
+               era una fila che si adattava al testo, quindi "Programma" era stretta
+               e "Selezione aziende" larga il doppio. Ora e' una griglia a colonne
+               uguali: due per riga sul telefono, quattro da tablet in su. */
+            className="mt-8 grid max-w-[46rem] grid-cols-2 gap-4 sm:grid-cols-4"
           >
             {siteConfig.sfideAccordion.items.map((item) => (
               <a
                 key={item.kind}
                 href={item.ctaHref || undefined}
                 aria-disabled={!item.ctaHref}
-                className={`font-ui flex shrink-0 flex-col items-center gap-2 whitespace-nowrap rounded-[1.1rem] border px-7 py-5 text-[0.92rem] font-semibold uppercase tracking-[0.05em] transition-colors duration-200 ${
+                className={`font-ui flex h-full flex-col items-center justify-start gap-2 rounded-[1.1rem] border px-4 py-5 text-center text-[0.86rem] font-semibold uppercase leading-tight tracking-[0.05em] transition-colors duration-200 ${
                   item.ctaHref
                     ? "border-[rgba(255,215,87,0.45)] bg-[rgba(255,253,245,0.12)] text-[var(--color-ivory)] hover:bg-[rgba(255,215,87,0.18)]"
                     : "cursor-not-allowed border-[rgba(255,253,245,0.2)] text-[rgba(255,253,245,0.5)]"
