@@ -7,12 +7,16 @@ declare(strict_types=1);
  * lead.php e pass-giurato-counts.php. Deve restare identica ai nomi in
  * content/settings/home-sections.json (sfideAccordion.items[iscrivi].concorsi).
  */
+// 15/10/2026: le Sfide sono le nove categorie del bando della Regione Campania,
+// scritte con le sue stesse parole (Edvige: "devi mostrare le vere categorie").
+// Spariscono salumeria e gelato; mozzarella e formaggio si fondono in
+// lattiero-caseario; entrano pasta, pizza e panuozzo, caffè.
+// Le iscrizioni gia' salvate nel CSV portano i nomi vecchi: vanno rimappate a mano
+// prima di fidarsi dei conteggi per Sfida.
 const VOS_CONCORSI_VALIDI = [
-    'Il Miglior Amaro, Liquore o Spumante', 'La Migliore Mozzarella di Bufala',
-    'Il Miglior Formaggio o Fiordilatte', 'Il Miglior Olio Extravergine di Oliva',
-    'Il Miglior Dolce, Cioccolato o Specialità Dolce', 'Il Miglior Prodotto di Salumeria',
-    'La Migliore Birra', 'Il Miglior Pane o Prodotto da Forno Salato',
-    'Il Miglior Gelato, Yogurt o Dessert Freddo',
+    'Lattiero-caseario', 'Pasta artigianale (fresca o secca)', 'Dolciaria',
+    'Prodotti da forno', 'Olivicolo-oleario', 'Pizza e panuozzo', 'Caffè',
+    'Liquori tipici e distillati', 'Birra artigianale',
 ];
 
 /**
