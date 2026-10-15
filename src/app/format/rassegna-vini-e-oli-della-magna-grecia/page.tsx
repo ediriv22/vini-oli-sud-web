@@ -47,9 +47,6 @@ export default function RassegnaPage() {
             E con la collaborazione di AIS &ndash; Associazione Italiana Sommelier per le
             Masterclass.
           </p>
-          <p className="mt-6 font-ui text-[0.82rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-wine)]">
-            Il relativo Regolamento sarà pubblicato prossimamente.
-          </p>
         </div>
       </section>
 
