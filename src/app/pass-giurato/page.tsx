@@ -1,118 +1,33 @@
-"use client";
-
-import { useEffect, useMemo, useState, type FormEvent } from "react";
-import {
-  CheckboxField,
-  FormSectionTitle,
-  FormStatusBanner,
-  Honeypot,
-  TextField,
-  submitLeadForm,
-  type SubmitStatus,
-} from "@/components/forms/FormFields";
 import { siteConfig } from "@/data/site";
 
 /**
- * Modulo "Diventa Giurato Popolare" — prenotazione. Invia a
- * napoliracingshow@gmail.com via /forms/lead.php
- * (requestType=iscrizione-giurato). Riusa i 3 Pass e i 9 Concorsi già
- * definiti in siteConfig (nessun dato duplicato).
+ * Pagina "Diventa Giurato Popolare".
  *
- * Nota maggiore età: il modulo richiede la data di nascita e blocca lato
- * server chi ha meno di 18 anni (vedi lead.php).
+ * 16/10/2026 (ordine di Edvige, con il link della biglietteria in mano): al
+ * posto del modulo di prenotazione c'e' l'acquisto vero sulla biglietteria
+ * ufficiale Metooo. Il sito non raccoglie piu' dati personali per il Pass e
+ * non incassa pagamenti: scelta del Pass, scelta delle Sfide, limite di 60
+ * posti per Sfida e incasso stanno tutti sulla biglietteria.
  *
- * 14/10/2026 (richiesta Edvige, regola cambiata di nuovo): il Pass Giurato
- * torna A PAGAMENTO. Prezzi presi dalla biglietteria ufficiale, perché è
- * quello che il pubblico paga davvero: €25 + €10 bicchiere = €35, €50 + €10 =
- * €60, €70 + €10 = €80, più commissioni. Cade il tetto dei 50 posti gratuiti
- * del 7/10/2026; resta attivo il conteggio per Sfida (sfideCounts/countsLimit
- * sotto, letto da pass-giurato-counts.php, backend non in questa repo, non
- * toccato qui).
+ * Storia breve, per non rifare giri gia' fatti: 7/10 il Pass era gratis (primi
+ * 50); 14/10 torna a pagamento con i link Azzurro Service/Vivaticket; 15/10
+ * Edvige toglie la biglietteria esterna e lascia solo il modulo per la
+ * segreteria; 16/10 arriva la biglietteria Metooo e il modulo esce.
  *
- * 15/10/2026: tolta la biglietteria esterna (ordine di Edvige). Il sito non
- * incassa pagamenti e non manda piu' fuori: questo
- * modulo serve alla segreteria per sapere quali Sfide ha scelto il Giurato.
+ * Il modulo lato server (/forms/lead.php, requestType=iscrizione-giurato) NON
+ * e' stato toccato: resta in piedi, semplicemente non lo chiama piu' nessuno
+ * da qui. Stessa cosa per pass-giurato-counts.php, che contava le iscrizioni
+ * nel CSV: quei numeri non valgono piu' niente ora che le iscrizioni passano
+ * dalla biglietteria, quindi la pagina non li legge e non mostra piu'
+ * "Esaurito" per Sfida.
  */
+
+const BIGLIETTERIA_URL = "https://napoli-racing-show.metooo.com/pages/il-gran-premio-del-gusto";
 
 export default function PassGiuratoPage() {
   const biglietti = siteConfig.sfideAccordion.items.find((i) => i.kind === "biglietti");
   const tiers = biglietti?.tiers ?? [];
   const concorsi = siteConfig.sfideAccordion.items.find((i) => i.kind === "iscrivi")?.concorsi ?? [];
-
-  const [tipoPass, setTipoPass] = useState<string>("");
-  const [sfideScelte, setSfideScelte] = useState<string[]>([]);
-  const [status, setStatus] = useState<SubmitStatus>("idle");
-  const [errorMessage, setErrorMessage] = useState<string | undefined>();
-  // Posti rimasti per Sfida (60 a Sfida, confermato da Edvige il 15/10/2026):
-  // letti da
-  // pass-giurato-counts.php, che conta le iscrizioni già salvate nel CSV
-  // sul server. Una Sfida esaurita si disattiva da sola, senza bisogno di
-  // toccare il codice quando si riempie.
-  const [sfideCounts, setSfideCounts] = useState<Record<string, number>>({});
-  const [countsLimit, setCountsLimit] = useState<number>(60);
-
-  useEffect(() => {
-    let cancelled = false;
-    fetch("/forms/pass-giurato-counts.php", { cache: "no-store" })
-      .then((r) => r.json())
-      .then((data: { limit?: number; counts?: Record<string, number> }) => {
-        if (cancelled) return;
-        if (data.counts) setSfideCounts(data.counts);
-        if (data.limit) setCountsLimit(data.limit);
-      })
-      .catch(() => {
-        // Endpoint non raggiungibile: nessuna Sfida viene disattivata per
-        // errore di rete, il controllo definitivo resta comunque lato
-        // server in lead.php.
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  const isSfidaFull = (name: string) => (sfideCounts[name] ?? 0) >= countsLimit;
-  const tutteEsaurite = concorsi.length > 0 && concorsi.every((c) => isSfidaFull(c.name));
-
-  const sfideAttese = tipoPass === "1 Sfida a scelta" ? 1 : tipoPass.startsWith("3 Sfide") ? 3 : tipoPass ? 9 : 0;
-  const richiedeSelezione = sfideAttese === 1 || sfideAttese === 3;
-  const granGiuratoDisponibile = !concorsi.some((c) => isSfidaFull(c.name));
-
-  const oggi = useMemo(() => new Date(), []);
-  const maxNascita = useMemo(() => {
-    const d = new Date(oggi);
-    d.setFullYear(d.getFullYear() - 18);
-    return d.toISOString().slice(0, 10);
-  }, [oggi]);
-
-  function toggleSfida(name: string) {
-    setSfideScelte((prev) => {
-      if (prev.includes(name)) return prev.filter((s) => s !== name);
-      if (prev.length >= sfideAttese) return prev; // limite Pass raggiunto
-      if (isSfidaFull(name)) return prev; // 60 posti già occupati per questa Sfida
-      return [...prev, name];
-    });
-  }
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (richiedeSelezione && sfideScelte.length !== sfideAttese) {
-      setStatus("error");
-      setErrorMessage(`Seleziona esattamente ${sfideAttese} Sfid${sfideAttese === 1 ? "a" : "e"}.`);
-      return;
-    }
-    setStatus("submitting");
-    setErrorMessage(undefined);
-    const result = await submitLeadForm(e.currentTarget);
-    if (result.ok) {
-      setStatus("success");
-      e.currentTarget.reset();
-      setTipoPass("");
-      setSfideScelte([]);
-    } else {
-      setStatus("error");
-      setErrorMessage(result.error);
-    }
-  }
 
   return (
     <section className="section-flow section-space">
@@ -162,32 +77,57 @@ export default function PassGiuratoPage() {
         </p>
       </div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="section-shell mx-auto mt-12 flex max-w-[42rem] flex-col gap-12"
-      >
-        <input type="hidden" name="requestType" value="iscrizione-giurato" />
-        <Honeypot />
-
-        <fieldset className="flex flex-col gap-5">
-          <FormSectionTitle>1. I tuoi dati</FormSectionTitle>
-          <div className="grid gap-5 sm:grid-cols-2">
-            <TextField label="Nome" name="nome" required />
-            <TextField label="Cognome" name="cognome" required />
+      <div className="section-shell mx-auto mt-12 flex max-w-[42rem] flex-col gap-10">
+        <div className="flex flex-col gap-5">
+          <h2 className="text-center font-display text-[1.35rem] leading-tight text-[var(--color-ink-strong)]">
+            Scegli il tuo Pass
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {tiers.map((tier) => (
+              <div
+                key={tier.name}
+                className={`flex flex-col items-center gap-2 rounded-[1rem] border p-4 text-center ${
+                  tier.featured
+                    ? "border-[var(--color-wine)] bg-[rgba(47,91,70,0.08)]"
+                    : "border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)]"
+                }`}
+              >
+                <span className="font-display text-[1rem] leading-tight text-[var(--color-ink-strong)]">
+                  {tier.name}
+                </span>
+                <span className="font-display text-[1.5rem] leading-none text-[var(--color-ink-strong)]">
+                  {tier.price}
+                </span>
+                {tier.priceDetail ? (
+                  <span className="text-[0.76rem] leading-[1.45] text-[var(--color-muted)]">
+                    {tier.priceDetail}
+                  </span>
+                ) : null}
+              </div>
+            ))}
           </div>
-          <TextField label="Email" name="email" type="email" required />
-          <TextField
-            label="Data di nascita"
-            name="data_nascita"
-            type="date"
-            required
-            max={maxNascita}
-            hint="Il Pass Giuria Popolare è riservato ai maggiorenni (18 anni compiuti)."
-          />
-        </fieldset>
 
-        <fieldset className="flex flex-col gap-5">
-          <FormSectionTitle>2. Il calendario delle Sfide</FormSectionTitle>
+          <div className="flex flex-col items-center gap-3 text-center">
+            <a
+              href={BIGLIETTERIA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-ui inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[var(--color-sand)] px-10 text-[1rem] font-bold uppercase tracking-[0.06em] text-[var(--color-ink-strong)] shadow-[0_14px_32px_rgba(255,215,87,0.32)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-px hover:shadow-[0_18px_38px_rgba(255,215,87,0.4)]"
+            >
+              🎟️ Acquista il tuo Pass Giurato
+            </a>
+            <p className="max-w-[44ch] text-[0.84rem] leading-[1.6] text-[var(--color-muted)]">
+              L&rsquo;acquisto si completa sulla biglietteria ufficiale, dove scegli il Pass e le
+              Sfide a cui vuoi partecipare. Ai prezzi si aggiungono le commissioni della
+              biglietteria.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-5">
+          <h2 className="text-center font-display text-[1.35rem] leading-tight text-[var(--color-ink-strong)]">
+            Il calendario delle Sfide
+          </h2>
           <p className="text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
             Le 9 Sfide del Gran Premio del Gusto si svolgono su 3 giornate. Scegli il Pass e le
             Sfide tenendo conto di quando puoi essere presente — ogni Sfida qui sotto mostra
@@ -209,11 +149,6 @@ export default function PassGiuratoPage() {
                       .map((c) => (
                         <li key={c.name} className="text-[0.82rem] leading-[1.4] text-[var(--color-muted)]">
                           <span aria-hidden="true">{c.icon}</span> {c.ora} — {c.name}
-                          {isSfidaFull(c.name) ? (
-                            <span className="ml-1.5 font-ui text-[0.66rem] font-semibold uppercase tracking-[0.04em] text-[rgb(153,42,42)]">
-                              Esaurito
-                            </span>
-                          ) : null}
                         </li>
                       ))}
                   </ul>
@@ -228,163 +163,8 @@ export default function PassGiuratoPage() {
             </a>
             .
           </p>
-        </fieldset>
-
-        <fieldset className="flex flex-col gap-5">
-          <FormSectionTitle>3. Scegli il tuo Pass</FormSectionTitle>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {tiers.map((tier) => {
-              const selected = tipoPass === tier.name;
-              // Il Pass Gran Giurato copre tutte le 9 Sfide: se anche una
-              // sola ha già raggiunto i 60 posti, questo Pass non è più
-              // acquistabile per intero (le Sfide singole restano invece
-              // scelte una per una più sotto, dove l'esclusione è puntuale).
-              const isGranGiurato = tier.name.startsWith("Pass Gran Giurato");
-              const disabled = isGranGiurato && !granGiuratoDisponibile;
-              return (
-                <label
-                  key={tier.name}
-                  className={`flex flex-col items-center gap-1 rounded-[1rem] border p-4 text-center transition-colors duration-200 ${
-                    disabled
-                      ? "cursor-not-allowed border-[rgba(47,91,70,0.15)] bg-[rgba(47,91,70,0.03)] opacity-60"
-                      : "cursor-pointer"
-                  } ${
-                    selected
-                      ? "border-[var(--color-wine)] bg-[rgba(47,91,70,0.08)]"
-                      : disabled
-                        ? ""
-                        : "border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)]"
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="tipo_pass"
-                    value={tier.name}
-                    required
-                    disabled={disabled}
-                    checked={selected}
-                    onChange={() => {
-                      setTipoPass(tier.name);
-                      setSfideScelte([]);
-                    }}
-                    className="sr-only"
-                  />
-                  <span className="font-display text-[1rem] leading-tight text-[var(--color-ink-strong)]">
-                    {tier.name}
-                  </span>
-                  {disabled ? (
-                    <span className="font-ui text-[0.66rem] font-semibold uppercase tracking-[0.04em] text-[rgb(153,42,42)]">
-                      Non disponibile: una o più Sfide esaurite
-                    </span>
-                  ) : null}
-                </label>
-              );
-            })}
-          </div>
-
-          {richiedeSelezione ? (
-            <div>
-              <p className="text-[0.88rem] text-[var(--color-muted)]">
-                Scegli {sfideAttese} Sfid{sfideAttese === 1 ? "a" : "e"} ({sfideScelte.length}/{sfideAttese}{" "}
-                selezionat{sfideAttese === 1 ? "a" : "e"})
-              </p>
-              <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
-                {concorsi.map((c) => {
-                  const checked = sfideScelte.includes(c.name);
-                  const full = isSfidaFull(c.name);
-                  return (
-                    <label
-                      key={c.name}
-                      className={`flex items-center gap-3 rounded-[0.8rem] border px-3 py-2.5 text-[0.88rem] transition-colors duration-200 ${
-                        full
-                          ? "cursor-not-allowed border-[rgba(47,91,70,0.12)] bg-[rgba(47,91,70,0.02)] opacity-60"
-                          : checked
-                            ? "border-[var(--color-wine)] bg-[rgba(47,91,70,0.08)]"
-                            : "border-[rgba(47,91,70,0.22)] bg-[rgba(255,253,245,0.6)]"
-                      }`}
-                    >
-                      <input
-                        type="checkbox"
-                        name="sfide"
-                        value={c.name}
-                        checked={checked}
-                        disabled={full}
-                        onChange={() => toggleSfida(c.name)}
-                        className="h-4 w-4 accent-[var(--color-wine)]"
-                      />
-                      <span aria-hidden="true">{c.icon}</span>
-                      <span>
-                        {c.name}
-                        <span className="block text-[0.74rem] text-[var(--color-muted)]">
-                          {c.giorno} · ore {c.ora}
-                          {full ? (
-                            <span className="ml-1.5 font-ui font-semibold uppercase tracking-[0.04em] text-[rgb(153,42,42)]">
-                              Esaurito
-                            </span>
-                          ) : null}
-                        </span>
-                      </span>
-                    </label>
-                  );
-                })}
-              </div>
-            </div>
-          ) : tipoPass ? (
-            <p className="text-center text-[0.86rem] italic text-[var(--color-muted)]">
-              Pass Gran Giurato: partecipi a tutte le 9 Sfide, nessuna selezione necessaria.
-            </p>
-          ) : null}
-
-        </fieldset>
-
-        {/* 15/10/2026: niente biglietteria esterna,
-            non qui. Questo modulo resta per dire alla segreteria quali Sfide
-            ha scelto il Giurato. Nessun pagamento viene incassato dal sito. */}
-        <fieldset className="flex flex-col gap-5">
-          <div className="rounded-[0.9rem] border border-[rgba(47,91,70,0.25)] bg-[rgba(255,253,245,0.6)] p-4 text-center">
-            <p className="text-[0.88rem] leading-[1.6] text-[var(--color-muted)]">
-              Compila il modulo qui sotto con le Sfide che hai scelto: la Segreteria ti
-              richiama per completare il Pass e ti manda la conferma via email.
-            </p>
-            <p className="mt-2 text-[0.82rem] leading-[1.55] text-[var(--color-muted)]">
-              €35 una Sfida · €60 tre Sfide · €80 tutte le nove, più commissioni. Bicchiere e
-              portabicchiere serigrafati sono compresi nel prezzo di tutti i Pass.
-            </p>
-          </div>
-        </fieldset>
-
-        <fieldset className="flex flex-col gap-4">
-          <CheckboxField name="privacy_consent" required>
-            Ho letto e accetto la{" "}
-            <a href="/social/privacy.html" className="underline">
-              privacy policy
-            </a>
-            .
-          </CheckboxField>
-        </fieldset>
-
-        <div className="flex flex-col items-center gap-4 border-t border-[rgba(255,215,87,0.3)] pt-8 text-center">
-          {tutteEsaurite ? (
-            <p className="font-ui text-[0.86rem] font-semibold uppercase tracking-[0.06em] text-[rgb(153,42,42)]">
-              Tutti i posti Giuria Popolare per le 9 Sfide sono esauriti.
-            </p>
-          ) : null}
-
-          <button
-            type="submit"
-            disabled={status === "submitting" || tutteEsaurite}
-            className="font-ui inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[var(--color-sand)] px-10 text-[1rem] font-bold uppercase tracking-[0.06em] text-[var(--color-ink-strong)] shadow-[0_14px_32px_rgba(255,215,87,0.32)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-px hover:shadow-[0_18px_38px_rgba(255,215,87,0.4)] disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {status === "submitting" ? "Invio in corso…" : "🎟️ Invia Prenotazione"}
-          </button>
-
-          <FormStatusBanner
-            status={status}
-            errorMessage={errorMessage}
-            successMessage="Prenotazione ricevuta dalla Segreteria Organizzativa. Riceverai una conferma via email."
-          />
         </div>
-      </form>
+      </div>
 
       {biglietti?.extraTitle ? (
         <div className="section-shell mx-auto mt-14 max-w-[42rem] rounded-[1.1rem] border border-[rgba(47,91,70,0.2)] bg-[rgba(255,253,245,0.6)] p-6 text-center">

@@ -181,7 +181,7 @@ export default function ProgrammaHubSection() {
                 href="/pass-giurato/"
                 className="font-ui inline-flex h-11 items-center justify-center rounded-full bg-[var(--color-wine)] px-6 text-[0.86rem] font-semibold text-[rgba(255,253,245,1)] transition-colors duration-300 ease-out hover:bg-[var(--color-wine-strong)]"
               >
-                Richiedi il tuo Pass Giurato
+                Acquista il tuo Pass Giurato
               </a>
             </div>
           </div>
