@@ -1,5 +1,25 @@
 [
   {
+    "id": "76d9a5651d9f",
+    "category": "Radar del Sud",
+    "title": "Sull'Appennino c'è uno dei migliori ristoranti d'Italia. Il menu di 5 portate costa 80 euro",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/ristoranti/dagorini-san-piero-bagno-menu-80-euro-gianluca-gorini/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-16"
+  },
+  {
+    "id": "4c5de2442130",
+    "category": "Business con Anima",
+    "title": "Riparte l'export di vino italiano fuori dall'Ue grazie agli Stati Uniti. Europa ancora in affanno",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/export-vino-italiano-luglio-2026-stati-uniti/",
+    "note": "Un segnale di mercato per le eccellenze del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-16"
+  },
+  {
     "id": "34a0e94b3de4",
     "category": "Radar del Sud",
     "title": "\"Dobbiamo fermare l'effetto domino\". Come le proteste dei tir rischiano di bloccare i supermercati",
@@ -276,26 +296,6 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/i-venti-2025-coda-di-volpe-irpinia-doc-famiglia-pagano/302594/",
     "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-05"
-  },
-  {
-    "id": "2f3f8821a624",
-    "category": "Calici di Magna Grecia",
-    "title": "6 vini per raccontare il Trentino: perché andare fino in cantina",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/cantina-la-vis-vini-ritratti",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-05"
-  },
-  {
-    "id": "98d43c2740ec",
-    "category": "Radar del Sud",
-    "title": "Sembra una criniera di leone ed è il fungo più strano del bosco: perché gli chef lo vogliono in menu",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/lions-mane-fungo-criniera-di-leone/",
-    "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-10-05"
   }
