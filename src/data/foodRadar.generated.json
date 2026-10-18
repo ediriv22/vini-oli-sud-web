@@ -1,5 +1,35 @@
 [
   {
+    "id": "ac9843f05cb1",
+    "category": "Radar del Sud",
+    "title": "La vendemmia della vigna a starseta dei Guastaferro, la più vecchia del mondo",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/la-vendemmia-della-vigna-a-starseta-dei-guastaferro-la-piu-vecchia-del-mondo/303356/",
+    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-18"
+  },
+  {
+    "id": "a7c06292874a",
+    "category": "Calici di Magna Grecia",
+    "title": "MenoDodiciIGP: Falerio Pecorino Le Rondini 2025 Tenuta Cocci Grifoni",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/menododiciigp-falerio-pecorino-le-rondini-2025-tenuta-cocci-grifoni/302971/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-18"
+  },
+  {
+    "id": "09b27e6e9941",
+    "category": "Radar del Sud",
+    "title": "Dentro un campeggio sulle Dolomiti c'è un ristorante con 1.500 vini in cantina: è tra i migliori d'Italia",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/ristoranti/hebbo-dobbiaco-ristorante-campeggio-cantina-1500-vini/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-17"
+  },
+  {
     "id": "76d9a5651d9f",
     "category": "Radar del Sud",
     "title": "Sull'Appennino c'è uno dei migliori ristoranti d'Italia. Il menu di 5 portate costa 80 euro",
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-10-06"
-  },
-  {
-    "id": "f4054552cc89",
-    "category": "Oro Verde",
-    "title": "La pasta nata per mangiare l'olio nuovo. In Abruzzo si preparava direttamente al frantoio",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/pasta-trappitara-abruzzo-olio-nuovo/",
-    "note": "Un segnale dall'olio del Sud, focus Abruzzo.",
-    "noteSource": "auto",
-    "date": "2026-10-06"
-  },
-  {
-    "id": "3fbb5c26bd58",
-    "category": "Radar del Sud",
-    "title": "Il ristorante vegano a Milano dove portare anche un carnivoro",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/ristorante-vegano-linfa-visionnaire-milano",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-06"
-  },
-  {
-    "id": "75a671cda534",
-    "category": "Calici di Magna Grecia",
-    "title": "I Venti 2025 Coda di Volpe Irpinia doc, Famiglia Pagano",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/i-venti-2025-coda-di-volpe-irpinia-doc-famiglia-pagano/302594/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-05"
   }
 ]
