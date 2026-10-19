@@ -1,5 +1,25 @@
 [
   {
+    "id": "83696890f189",
+    "category": "Calici di Magna Grecia",
+    "title": "Campania Falanghina 2019 Igt – Di Meo",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/campania-falanghina-2019-igt-di-meo/303417/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-19"
+  },
+  {
+    "id": "c2ead4d68f0f",
+    "category": "Calici di Magna Grecia",
+    "title": "Fiano di Avellino Docg 2019, Filadoro",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/fiano-di-avellino-docg-2019-filadoro/302797/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-19"
+  },
+  {
     "id": "ac9843f05cb1",
     "category": "Radar del Sud",
     "title": "La vendemmia della vigna a starseta dei Guastaferro, la più vecchia del mondo",
@@ -15,6 +35,16 @@
     "title": "MenoDodiciIGP: Falerio Pecorino Le Rondini 2025 Tenuta Cocci Grifoni",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/menododiciigp-falerio-pecorino-le-rondini-2025-tenuta-cocci-grifoni/302971/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-18"
+  },
+  {
+    "id": "053b616f6673",
+    "category": "Calici di Magna Grecia",
+    "title": "Il Wengè di Pontelatone parte dal vino e dai cocktail per arrivare alla cucina",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/il-wenge-bar-wine-bar-gintoneria-e-cucina-contemporanea-a-pontelatone-ce/190650/",
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-10-18"
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-10-07"
-  },
-  {
-    "id": "6faccbae8210",
-    "category": "Calici di Magna Grecia",
-    "title": "Oltre il 70% del vino altoatesino è cooperativo (ed è una fortuna). Storia di un modello di resistenza controcorrente",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/alto-adige-vino-cooperativo-modello-controcorrente/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-07"
-  },
-  {
-    "id": "b623a632446d",
-    "category": "Calici di Magna Grecia",
-    "title": "Il vino dealcolato prova a recuperare gli aromi persi. La nuova tecnologia viene dalla Germania",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/vino-dealcolato-aromi-henkell-freixenet/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-07"
-  },
-  {
-    "id": "0fbcf4330665",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Vino, Donna\" di Chiara Giorleo: le prossime presentazioni",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vino-donna-di-chiara-giorleo-le-prossime-presentazioni/302617/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-06"
   }
 ]
