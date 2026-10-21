@@ -1,3 +1,4 @@
+import CookiePreferencesLink from "@/components/consent/CookiePreferencesLink";
 import BrandLogo from "@/components/ui/BrandLogo";
 import { footerNavigation } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
@@ -114,6 +115,7 @@ export default function Footer() {
           >
             Terms of Service
           </a>
+          <CookiePreferencesLink className="min-h-[1.75rem] uppercase tracking-[0.12em] hover:text-[var(--color-sand)]" />
         </div>
       </div>
     </footer>

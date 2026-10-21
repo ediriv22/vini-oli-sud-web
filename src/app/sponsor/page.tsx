@@ -10,6 +10,7 @@ import {
   submitLeadForm,
   type SubmitStatus,
 } from "@/components/forms/FormFields";
+import { track } from "@/lib/track";
 
 /**
  * Pagina dedicata "Diventa Sponsor" — numeri di affluenza + modulo di
@@ -29,6 +30,7 @@ export default function SponsorPage() {
     const result = await submitLeadForm(e.currentTarget);
     if (result.ok) {
       setStatus("success");
+      track("SubmitForm", { content_name: "Richiesta sponsor" });
       e.currentTarget.reset();
     } else {
       setStatus("error");

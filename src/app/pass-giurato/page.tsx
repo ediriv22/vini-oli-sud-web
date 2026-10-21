@@ -1,3 +1,4 @@
+import { TrackClick, TrackOnView } from "@/components/consent/TrackEvents";
 import { siteConfig } from "@/data/site";
 
 /**
@@ -31,6 +32,7 @@ export default function PassGiuratoPage() {
 
   return (
     <section className="section-flow section-space">
+      <TrackOnView event="ViewContent" params={{ content_name: "Pass Giurato" }} />
       <div className="section-shell mx-auto max-w-[46rem] text-center">
         <p className="eyebrow text-center">Il Gran Premio del Gusto</p>
         <h1 className="display-balance mt-4 font-display text-[clamp(1.9rem,4vw,2.6rem)] leading-[1.05] text-[var(--color-ink-strong)]">
@@ -108,14 +110,20 @@ export default function PassGiuratoPage() {
           </div>
 
           <div className="flex flex-col items-center gap-3 text-center">
-            <a
-              href={BIGLIETTERIA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-ui inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[var(--color-sand)] px-10 text-[1rem] font-bold uppercase tracking-[0.06em] text-[var(--color-ink-strong)] shadow-[0_14px_32px_rgba(255,215,87,0.32)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-px hover:shadow-[0_18px_38px_rgba(255,215,87,0.4)]"
+            <TrackClick
+              event="InitiateCheckout"
+              params={{ content_name: "Pass Giurato" }}
+              appendUtm
             >
-              🎟️ Acquista il tuo Pass Giurato
-            </a>
+              <a
+                href={BIGLIETTERIA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-ui inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[var(--color-sand)] px-10 text-[1rem] font-bold uppercase tracking-[0.06em] text-[var(--color-ink-strong)] shadow-[0_14px_32px_rgba(255,215,87,0.32)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-px hover:shadow-[0_18px_38px_rgba(255,215,87,0.4)]"
+              >
+                🎟️ Acquista il tuo Pass Giurato
+              </a>
+            </TrackClick>
             <p className="max-w-[44ch] text-[0.84rem] leading-[1.6] text-[var(--color-muted)]">
               L&rsquo;acquisto si completa sulla biglietteria ufficiale, dove scegli il Pass e le
               Sfide a cui vuoi partecipare. Ai prezzi si aggiungono le commissioni della
