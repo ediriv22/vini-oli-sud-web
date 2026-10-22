@@ -1,5 +1,65 @@
 [
   {
+    "id": "4a05e5975387",
+    "category": "Radar del Sud",
+    "title": "Ai Tre Monelli e l'Hotel Rufolo di Ravello: cucina, pizza e vino",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/ai-tre-monelli-e-lhotel-rufolo-di-ravello-cucina-pizza-e-vino/303576/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-21"
+  },
+  {
+    "id": "72a31498c236",
+    "category": "Radar del Sud",
+    "title": "Ciro Salvo e il vino: la Campania nel calice di 50 Kalò",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/ciro-salvo-e-il-vino-la-campania-nel-calice-di-50-kalo/303562/",
+    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-21"
+  },
+  {
+    "id": "75cc87963680",
+    "category": "Calici di Magna Grecia",
+    "title": "Sovranaturale torna a Bari: oltre 40 vignaioli europei per raccontare il futuro del vino naturale",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/sovranaturale-torna-a-bari-oltre-40-vignaioli-europei-per-raccontare-il-futuro-del-vino-naturale/303559/",
+    "note": "Una voce dal mondo del vino, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-10-21"
+  },
+  {
+    "id": "102fe630b26a",
+    "category": "Calici di Magna Grecia",
+    "title": "Il vino italiano parte alla conquista del Giappone. A Tokyo arrivano 41 cantine premiate con i Tre Bicchieri",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/gambero-rosso-world-tour-2026-tokyo-vino-italiano/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-21"
+  },
+  {
+    "id": "732db923ea1f",
+    "category": "Radar del Sud",
+    "title": "Ristorante Due Camini di Borgo Egnazia",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/borgo-egnazia-ristorante-i-due-camini-domingo-schingarogingaro/125531/",
+    "note": "Una segnalazione di cucina, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-10-21"
+  },
+  {
+    "id": "fdb29bb7d9ae",
+    "category": "Business con Anima",
+    "title": "Il vino naturale è diventato troppo caro? \"La bolla è cresciuta, il prezzo può costituire un'ulteriore barriera\"",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/vino-naturale-prezzi-alti-speculazione-piero-crocenzi/",
+    "note": "Un segnale di mercato per le eccellenze del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-21"
+  },
+  {
     "id": "fa90b7a7e7b5",
     "category": "Calici di Magna Grecia",
     "title": "Barbaresco 2021 docg Produttori del Barbaresco",
@@ -238,65 +298,5 @@
     "note": "Una segnalazione di cucina, focus Puglia.",
     "noteSource": "auto",
     "date": "2026-10-11"
-  },
-  {
-    "id": "da128675e6db",
-    "category": "Radar del Sud",
-    "title": "Uno dei migliori Vermentino da 12 euro si fa in Puglia. E si trova anche al supermercato",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/degustazioni/vermentino-salento-notte-rossa-terre-di-sava/",
-    "note": "Una segnalazione gastronomica del Sud, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-10-11"
-  },
-  {
-    "id": "b83a25735a95",
-    "category": "Calici di Magna Grecia",
-    "title": "Alta Langa il futuro del Metodo Classico italiano: la masterclass durante l'evento Falstaff Sparkling Party a Napoli",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/alta-langa-il-futuro-del-metodo-classico-italiano-la-masterclass-durante-levento-falstaff-sparkling-party-a-napoli/302828/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-10"
-  },
-  {
-    "id": "8d13da118f0c",
-    "category": "Radar del Sud",
-    "title": "Cosa succede quando un ristorante ospita uno chef diverso ogni evento. Si chiama chef residency ed è la formula del momento",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/ristoranti/chef-residency-tendenza/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-10"
-  },
-  {
-    "id": "675d5e57038c",
-    "category": "Calici di Magna Grecia",
-    "title": "Vino e pizza: il sommelier in pizzeria 40 | Lorenzo Tonelli",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vino-e-pizza-il-sommelier-in-pizzeria-40-lorenzo-tonelli/302936/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-10"
-  },
-  {
-    "id": "9e51275bf64d",
-    "category": "Calici di Magna Grecia",
-    "title": "Il tre stelle Michelin in Abruzzo: dormi, fai colazione e cena super",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/casadonna-ristorante-reale-niko-romito-castel-di-sangro",
-    "note": "Una voce dal mondo del vino, focus Abruzzo.",
-    "noteSource": "auto",
-    "date": "2026-10-10"
-  },
-  {
-    "id": "c385f47aa09b",
-    "category": "Calici di Magna Grecia",
-    "title": "VINerdì | Az. Agr. Falisca – Toscana IGT Trebbiano 2024",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vinerdi-az-agr-falisca-toscana-igt-trebbiano-2024/302701/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-09"
   }
 ]
