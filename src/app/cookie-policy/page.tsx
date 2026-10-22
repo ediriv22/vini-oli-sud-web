@@ -6,7 +6,8 @@ export const metadata = createPageMetadata(
 );
 
 // Data di ultimo aggiornamento = giorno del deploy: va aggiornata se il testo cambia.
-const LAST_UPDATE = "21 ottobre 2026";
+const PRIVACY_EMAIL = "info@vinisud.it";
+const LAST_UPDATE = "22 ottobre 2026";
 
 export default function CookiePolicyPage() {
   const { organizer } = siteConfig;
@@ -29,9 +30,9 @@ export default function CookiePolicyPage() {
             </h2>
             <p className="mt-2">
               Il titolare del trattamento è {organizer.legalName} (P.IVA {organizer.vatId}).
-              Per qualsiasi richiesta scrivi a{" "}
-              <a className="underline" href={`mailto:${organizer.email}`}>
-                {organizer.email}
+              Per qualsiasi richiesta sulla privacy scrivi a{" "}
+              <a className="underline" href={`mailto:${PRIVACY_EMAIL}`}>
+                {PRIVACY_EMAIL}
               </a>
               .
             </p>
