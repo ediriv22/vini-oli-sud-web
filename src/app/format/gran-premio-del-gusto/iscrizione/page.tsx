@@ -1,3 +1,4 @@
+import { TrackClick } from "@/components/consent/TrackEvents";
 import { createPageMetadata, siteConfig } from "@/data/site";
 
 export const metadata = createPageMetadata(
@@ -50,14 +51,16 @@ export default function SelezioneProdottoPage() {
             presentare la domanda stanno nel bando, che e' la fonte ufficiale e puo'
             cambiare senza che ce ne accorgiamo. */}
         <p className="mt-7">
-          <a
-            href="https://agricoltura.regione.campania.it/fiere/racing-show-2026.html"
-            target="_blank"
-            rel="noreferrer"
-            className="font-ui inline-flex h-11 items-center justify-center rounded-full bg-[var(--color-wine)] px-6 text-[0.86rem] font-semibold text-[rgba(255,253,245,1)] transition-colors duration-300 ease-out hover:bg-[var(--color-wine-strong)]"
-          >
-            Leggi il bando della Regione Campania
-          </a>
+          <TrackClick event="ClickButton" params={{ content_name: "Bando Regione Campania" }}>
+            <a
+              href="https://agricoltura.regione.campania.it/fiere/racing-show-2026.html"
+              target="_blank"
+              rel="noreferrer"
+              className="font-ui inline-flex h-11 items-center justify-center rounded-full bg-[var(--color-wine)] px-6 text-[0.86rem] font-semibold text-[rgba(255,253,245,1)] transition-colors duration-300 ease-out hover:bg-[var(--color-wine-strong)]"
+            >
+              Leggi il bando della Regione Campania
+            </a>
+          </TrackClick>
         </p>
       </div>
 

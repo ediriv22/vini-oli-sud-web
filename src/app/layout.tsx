@@ -10,6 +10,8 @@ import {
   EB_Garamond,
   Inter,
 } from "next/font/google";
+import CookieBanner from "@/components/consent/CookieBanner";
+import TikTokPixel from "@/components/consent/TikTokPixel";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { siteConfig } from "@/data/site";
@@ -184,6 +186,8 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
+        <CookieBanner />
+        <TikTokPixel />
       </body>
     </html>
   );

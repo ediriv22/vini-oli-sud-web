@@ -1,3 +1,4 @@
+import { TrackClick } from "@/components/consent/TrackEvents";
 import Button from "@/components/ui/Button";
 import { ticketsSection } from "@/data/homePrices";
 import { siteConfig } from "@/data/site";
@@ -8,6 +9,8 @@ import { siteConfig } from "@/data/site";
  * pagina di iscrizione prodotto, così l'utente non deve cercarli in un
  * sotto-menu. Dati in src/data/homePrices.ts (nessun prezzo hard-coded qui).
  */
+const isPassCard = (href: string) => href.startsWith("/pass-giurato");
+
 export default function HomeTicketsSection() {
   const { organizer } = siteConfig;
 
@@ -61,14 +64,27 @@ export default function HomeTicketsSection() {
               {card.note ? (
                 <p className="mt-1 text-[0.78rem] leading-[1.4] text-[var(--color-muted)]">{card.note}</p>
               ) : null}
-              <Button
-                href={card.ctaHref}
-                variant={card.featured ? "primary" : "soft"}
-                size="sm"
-                className="mt-4"
-              >
-                {card.ctaLabel}
-              </Button>
+              {isPassCard(card.ctaHref) ? (
+                <TrackClick event="InitiateCheckout" params={{ content_name: "Pass Giurato" }}>
+                  <Button
+                    href={card.ctaHref}
+                    variant={card.featured ? "primary" : "soft"}
+                    size="sm"
+                    className="mt-4"
+                  >
+                    {card.ctaLabel}
+                  </Button>
+                </TrackClick>
+              ) : (
+                <Button
+                  href={card.ctaHref}
+                  variant={card.featured ? "primary" : "soft"}
+                  size="sm"
+                  className="mt-4"
+                >
+                  {card.ctaLabel}
+                </Button>
+              )}
             </div>
           ))}
         </div>
