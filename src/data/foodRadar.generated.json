@@ -1,5 +1,35 @@
 [
   {
+    "id": "6cd618a9869d",
+    "category": "Calici di Magna Grecia",
+    "title": "Abbiamo un problema: le cantine italiane non stanno investendo sul digitale e sull'intelligenza artificiale",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/cantine-investimenti-digitale-intelligenza-artificiale-rapporto-teha/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-22"
+  },
+  {
+    "id": "5b061f202b0b",
+    "category": "Calici di Magna Grecia",
+    "title": "Presentazione \"Vino, Donna\" di Chiara Giorleo:al Renaissance Naples Hotel Mediterraneo",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/presentazione-vino-donna-di-chiara-giorleoal-renaissance-naples-hotel-mediterraneo/303625/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-22"
+  },
+  {
+    "id": "a82bea699a7d",
+    "category": "Calici di Magna Grecia",
+    "title": "Cinque consorzi agroalimentari del Lazio si uniscono per dare futuro ai paesaggi agricoli",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/cinque-consorzi-enogastronomici-lazio-roots-arsial/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-22"
+  },
+  {
     "id": "4a05e5975387",
     "category": "Radar del Sud",
     "title": "Ai Tre Monelli e l'Hotel Rufolo di Ravello: cucina, pizza e vino",
@@ -268,35 +298,5 @@
     "note": "Una segnalazione di cucina, focus Campania.",
     "noteSource": "auto",
     "date": "2026-10-12"
-  },
-  {
-    "id": "b08e3e316c4a",
-    "category": "Radar del Sud",
-    "title": "TerraCore – Osteria Campana al Conterraneo Hotel",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/terracore-osteria-campana-al-conterraneo-hotel/303018/",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-12"
-  },
-  {
-    "id": "2960c6b149fb",
-    "category": "Radar del Sud",
-    "title": "Il ristorante e tapas bar a Napoli che gioca bene con piatti e prezzi",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/joca-ristorante-tapas-bar-napoli",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-12"
-  },
-  {
-    "id": "94a9e37387c5",
-    "category": "Radar del Sud",
-    "title": "Addio alla stella Michelin in Puglia: Pietro Penna lascia Casamatta",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/pietro-penna-lascia-ristorante-stellato-casamatta",
-    "note": "Una segnalazione di cucina, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-10-11"
   }
 ]
