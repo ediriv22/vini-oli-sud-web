@@ -1,5 +1,35 @@
 [
   {
+    "id": "fbb68662f606",
+    "category": "Calici di Magna Grecia",
+    "title": "Solaia 2022 Toscana Igt, Antinori. Il formato da tre litri",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/solaia-2022-toscana-igt-antinori-il-formato-da-tre-litri/303724/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-24"
+  },
+  {
+    "id": "bced693e481f",
+    "category": "Calici di Magna Grecia",
+    "title": "I vincitori della 1a edizione del \"Premio culturale Falerno\" in onore di Gennaro Papa",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/i-vincitori-della-1a-edizione-del-premio-culturale-falerno-in-onore-di-fondatore-dellomonima-cantina/303734/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-23"
+  },
+  {
+    "id": "315001725ceb",
+    "category": "Radar del Sud",
+    "title": "Da un libro a un premio, così il lusso nel piatto ha trovato i suoi re",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/luxury-food-2026-chef-premiati-senato-roma/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-23"
+  },
+  {
     "id": "6cd618a9869d",
     "category": "Calici di Magna Grecia",
     "title": "Abbiamo un problema: le cantine italiane non stanno investendo sul digitale e sull'intelligenza artificiale",
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-10-14"
-  },
-  {
-    "id": "4fd7fd9bc756",
-    "category": "Radar del Sud",
-    "title": "Pizza della settimana: Attaccami di Madison e Piedirosso Contrada Salandra",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/pizza-della-settimana-attaccami-di-madison-e-piedirosso-contrada-salandra/303122/",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-13"
-  },
-  {
-    "id": "be4652a6fdb1",
-    "category": "Radar del Sud",
-    "title": "Dieta Mediterranea, un dialogo a più voci al Campania Libri Festival",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/dieta-mediterranea-un-dialogo-a-piu-voci-al-campania-libri-festival/303118/",
-    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-13"
-  },
-  {
-    "id": "f89005573a39",
-    "category": "Radar del Sud",
-    "title": "Ragù indimenticabile al tavolo sociale del ristorante di Salerno",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/cucina-uvenude-ristorante-salerno",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-12"
   }
 ]
