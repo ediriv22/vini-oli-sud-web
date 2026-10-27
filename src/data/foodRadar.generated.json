@@ -1,5 +1,25 @@
 [
   {
+    "id": "942287344754",
+    "category": "Calici di Magna Grecia",
+    "title": "Podere della Civettaja, il Pinot Nero in Casentino. La storia di Vincenzo Tommasi e Henri Jayer",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/podere-della-civettaja-il-pinot-nero-in-casentino-la-storia-di-vincenzo-tommasi-e-henri-jayer/303874/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-27"
+  },
+  {
+    "id": "a78c04dac7dd",
+    "category": "Radar del Sud",
+    "title": "Il ristorante in Sardegna con piatti strepitosi e menù a 44 euro",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/ristorante-arieddas-marmilla-sanluri-sardegna",
+    "note": "Una segnalazione di cucina, focus Sardegna.",
+    "noteSource": "auto",
+    "date": "2026-10-26"
+  },
+  {
     "id": "c6b2abf63cdd",
     "category": "Calici di Magna Grecia",
     "title": "Da una cantina in Valpolicella a mille ettari in tutta Italia: Tommasi è la Cantina dell'Anno 2027",
@@ -278,25 +298,5 @@
     "note": "Un segnale di mercato per le eccellenze del Sud.",
     "noteSource": "auto",
     "date": "2026-10-16"
-  },
-  {
-    "id": "34a0e94b3de4",
-    "category": "Radar del Sud",
-    "title": "\"Dobbiamo fermare l'effetto domino\". Come le proteste dei tir rischiano di bloccare i supermercati",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/proteste-tir-sud-supermercati-consegne-cibo/",
-    "note": "Una segnalazione gastronomica del Sud, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-10-15"
-  },
-  {
-    "id": "981016412aa4",
-    "category": "Oro Verde",
-    "title": "In Puglia gli olivicoltori bloccano l'A14 e lasciano le olive sugli alberi: \"Raccoglierle costa troppo\"",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/protesta-olio-puglia-olivicoltori-a14-prezzi/",
-    "note": "Un segnale dall'olio del Sud, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-10-14"
   }
 ]
