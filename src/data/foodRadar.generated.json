@@ -1,11 +1,31 @@
 [
   {
+    "id": "f9e324468fb7",
+    "category": "Calici di Magna Grecia",
+    "title": "Marina Cvetić San Martino Rosso Riserva, il Montepulciano d'Abruzzo super premiato",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/marina-cvetic-san-martino-rosso-riserva-il-montepulciano-dabruzzo-super-premiato/303885/",
+    "note": "Una voce dal mondo del vino, focus Abruzzo.",
+    "noteSource": "auto",
+    "date": "2026-10-28"
+  },
+  {
     "id": "942287344754",
     "category": "Calici di Magna Grecia",
     "title": "Podere della Civettaja, il Pinot Nero in Casentino. La storia di Vincenzo Tommasi e Henri Jayer",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/podere-della-civettaja-il-pinot-nero-in-casentino-la-storia-di-vincenzo-tommasi-e-henri-jayer/303874/",
     "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-27"
+  },
+  {
+    "id": "9fab6e15cb8c",
+    "category": "Radar del Sud",
+    "title": "\"Chiudiamo il ristorante due mesi all'anno\". La scelta di Niko Romito per far lavorare meglio i suoi cuochi",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/niko-romito-reale-chiusura-due-mesi-lavoro-cuochi/",
+    "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-10-27"
   },
@@ -278,25 +298,5 @@
     "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-10-17"
-  },
-  {
-    "id": "76d9a5651d9f",
-    "category": "Radar del Sud",
-    "title": "Sull'Appennino c'è uno dei migliori ristoranti d'Italia. Il menu di 5 portate costa 80 euro",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/ristoranti/dagorini-san-piero-bagno-menu-80-euro-gianluca-gorini/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-16"
-  },
-  {
-    "id": "4c5de2442130",
-    "category": "Business con Anima",
-    "title": "Riparte l'export di vino italiano fuori dall'Ue grazie agli Stati Uniti. Europa ancora in affanno",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/export-vino-italiano-luglio-2026-stati-uniti/",
-    "note": "Un segnale di mercato per le eccellenze del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-16"
   }
 ]
