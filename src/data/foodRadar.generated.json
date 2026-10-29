@@ -10,6 +10,26 @@
     "date": "2026-10-28"
   },
   {
+    "id": "787b4f243cd3",
+    "category": "Radar del Sud",
+    "title": "Festival della Cucina Italiana in Svizzera, successo a Neuchâtel per la seconda tappa",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/festival-della-cucina-italiana-in-svizzera-successo-a-neuchatel-per-la-seconda-tappa/303940/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-28"
+  },
+  {
+    "id": "bf21358fa4b1",
+    "category": "Calici di Magna Grecia",
+    "title": "I vini del Collio al primo posto tra i bianchi di collina: precedono Alto Adige e Colli Orientali tra i ristoratori",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/collio-evolution-sondaggio-wine-monitor-2026/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-28"
+  },
+  {
     "id": "942287344754",
     "category": "Calici di Magna Grecia",
     "title": "Podere della Civettaja, il Pinot Nero in Casentino. La storia di Vincenzo Tommasi e Henri Jayer",
@@ -278,25 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-10-18"
-  },
-  {
-    "id": "053b616f6673",
-    "category": "Calici di Magna Grecia",
-    "title": "Il Wengè di Pontelatone parte dal vino e dai cocktail per arrivare alla cucina",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/il-wenge-bar-wine-bar-gintoneria-e-cucina-contemporanea-a-pontelatone-ce/190650/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-18"
-  },
-  {
-    "id": "09b27e6e9941",
-    "category": "Radar del Sud",
-    "title": "Dentro un campeggio sulle Dolomiti c'è un ristorante con 1.500 vini in cantina: è tra i migliori d'Italia",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/ristoranti/hebbo-dobbiaco-ristorante-campeggio-cantina-1500-vini/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-17"
   }
 ]
