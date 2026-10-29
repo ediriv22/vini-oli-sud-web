@@ -72,7 +72,7 @@ export const ticketsSection = {
       subtitle: "Bando Regione Campania",
       featured: false,
       ctaLabel: "Come funziona",
-      ctaHref: "/format/gran-premio-del-gusto/iscrizione/",
+      ctaHref: "/programma/",
       note: "Le aziende saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania con un bando apposito.",
     },
   ] as readonly TicketCard[],

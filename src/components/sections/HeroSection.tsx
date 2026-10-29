@@ -155,7 +155,9 @@ export default function HeroSection() {
                uguali: due per riga sul telefono, quattro da tablet in su. */
             className="mt-8 grid max-w-[46rem] grid-cols-2 gap-4 sm:grid-cols-4"
           >
-            {siteConfig.sfideAccordion.items.map((item) => (
+            {siteConfig.sfideAccordion.items
+              .filter((item) => item.kind !== "iscrivi")
+              .map((item) => (
               <a
                 key={item.kind}
                 href={item.ctaHref || undefined}

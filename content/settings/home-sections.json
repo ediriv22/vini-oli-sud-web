@@ -182,14 +182,14 @@
         "label": "Programma",
         "heading": "Il Programma 2026",
         "body": [
-          "Tre giorni di degustazioni, masterclass e Sfide del Gran Premio del Gusto: 27, 28 e 29 novembre 2026 a Rotonda Diaz, Lungomare Caracciolo, Napoli."
+          "Tre giorni di degustazioni e masterclass: 27, 28 e 29 novembre 2026 a Rotonda Diaz, Lungomare Caracciolo, Napoli."
         ],
         "ctaLabel": "Vai al Programma",
         "ctaHref": "/programma/"
       },
       {
         "kind": "biglietti",
-        "label": "Acquista Pass Giurato",
+        "label": "Prenota la tua degustazione",
         "heading": "L'ingresso alla manifestazione è libero e gratuito",
         "subheading": "9 Sfide da assaggiare e votare. Con il Pass Giurato degusti le eccellenze in gara ed esprimi il tuo voto: la Giuria Popolare pesa il 70% del verdetto. I posti sono solo 60 per ciascuna Sfida.",
         "sectionTitle": "Diventa Giurato Popolare: solo 60 posti per ogni Sfida",
@@ -237,7 +237,7 @@
         ],
         "priceFootnote": "Con il Pass il tuo posto in giuria è assicurato: garantisce la partecipazione alle degustazioni e alle votazioni delle Sfide che hai scelto. I posti riservati a chi ha il Pass sono soltanto 60 per ciascun Gran Premio del Gusto. Chi non ha il Pass può essere ammesso alla Giuria Popolare solo a discrezione dell'Organizzazione, e soltanto se restano posti liberi. Bicchiere e portabicchiere serigrafati sono compresi nel prezzo di tutti i Pass. Prezzi esclusi commissioni e costi aggiuntivi indicati al momento della richiesta.",
         "ctaLabel": "Richiedi il tuo Pass Giurato",
-        "ctaHref": "/pass-giurato/",
+        "ctaHref": "https://napoli-racing-show.metooo.com/pages/il-gran-premio-del-gusto",
         "extraTitle": "🩺 Prevenzione gratuita con ASL Napoli 1 Centro",
         "extraBody": "I maggiorenni in possesso del Biglietto Tribuna del Napoli Racing Show o del Pass Giuria Popolare del Gran Premio del Gusto, previa prenotazione e fino a esaurimento dei posti disponibili, potranno effettuare visite gratuite di prevenzione presso il Camper della Salute dell'ASL Napoli 1 Centro nelle giornate di venerdì 27 e sabato 28 novembre 2026.",
         "extraCtaLabel": "Prenota la tua visita gratuita",
@@ -360,7 +360,7 @@
         ],
         "phasesNote": "Gli orari e la durata delle singole fasi potranno subire variazioni per esigenze organizzative.",
         "ctaLabel": "Vai al bando",
-        "ctaHref": "/format/gran-premio-del-gusto/iscrizione/",
+        "ctaHref": "/programma/",
         "note": "Le aziende che desiderano concorrere alle Sfide del Gran Premio del Gusto saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania, che ha pubblicato un bando apposito. Le domande si chiudono il 31 ottobre 2026."
       },
       {
@@ -376,16 +376,16 @@
     ]
   },
   "granPremioIntro": {
-    "kicker": "Il Gran Premio del Gusto",
-    "stat1": "9 Sfide • 9 Vincitori • 3 Giorni di Gusto e Spettacolo",
-    "stat2": "Giuria Popolare 70% • Giuria Tecnica 30%",
+    "kicker": "Il Villaggio Vini e Oli",
+    "stat1": "3 Giorni di degustazioni, presentazioni e spettacolo",
+    "stat2": "Partecipazione gratuita su prenotazione",
     "brand": "VINISUD.IT",
     "edition": "2ª Rassegna Vini & Oli della Magna Grecia",
     "dates": "27 • 28 • 29 Novembre 2026",
     "venue": "Rotonda Diaz • Lungomare Caracciolo • Napoli",
-    "subtitle": "Le Sfide della Magna Grecia",
-    "claim1": "Il pubblico non assaggia soltanto.",
-    "claim2": "Il pubblico sceglie i vincitori.",
+    "subtitle": "Le eccellenze della Magna Grecia",
+    "claim1": "Il pubblico non guarda soltanto.",
+    "claim2": "Il pubblico assaggia.",
     "tags": "Vini • Oli • Sapori • Dieta Mediterranea • Prevenzione • Motori • Spettacolo",
     "freeEntry": "Ingresso al Villaggio gratuito",
     "organizzatori": "Organizzato da A.S.D. Napoli Racing Show, in collaborazione con Comune di Napoli e Associazione Italiana Sommelier, con il Patrocinio dell'Assessorato all'Agricoltura della Regione Campania."
@@ -402,12 +402,12 @@
         "ctaHref": "/format/rassegna-vini-e-oli-della-magna-grecia/"
       },
       {
-        "title": "1ª Edizione del Gran Premio del Gusto",
-        "tagline": "9 Sfide · 9 Vincitori · 70% Giuria Popolare · 30% Giuria Tecnica",
-        "ctaLabel": "Scopri il Gran Premio",
-        "ctaHref": "/format/gran-premio-del-gusto/",
-        "secondaryCtaLabel": "🎟️ Diventa Giurato",
-        "secondaryCtaHref": "/pass-giurato/"
+        "title": "Presentazioni e degustazioni",
+        "tagline": "Le aziende raccontano il prodotto · Tu assaggi · Gratis per i primi 60 iscritti",
+        "ctaLabel": "Vedi il programma",
+        "ctaHref": "/programma/",
+        "secondaryCtaLabel": "Prenota la tua degustazione",
+        "secondaryCtaHref": "https://napoli-racing-show.metooo.com/pages/il-gran-premio-del-gusto"
       }
     ]
   }
