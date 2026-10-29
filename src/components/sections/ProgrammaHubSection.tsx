@@ -17,7 +17,7 @@ const COLLEGAMENTI = [
   },
   {
     titolo: "Vincitori 2025",
-    testo: "L'albo d'oro della prima edizione, Sfida per Sfida.",
+    testo: "L'albo d'oro della prima edizione.",
     href: "/vincitori-2025/",
     cta: "Vedi i vincitori",
   },

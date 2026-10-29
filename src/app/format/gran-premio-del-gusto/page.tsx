@@ -1,21 +1,17 @@
-import { Panel } from "@/components/sections/SfideAccordionSection";
+import ScalettaDegustazioni from "@/components/sections/ScalettaDegustazioni";
+import { PRENOTA_LABEL, PRENOTA_URL } from "@/data/prenota";
 import { createPageMetadata, siteConfig } from "@/data/site";
 
 export const metadata = createPageMetadata(
-  "1ª Edizione del Gran Premio del Gusto",
-  "9 Sfide, 9 Vincitori: 70% Giuria Popolare, 30% Giuria Tecnica. Le aziende saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania tramite bando.",
+  "Presentazioni e degustazioni",
+  "Le aziende dell'eccellenza enogastronomica presentano i loro prodotti al Villaggio Vini e Oli della Magna Grecia: degustazioni gratuite per i primi 60 iscritti. 27-28-29 novembre 2026, Rotonda Diaz, Napoli.",
 );
 
 /**
- * Pagina dedicata "1ª Edizione del Gran Premio del Gusto" (Format). Riusa
- * i dati e il renderer già esistenti per la scheda "Iscrivi la tua
- * Azienda" (concorsi, fasi, quota) invece di duplicare il markup: stessa
- * fonte, stesso pannello /admin. Vedi SfideAccordionSection.
+ * 29/10/2026: le Sfide e il Gran Premio come concorso non ci sono piu'. La pagina (stesso URL, gia'
+ * linkato da post pubblicati) presenta le degustazioni e rimanda alla prenotazione.
  */
-export default function GranPremioDelGustoPage() {
-  const items = siteConfig.sfideAccordion.items;
-  const index = items.findIndex((item) => item.kind === "iscrivi");
-  const item = items[index];
+export default function PresentazioniDegustazioniPage() {
   const g = siteConfig.granPremioIntro;
 
   return (
@@ -35,8 +31,26 @@ export default function GranPremioDelGustoPage() {
       </section>
 
       <section className="section-flow section-space">
-        <div className="section-shell">
-          {item ? <Panel item={item} index={index} email={siteConfig.contact.projectEmail} /> : null}
+        <div className="section-shell mx-auto max-w-[46rem] text-center">
+          <p className="mx-auto max-w-[46ch] text-[0.98rem] leading-[1.7] text-[var(--color-muted)]">
+            Le aziende dell&rsquo;eccellenza enogastronomica della nostra terra presentano i loro
+            prodotti. Scegli a quale degustazione partecipare: la partecipazione è{" "}
+            <strong>gratuita per i primi 60 iscritti</strong>.
+          </p>
+          <div className="mt-8">
+            <a
+              href={PRENOTA_URL}
+              className="font-ui inline-flex h-12 items-center justify-center rounded-full bg-[var(--color-wine)] px-7 text-[0.9rem] font-semibold text-[rgba(255,253,245,1)] transition-colors duration-300 ease-out hover:bg-[var(--color-wine-strong)]"
+            >
+              {PRENOTA_LABEL}
+            </a>
+          </div>
+          <div className="mt-12">
+            <ScalettaDegustazioni />
+          </div>
+          <p className="mt-6 text-[0.82rem] italic text-[var(--color-muted)]">
+            Giorni e orari possono cambiare per esigenze organizzative.
+          </p>
         </div>
       </section>
     </>
