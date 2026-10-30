@@ -18,10 +18,10 @@
 // finche' non si decide la nuova biglietteria. Gli URL vecchi non restano
 // nemmeno commentati, per non rimetterli in pagina per sbaglio.
 export const PASS_URLS = {
-  unaSfida: "/pass-giurato/",
-  treSfide: "/pass-giurato/",
-  noveSfide: "/pass-giurato/",
-  tutti: "/pass-giurato/",
+  unaSfida: "/programma/",
+  treSfide: "/programma/",
+  noveSfide: "/programma/",
+  tutti: "/programma/",
 } as const;
 
 type TicketCard = {
