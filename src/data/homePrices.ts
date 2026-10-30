@@ -145,6 +145,6 @@ export const sponsorPackagesSection = {
   ctaHref: "/sponsor/",
   brochures: [
     { label: "Scarica Brochure Espositori (PDF)", href: "/downloads/brochure-vinisud-espositori.pdf" },
-    { label: "Brochure Giurati (PDF)", href: "/downloads/brochure-vinisud-giurati.pdf" },
+    { label: "Brochure Degustazioni (PDF)", href: "/downloads/brochure-vinisud-degustazioni.pdf" },
   ],
 } as const;
