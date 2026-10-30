@@ -132,7 +132,6 @@ export const sponsorPackagesSection = {
       featured: true,
       features: [
         "Tutti i benefit dei pacchetti precedenti",
-        "Naming di una degustazione in scaletta (salvo disponibilità)",
         "Video su maxischermi (passaggi aumentati)",
         "Maggiore presenza sui canali media",
         "Area hospitality dedicata",
