@@ -157,18 +157,22 @@ export default function HeroSection() {
           >
             {siteConfig.sfideAccordion.items
               .filter((item) => item.kind !== "iscrivi")
+              // La prenotazione e' l'azione principale: prima e in evidenza.
+              .sort((a, b) => Number(b.kind === "biglietti") - Number(a.kind === "biglietti"))
               .map((item) => (
               <a
                 key={item.kind}
                 href={item.ctaHref || undefined}
                 aria-disabled={!item.ctaHref}
                 className={`font-ui flex h-full flex-col items-center justify-start gap-2 rounded-[1.1rem] border px-4 py-5 text-center text-[0.86rem] font-semibold uppercase leading-tight tracking-[0.05em] transition-colors duration-200 ${
-                  item.ctaHref
+                  item.kind === "biglietti" && item.ctaHref
+                    ? "border-transparent bg-[var(--color-gold,#ffd757)] text-[#1f3a2d] hover:brightness-95"
+                    : item.ctaHref
                     ? "border-[rgba(255,215,87,0.45)] bg-[rgba(255,253,245,0.12)] text-[var(--color-ivory)] hover:bg-[rgba(255,215,87,0.18)]"
                     : "cursor-not-allowed border-[rgba(255,253,245,0.2)] text-[rgba(255,253,245,0.5)]"
                 }`}
               >
-                <span aria-hidden="true" className="text-[1.7rem] leading-none">
+                <span aria-hidden="true" className="flex h-7 items-center leading-none">
                   {TILE_ICON[item.kind] ?? "•"}
                 </span>
                 {item.label}

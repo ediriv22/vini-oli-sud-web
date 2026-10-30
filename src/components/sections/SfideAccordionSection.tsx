@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import Button from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
 
@@ -316,12 +316,35 @@ export function Panel({ item, index, email }: { item: Item; index: number; email
 
 // Icona per ciascun riquadro (per tipo).
 // Esportata per riuso nel carosello rapido dell'hero (vedi HeroSection).
-export const TILE_ICON: Record<string, string> = {
-  programma: "📅",
-  biglietti: "🎟️",
-  iscrivi: "🏆",
-  sponsor: "🤝",
-  shop: "🛍️",
+export const TILE_ICON: Record<string, ReactNode> = {
+  programma: (
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3.5" y="5" width="17" height="15.5" rx="2.5" />
+      <path d="M3.5 10h17M8 3v4M16 3v4" />
+    </svg>
+  ),
+  biglietti: (
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 7.5A1.5 1.5 0 0 1 5.5 6h13A1.5 1.5 0 0 1 20 7.5V10a2 2 0 0 0 0 4v2.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 16.5V14a2 2 0 0 0 0-4z" />
+      <path d="M14 6v12" strokeDasharray="1.5 2.5" />
+    </svg>
+  ),
+  iscrivi: (
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 4h8v5a4 4 0 0 1-8 0zM12 13v4M8.5 20h7" />
+    </svg>
+  ),
+  sponsor: (
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3.5" y="7.5" width="17" height="12" rx="2.5" />
+      <path d="M9 7.5V6a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 6v1.5M3.5 13h17" />
+    </svg>
+  ),
+  shop: (
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 8h14l-1 12H6zM9 8V6.5a3 3 0 0 1 6 0V8" />
+    </svg>
+  ),
 };
 
 // Tipo esportato per riuso in pagine dedicate (vedi src/app/format/).

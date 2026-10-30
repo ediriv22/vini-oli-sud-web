@@ -99,7 +99,7 @@ export default function SponsorPage() {
           disabled={status === "submitting"}
           className="font-ui mt-2 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[var(--color-wine)] px-6 text-[0.92rem] font-semibold text-[var(--color-ivory)] transition-colors duration-300 ease-out hover:bg-[var(--color-wine-strong)] disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {status === "submitting" ? "Invio in corso…" : "✉️ Invia Messaggio"}
+          {status === "submitting" ? "Invio in corso…" : "Invia messaggio"}
         </button>
 
         <FormStatusBanner
