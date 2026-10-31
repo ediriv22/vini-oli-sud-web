@@ -1,11 +1,41 @@
 [
   {
+    "id": "5859c768d8ed",
+    "category": "Calici di Magna Grecia",
+    "title": "Invecchiato Igp. Don Anselmo 2005 Aglianico del Vulture doc, Paternoster",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/invecchiato-igp-don-anselmo-2005-aglianico-del-vulture-doc-paternoster/303835/",
+    "note": "Una voce dal mondo del vino, focus Basilicata.",
+    "noteSource": "auto",
+    "date": "2026-10-31"
+  },
+  {
     "id": "fd0071899549",
     "category": "Calici di Magna Grecia",
     "title": "Il VINerdì di Garantito Igp. Tenuta Frassitelli 2024 Ischia doc. Casa D'Ambra",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/il-vinerdi-di-garantito-igp-tenuta-frassitelli-2024-ischia-doc-casa-dambra/303855/",
     "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-10-30"
+  },
+  {
+    "id": "dc68bfd31290",
+    "category": "Calici di Magna Grecia",
+    "title": "Il vino italiano punta sul Messico: 150 produttori alla Wines Experience tra fine food e nuove tecnologie",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/il-vino-italiano-punta-sul-messico-wine-experience-tre-bicchieri/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-10-30"
+  },
+  {
+    "id": "27506611c611",
+    "category": "Calici di Magna Grecia",
+    "title": "Da una cantina fondata nel 1885 ai nuovi vignaioli. Le 54 aziende prima volta Tre Bicchieri",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri-2027-cantine-premiate-prima-volta-elenco/",
+    "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-10-30"
   },
@@ -266,36 +296,6 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/fiano-di-avellino-docg-2019-filadoro/302797/",
     "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-19"
-  },
-  {
-    "id": "82c24bcecce2",
-    "category": "Business con Anima",
-    "title": "Sciopero autotrasportatori: rischio scaffali vuoti nei supermercati",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/sciopero-autotrasportatori-campania-supermercati-rifornimenti",
-    "note": "Un segnale di mercato per le eccellenze del Sud, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-19"
-  },
-  {
-    "id": "a4f87f78c063",
-    "category": "Radar del Sud",
-    "title": "La Locanda del '500 vicino Bergamo: piatti e prezzi come una volta",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/locanda-dell-annunciata-palazzago-vicino-bergamo",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-19"
-  },
-  {
-    "id": "7325098ac711",
-    "category": "Calici di Magna Grecia",
-    "title": "\"Abbiamo abbassato i prezzi del vino, ma non sono arrivati più clienti\". L'esperimento di un ristorante londinese",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/ricarichi-vino-ristorante-hide-londra-esperimento/",
-    "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-10-19"
   }
