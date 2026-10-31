@@ -379,135 +379,59 @@ $forcedTo = null;
 // Allegati email (path assoluti locali) per le richieste con upload file.
 $attachments = [];
 
-if ($requestType === 'iscrizione-giurato') {
-    $kind = 'iscrizione-giurato';
+if ($requestType === 'prenotazione-degustazione') {
+    $kind = 'prenotazione-degustazione';
     $forcedTo = 'napoliracingshow@gmail.com';
 
     $nome = vos_clean_line($_POST['nome'] ?? '');
     $cognome = vos_clean_line($_POST['cognome'] ?? '');
-    $dataNascita = vos_clean_line($_POST['data_nascita'] ?? '');
-    $tipoPass = vos_clean_line($_POST['tipo_pass'] ?? '');
-    // 7/10/2026: nessun pagamento, il Pass Giurato si prenota gratis (primi 50).
-    $metodoPagamento = 'prenotazione';
+    $telefono = vos_clean_line($_POST['telefono'] ?? '');
+    $persone = (int) ($_POST['persone'] ?? 0);
+    $note = vos_clean_multiline($_POST['note'] ?? '', 1000);
 
     if ($nome === '' || $cognome === '') {
         $respond(false, 'Nome e cognome sono obbligatori.');
     }
-
-    $nascita = DateTime::createFromFormat('Y-m-d', $dataNascita);
-    if (!$nascita || $nascita->format('Y-m-d') !== $dataNascita) {
-        $respond(false, 'Data di nascita non valida.');
-    }
-    $età = (new DateTime())->diff($nascita)->y;
-    if ($età < 18) {
-        $respond(false, 'Il Pass Giuria Popolare è riservato ai maggiorenni (18 anni compiuti).');
+    if ($persone < 1 || $persone > 10) {
+        $respond(false, 'Indica il numero di persone (da 1 a 10).');
     }
 
-    $tierValida = [
-        '1 Sfida a scelta'                        => 1,
-        '3 Sfide a scelta'                         => 3,
-        'Pass Gran Giurato — Tutte le 9 Sfide'     => 9,
-    ];
-    if (!isset($tierValida[$tipoPass])) {
-        $respond(false, 'Seleziona un Pass valido.');
+    // Le degustazioni arrivano come testo ("Ven 27 novembre, 13:00 — Pasta Cuomo"):
+    // la scaletta vive nel sito (src/data/prenota.ts), qui si controlla solo
+    // forma e quantita'. La segreteria verifica i posti e conferma via email.
+    $degustazioni = array_values(array_unique(array_filter(array_map(
+        'vos_clean_line',
+        (array) ($_POST['degustazioni'] ?? [])
+    ))));
+    if (count($degustazioni) < 1) {
+        $respond(false, 'Scegli almeno una degustazione.');
     }
-    $sfideAttese = $tierValida[$tipoPass];
-
-    if ($sfideAttese === 9) {
-        $sfideScelte = VOS_CONCORSI_VALIDI; // Gran Giurato: tutte le 9, nessuna selezione richiesta.
-    } else {
-        $sfideScelte = array_values(array_filter(array_map(
-            'vos_clean_line',
-            (array) ($_POST['sfide'] ?? [])
-        )));
-        $sfideScelte = array_values(array_unique($sfideScelte));
-        foreach ($sfideScelte as $s) {
-            if (!in_array($s, VOS_CONCORSI_VALIDI, true)) {
-                $respond(false, 'Una delle Sfide selezionate non è valida.');
-            }
-        }
-        if (count($sfideScelte) !== $sfideAttese) {
-            $respond(false, "Seleziona esattamente $sfideAttese Sfid" . ($sfideAttese === 1 ? 'a' : 'e') . " per questo Pass.");
+    if (count($degustazioni) > 12) {
+        $respond(false, 'Hai selezionato troppe degustazioni.');
+    }
+    foreach ($degustazioni as $d) {
+        if (mb_strlen($d) > 160) {
+            $respond(false, 'Una delle degustazioni selezionate non è valida.');
         }
     }
-
-    // Limite 60 Giurati Popolari per Sfida (confermato 15/10/2026): il CSV
-    // locale è la fonte di verità, stessa lettura usata da
-    // pass-giurato-counts.php per disattivare la scelta in pagina. Controllo
-    // server-side qui per non fidarsi solo del blocco lato client.
-    $sfideCounts = vos_count_sfide_from_csv($dataDir);
-    foreach ($sfideScelte as $s) {
-        if (($sfideCounts[$s] ?? 0) >= VOS_LIMITE_GIURATI_PER_SFIDA) {
-            $respond(false, "La Sfida \"$s\" ha raggiunto i " . VOS_LIMITE_GIURATI_PER_SFIDA . " posti disponibili. Scegline un'altra.");
-        }
-    }
-
-    // Tetto totale: solo i primi 50 possono prenotare il Pass Giurato.
-    if (vos_count_prenotazioni_pass_giurato($dataDir) >= VOS_LIMITE_PASS_GIURATO_TOTALE) {
-        $respond(false, 'I ' . VOS_LIMITE_PASS_GIURATO_TOTALE . ' posti disponibili per il Pass Giurato sono esauriti.');
-    }
-
-    // Add-on "bicchiere + portabicchiere in omaggio" (+€10, richiesta esplicita
-    // 1/9/2026): esclusivo del Pass Gran Giurato — Tutte le 9 Sfide. Controllo
-    // server-side (non ci si fida del solo checkbox lato client, stesso
-    // principio delle altre validazioni qui sopra): un addon selezionato con
-    // un Pass diverso viene silenziosamente ignorato, mai un errore che
-    // blocca l'iscrizione per un dettaglio non essenziale come questo.
-    // $totale è anche l'importo atteso che paypal-confirm.php confronta con
-    // quanto restituito da PayPal Orders API prima di segnare pagato.
-    // 7/10/2026: add-on kit eliminato e Pass non piu' a pagamento.
-    $addonBicchiere = false;
-    $totale = 0;
-
-    // Bonifico: la ricevuta è già allegata al submit, la segreteria la
-    // verifica dopo ma la prova esiste già -> stato resta "da verificare"
-    // solo informativo. PayPal: nessuna prova ancora, il pagamento non è
-    // stato controllato -> "in_attesa_pagamento". Diventa "pagato" solo da
-    // paypal-confirm.php dopo verifica reale su PayPal Orders API (vedi
-    // §8bis più sotto: la mail di conferma utente per paypal NON parte qui).
-    $statoPagamento = 'prenotazione';
 
     $payload = [
-        'Nome e cognome'      => "$nome $cognome",
-        'Email'               => $email,
-        'Data di nascita'     => $dataNascita . " (età $età)",
-        'Tipo di Pass'        => $tipoPass,
-        'Sfide scelte'        => implode(', ', $sfideScelte),
-        'Tipo di richiesta'   => 'Prenotazione gratuita (primi 50)',
+        'Nome e cognome' => "$nome $cognome",
+        'Email'          => $email,
+        'Telefono'       => $telefono !== '' ? $telefono : '—',
+        'Persone'        => (string) $persone,
+        'Degustazioni'   => implode("\n  - ", array_merge([''], $degustazioni)),
+        'Note'           => $note !== '' ? $note : '—',
     ];
-    $subject = 'Prenotazione Pass Giuria Popolare — ' . $nome . ' ' . $cognome . ' — ' . $tipoPass;
+    $subject = 'Prenotazione degustazione — ' . $nome . ' ' . $cognome . ' — ' . $persone . ' pers.';
 
-    // Canali extra oltre all'email (richiesta esplicita): CSV locale sempre
-    // scritto (garantito, nessuna dipendenza esterna); Google Sheet in più
-    // se GOOGLE_SHEET_WEBAPP_URL è configurato in config.php (altrimenti
-    // no-op silenzioso). Nessuno dei due blocca l'invio se fallisce.
-    $ricevutaAllegataStr = '—';
+    // CSV locale sempre scritto (nessuna dipendenza esterna); non blocca l'invio.
     vos_append_csv(
         $dataDir,
-        'pass-giurato-iscrizioni.csv',
-        ['request_id', 'data_ora', 'nome', 'cognome', 'email', 'data_nascita', 'eta',
-            'tipo_pass', 'addon_bicchiere', 'importo_atteso', 'sfide', 'metodo_pagamento',
-            'ricevuta_allegata', 'stato_pagamento'],
-        [$requestId, date('c'), $nome, $cognome, $email, $dataNascita, $età,
-            $tipoPass, $addonBicchiere ? 'si' : 'no', $totale, implode('; ', $sfideScelte),
-            $metodoPagamento, $ricevutaAllegataStr, $statoPagamento],
+        'prenotazioni-degustazioni.csv',
+        ['request_id', 'data_ora', 'nome', 'cognome', 'email', 'telefono', 'persone', 'degustazioni', 'note'],
+        [$requestId, date('c'), $nome, $cognome, $email, $telefono, $persone, implode('; ', $degustazioni), $note],
     );
-    vos_push_google_sheet($config, 'GOOGLE_SHEET_WEBAPP_URL_GIURATO', [
-        'requestId'       => $requestId,
-        'timestamp'       => date('c'),
-        'nome'            => $nome,
-        'cognome'         => $cognome,
-        'email'           => $email,
-        'dataNascita'     => $dataNascita,
-        'eta'             => $età,
-        'tipoPass'        => $tipoPass,
-        'addonBicchiere'  => $addonBicchiere ? 'si' : 'no',
-        'importoAtteso'   => $totale,
-        'sfide'           => implode('; ', $sfideScelte),
-        'metodoPagamento' => $metodoPagamento,
-        'ricevutaAllegata' => $ricevutaAllegataStr,
-        'statoPagamento'  => $statoPagamento,
-    ]);
 } elseif ($requestType === 'iscrizione-prodotto') {
     $kind = 'iscrizione-prodotto';
     $forcedTo = 'napoliracingshow@gmail.com';
@@ -791,7 +715,7 @@ $record['extra_json']         = json_encode($payload, JSON_UNESCAPED_UNICODE);
 // schema vos_form_leads (campi troppo specifici/con allegati): per questi
 // due tipi l'email è il canale primario (vedi sezione 8, invio bloccante),
 // niente insert DB.
-$dbBacked = !in_array($kind, ['iscrizione-prodotto', 'richiesta-sponsor', 'iscrizione-giurato'], true);
+$dbBacked = !in_array($kind, ['iscrizione-prodotto', 'richiesta-sponsor', 'prenotazione-degustazione'], true);
 
 if ($dbBacked) {
     try {
@@ -908,36 +832,33 @@ try {
 
 // --- 8b. Email di conferma all'utente (best-effort, non blocca la risposta) ---
 // Testo e oggetto sono ad hoc per tipo di candidatura (richiesta esplicita):
-// per iscrizione-giurato/iscrizione-prodotto il $requestId è presentato come
+// per prenotazione-degustazione/iscrizione-prodotto il $requestId è presentato come
 // "codice" da conservare e mostrare alla Segreteria Organizzativa — è lo
 // stesso identificativo che compare nella notifica interna (sezione 8a),
 // quindi segreteria e utente parlano sempre dello stesso codice.
-// Pass Giurato pagato con PayPal: NIENTE mail di conferma qui. Il pagamento
-// non è ancora stato verificato a questo punto (l'utente ha solo compilato
-// il form) — la mail parte solo da paypal-confirm.php, dopo che PayPal
-// Orders API conferma che il pagamento è reale e per l'importo giusto.
-// Bonifico invece conferma qui: la ricevuta è già allegata al submit.
-$skipUserConfirmation = ($kind === 'iscrizione-giurato' && ($metodoPagamento ?? '') === 'paypal');
+$skipUserConfirmation = false;
 
 if (!empty($config['SEND_USER_CONFIRMATION']) && !$skipUserConfirmation) {
     try {
         $confSubject = $config['CONFIRM_SUBJECT'] ?? 'Abbiamo ricevuto la tua richiesta — Vini Oli Sud';
         $confLines = [];
 
-        if ($kind === 'iscrizione-giurato') {
-            $confSubject = "Prenotazione Pass Giuria Popolare ricevuta — Codice $requestId";
-            $confLines[] = 'Ciao,';
+        if ($kind === 'prenotazione-degustazione') {
+            $confSubject = "Prenotazione degustazione ricevuta — Codice $requestId";
+            $confLines[] = 'Ciao ' . $nome . ',';
             $confLines[] = '';
-            $confLines[] = 'grazie per la tua prenotazione come Giurato Popolare al Gran Premio del '
-                         . 'Gusto 2026.';
+            $confLines[] = 'abbiamo ricevuto la tua prenotazione per il Villaggio Vini e Oli della '
+                         . 'Magna Grecia (27-28-29 novembre 2026, Rotonda Diaz, Napoli).';
             $confLines[] = '';
             $confLines[] = "IL TUO CODICE PRENOTAZIONE: $requestId";
             $confLines[] = '';
-            $confLines[] = 'Conserva questo codice: la Segreteria Organizzativa ti confermerà '
-                         . 'la prenotazione via email.';
+            $confLines[] = 'Degustazioni richieste (' . $persone . ' ' . ($persone === 1 ? 'persona' : 'persone') . '):';
+            foreach ($degustazioni as $d) {
+                $confLines[] = '  - ' . $d;
+            }
             $confLines[] = '';
-            $confLines[] = 'Il Pass Giurato è personale, non cedibile né sostituibile: va '
-                         . 'conservato dal titolare per tutta la durata della manifestazione.';
+            $confLines[] = 'La Segreteria Organizzativa verifica i posti e ti conferma la prenotazione '
+                         . 'via email. Conserva questo codice.';
         } elseif ($kind === 'iscrizione-prodotto') {
             $confSubject = "Iscrizione Prodotto ricevuta — Codice $requestId — Gran Premio del Gusto 2026";
             $confLines[] = 'Ciao,';

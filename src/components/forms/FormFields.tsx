@@ -126,7 +126,7 @@ export function FormStatusBanner({
   if (status === "success") {
     return (
       <div className="rounded-[1rem] border border-[rgba(47,91,70,0.35)] bg-[rgba(47,91,70,0.08)] px-6 py-5 text-center">
-        <p className="font-display text-[1.1rem] text-[var(--color-ink-strong)]">✅ Inviato</p>
+        <p className="font-display text-[1.1rem] text-[var(--color-ink-strong)]">Inviato</p>
         <p className="mt-2 text-[0.92rem] leading-[1.6] text-[var(--color-muted)]">{successMessage}</p>
       </div>
     );

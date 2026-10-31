@@ -3,11 +3,10 @@
  * le Sfide non ci sono piu'. Le aziende presentano il prodotto con degustazione, il pubblico
  * sceglie a quale partecipare, gratis per i primi 60 iscritti.
  *
- * PRENOTA_URL: link di prenotazione di Eduardo (biglietteria Metooo). 29/10: la pagina ha ancora i
- * vecchi prezzi, verra' aggiornata il 30/10. Unico punto da cambiare se il link cambia.
+ * 31/10/2026: niente piu' link esterno (Metooo). La prenotazione e' il modulo /prenota/,
+ * che invia a napoliracingshow@gmail.com tramite /forms/lead.php (requestType=prenotazione-degustazione).
  */
-export const PRENOTA_URL =
-  "https://napoli-racing-show.metooo.com/pages/il-gran-premio-del-gusto";
+export const PRENOTA_URL = "/prenota/";
 export const PRENOTA_LABEL = "Prenota la tua degustazione";
 
 export type Degustazione = { ora: string; nome: string };
