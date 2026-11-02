@@ -432,6 +432,27 @@ if ($requestType === 'prenotazione-degustazione') {
         ['request_id', 'data_ora', 'nome', 'cognome', 'email', 'telefono', 'persone', 'degustazioni', 'note'],
         [$requestId, date('c'), $nome, $cognome, $email, $telefono, $persone, implode('; ', $degustazioni), $note],
     );
+    // Stesso Google Sheet del vecchio Pass Giurato ("pass giurati"), stesse colonne: lo Sheet resta
+    // uno solo. Se GOOGLE_SHEET_WEBAPP_URL_GIURATO non e' in config.php e' un no-op silenzioso.
+    vos_push_google_sheet($config, 'GOOGLE_SHEET_WEBAPP_URL_GIURATO', [
+        'requestId'        => $requestId,
+        'timestamp'        => date('c'),
+        'nome'             => $nome,
+        'cognome'          => $cognome,
+        'email'            => $email,
+        'dataNascita'      => '—',
+        'eta'              => '—',
+        'tipoPass'         => 'Prenotazione degustazione — ' . $persone . ($persone === 1 ? ' persona' : ' persone'),
+        'addonBicchiere'   => 'no',
+        'importoAtteso'    => 0,
+        'sfide'            => implode('; ', $degustazioni),
+        'metodoPagamento'  => 'prenotazione',
+        'ricevutaAllegata' => '—',
+        'statoPagamento'   => 'prenotazione',
+        'telefono'         => $telefono,
+        'persone'          => $persone,
+        'note'             => $note,
+    ]);
 } elseif ($requestType === 'iscrizione-prodotto') {
     $kind = 'iscrizione-prodotto';
     $forcedTo = 'napoliracingshow@gmail.com';
