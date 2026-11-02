@@ -141,7 +141,7 @@ export default function PrenotaForm() {
       <FormStatusBanner
         status={status}
         errorMessage={errorMessage}
-        successMessage="Prenotazione ricevuta: ti abbiamo scritto una mail con il tuo codice. La Segreteria verifica i posti e ti conferma via email."
+        successMessage="Prenotazione ricevuta: ti abbiamo scritto una mail con il tuo codice."
       />
     </form>
   );

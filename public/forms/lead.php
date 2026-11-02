@@ -898,8 +898,7 @@ if (!empty($config['SEND_USER_CONFIRMATION']) && !$skipUserConfirmation) {
                 $confLines[] = '  - ' . $d;
             }
             $confLines[] = '';
-            $confLines[] = 'La Segreteria Organizzativa verifica i posti e ti conferma la prenotazione '
-                         . 'via email. Conserva questo codice.';
+            $confLines[] = 'Conserva questo codice.';
         } elseif ($kind === 'iscrizione-prodotto') {
             $confSubject = "Iscrizione Prodotto ricevuta — Codice $requestId — Gran Premio del Gusto 2026";
             $confLines[] = 'Ciao,';
