@@ -36,6 +36,13 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y php-cli -qq
           find public -name '*.php' -print0 | xargs -0 -r -n1 php -l
 
+      - name: Credenziali SMTP per i moduli (da secret, mai nel repo)
+        env:
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: |
+          php -r 'file_put_contents("out/forms/config.smtp.php", "<?php\nreturn " . var_export(["SMTP_USER" => "info@vinisud.it", "SMTP_PASS" => getenv("SMTP_PASS"), "SMTP_HOST" => "smtps.aruba.it", "SMTP_PORT" => 465, "SMTP_SECURE" => "ssl", "MAIL_FROM" => "info@vinisud.it"], true) . ";\n");'
+          php -l out/forms/config.smtp.php
+
       - name: Pubblicazione su Aruba via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:

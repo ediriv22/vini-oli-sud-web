@@ -75,6 +75,15 @@ if (!is_array($config)) {
     $respond(false, 'Configurazione non valida.');
 }
 
+// Credenziali SMTP generate dal deploy (secret GitHub): sovrascrivono quelle di config.php.
+$smtpOverride = __DIR__ . '/config.smtp.php';
+if (is_readable($smtpOverride)) {
+    $ov = require $smtpOverride;
+    if (is_array($ov) && ($ov['SMTP_PASS'] ?? '') !== '') {
+        $config = array_merge($config, $ov);
+    }
+}
+
 $dataDir = __DIR__ . '/data';
 if (!is_dir($dataDir)) {
     @mkdir($dataDir, 0750, true);
@@ -853,9 +862,7 @@ try {
         }
         vos_log_request($dataDir, $requestId, $kind, false);
         http_response_code(500);
-        // DIAGNOSI TEMPORANEA (2/11/2026): da togliere dopo il fix SMTP.
-        $diag = (($_POST['_diag'] ?? '') === 'vos-diag-1102') ? ' [' . substr($e->getMessage(), 0, 200) . ']' : '';
-        $respond(false, 'Invio non riuscito. Scrivi direttamente a napoliracingshow@gmail.com.' . $diag);
+        $respond(false, 'Invio non riuscito. Scrivi direttamente a napoliracingshow@gmail.com.');
     }
     // Il lead è salvato su DB: la notifica email è secondaria. Logghiamo e
     // proseguiamo, così l'utente non riprova un invio già andato a buon fine.
