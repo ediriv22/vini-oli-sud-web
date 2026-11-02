@@ -818,8 +818,18 @@ try {
     vos_log_request($dataDir, $requestId, $kind, true);
 } catch (\Throwable $e) {
     if (!$dbBacked) {
-        // Niente DB per questi tipi: se l'email non parte, la richiesta è persa.
-        error_log('lead.php SMTP error (richiesta ' . $requestId . ' NON salvata, nessun DB per ' . $kind . '): ' . $e->getMessage());
+        error_log('lead.php SMTP error (richiesta ' . $requestId . ', nessun DB per ' . $kind . '): ' . $e->getMessage());
+        // Ripiego (2/11/2026): se l'autenticazione SMTP fallisce, prova mail() nativa di PHP
+        // con mittente del dominio, cosi' la prenotazione arriva comunque alla segreteria.
+        $fbFrom = (string)($config['MAIL_FROM'] ?? 'info@vinisud.it');
+        $fbHeaders = "From: Vini Oli Sud <{$fbFrom}>\r\nReply-To: {$email}\r\n"
+            . "Content-Type: text/plain; charset=UTF-8\r\nMIME-Version: 1.0";
+        $fbOk = @mail($forcedTo ?? $to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, $fbHeaders, '-f' . $fbFrom);
+        if ($fbOk) {
+            error_log('lead.php: richiesta ' . $requestId . ' inviata con mail() di ripiego.');
+            vos_log_request($dataDir, $requestId, $kind, true);
+            goto vos_mail_done;
+        }
         vos_log_request($dataDir, $requestId, $kind, false);
         http_response_code(500);
         // DIAGNOSI TEMPORANEA (2/11/2026): da togliere dopo il fix SMTP.
@@ -832,6 +842,7 @@ try {
     vos_log_request($dataDir, $requestId, $kind, true);
 }
 
+vos_mail_done:
 // --- 8b. Email di conferma all'utente (best-effort, non blocca la risposta) ---
 // Testo e oggetto sono ad hoc per tipo di candidatura (richiesta esplicita):
 // per prenotazione-degustazione/iscrizione-prodotto il $requestId è presentato come
@@ -912,6 +923,12 @@ if (!empty($config['SEND_USER_CONFIRMATION']) && !$skipUserConfirmation) {
     } catch (\Throwable $e) {
         // La conferma all'utente è un di più: se fallisce, lo logghiamo soltanto.
         error_log('lead.php SMTP error conferma utente (lead ' . $requestId . '): ' . $e->getMessage());
+        // Ripiego mail() nativa (SMTP non autenticato sul server, 2/11/2026).
+        $cfFrom = (string)($config['CONFIRM_FROM'] ?? ($config['MAIL_FROM'] ?? 'info@vinisud.it'));
+        $cfHeaders = "From: Vini Oli Sud <{$cfFrom}>\r\nReply-To: " . ($config['MAIL_TO_INFO'] ?? $cfFrom)
+            . "\r\nContent-Type: text/plain; charset=UTF-8\r\nMIME-Version: 1.0";
+        @mail($email, '=?UTF-8?B?' . base64_encode($confSubject ?? 'Richiesta ricevuta') . '?=',
+            implode("\n", $confLines ?? []), $cfHeaders, '-f' . $cfFrom);
     }
 }
 
