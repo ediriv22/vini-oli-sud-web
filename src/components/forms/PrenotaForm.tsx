@@ -113,10 +113,10 @@ export default function PrenotaForm() {
             name="persone"
             type="number"
             min={1}
-            max={10}
+            max={2}
             defaultValue={1}
             required
-            hint="Te compreso, da 1 a 10."
+            hint="Te compreso, massimo 2 persone per prenotazione."
           />
         </div>
         <TextareaField label="Note" name="note" rows={3} hint="Allergie, intolleranze o richieste per la Segreteria (facoltativo)." />

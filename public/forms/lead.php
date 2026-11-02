@@ -392,8 +392,8 @@ if ($requestType === 'prenotazione-degustazione') {
     if ($nome === '' || $cognome === '') {
         $respond(false, 'Nome e cognome sono obbligatori.');
     }
-    if ($persone < 1 || $persone > 10) {
-        $respond(false, 'Indica il numero di persone (da 1 a 10).');
+    if ($persone < 1 || $persone > 2) {
+        $respond(false, 'Una prenotazione vale al massimo per 2 persone.');
     }
 
     // Le degustazioni arrivano come testo ("Ven 27 novembre, 13:00 — Pasta Cuomo"):
