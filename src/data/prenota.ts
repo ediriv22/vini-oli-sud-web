@@ -40,3 +40,6 @@ export const SCALETTA: GiornoProgramma[] = [
     ],
   },
 ];
+
+/** Degustazioni selezionabili per ogni prenotazione. */
+export const MAX_DEGUSTAZIONI = 2;

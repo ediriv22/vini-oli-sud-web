@@ -406,8 +406,8 @@ if ($requestType === 'prenotazione-degustazione') {
     if (count($degustazioni) < 1) {
         $respond(false, 'Scegli almeno una degustazione.');
     }
-    if (count($degustazioni) > 12) {
-        $respond(false, 'Hai selezionato troppe degustazioni.');
+    if (count($degustazioni) > 2) {
+        $respond(false, 'Puoi scegliere al massimo 2 degustazioni per prenotazione.');
     }
     foreach ($degustazioni as $d) {
         if (mb_strlen($d) > 160) {

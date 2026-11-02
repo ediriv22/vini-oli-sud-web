@@ -10,7 +10,7 @@ import {
   submitLeadForm,
   type SubmitStatus,
 } from "@/components/forms/FormFields";
-import { SCALETTA } from "@/data/prenota";
+import { MAX_DEGUSTAZIONI, SCALETTA } from "@/data/prenota";
 import { track } from "@/lib/track";
 
 /**
@@ -22,6 +22,12 @@ import { track } from "@/lib/track";
 export default function PrenotaForm() {
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | undefined>();
+  const [scelte, setScelte] = useState<string[]>([]);
+  const pieno = scelte.length >= MAX_DEGUSTAZIONI;
+
+  function toggle(valore: string, checked: boolean) {
+    setScelte((prev) => (checked ? [...prev, valore] : prev.filter((v) => v !== valore)));
+  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -38,6 +44,7 @@ export default function PrenotaForm() {
       setStatus("success");
       track("SubmitForm", { content_name: "Prenotazione degustazione" });
       form.reset();
+      setScelte([]);
     } else {
       setStatus("error");
       setErrorMessage(result.error);
@@ -56,18 +63,27 @@ export default function PrenotaForm() {
         <legend className="font-ui mb-1 text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-sand-strong)]">
           1. Scegli le degustazioni
         </legend>
+        <p className="font-ui -mt-2 text-[0.84rem] text-[var(--color-ink-strong)]" aria-live="polite">
+          Massimo {MAX_DEGUSTAZIONI} per prenotazione: {scelte.length} di {MAX_DEGUSTAZIONI} scelte.
+        </p>
         {SCALETTA.map(({ giorno, slot }) => (
           <div key={giorno} className="flex flex-col gap-2">
             <p className="font-ui text-[0.82rem] font-semibold text-[var(--color-ink-strong)]">{giorno}</p>
-            {slot.map((s) => (
+            {slot.map((s) => {
+              const valore = `${giorno}, ${s.ora} — ${s.nome}`;
+              const bloccata = pieno && !scelte.includes(valore);
+              return (
               <label
                 key={giorno + s.ora}
-                className="flex cursor-pointer items-start gap-3 rounded-[0.8rem] border border-[rgba(47,91,70,0.2)] bg-[rgba(255,253,245,0.7)] px-4 py-3 text-left transition-colors duration-200 has-[:checked]:border-[var(--color-wine)] has-[:checked]:bg-[rgba(255,215,87,0.18)]"
+                className={`flex items-start gap-3 rounded-[0.8rem] border border-[rgba(47,91,70,0.2)] bg-[rgba(255,253,245,0.7)] px-4 py-3 text-left transition-colors duration-200 has-[:checked]:border-[var(--color-wine)] has-[:checked]:bg-[rgba(255,215,87,0.18)] ${bloccata ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}
               >
                 <input
                   type="checkbox"
                   name="degustazioni[]"
-                  value={`${giorno}, ${s.ora} — ${s.nome}`}
+                  value={valore}
+                  checked={scelte.includes(valore)}
+                  disabled={bloccata}
+                  onChange={(e) => toggle(valore, e.target.checked)}
                   className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-wine)]"
                 />
                 <span className="text-[0.94rem] leading-[1.45] text-[var(--color-ink-strong)]">
@@ -75,7 +91,8 @@ export default function PrenotaForm() {
                   {s.nome}
                 </span>
               </label>
-            ))}
+              );
+            })}
           </div>
         ))}
       </fieldset>
