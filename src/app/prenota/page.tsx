@@ -15,7 +15,7 @@ export default function PrenotaPage() {
           Prenota la tua degustazione
         </h1>
         <p className="mx-auto mt-5 max-w-[48ch] text-[0.98rem] leading-[1.7] text-[var(--color-muted)]">
-          L&rsquo;ingresso al Villaggio è gratuito. Scegli una o più presentazioni con degustazione:
+          L&rsquo;ingresso al Villaggio è gratuito. Scegli fino a due presentazioni con degustazione:
           la partecipazione è gratuita per i primi 60 iscritti. Riceverai una mail di conferma dalla
           Segreteria Organizzativa.
         </p>
