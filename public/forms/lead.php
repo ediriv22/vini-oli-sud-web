@@ -822,7 +822,9 @@ try {
         error_log('lead.php SMTP error (richiesta ' . $requestId . ' NON salvata, nessun DB per ' . $kind . '): ' . $e->getMessage());
         vos_log_request($dataDir, $requestId, $kind, false);
         http_response_code(500);
-        $respond(false, 'Invio non riuscito. Scrivi direttamente a napoliracingshow@gmail.com.');
+        // DIAGNOSI TEMPORANEA (2/11/2026): da togliere dopo il fix SMTP.
+        $diag = (($_POST['_diag'] ?? '') === 'vos-diag-1102') ? ' [' . substr($e->getMessage(), 0, 200) . ']' : '';
+        $respond(false, 'Invio non riuscito. Scrivi direttamente a napoliracingshow@gmail.com.' . $diag);
     }
     // Il lead è salvato su DB: la notifica email è secondaria. Logghiamo e
     // proseguiamo, così l'utente non riprova un invio già andato a buon fine.
