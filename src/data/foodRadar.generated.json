@@ -1,5 +1,25 @@
 [
   {
+    "id": "3ea78d0f8de0",
+    "category": "Calici di Magna Grecia",
+    "title": "Pinot grigio il Collio si racconta attraverso il vitigno della trasparenza",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/pinot-grigio-il-collio-si-racconta-attraverso-il-vitigno-della-trasparenza/304075/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-02"
+  },
+  {
+    "id": "897c6fc0de5b",
+    "category": "Radar del Sud",
+    "title": "Da Basta Pizzeria a Basta Bistrot: Enzo Bastelli allarga il progetto tra pizza e cucina",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/da-basta-pizzeria-a-basta-bistrot-enzo-bastelli-allarga-il-progetto-tra-pizza-e-cucina/304097/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-01"
+  },
+  {
     "id": "5859c768d8ed",
     "category": "Calici di Magna Grecia",
     "title": "Invecchiato Igp. Don Anselmo 2005 Aglianico del Vulture doc, Paternoster",
@@ -278,25 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-10-20"
-  },
-  {
-    "id": "83696890f189",
-    "category": "Calici di Magna Grecia",
-    "title": "Campania Falanghina 2019 Igt – Di Meo",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/campania-falanghina-2019-igt-di-meo/303417/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-19"
-  },
-  {
-    "id": "c2ead4d68f0f",
-    "category": "Calici di Magna Grecia",
-    "title": "Fiano di Avellino Docg 2019, Filadoro",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/fiano-di-avellino-docg-2019-filadoro/302797/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-19"
   }
 ]
