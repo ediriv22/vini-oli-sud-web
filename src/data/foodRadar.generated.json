@@ -1,5 +1,55 @@
 [
   {
+    "id": "953fb3c43ba3",
+    "category": "Radar del Sud",
+    "title": "La cucina stellata di Ischia approda a Le Parùle: Palamaro e Iervolino ospiti di Giuseppe Pignalosa",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/la-cucina-stellata-di-ischia-approda-a-le-parule-palamaro-e-iervolino-ospiti-di-giuseppe-pignalosa/304236/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-11-03"
+  },
+  {
+    "id": "b996122c9e63",
+    "category": "Business con Anima",
+    "title": "Hacker nei frigoriferi dei supermercati: rischi e come difendersi",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/attacco-hacker-frigoriferi-supermercati",
+    "note": "Un segnale di mercato per le eccellenze del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-03"
+  },
+  {
+    "id": "bc7671d0177e",
+    "category": "Radar del Sud",
+    "title": "Echi di piatti pugliesi nel ristorante a Spinetta Marengo in Piemonte",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/ristorante-casa-flo-spinetta-marengo",
+    "note": "Una segnalazione di cucina, focus Puglia.",
+    "noteSource": "auto",
+    "date": "2026-11-03"
+  },
+  {
+    "id": "797438d133de",
+    "category": "Calici di Magna Grecia",
+    "title": "Giuseppe Carrus premiato come Divulgatore dell'Anno dalla Stampa Estera. Da 20 anni racconta il vino italiano",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/giuseppe-carrus-divulgatore-anno-premio-stampa-estera/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-03"
+  },
+  {
+    "id": "c39893e77d16",
+    "category": "Radar del Sud",
+    "title": "La pizza italiana conquista Tokyo. Le migliori si mangiano anche al 38° piano di un grattacielo",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/ristoranti/migliori-ristoranti-italiani-tokyo-gucci-osteria-raffaella-de-vita/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-03"
+  },
+  {
     "id": "3ea78d0f8de0",
     "category": "Calici di Magna Grecia",
     "title": "Pinot grigio il Collio si racconta attraverso il vitigno della trasparenza",
@@ -248,55 +298,5 @@
     "note": "Una segnalazione gastronomica del Sud, focus Campania.",
     "noteSource": "auto",
     "date": "2026-10-21"
-  },
-  {
-    "id": "75cc87963680",
-    "category": "Calici di Magna Grecia",
-    "title": "Sovranaturale torna a Bari: oltre 40 vignaioli europei per raccontare il futuro del vino naturale",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/sovranaturale-torna-a-bari-oltre-40-vignaioli-europei-per-raccontare-il-futuro-del-vino-naturale/303559/",
-    "note": "Una voce dal mondo del vino, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-10-21"
-  },
-  {
-    "id": "102fe630b26a",
-    "category": "Calici di Magna Grecia",
-    "title": "Il vino italiano parte alla conquista del Giappone. A Tokyo arrivano 41 cantine premiate con i Tre Bicchieri",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/gambero-rosso-world-tour-2026-tokyo-vino-italiano/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-21"
-  },
-  {
-    "id": "732db923ea1f",
-    "category": "Radar del Sud",
-    "title": "Ristorante Due Camini di Borgo Egnazia",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/borgo-egnazia-ristorante-i-due-camini-domingo-schingarogingaro/125531/",
-    "note": "Una segnalazione di cucina, focus Puglia.",
-    "noteSource": "auto",
-    "date": "2026-10-21"
-  },
-  {
-    "id": "fdb29bb7d9ae",
-    "category": "Business con Anima",
-    "title": "Il vino naturale è diventato troppo caro? \"La bolla è cresciuta, il prezzo può costituire un'ulteriore barriera\"",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/vino-naturale-prezzi-alti-speculazione-piero-crocenzi/",
-    "note": "Un segnale di mercato per le eccellenze del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-21"
-  },
-  {
-    "id": "fa90b7a7e7b5",
-    "category": "Calici di Magna Grecia",
-    "title": "Barbaresco 2021 docg Produttori del Barbaresco",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/barbaresco-2021-docg-produttori-del-barbaresco/303451/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-20"
   }
 ]
