@@ -1,5 +1,35 @@
 [
   {
+    "id": "bd75f138c995",
+    "category": "Radar del Sud",
+    "title": "The World's 50 Best Restaurants 2026: vince Asador Etxebarri",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/the-worlds-50-best-restaurants-2026-vince-asador-etxebarri/304378/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-05"
+  },
+  {
+    "id": "72af9812a850",
+    "category": "Radar del Sud",
+    "title": "50 Best 2026: 5 ristoranti italiani a metà classifica. Vince la Spagna",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/50-best-2026-classifica",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-05"
+  },
+  {
+    "id": "26388f8758cc",
+    "category": "Calici di Magna Grecia",
+    "title": "La Borgogna è diventata troppo cara. Ma c'è una zona dove si fanno ancora grandi vini a prezzi accessibili",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/borgogna-arnaud-boue-haute-cotes-nuits/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-04"
+  },
+  {
     "id": "953fb3c43ba3",
     "category": "Radar del Sud",
     "title": "La cucina stellata di Ischia approda a Le Parùle: Palamaro e Iervolino ospiti di Giuseppe Pignalosa",
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino, focus Campania.",
     "noteSource": "auto",
     "date": "2026-10-22"
-  },
-  {
-    "id": "a82bea699a7d",
-    "category": "Calici di Magna Grecia",
-    "title": "Cinque consorzi agroalimentari del Lazio si uniscono per dare futuro ai paesaggi agricoli",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/cinque-consorzi-enogastronomici-lazio-roots-arsial/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-22"
-  },
-  {
-    "id": "4a05e5975387",
-    "category": "Radar del Sud",
-    "title": "Ai Tre Monelli e l'Hotel Rufolo di Ravello: cucina, pizza e vino",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/ai-tre-monelli-e-lhotel-rufolo-di-ravello-cucina-pizza-e-vino/303576/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-21"
-  },
-  {
-    "id": "72a31498c236",
-    "category": "Radar del Sud",
-    "title": "Ciro Salvo e il vino: la Campania nel calice di 50 Kalò",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/ciro-salvo-e-il-vino-la-campania-nel-calice-di-50-kalo/303562/",
-    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-21"
   }
 ]
