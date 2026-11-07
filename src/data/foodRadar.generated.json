@@ -1,11 +1,41 @@
 [
   {
+    "id": "c7a5379a21b0",
+    "category": "Calici di Magna Grecia",
+    "title": "Merano WineFestival 2026 e la presentazione di \"Vino, Donna\" di Chiara Giorleo",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/merano-winefestival-2026-e-la-presentazione-di-vino-donna-di-chiara-giorleo/304455/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-07"
+  },
+  {
+    "id": "d8a00be39479",
+    "category": "Calici di Magna Grecia",
+    "title": "Invecchiato IGP | Sebastiano Colline Lucchesi doc 2003 Fattoria Sardi",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/invecchiato-igp-sebastiano-colline-lucchesi-doc-2003-fattoria-sardi/304381/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-07"
+  },
+  {
     "id": "6a31b13d6c59",
     "category": "Calici di Magna Grecia",
     "title": "VINerdì | Rasole Colli dell'Etruria Centrale doc 2024, Le Forconate",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/vinerdi-rasole-colli-delletruria-centrale-doc-2024-le-forconate/304202/",
     "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-06"
+  },
+  {
+    "id": "ef6501bbd24c",
+    "category": "Radar del Sud",
+    "title": "Festival della Cucina Italiana in Svizzera, il Made in Italy conquista tutti: un successo che guarda al 2027",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/festival-della-cucina-italiana-in-svizzera-il-made-in-italy-conquista-tutti-un-successo-che-guarda-al-2027/304487/",
+    "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-11-06"
   },
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-10-25"
-  },
-  {
-    "id": "df0fb528ce97",
-    "category": "Calici di Magna Grecia",
-    "title": "Lollobrigida: \"In Italia interventi massicci sul caro gasolio, puntato su aiuti strutturali\"",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/lollobrigida-caro-gasolio-interventi-strutturali-vino-usa/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-25"
-  },
-  {
-    "id": "fbb68662f606",
-    "category": "Calici di Magna Grecia",
-    "title": "Solaia 2022 Toscana Igt, Antinori. Il formato da tre litri",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/solaia-2022-toscana-igt-antinori-il-formato-da-tre-litri/303724/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-24"
-  },
-  {
-    "id": "bced693e481f",
-    "category": "Calici di Magna Grecia",
-    "title": "I vincitori della 1a edizione del \"Premio culturale Falerno\" in onore di Gennaro Papa",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/i-vincitori-della-1a-edizione-del-premio-culturale-falerno-in-onore-di-fondatore-dellomonima-cantina/303734/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-23"
   }
 ]
