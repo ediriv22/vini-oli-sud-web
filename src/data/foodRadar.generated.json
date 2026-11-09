@@ -1,5 +1,15 @@
 [
   {
+    "id": "c9eceb446201",
+    "category": "Radar del Sud",
+    "title": "Osteria Borga, dove la campagna trevigiana incontra la cucina contemporanea",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/osteria-borga-dove-la-campagna-trevigiana-incontra-la-cucina-contemporanea/304493/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-08"
+  },
+  {
     "id": "c7a5379a21b0",
     "category": "Calici di Magna Grecia",
     "title": "Merano WineFestival 2026 e la presentazione di \"Vino, Donna\" di Chiara Giorleo",
@@ -288,15 +298,5 @@
     "note": "Una segnalazione di cucina, focus Sardegna.",
     "noteSource": "auto",
     "date": "2026-10-26"
-  },
-  {
-    "id": "c6b2abf63cdd",
-    "category": "Calici di Magna Grecia",
-    "title": "Da una cantina in Valpolicella a mille ettari in tutta Italia: Tommasi è la Cantina dell'Anno 2027",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tommasi-family-estates-premio-cantina-anno-2027/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-25"
   }
 ]
