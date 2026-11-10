@@ -1,5 +1,35 @@
 [
   {
+    "id": "c032e6556007",
+    "category": "Business con Anima",
+    "title": "Nicola Caputo nominato inviato speciale del ministro degli affari esteri per la diplomazia agroalimentare",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/nicola-caputo-nominato-inviato-speciale-del-ministro-degli-affari-esteri-per-la-diplomazia-agroalimentare/304649/",
+    "note": "Un segnale di mercato per le eccellenze del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-10"
+  },
+  {
+    "id": "371e2aac9276",
+    "category": "Oro Verde",
+    "title": "Olio d'oliva, il modello spagnolo entra ufficialmente in crisi: è guerra sui prezzi",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/olio-oliva-modello-spagnolo-crisi-guerra-prezzi/",
+    "note": "Un segnale dall'olio del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "1b609817cfbd",
+    "category": "Calici di Magna Grecia",
+    "title": "Mezzacorona: sequestrate 60mila bottiglie Igt. Si ipotizza frode da 1 milione di euro. La cantina: \"Noi estranei ai fatti\"",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/inchiesta-frode-vino-igt-mezzacorona/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-09"
+  },
+  {
     "id": "c9eceb446201",
     "category": "Radar del Sud",
     "title": "Osteria Borga, dove la campagna trevigiana incontra la cucina contemporanea",
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-10-28"
-  },
-  {
-    "id": "942287344754",
-    "category": "Calici di Magna Grecia",
-    "title": "Podere della Civettaja, il Pinot Nero in Casentino. La storia di Vincenzo Tommasi e Henri Jayer",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/podere-della-civettaja-il-pinot-nero-in-casentino-la-storia-di-vincenzo-tommasi-e-henri-jayer/303874/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-27"
-  },
-  {
-    "id": "9fab6e15cb8c",
-    "category": "Radar del Sud",
-    "title": "\"Chiudiamo il ristorante due mesi all'anno\". La scelta di Niko Romito per far lavorare meglio i suoi cuochi",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/niko-romito-reale-chiusura-due-mesi-lavoro-cuochi/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-27"
-  },
-  {
-    "id": "a78c04dac7dd",
-    "category": "Radar del Sud",
-    "title": "Il ristorante in Sardegna con piatti strepitosi e menù a 44 euro",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/ristorante-arieddas-marmilla-sanluri-sardegna",
-    "note": "Una segnalazione di cucina, focus Sardegna.",
-    "noteSource": "auto",
-    "date": "2026-10-26"
   }
 ]
