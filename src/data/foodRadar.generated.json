@@ -1,11 +1,41 @@
 [
   {
+    "id": "07c2b3e8e239",
+    "category": "Radar del Sud",
+    "title": "Bellavista e Nomos Ante, il Franciacorta incontra la cucina d'autore a Roma",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/bellavista-e-nomos-ante-il-franciacorta-incontra-la-cucina-dautore-a-roma/304680/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-11"
+  },
+  {
     "id": "c032e6556007",
     "category": "Business con Anima",
     "title": "Nicola Caputo nominato inviato speciale del ministro degli affari esteri per la diplomazia agroalimentare",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/nicola-caputo-nominato-inviato-speciale-del-ministro-degli-affari-esteri-per-la-diplomazia-agroalimentare/304649/",
     "note": "Un segnale di mercato per le eccellenze del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-10"
+  },
+  {
+    "id": "e1067c28d4e7",
+    "category": "Calici di Magna Grecia",
+    "title": "Dove mangiare pesce a Roma a 40 euro e con vini a prezzi minimi",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/eataly-roma-ostiense",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-10"
+  },
+  {
+    "id": "f02490a0e103",
+    "category": "Oro Verde",
+    "title": "L'Europa cambia le regole sull'olio d'oliva, ma lascia fuori una varietà pugliese. Scoppia il caso Coratina",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/olio-coratina-puglia-deroga-steroli-regolamento-europeo/",
+    "note": "Un segnale dall'olio del Sud.",
     "noteSource": "auto",
     "date": "2026-11-10"
   },
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-10-29"
-  },
-  {
-    "id": "f9e324468fb7",
-    "category": "Calici di Magna Grecia",
-    "title": "Marina Cvetić San Martino Rosso Riserva, il Montepulciano d'Abruzzo super premiato",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/marina-cvetic-san-martino-rosso-riserva-il-montepulciano-dabruzzo-super-premiato/303885/",
-    "note": "Una voce dal mondo del vino, focus Abruzzo.",
-    "noteSource": "auto",
-    "date": "2026-10-28"
-  },
-  {
-    "id": "787b4f243cd3",
-    "category": "Radar del Sud",
-    "title": "Festival della Cucina Italiana in Svizzera, successo a Neuchâtel per la seconda tappa",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/festival-della-cucina-italiana-in-svizzera-successo-a-neuchatel-per-la-seconda-tappa/303940/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-28"
-  },
-  {
-    "id": "bf21358fa4b1",
-    "category": "Calici di Magna Grecia",
-    "title": "I vini del Collio al primo posto tra i bianchi di collina: precedono Alto Adige e Colli Orientali tra i ristoratori",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/collio-evolution-sondaggio-wine-monitor-2026/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-28"
   }
 ]
