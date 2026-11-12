@@ -1,11 +1,51 @@
 [
   {
+    "id": "602c41bf0899",
+    "category": "Calici di Magna Grecia",
+    "title": "Il Falcone Castel del Monte Rosso Riserva Docg 2013 – Rivera",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/il-falcone-castel-del-monte-rosso-riserva-docg-2013-rivera/229373/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-12"
+  },
+  {
+    "id": "f32f0fe46994",
+    "category": "Calici di Magna Grecia",
+    "title": "Garantito IGP | Ma il vino si fa ancora con l'uva? Una degustazione \"particolare\"",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/garantito-igp-ma-il-vino-si-fa-ancora-con-luva-una-degustazione-particolare/304555/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-12"
+  },
+  {
     "id": "07c2b3e8e239",
     "category": "Radar del Sud",
     "title": "Bellavista e Nomos Ante, il Franciacorta incontra la cucina d'autore a Roma",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/bellavista-e-nomos-ante-il-franciacorta-incontra-la-cucina-dautore-a-roma/304680/",
     "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-11"
+  },
+  {
+    "id": "debf966ba807",
+    "category": "Radar del Sud",
+    "title": "Il ristorante a Firenze che ridisegna la cucina peruviana",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/ristorante-peruviano-sevi-firenze",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-11"
+  },
+  {
+    "id": "3c58e852dd2c",
+    "category": "Calici di Magna Grecia",
+    "title": "\"Le cantine da sole non bastano: bisogna creare degli hub turistici\". La sfida del nuovo decreto sull'enoturismo",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/enoturismo-confronto-italia-francia-stati-uniti/",
+    "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-11-11"
   },
@@ -258,45 +298,5 @@
     "note": "Una voce dal mondo del vino, focus Basilicata.",
     "noteSource": "auto",
     "date": "2026-10-31"
-  },
-  {
-    "id": "fd0071899549",
-    "category": "Calici di Magna Grecia",
-    "title": "Il VINerdì di Garantito Igp. Tenuta Frassitelli 2024 Ischia doc. Casa D'Ambra",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/il-vinerdi-di-garantito-igp-tenuta-frassitelli-2024-ischia-doc-casa-dambra/303855/",
-    "note": "Una voce dal mondo del vino, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-10-30"
-  },
-  {
-    "id": "dc68bfd31290",
-    "category": "Calici di Magna Grecia",
-    "title": "Il vino italiano punta sul Messico: 150 produttori alla Wines Experience tra fine food e nuove tecnologie",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/il-vino-italiano-punta-sul-messico-wine-experience-tre-bicchieri/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-30"
-  },
-  {
-    "id": "27506611c611",
-    "category": "Calici di Magna Grecia",
-    "title": "Da una cantina fondata nel 1885 ai nuovi vignaioli. Le 54 aziende prima volta Tre Bicchieri",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri-2027-cantine-premiate-prima-volta-elenco/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-30"
-  },
-  {
-    "id": "5b1617cc4e56",
-    "category": "Calici di Magna Grecia",
-    "title": "Cantine e agenzie di viaggio: quell'intesa ancora debole che frena il turismo del vino",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/rapporto-cantine-agenzie-viaggio-indagine-fine-wine-tourism-2026/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-10-29"
   }
 ]
