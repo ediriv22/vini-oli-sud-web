@@ -1,5 +1,15 @@
 [
   {
+    "id": "5696098b8dbf",
+    "category": "Calici di Magna Grecia",
+    "title": "Invecchiato IGP | Garda Bresciano Doc VQPRD Rosso Superiore Vigna Costa Bianca 1996 – Az. Agr. La Guarda",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/invecchiato-igp-garda-bresciano-doc-vqprd-rosso-superiore-vigna-costa-bianca-1996-az-agr-la-guarda/304563/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-14"
+  },
+  {
     "id": "76bf9949ffdb",
     "category": "Calici di Magna Grecia",
     "title": "VINerdì | Terre Siciliane Igp Perricone 2024 – Fina",
@@ -16,6 +26,16 @@
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/moncalisse-la-magia-delle-sorelle-walch-in-bolla/304882/",
     "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-13"
+  },
+  {
+    "id": "cbc92ec2c0ed",
+    "category": "Radar del Sud",
+    "title": "Guida Michelin: i ristoranti con due stelle regione per regione",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/guida-michelin-i-ristoranti-con-due-stelle-regione-per-regione/304956/",
+    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
     "noteSource": "auto",
     "date": "2026-11-13"
   },
@@ -278,25 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-11-03"
-  },
-  {
-    "id": "c39893e77d16",
-    "category": "Radar del Sud",
-    "title": "La pizza italiana conquista Tokyo. Le migliori si mangiano anche al 38° piano di un grattacielo",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/ristoranti/migliori-ristoranti-italiani-tokyo-gucci-osteria-raffaella-de-vita/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-03"
-  },
-  {
-    "id": "3ea78d0f8de0",
-    "category": "Calici di Magna Grecia",
-    "title": "Pinot grigio il Collio si racconta attraverso il vitigno della trasparenza",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/pinot-grigio-il-collio-si-racconta-attraverso-il-vitigno-della-trasparenza/304075/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-02"
   }
 ]
