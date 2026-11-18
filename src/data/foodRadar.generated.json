@@ -1,5 +1,35 @@
 [
   {
+    "id": "d12b1aff9937",
+    "category": "Calici di Magna Grecia",
+    "title": "Gewurztraminer Hofstatter, il ritorno di un grande bianco",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/gewurztraminer-hofstatter-il-ritorno-di-un-grande-bianco/305094/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-18"
+  },
+  {
+    "id": "7b253622454c",
+    "category": "Radar del Sud",
+    "title": "Guida Michelin 2027. Tutti i ristoranti stellati di Napoli e della Campania",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/guida-michelin-tutte-le-stelle-della-campania/207656/",
+    "note": "Una segnalazione gastronomica del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-11-17"
+  },
+  {
+    "id": "551e3b5cf966",
+    "category": "Radar del Sud",
+    "title": "POP a Palermo, pasta e pizzerie magnifiche in Sicilia: gare e premi",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/pop-a-palermo-migliori-pizzerie-e-pastifici-della-sicilia",
+    "note": "Una segnalazione di cucina, focus Sicilia.",
+    "noteSource": "auto",
+    "date": "2026-11-16"
+  },
+  {
     "id": "710107d964e9",
     "category": "Calici di Magna Grecia",
     "title": "Meno Dodici | Capriano del Colle Torrazza 2023, Tenuta La Vigna",
@@ -268,35 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-11-05"
-  },
-  {
-    "id": "0f3bac70a917",
-    "category": "Calici di Magna Grecia",
-    "title": "San Martino si festeggia in cantina: gli appuntamenti in tutta Italia",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/san-martino-programma-movimento-turismo-vino-2026/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-05"
-  },
-  {
-    "id": "26388f8758cc",
-    "category": "Calici di Magna Grecia",
-    "title": "La Borgogna è diventata troppo cara. Ma c'è una zona dove si fanno ancora grandi vini a prezzi accessibili",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/borgogna-arnaud-boue-haute-cotes-nuits/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-04"
-  },
-  {
-    "id": "953fb3c43ba3",
-    "category": "Radar del Sud",
-    "title": "La cucina stellata di Ischia approda a Le Parùle: Palamaro e Iervolino ospiti di Giuseppe Pignalosa",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/la-cucina-stellata-di-ischia-approda-a-le-parule-palamaro-e-iervolino-ospiti-di-giuseppe-pignalosa/304236/",
-    "note": "Una segnalazione di cucina, focus Campania.",
-    "noteSource": "auto",
-    "date": "2026-11-03"
   }
 ]
