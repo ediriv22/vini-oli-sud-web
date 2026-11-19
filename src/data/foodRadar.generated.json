@@ -1,11 +1,41 @@
 [
   {
+    "id": "f9520095345e",
+    "category": "Business con Anima",
+    "title": "Garantito IGP | Pinot Grigio del Collio, il tempo è la terza via",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/garantito-igp-pinot-grigio-del-collio-il-tempo-e-la-terza-via/305036/",
+    "note": "Un segnale di mercato per le eccellenze del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-19"
+  },
+  {
     "id": "d12b1aff9937",
     "category": "Calici di Magna Grecia",
     "title": "Gewurztraminer Hofstatter, il ritorno di un grande bianco",
     "source": "Luciano Pignataro Wine Blog",
     "url": "https://www.lucianopignataro.it/a/gewurztraminer-hofstatter-il-ritorno-di-un-grande-bianco/305094/",
     "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-18"
+  },
+  {
+    "id": "a5c7d01b57fd",
+    "category": "Radar del Sud",
+    "title": "A Palazzo Talia a Roma la cucina incontra il Mediterraneo",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/a-palazzo-talia-a-roma-la-cucina-incontra-il-mediterraneo/305127/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-18"
+  },
+  {
+    "id": "1aa9a7d4f3a0",
+    "category": "Radar del Sud",
+    "title": "Il Giardino Segreto che è un elegante ristorante a Venezia",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/ristorante-da-lorenzo-giardino-segreto-venezia",
+    "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-11-18"
   },
@@ -268,35 +298,5 @@
     "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-11-06"
-  },
-  {
-    "id": "bd75f138c995",
-    "category": "Radar del Sud",
-    "title": "The World's 50 Best Restaurants 2026: vince Asador Etxebarri",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/the-worlds-50-best-restaurants-2026-vince-asador-etxebarri/304378/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-05"
-  },
-  {
-    "id": "72af9812a850",
-    "category": "Radar del Sud",
-    "title": "50 Best 2026: 5 ristoranti italiani a metà classifica. Vince la Spagna",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/50-best-2026-classifica",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-05"
-  },
-  {
-    "id": "af9dfbbd7b2f",
-    "category": "Calici di Magna Grecia",
-    "title": "Il futuro del vino vale 447 miliardi di dollari: l'area Asia-Pacifico guiderà la crescita nei prossimi 5 anni",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/mercati-vino-2032-asia-pacifico-analisi-mordor-intelligence/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-05"
   }
 ]
