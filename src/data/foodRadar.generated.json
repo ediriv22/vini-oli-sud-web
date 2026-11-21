@@ -1,5 +1,25 @@
 [
   {
+    "id": "9b5e45998b6c",
+    "category": "Radar del Sud",
+    "title": "Acquolina: la ricetta di Giovanni Gigante",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/acquolina-la-ricetta-di-giovanni-gigante/305209/",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-20"
+  },
+  {
+    "id": "bf9701bd131d",
+    "category": "Business con Anima",
+    "title": "Se il croissant per voi è cubico, questa bakery a Napoli fa per voi",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/cubo-bakehouse-napoli",
+    "note": "Un segnale di mercato per le eccellenze del Sud, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-11-20"
+  },
+  {
     "id": "f9520095345e",
     "category": "Business con Anima",
     "title": "Garantito IGP | Pinot Grigio del Collio, il tempo è la terza via",
@@ -278,25 +298,5 @@
     "note": "Una voce dal mondo del vino del Sud.",
     "noteSource": "auto",
     "date": "2026-11-07"
-  },
-  {
-    "id": "6a31b13d6c59",
-    "category": "Calici di Magna Grecia",
-    "title": "VINerdì | Rasole Colli dell'Etruria Centrale doc 2024, Le Forconate",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vinerdi-rasole-colli-delletruria-centrale-doc-2024-le-forconate/304202/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-06"
-  },
-  {
-    "id": "ef6501bbd24c",
-    "category": "Radar del Sud",
-    "title": "Festival della Cucina Italiana in Svizzera, il Made in Italy conquista tutti: un successo che guarda al 2027",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/festival-della-cucina-italiana-in-svizzera-il-made-in-italy-conquista-tutti-un-successo-che-guarda-al-2027/304487/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-06"
   }
 ]
