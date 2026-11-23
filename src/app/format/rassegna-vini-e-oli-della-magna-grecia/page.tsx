@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/data/site";
 
 export const metadata = createPageMetadata(
   "2ª Rassegna Vini e Oli della Magna Grecia",
-  "Ingresso libero e gratuito a stand espositivi, convegni, aree istituzionali e Masterclass AIS. 27, 28 e 29 novembre 2026, Rotonda Diaz, Napoli.",
+  "Ingresso libero e gratuito a stand espositivi, convegni, aree istituzionali e Masterclass AIS. 27, 28 e 29 novembre 2026, Arena del Lungomare, Napoli.",
 );
 
 /**

@@ -10,7 +10,7 @@ import {
   submitLeadForm,
   type SubmitStatus,
 } from "@/components/forms/FormFields";
-import { MAX_DEGUSTAZIONI, SCALETTA } from "@/data/prenota";
+import { DISCLAIMER_DEGUSTAZIONI, MAX_DEGUSTAZIONI, SCALETTA } from "@/data/prenota";
 import { track } from "@/lib/track";
 
 /**
@@ -66,6 +66,7 @@ export default function PrenotaForm() {
         <p className="font-ui -mt-2 text-[0.84rem] text-[var(--color-ink-strong)]" aria-live="polite">
           Massimo {MAX_DEGUSTAZIONI} per prenotazione: {scelte.length} di {MAX_DEGUSTAZIONI} scelte.
         </p>
+        <p className="font-ui -mt-2 text-[0.8rem] italic text-[var(--color-muted)]">{DISCLAIMER_DEGUSTAZIONI}</p>
         {SCALETTA.map(({ giorno, slot }) => (
           <div key={giorno} className="flex flex-col gap-2">
             <p className="font-ui text-[0.82rem] font-semibold text-[var(--color-ink-strong)]">{giorno}</p>

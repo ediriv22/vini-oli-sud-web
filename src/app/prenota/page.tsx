@@ -3,14 +3,14 @@ import { createPageMetadata } from "@/data/site";
 
 export const metadata = createPageMetadata(
   "Prenota la tua degustazione",
-  "Scegli le presentazioni con degustazione del Villaggio Vini e Oli della Magna Grecia e prenota gratis il tuo posto (27-29 novembre 2026, Rotonda Diaz, Napoli).",
+  "Scegli le presentazioni con degustazione del Villaggio Vini e Oli della Magna Grecia e prenota gratis il tuo posto (27-29 novembre 2026, Arena del Lungomare, Napoli).",
 );
 
 export default function PrenotaPage() {
   return (
     <section className="section-flow section-space">
       <div className="section-shell mx-auto max-w-[42rem] text-center">
-        <p className="eyebrow text-center">27 · 28 · 29 Novembre 2026 · Rotonda Diaz, Napoli</p>
+        <p className="eyebrow text-center">27 · 28 · 29 Novembre 2026 · Arena del Lungomare, Napoli</p>
         <h1 className="display-balance mt-4 font-display text-[clamp(2rem,4.4vw,2.9rem)] leading-[1.05] text-[var(--color-ink-strong)]">
           Prenota la tua degustazione
         </h1>

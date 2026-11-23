@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { PRENOTA_LABEL, PRENOTA_URL, SCALETTA } from "@/data/prenota";
+import { DISCLAIMER_DEGUSTAZIONI, PRENOTA_LABEL, PRENOTA_URL, SCALETTA } from "@/data/prenota";
 
 /**
  * Pagina Programma: Masterclass con il logo della Regione Campania, la scaletta delle
@@ -106,13 +106,15 @@ export default function ProgrammaHubSection() {
           </p>
 
           <div className="mt-10 flex flex-col gap-8">
-            {SCALETTA.map(({ giorno, slot }) => (
+            {SCALETTA.map(({ giorno, slot, altri = [] }) => (
               <div key={giorno}>
                 <p className="font-ui text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-sand-strong)]">
                   {giorno}
                 </p>
                 <ul className="mt-4 flex flex-col gap-3">
-                  {slot.map((s) => (
+                  {[...altri, ...slot]
+                    .sort((x, y) => (x.ora === "A seguire" ? 1 : y.ora === "A seguire" ? -1 : x.ora.localeCompare(y.ora)))
+                    .map((s) => (
                     <li
                       key={s.ora + s.nome}
                       className="flex flex-wrap items-baseline gap-x-4 gap-y-1 rounded-[0.9rem] border border-[rgba(47,91,70,0.18)] bg-[rgba(255,253,245,0.6)] px-4 py-3"
@@ -129,7 +131,7 @@ export default function ProgrammaHubSection() {
           </div>
 
           <p className="mt-6 text-center text-[0.82rem] italic text-[var(--color-muted)]">
-            Giorni e orari possono cambiare per esigenze organizzative.
+            {DISCLAIMER_DEGUSTAZIONI}
           </p>
 
           <div className="mt-8 text-center">

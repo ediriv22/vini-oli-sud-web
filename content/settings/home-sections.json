@@ -2,7 +2,7 @@
   "hero": {
     "slides": [
       {
-        "eyebrow": "27 · 28 · 29 Novembre 2026 · Rotonda Diaz, Napoli",
+        "eyebrow": "27 · 28 · 29 Novembre 2026 · Arena del Lungomare, Napoli",
         "titlePrefix": "Tre giorni per assaggiare la ",
         "titleEmphasis": "Magna Grecia",
         "titleSuffix": "",
@@ -182,7 +182,7 @@
         "label": "Programma",
         "heading": "Il Programma 2026",
         "body": [
-          "Tre giorni di degustazioni e masterclass: 27, 28 e 29 novembre 2026 a Rotonda Diaz, Lungomare Caracciolo, Napoli."
+          "Tre giorni di degustazioni e masterclass: 27, 28 e 29 novembre 2026 a Arena del Lungomare, Via Caracciolo, Napoli."
         ],
         "ctaLabel": "Vai al Programma",
         "ctaHref": "/programma/"
@@ -247,7 +247,7 @@
         "kind": "iscrivi",
         "label": "Selezione aziende",
         "heading": "Le aziende sono selezionate dall'Assessorato all'Agricoltura della Regione Campania",
-        "subheading": "Gran Premio del Gusto 2026 — Le Sfide della Magna Grecia · 27 • 28 • 29 Novembre 2026 · Rotonda Diaz – Lungomare Caracciolo – Napoli",
+        "subheading": "Gran Premio del Gusto 2026 — Le Sfide della Magna Grecia · 27 • 28 • 29 Novembre 2026 · Arena del Lungomare – Via Caracciolo – Napoli",
         "body": [
           "Le aziende che desiderano concorrere alle Sfide del Gran Premio del Gusto saranno selezionate dall'Assessorato all'Agricoltura della Regione Campania, che ha pubblicato un bando apposito.",
           "Le domande si chiudono il 31 ottobre 2026.",
@@ -382,7 +382,7 @@
     "brand": "VINISUD.IT",
     "edition": "2ª Rassegna Vini & Oli della Magna Grecia",
     "dates": "27 • 28 • 29 Novembre 2026",
-    "venue": "Rotonda Diaz • Lungomare Caracciolo • Napoli",
+    "venue": "Arena del Lungomare • Via Caracciolo • Napoli",
     "subtitle": "Le eccellenze della Magna Grecia",
     "claim1": "Il pubblico non guarda soltanto.",
     "claim2": "Il pubblico assaggia.",
@@ -393,7 +393,7 @@
   "twoEvents": {
     "title": "Tre giorni, un solo Villaggio.",
     "dateLine": "27 · 28 · 29 Novembre 2026",
-    "venueLine": "Rotonda Diaz · Napoli",
+    "venueLine": "Arena del Lungomare · Napoli",
     "cards": [
       {
         "title": "2ª Rassegna Vini e Oli della Magna Grecia",

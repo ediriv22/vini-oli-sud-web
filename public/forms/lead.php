@@ -889,7 +889,7 @@ if (!empty($config['SEND_USER_CONFIRMATION']) && !$skipUserConfirmation) {
             $confLines[] = 'Ciao ' . $nome . ',';
             $confLines[] = '';
             $confLines[] = 'abbiamo ricevuto la tua prenotazione per il Villaggio Vini e Oli della '
-                         . 'Magna Grecia (27-28-29 novembre 2026, Rotonda Diaz, Napoli).';
+                         . 'Magna Grecia (27-28-29 novembre 2026, Arena del Lungomare, Napoli).';
             $confLines[] = '';
             $confLines[] = "IL TUO CODICE PRENOTAZIONE: $requestId";
             $confLines[] = '';
