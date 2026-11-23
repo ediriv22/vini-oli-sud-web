@@ -1,7 +1,7 @@
 /**
  * Prenotazione gratuita alle degustazioni (29/10/2026, "1_0 MODIFICHE SITO"):
  * le Sfide non ci sono piu'. Le aziende presentano il prodotto con degustazione, il pubblico
- * sceglie a quale partecipare, gratis per i primi 60 iscritti.
+ * sceglie a quale partecipare, gratis per i primi 60 iscritti per ogni degustazione.
  *
  * 31/10/2026: niente piu' link esterno (Metooo). La prenotazione e' il modulo /prenota/,
  * che invia a napoliracingshow@gmail.com tramite /forms/lead.php (requestType=prenotazione-degustazione).

@@ -235,6 +235,59 @@ function vos_append_csv(string $dataDir, string $filename, array $headers, array
     fclose($fh);
 }
 
+/** Posti per ogni degustazione (persone). Oltre questo numero la prenotazione viene rifiutata. */
+const VOS_LIMITE_POSTI_DEGUSTAZIONE = 60;
+
+/**
+ * Controllo posti + scrittura in un unico blocco con lock esclusivo sul CSV (fonte di verita'),
+ * cosi' due richieste simultanee non possono superare il limite. Ritorna il nome della prima
+ * degustazione senza posti sufficienti, oppure null se la riga e' stata scritta.
+ * Se il file non si apre, non blocca (come vos_append_csv): l'email resta il canale garantito.
+ */
+function vos_prenota_con_limite(string $dataDir, array $headers, array $row, array $degustazioni, int $persone): ?string {
+    $path = $dataDir . '/prenotazioni-degustazioni.csv';
+    $fh = @fopen($path, 'c+');
+    if (!$fh) {
+        error_log('vos_prenota_con_limite: impossibile aprire il CSV');
+        return null;
+    }
+    $piena = null;
+    if (flock($fh, LOCK_EX)) {
+        $conteggi = [];
+        $isNew = (fstat($fh)['size'] ?? 0) === 0;
+        if (!$isNew) {
+            $head = fgetcsv($fh, 0, ',', '"', '\\');
+            $iP = is_array($head) ? array_search('persone', $head, true) : false;
+            $iD = is_array($head) ? array_search('degustazioni', $head, true) : false;
+            if ($iP !== false && $iD !== false) {
+                while (($r = fgetcsv($fh, 0, ',', '"', '\\')) !== false) {
+                    foreach (explode('; ', (string) ($r[$iD] ?? '')) as $d) {
+                        if ($d !== '') {
+                            $conteggi[$d] = ($conteggi[$d] ?? 0) + (int) ($r[$iP] ?? 0);
+                        }
+                    }
+                }
+            }
+        }
+        foreach ($degustazioni as $d) {
+            if (($conteggi[$d] ?? 0) + $persone > VOS_LIMITE_POSTI_DEGUSTAZIONE) {
+                $piena = $d;
+                break;
+            }
+        }
+        if ($piena === null) {
+            fseek($fh, 0, SEEK_END);
+            if ($isNew) {
+                fputcsv($fh, $headers, ',', '"', '\\');
+            }
+            fputcsv($fh, $row, ',', '"', '\\');
+        }
+        flock($fh, LOCK_UN);
+    }
+    fclose($fh);
+    return $piena;
+}
+
 // vos_push_google_sheet spostata in lib/vos-sfide.php (riusata anche da
 // paypal-confirm.php per aggiornare lo stato pagamento dopo verifica).
 
@@ -434,13 +487,18 @@ if ($requestType === 'prenotazione-degustazione') {
     ];
     $subject = 'Prenotazione degustazione — ' . $nome . ' ' . $cognome . ' — ' . $persone . ' pers.';
 
-    // CSV locale sempre scritto (nessuna dipendenza esterna); non blocca l'invio.
-    vos_append_csv(
+    // CSV locale = fonte di verita' dei posti: controllo del limite (60 persone per degustazione)
+    // e scrittura sono un'unica operazione con lock.
+    $esaurita = vos_prenota_con_limite(
         $dataDir,
-        'prenotazioni-degustazioni.csv',
         ['request_id', 'data_ora', 'nome', 'cognome', 'email', 'telefono', 'persone', 'degustazioni', 'note'],
         [$requestId, date('c'), $nome, $cognome, $email, $telefono, $persone, implode('; ', $degustazioni), $note],
+        $degustazioni,
+        $persone,
     );
+    if ($esaurita !== null) {
+        $respond(false, 'Posti esauriti o insufficienti per: ' . $esaurita . '. Scegli un\'altra degustazione o riduci le persone.');
+    }
     // Stesso Google Sheet del vecchio Pass Giurato ("pass giurati"), stesse colonne: lo Sheet resta
     // uno solo. Se GOOGLE_SHEET_WEBAPP_URL_GIURATO non e' in config.php e' un no-op silenzioso.
     vos_push_google_sheet($config, 'GOOGLE_SHEET_WEBAPP_URL_GIURATO', [

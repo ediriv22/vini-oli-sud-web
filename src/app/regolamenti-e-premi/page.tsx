@@ -44,7 +44,7 @@ export default function RegolamentiEPremiPage() {
             <p className="text-[0.96rem] leading-[1.7] text-[var(--color-muted)]">
               L&rsquo;ingresso al Villaggio è gratuito. Per assistere a una presentazione con
               degustazione scegli quella che ti interessa dal programma e prenotati: la
-              partecipazione è <strong>gratuita per i primi 60 iscritti</strong>.
+              partecipazione è <strong>gratuita per i primi 60 iscritti per ogni degustazione</strong>.
             </p>
             <p className="text-[0.86rem] italic leading-[1.6] text-[var(--color-muted)]">
               Giorni e orari possono cambiare per esigenze organizzative.

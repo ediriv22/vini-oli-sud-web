@@ -102,7 +102,7 @@ export default function ProgrammaHubSection() {
           <p className="mx-auto mt-4 max-w-[46ch] text-center text-[0.94rem] leading-[1.65] text-[var(--color-muted)]">
             Le aziende dell&rsquo;eccellenza enogastronomica della nostra terra presentano i loro
             prodotti. Scegli a quale degustazione partecipare: la partecipazione è{" "}
-            <strong>gratuita per i primi 60 iscritti</strong>.
+            <strong>gratuita per i primi 60 iscritti per ogni degustazione</strong>.
           </p>
 
           <div className="mt-10 flex flex-col gap-8">
