@@ -1,5 +1,25 @@
 [
   {
+    "id": "779b967355c9",
+    "category": "Calici di Magna Grecia",
+    "title": "Il Brasile compra sempre più vino italiano. E per le nostre cantine ci sono nuove opportunità",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/attualita/il-brasile-compra-sempre-piu-vino-italiano-e-per-le-nostre-cantine-ci-sono-nuove-opportunita/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-22"
+  },
+  {
+    "id": "e74d833bc7ae",
+    "category": "Radar del Sud",
+    "title": "Un ristorante alla Garbatella vuole stupire con un solo ingrediente",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/uma-roma-ristorante-garbatella",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-21"
+  },
+  {
     "id": "9b5e45998b6c",
     "category": "Radar del Sud",
     "title": "Acquolina: la ricetta di Giovanni Gigante",
@@ -278,25 +298,5 @@
     "note": "Una segnalazione di cucina del Sud.",
     "noteSource": "auto",
     "date": "2026-11-08"
-  },
-  {
-    "id": "c7a5379a21b0",
-    "category": "Calici di Magna Grecia",
-    "title": "Merano WineFestival 2026 e la presentazione di \"Vino, Donna\" di Chiara Giorleo",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/merano-winefestival-2026-e-la-presentazione-di-vino-donna-di-chiara-giorleo/304455/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-07"
-  },
-  {
-    "id": "d8a00be39479",
-    "category": "Calici di Magna Grecia",
-    "title": "Invecchiato IGP | Sebastiano Colline Lucchesi doc 2003 Fattoria Sardi",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/invecchiato-igp-sebastiano-colline-lucchesi-doc-2003-fattoria-sardi/304381/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-07"
   }
 ]
