@@ -1,5 +1,55 @@
 [
   {
+    "id": "26e6f5ddb473",
+    "category": "Calici di Magna Grecia",
+    "title": "Vini Società Agricola Nativ",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vini-societa-agricola-nativ/305440/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-11-24"
+  },
+  {
+    "id": "f7008afbb5df",
+    "category": "Radar del Sud",
+    "title": "Nel centro storico di Napoli c'è un piccolo bistrot dove i piatti della tradizione cambiano forma",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/ristoranti/cisterna-bistrot-napoli-centro-storico-vincenzo-diano/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-11-23"
+  },
+  {
+    "id": "f8815661d48e",
+    "category": "Calici di Magna Grecia",
+    "title": "In Panettone Veritas, Napoli, 3 dicembre dalle 17:00 alle 20:00",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/in-panettone-veritas-napoli-3-dicembre-dalle-1700-alle-2000/305431/",
+    "note": "Una voce dal mondo del vino, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-11-23"
+  },
+  {
+    "id": "c2f2617359ef",
+    "category": "Radar del Sud",
+    "title": "Era la pasta fatta con gli scarti: ora i Mbillimbant entrano nella cucina d'autore",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/rubriche/storie/pasta-fatta-scarti-mbillimbant-cucina-dautore/",
+    "note": "Una segnalazione di cucina, focus Basilicata.",
+    "noteSource": "auto",
+    "date": "2026-11-23"
+  },
+  {
+    "id": "131d4eaeb649",
+    "category": "Radar del Sud",
+    "title": "A Napoli l'esordio letterario di Paolo Gramaglia. Giovedì 3 dicembre la presentazione di \"Mordi la vita\" all'Ipogeo di San Gennaro",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/a-napoli-lesordio-letterario-di-paolo-gramaglia-giovedi-3-dicembre-la-presentazione-di-mordi-la-vita-allipogeo-di-san-gennaro/305433/",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-11-23"
+  },
+  {
     "id": "779b967355c9",
     "category": "Calici di Magna Grecia",
     "title": "Il Brasile compra sempre più vino italiano. E per le nostre cantine ci sono nuove opportunità",
@@ -248,55 +298,5 @@
     "note": "Un segnale di mercato per le eccellenze del Sud.",
     "noteSource": "auto",
     "date": "2026-11-10"
-  },
-  {
-    "id": "e1067c28d4e7",
-    "category": "Calici di Magna Grecia",
-    "title": "Dove mangiare pesce a Roma a 40 euro e con vini a prezzi minimi",
-    "source": "Scatti di Gusto",
-    "url": "https://www.scattidigusto.it/eataly-roma-ostiense",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-10"
-  },
-  {
-    "id": "f02490a0e103",
-    "category": "Oro Verde",
-    "title": "L'Europa cambia le regole sull'olio d'oliva, ma lascia fuori una varietà pugliese. Scoppia il caso Coratina",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/olio-coratina-puglia-deroga-steroli-regolamento-europeo/",
-    "note": "Un segnale dall'olio del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-10"
-  },
-  {
-    "id": "371e2aac9276",
-    "category": "Oro Verde",
-    "title": "Olio d'oliva, il modello spagnolo entra ufficialmente in crisi: è guerra sui prezzi",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/attualita/olio-oliva-modello-spagnolo-crisi-guerra-prezzi/",
-    "note": "Un segnale dall'olio del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-09"
-  },
-  {
-    "id": "1b609817cfbd",
-    "category": "Calici di Magna Grecia",
-    "title": "Mezzacorona: sequestrate 60mila bottiglie Igt. Si ipotizza frode da 1 milione di euro. La cantina: \"Noi estranei ai fatti\"",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/inchiesta-frode-vino-igt-mezzacorona/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-09"
-  },
-  {
-    "id": "c9eceb446201",
-    "category": "Radar del Sud",
-    "title": "Osteria Borga, dove la campagna trevigiana incontra la cucina contemporanea",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/osteria-borga-dove-la-campagna-trevigiana-incontra-la-cucina-contemporanea/304493/",
-    "note": "Una segnalazione di cucina del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-08"
   }
 ]
