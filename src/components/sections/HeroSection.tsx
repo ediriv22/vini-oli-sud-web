@@ -179,6 +179,24 @@ export default function HeroSection() {
               </a>
             ))}
           </nav>
+
+          {/* 25/11/2026: masterclass AIS prenotabili e convegno del 27 in evidenza in home. */}
+          <div className="mt-5 grid max-w-[46rem] gap-3 sm:grid-cols-2">
+            <a
+              href="/prenota/"
+              className="font-ui rounded-[1.1rem] border border-[rgba(255,215,87,0.45)] bg-[rgba(255,253,245,0.12)] px-5 py-4 text-left text-[0.86rem] leading-snug text-[var(--color-ivory)] transition-colors duration-200 hover:bg-[rgba(255,215,87,0.18)]"
+            >
+              <strong className="block uppercase tracking-[0.05em]">Masterclass AIS · I migliori vini della Magna Grecia</strong>
+              Venerdì 27 alle 12:00 e domenica 29 alle 11:00. Prenota gratis il tuo posto →
+            </a>
+            <a
+              href="/programma/#convegno"
+              className="font-ui rounded-[1.1rem] border border-[rgba(255,215,87,0.45)] bg-[rgba(255,253,245,0.12)] px-5 py-4 text-left text-[0.86rem] leading-snug text-[var(--color-ivory)] transition-colors duration-200 hover:bg-[rgba(255,215,87,0.18)]"
+            >
+              <strong className="block uppercase tracking-[0.05em]">Convegno · Napoli, Porto del Futuro</strong>
+              Venerdì 27 novembre alle 11:00, Tendostruttura Oli e Vini della Magna Grecia →
+            </a>
+          </div>
         </div>
       </div>
 
