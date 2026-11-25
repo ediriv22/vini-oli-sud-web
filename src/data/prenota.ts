@@ -20,8 +20,8 @@ export type GiornoProgramma = { giorno: string; slot: Degustazione[]; altri?: De
 export const SCALETTA: GiornoProgramma[] = [
   {
     giorno: "Venerdì 27 novembre",
-    altri: [{ ora: "12:00", nome: "Masterclass dei vini migliori della Magna Grecia (Regione Campania, in collaborazione con AIS)" }],
     slot: [
+      { ora: "12:00", nome: "Masterclass AIS: i migliori vini della Magna Grecia (Regione Campania)" },
       { ora: "13:00", nome: "Caseificio Cioffi | Prodotti caseari di Campania Felix" },
       { ora: "14:00", nome: "Azienda Olivicola Ragozzino / De Marco" },
       { ora: "15:00", nome: "Amaro Basiliano dell’Azienda Delizie del Sole" },
@@ -47,10 +47,10 @@ export const SCALETTA: GiornoProgramma[] = [
     giorno: "Domenica 29 novembre",
     altri: [
       { ora: "10:00–14:00", nome: "Camper della Prevenzione ASL Napoli 1 Centro: vaccinazioni e screening oncologici" },
-      { ora: "11:00", nome: "Masterclass dei vini migliori della Magna Grecia (Regione Campania, in collaborazione con AIS)" },
       { ora: "A seguire", nome: "Premiazioni e interviste" },
     ],
     slot: [
+      { ora: "11:00", nome: "Masterclass AIS: i migliori vini della Magna Grecia (Regione Campania)" },
       { ora: "12:00", nome: "A’ Scarpetta: Pasta e Pomodoro Nolano" },
       { ora: "13:00", nome: "Sua Maestà La Pizza — Enzo Cocozza" },
       { ora: "14:00", nome: "Il divino baccalà — Baita del Re Resort" },
