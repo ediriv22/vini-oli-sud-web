@@ -85,6 +85,36 @@ export default function ProgrammaHubSection() {
         </div>
       </section>
 
+      {/* Convegno Napoli Porto del Futuro, venerdi 27/11 ore 11 (locandina ricevuta il 25/11/2026) */}
+      <section
+        id="convegno"
+        aria-labelledby="convegno-title"
+        className="section-flow section-space hairline-gold"
+      >
+        <div className="section-shell mx-auto max-w-[34rem] text-center">
+          <p className="eyebrow">Convegno · Venerdì 27 novembre, ore 11:00</p>
+          <h2
+            id="convegno-title"
+            className="display-balance mt-4 font-display text-[clamp(1.8rem,3.8vw,2.5rem)] leading-[1.08] text-[var(--color-ink-strong)]"
+          >
+            Napoli, Porto del Futuro
+          </h2>
+          <p className="mx-auto mt-5 max-w-[44ch] text-[0.96rem] leading-[1.7] text-[var(--color-muted)]">
+            Turismo, grandi eventi, intelligenza artificiale e blue economy. Alla Tendostruttura Oli e Vini
+            della Magna Grecia, nel Villaggio Napoli Racing Show. Modera Vincenzo Di Vincenzo; intervengono
+            Tommaso Cognolato (D.G. Terminal Napoli) e Alessandro Ilarda (Chief Digital Officer Fiven);
+            conclude Eliseo Cuccaro (Presidente Autorità Portuale Tirreno).
+          </p>
+          <Image
+            src="/images/convegni/napoli-porto-del-futuro-27-11-2026.jpg"
+            alt="Locandina del convegno Napoli, Porto del Futuro: venerdì 27 novembre 2026 alle 11:00, Tendostruttura Oli e Vini della Magna Grecia, Villaggio Napoli Racing Show"
+            width={1122}
+            height={1402}
+            className="mx-auto mt-8 h-auto w-full max-w-[28rem] rounded-[1rem] shadow-[0_10px_28px_rgba(26,53,40,0.12)]"
+          />
+        </div>
+      </section>
+
       {/* Presentazioni e degustazioni (dal 29/10/2026: niente piu' Sfide) */}
       <section
         id="degustazioni"

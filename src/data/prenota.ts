@@ -20,6 +20,7 @@ export type GiornoProgramma = { giorno: string; slot: Degustazione[]; altri?: De
 export const SCALETTA: GiornoProgramma[] = [
   {
     giorno: "Venerdì 27 novembre",
+    altri: [{ ora: "11:00", nome: "Convegno “Napoli, Porto del Futuro”: turismo, grandi eventi, intelligenza artificiale e blue economy (Tendostruttura Oli e Vini della Magna Grecia)" }],
     slot: [
       { ora: "12:00", nome: "Masterclass AIS: i migliori vini della Magna Grecia (Regione Campania)" },
       { ora: "13:00", nome: "Caseificio Cioffi | Prodotti caseari di Campania Felix" },
