@@ -485,7 +485,11 @@ if ($requestType === 'prenotazione-degustazione') {
         'Degustazioni'   => implode("\n  - ", array_merge([''], $degustazioni)),
         'Note'           => $note !== '' ? $note : '—',
     ];
-    $subject = 'Prenotazione degustazione — ' . $nome . ' ' . $cognome . ' — ' . $persone . ' pers.';
+    // Le Masterclass AIS hanno un loro Google Sheet (GOOGLE_SHEET_WEBAPP_URL_MASTERCLASS): si separano dalle degustazioni.
+    $masterclass = array_values(array_filter($degustazioni, fn($d) => mb_stripos($d, 'Masterclass AIS') !== false));
+    $soloDegustazioni = array_values(array_diff($degustazioni, $masterclass));
+    $subject = ($masterclass ? ($soloDegustazioni ? 'Prenotazione Masterclass AIS + degustazione' : 'Prenotazione Masterclass AIS') : 'Prenotazione degustazione')
+        . ' — ' . $nome . ' ' . $cognome . ' — ' . $persone . ' pers.';
 
     // CSV locale = fonte di verita' dei posti: controllo del limite (60 persone per degustazione)
     // e scrittura sono un'unica operazione con lock.
@@ -499,9 +503,27 @@ if ($requestType === 'prenotazione-degustazione') {
     if ($esaurita !== null) {
         $respond(false, 'Posti esauriti o insufficienti per: ' . $esaurita . '. Scegli un\'altra degustazione o riduci le persone.');
     }
+    if ($masterclass) {
+        vos_push_google_sheet($config, 'GOOGLE_SHEET_WEBAPP_URL_MASTERCLASS', [
+            'requestId'   => $requestId,
+            'timestamp'   => date('c'),
+            'nome'        => $nome,
+            'cognome'     => $cognome,
+            'email'       => $email,
+            'telefono'    => $telefono !== '' ? $telefono : '—',
+            'persone'     => $persone,
+            'masterclass' => implode('; ', $masterclass),
+            'note'        => $note,
+        ]);
+    }
+    if (!$soloDegustazioni) {
+        $degustazioni_sheet = [];
+    } else {
+        $degustazioni_sheet = $soloDegustazioni;
+    }
     // Stesso Google Sheet del vecchio Pass Giurato ("pass giurati"), stesse colonne: lo Sheet resta
     // uno solo. Se GOOGLE_SHEET_WEBAPP_URL_GIURATO non e' in config.php e' un no-op silenzioso.
-    vos_push_google_sheet($config, 'GOOGLE_SHEET_WEBAPP_URL_GIURATO', [
+    if ($degustazioni_sheet) vos_push_google_sheet($config, 'GOOGLE_SHEET_WEBAPP_URL_GIURATO', [
         'requestId'        => $requestId,
         'timestamp'        => date('c'),
         'nome'             => $nome,
@@ -512,7 +534,7 @@ if ($requestType === 'prenotazione-degustazione') {
         'tipoPass'         => 'Prenotazione degustazione — ' . $persone . ($persone === 1 ? ' persona' : ' persone'),
         'addonBicchiere'   => 'no',
         'importoAtteso'    => 0,
-        'sfide'            => implode('; ', $degustazioni),
+        'sfide'            => implode('; ', $degustazioni_sheet),
         'metodoPagamento'  => 'prenotazione',
         'ricevutaAllegata' => '—',
         'statoPagamento'   => 'prenotazione',

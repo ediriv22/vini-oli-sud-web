@@ -68,6 +68,7 @@ return [
     // usare solo email + CSV.
     'GOOGLE_SHEET_WEBAPP_URL_GIURATO'  => '',
     'GOOGLE_SHEET_WEBAPP_URL_PRODOTTO' => '',
+    'GOOGLE_SHEET_WEBAPP_URL_MASTERCLASS' => '',
 
     // --- PayPal (Pass Giurato) — verifica server-side degli ordini ---
     // Usato SOLO da forms/paypal-confirm.php (chiamato dal sito dopo che
