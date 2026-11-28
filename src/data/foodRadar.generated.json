@@ -20,6 +20,66 @@
     "date": "2026-11-27"
   },
   {
+    "id": "1e5df1f35b4d",
+    "category": "Calici di Magna Grecia",
+    "title": "Carmelo Grasso alla guida del Mamertino: la scommessa sul Nocera per rilanciare una delle più piccole Doc italiane",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/doc-mamertino-nuovo-presidente-carmelo-grasso/",
+    "note": "Una voce dal mondo del vino, focus Sicilia.",
+    "noteSource": "auto",
+    "date": "2026-11-27"
+  },
+  {
+    "id": "3a8ead61241d",
+    "category": "Calici di Magna Grecia",
+    "title": "Vini Bianchi Fattoria La Rivolta",
+    "source": "Luciano Pignataro Wine Blog",
+    "url": "https://www.lucianopignataro.it/a/vini-fattoria-la-rivolta-2/209129/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-27"
+  },
+  {
+    "id": "b8cf33f266a2",
+    "category": "Radar del Sud",
+    "title": "Pescheria, migliore ristorante di pesce a Salerno, fa bere benissimo",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/pescheria-ristorante-salerno-crescent",
+    "note": "Una segnalazione di cucina, focus Campania.",
+    "noteSource": "auto",
+    "date": "2026-11-27"
+  },
+  {
+    "id": "3526e8a1c07c",
+    "category": "Radar del Sud",
+    "title": "Il ristorante e cocktail bar di Torino che fa cucina nikkei",
+    "source": "Scatti di Gusto",
+    "url": "https://www.scattidigusto.it/azotea-ristorante-cocktail-bar-torino",
+    "note": "Una segnalazione di cucina del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-27"
+  },
+  {
+    "id": "dfc1e3de34ef",
+    "category": "Calici di Magna Grecia",
+    "title": "La Dop economy supera i 21 miliardi di euro, ma frena il vino. La classifica delle denominazioni che valgono di più",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/dop-economy-2026-21-miliardi-euro-qualivita-ismea/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-27"
+  },
+  {
+    "id": "660f179fe2c8",
+    "category": "Calici di Magna Grecia",
+    "title": "Blitz in una cantina di Lipari: sequestro da 10 milioni di euro per presunta frode nel settore del vino biologico",
+    "source": "Gambero Rosso",
+    "url": "https://www.gamberorosso.it/notizie/vino/tre-bicchieri/eolie-sequestro-cantina-biologica/",
+    "note": "Una voce dal mondo del vino del Sud.",
+    "noteSource": "auto",
+    "date": "2026-11-27"
+  },
+  {
     "id": "cfdb15cbb7f7",
     "category": "Radar del Sud",
     "title": "Napoli 28 novembre, con Slow Food Napoli e Ristorante Al 53 si firma e si brinda al Reddito di Contadinanza",
@@ -238,65 +298,5 @@
     "note": "Una segnalazione di cucina, focus Sicilia.",
     "noteSource": "auto",
     "date": "2026-11-16"
-  },
-  {
-    "id": "710107d964e9",
-    "category": "Calici di Magna Grecia",
-    "title": "Meno Dodici | Capriano del Colle Torrazza 2023, Tenuta La Vigna",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/meno-dodici-capriano-del-colle-torrazza-2023-tenuta-la-vigna/304570/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-15"
-  },
-  {
-    "id": "7495b7254f62",
-    "category": "Calici di Magna Grecia",
-    "title": "Da vino \"proibito\" ai Tre Bicchieri: la sfida sostenibile del viticoltore che ha fatto rinascere lo Zibibbo in Calabria",
-    "source": "Gambero Rosso",
-    "url": "https://www.gamberorosso.it/notizie/vino/cantine-benvenuto-calabria-premio-vitivinicoltura-sostenibile-2027/",
-    "note": "Una voce dal mondo del vino, focus Calabria.",
-    "noteSource": "auto",
-    "date": "2026-11-15"
-  },
-  {
-    "id": "f5b3fd623bcf",
-    "category": "Radar del Sud",
-    "title": "Ristorante Aquadulcis Vallo della Lucania e la cucina di Luigi Coppola",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/ristorante-aquadulcis-vallo-della-lucania-e-la-cucina-di-luigi-coppola/304993/",
-    "note": "Una segnalazione di cucina, focus Basilicata.",
-    "noteSource": "auto",
-    "date": "2026-11-15"
-  },
-  {
-    "id": "5696098b8dbf",
-    "category": "Calici di Magna Grecia",
-    "title": "Invecchiato IGP | Garda Bresciano Doc VQPRD Rosso Superiore Vigna Costa Bianca 1996 – Az. Agr. La Guarda",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/invecchiato-igp-garda-bresciano-doc-vqprd-rosso-superiore-vigna-costa-bianca-1996-az-agr-la-guarda/304563/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-14"
-  },
-  {
-    "id": "76bf9949ffdb",
-    "category": "Calici di Magna Grecia",
-    "title": "VINerdì | Terre Siciliane Igp Perricone 2024 – Fina",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/vinerdi-terre-siciliane-igp-perricone-2024-fina/304567/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-13"
-  },
-  {
-    "id": "0a61ce0239c8",
-    "category": "Calici di Magna Grecia",
-    "title": "Moncalisse, la magia delle sorelle Walch in bolla",
-    "source": "Luciano Pignataro Wine Blog",
-    "url": "https://www.lucianopignataro.it/a/moncalisse-la-magia-delle-sorelle-walch-in-bolla/304882/",
-    "note": "Una voce dal mondo del vino del Sud.",
-    "noteSource": "auto",
-    "date": "2026-11-13"
   }
 ]
